@@ -101,12 +101,43 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
             return FALSE;
     }
 
-    if(relative) {
+    if(!proposed_time) {
+        
+        timedate1_complete_set_time(td1_passed_interf, invoc);
+        return TRUE;
+
+    } else if(relative) {
 
         new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
-
         cur_time = g_get_real_time();
-        /* LEFT OFF HERE 9/13 */ return FALSE;
+
+        if(proposed_time < 0 && cur_time + proposed_time > proposed_time) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EINVAL", "Resultant time out of bounds.");
+            return FALSE;
+
+        } else if(cur_time + proposed_time < proposed_time) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EINVAL", "Resultant time out of bounds.");
+            return FALSE;
+        }
+
+        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
+        new_time->tv_sec = proposed_time;
+        new_time->tv_nsec = 0;
+        g_ptr_array_add(timedated_freeable, new_time);
+
+        if(!clock_settime(CLOCK_REALTIME, new_time)) {
+
+            timedate1_complete_set_time(td1_passed_interf, invoc);
+            return TRUE;
+
+        } else {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to set system time for unknown reasons.");
+            return FALSE;
+        }
+
     } else if(proposed_time >= 0) {
 
         new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
@@ -124,9 +155,10 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
             g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to set system time for unknown reasons.");
             return FALSE;
         }
+
     } else {
 
-        g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.EDOM", "Provided time results in a negative clock value.");
+        g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EINVAL", "Resultant time out of bounds.");
         return FALSE;
     }
 }
