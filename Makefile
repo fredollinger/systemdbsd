@@ -1,1 +1,5 @@
-# see next commit
+# use gmake!
+
+.PHONY: all
+
+

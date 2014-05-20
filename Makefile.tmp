@@ -11,8 +11,7 @@ localed, timedated, and logind
 # TODO: think of better name
 PKGNAME = dbus-utilities
 
-# should i create four seperate packages for the utils or just 1?\
-# ajacoutot@ landry@
+# one package with each component  
 #PKGNAME-foo =		???	for multi packages
 
 # for any port that creates shared libraries.

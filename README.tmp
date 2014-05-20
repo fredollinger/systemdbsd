@@ -5,12 +5,13 @@ and all files will follow standard protocol/KNF.
 FILESYSTEM
 
 /src - source files
-	/src/logind - obvious
-	/src/hostnamed - obvious
-	/src/localed - obvious
-	/src/timedated - obvious
+	/src/modules/logind - obvious
+	/src/modules/hostnamed - obvious
+	/src/modules/localed - obvious
+	/src/modules/timedated - obvious
 /bin - dir for compiled test binaries, will eventually be build tmp dir
 /build - build dir
+/scripts - test scripts, mostly python scripts for gdb
 ------------------------------------------------------------------------
 TODO
 
