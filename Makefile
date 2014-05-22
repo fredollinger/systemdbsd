@@ -8,7 +8,7 @@ COMMENT =			dbus utilities
 
 DISTNAME =			dbus-utils-0.1
 
-CATEGORIES =		misc
+CATEGORIES =		kremlinware/test
 
 HOMEPAGE =			http://uglyman.kremlin.cc
 
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB = c gio-2.0 glib-2.0
 
 #TODO: see if it's okay to host this
-MASTER_SITES = http://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git;a=snapshot;h=refs/heads/master;sf=tgz
+MASTER_SITES =
+http://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git;a=snapshot;h=refs/heads/master;sf=tgz
 
 #MODULES =		???
 #BUILD_DEPENDS =	???
