@@ -7,8 +7,8 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =			dbus utilities
 
 DISTNAME =			dbus-utils-0.1
-
-CATEGORIES =		kremlinware/test
+PACKAGE = 			systemd-utls
+CATEGORIES =		kremlinware test
 
 HOMEPAGE =			http://uglyman.kremlin.cc
 
@@ -22,7 +22,6 @@ WANTLIB = c gio-2.0 glib-2.0
 
 #TODO: see if it's okay to host this
 MASTER_SITES = http://uglyman.kremlin.cc/latest-devel/
-
 #MODULES =		???
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
@@ -37,15 +36,16 @@ LIB_DEPENDS =		x11/dbus>=1.8.2v0 \
 
 # build/configuration variables
 #
+COMMIT =		efedf0c
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
 #SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
-CONFIGURE_STYLE = 	simple
-
+#CONFIGURE_STYLE = 	simple
+CONFIGURE_SCRIPT =  configure
 #CFLAGS =		???
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
+WRKDIST =		${WRKDIR}/systemd-utl-devel-${COMMIT}
 #WRKSRC =		??? if other than ${WRKDIST}
 #WRKBUILD =		??? if other than ${WRKSRC}
 #WRKCONF =		??? if other than ${WRKBUILD}
