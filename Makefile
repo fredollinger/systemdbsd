@@ -5,7 +5,7 @@ DEBUGF=-O0 -v -g
 SRCDIR=src
 MODDIR=$(SRCDIR)/modules
 
-GLIBF=`pkg-config --cflags --libs glib-2.0 gobject-2.0`
+GLIBF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0`
 
 hostnamed: 
-	gcc -o bin/out.bin $(CFLAGS) $(DEBUGF) $(GLIBF) $(SRCDIR)/main.c 
+	gcc -o bin/out.bin $(DEBUGF) $(GLIBF) $(SRCDIR)/main.c 
