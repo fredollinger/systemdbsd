@@ -130,7 +130,7 @@ void hostnamed_init() {
 	guint bus_descriptor;
 	GError *err = NULL;
 	
-	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SESSION,
+	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
 				                    on_bus_acquired,
