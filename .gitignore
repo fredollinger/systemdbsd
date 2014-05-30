@@ -5,4 +5,5 @@ bin/*
 Session.vim
 .netrwhist
 *~
-
+*.sw*
+.*.sw*
