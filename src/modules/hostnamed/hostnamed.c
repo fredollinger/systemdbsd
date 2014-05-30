@@ -1,4 +1,3 @@
-/* #include <glib-2.0/glib.h> */
 #include <gio/gio.h>
 
 /* testing, for now */
@@ -87,11 +86,56 @@ static const gchar spect_xml[] =
 		" </interface>"
 		"</node>";
 
-static void handle_method_call() {}
-static GVariant * handle_get_property() {return NULL;}
-static gboolean handle_set_property() {return FALSE;}
+static void handle_method_call(GDBusConnection *conn,
+				const gchar *sender,
+				const gchar *obj_path,
+				const gchar *interf_name,
+				const gchar *method_name,
+				GVariant *params,
+				GDBusMethodInvocation *invc,
+				gpointer usrdat) {
 
-/* TODO: what's this guy do */
+		g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
+
+		g_dbus_method_invocation_return_value(invc, &spect_xml);
+
+}
+
+
+static GVariant * handle_get_property(GDBusConnection *conn,
+				const gchar *sender,
+				const gchar *obj_path,
+				const gchar *interf_name,
+				const gchar *prop_name,
+				GError **err,
+				gpointer usr_data) {
+		
+		GVariant *ret;
+		ret = g_variant_new_string("");
+		g_snprintf(ret, 100, "%s touched property %s at %s", sender, prop_name, obj_path);
+
+		return ret;
+}
+
+static gboolean handle_set_property(GDBusConnection *conn,
+				const gchar *sender,
+				const gchar *obj_path,
+				const gchar *interf_name,
+				const gchar *prop_name,
+				GVariant *val,
+				GError **err,
+				gpointer usr_data) {
+		g_dbus_connection_emit_signal(conn,
+						NULL,
+						obj_path,
+						"org.freedesktop.DBus.Properties",
+						"PropertiesChanged",
+						NULL, /* incorrect */
+						NULL);
+
+		return TRUE;
+}
+
 static const GDBusInterfaceVTable interface_vtable =
 {
   handle_method_call,
@@ -104,7 +148,6 @@ static const GDBusInterfaceVTable interface_vtable =
 static void on_bus_acquired(GDBusConnection *conn, const gchar *name, gpointer user_data) {
 	g_print("got bus, name: %s\n", name);
 	
-	spect_data = g_dbus_node_info_new_for_xml(spect_xml, NULL);
 	guint reg_id;
 
 	reg_id = g_dbus_connection_register_object (conn,
@@ -122,15 +165,19 @@ static void on_name_acquired(GDBusConnection *conn, const gchar *name, gpointer 
 }
 
 static void on_name_lost(GDBusConnection *conn, const gchar *name, gpointer user_data) {
-	g_print("lost name %s\n", name);
+	g_print("lost name %s, exiting...\n", name);
+	exit(1);
 }
 
 void hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;
-	
-	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
+	GMainLoop *loop;
+
+	spect_data = g_dbus_node_info_new_for_xml(spect_xml, NULL);
+
+	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SESSION,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
 				                    on_bus_acquired,
@@ -138,6 +185,13 @@ void hostnamed_init() {
 				                    on_name_lost,
 				                    NULL,
 				                    NULL);
-}
 
+	loop = g_main_loop_new(NULL, FALSE);
+	g_main_loop_run(loop);
+
+	/* unclear */
+
+	g_bus_unown_name(bus_descriptor);
+	g_dbus_node_info_unref(spect_data);
+}
 
