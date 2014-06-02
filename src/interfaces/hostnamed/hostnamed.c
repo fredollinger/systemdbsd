@@ -84,7 +84,6 @@ static void on_bus_acquired(GDBusConnection *conn,
 											   NULL,
 											   NULL,
 											   NULL);
-	g_assert(reg_id > 0);
 }
 
 static void on_name_acquired(GDBusConnection *conn,
@@ -99,6 +98,7 @@ static void on_name_lost(GDBusConnection *conn,
 						 gpointer user_data) {
 
 	g_print("lost name %s, exiting...\n", name);
+	g_print("you might need to run hacks/punch_config.sh\n");
 	g_main_loop_quit(loop);
 }
 
