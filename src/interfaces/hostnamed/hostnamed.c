@@ -103,14 +103,14 @@ static void on_name_lost(GDBusConnection *conn,
 }
 
 /* safe call to try and start hostnamed */
-GError hostnamed_init() {
+GError * hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;	
 
 	spect_data = g_dbus_node_info_new_for_xml(SYSTEMD_HOSTNAMED_XML, &err);
 
-	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SESSION,
+	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
 				                    on_bus_acquired,
@@ -121,4 +121,7 @@ GError hostnamed_init() {
 
 	loop = g_main_loop_new(NULL, FALSE);
 	g_main_loop_run(loop);
+
+	//TODO: malloc and return reference as if a main() closed
+	return err;
 }
