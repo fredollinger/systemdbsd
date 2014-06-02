@@ -86,6 +86,13 @@ static const gchar spect_xml[] =
 		" </interface>"
 		"</node>";
 
+static const GDBusInterfaceVTable interface_vtable =
+{
+  handle_method_call,
+  handle_get_property,
+  handle_set_property
+};
+
 static void handle_method_call(GDBusConnection *conn,
 				const gchar *sender,
 				const gchar *obj_path,
@@ -136,13 +143,11 @@ static gboolean handle_set_property(GDBusConnection *conn,
 		return TRUE;
 }
 
-static const GDBusInterfaceVTable interface_vtable =
-{
-  handle_method_call,
-  handle_get_property,
-  handle_set_property
-};
-
+/* end method/property functions, begin bus name handlers
+ * TODO: these should be intertwined as to handle edge cases
+ * for when the system cannot immediately grab the name, as
+ * well as cases where the system unintendedly loses the name
+ */
 
 
 static void on_bus_acquired(GDBusConnection *conn, const gchar *name, gpointer user_data) {
@@ -169,12 +174,14 @@ static void on_name_lost(GDBusConnection *conn, const gchar *name, gpointer user
 	exit(1);
 }
 
-void hostnamed_init() {
+/* safe call to try and start hostnamed */
+GError hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;
 	GMainLoop *loop;
 
+	/* TODO: there is a correct way to generate introspection XML, switch to that */
 	spect_data = g_dbus_node_info_new_for_xml(spect_xml, NULL);
 
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SESSION,
@@ -189,7 +196,7 @@ void hostnamed_init() {
 	loop = g_main_loop_new(NULL, FALSE);
 	g_main_loop_run(loop);
 
-	/* unclear */
+	/* i am not sure what the system state is once g_main_loop exits */
 
 	g_bus_unown_name(bus_descriptor);
 	g_dbus_node_info_unref(spect_data);
