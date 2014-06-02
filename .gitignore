@@ -1,3 +1,4 @@
+*.core
 bin/*.out
 bin/*.bin
 bin/*.o

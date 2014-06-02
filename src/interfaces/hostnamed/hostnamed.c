@@ -5,63 +5,64 @@ GDBusNodeInfo *spect_data;
 GMainLoop *loop;
 
 static void handle_method_call(GDBusConnection *conn,
-				const gchar *sender,
-				const gchar *obj_path,
-				const gchar *interf_name,
-				const gchar *method_name,
-				GVariant *params,
-				GDBusMethodInvocation *invc,
-				gpointer usrdat) {
+			   				   const gchar *sender,
+							   const gchar *obj_path,
+							   const gchar *interf_name,
+							   const gchar *method_name,
+							   GVariant *params,
+							   GDBusMethodInvocation *invc,
+							   gpointer usrdat) {
 
-		g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
+	g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
 
-		GString  *xml_ret;
-		GVariant *xml_ret_gvar;
+	GString  *xml_ret;
+	GVariant *xml_ret_gvar;
 
-		g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
-		xml_ret_gvar = g_variant_new_string(xml_ret->str);
-		g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
+	g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
+	xml_ret_gvar = g_variant_new_string(xml_ret->str);
+	g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
 
 }
 
 static GVariant * handle_get_property(GDBusConnection *conn,
-				const gchar *sender,
-				const gchar *obj_path,
-				const gchar *interf_name,
-				const gchar *prop_name,
-				GError **err,
-				gpointer usr_data) {
+									  const gchar *sender,
+									  const gchar *obj_path,
+									  const gchar *interf_name,
+									  const gchar *prop_name,
+									  GError **err,
+									  gpointer usr_data) {
 		
-		GVariant *ret;
+	GVariant *ret;
 
-		return ret;
+	return ret;
 }
 
 static gboolean handle_set_property(GDBusConnection *conn,
-				const gchar *sender,
-				const gchar *obj_path,
-				const gchar *interf_name,
-				const gchar *prop_name,
-				GVariant *val,
-				GError **err,
-				gpointer usr_data) {
-		g_dbus_connection_emit_signal(conn,
-						NULL,
-						obj_path,
-						"org.freedesktop.DBus.Properties",
-						"PropertiesChanged",
-						NULL, /* incorrect */
-						NULL);
+									const gchar *sender,
+									const gchar *obj_path,
+									const gchar *interf_name,
+									const gchar *prop_name,
+									GVariant *val,
+									GError **err,
+									gpointer usr_data) {
 
-		return TRUE;
+	g_dbus_connection_emit_signal(conn,
+								  NULL,
+								  obj_path,
+								  "org.freedesktop.DBus.Properties",
+								  "PropertiesChanged",
+								  NULL, /* incorrect */
+								  NULL);
+
+	return TRUE;
 }
 
 /* "hot" functions initially passed to gdbus */
 static const GDBusInterfaceVTable interface_vtable =
 {
-  handle_method_call,
-  handle_get_property,
-  handle_set_property
+	handle_method_call,
+	handle_get_property,
+	handle_set_property
 };
 
 /* end method/property functions, begin bus name handlers
@@ -69,7 +70,9 @@ static const GDBusInterfaceVTable interface_vtable =
  * for when the system cannot immediately grab the name, as
  * well as cases where the system unintendedly loses the name
  */
-static void on_bus_acquired(GDBusConnection *conn, const gchar *name, gpointer user_data) {
+static void on_bus_acquired(GDBusConnection *conn,
+							const gchar *name,
+							gpointer user_data) {
 	g_print("got bus, name: %s\n", name);
 	
 	guint reg_id;
@@ -80,15 +83,21 @@ static void on_bus_acquired(GDBusConnection *conn, const gchar *name, gpointer u
 											   &interface_vtable,
 											   NULL,
 											   NULL,
-											   NULL );
+											   NULL);
 	g_assert(reg_id > 0);
 }
 
-static void on_name_acquired(GDBusConnection *conn, const gchar *name, gpointer user_data) {
+static void on_name_acquired(GDBusConnection *conn,
+							 const gchar *name,
+							 gpointer user_data) {
+
 	g_print("got name %s\n", name);
 }
 
-static void on_name_lost(GDBusConnection *conn, const gchar *name, gpointer user_data) {
+static void on_name_lost(GDBusConnection *conn,
+						 const gchar *name,
+						 gpointer user_data) {
+
 	g_print("lost name %s, exiting...\n", name);
 	g_main_loop_quit(loop);
 }
@@ -112,10 +121,4 @@ GError hostnamed_init() {
 
 	loop = g_main_loop_new(NULL, FALSE);
 	g_main_loop_run(loop);
-
-	/* i am not sure what the system state is once g_main_loop exits */
-
-	g_bus_unown_name(bus_descriptor);
-	g_dbus_node_info_unref(spect_data);
 }
-
