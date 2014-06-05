@@ -1,5 +1,4 @@
 #include <gio/gio.h>
-#include "hostnamed.h"
 
 GMainLoop *loop;
 GDBusNodeInfo *spect_data;
