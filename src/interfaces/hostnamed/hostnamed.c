@@ -1,8 +1,8 @@
 #include <gio/gio.h>
 #include "hostnamed.h"
 
-GDBusNodeInfo *spect_data;
 GMainLoop *loop;
+GDBusNodeInfo *spect_data;
 
 static void handle_method_call(GDBusConnection *conn,
 			   				   const gchar *sender,
@@ -13,11 +13,13 @@ static void handle_method_call(GDBusConnection *conn,
 							   GDBusMethodInvocation *invc,
 							   gpointer usrdat) {
 
-	g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
+	//g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
 
-	GString  *xml_ret;
+	if(g_strcmp0(method_name, "Introspect"
+
 	GVariant *xml_ret_gvar;
-
+	GString  *xml_ret;
+	
 	g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
 	xml_ret_gvar = g_variant_new_string(xml_ret->str);
 	g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
@@ -98,7 +100,7 @@ static void on_name_lost(GDBusConnection *conn,
 						 gpointer user_data) {
 
 	g_print("lost name %s, exiting...\n", name);
-	g_print("you might need to run hacks/punch_config.sh\n");
+	//g_print("you might need to run hacks/punch_config.sh\n");
 	g_main_loop_quit(loop);
 }
 
@@ -109,7 +111,6 @@ GError * hostnamed_init() {
 	GError *err = NULL;	
 
 	spect_data = g_dbus_node_info_new_for_xml(SYSTEMD_HOSTNAMED_XML, &err);
-
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
