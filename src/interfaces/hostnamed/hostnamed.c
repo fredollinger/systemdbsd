@@ -1,6 +1,5 @@
 #include <gio/gio.h>
 
-GMainLoop *loop;
 GDBusNodeInfo *spect_data;
 
 static void handle_method_call(GDBusConnection *conn,
@@ -12,9 +11,7 @@ static void handle_method_call(GDBusConnection *conn,
 							   GDBusMethodInvocation *invc,
 							   gpointer usrdat) {
 
-	//g_printf("%s wants to call %s, at %s with interface %s\n", sender, method_name, obj_path, interf_name);
-
-	if(g_strcmp0(method_name, "Introspect"
+	//if(g_strcmp0(method_name, "Introspect"
 
 	GVariant *xml_ret_gvar;
 	GString  *xml_ret;
@@ -99,8 +96,8 @@ static void on_name_lost(GDBusConnection *conn,
 						 gpointer user_data) {
 
 	g_print("lost name %s, exiting...\n", name);
-	//g_print("you might need to run hacks/punch_config.sh\n");
-	g_main_loop_quit(loop);
+	//TODO exit through g_main_loop properly...
+	exit(0);
 }
 
 /* safe call to try and start hostnamed */
@@ -108,8 +105,16 @@ GError * hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;	
+	gchar  **hnd_ispect_xml;
+	GDir   *cur_dir;
+	gchar  *dir;
+	
+	cur_dir = g_dir_open("./../", 0, err);
 
-	spect_data = g_dbus_node_info_new_for_xml(SYSTEMD_HOSTNAMED_XML, &err);
+	g_sprintf(dir, "%s\n", g_dir_read_name(cur_dir));
+
+	//g_file_get_contents("../../../../conf/hostnamed-ispect.xml", hnd_ispect_xml, NULL, err);
+	//spect_data = g_dbus_node_info_new_for_xml(hnd_ispect_xml, &err);
 
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
@@ -119,9 +124,6 @@ GError * hostnamed_init() {
 				                    on_name_lost,
 				                    NULL,
 				                    NULL);
-
-	loop = g_main_loop_new(NULL, FALSE);
-	g_main_loop_run(loop);
 
 	//TODO: malloc and return reference as if a main() closed
 	return err;
