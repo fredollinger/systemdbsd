@@ -110,6 +110,7 @@ GError * hostnamed_init() {
 	GError *err = NULL;	
 
 	spect_data = g_dbus_node_info_new_for_xml(SYSTEMD_HOSTNAMED_XML, &err);
+
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
