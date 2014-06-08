@@ -105,17 +105,7 @@ GError * hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;	
-	gchar  **hnd_ispect_xml;
-	GDir   *cur_dir;
-	gchar  *dir;
 	
-	cur_dir = g_dir_open("./../", 0, err);
-
-	g_sprintf(dir, "%s\n", g_dir_read_name(cur_dir));
-
-	//g_file_get_contents("../../../../conf/hostnamed-ispect.xml", hnd_ispect_xml, NULL, err);
-	//spect_data = g_dbus_node_info_new_for_xml(hnd_ispect_xml, &err);
-
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                (gchar *)"org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
