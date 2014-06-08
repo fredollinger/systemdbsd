@@ -95,7 +95,7 @@ static void on_name_lost(GDBusConnection *conn,
 						 const gchar *name,
 						 gpointer user_data) {
 
-	g_print("lost name %s, exiting...\n", name);
+	g_print("lost name %s, exiting...", name);
 	//TODO exit through g_main_loop properly...
 	exit(0);
 }
