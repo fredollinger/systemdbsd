@@ -2,6 +2,11 @@
 
 GDBusNodeInfo *spect_data;
 
+static gchar *hostname;
+static gchar *pretty_hostname;
+static gchar *static_hostname;
+static gchar *icon_name;
+
 static void handle_method_call(GDBusConnection *conn,
 			   				   const gchar *sender,
 							   const gchar *obj_path,
@@ -11,12 +16,15 @@ static void handle_method_call(GDBusConnection *conn,
 							   GDBusMethodInvocation *invc,
 							   gpointer usrdat) {
 
-	GVariant *xml_ret_gvar;
-	GString  *xml_ret;
+	if(g_strcmp0(interf_name, "org.freedesktop.DBus.Introspectable") == 0) {
+
+		GVariant *xml_ret_gvar;
+		GString  *xml_ret;
 	
-	g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
-	xml_ret_gvar = g_variant_new_string(xml_ret->str);
-	g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
+		g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
+		xml_ret_gvar = g_variant_new_string(xml_ret->str);
+		g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
+	} 
 
 }
 
