@@ -1,5 +1,4 @@
 #include <gio/gio.h>
-#include "xml_defs.h"
 
 gboolean install_conf() {
 	gchar *our_conf_uri   = "systemd-utl/xml-conf/";
@@ -13,7 +12,8 @@ gboolean install_conf() {
 		/*TODO permissions w/ this */
 		g_mkdir_with_parents(our_conf_path, 0644);
 	
-		return (errors[0] == NULL);
+		return FALSE;
+		//return (errors[0] == NULL);
 
 		} else
 			return FALSE;

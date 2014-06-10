@@ -1,12 +1,11 @@
 /* debugging */
-#define INSTALL 1
-#define NO_BUILTIN_XML 1
-
+//#define INSTALL 1
+//#define NO_BUILTIN_XML 1
 /* end debugging */
 
 #include <gio/gio.h>
 #include "interfaces/hostnamed/hostnamed.c"
-#include "main.h"
+//#include "main.h"
 
 int main() {
 
