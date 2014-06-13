@@ -1,4 +1,7 @@
+#include <unistd.h>
+#include <limits.h>
 #include <gio/gio.h>
+
 
 GDBusNodeInfo *spect_data;
 
@@ -6,6 +9,12 @@ static gchar *hostname;
 static gchar *pretty_hostname;
 static gchar *static_hostname;
 static gchar *icon_name;
+static gchar *chassis;
+static gchar *kernel_name;
+static gchar *kernel_release;
+static gchar *kernel_version;
+static gchar *os_prettyname;
+static gchar *os_cpe;         //common platform enumeration string
 
 static void handle_method_call(GDBusConnection *conn,
 			   				   const gchar *sender,
@@ -16,7 +25,8 @@ static void handle_method_call(GDBusConnection *conn,
 							   GDBusMethodInvocation *invc,
 							   gpointer usrdat) {
 
-	if(g_strcmp0(interf_name, "org.freedesktop.DBus.Introspectable") == 0) {
+	if(g_strcmp0(interf_name, "org.freedesktop.DBus.Introspectable") == 0
+		&& g_strcmp0(method_name, "Introspect") == 0) {
 
 		GVariant *xml_ret_gvar;
 		GString  *xml_ret;
@@ -35,10 +45,31 @@ static GVariant * handle_get_property(GDBusConnection *conn,
 									  const gchar *prop_name,
 									  GError **err,
 									  gpointer usr_data) {
-		
-	GVariant *ret;
+	
+	const gchar *our_interf_name = "org.freedesktop.hostname1";
+	const gchar *our_obj_path    = "/org/freedesktop/hostname1";
 
-	return ret;
+	if(g_strcmp0(interf_name, our_interf_name) != 0
+		|| g_strcmp0(obj_path, our_obj_path) != 0) {
+
+		return NULL; //TODO error
+	}
+
+	if(g_strcmp0(prop_name, "Hostname") == 0)
+		return g_variant_new_string(hostname);
+
+	else if(g_strcmp0(prop_name, "StaticHostname") == 0)
+		return g_variant_new_string(static_hostname);
+
+	else if(g_strcmp0(prop_name, "PrettyHostname") == 0)
+		return g_variant_new_string(pretty_hostname);
+
+	else if(g_strcmp0(prop_name, "IconName") == 0)
+		return g_variant_new_string(icon_name);
+
+	else 
+		return NULL; //TODO error
+	
 }
 
 static gboolean handle_set_property(GDBusConnection *conn,
@@ -118,6 +149,9 @@ GError * hostnamed_init() {
 	g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, NULL, err);
 	hostnamed_joined_xml = g_strjoinv("\n", hostnamed_ispect_xml);
 	spect_data = g_dbus_node_info_new_for_xml(hostnamed_joined_xml, NULL);
+
+	if(!init_props())
+		return err; //TODO error
 	
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                "org.freedesktop.hostname1",
@@ -131,3 +165,86 @@ GError * hostnamed_init() {
 	//TODO: malloc and return reference as if a main() closed
 	return err;
 }
+
+static gboolean init_props() {
+	
+	if(init_hostname()
+		&& init_static_hostname()
+		&& init_pretty_hostname()
+		&& init_icon_name()
+		&& init_chassis()
+		&& init_kernel_name()
+		&& init_kernel_version()
+		&& init_os_name()
+		&& init_os_cpe() )
+		return TRUE;
+
+	return FALSE;
+}
+
+//POSIX, for future ports try_hostname should be checked for null-termination
+static gboolean init_hostname() {
+
+	gchar try_hostname[MAX_HOSTNAME];
+
+	if(!get_hostname(try_hostname, MAX_HOSTNAME)) {
+		hostname = try_hostname;
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+static gboolean init_pretty_hostname() {
+
+	
+
+}
+
+//TODO figure out DMI variables on obsd
+/*static gchar *guess_icon_name() {
+
+    gchar *filebuf = NULL;
+    gchar *ret = NULL;
+
+	//TODO vm check
+
+	#if defined(__i386__) || defined(__x86_64__)
+    /*
+       Taken with a few minor changes from systemd's hostnamed.c,
+       copyright 2011 Lennart Poettering.
+
+       See the SMBIOS Specification 2.7.1 section 7.4.1 for
+       details about the values listed here:
+
+       http://www.dmtf.org/sites/default/files/standards/documents/DSP0134_2.7.1.pdf
+    */   /*
+
+    if (g_file_get_contents ("/sys/class/dmi/id/chassis_type", &filebuf, NULL, NULL)) {
+        switch (g_ascii_strtoull (filebuf, NULL, 10)) {
+        case 0x3:
+        case 0x4:
+        case 0x5:
+        case 0x6:
+        case 0x7:
+            ret = g_strdup ("computer-desktop");
+            goto out;
+        case 0x9:
+        case 0xA:
+        case 0xE:
+            ret = g_strdup ("computer-laptop");
+            goto out;
+        case 0x11:
+        case 0x17:
+        case 0x1C:
+        case 0x1D:
+            ret = g_strdup ("computer-server");
+            goto out;
+        }
+    }
+	#endif
+    ret = g_strdup ("computer");
+  out:
+    g_free (filebuf);
+    return ret;
+}*/
