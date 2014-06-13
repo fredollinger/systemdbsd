@@ -1,10 +1,10 @@
 /* debugging */
-//#define INSTALL 1
+#define INSTALL 1
 //#define NO_BUILTIN_XML 1
 /* end debugging */
 
 #include <gio/gio.h>
-#include <config.c>
+#include "config.c"
 #include "interfaces/hostnamed/hostnamed.c"
 //#include "main.h"
 
@@ -17,17 +17,17 @@ static gboolean install_conf() {
 int main() {
 	//TODO cleanup
 	#ifdef INSTALL
-		if(!install_conf()) {
+		if(!config_init()) {
 			g_printf("%s\n", "FAILED to install configs in /etc/!");
-			exit(1);
+			return 1;
 		}
 	#endif
 
 	//TODO cleanup
 	#if (defined NO_BUILTIN_XML && defined INSTALL)
-		if(!install_conf()) {
+		if(!config_init()) {
 			g_printf("%s\n", "FAILED to install xml configs!");
-			exit(1);
+			return 1;
 		}
 	#else
 	#endif

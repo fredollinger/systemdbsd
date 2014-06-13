@@ -166,7 +166,7 @@ GError * hostnamed_init() {
 	return err;
 }
 
-static gboolean init_props() {
+gboolean init_props() {
 	
 	if(init_hostname()
 		&& init_static_hostname()
@@ -183,11 +183,11 @@ static gboolean init_props() {
 }
 
 //POSIX, for future ports try_hostname should be checked for null-termination
-static gboolean init_hostname() {
+gboolean init_hostname() {
 
-	gchar try_hostname[MAX_HOSTNAME];
+	gchar try_hostname[HOST_NAME_MAX];
 
-	if(!get_hostname(try_hostname, MAX_HOSTNAME)) {
+	if(!gethostname(try_hostname, HOST_NAME_MAX)) {
 		hostname = try_hostname;
 		return TRUE;
 	}
@@ -195,10 +195,44 @@ static gboolean init_hostname() {
 	return FALSE;
 }
 
-static gboolean init_pretty_hostname() {
+gboolean init_static_hostname() {
+	//TODO
+	return TRUE;
+}
 
-	
+gboolean init_pretty_hostname() {
+	//TODO
+	return TRUE;
+}
 
+gboolean init_icon_name() {
+	//TODO
+	return TRUE;
+}
+
+gboolean init_chassis() {
+	//TODO
+	return TRUE;
+}
+
+gboolean init_kernel_name() {
+	//TODO
+	return TRUE;
+}
+
+gboolean init_kernel_version() {
+	//TODO
+	return TRUE;
+}
+
+gboolean init_os_name() {
+	//TODO
+	return TRUE;
+}
+
+gboolean init_os_cpe() {
+	//TODO
+	return TRUE;
 }
 
 //TODO figure out DMI variables on obsd
