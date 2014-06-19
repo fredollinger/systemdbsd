@@ -8,7 +8,7 @@
 #  include "config.h"
 #endif
 
-#include "src/interfaces/hostnamed/hostnamed-gen.h"
+#include "hostnamed-gen.h"
 
 #include <string.h>
 #ifdef G_OS_UNIX

@@ -1,115 +1,14 @@
 #include <unistd.h>
 #include <limits.h>
+
+#include <glib.h>
 #include <gio/gio.h>
 
-#include "src/interfaces/hostnamed/hostnamed-gen.c"
+#include "hostnamed.h"
+#include "hostnamed-gen.c"
 
+GPtrArray *hostnamed_freeable;
 GDBusNodeInfo *spect_data;
-
-/* handled by codegen
-static gchar *hostname;
-static gchar *pretty_hostname;
-static gchar *static_hostname;
-static gchar *icon_name;
-static gchar *chassis;
-static gchar *kernel_name;
-static gchar *kernel_release;
-static gchar *kernel_version;
-static gchar *os_prettyname;
-static gchar *os_cpe;         //common platform enumeration string
-*/
-
-/* handled by codegen
-static void handle_method_call(GDBusConnection *conn,
-			   				   const gchar *sender,
-							   const gchar *obj_path,
-							   const gchar *interf_name,
-							   const gchar *method_name,
-							   GVariant *params,
-							   GDBusMethodInvocation *invc,
-							   gpointer usrdat) {
-
-	if(g_strcmp0(interf_name, "org.freedesktop.DBus.Introspectable") == 0
-		&& g_strcmp0(method_name, "Introspect") == 0) {
-
-		GVariant *xml_ret_gvar;
-		GString  *xml_ret;
-	
-		g_dbus_interface_info_generate_xml(spect_data->interfaces[0], (guint)0, xml_ret);
-		xml_ret_gvar = g_variant_new_string(xml_ret->str);
-		g_dbus_method_invocation_return_value(invc, xml_ret_gvar);
-	} 
-
-}
-*/
-
-/* handled by codegen
-static GVariant * handle_get_property(GDBusConnection *conn,
-									  const gchar *sender,
-									  const gchar *obj_path,
-									  const gchar *interf_name,
-									  const gchar *prop_name,
-									  GError **err,
-									  gpointer usr_data) {
-	
-	const gchar *our_interf_name = "org.freedesktop.hostname1";
-	const gchar *our_obj_path    = "/org/freedesktop/hostname1";
-
-	if(g_strcmp0(interf_name, our_interf_name) != 0
-		|| g_strcmp0(obj_path, our_obj_path) != 0) {
-
-		return NULL; //TODO error
-	}
-
-	if(g_strcmp0(prop_name, "Hostname") == 0)
-		return g_variant_new_string(hostname);
-
-	else if(g_strcmp0(prop_name, "StaticHostname") == 0)
-		return g_variant_new_string(static_hostname);
-
-	else if(g_strcmp0(prop_name, "PrettyHostname") == 0)
-		return g_variant_new_string(pretty_hostname);
-
-	else if(g_strcmp0(prop_name, "IconName") == 0)
-		return g_variant_new_string(icon_name);
-
-	else 
-		return NULL; //TODO error
-	
-}
-*/
-
-/* handled by codegen
-static gboolean handle_set_property(GDBusConnection *conn,
-									const gchar *sender,
-									const gchar *obj_path,
-									const gchar *interf_name,
-									const gchar *prop_name,
-									GVariant *val,
-									GError **err,
-									gpointer usr_data) {
-
-	g_dbus_connection_emit_signal(conn,
-								  NULL,
-								  obj_path,
-								  "org.freedesktop.DBus.Properties",
-								  "PropertiesChanged",
-								  NULL, //incorrect 
-								  NULL);
-
-	return TRUE;
-}
-*/
-
-/* handled by codegen
-static const GDBusInterfaceVTable interface_vtable =
-{
-	handle_method_call,
-	handle_get_property,
-	handle_set_property
-};
-
-*/
 
 static void on_bus_acquired(GDBusConnection *conn,
 							const gchar *name,
@@ -119,13 +18,11 @@ static void on_bus_acquired(GDBusConnection *conn,
 
 	g_print("got bus, name: %s\n", name);	
 
-	//GDBusObjectSkeleton *hostnamed_dbobj = g_dbus_object_skeleton_new("/org/freedesktop/hostname1");
-
-	g_dbus_connection_register_object(conn,
+	/*g_dbus_connection_register_object(conn,
 									  "/org/freedesktop/hostname1",
 									  spect_data->interfaces[0],
 									  &interface_vtable,
-									  NULL, NULL, NULL);
+									  NULL, NULL, NULL);*/
 }
 
 static void on_name_acquired(GDBusConnection *conn,
@@ -140,8 +37,10 @@ static void on_name_lost(GDBusConnection *conn,
 						 gpointer user_data) {
 
 	g_print("lost name %s, exiting...", name);
+
+	hostnamed_mem_clean();
+
 	//TODO exit through g_main_loop properly...
-	exit(0);
 }
 
 /* safe call to try and start hostnamed */
@@ -149,16 +48,18 @@ GError * hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;
-	gchar **hostnamed_ispect_xml = g_malloc(3000);
-	gchar  *hostnamed_joined_xml = g_malloc(3000);
+	gchar **hostnamed_ispect_xml;
+	gchar  *hostnamed_joined_xml;
 
-	g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, NULL, err);
+	hostnamed_freeable = g_ptr_array_new();
+
+	g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, GUINT_TO_POINTER(3000), &err);
 	hostnamed_joined_xml = g_strjoinv("\n", hostnamed_ispect_xml);
 	spect_data = g_dbus_node_info_new_for_xml(hostnamed_joined_xml, NULL);
 
-	if(!init_props())
-		return err; //TODO error
-	
+	g_free(hostnamed_ispect_xml);
+	g_ptr_array_add(hostnamed_freeable, hostnamed_joined_xml);
+
 	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
 	                                "org.freedesktop.hostname1",
 				                    G_BUS_NAME_OWNER_FLAGS_NONE,
@@ -171,24 +72,9 @@ GError * hostnamed_init() {
 	//TODO: malloc and return reference as if a main() closed
 	return err;
 }
-/* handled by codegen
-gboolean init_props() {
-	
-	if(init_hostname()
-		&& init_static_hostname()
-		&& init_pretty_hostname()
-		&& init_icon_name()
-		&& init_chassis()
-		&& init_kernel_name()
-		&& init_kernel_version()
-		&& init_os_name()
-		&& init_os_cpe() )
-		return TRUE;
-
-	return FALSE;
-}
 
 //POSIX, for future ports try_hostname should be checked for null-termination
+/*
 gboolean init_hostname() {
 
 	gchar try_hostname[HOST_NAME_MAX];
@@ -199,48 +85,12 @@ gboolean init_hostname() {
 	}
 
 	return FALSE;
-}
-*/
+}*/
 
-/* handled by codegen
-gboolean init_static_hostname() {
-	//TODO
-	return TRUE;
-}
+/* free()'s */
+void hostnamed_mem_clean() {
 
-gboolean init_pretty_hostname() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_icon_name() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_chassis() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_kernel_name() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_kernel_version() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_os_name() {
-	//TODO
-	return TRUE;
-}
-
-gboolean init_os_cpe() {
-	//TODO
-	return TRUE;
+	g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
 }
 
 //TODO figure out DMI variables on obsd
