@@ -2,9 +2,11 @@
 #include <limits.h>
 #include <gio/gio.h>
 
+#include "src/interfaces/hostnamed/hostnamed-gen.c"
 
 GDBusNodeInfo *spect_data;
 
+/* handled by codegen
 static gchar *hostname;
 static gchar *pretty_hostname;
 static gchar *static_hostname;
@@ -15,7 +17,9 @@ static gchar *kernel_release;
 static gchar *kernel_version;
 static gchar *os_prettyname;
 static gchar *os_cpe;         //common platform enumeration string
+*/
 
+/* handled by codegen
 static void handle_method_call(GDBusConnection *conn,
 			   				   const gchar *sender,
 							   const gchar *obj_path,
@@ -37,7 +41,9 @@ static void handle_method_call(GDBusConnection *conn,
 	} 
 
 }
+*/
 
+/* handled by codegen
 static GVariant * handle_get_property(GDBusConnection *conn,
 									  const gchar *sender,
 									  const gchar *obj_path,
@@ -71,7 +77,9 @@ static GVariant * handle_get_property(GDBusConnection *conn,
 		return NULL; //TODO error
 	
 }
+*/
 
+/* handled by codegen
 static gboolean handle_set_property(GDBusConnection *conn,
 									const gchar *sender,
 									const gchar *obj_path,
@@ -86,13 +94,14 @@ static gboolean handle_set_property(GDBusConnection *conn,
 								  obj_path,
 								  "org.freedesktop.DBus.Properties",
 								  "PropertiesChanged",
-								  NULL, /* incorrect */
+								  NULL, //incorrect 
 								  NULL);
 
 	return TRUE;
 }
+*/
 
-/* "hot" functions initially passed to gdbus */
+/* handled by codegen
 static const GDBusInterfaceVTable interface_vtable =
 {
 	handle_method_call,
@@ -100,11 +109,8 @@ static const GDBusInterfaceVTable interface_vtable =
 	handle_set_property
 };
 
-/* end method/property functions, begin bus name handlers
- * TODO: these should be intertwined as to handle edge cases
- * for when the system cannot immediately grab the name, as
- * well as cases where the system unintendedly loses the name
- */
+*/
+
 static void on_bus_acquired(GDBusConnection *conn,
 							const gchar *name,
 							gpointer user_data) {
@@ -165,7 +171,7 @@ GError * hostnamed_init() {
 	//TODO: malloc and return reference as if a main() closed
 	return err;
 }
-
+/* handled by codegen
 gboolean init_props() {
 	
 	if(init_hostname()
@@ -194,7 +200,9 @@ gboolean init_hostname() {
 
 	return FALSE;
 }
+*/
 
+/* handled by codegen
 gboolean init_static_hostname() {
 	//TODO
 	return TRUE;
