@@ -3,6 +3,7 @@
 #include <gio/gio.h>
 
 static GKeyFile *config;
+static int config_descr;
 
 static const gchar *CONFIG_KEYS[] = {
 	"PrettyHostname",
@@ -55,7 +56,6 @@ gboolean config_init() {
 			return FALSE;
 		}
 
-		int config_descr;
 		config_descr = g_open(config_path, O_CREAT, 644);
 
 		gchar *posix_hostname;
@@ -86,10 +86,22 @@ gboolean config_init() {
 		if(!g_access(config_path, W_OK)) {
 			g_printf("%s\n", "no write permissions for /etc/! exiting..");
 			return FALSE;
-		} else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
+		} else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL)) {
+			config_descr = g_open(config_path, O_RDWR, 644);
 			return TRUE;
+		}
 
 		g_printf("could not read config at %s! exiting..", config_path);
 		return FALSE;
 	}
+}
+
+void clean_config() {
+
+	if(config)
+		g_free(config);
+
+	if(config_descr)
+		g_close(config_descr, NULL);
+
 }
