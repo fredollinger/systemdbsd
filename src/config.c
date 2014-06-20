@@ -34,45 +34,62 @@ gboolean set_option(gchar *key, gchar *value, gchar *group) {
 }
 
 /* initial load/check */
-
 gboolean config_init() {
 
-	static gchar *config_path;
-	int tryopen = 0;
-	/* config is already good to go */
 	if(config)
+		return TRUE; //already init'd
+
+	config = g_key_file_new();
+	
+	const gchar *config_path;
+	GStatBuf *config_lstat;
+
+	config_path = "/etc/systemd_compat.conf";
+
+	/* does conf exist? */
+	if(g_lstat(config_path, config_lstat)) {
+
+		/* if not, can we write it */
+		if(g_access("/etc/", W_OK)) {
+			g_printf("%s\n", "no write permissions for /etc/! exiting..");
+			return FALSE;
+		}
+
+		int config_descr;
+		config_descr = g_open(config_path, O_CREAT, 644);
+
+		gchar *posix_hostname;
+		posix_hostname = g_malloc(255); 
+
+		gethostname(posix_hostname, 255);
+
+		g_key_file_set_string(config, "hostnamed", "Hostname", posix_hostname);
+		g_key_file_set_string(config, "hostnamed", "PrettyHostname", "");
+		g_key_file_set_string(config, "hostnamed", "IconName", "Computer");	
+		g_key_file_set_string(config, "hostnamed", "ChassisType", "laptop"); //TODO set these correctly
+
+		if(!g_key_file_save_to_file(config, config_path, NULL)) {
+			g_printf("failed to write config to %s!\n", config_path);
+			g_free(posix_hostname);
+			return FALSE;
+		}
+
+		g_printf("wrote config to %s\n", config_path);
+
+		g_free(posix_hostname);
+
 		return TRUE;
 
-	/* does config file exist? if not, write one */
-	else if(!g_key_file_load_from_data(config, "systemd_compat.conf", &config_path, G_KEY_FILE_KEEP_COMMENTS, NULL)) {
-			
-			tryopen = g_open("/etc/systemd_compat.conf", O_CREAT, 644);
-			
-			//TODO clean this up, use g_data_dirs and g_exit
-			/* can we open it rw? */
-			if(!g_access("/etc/systemd_compat.conf", W_OK) && !tryopen) {
-				g_printf("%s\n", "ERROR: cannot open systemd_compat.conf as read/write!");
-				return FALSE;
-			}
-			
-			if(tryopen) {
-				config_path = "/etc/systemd_compat.conf";
-				g_close(tryopen, NULL);
-			}
+	/* it does exist, read it */
+	} else {
 
-			//TODO set these properly
-			config = g_key_file_new();
-
-			g_key_file_set_string(config, "hostnamed", "PrettyHostname", "");
-			g_key_file_set_string(config, "hostnamed", "IconName", "Computer");	
-			g_key_file_set_string(config, "hostnamed", "ChassisType", "laptop");
-
-			if(!g_key_file_save_to_file(config, config_path, NULL))
-				return FALSE;
-
+		if(!g_access(config_path, W_OK)) {
+			g_printf("%s\n", "no write permissions for /etc/! exiting..");
+			return FALSE;
+		} else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
 			return TRUE;
 
-	/* it does it exist and was written to config var */
-	} else
-		return TRUE;
+		g_printf("could not read config at %s! exiting..", config_path);
+		return FALSE;
+	}
 }

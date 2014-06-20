@@ -1,5 +1,6 @@
 #include <gio/gio.h>
 
+//TODO change this to config dir, not data dir
 gboolean install_conf() {
 	gchar *our_conf_uri   = "systemd-utl/xml-conf/";
 	gchar **data_dir = g_get_system_data_dirs();

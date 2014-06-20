@@ -18,11 +18,6 @@ static void on_bus_acquired(GDBusConnection *conn,
 
 	g_print("got bus, name: %s\n", name);	
 
-	/*g_dbus_connection_register_object(conn,
-									  "/org/freedesktop/hostname1",
-									  spect_data->interfaces[0],
-									  &interface_vtable,
-									  NULL, NULL, NULL);*/
 }
 
 static void on_name_acquired(GDBusConnection *conn,
@@ -44,7 +39,7 @@ static void on_name_lost(GDBusConnection *conn,
 }
 
 /* safe call to try and start hostnamed */
-GError * hostnamed_init() {
+GError *hostnamed_init() {
 
 	guint bus_descriptor;
 	GError *err = NULL;
@@ -52,8 +47,9 @@ GError * hostnamed_init() {
 	gchar  *hostnamed_joined_xml;
 
 	hostnamed_freeable = g_ptr_array_new();
+	hostnamed_ispect_xml = g_malloc(3000);
 
-	g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, GUINT_TO_POINTER(3000), &err);
+	g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, NULL, NULL);
 	hostnamed_joined_xml = g_strjoinv("\n", hostnamed_ispect_xml);
 	spect_data = g_dbus_node_info_new_for_xml(hostnamed_joined_xml, NULL);
 
@@ -69,23 +65,9 @@ GError * hostnamed_init() {
 				                    NULL,
 				                    NULL);
 
-	//TODO: malloc and return reference as if a main() closed
+	//TODO: malloc and return reference as if a main() closed 
 	return err;
 }
-
-//POSIX, for future ports try_hostname should be checked for null-termination
-/*
-gboolean init_hostname() {
-
-	gchar try_hostname[HOST_NAME_MAX];
-
-	if(!gethostname(try_hostname, HOST_NAME_MAX)) {
-		hostname = try_hostname;
-		return TRUE;
-	}
-
-	return FALSE;
-}*/
 
 /* free()'s */
 void hostnamed_mem_clean() {
@@ -102,7 +84,7 @@ void hostnamed_mem_clean() {
 	//TODO vm check
 
 	#if defined(__i386__) || defined(__x86_64__)
-    /*
+    
        Taken with a few minor changes from systemd's hostnamed.c,
        copyright 2011 Lennart Poettering.
 
@@ -110,7 +92,7 @@ void hostnamed_mem_clean() {
        details about the values listed here:
 
        http://www.dmtf.org/sites/default/files/standards/documents/DSP0134_2.7.1.pdf
-    */   /*
+
 
     if (g_file_get_contents ("/sys/class/dmi/id/chassis_type", &filebuf, NULL, NULL)) {
         switch (g_ascii_strtoull (filebuf, NULL, 10)) {

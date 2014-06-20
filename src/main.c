@@ -4,40 +4,38 @@
 /* end debugging */
 
 #include <gio/gio.h>
+#include <glib.h>
+#include <glib/gprintf.h>
+#include <glib/gstdio.h>
 #include "config.c"
 #include "interfaces/hostnamed/hostnamed.c"
-//#include "main.h"
+//#include "main/h"
 
-#ifdef INSTALL
-static gboolean install_conf() {
-	
-}
-#endif
-
-int main() {
-	//TODO cleanup
+gboolean systemd_utils_init() {
 	#ifdef INSTALL
 		if(!config_init()) {
 			g_printf("%s\n", "FAILED to install configs in /etc/!");
-			return 1;
+			return FALSE; 
 		}
 	#endif
+	return TRUE;
+}
 
-	//TODO cleanup
-	#if (defined NO_BUILTIN_XML && defined INSTALL)
-		if(!config_init()) {
-			g_printf("%s\n", "FAILED to install xml configs!");
-			return 1;
-		}
-	#else
-	#endif
+int main() {
 
-	GMainLoop *mloop = NULL;
+	GMainLoop *mloop;
 	
-	mloop = g_main_loop_new(NULL, FALSE);
+	if(!systemd_utils_init()) {
+		g_printf("failed to init, are you root?\n");
+		return 1; //TODO errno properly. grep for all "return 1;"s, not TODO'ing each one
+	}
+
 	hostnamed_init();
+
+	mloop = g_main_loop_new(NULL, TRUE);
+
 	g_main_loop_run(mloop);
+	g_main_loop_unref(mloop);
 
 	return 0;
 }
-
