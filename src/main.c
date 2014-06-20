@@ -14,8 +14,18 @@
 gboolean systemd_utils_init() {
 	#ifdef INSTALL
 		if(!config_init()) {
-			g_printf("%s\n", "FAILED to install configs in /etc/!");
-			return FALSE; 
+			gchar *tmp;
+			tmp = "/etc/"; //what the hell is /etc/xdg anyway
+
+			g_printf("FAILED to install configs in %s!\n", tmp);
+			return FALSE;
+		} 
+		if(!init_xml()) {
+			gchar **tmp;
+			tmp = g_get_system_data_dirs();
+
+			g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
+			return FALSE;
 		}
 	#endif
 	return TRUE;

@@ -1,1 +1,2 @@
  * get autoconf stuff figured out
+ * handle SIGINTs so file descriptors are dropped properly, otherwise we get bus errors next run
