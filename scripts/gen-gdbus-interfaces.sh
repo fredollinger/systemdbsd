@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
 # Copyright (c) 2014 Ian Sutton <ian@kremlin.cc>
 #
