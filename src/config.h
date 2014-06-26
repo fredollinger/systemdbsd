@@ -1,34 +1,21 @@
+/*our buffers for xml config file contents */
+static gchar **hostnamed_ispect_xml, **hostnamed_dbus_xml,
+             **localed_ispect_xml,   **localed_dbus_xml,
+             **timedated_ispect_xml, **timedated_dbus_xml,
+             **logind_ispect_xml,    **logind_dbus_xml;
+
 /* manually increment this if adding new functionality/config files */
 static const guint XML_FILE_COUNT = 8;
 
-
-/* our buffers for xml config file descriptors */
-static int hostnamed_ispect_xml_descr, hostnamed_dbus_xml_descr,
-           localed_ispect_xml_descr, localed_dbus_xml_descr,
-           timedated_ispect_xml_descr, timedated_dbus_xml_descr,
-           logind_ispect_xml_descr, logind_dbus_xml_descr;
-
-static int *xml_descriptors[] = {
-
-	&hostnamed_ispect_xml_descr, &hostnamed_dbus_xml_descr,
-	&localed_ispect_xml_descr, &localed_dbus_xml_descr,
-	&timedated_ispect_xml_descr, &timedated_dbus_xml_descr,
-	&logind_ispect_xml_descr, &logind_dbus_xml_descr
+static gchar **xml_contents[] = {
+        hostnamed_ispect_xml, hostnamed_dbus_xml,
+        localed_ispect_xml,   localed_dbus_xml,
+        timedated_ispect_xml, timedated_dbus_xml,
+        logind_ispect_xml,    logind_dbus_xml
 };
 
-/*our buffers for xml config file contents */
-static gchar **hostnamed_ispect_xml, **hostnamed_dbus_xml,
-			 **localed_ispect_xml, **localed_dbus_xml,
-			 **timedated_ispect_xml, **timedated_dbus_xml,
-			 **logind_ispect_xml, **logind_dbus_xml;
-
-static gchar ***xml_contents[] = {
-
-	&hostnamed_ispect_xml, &hostnamed_dbus_xml,
-	&localed_ispect_xml, &localed_dbus_xml,
-	&timedated_ispect_xml, &timedated_dbus_xml,
-	&logind_ispect_xml, &logind_dbus_xml
-};
+/* TODO ifdef allowed editable xml only take files that meet exact sizes
+ * of ones hashed below */
 
 #ifndef ALLOW_EDITED_XML
 
@@ -42,10 +29,6 @@ static const gchar *timedated_dbus_sum   = "d7d67482a821cbc7a6ab3a68f1c00e0dc61a
 static const gchar *timedated_ispect_sum = "f576cb908636a285c9cd2e42a71ad243a0d5eb0ff12398f0627cce56c15a8268";
 
 #endif
-
-static gboolean set_xml_descriptors() {	
-
-}
 
 static gboolean populate_xml_data_dir() {
 
