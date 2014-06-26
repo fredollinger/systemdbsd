@@ -122,6 +122,7 @@ gboolean config_init() {
         g_printf("could not read config at %s! exiting..", config_path);
         return FALSE;
     }
+}
 
 gboolean init_xml() {
 
@@ -148,10 +149,9 @@ gboolean init_xml() {
 		}
 
 		//set_xml_descriptors();
-		return TRUE; //kill me!
 	}
 }
-}
+
 //LEFTOFF
 		
 /*		gchar *posix_hostname;
@@ -195,7 +195,7 @@ gboolean init_xml() {
 	return TRUE;
 } */
 
-/*static void set_xml_descriptors() {
+static void set_xml_descriptors() {
 	
 }
 
@@ -205,4 +205,4 @@ void clean_config() {
 	g_free(config);
 	g_free(data_dir);
 	g_close(config_descr, NULL);
-}*/
+}
