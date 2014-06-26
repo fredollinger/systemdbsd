@@ -62,16 +62,16 @@ gboolean config_init() {
     config_path = "/etc/systemd_compat.conf";
     config_lstat_ret = g_lstat(config_path, config_lstat);
 
-    /* does conf exist? */
+	/* this should all be handled in the makefile
+     * does conf exist?
     if(config_lstat_ret) {
 
-        /* if not, can we write to where it should be? */
         if(g_access("/etc/", W_OK)) {
             g_printf("%s\n", "no write permissions for /etc/! exiting..");
             return FALSE;
         }
 
-        int config_descr; /*TODO add to descr array for sigints, etc */
+        int config_descr; 
         config_descr = g_open(config_path, O_CREAT, 644);
 
         gchar *posix_hostname;
@@ -82,7 +82,7 @@ gboolean config_init() {
         g_key_file_set_string(config, "hostnamed", "Hostname", posix_hostname);
         g_key_file_set_string(config, "hostnamed", "PrettyHostname", "");
         g_key_file_set_string(config, "hostnamed", "IconName", "Computer"); 
-        g_key_file_set_string(config, "hostnamed", "ChassisType","laptop"); /*TODO set these correctly */
+        g_key_file_set_string(config, "hostnamed", "ChassisType","laptop"); 
 
         if(!g_key_file_save_to_file(config, config_path, NULL)) {
             g_printf("failed to write config to %s!\n", config_path);
@@ -94,22 +94,22 @@ gboolean config_init() {
 
         g_free(posix_hostname);
 
+        return TRUE; 
+
+    } else { */
+
+    if(g_access(config_path, W_OK)) {
+
+		g_printf("%s\n", "no write permissions for /etc/! exiting..");
+        return FALSE;
+
+    } else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
         return TRUE;
 
-    /* it does exist, read it */
-    } else {
-
-        if(g_access(config_path, W_OK)) {
-            g_printf("%s\n", "no write permissions for /etc/! exiting..");
-            return FALSE;
-        } else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
-            return TRUE;
-
-        g_printf("could not read config at %s! exiting..", config_path);
-        return FALSE;
-    }
+    g_printf("could not read config at %s! exiting..", config_path);
+    return FALSE;
 }
-
+/* this definitely does not need to exist
 gboolean init_xml() {
 
     const gchar * const *data_dir_prefix;
@@ -121,10 +121,8 @@ gboolean init_xml() {
     
     xml_lstat_ret = g_lstat(data_dir, xml_lstat);
 
-    /* does xml dir exist? */
     if(xml_lstat_ret) {
 
-        /* if not, can we write to where it should be? */
         if(g_access(data_dir_prefix[0], W_OK)) {
             g_printf("no write permissions for %s! exiting...\n", data_dir_prefix[0]);
             return FALSE;
@@ -137,19 +135,16 @@ gboolean init_xml() {
             return FALSE;
         }
 
-        /* read in xml files from conf/ */
         if(!read_xml_from_installconf()) {
             g_printf("failed to read xml configs in conf/...\n");
             return FALSE;
         }
 
-        /* write our configs to system data dir */
         if(!populate_xml_data_dir()) {
             g_printf("failed to write xml configs to %s...\n", data_dir);
             return FALSE;
         }
 
-        /* get descriptors from freshly-installed configs */
         if(!set_xml_descriptors()) {
             g_printf("failed to fopen xml configs...\n");
             return FALSE;
@@ -157,7 +152,6 @@ gboolean init_xml() {
 
         return TRUE;
     
-    /* it does exist, read it */
     } else {
 
         if(!set_xml_descriptors()) {
@@ -167,7 +161,7 @@ gboolean init_xml() {
 
         return TRUE;
     }
-}
+} */
 
 void clean_config() {
 

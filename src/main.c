@@ -14,36 +14,28 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* debugging */
-#define INSTALL 1
-//#define NO_BUILTIN_XML 1
-/* end debugging */
-
 #include <gio/gio.h>
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib/gstdio.h>
 #include "config.c"
 #include "interfaces/hostnamed/hostnamed.c"
-//#include "main/h"
 
 gboolean systemd_utils_init() {
-	#ifdef INSTALL
-		if(!config_init()) {
-			gchar *tmp;
-			tmp = "/etc/"; //what the hell is /etc/xdg anyway
+	if(!config_init()) {
+		gchar *tmp;
+		tmp = "/etc/systemd_compat.conf"; 
 
-			g_printf("FAILED to install configs in %s!\n", tmp);
-			return FALSE;
-		} 
-		if(!init_xml()) {
-			const gchar * const *tmp;
-			tmp = g_get_system_data_dirs();
+		g_printf("FAILED to open config %s!\n", tmp);
+		return FALSE;
+	} 
+	/*if(!init_xml()) {
+		const gchar * const *tmp;
+		tmp = g_get_system_data_dirs();
 
-			g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
-			return FALSE;
-		}
-	#endif
+		g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
+		return FALSE;
+	}*/
 	return TRUE;
 }
 
