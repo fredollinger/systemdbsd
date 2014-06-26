@@ -4,7 +4,7 @@ CFLAGS=-Wall -Wextra -Werror
 DEBUGF=-O0 -v -g
 SRCDIR=src
 INTFDIR=$(SRCDIR)/interfaces
-SANITY=-Wno-unused-variable -Wno-unused-parameter
+SANITY=-Wno-unused-variable -Wno-unused-parameter -Wno-comment
 
 GLIBF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
 

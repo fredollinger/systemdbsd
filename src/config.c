@@ -34,6 +34,8 @@ static gchar **localed_ispect_xml, localed_dbus_xml;
 static gchar **timedated_ispect_xml, timedated_dbus_xml;
 static gchar **logind_ispect_xml, logind_dbus_xml; */
 
+static void set_xml_descriptors(); 
+
 static const gchar *CONFIG_KEYS[] = {
     "PrettyHostname",
     "IconName",
@@ -148,9 +150,10 @@ gboolean init_xml() {
 			return FALSE;
 		}
 
-		//set_xml_descriptors();
+		set_xml_descriptors();
 	}
-}
+	return TRUE; /* kill me! */
+} /* kill me too!*/
 
 //LEFTOFF
 		
