@@ -22,21 +22,21 @@
 #include "interfaces/hostnamed/hostnamed.c"
 
 gboolean systemd_utils_init() {
-	if(!config_init()) {
-		gchar *tmp;
-		tmp = "/etc/systemd_compat.conf"; 
+    if(!config_init()) {
+        gchar *tmp;
+        tmp = "/etc/systemd_compat.conf"; 
 
-		g_printf("FAILED to open config %s!\n", tmp);
-		return FALSE;
-	} 
-	/*if(!init_xml()) {
-		const gchar * const *tmp;
-		tmp = g_get_system_data_dirs();
+        g_printf("FAILED to open config %s!\n", tmp);
+        return FALSE;
+    } 
+    /*if(!init_xml()) {
+        const gchar * const *tmp;
+        tmp = g_get_system_data_dirs();
 
-		g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
-		return FALSE;
-	}*/
-	return TRUE;
+        g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
+        return FALSE;
+    }*/
+    return TRUE;
 }
 
 int main() {

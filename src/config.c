@@ -62,7 +62,7 @@ gboolean config_init() {
     config_path = "/etc/systemd_compat.conf";
     config_lstat_ret = g_lstat(config_path, config_lstat);
 
-	/* this should all be handled in the makefile
+    /* this should all be handled in the makefile
      * does conf exist?
     if(config_lstat_ret) {
 
@@ -100,7 +100,7 @@ gboolean config_init() {
 
     if(g_access(config_path, W_OK)) {
 
-		g_printf("%s\n", "no write permissions for /etc/! exiting..");
+        g_printf("%s\n", "no write permissions for /etc/! exiting..");
         return FALSE;
 
     } else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
