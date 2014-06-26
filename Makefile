@@ -23,3 +23,4 @@ install: _install_conf
 
 _install_conf:
 	cp conf/*-dbus.conf /etc/dbus-1/system.d/
+	cp conf/systemd_compat.conf /etc/
