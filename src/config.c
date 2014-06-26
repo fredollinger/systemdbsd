@@ -115,7 +115,7 @@ gboolean config_init() {
     /* it does exist, read it */
     } else {
 
-        if(!g_access(config_path, W_OK)) {
+        if(g_access(config_path, W_OK)) {
             g_printf("%s\n", "no write permissions for /etc/! exiting..");
             return FALSE;
         } else if(g_key_file_load_from_file(config, config_path, G_KEY_FILE_KEEP_COMMENTS, NULL))
