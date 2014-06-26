@@ -14,4 +14,3 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-void hostnamed_mem_clean();
