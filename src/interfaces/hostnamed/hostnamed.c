@@ -51,7 +51,7 @@ static void on_name_lost(GDBusConnection *conn,
 
     hostnamed_mem_clean();
 
-    //TODO exit through g_main_loop properly...
+    /* TODO exit through g_main_loop properly... */
 }
 
 /* safe call to try and start hostnamed */
@@ -81,7 +81,7 @@ GError *hostnamed_init() {
                                     NULL,
                                     NULL);
 
-    //TODO: malloc and return reference as if a main() closed 
+    /* TODO: malloc and return reference as if a main() closed */
     return err;
 }
 
@@ -91,13 +91,11 @@ void hostnamed_mem_clean() {
     g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
 }
 
-//TODO figure out DMI variables on obsd
+/* TODO figure out DMI variables on obsd */
 /*static gchar *guess_icon_name() {
 
     gchar *filebuf = NULL;
     gchar *ret = NULL;
-
-    //TODO vm check
 
     #if defined(__i386__) || defined(__x86_64__)
     

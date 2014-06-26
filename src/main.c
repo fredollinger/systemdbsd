@@ -45,7 +45,7 @@ int main() {
     
     if(!systemd_utils_init()) {
         g_printf("failed to init, are you root?\n");
-        return 1; //TODO errno properly. grep for all "return 1;"s, not TODO'ing each one
+        return 1; /* TODO errno properly. grep for all "return 1;"s, not TODO'ing each one */
     }
 
     hostnamed_init();

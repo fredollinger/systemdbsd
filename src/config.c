@@ -41,7 +41,7 @@ gboolean set_option(gchar *key, gchar *value, gchar *group) {
     if(!g_key_file_get_string(config, group, key, NULL))
         return FALSE;
 
-    //TODO safteycheck value
+    /* TODO safteycheck value */
     g_key_file_set_string(config, group, key, value);
     return TRUE;
 }
@@ -165,7 +165,7 @@ gboolean init_xml() {
 
 void clean_config() {
 
-    //TODO g_ptr_array all of this
+    /* TODO g_ptr_array all of this */
     g_free(config);
     g_free(data_dir);
     g_close(config_descr, NULL);
