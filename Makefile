@@ -1,6 +1,6 @@
 .PHONY: all
 
-CFLAGS=-Wall -Wextra -Werror -std=c89 -pedantic 
+CFLAGS=-Wall -Wextra -Werror -std=c89 
 DEBUGF=-O0 -v -g
 SRCDIR=src
 INTFDIR=$(SRCDIR)/interfaces
