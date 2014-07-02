@@ -29,6 +29,7 @@ gdbus-codegen \
 --interface-prefix org.freedesktop. \
 --generate-docbook doc/$1-docbook.xml \
 --generate-c-code  src/interfaces/$1/$1-gen \
+--c-generate-object-manager \
 conf/$1-ispect.xml
 
 echo "success"

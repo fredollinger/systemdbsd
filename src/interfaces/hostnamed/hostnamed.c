@@ -27,6 +27,9 @@ GPtrArray *hostnamed_freeable;
 GDBusNodeInfo *spect_data;
 Hostname1 *hostnamed_interf;
 
+/* begin method/property/signal code */
+
+/* TODO make sure these guys only work if called by root */
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        GDBusMethodInvocation *invoc,
@@ -67,6 +70,72 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
     return FALSE;
 }
 
+/* note: all hostnamed/hostname1's properties are read-only,
+ * and do not need set_ functions, gdbus-codegen realized
+ * this from the XML and handled the to-be error of trying
+ * to set a read-only property's value 
+ */
+
+const gchar *
+our_get_hostname() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_static_hostname() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_pretty_hostname() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_chassis() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_icon_name() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_kernel_name() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_kernel_version() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_kernel_release() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_os_cpename() {
+
+    return "TODO";
+}
+
+const gchar *
+our_get_os_pretty_name() {
+
+    return "TODO";
+}
+
 /* end method/property/signal code, begin bus/name handlers */
 
 static void on_bus_acquired(GDBusConnection *conn,
@@ -85,13 +154,25 @@ static void on_name_acquired(GDBusConnection *conn,
 
     hostnamed_interf = hostname1_skeleton_new();
 
-    /* attach function pointers to generated vfunc table struct */
+    /* attach function pointers to generated struct's method handlers */
     g_signal_connect(hostnamed_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-static-hostname", G_CALLBACK(on_handle_set_static_hostname), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-pretty-hostname", G_CALLBACK(on_handle_set_pretty_hostname), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-chassis", G_CALLBACK(on_handle_set_chassis), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-icon-name", G_CALLBACK(on_handle_set_icon_name), NULL);
 
+    /* set our properties before export */
+    hostname1_set_hostname(hostnamed_interf, our_get_hostname());
+    hostname1_set_static_hostname(hostnamed_interf, our_get_static_hostname());
+    hostname1_set_pretty_hostname(hostnamed_interf, our_get_pretty_hostname());
+    hostname1_set_chassis(hostnamed_interf, our_get_chassis());
+    hostname1_set_icon_name(hostnamed_interf, our_get_icon_name());
+    hostname1_set_kernel_name(hostnamed_interf, our_get_kernel_name());
+    hostname1_set_kernel_version(hostnamed_interf, our_get_kernel_version());
+    hostname1_set_kernel_release(hostnamed_interf, our_get_kernel_release());
+    hostname1_set_operating_system_cpename(hostnamed_interf, our_get_os_cpename());
+    hostname1_set_operating_system_pretty_name(hostnamed_interf, our_get_os_pretty_name());
+ 
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(hostnamed_interf),
                                                                    conn,
                                                                    "/org/freedesktop/hostname1",
