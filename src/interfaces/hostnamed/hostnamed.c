@@ -25,12 +25,53 @@
 
 GPtrArray *hostnamed_freeable;
 GDBusNodeInfo *spect_data;
+Hostname1 *hostnamed_interf;
+
+static gboolean
+on_handle_set_hostname(Hostname1 *hn1_passed_interf,
+                       GDBusMethodInvocation *invoc,
+                       const gchar *greet,
+                       gpointer data) {
+    return FALSE;
+}
+
+static gboolean
+on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
+                              GDBusMethodInvocation *invoc,
+                              const gchar *greet,
+                              gpointer data) {
+    return FALSE;
+}
+
+static gboolean
+on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
+                              GDBusMethodInvocation *invoc,
+                              const gchar *greet,
+                              gpointer data) {
+    return FALSE;
+}
+
+static gboolean
+on_handle_set_chassis(Hostname1 *hn1_passed_interf,
+                      GDBusMethodInvocation *invoc,
+                      const gchar *greet,
+                      gpointer data) {
+    return FALSE;
+}
+
+static gboolean
+on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
+                        GDBusMethodInvocation *invoc,
+                        const gchar *greet,
+                        gpointer data) {
+    return FALSE;
+}
+
+/* end method/property/signal code, begin bus/name handlers */
 
 static void on_bus_acquired(GDBusConnection *conn,
                             const gchar *name,
                             gpointer user_data) {
-
-    GError *err;
 
     g_print("got bus, name: %s\n", name);   
 
@@ -40,7 +81,25 @@ static void on_name_acquired(GDBusConnection *conn,
                              const gchar *name,
                              gpointer user_data) {
 
-    g_print("got name %s\n", name);
+    g_print("got '%s' on system bus\n", name);
+
+    hostnamed_interf = hostname1_skeleton_new();
+
+    /* attach function pointers to generated vfunc table struct */
+    g_signal_connect(hostnamed_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-static-hostname", G_CALLBACK(on_handle_set_static_hostname), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-pretty-hostname", G_CALLBACK(on_handle_set_pretty_hostname), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-chassis", G_CALLBACK(on_handle_set_chassis), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-icon-name", G_CALLBACK(on_handle_set_icon_name), NULL);
+
+    if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(hostnamed_interf),
+                                                                   conn,
+                                                                   "/org/freedesktop/hostname1",
+                                                                   NULL)) {
+
+        g_printf("failed to export hostname1's interface on system bus!");
+    }
+
 }
 
 static void on_name_lost(GDBusConnection *conn,
@@ -50,6 +109,7 @@ static void on_name_lost(GDBusConnection *conn,
     g_print("lost name %s, exiting...", name);
 
     hostnamed_mem_clean();
+    g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(hostnamed_interf));
 
     /* TODO exit through g_main_loop properly... */
 }

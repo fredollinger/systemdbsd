@@ -149,6 +149,3398 @@ _g_value_equal (const GValue *a, const GValue *b)
 }
 
 /* ------------------------------------------------------------------------
+ * Code for interface org.freedesktop.DBus.Peer
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:DBusPeer
+ * @title: DBusPeer
+ * @short_description: Generated C code for the org.freedesktop.DBus.Peer D-Bus interface
+ *
+ * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link> D-Bus interface in C.
+ */
+
+/* ---- Introspection data for org.freedesktop.DBus.Peer ---- */
+
+static const _ExtendedGDBusMethodInfo _dbus_peer_method_info_ping =
+{
+  {
+    -1,
+    (gchar *) "Ping",
+    NULL,
+    NULL,
+    NULL
+  },
+  "handle-ping",
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_peer_method_info_get_machine_id_OUT_ARG_machine_uuid =
+{
+  {
+    -1,
+    (gchar *) "machine_uuid",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_peer_method_info_get_machine_id_OUT_ARG_pointers[] =
+{
+  &_dbus_peer_method_info_get_machine_id_OUT_ARG_machine_uuid,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _dbus_peer_method_info_get_machine_id =
+{
+  {
+    -1,
+    (gchar *) "GetMachineId",
+    NULL,
+    (GDBusArgInfo **) &_dbus_peer_method_info_get_machine_id_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-get-machine-id",
+  FALSE
+};
+
+static const _ExtendedGDBusMethodInfo * const _dbus_peer_method_info_pointers[] =
+{
+  &_dbus_peer_method_info_ping,
+  &_dbus_peer_method_info_get_machine_id,
+  NULL
+};
+
+static const _ExtendedGDBusInterfaceInfo _dbus_peer_interface_info =
+{
+  {
+    -1,
+    (gchar *) "org.freedesktop.DBus.Peer",
+    (GDBusMethodInfo **) &_dbus_peer_method_info_pointers,
+    NULL,
+    NULL,
+    NULL
+  },
+  "dbus-peer",
+};
+
+
+/**
+ * dbus_peer_interface_info:
+ *
+ * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link> D-Bus interface.
+ *
+ * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
+ */
+GDBusInterfaceInfo *
+dbus_peer_interface_info (void)
+{
+  return (GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct;
+}
+
+/**
+ * dbus_peer_override_properties:
+ * @klass: The class structure for a #GObject<!-- -->-derived class.
+ * @property_id_begin: The property id to assign to the first overridden property.
+ *
+ * Overrides all #GObject properties in the #DBusPeer interface for a concrete class.
+ * The properties are overridden in the order they are defined.
+ *
+ * Returns: The last property id.
+ */
+guint
+dbus_peer_override_properties (GObjectClass *klass, guint property_id_begin)
+{
+  return property_id_begin - 1;
+}
+
+
+
+/**
+ * DBusPeer:
+ *
+ * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link>.
+ */
+
+/**
+ * DBusPeerIface:
+ * @parent_iface: The parent interface.
+ * @handle_get_machine_id: Handler for the #DBusPeer::handle-get-machine-id signal.
+ * @handle_ping: Handler for the #DBusPeer::handle-ping signal.
+ *
+ * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link>.
+ */
+
+typedef DBusPeerIface DBusPeerInterface;
+G_DEFINE_INTERFACE (DBusPeer, dbus_peer, G_TYPE_OBJECT);
+
+static void
+dbus_peer_default_init (DBusPeerIface *iface)
+{
+  /* GObject signals for incoming D-Bus method calls: */
+  /**
+   * DBusPeer::handle-ping:
+   * @object: A #DBusPeer.
+   * @invocation: A #GDBusMethodInvocation.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.Ping">Ping()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_peer_complete_ping() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-ping",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPeerIface, handle_ping),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    1,
+    G_TYPE_DBUS_METHOD_INVOCATION);
+
+  /**
+   * DBusPeer::handle-get-machine-id:
+   * @object: A #DBusPeer.
+   * @invocation: A #GDBusMethodInvocation.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.GetMachineId">GetMachineId()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_peer_complete_get_machine_id() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-get-machine-id",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPeerIface, handle_get_machine_id),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    1,
+    G_TYPE_DBUS_METHOD_INVOCATION);
+
+}
+
+/**
+ * dbus_peer_call_ping:
+ * @proxy: A #DBusPeerProxy.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.Ping">Ping()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_peer_call_ping_finish() to get the result of the operation.
+ *
+ * See dbus_peer_call_ping_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_peer_call_ping (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "Ping",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_peer_call_ping_finish:
+ * @proxy: A #DBusPeerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_peer_call_ping().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_peer_call_ping().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_peer_call_ping_finish (
+    DBusPeer *proxy,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_peer_call_ping_sync:
+ * @proxy: A #DBusPeerProxy.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.Ping">Ping()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_peer_call_ping() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_peer_call_ping_sync (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "Ping",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_peer_call_get_machine_id:
+ * @proxy: A #DBusPeerProxy.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.GetMachineId">GetMachineId()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_peer_call_get_machine_id_finish() to get the result of the operation.
+ *
+ * See dbus_peer_call_get_machine_id_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_peer_call_get_machine_id (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "GetMachineId",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_peer_call_get_machine_id_finish:
+ * @proxy: A #DBusPeerProxy.
+ * @out_machine_uuid: (out): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_peer_call_get_machine_id().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_peer_call_get_machine_id().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_peer_call_get_machine_id_finish (
+    DBusPeer *proxy,
+    gchar **out_machine_uuid,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(s)",
+                 out_machine_uuid);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_peer_call_get_machine_id_sync:
+ * @proxy: A #DBusPeerProxy.
+ * @out_machine_uuid: (out): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.GetMachineId">GetMachineId()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_peer_call_get_machine_id() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_peer_call_get_machine_id_sync (
+    DBusPeer *proxy,
+    gchar **out_machine_uuid,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "GetMachineId",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(s)",
+                 out_machine_uuid);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_peer_complete_ping:
+ * @object: A #DBusPeer.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.Ping">Ping()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_peer_complete_ping (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("()"));
+}
+
+/**
+ * dbus_peer_complete_get_machine_id:
+ * @object: A #DBusPeer.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @machine_uuid: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Peer.GetMachineId">GetMachineId()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_peer_complete_get_machine_id (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *machine_uuid)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(s)",
+                   machine_uuid));
+}
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusPeerProxy:
+ *
+ * The #DBusPeerProxy structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusPeerProxyClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusPeerProxy.
+ */
+
+struct _DBusPeerProxyPrivate
+{
+  GData *qdata;
+};
+
+static void dbus_peer_proxy_iface_init (DBusPeerIface *iface);
+
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusPeerProxy, dbus_peer_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (DBusPeerProxy)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PEER, dbus_peer_proxy_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusPeerProxy, dbus_peer_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PEER, dbus_peer_proxy_iface_init));
+
+#endif
+static void
+dbus_peer_proxy_finalize (GObject *object)
+{
+  DBusPeerProxy *proxy = DBUS_PEER_PROXY (object);
+  g_datalist_clear (&proxy->priv->qdata);
+  G_OBJECT_CLASS (dbus_peer_proxy_parent_class)->finalize (object);
+}
+
+static void
+dbus_peer_proxy_get_property (GObject      *object,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_peer_proxy_set_property (GObject      *object,
+  guint         prop_id,
+  const GValue *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_peer_proxy_g_signal (GDBusProxy *proxy,
+  const gchar *sender_name G_GNUC_UNUSED,
+  const gchar *signal_name,
+  GVariant *parameters)
+{
+  _ExtendedGDBusSignalInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint n;
+  guint signal_id;
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct, signal_name);
+  if (info == NULL)
+    return;
+  num_params = g_variant_n_children (parameters);
+  paramv = g_new0 (GValue, num_params + 1);
+  g_value_init (&paramv[0], TYPE_DBUS_PEER);
+  g_value_set_object (&paramv[0], proxy);
+  g_variant_iter_init (&iter, parameters);
+  n = 1;
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.args[n - 1];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_PEER);
+  g_signal_emitv (paramv, signal_id, 0, NULL);
+  for (n = 0; n < num_params + 1; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static void
+dbus_peer_proxy_g_properties_changed (GDBusProxy *_proxy,
+  GVariant *changed_properties,
+  const gchar *const *invalidated_properties)
+{
+  DBusPeerProxy *proxy = DBUS_PEER_PROXY (_proxy);
+  guint n;
+  const gchar *key;
+  GVariantIter *iter;
+  _ExtendedGDBusPropertyInfo *info;
+  g_variant_get (changed_properties, "a{sv}", &iter);
+  while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct, key);
+      g_datalist_remove_data (&proxy->priv->qdata, key);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+  g_variant_iter_free (iter);
+  for (n = 0; invalidated_properties[n] != NULL; n++)
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct, invalidated_properties[n]);
+      g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+}
+
+static void
+dbus_peer_proxy_init (DBusPeerProxy *proxy)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  proxy->priv = dbus_peer_proxy_get_instance_private (proxy);
+#else
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_DBUS_PEER_PROXY, DBusPeerProxyPrivate);
+#endif
+
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), dbus_peer_interface_info ());
+}
+
+static void
+dbus_peer_proxy_class_init (DBusPeerProxyClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusProxyClass *proxy_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize     = dbus_peer_proxy_finalize;
+  gobject_class->get_property = dbus_peer_proxy_get_property;
+  gobject_class->set_property = dbus_peer_proxy_set_property;
+
+  proxy_class = G_DBUS_PROXY_CLASS (klass);
+  proxy_class->g_signal = dbus_peer_proxy_g_signal;
+  proxy_class->g_properties_changed = dbus_peer_proxy_g_properties_changed;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusPeerProxyPrivate));
+#endif
+}
+
+static void
+dbus_peer_proxy_iface_init (DBusPeerIface *iface)
+{
+}
+
+/**
+ * dbus_peer_proxy_new:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link>. See g_dbus_proxy_new() for more details.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_peer_proxy_new_finish() to get the result of the operation.
+ *
+ * See dbus_peer_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_peer_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_PEER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Peer", NULL);
+}
+
+/**
+ * dbus_peer_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_peer_proxy_new().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_peer_proxy_new().
+ *
+ * Returns: (transfer full) (type DBusPeerProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusPeer *
+dbus_peer_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_PEER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_peer_proxy_new_sync:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Synchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link>. See g_dbus_proxy_new_sync() for more details.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_peer_proxy_new() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusPeerProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusPeer *
+dbus_peer_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_PEER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Peer", NULL);
+  if (ret != NULL)
+    return DBUS_PEER (ret);
+  else
+    return NULL;
+}
+
+
+/**
+ * dbus_peer_proxy_new_for_bus:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Like dbus_peer_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_peer_proxy_new_for_bus_finish() to get the result of the operation.
+ *
+ * See dbus_peer_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_peer_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_PEER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Peer", NULL);
+}
+
+/**
+ * dbus_peer_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_peer_proxy_new_for_bus().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_peer_proxy_new_for_bus().
+ *
+ * Returns: (transfer full) (type DBusPeerProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusPeer *
+dbus_peer_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_PEER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_peer_proxy_new_for_bus_sync:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Like dbus_peer_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_peer_proxy_new_for_bus() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusPeerProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusPeer *
+dbus_peer_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_PEER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Peer", NULL);
+  if (ret != NULL)
+    return DBUS_PEER (ret);
+  else
+    return NULL;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusPeerSkeleton:
+ *
+ * The #DBusPeerSkeleton structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusPeerSkeletonClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusPeerSkeleton.
+ */
+
+struct _DBusPeerSkeletonPrivate
+{
+  GValue *properties;
+  GList *changed_properties;
+  GSource *changed_properties_idle_source;
+  GMainContext *context;
+  GMutex lock;
+};
+
+static void
+_dbus_peer_skeleton_handle_method_call (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name,
+  const gchar *method_name,
+  GVariant *parameters,
+  GDBusMethodInvocation *invocation,
+  gpointer user_data)
+{
+  DBusPeerSkeleton *skeleton = DBUS_PEER_SKELETON (user_data);
+  _ExtendedGDBusMethodInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint num_extra;
+  guint n;
+  guint signal_id;
+  GValue return_value = G_VALUE_INIT;
+  info = (_ExtendedGDBusMethodInfo *) g_dbus_method_invocation_get_method_info (invocation);
+  g_assert (info != NULL);
+  num_params = g_variant_n_children (parameters);
+  num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
+  n = 0;
+  g_value_init (&paramv[n], TYPE_DBUS_PEER);
+  g_value_set_object (&paramv[n++], skeleton);
+  g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
+  g_value_set_object (&paramv[n++], invocation);
+  if (info->pass_fdlist)
+    {
+#ifdef G_OS_UNIX
+      g_value_init (&paramv[n], G_TYPE_UNIX_FD_LIST);
+      g_value_set_object (&paramv[n++], g_dbus_message_get_unix_fd_list (g_dbus_method_invocation_get_message (invocation)));
+#else
+      g_assert_not_reached ();
+#endif
+    }
+  g_variant_iter_init (&iter, parameters);
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.in_args[n - num_extra];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_PEER);
+  g_value_init (&return_value, G_TYPE_BOOLEAN);
+  g_signal_emitv (paramv, signal_id, 0, &return_value);
+  if (!g_value_get_boolean (&return_value))
+    g_dbus_method_invocation_return_error (invocation, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD, "Method %s is not implemented on interface %s", method_name, interface_name);
+  g_value_unset (&return_value);
+  for (n = 0; n < num_params + num_extra; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static GVariant *
+_dbus_peer_skeleton_handle_get_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GError **error,
+  gpointer user_data)
+{
+  DBusPeerSkeleton *skeleton = DBUS_PEER_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  GVariant *ret;
+  ret = NULL;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      g_value_init (&value, pspec->value_type);
+      g_object_get_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      ret = g_dbus_gvalue_to_gvariant (&value, G_VARIANT_TYPE (info->parent_struct.signature));
+      g_value_unset (&value);
+    }
+  return ret;
+}
+
+static gboolean
+_dbus_peer_skeleton_handle_set_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GVariant *variant,
+  GError **error,
+  gpointer user_data)
+{
+  DBusPeerSkeleton *skeleton = DBUS_PEER_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  gboolean ret;
+  ret = FALSE;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_peer_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      if (info->use_gvariant)
+        g_value_set_variant (&value, variant);
+      else
+        g_dbus_gvariant_to_gvalue (variant, &value);
+      g_object_set_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      g_value_unset (&value);
+      ret = TRUE;
+    }
+  return ret;
+}
+
+static const GDBusInterfaceVTable _dbus_peer_skeleton_vtable =
+{
+  _dbus_peer_skeleton_handle_method_call,
+  _dbus_peer_skeleton_handle_get_property,
+  _dbus_peer_skeleton_handle_set_property,
+  {NULL}
+};
+
+static GDBusInterfaceInfo *
+dbus_peer_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return dbus_peer_interface_info ();
+}
+
+static GDBusInterfaceVTable *
+dbus_peer_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return (GDBusInterfaceVTable *) &_dbus_peer_skeleton_vtable;
+}
+
+static GVariant *
+dbus_peer_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+{
+  DBusPeerSkeleton *skeleton = DBUS_PEER_SKELETON (_skeleton);
+
+  GVariantBuilder builder;
+  guint n;
+  g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
+  if (_dbus_peer_interface_info.parent_struct.properties == NULL)
+    goto out;
+  for (n = 0; _dbus_peer_interface_info.parent_struct.properties[n] != NULL; n++)
+    {
+      GDBusPropertyInfo *info = _dbus_peer_interface_info.parent_struct.properties[n];
+      if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
+        {
+          GVariant *value;
+          value = _dbus_peer_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.DBus.Peer", info->name, NULL, skeleton);
+          if (value != NULL)
+            {
+              g_variant_take_ref (value);
+              g_variant_builder_add (&builder, "{sv}", info->name, value);
+              g_variant_unref (value);
+            }
+        }
+    }
+out:
+  return g_variant_builder_end (&builder);
+}
+
+static void
+dbus_peer_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+{
+}
+
+static void dbus_peer_skeleton_iface_init (DBusPeerIface *iface);
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusPeerSkeleton, dbus_peer_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (DBusPeerSkeleton)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PEER, dbus_peer_skeleton_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusPeerSkeleton, dbus_peer_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PEER, dbus_peer_skeleton_iface_init));
+
+#endif
+static void
+dbus_peer_skeleton_finalize (GObject *object)
+{
+  DBusPeerSkeleton *skeleton = DBUS_PEER_SKELETON (object);
+  g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
+  if (skeleton->priv->changed_properties_idle_source != NULL)
+    g_source_destroy (skeleton->priv->changed_properties_idle_source);
+  g_main_context_unref (skeleton->priv->context);
+  g_mutex_clear (&skeleton->priv->lock);
+  G_OBJECT_CLASS (dbus_peer_skeleton_parent_class)->finalize (object);
+}
+
+static void
+dbus_peer_skeleton_init (DBusPeerSkeleton *skeleton)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  skeleton->priv = dbus_peer_skeleton_get_instance_private (skeleton);
+#else
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_DBUS_PEER_SKELETON, DBusPeerSkeletonPrivate);
+#endif
+
+  g_mutex_init (&skeleton->priv->lock);
+  skeleton->priv->context = g_main_context_ref_thread_default ();
+}
+
+static void
+dbus_peer_skeleton_class_init (DBusPeerSkeletonClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusInterfaceSkeletonClass *skeleton_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize = dbus_peer_skeleton_finalize;
+
+  skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
+  skeleton_class->get_info = dbus_peer_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = dbus_peer_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = dbus_peer_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = dbus_peer_skeleton_dbus_interface_get_vtable;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusPeerSkeletonPrivate));
+#endif
+}
+
+static void
+dbus_peer_skeleton_iface_init (DBusPeerIface *iface)
+{
+}
+
+/**
+ * dbus_peer_skeleton_new:
+ *
+ * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Peer.top_of_page">org.freedesktop.DBus.Peer</link>.
+ *
+ * Returns: (transfer full) (type DBusPeerSkeleton): The skeleton object.
+ */
+DBusPeer *
+dbus_peer_skeleton_new (void)
+{
+  return DBUS_PEER (g_object_new (TYPE_DBUS_PEER_SKELETON, NULL));
+}
+
+/* ------------------------------------------------------------------------
+ * Code for interface org.freedesktop.DBus.Introspectable
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:DBusIntrospectable
+ * @title: DBusIntrospectable
+ * @short_description: Generated C code for the org.freedesktop.DBus.Introspectable D-Bus interface
+ *
+ * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link> D-Bus interface in C.
+ */
+
+/* ---- Introspection data for org.freedesktop.DBus.Introspectable ---- */
+
+static const _ExtendedGDBusArgInfo _dbus_introspectable_method_info_introspect_OUT_ARG_data =
+{
+  {
+    -1,
+    (gchar *) "data",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_introspectable_method_info_introspect_OUT_ARG_pointers[] =
+{
+  &_dbus_introspectable_method_info_introspect_OUT_ARG_data,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _dbus_introspectable_method_info_introspect =
+{
+  {
+    -1,
+    (gchar *) "Introspect",
+    NULL,
+    (GDBusArgInfo **) &_dbus_introspectable_method_info_introspect_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-introspect",
+  FALSE
+};
+
+static const _ExtendedGDBusMethodInfo * const _dbus_introspectable_method_info_pointers[] =
+{
+  &_dbus_introspectable_method_info_introspect,
+  NULL
+};
+
+static const _ExtendedGDBusInterfaceInfo _dbus_introspectable_interface_info =
+{
+  {
+    -1,
+    (gchar *) "org.freedesktop.DBus.Introspectable",
+    (GDBusMethodInfo **) &_dbus_introspectable_method_info_pointers,
+    NULL,
+    NULL,
+    NULL
+  },
+  "dbus-introspectable",
+};
+
+
+/**
+ * dbus_introspectable_interface_info:
+ *
+ * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link> D-Bus interface.
+ *
+ * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
+ */
+GDBusInterfaceInfo *
+dbus_introspectable_interface_info (void)
+{
+  return (GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct;
+}
+
+/**
+ * dbus_introspectable_override_properties:
+ * @klass: The class structure for a #GObject<!-- -->-derived class.
+ * @property_id_begin: The property id to assign to the first overridden property.
+ *
+ * Overrides all #GObject properties in the #DBusIntrospectable interface for a concrete class.
+ * The properties are overridden in the order they are defined.
+ *
+ * Returns: The last property id.
+ */
+guint
+dbus_introspectable_override_properties (GObjectClass *klass, guint property_id_begin)
+{
+  return property_id_begin - 1;
+}
+
+
+
+/**
+ * DBusIntrospectable:
+ *
+ * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link>.
+ */
+
+/**
+ * DBusIntrospectableIface:
+ * @parent_iface: The parent interface.
+ * @handle_introspect: Handler for the #DBusIntrospectable::handle-introspect signal.
+ *
+ * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link>.
+ */
+
+typedef DBusIntrospectableIface DBusIntrospectableInterface;
+G_DEFINE_INTERFACE (DBusIntrospectable, dbus_introspectable, G_TYPE_OBJECT);
+
+static void
+dbus_introspectable_default_init (DBusIntrospectableIface *iface)
+{
+  /* GObject signals for incoming D-Bus method calls: */
+  /**
+   * DBusIntrospectable::handle-introspect:
+   * @object: A #DBusIntrospectable.
+   * @invocation: A #GDBusMethodInvocation.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Introspectable.Introspect">Introspect()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_introspectable_complete_introspect() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-introspect",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusIntrospectableIface, handle_introspect),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    1,
+    G_TYPE_DBUS_METHOD_INVOCATION);
+
+}
+
+/**
+ * dbus_introspectable_call_introspect:
+ * @proxy: A #DBusIntrospectableProxy.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Introspectable.Introspect">Introspect()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_introspectable_call_introspect_finish() to get the result of the operation.
+ *
+ * See dbus_introspectable_call_introspect_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_introspectable_call_introspect (
+    DBusIntrospectable *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "Introspect",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_introspectable_call_introspect_finish:
+ * @proxy: A #DBusIntrospectableProxy.
+ * @out_data: (out): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_introspectable_call_introspect().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_introspectable_call_introspect().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_introspectable_call_introspect_finish (
+    DBusIntrospectable *proxy,
+    gchar **out_data,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(s)",
+                 out_data);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_introspectable_call_introspect_sync:
+ * @proxy: A #DBusIntrospectableProxy.
+ * @out_data: (out): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Introspectable.Introspect">Introspect()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_introspectable_call_introspect() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_introspectable_call_introspect_sync (
+    DBusIntrospectable *proxy,
+    gchar **out_data,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "Introspect",
+    g_variant_new ("()"),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(s)",
+                 out_data);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_introspectable_complete_introspect:
+ * @object: A #DBusIntrospectable.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @data: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Introspectable.Introspect">Introspect()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_introspectable_complete_introspect (
+    DBusIntrospectable *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *data)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(s)",
+                   data));
+}
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusIntrospectableProxy:
+ *
+ * The #DBusIntrospectableProxy structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusIntrospectableProxyClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusIntrospectableProxy.
+ */
+
+struct _DBusIntrospectableProxyPrivate
+{
+  GData *qdata;
+};
+
+static void dbus_introspectable_proxy_iface_init (DBusIntrospectableIface *iface);
+
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusIntrospectableProxy, dbus_introspectable_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (DBusIntrospectableProxy)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_INTROSPECTABLE, dbus_introspectable_proxy_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusIntrospectableProxy, dbus_introspectable_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_INTROSPECTABLE, dbus_introspectable_proxy_iface_init));
+
+#endif
+static void
+dbus_introspectable_proxy_finalize (GObject *object)
+{
+  DBusIntrospectableProxy *proxy = DBUS_INTROSPECTABLE_PROXY (object);
+  g_datalist_clear (&proxy->priv->qdata);
+  G_OBJECT_CLASS (dbus_introspectable_proxy_parent_class)->finalize (object);
+}
+
+static void
+dbus_introspectable_proxy_get_property (GObject      *object,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_introspectable_proxy_set_property (GObject      *object,
+  guint         prop_id,
+  const GValue *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_introspectable_proxy_g_signal (GDBusProxy *proxy,
+  const gchar *sender_name G_GNUC_UNUSED,
+  const gchar *signal_name,
+  GVariant *parameters)
+{
+  _ExtendedGDBusSignalInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint n;
+  guint signal_id;
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct, signal_name);
+  if (info == NULL)
+    return;
+  num_params = g_variant_n_children (parameters);
+  paramv = g_new0 (GValue, num_params + 1);
+  g_value_init (&paramv[0], TYPE_DBUS_INTROSPECTABLE);
+  g_value_set_object (&paramv[0], proxy);
+  g_variant_iter_init (&iter, parameters);
+  n = 1;
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.args[n - 1];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_INTROSPECTABLE);
+  g_signal_emitv (paramv, signal_id, 0, NULL);
+  for (n = 0; n < num_params + 1; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static void
+dbus_introspectable_proxy_g_properties_changed (GDBusProxy *_proxy,
+  GVariant *changed_properties,
+  const gchar *const *invalidated_properties)
+{
+  DBusIntrospectableProxy *proxy = DBUS_INTROSPECTABLE_PROXY (_proxy);
+  guint n;
+  const gchar *key;
+  GVariantIter *iter;
+  _ExtendedGDBusPropertyInfo *info;
+  g_variant_get (changed_properties, "a{sv}", &iter);
+  while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct, key);
+      g_datalist_remove_data (&proxy->priv->qdata, key);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+  g_variant_iter_free (iter);
+  for (n = 0; invalidated_properties[n] != NULL; n++)
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct, invalidated_properties[n]);
+      g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+}
+
+static void
+dbus_introspectable_proxy_init (DBusIntrospectableProxy *proxy)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  proxy->priv = dbus_introspectable_proxy_get_instance_private (proxy);
+#else
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_DBUS_INTROSPECTABLE_PROXY, DBusIntrospectableProxyPrivate);
+#endif
+
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), dbus_introspectable_interface_info ());
+}
+
+static void
+dbus_introspectable_proxy_class_init (DBusIntrospectableProxyClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusProxyClass *proxy_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize     = dbus_introspectable_proxy_finalize;
+  gobject_class->get_property = dbus_introspectable_proxy_get_property;
+  gobject_class->set_property = dbus_introspectable_proxy_set_property;
+
+  proxy_class = G_DBUS_PROXY_CLASS (klass);
+  proxy_class->g_signal = dbus_introspectable_proxy_g_signal;
+  proxy_class->g_properties_changed = dbus_introspectable_proxy_g_properties_changed;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusIntrospectableProxyPrivate));
+#endif
+}
+
+static void
+dbus_introspectable_proxy_iface_init (DBusIntrospectableIface *iface)
+{
+}
+
+/**
+ * dbus_introspectable_proxy_new:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link>. See g_dbus_proxy_new() for more details.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_introspectable_proxy_new_finish() to get the result of the operation.
+ *
+ * See dbus_introspectable_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_introspectable_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_INTROSPECTABLE_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Introspectable", NULL);
+}
+
+/**
+ * dbus_introspectable_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_introspectable_proxy_new().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_introspectable_proxy_new().
+ *
+ * Returns: (transfer full) (type DBusIntrospectableProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusIntrospectable *
+dbus_introspectable_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_INTROSPECTABLE (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_introspectable_proxy_new_sync:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Synchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link>. See g_dbus_proxy_new_sync() for more details.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_introspectable_proxy_new() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusIntrospectableProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusIntrospectable *
+dbus_introspectable_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_INTROSPECTABLE_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Introspectable", NULL);
+  if (ret != NULL)
+    return DBUS_INTROSPECTABLE (ret);
+  else
+    return NULL;
+}
+
+
+/**
+ * dbus_introspectable_proxy_new_for_bus:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Like dbus_introspectable_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_introspectable_proxy_new_for_bus_finish() to get the result of the operation.
+ *
+ * See dbus_introspectable_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_introspectable_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_INTROSPECTABLE_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Introspectable", NULL);
+}
+
+/**
+ * dbus_introspectable_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_introspectable_proxy_new_for_bus().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_introspectable_proxy_new_for_bus().
+ *
+ * Returns: (transfer full) (type DBusIntrospectableProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusIntrospectable *
+dbus_introspectable_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_INTROSPECTABLE (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_introspectable_proxy_new_for_bus_sync:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Like dbus_introspectable_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_introspectable_proxy_new_for_bus() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusIntrospectableProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusIntrospectable *
+dbus_introspectable_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_INTROSPECTABLE_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Introspectable", NULL);
+  if (ret != NULL)
+    return DBUS_INTROSPECTABLE (ret);
+  else
+    return NULL;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusIntrospectableSkeleton:
+ *
+ * The #DBusIntrospectableSkeleton structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusIntrospectableSkeletonClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusIntrospectableSkeleton.
+ */
+
+struct _DBusIntrospectableSkeletonPrivate
+{
+  GValue *properties;
+  GList *changed_properties;
+  GSource *changed_properties_idle_source;
+  GMainContext *context;
+  GMutex lock;
+};
+
+static void
+_dbus_introspectable_skeleton_handle_method_call (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name,
+  const gchar *method_name,
+  GVariant *parameters,
+  GDBusMethodInvocation *invocation,
+  gpointer user_data)
+{
+  DBusIntrospectableSkeleton *skeleton = DBUS_INTROSPECTABLE_SKELETON (user_data);
+  _ExtendedGDBusMethodInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint num_extra;
+  guint n;
+  guint signal_id;
+  GValue return_value = G_VALUE_INIT;
+  info = (_ExtendedGDBusMethodInfo *) g_dbus_method_invocation_get_method_info (invocation);
+  g_assert (info != NULL);
+  num_params = g_variant_n_children (parameters);
+  num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
+  n = 0;
+  g_value_init (&paramv[n], TYPE_DBUS_INTROSPECTABLE);
+  g_value_set_object (&paramv[n++], skeleton);
+  g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
+  g_value_set_object (&paramv[n++], invocation);
+  if (info->pass_fdlist)
+    {
+#ifdef G_OS_UNIX
+      g_value_init (&paramv[n], G_TYPE_UNIX_FD_LIST);
+      g_value_set_object (&paramv[n++], g_dbus_message_get_unix_fd_list (g_dbus_method_invocation_get_message (invocation)));
+#else
+      g_assert_not_reached ();
+#endif
+    }
+  g_variant_iter_init (&iter, parameters);
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.in_args[n - num_extra];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_INTROSPECTABLE);
+  g_value_init (&return_value, G_TYPE_BOOLEAN);
+  g_signal_emitv (paramv, signal_id, 0, &return_value);
+  if (!g_value_get_boolean (&return_value))
+    g_dbus_method_invocation_return_error (invocation, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD, "Method %s is not implemented on interface %s", method_name, interface_name);
+  g_value_unset (&return_value);
+  for (n = 0; n < num_params + num_extra; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static GVariant *
+_dbus_introspectable_skeleton_handle_get_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GError **error,
+  gpointer user_data)
+{
+  DBusIntrospectableSkeleton *skeleton = DBUS_INTROSPECTABLE_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  GVariant *ret;
+  ret = NULL;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      g_value_init (&value, pspec->value_type);
+      g_object_get_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      ret = g_dbus_gvalue_to_gvariant (&value, G_VARIANT_TYPE (info->parent_struct.signature));
+      g_value_unset (&value);
+    }
+  return ret;
+}
+
+static gboolean
+_dbus_introspectable_skeleton_handle_set_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GVariant *variant,
+  GError **error,
+  gpointer user_data)
+{
+  DBusIntrospectableSkeleton *skeleton = DBUS_INTROSPECTABLE_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  gboolean ret;
+  ret = FALSE;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_introspectable_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      if (info->use_gvariant)
+        g_value_set_variant (&value, variant);
+      else
+        g_dbus_gvariant_to_gvalue (variant, &value);
+      g_object_set_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      g_value_unset (&value);
+      ret = TRUE;
+    }
+  return ret;
+}
+
+static const GDBusInterfaceVTable _dbus_introspectable_skeleton_vtable =
+{
+  _dbus_introspectable_skeleton_handle_method_call,
+  _dbus_introspectable_skeleton_handle_get_property,
+  _dbus_introspectable_skeleton_handle_set_property,
+  {NULL}
+};
+
+static GDBusInterfaceInfo *
+dbus_introspectable_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return dbus_introspectable_interface_info ();
+}
+
+static GDBusInterfaceVTable *
+dbus_introspectable_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return (GDBusInterfaceVTable *) &_dbus_introspectable_skeleton_vtable;
+}
+
+static GVariant *
+dbus_introspectable_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+{
+  DBusIntrospectableSkeleton *skeleton = DBUS_INTROSPECTABLE_SKELETON (_skeleton);
+
+  GVariantBuilder builder;
+  guint n;
+  g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
+  if (_dbus_introspectable_interface_info.parent_struct.properties == NULL)
+    goto out;
+  for (n = 0; _dbus_introspectable_interface_info.parent_struct.properties[n] != NULL; n++)
+    {
+      GDBusPropertyInfo *info = _dbus_introspectable_interface_info.parent_struct.properties[n];
+      if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
+        {
+          GVariant *value;
+          value = _dbus_introspectable_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.DBus.Introspectable", info->name, NULL, skeleton);
+          if (value != NULL)
+            {
+              g_variant_take_ref (value);
+              g_variant_builder_add (&builder, "{sv}", info->name, value);
+              g_variant_unref (value);
+            }
+        }
+    }
+out:
+  return g_variant_builder_end (&builder);
+}
+
+static void
+dbus_introspectable_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+{
+}
+
+static void dbus_introspectable_skeleton_iface_init (DBusIntrospectableIface *iface);
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusIntrospectableSkeleton, dbus_introspectable_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (DBusIntrospectableSkeleton)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_INTROSPECTABLE, dbus_introspectable_skeleton_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusIntrospectableSkeleton, dbus_introspectable_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_INTROSPECTABLE, dbus_introspectable_skeleton_iface_init));
+
+#endif
+static void
+dbus_introspectable_skeleton_finalize (GObject *object)
+{
+  DBusIntrospectableSkeleton *skeleton = DBUS_INTROSPECTABLE_SKELETON (object);
+  g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
+  if (skeleton->priv->changed_properties_idle_source != NULL)
+    g_source_destroy (skeleton->priv->changed_properties_idle_source);
+  g_main_context_unref (skeleton->priv->context);
+  g_mutex_clear (&skeleton->priv->lock);
+  G_OBJECT_CLASS (dbus_introspectable_skeleton_parent_class)->finalize (object);
+}
+
+static void
+dbus_introspectable_skeleton_init (DBusIntrospectableSkeleton *skeleton)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  skeleton->priv = dbus_introspectable_skeleton_get_instance_private (skeleton);
+#else
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_DBUS_INTROSPECTABLE_SKELETON, DBusIntrospectableSkeletonPrivate);
+#endif
+
+  g_mutex_init (&skeleton->priv->lock);
+  skeleton->priv->context = g_main_context_ref_thread_default ();
+}
+
+static void
+dbus_introspectable_skeleton_class_init (DBusIntrospectableSkeletonClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusInterfaceSkeletonClass *skeleton_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize = dbus_introspectable_skeleton_finalize;
+
+  skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
+  skeleton_class->get_info = dbus_introspectable_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = dbus_introspectable_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = dbus_introspectable_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = dbus_introspectable_skeleton_dbus_interface_get_vtable;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusIntrospectableSkeletonPrivate));
+#endif
+}
+
+static void
+dbus_introspectable_skeleton_iface_init (DBusIntrospectableIface *iface)
+{
+}
+
+/**
+ * dbus_introspectable_skeleton_new:
+ *
+ * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Introspectable.top_of_page">org.freedesktop.DBus.Introspectable</link>.
+ *
+ * Returns: (transfer full) (type DBusIntrospectableSkeleton): The skeleton object.
+ */
+DBusIntrospectable *
+dbus_introspectable_skeleton_new (void)
+{
+  return DBUS_INTROSPECTABLE (g_object_new (TYPE_DBUS_INTROSPECTABLE_SKELETON, NULL));
+}
+
+/* ------------------------------------------------------------------------
+ * Code for interface org.freedesktop.DBus.Properties
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:DBusProperties
+ * @title: DBusProperties
+ * @short_description: Generated C code for the org.freedesktop.DBus.Properties D-Bus interface
+ *
+ * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link> D-Bus interface in C.
+ */
+
+/* ---- Introspection data for org.freedesktop.DBus.Properties ---- */
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_get_IN_ARG_interface =
+{
+  {
+    -1,
+    (gchar *) "interface",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_get_IN_ARG_property =
+{
+  {
+    -1,
+    (gchar *) "property",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_method_info_get_IN_ARG_pointers[] =
+{
+  &_dbus_properties_method_info_get_IN_ARG_interface,
+  &_dbus_properties_method_info_get_IN_ARG_property,
+  NULL
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_get_OUT_ARG_value =
+{
+  {
+    -1,
+    (gchar *) "value",
+    (gchar *) "v",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_method_info_get_OUT_ARG_pointers[] =
+{
+  &_dbus_properties_method_info_get_OUT_ARG_value,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _dbus_properties_method_info_get =
+{
+  {
+    -1,
+    (gchar *) "Get",
+    (GDBusArgInfo **) &_dbus_properties_method_info_get_IN_ARG_pointers,
+    (GDBusArgInfo **) &_dbus_properties_method_info_get_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-get",
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_get_all_IN_ARG_interface =
+{
+  {
+    -1,
+    (gchar *) "interface",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_method_info_get_all_IN_ARG_pointers[] =
+{
+  &_dbus_properties_method_info_get_all_IN_ARG_interface,
+  NULL
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_get_all_OUT_ARG_properties =
+{
+  {
+    -1,
+    (gchar *) "properties",
+    (gchar *) "a{sv}",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_method_info_get_all_OUT_ARG_pointers[] =
+{
+  &_dbus_properties_method_info_get_all_OUT_ARG_properties,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _dbus_properties_method_info_get_all =
+{
+  {
+    -1,
+    (gchar *) "GetAll",
+    (GDBusArgInfo **) &_dbus_properties_method_info_get_all_IN_ARG_pointers,
+    (GDBusArgInfo **) &_dbus_properties_method_info_get_all_OUT_ARG_pointers,
+    NULL
+  },
+  "handle-get-all",
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_set_IN_ARG_interface =
+{
+  {
+    -1,
+    (gchar *) "interface",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_set_IN_ARG_property =
+{
+  {
+    -1,
+    (gchar *) "property",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_method_info_set_IN_ARG_value =
+{
+  {
+    -1,
+    (gchar *) "value",
+    (gchar *) "v",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_method_info_set_IN_ARG_pointers[] =
+{
+  &_dbus_properties_method_info_set_IN_ARG_interface,
+  &_dbus_properties_method_info_set_IN_ARG_property,
+  &_dbus_properties_method_info_set_IN_ARG_value,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _dbus_properties_method_info_set =
+{
+  {
+    -1,
+    (gchar *) "Set",
+    (GDBusArgInfo **) &_dbus_properties_method_info_set_IN_ARG_pointers,
+    NULL,
+    NULL
+  },
+  "handle-set",
+  FALSE
+};
+
+static const _ExtendedGDBusMethodInfo * const _dbus_properties_method_info_pointers[] =
+{
+  &_dbus_properties_method_info_get,
+  &_dbus_properties_method_info_get_all,
+  &_dbus_properties_method_info_set,
+  NULL
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_signal_info_properties_changed_ARG_interface =
+{
+  {
+    -1,
+    (gchar *) "interface",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_signal_info_properties_changed_ARG_changed_properties =
+{
+  {
+    -1,
+    (gchar *) "changed_properties",
+    (gchar *) "a{sv}",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _dbus_properties_signal_info_properties_changed_ARG_invalidated_properties =
+{
+  {
+    -1,
+    (gchar *) "invalidated_properties",
+    (gchar *) "as",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _dbus_properties_signal_info_properties_changed_ARG_pointers[] =
+{
+  &_dbus_properties_signal_info_properties_changed_ARG_interface,
+  &_dbus_properties_signal_info_properties_changed_ARG_changed_properties,
+  &_dbus_properties_signal_info_properties_changed_ARG_invalidated_properties,
+  NULL
+};
+
+static const _ExtendedGDBusSignalInfo _dbus_properties_signal_info_properties_changed =
+{
+  {
+    -1,
+    (gchar *) "PropertiesChanged",
+    (GDBusArgInfo **) &_dbus_properties_signal_info_properties_changed_ARG_pointers,
+    NULL
+  },
+  "properties-changed"
+};
+
+static const _ExtendedGDBusSignalInfo * const _dbus_properties_signal_info_pointers[] =
+{
+  &_dbus_properties_signal_info_properties_changed,
+  NULL
+};
+
+static const _ExtendedGDBusInterfaceInfo _dbus_properties_interface_info =
+{
+  {
+    -1,
+    (gchar *) "org.freedesktop.DBus.Properties",
+    (GDBusMethodInfo **) &_dbus_properties_method_info_pointers,
+    (GDBusSignalInfo **) &_dbus_properties_signal_info_pointers,
+    NULL,
+    NULL
+  },
+  "dbus-properties",
+};
+
+
+/**
+ * dbus_properties_interface_info:
+ *
+ * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link> D-Bus interface.
+ *
+ * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
+ */
+GDBusInterfaceInfo *
+dbus_properties_interface_info (void)
+{
+  return (GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct;
+}
+
+/**
+ * dbus_properties_override_properties:
+ * @klass: The class structure for a #GObject<!-- -->-derived class.
+ * @property_id_begin: The property id to assign to the first overridden property.
+ *
+ * Overrides all #GObject properties in the #DBusProperties interface for a concrete class.
+ * The properties are overridden in the order they are defined.
+ *
+ * Returns: The last property id.
+ */
+guint
+dbus_properties_override_properties (GObjectClass *klass, guint property_id_begin)
+{
+  return property_id_begin - 1;
+}
+
+
+
+/**
+ * DBusProperties:
+ *
+ * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link>.
+ */
+
+/**
+ * DBusPropertiesIface:
+ * @parent_iface: The parent interface.
+ * @handle_get: Handler for the #DBusProperties::handle-get signal.
+ * @handle_get_all: Handler for the #DBusProperties::handle-get-all signal.
+ * @handle_set: Handler for the #DBusProperties::handle-set signal.
+ * @properties_changed: Handler for the #DBusProperties::properties-changed signal.
+ *
+ * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link>.
+ */
+
+typedef DBusPropertiesIface DBusPropertiesInterface;
+G_DEFINE_INTERFACE (DBusProperties, dbus_properties, G_TYPE_OBJECT);
+
+static void
+dbus_properties_default_init (DBusPropertiesIface *iface)
+{
+  /* GObject signals for incoming D-Bus method calls: */
+  /**
+   * DBusProperties::handle-get:
+   * @object: A #DBusProperties.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_interface: Argument passed by remote caller.
+   * @arg_property: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Get">Get()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_properties_complete_get() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-get",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPropertiesIface, handle_get),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    3,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING);
+
+  /**
+   * DBusProperties::handle-get-all:
+   * @object: A #DBusProperties.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_interface: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.GetAll">GetAll()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_properties_complete_get_all() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-get-all",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPropertiesIface, handle_get_all),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    2,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
+
+  /**
+   * DBusProperties::handle-set:
+   * @object: A #DBusProperties.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_interface: Argument passed by remote caller.
+   * @arg_property: Argument passed by remote caller.
+   * @arg_value: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Set">Set()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call dbus_properties_complete_set() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-set",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPropertiesIface, handle_set),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    4,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_VARIANT);
+
+  /* GObject signals for received D-Bus signals: */
+  /**
+   * DBusProperties::properties-changed:
+   * @object: A #DBusProperties.
+   * @arg_interface: Argument.
+   * @arg_changed_properties: Argument.
+   * @arg_invalidated_properties: Argument.
+   *
+   * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-org-freedesktop-DBus-Properties.PropertiesChanged">"PropertiesChanged"</link> is received.
+   *
+   * On the service-side, this signal can be used with e.g. g_signal_emit_by_name() to make the object emit the D-Bus signal.
+   */
+  g_signal_new ("properties-changed",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (DBusPropertiesIface, properties_changed),
+    NULL,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_NONE,
+    3, G_TYPE_STRING, G_TYPE_VARIANT, G_TYPE_STRV);
+
+}
+
+/**
+ * dbus_properties_emit_properties_changed:
+ * @object: A #DBusProperties.
+ * @arg_interface: Argument to pass with the signal.
+ * @arg_changed_properties: Argument to pass with the signal.
+ * @arg_invalidated_properties: Argument to pass with the signal.
+ *
+ * Emits the <link linkend="gdbus-signal-org-freedesktop-DBus-Properties.PropertiesChanged">"PropertiesChanged"</link> D-Bus signal.
+ */
+void
+dbus_properties_emit_properties_changed (
+    DBusProperties *object,
+    const gchar *arg_interface,
+    GVariant *arg_changed_properties,
+    const gchar *const *arg_invalidated_properties)
+{
+  g_signal_emit_by_name (object, "properties-changed", arg_interface, arg_changed_properties, arg_invalidated_properties);
+}
+
+/**
+ * dbus_properties_call_get:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @arg_property: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Get">Get()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_properties_call_get_finish() to get the result of the operation.
+ *
+ * See dbus_properties_call_get_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_properties_call_get (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "Get",
+    g_variant_new ("(ss)",
+                   arg_interface,
+                   arg_property),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_properties_call_get_finish:
+ * @proxy: A #DBusPropertiesProxy.
+ * @out_value: (out): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_properties_call_get().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_properties_call_get().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_get_finish (
+    DBusProperties *proxy,
+    GVariant **out_value,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(@v)",
+                 out_value);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_call_get_sync:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @arg_property: Argument to pass with the method invocation.
+ * @out_value: (out): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Get">Get()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_properties_call_get() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_get_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant **out_value,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "Get",
+    g_variant_new ("(ss)",
+                   arg_interface,
+                   arg_property),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(@v)",
+                 out_value);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_call_get_all:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.GetAll">GetAll()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_properties_call_get_all_finish() to get the result of the operation.
+ *
+ * See dbus_properties_call_get_all_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_properties_call_get_all (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "GetAll",
+    g_variant_new ("(s)",
+                   arg_interface),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_properties_call_get_all_finish:
+ * @proxy: A #DBusPropertiesProxy.
+ * @out_properties: (out): Return location for return parameter or %NULL to ignore.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_properties_call_get_all().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_properties_call_get_all().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_get_all_finish (
+    DBusProperties *proxy,
+    GVariant **out_properties,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(@a{sv})",
+                 out_properties);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_call_get_all_sync:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @out_properties: (out): Return location for return parameter or %NULL to ignore.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.GetAll">GetAll()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_properties_call_get_all() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_get_all_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    GVariant **out_properties,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "GetAll",
+    g_variant_new ("(s)",
+                   arg_interface),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "(@a{sv})",
+                 out_properties);
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_call_set:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @arg_property: Argument to pass with the method invocation.
+ * @arg_value: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Set">Set()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_properties_call_set_finish() to get the result of the operation.
+ *
+ * See dbus_properties_call_set_sync() for the synchronous, blocking version of this method.
+ */
+void
+dbus_properties_call_set (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant *arg_value,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "Set",
+    g_variant_new ("(ss@v)",
+                   arg_interface,
+                   arg_property,
+                   arg_value),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * dbus_properties_call_set_finish:
+ * @proxy: A #DBusPropertiesProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_properties_call_set().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with dbus_properties_call_set().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_set_finish (
+    DBusProperties *proxy,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_call_set_sync:
+ * @proxy: A #DBusPropertiesProxy.
+ * @arg_interface: Argument to pass with the method invocation.
+ * @arg_property: Argument to pass with the method invocation.
+ * @arg_value: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Set">Set()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See dbus_properties_call_set() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+dbus_properties_call_set_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant *arg_value,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "Set",
+    g_variant_new ("(ss@v)",
+                   arg_interface,
+                   arg_property,
+                   arg_value),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * dbus_properties_complete_get:
+ * @object: A #DBusProperties.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @value: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Get">Get()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_properties_complete_get (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    GVariant *value)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(@v)",
+                   value));
+}
+
+/**
+ * dbus_properties_complete_get_all:
+ * @object: A #DBusProperties.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ * @properties: Parameter to return.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.GetAll">GetAll()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_properties_complete_get_all (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    GVariant *properties)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("(@a{sv})",
+                   properties));
+}
+
+/**
+ * dbus_properties_complete_set:
+ * @object: A #DBusProperties.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-DBus-Properties.Set">Set()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+dbus_properties_complete_set (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("()"));
+}
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusPropertiesProxy:
+ *
+ * The #DBusPropertiesProxy structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusPropertiesProxyClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusPropertiesProxy.
+ */
+
+struct _DBusPropertiesProxyPrivate
+{
+  GData *qdata;
+};
+
+static void dbus_properties_proxy_iface_init (DBusPropertiesIface *iface);
+
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusPropertiesProxy, dbus_properties_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (DBusPropertiesProxy)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PROPERTIES, dbus_properties_proxy_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusPropertiesProxy, dbus_properties_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PROPERTIES, dbus_properties_proxy_iface_init));
+
+#endif
+static void
+dbus_properties_proxy_finalize (GObject *object)
+{
+  DBusPropertiesProxy *proxy = DBUS_PROPERTIES_PROXY (object);
+  g_datalist_clear (&proxy->priv->qdata);
+  G_OBJECT_CLASS (dbus_properties_proxy_parent_class)->finalize (object);
+}
+
+static void
+dbus_properties_proxy_get_property (GObject      *object,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_properties_proxy_set_property (GObject      *object,
+  guint         prop_id,
+  const GValue *value,
+  GParamSpec   *pspec G_GNUC_UNUSED)
+{
+}
+
+static void
+dbus_properties_proxy_g_signal (GDBusProxy *proxy,
+  const gchar *sender_name G_GNUC_UNUSED,
+  const gchar *signal_name,
+  GVariant *parameters)
+{
+  _ExtendedGDBusSignalInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint n;
+  guint signal_id;
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct, signal_name);
+  if (info == NULL)
+    return;
+  num_params = g_variant_n_children (parameters);
+  paramv = g_new0 (GValue, num_params + 1);
+  g_value_init (&paramv[0], TYPE_DBUS_PROPERTIES);
+  g_value_set_object (&paramv[0], proxy);
+  g_variant_iter_init (&iter, parameters);
+  n = 1;
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.args[n - 1];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_PROPERTIES);
+  g_signal_emitv (paramv, signal_id, 0, NULL);
+  for (n = 0; n < num_params + 1; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static void
+dbus_properties_proxy_g_properties_changed (GDBusProxy *_proxy,
+  GVariant *changed_properties,
+  const gchar *const *invalidated_properties)
+{
+  DBusPropertiesProxy *proxy = DBUS_PROPERTIES_PROXY (_proxy);
+  guint n;
+  const gchar *key;
+  GVariantIter *iter;
+  _ExtendedGDBusPropertyInfo *info;
+  g_variant_get (changed_properties, "a{sv}", &iter);
+  while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct, key);
+      g_datalist_remove_data (&proxy->priv->qdata, key);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+  g_variant_iter_free (iter);
+  for (n = 0; invalidated_properties[n] != NULL; n++)
+    {
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct, invalidated_properties[n]);
+      g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
+      if (info != NULL)
+        g_object_notify (G_OBJECT (proxy), info->hyphen_name);
+    }
+}
+
+static void
+dbus_properties_proxy_init (DBusPropertiesProxy *proxy)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  proxy->priv = dbus_properties_proxy_get_instance_private (proxy);
+#else
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_DBUS_PROPERTIES_PROXY, DBusPropertiesProxyPrivate);
+#endif
+
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), dbus_properties_interface_info ());
+}
+
+static void
+dbus_properties_proxy_class_init (DBusPropertiesProxyClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusProxyClass *proxy_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize     = dbus_properties_proxy_finalize;
+  gobject_class->get_property = dbus_properties_proxy_get_property;
+  gobject_class->set_property = dbus_properties_proxy_set_property;
+
+  proxy_class = G_DBUS_PROXY_CLASS (klass);
+  proxy_class->g_signal = dbus_properties_proxy_g_signal;
+  proxy_class->g_properties_changed = dbus_properties_proxy_g_properties_changed;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusPropertiesProxyPrivate));
+#endif
+}
+
+static void
+dbus_properties_proxy_iface_init (DBusPropertiesIface *iface)
+{
+}
+
+/**
+ * dbus_properties_proxy_new:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link>. See g_dbus_proxy_new() for more details.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_properties_proxy_new_finish() to get the result of the operation.
+ *
+ * See dbus_properties_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_properties_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_PROPERTIES_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Properties", NULL);
+}
+
+/**
+ * dbus_properties_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_properties_proxy_new().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_properties_proxy_new().
+ *
+ * Returns: (transfer full) (type DBusPropertiesProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusProperties *
+dbus_properties_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_PROPERTIES (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_properties_proxy_new_sync:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Synchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link>. See g_dbus_proxy_new_sync() for more details.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_properties_proxy_new() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusPropertiesProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusProperties *
+dbus_properties_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_PROPERTIES_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Properties", NULL);
+  if (ret != NULL)
+    return DBUS_PROPERTIES (ret);
+  else
+    return NULL;
+}
+
+
+/**
+ * dbus_properties_proxy_new_for_bus:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Like dbus_properties_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call dbus_properties_proxy_new_for_bus_finish() to get the result of the operation.
+ *
+ * See dbus_properties_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+dbus_properties_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data)
+{
+  g_async_initable_new_async (TYPE_DBUS_PROPERTIES_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Properties", NULL);
+}
+
+/**
+ * dbus_properties_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to dbus_properties_proxy_new_for_bus().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with dbus_properties_proxy_new_for_bus().
+ *
+ * Returns: (transfer full) (type DBusPropertiesProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusProperties *
+dbus_properties_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return DBUS_PROPERTIES (ret);
+  else
+    return NULL;
+}
+
+/**
+ * dbus_properties_proxy_new_for_bus_sync:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusProxyFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Like dbus_properties_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See dbus_properties_proxy_new_for_bus() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type DBusPropertiesProxy): The constructed proxy object or %NULL if @error is set.
+ */
+DBusProperties *
+dbus_properties_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TYPE_DBUS_PROPERTIES_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.DBus.Properties", NULL);
+  if (ret != NULL)
+    return DBUS_PROPERTIES (ret);
+  else
+    return NULL;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * DBusPropertiesSkeleton:
+ *
+ * The #DBusPropertiesSkeleton structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * DBusPropertiesSkeletonClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #DBusPropertiesSkeleton.
+ */
+
+struct _DBusPropertiesSkeletonPrivate
+{
+  GValue *properties;
+  GList *changed_properties;
+  GSource *changed_properties_idle_source;
+  GMainContext *context;
+  GMutex lock;
+};
+
+static void
+_dbus_properties_skeleton_handle_method_call (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name,
+  const gchar *method_name,
+  GVariant *parameters,
+  GDBusMethodInvocation *invocation,
+  gpointer user_data)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (user_data);
+  _ExtendedGDBusMethodInfo *info;
+  GVariantIter iter;
+  GVariant *child;
+  GValue *paramv;
+  guint num_params;
+  guint num_extra;
+  guint n;
+  guint signal_id;
+  GValue return_value = G_VALUE_INIT;
+  info = (_ExtendedGDBusMethodInfo *) g_dbus_method_invocation_get_method_info (invocation);
+  g_assert (info != NULL);
+  num_params = g_variant_n_children (parameters);
+  num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
+  n = 0;
+  g_value_init (&paramv[n], TYPE_DBUS_PROPERTIES);
+  g_value_set_object (&paramv[n++], skeleton);
+  g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
+  g_value_set_object (&paramv[n++], invocation);
+  if (info->pass_fdlist)
+    {
+#ifdef G_OS_UNIX
+      g_value_init (&paramv[n], G_TYPE_UNIX_FD_LIST);
+      g_value_set_object (&paramv[n++], g_dbus_message_get_unix_fd_list (g_dbus_method_invocation_get_message (invocation)));
+#else
+      g_assert_not_reached ();
+#endif
+    }
+  g_variant_iter_init (&iter, parameters);
+  while ((child = g_variant_iter_next_value (&iter)) != NULL)
+    {
+      _ExtendedGDBusArgInfo *arg_info = (_ExtendedGDBusArgInfo *) info->parent_struct.in_args[n - num_extra];
+      if (arg_info->use_gvariant)
+        {
+          g_value_init (&paramv[n], G_TYPE_VARIANT);
+          g_value_set_variant (&paramv[n], child);
+          n++;
+        }
+      else
+        g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
+      g_variant_unref (child);
+    }
+  signal_id = g_signal_lookup (info->signal_name, TYPE_DBUS_PROPERTIES);
+  g_value_init (&return_value, G_TYPE_BOOLEAN);
+  g_signal_emitv (paramv, signal_id, 0, &return_value);
+  if (!g_value_get_boolean (&return_value))
+    g_dbus_method_invocation_return_error (invocation, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD, "Method %s is not implemented on interface %s", method_name, interface_name);
+  g_value_unset (&return_value);
+  for (n = 0; n < num_params + num_extra; n++)
+    g_value_unset (&paramv[n]);
+  g_free (paramv);
+}
+
+static GVariant *
+_dbus_properties_skeleton_handle_get_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GError **error,
+  gpointer user_data)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  GVariant *ret;
+  ret = NULL;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      g_value_init (&value, pspec->value_type);
+      g_object_get_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      ret = g_dbus_gvalue_to_gvariant (&value, G_VARIANT_TYPE (info->parent_struct.signature));
+      g_value_unset (&value);
+    }
+  return ret;
+}
+
+static gboolean
+_dbus_properties_skeleton_handle_set_property (
+  GDBusConnection *connection G_GNUC_UNUSED,
+  const gchar *sender G_GNUC_UNUSED,
+  const gchar *object_path G_GNUC_UNUSED,
+  const gchar *interface_name G_GNUC_UNUSED,
+  const gchar *property_name,
+  GVariant *variant,
+  GError **error,
+  gpointer user_data)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (user_data);
+  GValue value = G_VALUE_INIT;
+  GParamSpec *pspec;
+  _ExtendedGDBusPropertyInfo *info;
+  gboolean ret;
+  ret = FALSE;
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_dbus_properties_interface_info.parent_struct, property_name);
+  g_assert (info != NULL);
+  pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
+  if (pspec == NULL)
+    {
+      g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS, "No property with name %s", property_name);
+    }
+  else
+    {
+      if (info->use_gvariant)
+        g_value_set_variant (&value, variant);
+      else
+        g_dbus_gvariant_to_gvalue (variant, &value);
+      g_object_set_property (G_OBJECT (skeleton), info->hyphen_name, &value);
+      g_value_unset (&value);
+      ret = TRUE;
+    }
+  return ret;
+}
+
+static const GDBusInterfaceVTable _dbus_properties_skeleton_vtable =
+{
+  _dbus_properties_skeleton_handle_method_call,
+  _dbus_properties_skeleton_handle_get_property,
+  _dbus_properties_skeleton_handle_set_property,
+  {NULL}
+};
+
+static GDBusInterfaceInfo *
+dbus_properties_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return dbus_properties_interface_info ();
+}
+
+static GDBusInterfaceVTable *
+dbus_properties_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+{
+  return (GDBusInterfaceVTable *) &_dbus_properties_skeleton_vtable;
+}
+
+static GVariant *
+dbus_properties_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (_skeleton);
+
+  GVariantBuilder builder;
+  guint n;
+  g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
+  if (_dbus_properties_interface_info.parent_struct.properties == NULL)
+    goto out;
+  for (n = 0; _dbus_properties_interface_info.parent_struct.properties[n] != NULL; n++)
+    {
+      GDBusPropertyInfo *info = _dbus_properties_interface_info.parent_struct.properties[n];
+      if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
+        {
+          GVariant *value;
+          value = _dbus_properties_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.DBus.Properties", info->name, NULL, skeleton);
+          if (value != NULL)
+            {
+              g_variant_take_ref (value);
+              g_variant_builder_add (&builder, "{sv}", info->name, value);
+              g_variant_unref (value);
+            }
+        }
+    }
+out:
+  return g_variant_builder_end (&builder);
+}
+
+static void
+dbus_properties_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+{
+}
+
+static void
+_dbus_properties_on_signal_properties_changed (
+    DBusProperties *object,
+    const gchar *arg_interface,
+    GVariant *arg_changed_properties,
+    const gchar *const *arg_invalidated_properties)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (object);
+
+  GList      *connections, *l;
+  GVariant   *signal_variant;
+  connections = g_dbus_interface_skeleton_get_connections (G_DBUS_INTERFACE_SKELETON (skeleton));
+
+  signal_variant = g_variant_ref_sink (g_variant_new ("(s@a{sv}^as)",
+                   arg_interface,
+                   arg_changed_properties,
+                   arg_invalidated_properties));
+  for (l = connections; l != NULL; l = l->next)
+    {
+      GDBusConnection *connection = l->data;
+      g_dbus_connection_emit_signal (connection,
+        NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.DBus.Properties", "PropertiesChanged",
+        signal_variant, NULL);
+    }
+  g_variant_unref (signal_variant);
+  g_list_free_full (connections, g_object_unref);
+}
+
+static void dbus_properties_skeleton_iface_init (DBusPropertiesIface *iface);
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+G_DEFINE_TYPE_WITH_CODE (DBusPropertiesSkeleton, dbus_properties_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (DBusPropertiesSkeleton)
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PROPERTIES, dbus_properties_skeleton_iface_init));
+
+#else
+G_DEFINE_TYPE_WITH_CODE (DBusPropertiesSkeleton, dbus_properties_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TYPE_DBUS_PROPERTIES, dbus_properties_skeleton_iface_init));
+
+#endif
+static void
+dbus_properties_skeleton_finalize (GObject *object)
+{
+  DBusPropertiesSkeleton *skeleton = DBUS_PROPERTIES_SKELETON (object);
+  g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
+  if (skeleton->priv->changed_properties_idle_source != NULL)
+    g_source_destroy (skeleton->priv->changed_properties_idle_source);
+  g_main_context_unref (skeleton->priv->context);
+  g_mutex_clear (&skeleton->priv->lock);
+  G_OBJECT_CLASS (dbus_properties_skeleton_parent_class)->finalize (object);
+}
+
+static void
+dbus_properties_skeleton_init (DBusPropertiesSkeleton *skeleton)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  skeleton->priv = dbus_properties_skeleton_get_instance_private (skeleton);
+#else
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_DBUS_PROPERTIES_SKELETON, DBusPropertiesSkeletonPrivate);
+#endif
+
+  g_mutex_init (&skeleton->priv->lock);
+  skeleton->priv->context = g_main_context_ref_thread_default ();
+}
+
+static void
+dbus_properties_skeleton_class_init (DBusPropertiesSkeletonClass *klass)
+{
+  GObjectClass *gobject_class;
+  GDBusInterfaceSkeletonClass *skeleton_class;
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize = dbus_properties_skeleton_finalize;
+
+  skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
+  skeleton_class->get_info = dbus_properties_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = dbus_properties_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = dbus_properties_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = dbus_properties_skeleton_dbus_interface_get_vtable;
+
+#if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
+  g_type_class_add_private (klass, sizeof (DBusPropertiesSkeletonPrivate));
+#endif
+}
+
+static void
+dbus_properties_skeleton_iface_init (DBusPropertiesIface *iface)
+{
+  iface->properties_changed = _dbus_properties_on_signal_properties_changed;
+}
+
+/**
+ * dbus_properties_skeleton_new:
+ *
+ * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-DBus-Properties.top_of_page">org.freedesktop.DBus.Properties</link>.
+ *
+ * Returns: (transfer full) (type DBusPropertiesSkeleton): The skeleton object.
+ */
+DBusProperties *
+dbus_properties_skeleton_new (void)
+{
+  return DBUS_PROPERTIES (g_object_new (TYPE_DBUS_PROPERTIES_SKELETON, NULL));
+}
+
+/* ------------------------------------------------------------------------
  * Code for interface org.freedesktop.hostname1
  * ------------------------------------------------------------------------
  */
@@ -163,22 +3555,22 @@ _g_value_equal (const GValue *a, const GValue *b)
 
 /* ---- Introspection data for org.freedesktop.hostname1 ---- */
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_name =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "name",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
@@ -187,8 +3579,8 @@ static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_us
 
 static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_hostname_IN_ARG_pointers[] =
 {
-  &_hostname1_method_info_set_hostname_IN_ARG_name,
-  &_hostname1_method_info_set_hostname_IN_ARG_user_interaction,
+  &_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
@@ -205,22 +3597,22 @@ static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_hostname =
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_name =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "name",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
@@ -229,8 +3621,8 @@ static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN
 
 static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_static_hostname_IN_ARG_pointers[] =
 {
-  &_hostname1_method_info_set_static_hostname_IN_ARG_name,
-  &_hostname1_method_info_set_static_hostname_IN_ARG_user_interaction,
+  &_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
@@ -247,22 +3639,22 @@ static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_static_hostname
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_name =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "name",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
@@ -271,8 +3663,8 @@ static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN
 
 static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_pretty_hostname_IN_ARG_pointers[] =
 {
-  &_hostname1_method_info_set_pretty_hostname_IN_ARG_name,
-  &_hostname1_method_info_set_pretty_hostname_IN_ARG_user_interaction,
+  &_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
@@ -289,22 +3681,22 @@ static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_pretty_hostname
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_name =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "name",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
@@ -313,8 +3705,8 @@ static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_u
 
 static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_icon_name_IN_ARG_pointers[] =
 {
-  &_hostname1_method_info_set_icon_name_IN_ARG_name,
-  &_hostname1_method_info_set_icon_name_IN_ARG_user_interaction,
+  &_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1,
   NULL
 };
 
@@ -331,12 +3723,69 @@ static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_icon_name =
   FALSE
 };
 
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0 =
+{
+  {
+    -1,
+    (gchar *) "unnamed_arg0",
+    (gchar *) "s",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1 =
+{
+  {
+    -1,
+    (gchar *) "unnamed_arg1",
+    (gchar *) "b",
+    NULL
+  },
+  FALSE
+};
+
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_chassis_IN_ARG_pointers[] =
+{
+  &_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1,
+  NULL
+};
+
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_chassis =
+{
+  {
+    -1,
+    (gchar *) "SetChassis",
+    (GDBusArgInfo **) &_hostname1_method_info_set_chassis_IN_ARG_pointers,
+    NULL,
+    NULL
+  },
+  "handle-set-chassis",
+  FALSE
+};
+
 static const _ExtendedGDBusMethodInfo * const _hostname1_method_info_pointers[] =
 {
   &_hostname1_method_info_set_hostname,
   &_hostname1_method_info_set_static_hostname,
   &_hostname1_method_info_set_pretty_hostname,
   &_hostname1_method_info_set_icon_name,
+  &_hostname1_method_info_set_chassis,
+  NULL
+};
+
+static const GDBusAnnotationInfo _hostname1_property_hostname_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "false",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_hostname_annotation_info_pointers[] =
+{
+  &_hostname1_property_hostname_annotation_info_0,
   NULL
 };
 
@@ -347,7 +3796,7 @@ static const _ExtendedGDBusPropertyInfo _hostname1_property_info_hostname =
     (gchar *) "Hostname",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    NULL
+    (GDBusAnnotationInfo **) &_hostname1_property_hostname_annotation_info_pointers
   },
   "hostname",
   FALSE
@@ -392,12 +3841,166 @@ static const _ExtendedGDBusPropertyInfo _hostname1_property_info_icon_name =
   FALSE
 };
 
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_chassis =
+{
+  {
+    -1,
+    (gchar *) "Chassis",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    NULL
+  },
+  "chassis",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _hostname1_property_kernel_name_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "const",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_name_annotation_info_pointers[] =
+{
+  &_hostname1_property_kernel_name_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_name =
+{
+  {
+    -1,
+    (gchar *) "KernelName",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_name_annotation_info_pointers
+  },
+  "kernel-name",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _hostname1_property_kernel_release_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "const",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_release_annotation_info_pointers[] =
+{
+  &_hostname1_property_kernel_release_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_release =
+{
+  {
+    -1,
+    (gchar *) "KernelRelease",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_release_annotation_info_pointers
+  },
+  "kernel-release",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _hostname1_property_kernel_version_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "const",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_version_annotation_info_pointers[] =
+{
+  &_hostname1_property_kernel_version_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_version =
+{
+  {
+    -1,
+    (gchar *) "KernelVersion",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_version_annotation_info_pointers
+  },
+  "kernel-version",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _hostname1_property_operating_system_pretty_name_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "const",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_operating_system_pretty_name_annotation_info_pointers[] =
+{
+  &_hostname1_property_operating_system_pretty_name_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_operating_system_pretty_name =
+{
+  {
+    -1,
+    (gchar *) "OperatingSystemPrettyName",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_hostname1_property_operating_system_pretty_name_annotation_info_pointers
+  },
+  "operating-system-pretty-name",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _hostname1_property_operating_system_cpename_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "const",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _hostname1_property_operating_system_cpename_annotation_info_pointers[] =
+{
+  &_hostname1_property_operating_system_cpename_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_operating_system_cpename =
+{
+  {
+    -1,
+    (gchar *) "OperatingSystemCPEName",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_hostname1_property_operating_system_cpename_annotation_info_pointers
+  },
+  "operating-system-cpename",
+  FALSE
+};
+
 static const _ExtendedGDBusPropertyInfo * const _hostname1_property_info_pointers[] =
 {
   &_hostname1_property_info_hostname,
   &_hostname1_property_info_static_hostname,
   &_hostname1_property_info_pretty_hostname,
   &_hostname1_property_info_icon_name,
+  &_hostname1_property_info_chassis,
+  &_hostname1_property_info_kernel_name,
+  &_hostname1_property_info_kernel_release,
+  &_hostname1_property_info_kernel_version,
+  &_hostname1_property_info_operating_system_pretty_name,
+  &_hostname1_property_info_operating_system_cpename,
   NULL
 };
 
@@ -445,6 +4048,12 @@ hostname1_override_properties (GObjectClass *klass, guint property_id_begin)
   g_object_class_override_property (klass, property_id_begin++, "static-hostname");
   g_object_class_override_property (klass, property_id_begin++, "pretty-hostname");
   g_object_class_override_property (klass, property_id_begin++, "icon-name");
+  g_object_class_override_property (klass, property_id_begin++, "chassis");
+  g_object_class_override_property (klass, property_id_begin++, "kernel-name");
+  g_object_class_override_property (klass, property_id_begin++, "kernel-release");
+  g_object_class_override_property (klass, property_id_begin++, "kernel-version");
+  g_object_class_override_property (klass, property_id_begin++, "operating-system-pretty-name");
+  g_object_class_override_property (klass, property_id_begin++, "operating-system-cpename");
   return property_id_begin - 1;
 }
 
@@ -459,12 +4068,19 @@ hostname1_override_properties (GObjectClass *klass, guint property_id_begin)
 /**
  * Hostname1Iface:
  * @parent_iface: The parent interface.
+ * @handle_set_chassis: Handler for the #Hostname1::handle-set-chassis signal.
  * @handle_set_hostname: Handler for the #Hostname1::handle-set-hostname signal.
  * @handle_set_icon_name: Handler for the #Hostname1::handle-set-icon-name signal.
  * @handle_set_pretty_hostname: Handler for the #Hostname1::handle-set-pretty-hostname signal.
  * @handle_set_static_hostname: Handler for the #Hostname1::handle-set-static-hostname signal.
+ * @get_chassis: Getter for the #Hostname1:chassis property.
  * @get_hostname: Getter for the #Hostname1:hostname property.
  * @get_icon_name: Getter for the #Hostname1:icon-name property.
+ * @get_kernel_name: Getter for the #Hostname1:kernel-name property.
+ * @get_kernel_release: Getter for the #Hostname1:kernel-release property.
+ * @get_kernel_version: Getter for the #Hostname1:kernel-version property.
+ * @get_operating_system_cpename: Getter for the #Hostname1:operating-system-cpename property.
+ * @get_operating_system_pretty_name: Getter for the #Hostname1:operating-system-pretty-name property.
  * @get_pretty_hostname: Getter for the #Hostname1:pretty-hostname property.
  * @get_static_hostname: Getter for the #Hostname1:static-hostname property.
  *
@@ -482,8 +4098,8 @@ hostname1_default_init (Hostname1Iface *iface)
    * Hostname1::handle-set-hostname:
    * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_name: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetHostname">SetHostname()</link> D-Bus method.
    *
@@ -506,8 +4122,8 @@ hostname1_default_init (Hostname1Iface *iface)
    * Hostname1::handle-set-static-hostname:
    * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_name: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetStaticHostname">SetStaticHostname()</link> D-Bus method.
    *
@@ -530,8 +4146,8 @@ hostname1_default_init (Hostname1Iface *iface)
    * Hostname1::handle-set-pretty-hostname:
    * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_name: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetPrettyHostname">SetPrettyHostname()</link> D-Bus method.
    *
@@ -554,8 +4170,8 @@ hostname1_default_init (Hostname1Iface *iface)
    * Hostname1::handle-set-icon-name:
    * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_name: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetIconName">SetIconName()</link> D-Bus method.
    *
@@ -567,6 +4183,30 @@ hostname1_default_init (Hostname1Iface *iface)
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
     G_STRUCT_OFFSET (Hostname1Iface, handle_set_icon_name),
+    g_signal_accumulator_true_handled,
+    NULL,
+    g_cclosure_marshal_generic,
+    G_TYPE_BOOLEAN,
+    3,
+    G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
+
+  /**
+   * Hostname1::handle-set-chassis:
+   * @object: A #Hostname1.
+   * @invocation: A #GDBusMethodInvocation.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
+   *
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method.
+   *
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_chassis() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   *
+   * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
+   */
+  g_signal_new ("handle-set-chassis",
+    G_TYPE_FROM_INTERFACE (iface),
+    G_SIGNAL_RUN_LAST,
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_chassis),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -611,6 +4251,60 @@ hostname1_default_init (Hostname1Iface *iface)
    */
   g_object_interface_install_property (iface,
     g_param_spec_string ("icon-name", "IconName", "IconName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:chassis:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("chassis", "Chassis", "Chassis", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:kernel-name:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("kernel-name", "KernelName", "KernelName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:kernel-release:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("kernel-release", "KernelRelease", "KernelRelease", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:kernel-version:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("kernel-version", "KernelVersion", "KernelVersion", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:operating-system-pretty-name:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("operating-system-pretty-name", "OperatingSystemPrettyName", "OperatingSystemPrettyName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * Hostname1:operating-system-cpename:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("operating-system-cpename", "OperatingSystemCPEName", "OperatingSystemCPEName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
 
 /**
@@ -818,10 +4512,316 @@ hostname1_set_icon_name (Hostname1 *object, const gchar *value)
 }
 
 /**
+ * hostname1_get_chassis: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_chassis() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_chassis (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_chassis (object);
+}
+
+/**
+ * hostname1_dup_chassis: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_chassis (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "chassis", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_chassis: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_chassis (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "chassis", value, NULL);
+}
+
+/**
+ * hostname1_get_kernel_name: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_name() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_kernel_name (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_name (object);
+}
+
+/**
+ * hostname1_dup_kernel_name: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_kernel_name (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "kernel-name", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_kernel_name: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_kernel_name (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "kernel-name", value, NULL);
+}
+
+/**
+ * hostname1_get_kernel_release: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_release() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_kernel_release (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_release (object);
+}
+
+/**
+ * hostname1_dup_kernel_release: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_kernel_release (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "kernel-release", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_kernel_release: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_kernel_release (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "kernel-release", value, NULL);
+}
+
+/**
+ * hostname1_get_kernel_version: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_version() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_kernel_version (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_version (object);
+}
+
+/**
+ * hostname1_dup_kernel_version: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_kernel_version (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "kernel-version", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_kernel_version: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_kernel_version (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "kernel-version", value, NULL);
+}
+
+/**
+ * hostname1_get_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_operating_system_pretty_name() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_operating_system_pretty_name (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_operating_system_pretty_name (object);
+}
+
+/**
+ * hostname1_dup_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_operating_system_pretty_name (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "operating-system-pretty-name", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_operating_system_pretty_name (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "operating-system-pretty-name", value, NULL);
+}
+
+/**
+ * hostname1_get_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_operating_system_cpename() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+hostname1_get_operating_system_cpename (Hostname1 *object)
+{
+  return HOSTNAME1_GET_IFACE (object)->get_operating_system_cpename (object);
+}
+
+/**
+ * hostname1_dup_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+hostname1_dup_operating_system_cpename (Hostname1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "operating-system-cpename", &value, NULL);
+  return value;
+}
+
+/**
+ * hostname1_set_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+hostname1_set_operating_system_cpename (Hostname1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "operating-system-cpename", value, NULL);
+}
+
+/**
  * hostname1_call_set_hostname:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
@@ -835,8 +4835,8 @@ hostname1_set_icon_name (Hostname1 *object, const gchar *value)
 void
 hostname1_call_set_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -844,8 +4844,8 @@ hostname1_call_set_hostname (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -883,8 +4883,8 @@ _out:
 /**
  * hostname1_call_set_hostname_sync:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
@@ -897,8 +4897,8 @@ _out:
 gboolean
 hostname1_call_set_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -906,8 +4906,8 @@ hostname1_call_set_hostname_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -924,8 +4924,8 @@ _out:
 /**
  * hostname1_call_set_static_hostname:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
@@ -939,8 +4939,8 @@ _out:
 void
 hostname1_call_set_static_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -948,8 +4948,8 @@ hostname1_call_set_static_hostname (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetStaticHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -987,8 +4987,8 @@ _out:
 /**
  * hostname1_call_set_static_hostname_sync:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
@@ -1001,8 +5001,8 @@ _out:
 gboolean
 hostname1_call_set_static_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1010,8 +5010,8 @@ hostname1_call_set_static_hostname_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetStaticHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1028,8 +5028,8 @@ _out:
 /**
  * hostname1_call_set_pretty_hostname:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
@@ -1043,8 +5043,8 @@ _out:
 void
 hostname1_call_set_pretty_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1052,8 +5052,8 @@ hostname1_call_set_pretty_hostname (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetPrettyHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1091,8 +5091,8 @@ _out:
 /**
  * hostname1_call_set_pretty_hostname_sync:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
@@ -1105,8 +5105,8 @@ _out:
 gboolean
 hostname1_call_set_pretty_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1114,8 +5114,8 @@ hostname1_call_set_pretty_hostname_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetPrettyHostname",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1132,8 +5132,8 @@ _out:
 /**
  * hostname1_call_set_icon_name:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
@@ -1147,8 +5147,8 @@ _out:
 void
 hostname1_call_set_icon_name (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1156,8 +5156,8 @@ hostname1_call_set_icon_name (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetIconName",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1195,8 +5195,8 @@ _out:
 /**
  * hostname1_call_set_icon_name_sync:
  * @proxy: A #Hostname1Proxy.
- * @arg_name: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
@@ -1209,8 +5209,8 @@ _out:
 gboolean
 hostname1_call_set_icon_name_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1218,8 +5218,112 @@ hostname1_call_set_icon_name_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetIconName",
     g_variant_new ("(sb)",
-                   arg_name,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * hostname1_call_set_chassis:
+ * @proxy: A #Hostname1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method on @proxy.
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call hostname1_call_set_chassis_finish() to get the result of the operation.
+ *
+ * See hostname1_call_set_chassis_sync() for the synchronous, blocking version of this method.
+ */
+void
+hostname1_call_set_chassis (
+    Hostname1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data)
+{
+  g_dbus_proxy_call (G_DBUS_PROXY (proxy),
+    "SetChassis",
+    g_variant_new ("(sb)",
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
+    G_DBUS_CALL_FLAGS_NONE,
+    -1,
+    cancellable,
+    callback,
+    user_data);
+}
+
+/**
+ * hostname1_call_set_chassis_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_chassis().
+ * @error: Return location for error or %NULL.
+ *
+ * Finishes an operation started with hostname1_call_set_chassis().
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+hostname1_call_set_chassis_finish (
+    Hostname1 *proxy,
+    GAsyncResult *res,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, error);
+  if (_ret == NULL)
+    goto _out;
+  g_variant_get (_ret,
+                 "()");
+  g_variant_unref (_ret);
+_out:
+  return _ret != NULL;
+}
+
+/**
+ * hostname1_call_set_chassis_sync:
+ * @proxy: A #Hostname1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL.
+ *
+ * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ *
+ * See hostname1_call_set_chassis() for the asynchronous version of this method.
+ *
+ * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
+ */
+gboolean
+hostname1_call_set_chassis_sync (
+    Hostname1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    GCancellable *cancellable,
+    GError **error)
+{
+  GVariant *_ret;
+  _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
+    "SetChassis",
+    g_variant_new ("(sb)",
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1305,6 +5409,24 @@ hostname1_complete_set_icon_name (
     g_variant_new ("()"));
 }
 
+/**
+ * hostname1_complete_set_chassis:
+ * @object: A #Hostname1.
+ * @invocation: (transfer full): A #GDBusMethodInvocation.
+ *
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ *
+ * This method will free @invocation, you cannot use it afterwards.
+ */
+void
+hostname1_complete_set_chassis (
+    Hostname1 *object,
+    GDBusMethodInvocation *invocation)
+{
+  g_dbus_method_invocation_return_value (invocation,
+    g_variant_new ("()"));
+}
+
 /* ------------------------------------------------------------------------ */
 
 /**
@@ -1353,7 +5475,7 @@ hostname1_proxy_get_property (GObject      *object,
 {
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
-  g_assert (prop_id != 0 && prop_id - 1 < 4);
+  g_assert (prop_id != 0 && prop_id - 1 < 10);
   info = _hostname1_property_info_pointers[prop_id - 1];
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (object), info->parent_struct.name);
   if (info->use_gvariant)
@@ -1400,7 +5522,7 @@ hostname1_proxy_set_property (GObject      *object,
 {
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
-  g_assert (prop_id != 0 && prop_id - 1 < 4);
+  g_assert (prop_id != 0 && prop_id - 1 < 10);
   info = _hostname1_property_info_pointers[prop_id - 1];
   variant = g_dbus_gvalue_to_gvariant (value, G_VARIANT_TYPE (info->parent_struct.signature));
   g_dbus_proxy_call (G_DBUS_PROXY (object),
@@ -1542,6 +5664,96 @@ hostname1_proxy_get_icon_name (Hostname1 *object)
   return value;
 }
 
+static const gchar *
+hostname1_proxy_get_chassis (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "Chassis");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static const gchar *
+hostname1_proxy_get_kernel_name (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelName");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static const gchar *
+hostname1_proxy_get_kernel_release (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelRelease");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static const gchar *
+hostname1_proxy_get_kernel_version (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelVersion");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static const gchar *
+hostname1_proxy_get_operating_system_pretty_name (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "OperatingSystemPrettyName");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static const gchar *
+hostname1_proxy_get_operating_system_cpename (Hostname1 *object)
+{
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "OperatingSystemCPEName");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
 static void
 hostname1_proxy_init (Hostname1Proxy *proxy)
 {
@@ -1583,6 +5795,12 @@ hostname1_proxy_iface_init (Hostname1Iface *iface)
   iface->get_static_hostname = hostname1_proxy_get_static_hostname;
   iface->get_pretty_hostname = hostname1_proxy_get_pretty_hostname;
   iface->get_icon_name = hostname1_proxy_get_icon_name;
+  iface->get_chassis = hostname1_proxy_get_chassis;
+  iface->get_kernel_name = hostname1_proxy_get_kernel_name;
+  iface->get_kernel_release = hostname1_proxy_get_kernel_release;
+  iface->get_kernel_version = hostname1_proxy_get_kernel_version;
+  iface->get_operating_system_pretty_name = hostname1_proxy_get_operating_system_pretty_name;
+  iface->get_operating_system_cpename = hostname1_proxy_get_operating_system_cpename;
 }
 
 /**
@@ -2009,7 +6227,7 @@ hostname1_skeleton_finalize (GObject *object)
 {
   Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   guint n;
-  for (n = 0; n < 4; n++)
+  for (n = 0; n < 10; n++)
     g_value_unset (&skeleton->priv->properties[n]);
   g_free (skeleton->priv->properties);
   g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
@@ -2027,7 +6245,7 @@ hostname1_skeleton_get_property (GObject      *object,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
   Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
-  g_assert (prop_id != 0 && prop_id - 1 < 4);
+  g_assert (prop_id != 0 && prop_id - 1 < 10);
   g_mutex_lock (&skeleton->priv->lock);
   g_value_copy (&skeleton->priv->properties[prop_id - 1], value);
   g_mutex_unlock (&skeleton->priv->lock);
@@ -2144,7 +6362,7 @@ hostname1_skeleton_set_property (GObject      *object,
   GParamSpec   *pspec)
 {
   Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
-  g_assert (prop_id != 0 && prop_id - 1 < 4);
+  g_assert (prop_id != 0 && prop_id - 1 < 10);
   g_mutex_lock (&skeleton->priv->lock);
   g_object_freeze_notify (object);
   if (!_g_value_equal (value, &skeleton->priv->properties[prop_id - 1]))
@@ -2169,11 +6387,17 @@ hostname1_skeleton_init (Hostname1Skeleton *skeleton)
 
   g_mutex_init (&skeleton->priv->lock);
   skeleton->priv->context = g_main_context_ref_thread_default ();
-  skeleton->priv->properties = g_new0 (GValue, 4);
+  skeleton->priv->properties = g_new0 (GValue, 10);
   g_value_init (&skeleton->priv->properties[0], G_TYPE_STRING);
   g_value_init (&skeleton->priv->properties[1], G_TYPE_STRING);
   g_value_init (&skeleton->priv->properties[2], G_TYPE_STRING);
   g_value_init (&skeleton->priv->properties[3], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[4], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[5], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[6], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[7], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[8], G_TYPE_STRING);
+  g_value_init (&skeleton->priv->properties[9], G_TYPE_STRING);
 }
 
 static const gchar *
@@ -2220,6 +6444,72 @@ hostname1_skeleton_get_icon_name (Hostname1 *object)
   return value;
 }
 
+static const gchar *
+hostname1_skeleton_get_chassis (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[4]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static const gchar *
+hostname1_skeleton_get_kernel_name (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[5]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static const gchar *
+hostname1_skeleton_get_kernel_release (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[6]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static const gchar *
+hostname1_skeleton_get_kernel_version (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[7]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static const gchar *
+hostname1_skeleton_get_operating_system_pretty_name (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[8]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static const gchar *
+hostname1_skeleton_get_operating_system_cpename (Hostname1 *object)
+{
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
+  const gchar *value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_string (&(skeleton->priv->properties[9]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
 static void
 hostname1_skeleton_class_init (Hostname1SkeletonClass *klass)
 {
@@ -2253,6 +6543,12 @@ hostname1_skeleton_iface_init (Hostname1Iface *iface)
   iface->get_static_hostname = hostname1_skeleton_get_static_hostname;
   iface->get_pretty_hostname = hostname1_skeleton_get_pretty_hostname;
   iface->get_icon_name = hostname1_skeleton_get_icon_name;
+  iface->get_chassis = hostname1_skeleton_get_chassis;
+  iface->get_kernel_name = hostname1_skeleton_get_kernel_name;
+  iface->get_kernel_release = hostname1_skeleton_get_kernel_release;
+  iface->get_kernel_version = hostname1_skeleton_get_kernel_version;
+  iface->get_operating_system_pretty_name = hostname1_skeleton_get_operating_system_pretty_name;
+  iface->get_operating_system_cpename = hostname1_skeleton_get_operating_system_cpename;
 }
 
 /**

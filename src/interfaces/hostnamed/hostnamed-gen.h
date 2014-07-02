@@ -13,6 +13,574 @@ G_BEGIN_DECLS
 
 
 /* ------------------------------------------------------------------------ */
+/* Declarations for org.freedesktop.DBus.Peer */
+
+#define TYPE_DBUS_PEER (dbus_peer_get_type ())
+#define DBUS_PEER(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PEER, DBusPeer))
+#define IS_DBUS_PEER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PEER))
+#define DBUS_PEER_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_DBUS_PEER, DBusPeerIface))
+
+struct _DBusPeer;
+typedef struct _DBusPeer DBusPeer;
+typedef struct _DBusPeerIface DBusPeerIface;
+
+struct _DBusPeerIface
+{
+  GTypeInterface parent_iface;
+
+  gboolean (*handle_get_machine_id) (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation);
+
+  gboolean (*handle_ping) (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation);
+
+};
+
+GType dbus_peer_get_type (void) G_GNUC_CONST;
+
+GDBusInterfaceInfo *dbus_peer_interface_info (void);
+guint dbus_peer_override_properties (GObjectClass *klass, guint property_id_begin);
+
+
+/* D-Bus method call completion functions: */
+void dbus_peer_complete_ping (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation);
+
+void dbus_peer_complete_get_machine_id (
+    DBusPeer *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *machine_uuid);
+
+
+
+/* D-Bus method calls: */
+void dbus_peer_call_ping (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_peer_call_ping_finish (
+    DBusPeer *proxy,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_peer_call_ping_sync (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GError **error);
+
+void dbus_peer_call_get_machine_id (
+    DBusPeer *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_peer_call_get_machine_id_finish (
+    DBusPeer *proxy,
+    gchar **out_machine_uuid,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_peer_call_get_machine_id_sync (
+    DBusPeer *proxy,
+    gchar **out_machine_uuid,
+    GCancellable *cancellable,
+    GError **error);
+
+
+
+/* ---- */
+
+#define TYPE_DBUS_PEER_PROXY (dbus_peer_proxy_get_type ())
+#define DBUS_PEER_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PEER_PROXY, DBusPeerProxy))
+#define DBUS_PEER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_PEER_PROXY, DBusPeerProxyClass))
+#define DBUS_PEER_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_PEER_PROXY, DBusPeerProxyClass))
+#define IS_DBUS_PEER_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PEER_PROXY))
+#define IS_DBUS_PEER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_PEER_PROXY))
+
+typedef struct _DBusPeerProxy DBusPeerProxy;
+typedef struct _DBusPeerProxyClass DBusPeerProxyClass;
+typedef struct _DBusPeerProxyPrivate DBusPeerProxyPrivate;
+
+struct _DBusPeerProxy
+{
+  /*< private >*/
+  GDBusProxy parent_instance;
+  DBusPeerProxyPrivate *priv;
+};
+
+struct _DBusPeerProxyClass
+{
+  GDBusProxyClass parent_class;
+};
+
+GType dbus_peer_proxy_get_type (void) G_GNUC_CONST;
+
+void dbus_peer_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusPeer *dbus_peer_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusPeer *dbus_peer_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+void dbus_peer_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusPeer *dbus_peer_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusPeer *dbus_peer_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+
+/* ---- */
+
+#define TYPE_DBUS_PEER_SKELETON (dbus_peer_skeleton_get_type ())
+#define DBUS_PEER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PEER_SKELETON, DBusPeerSkeleton))
+#define DBUS_PEER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_PEER_SKELETON, DBusPeerSkeletonClass))
+#define DBUS_PEER_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_PEER_SKELETON, DBusPeerSkeletonClass))
+#define IS_DBUS_PEER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PEER_SKELETON))
+#define IS_DBUS_PEER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_PEER_SKELETON))
+
+typedef struct _DBusPeerSkeleton DBusPeerSkeleton;
+typedef struct _DBusPeerSkeletonClass DBusPeerSkeletonClass;
+typedef struct _DBusPeerSkeletonPrivate DBusPeerSkeletonPrivate;
+
+struct _DBusPeerSkeleton
+{
+  /*< private >*/
+  GDBusInterfaceSkeleton parent_instance;
+  DBusPeerSkeletonPrivate *priv;
+};
+
+struct _DBusPeerSkeletonClass
+{
+  GDBusInterfaceSkeletonClass parent_class;
+};
+
+GType dbus_peer_skeleton_get_type (void) G_GNUC_CONST;
+
+DBusPeer *dbus_peer_skeleton_new (void);
+
+
+/* ------------------------------------------------------------------------ */
+/* Declarations for org.freedesktop.DBus.Introspectable */
+
+#define TYPE_DBUS_INTROSPECTABLE (dbus_introspectable_get_type ())
+#define DBUS_INTROSPECTABLE(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_INTROSPECTABLE, DBusIntrospectable))
+#define IS_DBUS_INTROSPECTABLE(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_INTROSPECTABLE))
+#define DBUS_INTROSPECTABLE_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_DBUS_INTROSPECTABLE, DBusIntrospectableIface))
+
+struct _DBusIntrospectable;
+typedef struct _DBusIntrospectable DBusIntrospectable;
+typedef struct _DBusIntrospectableIface DBusIntrospectableIface;
+
+struct _DBusIntrospectableIface
+{
+  GTypeInterface parent_iface;
+
+  gboolean (*handle_introspect) (
+    DBusIntrospectable *object,
+    GDBusMethodInvocation *invocation);
+
+};
+
+GType dbus_introspectable_get_type (void) G_GNUC_CONST;
+
+GDBusInterfaceInfo *dbus_introspectable_interface_info (void);
+guint dbus_introspectable_override_properties (GObjectClass *klass, guint property_id_begin);
+
+
+/* D-Bus method call completion functions: */
+void dbus_introspectable_complete_introspect (
+    DBusIntrospectable *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *data);
+
+
+
+/* D-Bus method calls: */
+void dbus_introspectable_call_introspect (
+    DBusIntrospectable *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_introspectable_call_introspect_finish (
+    DBusIntrospectable *proxy,
+    gchar **out_data,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_introspectable_call_introspect_sync (
+    DBusIntrospectable *proxy,
+    gchar **out_data,
+    GCancellable *cancellable,
+    GError **error);
+
+
+
+/* ---- */
+
+#define TYPE_DBUS_INTROSPECTABLE_PROXY (dbus_introspectable_proxy_get_type ())
+#define DBUS_INTROSPECTABLE_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_INTROSPECTABLE_PROXY, DBusIntrospectableProxy))
+#define DBUS_INTROSPECTABLE_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_INTROSPECTABLE_PROXY, DBusIntrospectableProxyClass))
+#define DBUS_INTROSPECTABLE_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_INTROSPECTABLE_PROXY, DBusIntrospectableProxyClass))
+#define IS_DBUS_INTROSPECTABLE_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_INTROSPECTABLE_PROXY))
+#define IS_DBUS_INTROSPECTABLE_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_INTROSPECTABLE_PROXY))
+
+typedef struct _DBusIntrospectableProxy DBusIntrospectableProxy;
+typedef struct _DBusIntrospectableProxyClass DBusIntrospectableProxyClass;
+typedef struct _DBusIntrospectableProxyPrivate DBusIntrospectableProxyPrivate;
+
+struct _DBusIntrospectableProxy
+{
+  /*< private >*/
+  GDBusProxy parent_instance;
+  DBusIntrospectableProxyPrivate *priv;
+};
+
+struct _DBusIntrospectableProxyClass
+{
+  GDBusProxyClass parent_class;
+};
+
+GType dbus_introspectable_proxy_get_type (void) G_GNUC_CONST;
+
+void dbus_introspectable_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusIntrospectable *dbus_introspectable_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusIntrospectable *dbus_introspectable_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+void dbus_introspectable_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusIntrospectable *dbus_introspectable_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusIntrospectable *dbus_introspectable_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+
+/* ---- */
+
+#define TYPE_DBUS_INTROSPECTABLE_SKELETON (dbus_introspectable_skeleton_get_type ())
+#define DBUS_INTROSPECTABLE_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_INTROSPECTABLE_SKELETON, DBusIntrospectableSkeleton))
+#define DBUS_INTROSPECTABLE_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_INTROSPECTABLE_SKELETON, DBusIntrospectableSkeletonClass))
+#define DBUS_INTROSPECTABLE_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_INTROSPECTABLE_SKELETON, DBusIntrospectableSkeletonClass))
+#define IS_DBUS_INTROSPECTABLE_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_INTROSPECTABLE_SKELETON))
+#define IS_DBUS_INTROSPECTABLE_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_INTROSPECTABLE_SKELETON))
+
+typedef struct _DBusIntrospectableSkeleton DBusIntrospectableSkeleton;
+typedef struct _DBusIntrospectableSkeletonClass DBusIntrospectableSkeletonClass;
+typedef struct _DBusIntrospectableSkeletonPrivate DBusIntrospectableSkeletonPrivate;
+
+struct _DBusIntrospectableSkeleton
+{
+  /*< private >*/
+  GDBusInterfaceSkeleton parent_instance;
+  DBusIntrospectableSkeletonPrivate *priv;
+};
+
+struct _DBusIntrospectableSkeletonClass
+{
+  GDBusInterfaceSkeletonClass parent_class;
+};
+
+GType dbus_introspectable_skeleton_get_type (void) G_GNUC_CONST;
+
+DBusIntrospectable *dbus_introspectable_skeleton_new (void);
+
+
+/* ------------------------------------------------------------------------ */
+/* Declarations for org.freedesktop.DBus.Properties */
+
+#define TYPE_DBUS_PROPERTIES (dbus_properties_get_type ())
+#define DBUS_PROPERTIES(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PROPERTIES, DBusProperties))
+#define IS_DBUS_PROPERTIES(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PROPERTIES))
+#define DBUS_PROPERTIES_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_DBUS_PROPERTIES, DBusPropertiesIface))
+
+struct _DBusProperties;
+typedef struct _DBusProperties DBusProperties;
+typedef struct _DBusPropertiesIface DBusPropertiesIface;
+
+struct _DBusPropertiesIface
+{
+  GTypeInterface parent_iface;
+
+
+  gboolean (*handle_get) (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_interface,
+    const gchar *arg_property);
+
+  gboolean (*handle_get_all) (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_interface);
+
+  gboolean (*handle_set) (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant *arg_value);
+
+  void (*properties_changed) (
+    DBusProperties *object,
+    const gchar *arg_interface,
+    GVariant *arg_changed_properties,
+    const gchar *const *arg_invalidated_properties);
+
+};
+
+GType dbus_properties_get_type (void) G_GNUC_CONST;
+
+GDBusInterfaceInfo *dbus_properties_interface_info (void);
+guint dbus_properties_override_properties (GObjectClass *klass, guint property_id_begin);
+
+
+/* D-Bus method call completion functions: */
+void dbus_properties_complete_get (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    GVariant *value);
+
+void dbus_properties_complete_get_all (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation,
+    GVariant *properties);
+
+void dbus_properties_complete_set (
+    DBusProperties *object,
+    GDBusMethodInvocation *invocation);
+
+
+
+/* D-Bus signal emissions functions: */
+void dbus_properties_emit_properties_changed (
+    DBusProperties *object,
+    const gchar *arg_interface,
+    GVariant *arg_changed_properties,
+    const gchar *const *arg_invalidated_properties);
+
+
+
+/* D-Bus method calls: */
+void dbus_properties_call_get (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_properties_call_get_finish (
+    DBusProperties *proxy,
+    GVariant **out_value,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_properties_call_get_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant **out_value,
+    GCancellable *cancellable,
+    GError **error);
+
+void dbus_properties_call_get_all (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_properties_call_get_all_finish (
+    DBusProperties *proxy,
+    GVariant **out_properties,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_properties_call_get_all_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    GVariant **out_properties,
+    GCancellable *cancellable,
+    GError **error);
+
+void dbus_properties_call_set (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant *arg_value,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean dbus_properties_call_set_finish (
+    DBusProperties *proxy,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean dbus_properties_call_set_sync (
+    DBusProperties *proxy,
+    const gchar *arg_interface,
+    const gchar *arg_property,
+    GVariant *arg_value,
+    GCancellable *cancellable,
+    GError **error);
+
+
+
+/* ---- */
+
+#define TYPE_DBUS_PROPERTIES_PROXY (dbus_properties_proxy_get_type ())
+#define DBUS_PROPERTIES_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PROPERTIES_PROXY, DBusPropertiesProxy))
+#define DBUS_PROPERTIES_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_PROPERTIES_PROXY, DBusPropertiesProxyClass))
+#define DBUS_PROPERTIES_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_PROPERTIES_PROXY, DBusPropertiesProxyClass))
+#define IS_DBUS_PROPERTIES_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PROPERTIES_PROXY))
+#define IS_DBUS_PROPERTIES_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_PROPERTIES_PROXY))
+
+typedef struct _DBusPropertiesProxy DBusPropertiesProxy;
+typedef struct _DBusPropertiesProxyClass DBusPropertiesProxyClass;
+typedef struct _DBusPropertiesProxyPrivate DBusPropertiesProxyPrivate;
+
+struct _DBusPropertiesProxy
+{
+  /*< private >*/
+  GDBusProxy parent_instance;
+  DBusPropertiesProxyPrivate *priv;
+};
+
+struct _DBusPropertiesProxyClass
+{
+  GDBusProxyClass parent_class;
+};
+
+GType dbus_properties_proxy_get_type (void) G_GNUC_CONST;
+
+void dbus_properties_proxy_new (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusProperties *dbus_properties_proxy_new_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusProperties *dbus_properties_proxy_new_sync (
+    GDBusConnection     *connection,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+void dbus_properties_proxy_new_for_bus (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GAsyncReadyCallback  callback,
+    gpointer             user_data);
+DBusProperties *dbus_properties_proxy_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error);
+DBusProperties *dbus_properties_proxy_new_for_bus_sync (
+    GBusType             bus_type,
+    GDBusProxyFlags      flags,
+    const gchar         *name,
+    const gchar         *object_path,
+    GCancellable        *cancellable,
+    GError             **error);
+
+
+/* ---- */
+
+#define TYPE_DBUS_PROPERTIES_SKELETON (dbus_properties_skeleton_get_type ())
+#define DBUS_PROPERTIES_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_DBUS_PROPERTIES_SKELETON, DBusPropertiesSkeleton))
+#define DBUS_PROPERTIES_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_DBUS_PROPERTIES_SKELETON, DBusPropertiesSkeletonClass))
+#define DBUS_PROPERTIES_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_DBUS_PROPERTIES_SKELETON, DBusPropertiesSkeletonClass))
+#define IS_DBUS_PROPERTIES_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_DBUS_PROPERTIES_SKELETON))
+#define IS_DBUS_PROPERTIES_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_DBUS_PROPERTIES_SKELETON))
+
+typedef struct _DBusPropertiesSkeleton DBusPropertiesSkeleton;
+typedef struct _DBusPropertiesSkeletonClass DBusPropertiesSkeletonClass;
+typedef struct _DBusPropertiesSkeletonPrivate DBusPropertiesSkeletonPrivate;
+
+struct _DBusPropertiesSkeleton
+{
+  /*< private >*/
+  GDBusInterfaceSkeleton parent_instance;
+  DBusPropertiesSkeletonPrivate *priv;
+};
+
+struct _DBusPropertiesSkeletonClass
+{
+  GDBusInterfaceSkeletonClass parent_class;
+};
+
+GType dbus_properties_skeleton_get_type (void) G_GNUC_CONST;
+
+DBusProperties *dbus_properties_skeleton_new (void);
+
+
+/* ------------------------------------------------------------------------ */
 /* Declarations for org.freedesktop.hostname1 */
 
 #define TYPE_HOSTNAME1 (hostname1_get_type ())
@@ -29,33 +597,51 @@ struct _Hostname1Iface
   GTypeInterface parent_iface;
 
 
+  gboolean (*handle_set_chassis) (
+    Hostname1 *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1);
+
   gboolean (*handle_set_hostname) (
     Hostname1 *object,
     GDBusMethodInvocation *invocation,
-    const gchar *arg_name,
-    gboolean arg_user_interaction);
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_icon_name) (
     Hostname1 *object,
     GDBusMethodInvocation *invocation,
-    const gchar *arg_name,
-    gboolean arg_user_interaction);
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_pretty_hostname) (
     Hostname1 *object,
     GDBusMethodInvocation *invocation,
-    const gchar *arg_name,
-    gboolean arg_user_interaction);
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_static_hostname) (
     Hostname1 *object,
     GDBusMethodInvocation *invocation,
-    const gchar *arg_name,
-    gboolean arg_user_interaction);
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1);
+
+  const gchar * (*get_chassis) (Hostname1 *object);
 
   const gchar * (*get_hostname) (Hostname1 *object);
 
   const gchar * (*get_icon_name) (Hostname1 *object);
+
+  const gchar * (*get_kernel_name) (Hostname1 *object);
+
+  const gchar * (*get_kernel_release) (Hostname1 *object);
+
+  const gchar * (*get_kernel_version) (Hostname1 *object);
+
+  const gchar * (*get_operating_system_cpename) (Hostname1 *object);
+
+  const gchar * (*get_operating_system_pretty_name) (Hostname1 *object);
 
   const gchar * (*get_pretty_hostname) (Hostname1 *object);
 
@@ -86,13 +672,17 @@ void hostname1_complete_set_icon_name (
     Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
+void hostname1_complete_set_chassis (
+    Hostname1 *object,
+    GDBusMethodInvocation *invocation);
+
 
 
 /* D-Bus method calls: */
 void hostname1_call_set_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
@@ -104,15 +694,15 @@ gboolean hostname1_call_set_hostname_finish (
 
 gboolean hostname1_call_set_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
 void hostname1_call_set_static_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
@@ -124,15 +714,15 @@ gboolean hostname1_call_set_static_hostname_finish (
 
 gboolean hostname1_call_set_static_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
 void hostname1_call_set_pretty_hostname (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
@@ -144,15 +734,15 @@ gboolean hostname1_call_set_pretty_hostname_finish (
 
 gboolean hostname1_call_set_pretty_hostname_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
 void hostname1_call_set_icon_name (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
@@ -164,8 +754,28 @@ gboolean hostname1_call_set_icon_name_finish (
 
 gboolean hostname1_call_set_icon_name_sync (
     Hostname1 *proxy,
-    const gchar *arg_name,
-    gboolean arg_user_interaction,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    GCancellable *cancellable,
+    GError **error);
+
+void hostname1_call_set_chassis (
+    Hostname1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean hostname1_call_set_chassis_finish (
+    Hostname1 *proxy,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean hostname1_call_set_chassis_sync (
+    Hostname1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
@@ -187,6 +797,30 @@ void hostname1_set_pretty_hostname (Hostname1 *object, const gchar *value);
 const gchar *hostname1_get_icon_name (Hostname1 *object);
 gchar *hostname1_dup_icon_name (Hostname1 *object);
 void hostname1_set_icon_name (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_chassis (Hostname1 *object);
+gchar *hostname1_dup_chassis (Hostname1 *object);
+void hostname1_set_chassis (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_kernel_name (Hostname1 *object);
+gchar *hostname1_dup_kernel_name (Hostname1 *object);
+void hostname1_set_kernel_name (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_kernel_release (Hostname1 *object);
+gchar *hostname1_dup_kernel_release (Hostname1 *object);
+void hostname1_set_kernel_release (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_kernel_version (Hostname1 *object);
+gchar *hostname1_dup_kernel_version (Hostname1 *object);
+void hostname1_set_kernel_version (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_operating_system_pretty_name (Hostname1 *object);
+gchar *hostname1_dup_operating_system_pretty_name (Hostname1 *object);
+void hostname1_set_operating_system_pretty_name (Hostname1 *object, const gchar *value);
+
+const gchar *hostname1_get_operating_system_cpename (Hostname1 *object);
+gchar *hostname1_dup_operating_system_cpename (Hostname1 *object);
+void hostname1_set_operating_system_cpename (Hostname1 *object, const gchar *value);
 
 
 /* ---- */

@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/local/bin/bash
+# JUST for now
 
 # Copyright (c) 2014 Ian Sutton <ian@kremlin.cc>
 #
