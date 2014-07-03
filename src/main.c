@@ -29,13 +29,6 @@ gboolean systemd_utils_init() {
         g_printf("FAILED to open config %s!\n", tmp);
         return FALSE;
     } 
-    /*if(!init_xml()) {
-        const gchar * const *tmp;
-        tmp = g_get_system_data_dirs();
-
-        g_printf("FAILED to install xml configs in %s!\n", tmp[0]);
-        return FALSE;
-    }*/
     return TRUE;
 }
 

@@ -62,42 +62,6 @@ gboolean config_init() {
     config_path = "/etc/systemd_compat.conf";
     config_lstat_ret = g_lstat(config_path, config_lstat);
 
-    /* this should all be handled in the makefile
-     * does conf exist?
-    if(config_lstat_ret) {
-
-        if(g_access("/etc/", W_OK)) {
-            g_printf("%s\n", "no write permissions for /etc/! exiting..");
-            return FALSE;
-        }
-
-        int config_descr; 
-        config_descr = g_open(config_path, O_CREAT, 644);
-
-        gchar *posix_hostname;
-        posix_hostname = g_malloc(HOST_NAME_MAX); 
-
-        gethostname(posix_hostname, HOST_NAME_MAX);
-
-        g_key_file_set_string(config, "hostnamed", "Hostname", posix_hostname);
-        g_key_file_set_string(config, "hostnamed", "PrettyHostname", "");
-        g_key_file_set_string(config, "hostnamed", "IconName", "Computer"); 
-        g_key_file_set_string(config, "hostnamed", "ChassisType","laptop"); 
-
-        if(!g_key_file_save_to_file(config, config_path, NULL)) {
-            g_printf("failed to write config to %s!\n", config_path);
-            g_free(posix_hostname);
-            return FALSE;
-        }
-
-        g_printf("wrote config to %s\n", config_path);
-
-        g_free(posix_hostname);
-
-        return TRUE; 
-
-    } else { */
-
     if(g_access(config_path, W_OK)) {
 
         g_printf("%s\n", "no write permissions for /etc/! exiting..");
@@ -109,59 +73,6 @@ gboolean config_init() {
     g_printf("could not read config at %s! exiting..", config_path);
     return FALSE;
 }
-/* this definitely does not need to exist
-gboolean init_xml() {
-
-    const gchar * const *data_dir_prefix;
-    int xml_lstat_ret;
-    GStatBuf *xml_lstat;
-
-    data_dir_prefix = g_get_system_data_dirs();
-    data_dir = g_strconcat(data_dir_prefix[0], "systemd_compat", NULL);
-    
-    xml_lstat_ret = g_lstat(data_dir, xml_lstat);
-
-    if(xml_lstat_ret) {
-
-        if(g_access(data_dir_prefix[0], W_OK)) {
-            g_printf("no write permissions for %s! exiting...\n", data_dir_prefix[0]);
-            return FALSE;
-        }
-
-        g_printf("creating xml data directory %s...\n", data_dir);
-
-        if(g_mkdir(data_dir, 644) || g_access) {
-            g_printf("failed to create dir %s...\n", data_dir);
-            return FALSE;
-        }
-
-        if(!read_xml_from_installconf()) {
-            g_printf("failed to read xml configs in conf/...\n");
-            return FALSE;
-        }
-
-        if(!populate_xml_data_dir()) {
-            g_printf("failed to write xml configs to %s...\n", data_dir);
-            return FALSE;
-        }
-
-        if(!set_xml_descriptors()) {
-            g_printf("failed to fopen xml configs...\n");
-            return FALSE;
-        }
-
-        return TRUE;
-    
-    } else {
-
-        if(!set_xml_descriptors()) {
-            g_printf("failed to fopen xml configs...\n");
-            return FALSE;
-        }
-
-        return TRUE;
-    }
-} */
 
 void clean_config() {
 
