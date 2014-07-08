@@ -8,30 +8,30 @@
   </refmeta>  <refnamediv>    <refname>org.freedesktop.locale1</refname>    <refpurpose></refpurpose>  </refnamediv>  <refsynopsisdiv role="synopsis">
     <title role="synopsis.title">Methods</title>
     <synopsis>
-<link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale</link>           (IN  as locale,
-                     IN  b  user_interaction);
-<link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard</link> (IN  s  keymap,
-                     IN  s  keymap_toggle,
-                     IN  b  convert,
-                     IN  b  user_interaction);
-<link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard</link>      (IN  s  layout,
-                     IN  s  model,
-                     IN  s  variant,
-                     IN  s  options,
-                     IN  b  convert,
-                     IN  b  user_interaction);
+<link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale</link>           (IN  as unnamed_arg0,
+                     IN  b  unnamed_arg1);
+<link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard</link> (IN  s  unnamed_arg0,
+                     IN  s  unnamed_arg1,
+                     IN  b  unnamed_arg2,
+                     IN  b  unnamed_arg3);
+<link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard</link>      (IN  s  unnamed_arg0,
+                     IN  s  unnamed_arg1,
+                     IN  s  unnamed_arg2,
+                     IN  s  unnamed_arg3,
+                     IN  b  unnamed_arg4,
+                     IN  b  unnamed_arg5);
 </synopsis>
   </refsynopsisdiv>
   <refsect1 role="properties">
     <title role="properties.title">Properties</title>
     <synopsis>
 <link linkend="gdbus-property-org-freedesktop-locale1.Locale">Locale</link>                readable   as
-<link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">VConsoleKeymap</link>        readable   s
-<link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">VConsoleKeymapToggle</link>  readable   s
 <link linkend="gdbus-property-org-freedesktop-locale1.X11Layout">X11Layout</link>             readable   s
 <link linkend="gdbus-property-org-freedesktop-locale1.X11Model">X11Model</link>              readable   s
 <link linkend="gdbus-property-org-freedesktop-locale1.X11Variant">X11Variant</link>            readable   s
 <link linkend="gdbus-property-org-freedesktop-locale1.X11Options">X11Options</link>            readable   s
+<link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">VConsoleKeymap</link>        readable   s
+<link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">VConsoleKeymapToggle</link>  readable   s
 </synopsis>
   </refsect1>
 <refsect1 role="desc" id="gdbus-interface-org-freedesktop-locale1">
@@ -44,17 +44,17 @@
   <title>The SetLocale() method</title>
   <indexterm zone="gdbus-method-org-freedesktop-locale1.SetLocale"><primary sortas="locale1.SetLocale">org.freedesktop.locale1.SetLocale()</primary></indexterm>
 <programlisting>
-SetLocale (IN  as locale,
-           IN  b  user_interaction);
+SetLocale (IN  as unnamed_arg0,
+           IN  b  unnamed_arg1);
 </programlisting>
 <para></para>
 <variablelist role="params">
 <varlistentry>
-  <term><literal>IN as <parameter>locale</parameter></literal>:</term>
+  <term><literal>IN as <parameter>unnamed_arg0</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN b <parameter>user_interaction</parameter></literal>:</term>
+  <term><literal>IN b <parameter>unnamed_arg1</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 </variablelist>
@@ -63,27 +63,27 @@ SetLocale (IN  as locale,
   <title>The SetVConsoleKeyboard() method</title>
   <indexterm zone="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard"><primary sortas="locale1.SetVConsoleKeyboard">org.freedesktop.locale1.SetVConsoleKeyboard()</primary></indexterm>
 <programlisting>
-SetVConsoleKeyboard (IN  s keymap,
-                     IN  s keymap_toggle,
-                     IN  b convert,
-                     IN  b user_interaction);
+SetVConsoleKeyboard (IN  s unnamed_arg0,
+                     IN  s unnamed_arg1,
+                     IN  b unnamed_arg2,
+                     IN  b unnamed_arg3);
 </programlisting>
 <para></para>
 <variablelist role="params">
 <varlistentry>
-  <term><literal>IN s <parameter>keymap</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg0</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN s <parameter>keymap_toggle</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg1</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN b <parameter>convert</parameter></literal>:</term>
+  <term><literal>IN b <parameter>unnamed_arg2</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN b <parameter>user_interaction</parameter></literal>:</term>
+  <term><literal>IN b <parameter>unnamed_arg3</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 </variablelist>
@@ -92,37 +92,37 @@ SetVConsoleKeyboard (IN  s keymap,
   <title>The SetX11Keyboard() method</title>
   <indexterm zone="gdbus-method-org-freedesktop-locale1.SetX11Keyboard"><primary sortas="locale1.SetX11Keyboard">org.freedesktop.locale1.SetX11Keyboard()</primary></indexterm>
 <programlisting>
-SetX11Keyboard (IN  s layout,
-                IN  s model,
-                IN  s variant,
-                IN  s options,
-                IN  b convert,
-                IN  b user_interaction);
+SetX11Keyboard (IN  s unnamed_arg0,
+                IN  s unnamed_arg1,
+                IN  s unnamed_arg2,
+                IN  s unnamed_arg3,
+                IN  b unnamed_arg4,
+                IN  b unnamed_arg5);
 </programlisting>
 <para></para>
 <variablelist role="params">
 <varlistentry>
-  <term><literal>IN s <parameter>layout</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg0</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN s <parameter>model</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg1</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN s <parameter>variant</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg2</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN s <parameter>options</parameter></literal>:</term>
+  <term><literal>IN s <parameter>unnamed_arg3</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN b <parameter>convert</parameter></literal>:</term>
+  <term><literal>IN b <parameter>unnamed_arg4</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 <varlistentry>
-  <term><literal>IN b <parameter>user_interaction</parameter></literal>:</term>
+  <term><literal>IN b <parameter>unnamed_arg5</parameter></literal>:</term>
   <listitem><para></para></listitem>
 </varlistentry>
 </variablelist>
@@ -135,22 +135,6 @@ SetX11Keyboard (IN  s layout,
   <indexterm zone="gdbus-property-org-freedesktop-locale1.Locale"><primary sortas="locale1:Locale">org.freedesktop.locale1:Locale</primary></indexterm>
 <programlisting>
 Locale  readable   as
-</programlisting>
-<para></para>
-</refsect2>
-<refsect2 role="property" id="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">
-  <title>The "VConsoleKeymap" property</title>
-  <indexterm zone="gdbus-property-org-freedesktop-locale1.VConsoleKeymap"><primary sortas="locale1:VConsoleKeymap">org.freedesktop.locale1:VConsoleKeymap</primary></indexterm>
-<programlisting>
-VConsoleKeymap  readable   s
-</programlisting>
-<para></para>
-</refsect2>
-<refsect2 role="property" id="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">
-  <title>The "VConsoleKeymapToggle" property</title>
-  <indexterm zone="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle"><primary sortas="locale1:VConsoleKeymapToggle">org.freedesktop.locale1:VConsoleKeymapToggle</primary></indexterm>
-<programlisting>
-VConsoleKeymapToggle  readable   s
 </programlisting>
 <para></para>
 </refsect2>
@@ -183,6 +167,22 @@ X11Variant  readable   s
   <indexterm zone="gdbus-property-org-freedesktop-locale1.X11Options"><primary sortas="locale1:X11Options">org.freedesktop.locale1:X11Options</primary></indexterm>
 <programlisting>
 X11Options  readable   s
+</programlisting>
+<para></para>
+</refsect2>
+<refsect2 role="property" id="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">
+  <title>The "VConsoleKeymap" property</title>
+  <indexterm zone="gdbus-property-org-freedesktop-locale1.VConsoleKeymap"><primary sortas="locale1:VConsoleKeymap">org.freedesktop.locale1:VConsoleKeymap</primary></indexterm>
+<programlisting>
+VConsoleKeymap  readable   s
+</programlisting>
+<para></para>
+</refsect2>
+<refsect2 role="property" id="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">
+  <title>The "VConsoleKeymapToggle" property</title>
+  <indexterm zone="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle"><primary sortas="locale1:VConsoleKeymapToggle">org.freedesktop.locale1:VConsoleKeymapToggle</primary></indexterm>
+<programlisting>
+VConsoleKeymapToggle  readable   s
 </programlisting>
 <para></para>
 </refsect2>

@@ -15,61 +15,61 @@ G_BEGIN_DECLS
 /* ------------------------------------------------------------------------ */
 /* Declarations for org.freedesktop.login1.Manager */
 
-#define TYPE_LOGIN1_MANAGER (login1_manager_get_type ())
-#define LOGIN1_MANAGER(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOGIN1_MANAGER, Login1Manager))
-#define IS_LOGIN1_MANAGER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOGIN1_MANAGER))
-#define LOGIN1_MANAGER_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_LOGIN1_MANAGER, Login1ManagerIface))
+#define LOGIND_TYPE_LOGIN1_MANAGER (logind_login1_manager_get_type ())
+#define LOGIND_LOGIN1_MANAGER(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_LOGIN1_MANAGER, logindLogin1Manager))
+#define LOGIND_IS_LOGIN1_MANAGER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_LOGIN1_MANAGER))
+#define LOGIND_LOGIN1_MANAGER_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), LOGIND_TYPE_LOGIN1_MANAGER, logindLogin1ManagerIface))
 
-struct _Login1Manager;
-typedef struct _Login1Manager Login1Manager;
-typedef struct _Login1ManagerIface Login1ManagerIface;
+struct _logindLogin1Manager;
+typedef struct _logindLogin1Manager logindLogin1Manager;
+typedef struct _logindLogin1ManagerIface logindLogin1ManagerIface;
 
-struct _Login1ManagerIface
+struct _logindLogin1ManagerIface
 {
   GTypeInterface parent_iface;
 
 
 
   gboolean (*handle_activate_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_activate_session_on_seat) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   gboolean (*handle_attach_device) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2);
 
   gboolean (*handle_can_hibernate) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_can_hybrid_sleep) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_can_power_off) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_can_reboot) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_can_suspend) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_create_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0,
     guint arg_unnamed_arg1,
@@ -87,47 +87,47 @@ struct _Login1ManagerIface
     GVariant *arg_unnamed_arg13);
 
   gboolean (*handle_flush_devices) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_get_seat) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_get_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_get_session_by_pid) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0);
 
   gboolean (*handle_get_user) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0);
 
   gboolean (*handle_get_user_by_pid) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0);
 
   gboolean (*handle_hibernate) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_hybrid_sleep) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_inhibit) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
@@ -135,224 +135,224 @@ struct _Login1ManagerIface
     const gchar *arg_unnamed_arg3);
 
   gboolean (*handle_kill_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gint arg_unnamed_arg2);
 
   gboolean (*handle_kill_user) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0,
     gint arg_unnamed_arg1);
 
   gboolean (*handle_list_inhibitors) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_list_seats) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_list_sessions) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_list_users) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_lock_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_lock_sessions) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
   gboolean (*handle_power_off) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_reboot) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_release_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_set_user_linger) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2);
 
   gboolean (*handle_suspend) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0);
 
   gboolean (*handle_terminate_seat) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_terminate_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_terminate_user) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     guint arg_unnamed_arg0);
 
   gboolean (*handle_unlock_session) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0);
 
   gboolean (*handle_unlock_sessions) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-  const gchar * (*get_block_inhibited) (Login1Manager *object);
+  const gchar * (*get_block_inhibited) (logindLogin1Manager *object);
 
-  const gchar * (*get_delay_inhibited) (Login1Manager *object);
+  const gchar * (*get_delay_inhibited) (logindLogin1Manager *object);
 
-  const gchar * (*get_handle_hibernate_key) (Login1Manager *object);
+  const gchar * (*get_handle_hibernate_key) (logindLogin1Manager *object);
 
-  const gchar * (*get_handle_lid_switch) (Login1Manager *object);
+  const gchar * (*get_handle_lid_switch) (logindLogin1Manager *object);
 
-  const gchar * (*get_handle_power_key) (Login1Manager *object);
+  const gchar * (*get_handle_power_key) (logindLogin1Manager *object);
 
-  const gchar * (*get_handle_suspend_key) (Login1Manager *object);
+  const gchar * (*get_handle_suspend_key) (logindLogin1Manager *object);
 
-  const gchar * (*get_idle_action) (Login1Manager *object);
+  const gchar * (*get_idle_action) (logindLogin1Manager *object);
 
-  guint64  (*get_idle_action_usec) (Login1Manager *object);
+  guint64  (*get_idle_action_usec) (logindLogin1Manager *object);
 
-  gboolean  (*get_idle_hint) (Login1Manager *object);
+  gboolean  (*get_idle_hint) (logindLogin1Manager *object);
 
-  guint64  (*get_idle_since_hint) (Login1Manager *object);
+  guint64  (*get_idle_since_hint) (logindLogin1Manager *object);
 
-  guint64  (*get_idle_since_hint_monotonic) (Login1Manager *object);
+  guint64  (*get_idle_since_hint_monotonic) (logindLogin1Manager *object);
 
-  guint64  (*get_inhibit_delay_max_usec) (Login1Manager *object);
+  guint64  (*get_inhibit_delay_max_usec) (logindLogin1Manager *object);
 
-  const gchar *const * (*get_kill_exclude_users) (Login1Manager *object);
+  const gchar *const * (*get_kill_exclude_users) (logindLogin1Manager *object);
 
-  const gchar *const * (*get_kill_only_users) (Login1Manager *object);
+  const gchar *const * (*get_kill_only_users) (logindLogin1Manager *object);
 
-  gboolean  (*get_kill_user_processes) (Login1Manager *object);
+  gboolean  (*get_kill_user_processes) (logindLogin1Manager *object);
 
-  guint  (*get_nauto_vts) (Login1Manager *object);
+  guint  (*get_nauto_vts) (logindLogin1Manager *object);
 
-  gboolean  (*get_preparing_for_shutdown) (Login1Manager *object);
+  gboolean  (*get_preparing_for_shutdown) (logindLogin1Manager *object);
 
-  gboolean  (*get_preparing_for_sleep) (Login1Manager *object);
+  gboolean  (*get_preparing_for_sleep) (logindLogin1Manager *object);
 
   void (*prepare_for_shutdown) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     gboolean arg_unnamed_arg0);
 
   void (*prepare_for_sleep) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     gboolean arg_unnamed_arg0);
 
   void (*seat_new) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   void (*seat_removed) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   void (*session_new) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   void (*session_removed) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   void (*user_new) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
   void (*user_removed) (
-    Login1Manager *object,
+    logindLogin1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
 };
 
-GType login1_manager_get_type (void) G_GNUC_CONST;
+GType logind_login1_manager_get_type (void) G_GNUC_CONST;
 
-GDBusInterfaceInfo *login1_manager_interface_info (void);
-guint login1_manager_override_properties (GObjectClass *klass, guint property_id_begin);
+GDBusInterfaceInfo *logind_login1_manager_interface_info (void);
+guint logind_login1_manager_override_properties (GObjectClass *klass, guint property_id_begin);
 
 
 /* D-Bus method call completion functions: */
-void login1_manager_complete_get_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_get_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1);
 
-void login1_manager_complete_get_session_by_pid (
-    Login1Manager *object,
+void logind_login1_manager_complete_get_session_by_pid (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1);
 
-void login1_manager_complete_get_user (
-    Login1Manager *object,
+void logind_login1_manager_complete_get_user (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1);
 
-void login1_manager_complete_get_user_by_pid (
-    Login1Manager *object,
+void logind_login1_manager_complete_get_user_by_pid (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1);
 
-void login1_manager_complete_get_seat (
-    Login1Manager *object,
+void logind_login1_manager_complete_get_seat (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1);
 
-void login1_manager_complete_list_sessions (
-    Login1Manager *object,
+void logind_login1_manager_complete_list_sessions (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0);
 
-void login1_manager_complete_list_users (
-    Login1Manager *object,
+void logind_login1_manager_complete_list_users (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0);
 
-void login1_manager_complete_list_seats (
-    Login1Manager *object,
+void logind_login1_manager_complete_list_seats (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0);
 
-void login1_manager_complete_list_inhibitors (
-    Login1Manager *object,
+void logind_login1_manager_complete_list_inhibitors (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0);
 
-void login1_manager_complete_create_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_create_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg14,
     const gchar *unnamed_arg15,
@@ -363,334 +363,334 @@ void login1_manager_complete_create_session (
     guint unnamed_arg20,
     gboolean unnamed_arg21);
 
-void login1_manager_complete_release_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_release_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_activate_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_activate_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_activate_session_on_seat (
-    Login1Manager *object,
+void logind_login1_manager_complete_activate_session_on_seat (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_lock_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_lock_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_unlock_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_unlock_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_lock_sessions (
-    Login1Manager *object,
+void logind_login1_manager_complete_lock_sessions (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_unlock_sessions (
-    Login1Manager *object,
+void logind_login1_manager_complete_unlock_sessions (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_kill_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_kill_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_kill_user (
-    Login1Manager *object,
+void logind_login1_manager_complete_kill_user (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_terminate_session (
-    Login1Manager *object,
+void logind_login1_manager_complete_terminate_session (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_terminate_user (
-    Login1Manager *object,
+void logind_login1_manager_complete_terminate_user (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_terminate_seat (
-    Login1Manager *object,
+void logind_login1_manager_complete_terminate_seat (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_set_user_linger (
-    Login1Manager *object,
+void logind_login1_manager_complete_set_user_linger (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_attach_device (
-    Login1Manager *object,
+void logind_login1_manager_complete_attach_device (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_flush_devices (
-    Login1Manager *object,
+void logind_login1_manager_complete_flush_devices (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_power_off (
-    Login1Manager *object,
+void logind_login1_manager_complete_power_off (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_reboot (
-    Login1Manager *object,
+void logind_login1_manager_complete_reboot (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_suspend (
-    Login1Manager *object,
+void logind_login1_manager_complete_suspend (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_hibernate (
-    Login1Manager *object,
+void logind_login1_manager_complete_hibernate (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_hybrid_sleep (
-    Login1Manager *object,
+void logind_login1_manager_complete_hybrid_sleep (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation);
 
-void login1_manager_complete_can_power_off (
-    Login1Manager *object,
+void logind_login1_manager_complete_can_power_off (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0);
 
-void login1_manager_complete_can_reboot (
-    Login1Manager *object,
+void logind_login1_manager_complete_can_reboot (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0);
 
-void login1_manager_complete_can_suspend (
-    Login1Manager *object,
+void logind_login1_manager_complete_can_suspend (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0);
 
-void login1_manager_complete_can_hibernate (
-    Login1Manager *object,
+void logind_login1_manager_complete_can_hibernate (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0);
 
-void login1_manager_complete_can_hybrid_sleep (
-    Login1Manager *object,
+void logind_login1_manager_complete_can_hybrid_sleep (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0);
 
-void login1_manager_complete_inhibit (
-    Login1Manager *object,
+void logind_login1_manager_complete_inhibit (
+    logindLogin1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg4);
 
 
 
 /* D-Bus signal emissions functions: */
-void login1_manager_emit_session_new (
-    Login1Manager *object,
+void logind_login1_manager_emit_session_new (
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_session_removed (
-    Login1Manager *object,
+void logind_login1_manager_emit_session_removed (
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_user_new (
-    Login1Manager *object,
+void logind_login1_manager_emit_user_new (
+    logindLogin1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_user_removed (
-    Login1Manager *object,
+void logind_login1_manager_emit_user_removed (
+    logindLogin1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_seat_new (
-    Login1Manager *object,
+void logind_login1_manager_emit_seat_new (
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_seat_removed (
-    Login1Manager *object,
+void logind_login1_manager_emit_seat_removed (
+    logindLogin1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1);
 
-void login1_manager_emit_prepare_for_shutdown (
-    Login1Manager *object,
+void logind_login1_manager_emit_prepare_for_shutdown (
+    logindLogin1Manager *object,
     gboolean arg_unnamed_arg0);
 
-void login1_manager_emit_prepare_for_sleep (
-    Login1Manager *object,
+void logind_login1_manager_emit_prepare_for_sleep (
+    logindLogin1Manager *object,
     gboolean arg_unnamed_arg0);
 
 
 
 /* D-Bus method calls: */
-void login1_manager_call_get_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_get_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_get_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_session_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_get_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_get_session_by_pid (
-    Login1Manager *proxy,
+void logind_login1_manager_call_get_session_by_pid (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_get_session_by_pid_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_session_by_pid_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_get_session_by_pid_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_session_by_pid_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_get_user (
-    Login1Manager *proxy,
+void logind_login1_manager_call_get_user (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_get_user_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_user_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_get_user_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_user_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_get_user_by_pid (
-    Login1Manager *proxy,
+void logind_login1_manager_call_get_user_by_pid (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_get_user_by_pid_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_user_by_pid_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_get_user_by_pid_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_user_by_pid_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_get_seat (
-    Login1Manager *proxy,
+void logind_login1_manager_call_get_seat (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_get_seat_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_seat_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_get_seat_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_get_seat_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_list_sessions (
-    Login1Manager *proxy,
+void logind_login1_manager_call_list_sessions (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_list_sessions_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_sessions_finish (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_list_sessions_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_sessions_sync (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_list_users (
-    Login1Manager *proxy,
+void logind_login1_manager_call_list_users (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_list_users_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_users_finish (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_list_users_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_users_sync (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_list_seats (
-    Login1Manager *proxy,
+void logind_login1_manager_call_list_seats (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_list_seats_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_seats_finish (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_list_seats_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_seats_sync (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_list_inhibitors (
-    Login1Manager *proxy,
+void logind_login1_manager_call_list_inhibitors (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_list_inhibitors_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_inhibitors_finish (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_list_inhibitors_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_list_inhibitors_sync (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_create_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_create_session (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     guint arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -709,8 +709,8 @@ void login1_manager_call_create_session (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_create_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_create_session_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg14,
     gchar **out_unnamed_arg15,
     gchar **out_unnamed_arg16,
@@ -722,8 +722,8 @@ gboolean login1_manager_call_create_session_finish (
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_create_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_create_session_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     guint arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -749,228 +749,228 @@ gboolean login1_manager_call_create_session_sync (
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_release_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_release_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_release_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_release_session_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_release_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_release_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_activate_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_activate_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_activate_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_activate_session_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_activate_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_activate_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_activate_session_on_seat (
-    Login1Manager *proxy,
+void logind_login1_manager_call_activate_session_on_seat (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_activate_session_on_seat_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_activate_session_on_seat_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_activate_session_on_seat_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_activate_session_on_seat_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_lock_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_lock_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_lock_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_lock_session_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_lock_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_lock_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_unlock_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_unlock_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_unlock_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_unlock_session_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_unlock_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_unlock_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_lock_sessions (
-    Login1Manager *proxy,
+void logind_login1_manager_call_lock_sessions (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_lock_sessions_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_lock_sessions_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_lock_sessions_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_lock_sessions_sync (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_unlock_sessions (
-    Login1Manager *proxy,
+void logind_login1_manager_call_unlock_sessions (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_unlock_sessions_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_unlock_sessions_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_unlock_sessions_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_unlock_sessions_sync (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_kill_session (
-    Login1Manager *proxy,
-    const gchar *arg_unnamed_arg0,
-    const gchar *arg_unnamed_arg1,
-    gint arg_unnamed_arg2,
-    GCancellable *cancellable,
-    GAsyncReadyCallback callback,
-    gpointer user_data);
-
-gboolean login1_manager_call_kill_session_finish (
-    Login1Manager *proxy,
-    GAsyncResult *res,
-    GError **error);
-
-gboolean login1_manager_call_kill_session_sync (
-    Login1Manager *proxy,
+void logind_login1_manager_call_kill_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gint arg_unnamed_arg2,
     GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean logind_login1_manager_call_kill_session_finish (
+    logindLogin1Manager *proxy,
+    GAsyncResult *res,
     GError **error);
 
-void login1_manager_call_kill_user (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_kill_session_sync (
+    logindLogin1Manager *proxy,
+    const gchar *arg_unnamed_arg0,
+    const gchar *arg_unnamed_arg1,
+    gint arg_unnamed_arg2,
+    GCancellable *cancellable,
+    GError **error);
+
+void logind_login1_manager_call_kill_user (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gint arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_kill_user_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_kill_user_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_kill_user_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_kill_user_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gint arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_terminate_session (
-    Login1Manager *proxy,
+void logind_login1_manager_call_terminate_session (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_terminate_session_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_session_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_terminate_session_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_session_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_terminate_user (
-    Login1Manager *proxy,
+void logind_login1_manager_call_terminate_user (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_terminate_user_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_user_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_terminate_user_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_user_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_terminate_seat (
-    Login1Manager *proxy,
+void logind_login1_manager_call_terminate_seat (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_terminate_seat_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_seat_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_terminate_seat_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_terminate_seat_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_set_user_linger (
-    Login1Manager *proxy,
+void logind_login1_manager_call_set_user_linger (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -978,21 +978,21 @@ void login1_manager_call_set_user_linger (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_set_user_linger_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_set_user_linger_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_set_user_linger_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_set_user_linger_sync (
+    logindLogin1Manager *proxy,
     guint arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_attach_device (
-    Login1Manager *proxy,
+void logind_login1_manager_call_attach_device (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -1000,219 +1000,219 @@ void login1_manager_call_attach_device (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_attach_device_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_attach_device_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_attach_device_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_attach_device_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_flush_devices (
-    Login1Manager *proxy,
+void logind_login1_manager_call_flush_devices (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_flush_devices_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_flush_devices_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_flush_devices_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_flush_devices_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_power_off (
-    Login1Manager *proxy,
+void logind_login1_manager_call_power_off (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_power_off_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_power_off_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_power_off_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_power_off_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_reboot (
-    Login1Manager *proxy,
+void logind_login1_manager_call_reboot (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_reboot_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_reboot_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_reboot_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_reboot_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_suspend (
-    Login1Manager *proxy,
+void logind_login1_manager_call_suspend (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_suspend_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_suspend_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_suspend_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_suspend_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_hibernate (
-    Login1Manager *proxy,
+void logind_login1_manager_call_hibernate (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_hibernate_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_hibernate_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_hibernate_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_hibernate_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_hybrid_sleep (
-    Login1Manager *proxy,
+void logind_login1_manager_call_hybrid_sleep (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_hybrid_sleep_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_hybrid_sleep_finish (
+    logindLogin1Manager *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_hybrid_sleep_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_hybrid_sleep_sync (
+    logindLogin1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_can_power_off (
-    Login1Manager *proxy,
+void logind_login1_manager_call_can_power_off (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_can_power_off_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_power_off_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_can_power_off_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_power_off_sync (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_can_reboot (
-    Login1Manager *proxy,
-    GCancellable *cancellable,
-    GAsyncReadyCallback callback,
-    gpointer user_data);
-
-gboolean login1_manager_call_can_reboot_finish (
-    Login1Manager *proxy,
-    gchar **out_unnamed_arg0,
-    GAsyncResult *res,
-    GError **error);
-
-gboolean login1_manager_call_can_reboot_sync (
-    Login1Manager *proxy,
-    gchar **out_unnamed_arg0,
-    GCancellable *cancellable,
-    GError **error);
-
-void login1_manager_call_can_suspend (
-    Login1Manager *proxy,
+void logind_login1_manager_call_can_reboot (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_can_suspend_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_reboot_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_can_suspend_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_reboot_sync (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_can_hibernate (
-    Login1Manager *proxy,
+void logind_login1_manager_call_can_suspend (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_can_hibernate_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_suspend_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_can_hibernate_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_suspend_sync (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_can_hybrid_sleep (
-    Login1Manager *proxy,
+void logind_login1_manager_call_can_hibernate (
+    logindLogin1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_can_hybrid_sleep_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_hibernate_finish (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_can_hybrid_sleep_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_can_hibernate_sync (
+    logindLogin1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error);
 
-void login1_manager_call_inhibit (
-    Login1Manager *proxy,
+void logind_login1_manager_call_can_hybrid_sleep (
+    logindLogin1Manager *proxy,
+    GCancellable *cancellable,
+    GAsyncReadyCallback callback,
+    gpointer user_data);
+
+gboolean logind_login1_manager_call_can_hybrid_sleep_finish (
+    logindLogin1Manager *proxy,
+    gchar **out_unnamed_arg0,
+    GAsyncResult *res,
+    GError **error);
+
+gboolean logind_login1_manager_call_can_hybrid_sleep_sync (
+    logindLogin1Manager *proxy,
+    gchar **out_unnamed_arg0,
+    GCancellable *cancellable,
+    GError **error);
+
+void logind_login1_manager_call_inhibit (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -1221,14 +1221,14 @@ void login1_manager_call_inhibit (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean login1_manager_call_inhibit_finish (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_inhibit_finish (
+    logindLogin1Manager *proxy,
     GVariant **out_unnamed_arg4,
     GAsyncResult *res,
     GError **error);
 
-gboolean login1_manager_call_inhibit_sync (
-    Login1Manager *proxy,
+gboolean logind_login1_manager_call_inhibit_sync (
+    logindLogin1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -1240,98 +1240,98 @@ gboolean login1_manager_call_inhibit_sync (
 
 
 /* D-Bus property accessors: */
-guint login1_manager_get_nauto_vts (Login1Manager *object);
-void login1_manager_set_nauto_vts (Login1Manager *object, guint value);
+guint logind_login1_manager_get_nauto_vts (logindLogin1Manager *object);
+void logind_login1_manager_set_nauto_vts (logindLogin1Manager *object, guint value);
 
-const gchar *const *login1_manager_get_kill_only_users (Login1Manager *object);
-gchar **login1_manager_dup_kill_only_users (Login1Manager *object);
-void login1_manager_set_kill_only_users (Login1Manager *object, const gchar *const *value);
+const gchar *const *logind_login1_manager_get_kill_only_users (logindLogin1Manager *object);
+gchar **logind_login1_manager_dup_kill_only_users (logindLogin1Manager *object);
+void logind_login1_manager_set_kill_only_users (logindLogin1Manager *object, const gchar *const *value);
 
-const gchar *const *login1_manager_get_kill_exclude_users (Login1Manager *object);
-gchar **login1_manager_dup_kill_exclude_users (Login1Manager *object);
-void login1_manager_set_kill_exclude_users (Login1Manager *object, const gchar *const *value);
+const gchar *const *logind_login1_manager_get_kill_exclude_users (logindLogin1Manager *object);
+gchar **logind_login1_manager_dup_kill_exclude_users (logindLogin1Manager *object);
+void logind_login1_manager_set_kill_exclude_users (logindLogin1Manager *object, const gchar *const *value);
 
-gboolean login1_manager_get_kill_user_processes (Login1Manager *object);
-void login1_manager_set_kill_user_processes (Login1Manager *object, gboolean value);
+gboolean logind_login1_manager_get_kill_user_processes (logindLogin1Manager *object);
+void logind_login1_manager_set_kill_user_processes (logindLogin1Manager *object, gboolean value);
 
-gboolean login1_manager_get_idle_hint (Login1Manager *object);
-void login1_manager_set_idle_hint (Login1Manager *object, gboolean value);
+gboolean logind_login1_manager_get_idle_hint (logindLogin1Manager *object);
+void logind_login1_manager_set_idle_hint (logindLogin1Manager *object, gboolean value);
 
-guint64 login1_manager_get_idle_since_hint (Login1Manager *object);
-void login1_manager_set_idle_since_hint (Login1Manager *object, guint64 value);
+guint64 logind_login1_manager_get_idle_since_hint (logindLogin1Manager *object);
+void logind_login1_manager_set_idle_since_hint (logindLogin1Manager *object, guint64 value);
 
-guint64 login1_manager_get_idle_since_hint_monotonic (Login1Manager *object);
-void login1_manager_set_idle_since_hint_monotonic (Login1Manager *object, guint64 value);
+guint64 logind_login1_manager_get_idle_since_hint_monotonic (logindLogin1Manager *object);
+void logind_login1_manager_set_idle_since_hint_monotonic (logindLogin1Manager *object, guint64 value);
 
-const gchar *login1_manager_get_block_inhibited (Login1Manager *object);
-gchar *login1_manager_dup_block_inhibited (Login1Manager *object);
-void login1_manager_set_block_inhibited (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_block_inhibited (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_block_inhibited (logindLogin1Manager *object);
+void logind_login1_manager_set_block_inhibited (logindLogin1Manager *object, const gchar *value);
 
-const gchar *login1_manager_get_delay_inhibited (Login1Manager *object);
-gchar *login1_manager_dup_delay_inhibited (Login1Manager *object);
-void login1_manager_set_delay_inhibited (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_delay_inhibited (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_delay_inhibited (logindLogin1Manager *object);
+void logind_login1_manager_set_delay_inhibited (logindLogin1Manager *object, const gchar *value);
 
-guint64 login1_manager_get_inhibit_delay_max_usec (Login1Manager *object);
-void login1_manager_set_inhibit_delay_max_usec (Login1Manager *object, guint64 value);
+guint64 logind_login1_manager_get_inhibit_delay_max_usec (logindLogin1Manager *object);
+void logind_login1_manager_set_inhibit_delay_max_usec (logindLogin1Manager *object, guint64 value);
 
-const gchar *login1_manager_get_handle_power_key (Login1Manager *object);
-gchar *login1_manager_dup_handle_power_key (Login1Manager *object);
-void login1_manager_set_handle_power_key (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_handle_power_key (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_handle_power_key (logindLogin1Manager *object);
+void logind_login1_manager_set_handle_power_key (logindLogin1Manager *object, const gchar *value);
 
-const gchar *login1_manager_get_handle_suspend_key (Login1Manager *object);
-gchar *login1_manager_dup_handle_suspend_key (Login1Manager *object);
-void login1_manager_set_handle_suspend_key (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_handle_suspend_key (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_handle_suspend_key (logindLogin1Manager *object);
+void logind_login1_manager_set_handle_suspend_key (logindLogin1Manager *object, const gchar *value);
 
-const gchar *login1_manager_get_handle_hibernate_key (Login1Manager *object);
-gchar *login1_manager_dup_handle_hibernate_key (Login1Manager *object);
-void login1_manager_set_handle_hibernate_key (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_handle_hibernate_key (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_handle_hibernate_key (logindLogin1Manager *object);
+void logind_login1_manager_set_handle_hibernate_key (logindLogin1Manager *object, const gchar *value);
 
-const gchar *login1_manager_get_handle_lid_switch (Login1Manager *object);
-gchar *login1_manager_dup_handle_lid_switch (Login1Manager *object);
-void login1_manager_set_handle_lid_switch (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_handle_lid_switch (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_handle_lid_switch (logindLogin1Manager *object);
+void logind_login1_manager_set_handle_lid_switch (logindLogin1Manager *object, const gchar *value);
 
-const gchar *login1_manager_get_idle_action (Login1Manager *object);
-gchar *login1_manager_dup_idle_action (Login1Manager *object);
-void login1_manager_set_idle_action (Login1Manager *object, const gchar *value);
+const gchar *logind_login1_manager_get_idle_action (logindLogin1Manager *object);
+gchar *logind_login1_manager_dup_idle_action (logindLogin1Manager *object);
+void logind_login1_manager_set_idle_action (logindLogin1Manager *object, const gchar *value);
 
-guint64 login1_manager_get_idle_action_usec (Login1Manager *object);
-void login1_manager_set_idle_action_usec (Login1Manager *object, guint64 value);
+guint64 logind_login1_manager_get_idle_action_usec (logindLogin1Manager *object);
+void logind_login1_manager_set_idle_action_usec (logindLogin1Manager *object, guint64 value);
 
-gboolean login1_manager_get_preparing_for_shutdown (Login1Manager *object);
-void login1_manager_set_preparing_for_shutdown (Login1Manager *object, gboolean value);
+gboolean logind_login1_manager_get_preparing_for_shutdown (logindLogin1Manager *object);
+void logind_login1_manager_set_preparing_for_shutdown (logindLogin1Manager *object, gboolean value);
 
-gboolean login1_manager_get_preparing_for_sleep (Login1Manager *object);
-void login1_manager_set_preparing_for_sleep (Login1Manager *object, gboolean value);
+gboolean logind_login1_manager_get_preparing_for_sleep (logindLogin1Manager *object);
+void logind_login1_manager_set_preparing_for_sleep (logindLogin1Manager *object, gboolean value);
 
 
 /* ---- */
 
-#define TYPE_LOGIN1_MANAGER_PROXY (login1_manager_proxy_get_type ())
-#define LOGIN1_MANAGER_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOGIN1_MANAGER_PROXY, Login1ManagerProxy))
-#define LOGIN1_MANAGER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_LOGIN1_MANAGER_PROXY, Login1ManagerProxyClass))
-#define LOGIN1_MANAGER_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_LOGIN1_MANAGER_PROXY, Login1ManagerProxyClass))
-#define IS_LOGIN1_MANAGER_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOGIN1_MANAGER_PROXY))
-#define IS_LOGIN1_MANAGER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_LOGIN1_MANAGER_PROXY))
+#define LOGIND_TYPE_LOGIN1_MANAGER_PROXY (logind_login1_manager_proxy_get_type ())
+#define LOGIND_LOGIN1_MANAGER_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_LOGIN1_MANAGER_PROXY, logindLogin1ManagerProxy))
+#define LOGIND_LOGIN1_MANAGER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOGIND_TYPE_LOGIN1_MANAGER_PROXY, logindLogin1ManagerProxyClass))
+#define LOGIND_LOGIN1_MANAGER_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOGIND_TYPE_LOGIN1_MANAGER_PROXY, logindLogin1ManagerProxyClass))
+#define LOGIND_IS_LOGIN1_MANAGER_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_LOGIN1_MANAGER_PROXY))
+#define LOGIND_IS_LOGIN1_MANAGER_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOGIND_TYPE_LOGIN1_MANAGER_PROXY))
 
-typedef struct _Login1ManagerProxy Login1ManagerProxy;
-typedef struct _Login1ManagerProxyClass Login1ManagerProxyClass;
-typedef struct _Login1ManagerProxyPrivate Login1ManagerProxyPrivate;
+typedef struct _logindLogin1ManagerProxy logindLogin1ManagerProxy;
+typedef struct _logindLogin1ManagerProxyClass logindLogin1ManagerProxyClass;
+typedef struct _logindLogin1ManagerProxyPrivate logindLogin1ManagerProxyPrivate;
 
-struct _Login1ManagerProxy
+struct _logindLogin1ManagerProxy
 {
   /*< private >*/
   GDBusProxy parent_instance;
-  Login1ManagerProxyPrivate *priv;
+  logindLogin1ManagerProxyPrivate *priv;
 };
 
-struct _Login1ManagerProxyClass
+struct _logindLogin1ManagerProxyClass
 {
   GDBusProxyClass parent_class;
 };
 
-GType login1_manager_proxy_get_type (void) G_GNUC_CONST;
+GType logind_login1_manager_proxy_get_type (void) G_GNUC_CONST;
 
-void login1_manager_proxy_new (
+void logind_login1_manager_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1339,10 +1339,10 @@ void login1_manager_proxy_new (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-Login1Manager *login1_manager_proxy_new_finish (
+logindLogin1Manager *logind_login1_manager_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error);
-Login1Manager *login1_manager_proxy_new_sync (
+logindLogin1Manager *logind_login1_manager_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1350,7 +1350,7 @@ Login1Manager *login1_manager_proxy_new_sync (
     GCancellable        *cancellable,
     GError             **error);
 
-void login1_manager_proxy_new_for_bus (
+void logind_login1_manager_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1358,10 +1358,10 @@ void login1_manager_proxy_new_for_bus (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-Login1Manager *login1_manager_proxy_new_for_bus_finish (
+logindLogin1Manager *logind_login1_manager_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error);
-Login1Manager *login1_manager_proxy_new_for_bus_sync (
+logindLogin1Manager *logind_login1_manager_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1372,32 +1372,174 @@ Login1Manager *login1_manager_proxy_new_for_bus_sync (
 
 /* ---- */
 
-#define TYPE_LOGIN1_MANAGER_SKELETON (login1_manager_skeleton_get_type ())
-#define LOGIN1_MANAGER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOGIN1_MANAGER_SKELETON, Login1ManagerSkeleton))
-#define LOGIN1_MANAGER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_LOGIN1_MANAGER_SKELETON, Login1ManagerSkeletonClass))
-#define LOGIN1_MANAGER_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_LOGIN1_MANAGER_SKELETON, Login1ManagerSkeletonClass))
-#define IS_LOGIN1_MANAGER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOGIN1_MANAGER_SKELETON))
-#define IS_LOGIN1_MANAGER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_LOGIN1_MANAGER_SKELETON))
+#define LOGIND_TYPE_LOGIN1_MANAGER_SKELETON (logind_login1_manager_skeleton_get_type ())
+#define LOGIND_LOGIN1_MANAGER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_LOGIN1_MANAGER_SKELETON, logindLogin1ManagerSkeleton))
+#define LOGIND_LOGIN1_MANAGER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOGIND_TYPE_LOGIN1_MANAGER_SKELETON, logindLogin1ManagerSkeletonClass))
+#define LOGIND_LOGIN1_MANAGER_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOGIND_TYPE_LOGIN1_MANAGER_SKELETON, logindLogin1ManagerSkeletonClass))
+#define LOGIND_IS_LOGIN1_MANAGER_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_LOGIN1_MANAGER_SKELETON))
+#define LOGIND_IS_LOGIN1_MANAGER_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOGIND_TYPE_LOGIN1_MANAGER_SKELETON))
 
-typedef struct _Login1ManagerSkeleton Login1ManagerSkeleton;
-typedef struct _Login1ManagerSkeletonClass Login1ManagerSkeletonClass;
-typedef struct _Login1ManagerSkeletonPrivate Login1ManagerSkeletonPrivate;
+typedef struct _logindLogin1ManagerSkeleton logindLogin1ManagerSkeleton;
+typedef struct _logindLogin1ManagerSkeletonClass logindLogin1ManagerSkeletonClass;
+typedef struct _logindLogin1ManagerSkeletonPrivate logindLogin1ManagerSkeletonPrivate;
 
-struct _Login1ManagerSkeleton
+struct _logindLogin1ManagerSkeleton
 {
   /*< private >*/
   GDBusInterfaceSkeleton parent_instance;
-  Login1ManagerSkeletonPrivate *priv;
+  logindLogin1ManagerSkeletonPrivate *priv;
 };
 
-struct _Login1ManagerSkeletonClass
+struct _logindLogin1ManagerSkeletonClass
 {
   GDBusInterfaceSkeletonClass parent_class;
 };
 
-GType login1_manager_skeleton_get_type (void) G_GNUC_CONST;
+GType logind_login1_manager_skeleton_get_type (void) G_GNUC_CONST;
 
-Login1Manager *login1_manager_skeleton_new (void);
+logindLogin1Manager *logind_login1_manager_skeleton_new (void);
+
+
+/* ---- */
+
+#define LOGIND_TYPE_OBJECT (logind_object_get_type ())
+#define LOGIND_OBJECT(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_OBJECT, logindObject))
+#define LOGIND_IS_OBJECT(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_OBJECT))
+#define LOGIND_OBJECT_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), LOGIND_TYPE_OBJECT, logindObject))
+
+struct _logindObject;
+typedef struct _logindObject logindObject;
+typedef struct _logindObjectIface logindObjectIface;
+
+struct _logindObjectIface
+{
+  GTypeInterface parent_iface;
+};
+
+GType logind_object_get_type (void) G_GNUC_CONST;
+
+logindLogin1Manager *logind_object_get_login1_manager (logindObject *object);
+logindLogin1Manager *logind_object_peek_login1_manager (logindObject *object);
+
+#define LOGIND_TYPE_OBJECT_PROXY (logind_object_proxy_get_type ())
+#define LOGIND_OBJECT_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_OBJECT_PROXY, logindObjectProxy))
+#define LOGIND_OBJECT_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOGIND_TYPE_OBJECT_PROXY, logindObjectProxyClass))
+#define LOGIND_OBJECT_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOGIND_TYPE_OBJECT_PROXY, logindObjectProxyClass))
+#define LOGIND_IS_OBJECT_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_OBJECT_PROXY))
+#define LOGIND_IS_OBJECT_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOGIND_TYPE_OBJECT_PROXY))
+
+typedef struct _logindObjectProxy logindObjectProxy;
+typedef struct _logindObjectProxyClass logindObjectProxyClass;
+typedef struct _logindObjectProxyPrivate logindObjectProxyPrivate;
+
+struct _logindObjectProxy
+{
+  /*< private >*/
+  GDBusObjectProxy parent_instance;
+  logindObjectProxyPrivate *priv;
+};
+
+struct _logindObjectProxyClass
+{
+  GDBusObjectProxyClass parent_class;
+};
+
+GType logind_object_proxy_get_type (void) G_GNUC_CONST;
+logindObjectProxy *logind_object_proxy_new (GDBusConnection *connection, const gchar *object_path);
+
+#define LOGIND_TYPE_OBJECT_SKELETON (logind_object_skeleton_get_type ())
+#define LOGIND_OBJECT_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_OBJECT_SKELETON, logindObjectSkeleton))
+#define LOGIND_OBJECT_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOGIND_TYPE_OBJECT_SKELETON, logindObjectSkeletonClass))
+#define LOGIND_OBJECT_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOGIND_TYPE_OBJECT_SKELETON, logindObjectSkeletonClass))
+#define LOGIND_IS_OBJECT_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_OBJECT_SKELETON))
+#define LOGIND_IS_OBJECT_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOGIND_TYPE_OBJECT_SKELETON))
+
+typedef struct _logindObjectSkeleton logindObjectSkeleton;
+typedef struct _logindObjectSkeletonClass logindObjectSkeletonClass;
+typedef struct _logindObjectSkeletonPrivate logindObjectSkeletonPrivate;
+
+struct _logindObjectSkeleton
+{
+  /*< private >*/
+  GDBusObjectSkeleton parent_instance;
+  logindObjectSkeletonPrivate *priv;
+};
+
+struct _logindObjectSkeletonClass
+{
+  GDBusObjectSkeletonClass parent_class;
+};
+
+GType logind_object_skeleton_get_type (void) G_GNUC_CONST;
+logindObjectSkeleton *logind_object_skeleton_new (const gchar *object_path);
+void logind_object_skeleton_set_login1_manager (logindObjectSkeleton *object, logindLogin1Manager *interface_);
+
+/* ---- */
+
+#define LOGIND_TYPE_OBJECT_MANAGER_CLIENT (logind_object_manager_client_get_type ())
+#define LOGIND_OBJECT_MANAGER_CLIENT(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOGIND_TYPE_OBJECT_MANAGER_CLIENT, logindObjectManagerClient))
+#define LOGIND_OBJECT_MANAGER_CLIENT_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOGIND_TYPE_OBJECT_MANAGER_CLIENT, logindObjectManagerClientClass))
+#define LOGIND_OBJECT_MANAGER_CLIENT_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOGIND_TYPE_OBJECT_MANAGER_CLIENT, logindObjectManagerClientClass))
+#define LOGIND_IS_OBJECT_MANAGER_CLIENT(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOGIND_TYPE_OBJECT_MANAGER_CLIENT))
+#define LOGIND_IS_OBJECT_MANAGER_CLIENT_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOGIND_TYPE_OBJECT_MANAGER_CLIENT))
+
+typedef struct _logindObjectManagerClient logindObjectManagerClient;
+typedef struct _logindObjectManagerClientClass logindObjectManagerClientClass;
+typedef struct _logindObjectManagerClientPrivate logindObjectManagerClientPrivate;
+
+struct _logindObjectManagerClient
+{
+  /*< private >*/
+  GDBusObjectManagerClient parent_instance;
+  logindObjectManagerClientPrivate *priv;
+};
+
+struct _logindObjectManagerClientClass
+{
+  GDBusObjectManagerClientClass parent_class;
+};
+
+GType logind_object_manager_client_get_type (void) G_GNUC_CONST;
+
+GType logind_object_manager_client_get_proxy_type (GDBusObjectManagerClient *manager, const gchar *object_path, const gchar *interface_name, gpointer user_data);
+
+void logind_object_manager_client_new (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data);
+GDBusObjectManager *logind_object_manager_client_new_finish (
+    GAsyncResult        *res,
+    GError             **error);
+GDBusObjectManager *logind_object_manager_client_new_sync (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error);
+
+void logind_object_manager_client_new_for_bus (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data);
+GDBusObjectManager *logind_object_manager_client_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error);
+GDBusObjectManager *logind_object_manager_client_new_for_bus_sync (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error);
 
 
 G_END_DECLS

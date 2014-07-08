@@ -8,7 +8,7 @@
 #  include "config.h"
 #endif
 
-#include "src/interfaces/timedated/timedated-gen.h"
+#include "timedated-gen.h"
 
 #include <string.h>
 #ifdef G_OS_UNIX
@@ -154,8 +154,8 @@ _g_value_equal (const GValue *a, const GValue *b)
  */
 
 /**
- * SECTION:Timedate1
- * @title: Timedate1
+ * SECTION:timedatedTimedate1
+ * @title: timedatedTimedate1
  * @short_description: Generated C code for the org.freedesktop.timedate1 D-Bus interface
  *
  * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link> D-Bus interface in C.
@@ -163,53 +163,53 @@ _g_value_equal (const GValue *a, const GValue *b)
 
 /* ---- Introspection data for org.freedesktop.timedate1 ---- */
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_time_IN_ARG_usec_utc =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "usec_utc",
+    (gchar *) "unnamed_arg0",
     (gchar *) "x",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_time_IN_ARG_relative =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "relative",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_time_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg2",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _timedate1_method_info_set_time_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _timedated_timedate1_method_info_set_time_IN_ARG_pointers[] =
 {
-  &_timedate1_method_info_set_time_IN_ARG_usec_utc,
-  &_timedate1_method_info_set_time_IN_ARG_relative,
-  &_timedate1_method_info_set_time_IN_ARG_user_interaction,
+  &_timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg0,
+  &_timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg1,
+  &_timedated_timedate1_method_info_set_time_IN_ARG_unnamed_arg2,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_time =
+static const _ExtendedGDBusMethodInfo _timedated_timedate1_method_info_set_time =
 {
   {
     -1,
     (gchar *) "SetTime",
-    (GDBusArgInfo **) &_timedate1_method_info_set_time_IN_ARG_pointers,
+    (GDBusArgInfo **) &_timedated_timedate1_method_info_set_time_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -217,41 +217,41 @@ static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_time =
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_timezone_IN_ARG_timezone =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_timezone_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "timezone",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_timezone_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_timezone_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _timedate1_method_info_set_timezone_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _timedated_timedate1_method_info_set_timezone_IN_ARG_pointers[] =
 {
-  &_timedate1_method_info_set_timezone_IN_ARG_timezone,
-  &_timedate1_method_info_set_timezone_IN_ARG_user_interaction,
+  &_timedated_timedate1_method_info_set_timezone_IN_ARG_unnamed_arg0,
+  &_timedated_timedate1_method_info_set_timezone_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_timezone =
+static const _ExtendedGDBusMethodInfo _timedated_timedate1_method_info_set_timezone =
 {
   {
     -1,
     (gchar *) "SetTimezone",
-    (GDBusArgInfo **) &_timedate1_method_info_set_timezone_IN_ARG_pointers,
+    (GDBusArgInfo **) &_timedated_timedate1_method_info_set_timezone_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -259,53 +259,53 @@ static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_timezone =
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_local_rtc_IN_ARG_local_rtc =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "local_rtc",
+    (gchar *) "unnamed_arg0",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_local_rtc_IN_ARG_fix_system =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "fix_system",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_local_rtc_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg2",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _timedate1_method_info_set_local_rtc_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _timedated_timedate1_method_info_set_local_rtc_IN_ARG_pointers[] =
 {
-  &_timedate1_method_info_set_local_rtc_IN_ARG_local_rtc,
-  &_timedate1_method_info_set_local_rtc_IN_ARG_fix_system,
-  &_timedate1_method_info_set_local_rtc_IN_ARG_user_interaction,
+  &_timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg0,
+  &_timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg1,
+  &_timedated_timedate1_method_info_set_local_rtc_IN_ARG_unnamed_arg2,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_local_rtc =
+static const _ExtendedGDBusMethodInfo _timedated_timedate1_method_info_set_local_rtc =
 {
   {
     -1,
     (gchar *) "SetLocalRTC",
-    (GDBusArgInfo **) &_timedate1_method_info_set_local_rtc_IN_ARG_pointers,
+    (GDBusArgInfo **) &_timedated_timedate1_method_info_set_local_rtc_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -313,41 +313,41 @@ static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_local_rtc =
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_ntp_IN_ARG_use_ntp =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_ntp_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "use_ntp",
+    (gchar *) "unnamed_arg0",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _timedate1_method_info_set_ntp_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _timedated_timedate1_method_info_set_ntp_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _timedate1_method_info_set_ntp_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _timedated_timedate1_method_info_set_ntp_IN_ARG_pointers[] =
 {
-  &_timedate1_method_info_set_ntp_IN_ARG_use_ntp,
-  &_timedate1_method_info_set_ntp_IN_ARG_user_interaction,
+  &_timedated_timedate1_method_info_set_ntp_IN_ARG_unnamed_arg0,
+  &_timedated_timedate1_method_info_set_ntp_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_ntp =
+static const _ExtendedGDBusMethodInfo _timedated_timedate1_method_info_set_ntp =
 {
   {
     -1,
     (gchar *) "SetNTP",
-    (GDBusArgInfo **) &_timedate1_method_info_set_ntp_IN_ARG_pointers,
+    (GDBusArgInfo **) &_timedated_timedate1_method_info_set_ntp_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -355,16 +355,16 @@ static const _ExtendedGDBusMethodInfo _timedate1_method_info_set_ntp =
   FALSE
 };
 
-static const _ExtendedGDBusMethodInfo * const _timedate1_method_info_pointers[] =
+static const _ExtendedGDBusMethodInfo * const _timedated_timedate1_method_info_pointers[] =
 {
-  &_timedate1_method_info_set_time,
-  &_timedate1_method_info_set_timezone,
-  &_timedate1_method_info_set_local_rtc,
-  &_timedate1_method_info_set_ntp,
+  &_timedated_timedate1_method_info_set_time,
+  &_timedated_timedate1_method_info_set_timezone,
+  &_timedated_timedate1_method_info_set_local_rtc,
+  &_timedated_timedate1_method_info_set_ntp,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _timedate1_property_info_timezone =
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_timezone =
 {
   {
     -1,
@@ -377,7 +377,7 @@ static const _ExtendedGDBusPropertyInfo _timedate1_property_info_timezone =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _timedate1_property_info_local_rtc =
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_local_rtc =
 {
   {
     -1,
@@ -390,7 +390,34 @@ static const _ExtendedGDBusPropertyInfo _timedate1_property_info_local_rtc =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _timedate1_property_info_ntp =
+static const GDBusAnnotationInfo _timedated_timedate1_property_can_ntp_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "false",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _timedated_timedate1_property_can_ntp_annotation_info_pointers[] =
+{
+  &_timedated_timedate1_property_can_ntp_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_can_ntp =
+{
+  {
+    -1,
+    (gchar *) "CanNTP",
+    (gchar *) "b",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_timedated_timedate1_property_can_ntp_annotation_info_pointers
+  },
+  "can-ntp",
+  FALSE
+};
+
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_ntp =
 {
   {
     -1,
@@ -403,22 +430,107 @@ static const _ExtendedGDBusPropertyInfo _timedate1_property_info_ntp =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo * const _timedate1_property_info_pointers[] =
+static const GDBusAnnotationInfo _timedated_timedate1_property_ntpsynchronized_annotation_info_0 =
 {
-  &_timedate1_property_info_timezone,
-  &_timedate1_property_info_local_rtc,
-  &_timedate1_property_info_ntp,
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "false",
   NULL
 };
 
-static const _ExtendedGDBusInterfaceInfo _timedate1_interface_info =
+static const GDBusAnnotationInfo * const _timedated_timedate1_property_ntpsynchronized_annotation_info_pointers[] =
+{
+  &_timedated_timedate1_property_ntpsynchronized_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_ntpsynchronized =
+{
+  {
+    -1,
+    (gchar *) "NTPSynchronized",
+    (gchar *) "b",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_timedated_timedate1_property_ntpsynchronized_annotation_info_pointers
+  },
+  "ntpsynchronized",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _timedated_timedate1_property_time_usec_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "false",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _timedated_timedate1_property_time_usec_annotation_info_pointers[] =
+{
+  &_timedated_timedate1_property_time_usec_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_time_usec =
+{
+  {
+    -1,
+    (gchar *) "TimeUSec",
+    (gchar *) "t",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_timedated_timedate1_property_time_usec_annotation_info_pointers
+  },
+  "time-usec",
+  FALSE
+};
+
+static const GDBusAnnotationInfo _timedated_timedate1_property_rtctime_usec_annotation_info_0 =
+{
+  -1,
+  (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
+  (gchar *) "false",
+  NULL
+};
+
+static const GDBusAnnotationInfo * const _timedated_timedate1_property_rtctime_usec_annotation_info_pointers[] =
+{
+  &_timedated_timedate1_property_rtctime_usec_annotation_info_0,
+  NULL
+};
+
+static const _ExtendedGDBusPropertyInfo _timedated_timedate1_property_info_rtctime_usec =
+{
+  {
+    -1,
+    (gchar *) "RTCTimeUSec",
+    (gchar *) "t",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    (GDBusAnnotationInfo **) &_timedated_timedate1_property_rtctime_usec_annotation_info_pointers
+  },
+  "rtctime-usec",
+  FALSE
+};
+
+static const _ExtendedGDBusPropertyInfo * const _timedated_timedate1_property_info_pointers[] =
+{
+  &_timedated_timedate1_property_info_timezone,
+  &_timedated_timedate1_property_info_local_rtc,
+  &_timedated_timedate1_property_info_can_ntp,
+  &_timedated_timedate1_property_info_ntp,
+  &_timedated_timedate1_property_info_ntpsynchronized,
+  &_timedated_timedate1_property_info_time_usec,
+  &_timedated_timedate1_property_info_rtctime_usec,
+  NULL
+};
+
+static const _ExtendedGDBusInterfaceInfo _timedated_timedate1_interface_info =
 {
   {
     -1,
     (gchar *) "org.freedesktop.timedate1",
-    (GDBusMethodInfo **) &_timedate1_method_info_pointers,
+    (GDBusMethodInfo **) &_timedated_timedate1_method_info_pointers,
     NULL,
-    (GDBusPropertyInfo **) &_timedate1_property_info_pointers,
+    (GDBusPropertyInfo **) &_timedated_timedate1_property_info_pointers,
     NULL
   },
   "timedate1",
@@ -426,84 +538,92 @@ static const _ExtendedGDBusInterfaceInfo _timedate1_interface_info =
 
 
 /**
- * timedate1_interface_info:
+ * timedated_timedate1_interface_info:
  *
  * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link> D-Bus interface.
  *
  * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
  */
 GDBusInterfaceInfo *
-timedate1_interface_info (void)
+timedated_timedate1_interface_info (void)
 {
-  return (GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct;
+  return (GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct;
 }
 
 /**
- * timedate1_override_properties:
+ * timedated_timedate1_override_properties:
  * @klass: The class structure for a #GObject<!-- -->-derived class.
  * @property_id_begin: The property id to assign to the first overridden property.
  *
- * Overrides all #GObject properties in the #Timedate1 interface for a concrete class.
+ * Overrides all #GObject properties in the #timedatedTimedate1 interface for a concrete class.
  * The properties are overridden in the order they are defined.
  *
  * Returns: The last property id.
  */
 guint
-timedate1_override_properties (GObjectClass *klass, guint property_id_begin)
+timedated_timedate1_override_properties (GObjectClass *klass, guint property_id_begin)
 {
   g_object_class_override_property (klass, property_id_begin++, "timezone");
   g_object_class_override_property (klass, property_id_begin++, "local-rtc");
+  g_object_class_override_property (klass, property_id_begin++, "can-ntp");
   g_object_class_override_property (klass, property_id_begin++, "ntp");
+  g_object_class_override_property (klass, property_id_begin++, "ntpsynchronized");
+  g_object_class_override_property (klass, property_id_begin++, "time-usec");
+  g_object_class_override_property (klass, property_id_begin++, "rtctime-usec");
   return property_id_begin - 1;
 }
 
 
 
 /**
- * Timedate1:
+ * timedatedTimedate1:
  *
  * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link>.
  */
 
 /**
- * Timedate1Iface:
+ * timedatedTimedate1Iface:
  * @parent_iface: The parent interface.
- * @handle_set_local_rtc: Handler for the #Timedate1::handle-set-local-rtc signal.
- * @handle_set_ntp: Handler for the #Timedate1::handle-set-ntp signal.
- * @handle_set_time: Handler for the #Timedate1::handle-set-time signal.
- * @handle_set_timezone: Handler for the #Timedate1::handle-set-timezone signal.
- * @get_local_rtc: Getter for the #Timedate1:local-rtc property.
- * @get_ntp: Getter for the #Timedate1:ntp property.
- * @get_timezone: Getter for the #Timedate1:timezone property.
+ * @handle_set_local_rtc: Handler for the #timedatedTimedate1::handle-set-local-rtc signal.
+ * @handle_set_ntp: Handler for the #timedatedTimedate1::handle-set-ntp signal.
+ * @handle_set_time: Handler for the #timedatedTimedate1::handle-set-time signal.
+ * @handle_set_timezone: Handler for the #timedatedTimedate1::handle-set-timezone signal.
+ * @get_can_ntp: Getter for the #timedatedTimedate1:can-ntp property.
+ * @get_local_rtc: Getter for the #timedatedTimedate1:local-rtc property.
+ * @get_ntp: Getter for the #timedatedTimedate1:ntp property.
+ * @get_ntpsynchronized: Getter for the #timedatedTimedate1:ntpsynchronized property.
+ * @get_rtctime_usec: Getter for the #timedatedTimedate1:rtctime-usec property.
+ * @get_time_usec: Getter for the #timedatedTimedate1:time-usec property.
+ * @get_timezone: Getter for the #timedatedTimedate1:timezone property.
  *
  * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link>.
  */
 
-typedef Timedate1Iface Timedate1Interface;
-G_DEFINE_INTERFACE (Timedate1, timedate1, G_TYPE_OBJECT);
+typedef timedatedTimedate1Iface timedatedTimedate1Interface;
+G_DEFINE_INTERFACE (timedatedTimedate1, timedated_timedate1, G_TYPE_OBJECT);
 
 static void
-timedate1_default_init (Timedate1Iface *iface)
+timedated_timedate1_default_init (timedatedTimedate1Iface *iface)
 {
   /* GObject signals for incoming D-Bus method calls: */
   /**
-   * Timedate1::handle-set-time:
-   * @object: A #Timedate1.
+   * timedatedTimedate1::handle-set-time:
+   * @object: A #timedatedTimedate1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_usec_utc: Argument passed by remote caller.
-   * @arg_relative: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
+   * @arg_unnamed_arg2: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTime">SetTime()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedate1_complete_set_time() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedated_timedate1_complete_set_time() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-time",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Timedate1Iface, handle_set_time),
+    G_STRUCT_OFFSET (timedatedTimedate1Iface, handle_set_time),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -512,22 +632,22 @@ timedate1_default_init (Timedate1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_INT64, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
   /**
-   * Timedate1::handle-set-timezone:
-   * @object: A #Timedate1.
+   * timedatedTimedate1::handle-set-timezone:
+   * @object: A #timedatedTimedate1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_timezone: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTimezone">SetTimezone()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedate1_complete_set_timezone() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedated_timedate1_complete_set_timezone() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-timezone",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Timedate1Iface, handle_set_timezone),
+    G_STRUCT_OFFSET (timedatedTimedate1Iface, handle_set_timezone),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -536,23 +656,23 @@ timedate1_default_init (Timedate1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * Timedate1::handle-set-local-rtc:
-   * @object: A #Timedate1.
+   * timedatedTimedate1::handle-set-local-rtc:
+   * @object: A #timedatedTimedate1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_local_rtc: Argument passed by remote caller.
-   * @arg_fix_system: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
+   * @arg_unnamed_arg2: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-timedate1.SetLocalRTC">SetLocalRTC()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedate1_complete_set_local_rtc() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedated_timedate1_complete_set_local_rtc() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-local-rtc",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Timedate1Iface, handle_set_local_rtc),
+    G_STRUCT_OFFSET (timedatedTimedate1Iface, handle_set_local_rtc),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -561,22 +681,22 @@ timedate1_default_init (Timedate1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
   /**
-   * Timedate1::handle-set-ntp:
-   * @object: A #Timedate1.
+   * timedatedTimedate1::handle-set-ntp:
+   * @object: A #timedatedTimedate1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_use_ntp: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-timedate1.SetNTP">SetNTP()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedate1_complete_set_ntp() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call timedated_timedate1_complete_set_ntp() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-ntp",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Timedate1Iface, handle_set_ntp),
+    G_STRUCT_OFFSET (timedatedTimedate1Iface, handle_set_ntp),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -586,7 +706,7 @@ timedate1_default_init (Timedate1Iface *iface)
 
   /* GObject properties for D-Bus properties: */
   /**
-   * Timedate1:timezone:
+   * timedatedTimedate1:timezone:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.Timezone">"Timezone"</link>.
    *
@@ -595,7 +715,7 @@ timedate1_default_init (Timedate1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("timezone", "Timezone", "Timezone", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Timedate1:local-rtc:
+   * timedatedTimedate1:local-rtc:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.LocalRTC">"LocalRTC"</link>.
    *
@@ -604,7 +724,16 @@ timedate1_default_init (Timedate1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boolean ("local-rtc", "LocalRTC", "LocalRTC", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Timedate1:ntp:
+   * timedatedTimedate1:can-ntp:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.CanNTP">"CanNTP"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_boolean ("can-ntp", "CanNTP", "CanNTP", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * timedatedTimedate1:ntp:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.NTP">"NTP"</link>.
    *
@@ -612,29 +741,56 @@ timedate1_default_init (Timedate1Iface *iface)
    */
   g_object_interface_install_property (iface,
     g_param_spec_boolean ("ntp", "NTP", "NTP", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * timedatedTimedate1:ntpsynchronized:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.NTPSynchronized">"NTPSynchronized"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_boolean ("ntpsynchronized", "NTPSynchronized", "NTPSynchronized", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * timedatedTimedate1:time-usec:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.TimeUSec">"TimeUSec"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_uint64 ("time-usec", "TimeUSec", "TimeUSec", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * timedatedTimedate1:rtctime-usec:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-timedate1.RTCTimeUSec">"RTCTimeUSec"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_uint64 ("rtctime-usec", "RTCTimeUSec", "RTCTimeUSec", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
 
 /**
- * timedate1_get_timezone: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_get_timezone: (skip)
+ * @object: A #timedatedTimedate1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.Timezone">"Timezone"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use timedate1_dup_timezone() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use timedated_timedate1_dup_timezone() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-timedate1_get_timezone (Timedate1 *object)
+timedated_timedate1_get_timezone (timedatedTimedate1 *object)
 {
-  return TIMEDATE1_GET_IFACE (object)->get_timezone (object);
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_timezone (object);
 }
 
 /**
- * timedate1_dup_timezone: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_dup_timezone: (skip)
+ * @object: A #timedatedTimedate1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-timedate1.Timezone">"Timezone"</link> D-Bus property.
  *
@@ -643,7 +799,7 @@ timedate1_get_timezone (Timedate1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-timedate1_dup_timezone (Timedate1 *object)
+timedated_timedate1_dup_timezone (timedatedTimedate1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "timezone", &value, NULL);
@@ -651,8 +807,8 @@ timedate1_dup_timezone (Timedate1 *object)
 }
 
 /**
- * timedate1_set_timezone: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_set_timezone: (skip)
+ * @object: A #timedatedTimedate1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.Timezone">"Timezone"</link> D-Bus property to @value.
@@ -660,14 +816,14 @@ timedate1_dup_timezone (Timedate1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-timedate1_set_timezone (Timedate1 *object, const gchar *value)
+timedated_timedate1_set_timezone (timedatedTimedate1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "timezone", value, NULL);
 }
 
 /**
- * timedate1_get_local_rtc: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_get_local_rtc: (skip)
+ * @object: A #timedatedTimedate1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.LocalRTC">"LocalRTC"</link> D-Bus property.
  *
@@ -676,14 +832,14 @@ timedate1_set_timezone (Timedate1 *object, const gchar *value)
  * Returns: The property value.
  */
 gboolean 
-timedate1_get_local_rtc (Timedate1 *object)
+timedated_timedate1_get_local_rtc (timedatedTimedate1 *object)
 {
-  return TIMEDATE1_GET_IFACE (object)->get_local_rtc (object);
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_local_rtc (object);
 }
 
 /**
- * timedate1_set_local_rtc: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_set_local_rtc: (skip)
+ * @object: A #timedatedTimedate1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.LocalRTC">"LocalRTC"</link> D-Bus property to @value.
@@ -691,14 +847,45 @@ timedate1_get_local_rtc (Timedate1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-timedate1_set_local_rtc (Timedate1 *object, gboolean value)
+timedated_timedate1_set_local_rtc (timedatedTimedate1 *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "local-rtc", value, NULL);
 }
 
 /**
- * timedate1_get_ntp: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_get_can_ntp: (skip)
+ * @object: A #timedatedTimedate1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.CanNTP">"CanNTP"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: The property value.
+ */
+gboolean 
+timedated_timedate1_get_can_ntp (timedatedTimedate1 *object)
+{
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_can_ntp (object);
+}
+
+/**
+ * timedated_timedate1_set_can_ntp: (skip)
+ * @object: A #timedatedTimedate1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.CanNTP">"CanNTP"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+timedated_timedate1_set_can_ntp (timedatedTimedate1 *object, gboolean value)
+{
+  g_object_set (G_OBJECT (object), "can-ntp", value, NULL);
+}
+
+/**
+ * timedated_timedate1_get_ntp: (skip)
+ * @object: A #timedatedTimedate1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.NTP">"NTP"</link> D-Bus property.
  *
@@ -707,14 +894,14 @@ timedate1_set_local_rtc (Timedate1 *object, gboolean value)
  * Returns: The property value.
  */
 gboolean 
-timedate1_get_ntp (Timedate1 *object)
+timedated_timedate1_get_ntp (timedatedTimedate1 *object)
 {
-  return TIMEDATE1_GET_IFACE (object)->get_ntp (object);
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_ntp (object);
 }
 
 /**
- * timedate1_set_ntp: (skip)
- * @object: A #Timedate1.
+ * timedated_timedate1_set_ntp: (skip)
+ * @object: A #timedatedTimedate1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.NTP">"NTP"</link> D-Bus property to @value.
@@ -722,33 +909,126 @@ timedate1_get_ntp (Timedate1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-timedate1_set_ntp (Timedate1 *object, gboolean value)
+timedated_timedate1_set_ntp (timedatedTimedate1 *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "ntp", value, NULL);
 }
 
 /**
- * timedate1_call_set_time:
- * @proxy: A #Timedate1Proxy.
- * @arg_usec_utc: Argument to pass with the method invocation.
- * @arg_relative: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_get_ntpsynchronized: (skip)
+ * @object: A #timedatedTimedate1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.NTPSynchronized">"NTPSynchronized"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: The property value.
+ */
+gboolean 
+timedated_timedate1_get_ntpsynchronized (timedatedTimedate1 *object)
+{
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_ntpsynchronized (object);
+}
+
+/**
+ * timedated_timedate1_set_ntpsynchronized: (skip)
+ * @object: A #timedatedTimedate1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.NTPSynchronized">"NTPSynchronized"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+timedated_timedate1_set_ntpsynchronized (timedatedTimedate1 *object, gboolean value)
+{
+  g_object_set (G_OBJECT (object), "ntpsynchronized", value, NULL);
+}
+
+/**
+ * timedated_timedate1_get_time_usec: (skip)
+ * @object: A #timedatedTimedate1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.TimeUSec">"TimeUSec"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: The property value.
+ */
+guint64 
+timedated_timedate1_get_time_usec (timedatedTimedate1 *object)
+{
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_time_usec (object);
+}
+
+/**
+ * timedated_timedate1_set_time_usec: (skip)
+ * @object: A #timedatedTimedate1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.TimeUSec">"TimeUSec"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+timedated_timedate1_set_time_usec (timedatedTimedate1 *object, guint64 value)
+{
+  g_object_set (G_OBJECT (object), "time-usec", value, NULL);
+}
+
+/**
+ * timedated_timedate1_get_rtctime_usec: (skip)
+ * @object: A #timedatedTimedate1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-timedate1.RTCTimeUSec">"RTCTimeUSec"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: The property value.
+ */
+guint64 
+timedated_timedate1_get_rtctime_usec (timedatedTimedate1 *object)
+{
+  return TIMEDATED_TIMEDATE1_GET_IFACE (object)->get_rtctime_usec (object);
+}
+
+/**
+ * timedated_timedate1_set_rtctime_usec: (skip)
+ * @object: A #timedatedTimedate1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-timedate1.RTCTimeUSec">"RTCTimeUSec"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+timedated_timedate1_set_rtctime_usec (timedatedTimedate1 *object, guint64 value)
+{
+  g_object_set (G_OBJECT (object), "rtctime-usec", value, NULL);
+}
+
+/**
+ * timedated_timedate1_call_set_time:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTime">SetTime()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_call_set_time_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_call_set_time_finish() to get the result of the operation.
  *
- * See timedate1_call_set_time_sync() for the synchronous, blocking version of this method.
+ * See timedated_timedate1_call_set_time_sync() for the synchronous, blocking version of this method.
  */
 void
-timedate1_call_set_time (
-    Timedate1 *proxy,
-    gint64 arg_usec_utc,
-    gboolean arg_relative,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_time (
+    timedatedTimedate1 *proxy,
+    gint64 arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -756,9 +1036,9 @@ timedate1_call_set_time (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetTime",
     g_variant_new ("(xbb)",
-                   arg_usec_utc,
-                   arg_relative,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -767,18 +1047,18 @@ timedate1_call_set_time (
 }
 
 /**
- * timedate1_call_set_time_finish:
- * @proxy: A #Timedate1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_call_set_time().
+ * timedated_timedate1_call_set_time_finish:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_call_set_time().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with timedate1_call_set_time().
+ * Finishes an operation started with timedated_timedate1_call_set_time().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_time_finish (
-    Timedate1 *proxy,
+timedated_timedate1_call_set_time_finish (
+    timedatedTimedate1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -794,26 +1074,26 @@ _out:
 }
 
 /**
- * timedate1_call_set_time_sync:
- * @proxy: A #Timedate1Proxy.
- * @arg_usec_utc: Argument to pass with the method invocation.
- * @arg_relative: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_time_sync:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTime">SetTime()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See timedate1_call_set_time() for the asynchronous version of this method.
+ * See timedated_timedate1_call_set_time() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_time_sync (
-    Timedate1 *proxy,
-    gint64 arg_usec_utc,
-    gboolean arg_relative,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_time_sync (
+    timedatedTimedate1 *proxy,
+    gint64 arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error)
 {
@@ -821,9 +1101,9 @@ timedate1_call_set_time_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetTime",
     g_variant_new ("(xbb)",
-                   arg_usec_utc,
-                   arg_relative,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -838,25 +1118,25 @@ _out:
 }
 
 /**
- * timedate1_call_set_timezone:
- * @proxy: A #Timedate1Proxy.
- * @arg_timezone: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_timezone:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTimezone">SetTimezone()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_call_set_timezone_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_call_set_timezone_finish() to get the result of the operation.
  *
- * See timedate1_call_set_timezone_sync() for the synchronous, blocking version of this method.
+ * See timedated_timedate1_call_set_timezone_sync() for the synchronous, blocking version of this method.
  */
 void
-timedate1_call_set_timezone (
-    Timedate1 *proxy,
-    const gchar *arg_timezone,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_timezone (
+    timedatedTimedate1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -864,8 +1144,8 @@ timedate1_call_set_timezone (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetTimezone",
     g_variant_new ("(sb)",
-                   arg_timezone,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -874,18 +1154,18 @@ timedate1_call_set_timezone (
 }
 
 /**
- * timedate1_call_set_timezone_finish:
- * @proxy: A #Timedate1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_call_set_timezone().
+ * timedated_timedate1_call_set_timezone_finish:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_call_set_timezone().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with timedate1_call_set_timezone().
+ * Finishes an operation started with timedated_timedate1_call_set_timezone().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_timezone_finish (
-    Timedate1 *proxy,
+timedated_timedate1_call_set_timezone_finish (
+    timedatedTimedate1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -901,24 +1181,24 @@ _out:
 }
 
 /**
- * timedate1_call_set_timezone_sync:
- * @proxy: A #Timedate1Proxy.
- * @arg_timezone: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_timezone_sync:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTimezone">SetTimezone()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See timedate1_call_set_timezone() for the asynchronous version of this method.
+ * See timedated_timedate1_call_set_timezone() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_timezone_sync (
-    Timedate1 *proxy,
-    const gchar *arg_timezone,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_timezone_sync (
+    timedatedTimedate1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -926,8 +1206,8 @@ timedate1_call_set_timezone_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetTimezone",
     g_variant_new ("(sb)",
-                   arg_timezone,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -942,27 +1222,27 @@ _out:
 }
 
 /**
- * timedate1_call_set_local_rtc:
- * @proxy: A #Timedate1Proxy.
- * @arg_local_rtc: Argument to pass with the method invocation.
- * @arg_fix_system: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_local_rtc:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetLocalRTC">SetLocalRTC()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_call_set_local_rtc_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_call_set_local_rtc_finish() to get the result of the operation.
  *
- * See timedate1_call_set_local_rtc_sync() for the synchronous, blocking version of this method.
+ * See timedated_timedate1_call_set_local_rtc_sync() for the synchronous, blocking version of this method.
  */
 void
-timedate1_call_set_local_rtc (
-    Timedate1 *proxy,
-    gboolean arg_local_rtc,
-    gboolean arg_fix_system,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_local_rtc (
+    timedatedTimedate1 *proxy,
+    gboolean arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -970,9 +1250,9 @@ timedate1_call_set_local_rtc (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetLocalRTC",
     g_variant_new ("(bbb)",
-                   arg_local_rtc,
-                   arg_fix_system,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -981,18 +1261,18 @@ timedate1_call_set_local_rtc (
 }
 
 /**
- * timedate1_call_set_local_rtc_finish:
- * @proxy: A #Timedate1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_call_set_local_rtc().
+ * timedated_timedate1_call_set_local_rtc_finish:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_call_set_local_rtc().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with timedate1_call_set_local_rtc().
+ * Finishes an operation started with timedated_timedate1_call_set_local_rtc().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_local_rtc_finish (
-    Timedate1 *proxy,
+timedated_timedate1_call_set_local_rtc_finish (
+    timedatedTimedate1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1008,26 +1288,26 @@ _out:
 }
 
 /**
- * timedate1_call_set_local_rtc_sync:
- * @proxy: A #Timedate1Proxy.
- * @arg_local_rtc: Argument to pass with the method invocation.
- * @arg_fix_system: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_local_rtc_sync:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetLocalRTC">SetLocalRTC()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See timedate1_call_set_local_rtc() for the asynchronous version of this method.
+ * See timedated_timedate1_call_set_local_rtc() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_local_rtc_sync (
-    Timedate1 *proxy,
-    gboolean arg_local_rtc,
-    gboolean arg_fix_system,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_local_rtc_sync (
+    timedatedTimedate1 *proxy,
+    gboolean arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1035,9 +1315,9 @@ timedate1_call_set_local_rtc_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetLocalRTC",
     g_variant_new ("(bbb)",
-                   arg_local_rtc,
-                   arg_fix_system,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1052,25 +1332,25 @@ _out:
 }
 
 /**
- * timedate1_call_set_ntp:
- * @proxy: A #Timedate1Proxy.
- * @arg_use_ntp: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_ntp:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetNTP">SetNTP()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_call_set_ntp_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_call_set_ntp_finish() to get the result of the operation.
  *
- * See timedate1_call_set_ntp_sync() for the synchronous, blocking version of this method.
+ * See timedated_timedate1_call_set_ntp_sync() for the synchronous, blocking version of this method.
  */
 void
-timedate1_call_set_ntp (
-    Timedate1 *proxy,
-    gboolean arg_use_ntp,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_ntp (
+    timedatedTimedate1 *proxy,
+    gboolean arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1078,8 +1358,8 @@ timedate1_call_set_ntp (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetNTP",
     g_variant_new ("(bb)",
-                   arg_use_ntp,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1088,18 +1368,18 @@ timedate1_call_set_ntp (
 }
 
 /**
- * timedate1_call_set_ntp_finish:
- * @proxy: A #Timedate1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_call_set_ntp().
+ * timedated_timedate1_call_set_ntp_finish:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_call_set_ntp().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with timedate1_call_set_ntp().
+ * Finishes an operation started with timedated_timedate1_call_set_ntp().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_ntp_finish (
-    Timedate1 *proxy,
+timedated_timedate1_call_set_ntp_finish (
+    timedatedTimedate1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1115,24 +1395,24 @@ _out:
 }
 
 /**
- * timedate1_call_set_ntp_sync:
- * @proxy: A #Timedate1Proxy.
- * @arg_use_ntp: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * timedated_timedate1_call_set_ntp_sync:
+ * @proxy: A #timedatedTimedate1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-timedate1.SetNTP">SetNTP()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See timedate1_call_set_ntp() for the asynchronous version of this method.
+ * See timedated_timedate1_call_set_ntp() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-timedate1_call_set_ntp_sync (
-    Timedate1 *proxy,
-    gboolean arg_use_ntp,
-    gboolean arg_user_interaction,
+timedated_timedate1_call_set_ntp_sync (
+    timedatedTimedate1 *proxy,
+    gboolean arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1140,8 +1420,8 @@ timedate1_call_set_ntp_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetNTP",
     g_variant_new ("(bb)",
-                   arg_use_ntp,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1156,8 +1436,8 @@ _out:
 }
 
 /**
- * timedate1_complete_set_time:
- * @object: A #Timedate1.
+ * timedated_timedate1_complete_set_time:
+ * @object: A #timedatedTimedate1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTime">SetTime()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1165,8 +1445,8 @@ _out:
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-timedate1_complete_set_time (
-    Timedate1 *object,
+timedated_timedate1_complete_set_time (
+    timedatedTimedate1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1174,8 +1454,8 @@ timedate1_complete_set_time (
 }
 
 /**
- * timedate1_complete_set_timezone:
- * @object: A #Timedate1.
+ * timedated_timedate1_complete_set_timezone:
+ * @object: A #timedatedTimedate1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-timedate1.SetTimezone">SetTimezone()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1183,8 +1463,8 @@ timedate1_complete_set_time (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-timedate1_complete_set_timezone (
-    Timedate1 *object,
+timedated_timedate1_complete_set_timezone (
+    timedatedTimedate1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1192,8 +1472,8 @@ timedate1_complete_set_timezone (
 }
 
 /**
- * timedate1_complete_set_local_rtc:
- * @object: A #Timedate1.
+ * timedated_timedate1_complete_set_local_rtc:
+ * @object: A #timedatedTimedate1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-timedate1.SetLocalRTC">SetLocalRTC()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1201,8 +1481,8 @@ timedate1_complete_set_timezone (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-timedate1_complete_set_local_rtc (
-    Timedate1 *object,
+timedated_timedate1_complete_set_local_rtc (
+    timedatedTimedate1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1210,8 +1490,8 @@ timedate1_complete_set_local_rtc (
 }
 
 /**
- * timedate1_complete_set_ntp:
- * @object: A #Timedate1.
+ * timedated_timedate1_complete_set_ntp:
+ * @object: A #timedatedTimedate1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-timedate1.SetNTP">SetNTP()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1219,8 +1499,8 @@ timedate1_complete_set_local_rtc (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-timedate1_complete_set_ntp (
-    Timedate1 *object,
+timedated_timedate1_complete_set_ntp (
+    timedatedTimedate1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1230,53 +1510,53 @@ timedate1_complete_set_ntp (
 /* ------------------------------------------------------------------------ */
 
 /**
- * Timedate1Proxy:
+ * timedatedTimedate1Proxy:
  *
- * The #Timedate1Proxy structure contains only private data and should only be accessed using the provided API.
+ * The #timedatedTimedate1Proxy structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * Timedate1ProxyClass:
+ * timedatedTimedate1ProxyClass:
  * @parent_class: The parent class.
  *
- * Class structure for #Timedate1Proxy.
+ * Class structure for #timedatedTimedate1Proxy.
  */
 
-struct _Timedate1ProxyPrivate
+struct _timedatedTimedate1ProxyPrivate
 {
   GData *qdata;
 };
 
-static void timedate1_proxy_iface_init (Timedate1Iface *iface);
+static void timedated_timedate1_proxy_iface_init (timedatedTimedate1Iface *iface);
 
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (Timedate1Proxy, timedate1_proxy, G_TYPE_DBUS_PROXY,
-                         G_ADD_PRIVATE (Timedate1Proxy)
-                         G_IMPLEMENT_INTERFACE (TYPE_TIMEDATE1, timedate1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (timedatedTimedate1Proxy, timedated_timedate1_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (timedatedTimedate1Proxy)
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_TIMEDATE1, timedated_timedate1_proxy_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (Timedate1Proxy, timedate1_proxy, G_TYPE_DBUS_PROXY,
-                         G_IMPLEMENT_INTERFACE (TYPE_TIMEDATE1, timedate1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (timedatedTimedate1Proxy, timedated_timedate1_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_TIMEDATE1, timedated_timedate1_proxy_iface_init));
 
 #endif
 static void
-timedate1_proxy_finalize (GObject *object)
+timedated_timedate1_proxy_finalize (GObject *object)
 {
-  Timedate1Proxy *proxy = TIMEDATE1_PROXY (object);
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
   g_datalist_clear (&proxy->priv->qdata);
-  G_OBJECT_CLASS (timedate1_proxy_parent_class)->finalize (object);
+  G_OBJECT_CLASS (timedated_timedate1_proxy_parent_class)->finalize (object);
 }
 
 static void
-timedate1_proxy_get_property (GObject      *object,
+timedated_timedate1_proxy_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
-  g_assert (prop_id != 0 && prop_id - 1 < 3);
-  info = _timedate1_property_info_pointers[prop_id - 1];
+  g_assert (prop_id != 0 && prop_id - 1 < 7);
+  info = _timedated_timedate1_property_info_pointers[prop_id - 1];
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (object), info->parent_struct.name);
   if (info->use_gvariant)
     {
@@ -1292,7 +1572,7 @@ timedate1_proxy_get_property (GObject      *object,
 }
 
 static void
-timedate1_proxy_set_property_cb (GDBusProxy *proxy,
+timedated_timedate1_proxy_set_property_cb (GDBusProxy *proxy,
   GAsyncResult *res,
   gpointer      user_data)
 {
@@ -1315,27 +1595,27 @@ timedate1_proxy_set_property_cb (GDBusProxy *proxy,
 }
 
 static void
-timedate1_proxy_set_property (GObject      *object,
+timedated_timedate1_proxy_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
-  g_assert (prop_id != 0 && prop_id - 1 < 3);
-  info = _timedate1_property_info_pointers[prop_id - 1];
+  g_assert (prop_id != 0 && prop_id - 1 < 7);
+  info = _timedated_timedate1_property_info_pointers[prop_id - 1];
   variant = g_dbus_gvalue_to_gvariant (value, G_VARIANT_TYPE (info->parent_struct.signature));
   g_dbus_proxy_call (G_DBUS_PROXY (object),
     "org.freedesktop.DBus.Properties.Set",
     g_variant_new ("(ssv)", "org.freedesktop.timedate1", info->parent_struct.name, variant),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
-    NULL, (GAsyncReadyCallback) timedate1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
+    NULL, (GAsyncReadyCallback) timedated_timedate1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
   g_variant_unref (variant);
 }
 
 static void
-timedate1_proxy_g_signal (GDBusProxy *proxy,
+timedated_timedate1_proxy_g_signal (GDBusProxy *proxy,
   const gchar *sender_name G_GNUC_UNUSED,
   const gchar *signal_name,
   GVariant *parameters)
@@ -1347,12 +1627,12 @@ timedate1_proxy_g_signal (GDBusProxy *proxy,
   guint num_params;
   guint n;
   guint signal_id;
-  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct, signal_name);
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct, signal_name);
   if (info == NULL)
     return;
   num_params = g_variant_n_children (parameters);
   paramv = g_new0 (GValue, num_params + 1);
-  g_value_init (&paramv[0], TYPE_TIMEDATE1);
+  g_value_init (&paramv[0], TIMEDATED_TYPE_TIMEDATE1);
   g_value_set_object (&paramv[0], proxy);
   g_variant_iter_init (&iter, parameters);
   n = 1;
@@ -1369,7 +1649,7 @@ timedate1_proxy_g_signal (GDBusProxy *proxy,
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, TYPE_TIMEDATE1);
+  signal_id = g_signal_lookup (info->signal_name, TIMEDATED_TYPE_TIMEDATE1);
   g_signal_emitv (paramv, signal_id, 0, NULL);
   for (n = 0; n < num_params + 1; n++)
     g_value_unset (&paramv[n]);
@@ -1377,11 +1657,11 @@ timedate1_proxy_g_signal (GDBusProxy *proxy,
 }
 
 static void
-timedate1_proxy_g_properties_changed (GDBusProxy *_proxy,
+timedated_timedate1_proxy_g_properties_changed (GDBusProxy *_proxy,
   GVariant *changed_properties,
   const gchar *const *invalidated_properties)
 {
-  Timedate1Proxy *proxy = TIMEDATE1_PROXY (_proxy);
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (_proxy);
   guint n;
   const gchar *key;
   GVariantIter *iter;
@@ -1389,7 +1669,7 @@ timedate1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_get (changed_properties, "a{sv}", &iter);
   while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct, key);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct, key);
       g_datalist_remove_data (&proxy->priv->qdata, key);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -1397,7 +1677,7 @@ timedate1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_iter_free (iter);
   for (n = 0; invalidated_properties[n] != NULL; n++)
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct, invalidated_properties[n]);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct, invalidated_properties[n]);
       g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -1405,9 +1685,9 @@ timedate1_proxy_g_properties_changed (GDBusProxy *_proxy,
 }
 
 static const gchar *
-timedate1_proxy_get_timezone (Timedate1 *object)
+timedated_timedate1_proxy_get_timezone (timedatedTimedate1 *object)
 {
-  Timedate1Proxy *proxy = TIMEDATE1_PROXY (object);
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "Timezone");
@@ -1420,9 +1700,9 @@ timedate1_proxy_get_timezone (Timedate1 *object)
 }
 
 static gboolean 
-timedate1_proxy_get_local_rtc (Timedate1 *object)
+timedated_timedate1_proxy_get_local_rtc (timedatedTimedate1 *object)
 {
-  Timedate1Proxy *proxy = TIMEDATE1_PROXY (object);
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "LocalRTC");
@@ -1435,9 +1715,24 @@ timedate1_proxy_get_local_rtc (Timedate1 *object)
 }
 
 static gboolean 
-timedate1_proxy_get_ntp (Timedate1 *object)
+timedated_timedate1_proxy_get_can_ntp (timedatedTimedate1 *object)
 {
-  Timedate1Proxy *proxy = TIMEDATE1_PROXY (object);
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
+  GVariant *variant;
+  gboolean value = 0;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "CanNTP");
+  if (variant != NULL)
+    {
+      value = g_variant_get_boolean (variant);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static gboolean 
+timedated_timedate1_proxy_get_ntp (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "NTP");
@@ -1449,50 +1744,99 @@ timedate1_proxy_get_ntp (Timedate1 *object)
   return value;
 }
 
-static void
-timedate1_proxy_init (Timedate1Proxy *proxy)
+static gboolean 
+timedated_timedate1_proxy_get_ntpsynchronized (timedatedTimedate1 *object)
 {
-#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  proxy->priv = timedate1_proxy_get_instance_private (proxy);
-#else
-  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_TIMEDATE1_PROXY, Timedate1ProxyPrivate);
-#endif
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
+  GVariant *variant;
+  gboolean value = 0;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "NTPSynchronized");
+  if (variant != NULL)
+    {
+      value = g_variant_get_boolean (variant);
+      g_variant_unref (variant);
+    }
+  return value;
+}
 
-  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), timedate1_interface_info ());
+static guint64 
+timedated_timedate1_proxy_get_time_usec (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
+  GVariant *variant;
+  guint64 value = 0;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "TimeUSec");
+  if (variant != NULL)
+    {
+      value = g_variant_get_uint64 (variant);
+      g_variant_unref (variant);
+    }
+  return value;
+}
+
+static guint64 
+timedated_timedate1_proxy_get_rtctime_usec (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Proxy *proxy = TIMEDATED_TIMEDATE1_PROXY (object);
+  GVariant *variant;
+  guint64 value = 0;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "RTCTimeUSec");
+  if (variant != NULL)
+    {
+      value = g_variant_get_uint64 (variant);
+      g_variant_unref (variant);
+    }
+  return value;
 }
 
 static void
-timedate1_proxy_class_init (Timedate1ProxyClass *klass)
+timedated_timedate1_proxy_init (timedatedTimedate1Proxy *proxy)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  proxy->priv = timedated_timedate1_proxy_get_instance_private (proxy);
+#else
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TIMEDATED_TYPE_TIMEDATE1_PROXY, timedatedTimedate1ProxyPrivate);
+#endif
+
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), timedated_timedate1_interface_info ());
+}
+
+static void
+timedated_timedate1_proxy_class_init (timedatedTimedate1ProxyClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize     = timedate1_proxy_finalize;
-  gobject_class->get_property = timedate1_proxy_get_property;
-  gobject_class->set_property = timedate1_proxy_set_property;
+  gobject_class->finalize     = timedated_timedate1_proxy_finalize;
+  gobject_class->get_property = timedated_timedate1_proxy_get_property;
+  gobject_class->set_property = timedated_timedate1_proxy_set_property;
 
   proxy_class = G_DBUS_PROXY_CLASS (klass);
-  proxy_class->g_signal = timedate1_proxy_g_signal;
-  proxy_class->g_properties_changed = timedate1_proxy_g_properties_changed;
+  proxy_class->g_signal = timedated_timedate1_proxy_g_signal;
+  proxy_class->g_properties_changed = timedated_timedate1_proxy_g_properties_changed;
 
-  timedate1_override_properties (gobject_class, 1);
+  timedated_timedate1_override_properties (gobject_class, 1);
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (Timedate1ProxyPrivate));
+  g_type_class_add_private (klass, sizeof (timedatedTimedate1ProxyPrivate));
 #endif
 }
 
 static void
-timedate1_proxy_iface_init (Timedate1Iface *iface)
+timedated_timedate1_proxy_iface_init (timedatedTimedate1Iface *iface)
 {
-  iface->get_timezone = timedate1_proxy_get_timezone;
-  iface->get_local_rtc = timedate1_proxy_get_local_rtc;
-  iface->get_ntp = timedate1_proxy_get_ntp;
+  iface->get_timezone = timedated_timedate1_proxy_get_timezone;
+  iface->get_local_rtc = timedated_timedate1_proxy_get_local_rtc;
+  iface->get_can_ntp = timedated_timedate1_proxy_get_can_ntp;
+  iface->get_ntp = timedated_timedate1_proxy_get_ntp;
+  iface->get_ntpsynchronized = timedated_timedate1_proxy_get_ntpsynchronized;
+  iface->get_time_usec = timedated_timedate1_proxy_get_time_usec;
+  iface->get_rtctime_usec = timedated_timedate1_proxy_get_rtctime_usec;
 }
 
 /**
- * timedate1_proxy_new:
+ * timedated_timedate1_proxy_new:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -1504,12 +1848,12 @@ timedate1_proxy_iface_init (Timedate1Iface *iface)
  * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link>. See g_dbus_proxy_new() for more details.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_proxy_new_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_proxy_new_finish() to get the result of the operation.
  *
- * See timedate1_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ * See timedated_timedate1_proxy_new_sync() for the synchronous, blocking version of this constructor.
  */
 void
-timedate1_proxy_new (
+timedated_timedate1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1518,20 +1862,20 @@ timedate1_proxy_new (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (TYPE_TIMEDATE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
+  g_async_initable_new_async (TIMEDATED_TYPE_TIMEDATE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
 }
 
 /**
- * timedate1_proxy_new_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_proxy_new().
+ * timedated_timedate1_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_proxy_new().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with timedate1_proxy_new().
+ * Finishes an operation started with timedated_timedate1_proxy_new().
  *
- * Returns: (transfer full) (type Timedate1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type timedatedTimedate1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Timedate1 *
-timedate1_proxy_new_finish (
+timedatedTimedate1 *
+timedated_timedate1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -1541,13 +1885,13 @@ timedate1_proxy_new_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return TIMEDATE1 (ret);
+    return TIMEDATED_TIMEDATE1 (ret);
   else
     return NULL;
 }
 
 /**
- * timedate1_proxy_new_sync:
+ * timedated_timedate1_proxy_new_sync:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -1559,12 +1903,12 @@ timedate1_proxy_new_finish (
  *
  * The calling thread is blocked until a reply is received.
  *
- * See timedate1_proxy_new() for the asynchronous version of this constructor.
+ * See timedated_timedate1_proxy_new() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type Timedate1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type timedatedTimedate1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Timedate1 *
-timedate1_proxy_new_sync (
+timedatedTimedate1 *
+timedated_timedate1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1573,16 +1917,16 @@ timedate1_proxy_new_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (TYPE_TIMEDATE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
+  ret = g_initable_new (TIMEDATED_TYPE_TIMEDATE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
   if (ret != NULL)
-    return TIMEDATE1 (ret);
+    return TIMEDATED_TIMEDATE1 (ret);
   else
     return NULL;
 }
 
 
 /**
- * timedate1_proxy_new_for_bus:
+ * timedated_timedate1_proxy_new_for_bus:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -1591,15 +1935,15 @@ timedate1_proxy_new_sync (
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Like timedate1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ * Like timedated_timedate1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call timedate1_proxy_new_for_bus_finish() to get the result of the operation.
+ * You can then call timedated_timedate1_proxy_new_for_bus_finish() to get the result of the operation.
  *
- * See timedate1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ * See timedated_timedate1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
  */
 void
-timedate1_proxy_new_for_bus (
+timedated_timedate1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1608,20 +1952,20 @@ timedate1_proxy_new_for_bus (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (TYPE_TIMEDATE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
+  g_async_initable_new_async (TIMEDATED_TYPE_TIMEDATE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
 }
 
 /**
- * timedate1_proxy_new_for_bus_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedate1_proxy_new_for_bus().
+ * timedated_timedate1_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_timedate1_proxy_new_for_bus().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with timedate1_proxy_new_for_bus().
+ * Finishes an operation started with timedated_timedate1_proxy_new_for_bus().
  *
- * Returns: (transfer full) (type Timedate1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type timedatedTimedate1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Timedate1 *
-timedate1_proxy_new_for_bus_finish (
+timedatedTimedate1 *
+timedated_timedate1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -1631,13 +1975,13 @@ timedate1_proxy_new_for_bus_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return TIMEDATE1 (ret);
+    return TIMEDATED_TIMEDATE1 (ret);
   else
     return NULL;
 }
 
 /**
- * timedate1_proxy_new_for_bus_sync:
+ * timedated_timedate1_proxy_new_for_bus_sync:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -1645,16 +1989,16 @@ timedate1_proxy_new_for_bus_finish (
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Like timedate1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ * Like timedated_timedate1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See timedate1_proxy_new_for_bus() for the asynchronous version of this constructor.
+ * See timedated_timedate1_proxy_new_for_bus() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type Timedate1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type timedatedTimedate1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Timedate1 *
-timedate1_proxy_new_for_bus_sync (
+timedatedTimedate1 *
+timedated_timedate1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1663,9 +2007,9 @@ timedate1_proxy_new_for_bus_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (TYPE_TIMEDATE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
+  ret = g_initable_new (TIMEDATED_TYPE_TIMEDATE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.timedate1", NULL);
   if (ret != NULL)
-    return TIMEDATE1 (ret);
+    return TIMEDATED_TIMEDATE1 (ret);
   else
     return NULL;
 }
@@ -1674,19 +2018,19 @@ timedate1_proxy_new_for_bus_sync (
 /* ------------------------------------------------------------------------ */
 
 /**
- * Timedate1Skeleton:
+ * timedatedTimedate1Skeleton:
  *
- * The #Timedate1Skeleton structure contains only private data and should only be accessed using the provided API.
+ * The #timedatedTimedate1Skeleton structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * Timedate1SkeletonClass:
+ * timedatedTimedate1SkeletonClass:
  * @parent_class: The parent class.
  *
- * Class structure for #Timedate1Skeleton.
+ * Class structure for #timedatedTimedate1Skeleton.
  */
 
-struct _Timedate1SkeletonPrivate
+struct _timedatedTimedate1SkeletonPrivate
 {
   GValue *properties;
   GList *changed_properties;
@@ -1696,7 +2040,7 @@ struct _Timedate1SkeletonPrivate
 };
 
 static void
-_timedate1_skeleton_handle_method_call (
+_timedated_timedate1_skeleton_handle_method_call (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -1706,7 +2050,7 @@ _timedate1_skeleton_handle_method_call (
   GDBusMethodInvocation *invocation,
   gpointer user_data)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (user_data);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (user_data);
   _ExtendedGDBusMethodInfo *info;
   GVariantIter iter;
   GVariant *child;
@@ -1721,7 +2065,7 @@ _timedate1_skeleton_handle_method_call (
   num_params = g_variant_n_children (parameters);
   num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
   n = 0;
-  g_value_init (&paramv[n], TYPE_TIMEDATE1);
+  g_value_init (&paramv[n], TIMEDATED_TYPE_TIMEDATE1);
   g_value_set_object (&paramv[n++], skeleton);
   g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
   g_value_set_object (&paramv[n++], invocation);
@@ -1748,7 +2092,7 @@ _timedate1_skeleton_handle_method_call (
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, TYPE_TIMEDATE1);
+  signal_id = g_signal_lookup (info->signal_name, TIMEDATED_TYPE_TIMEDATE1);
   g_value_init (&return_value, G_TYPE_BOOLEAN);
   g_signal_emitv (paramv, signal_id, 0, &return_value);
   if (!g_value_get_boolean (&return_value))
@@ -1760,7 +2104,7 @@ _timedate1_skeleton_handle_method_call (
 }
 
 static GVariant *
-_timedate1_skeleton_handle_get_property (
+_timedated_timedate1_skeleton_handle_get_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -1769,13 +2113,13 @@ _timedate1_skeleton_handle_get_property (
   GError **error,
   gpointer user_data)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (user_data);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   GVariant *ret;
   ret = NULL;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -1793,7 +2137,7 @@ _timedate1_skeleton_handle_get_property (
 }
 
 static gboolean
-_timedate1_skeleton_handle_set_property (
+_timedated_timedate1_skeleton_handle_set_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -1803,13 +2147,13 @@ _timedate1_skeleton_handle_set_property (
   GError **error,
   gpointer user_data)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (user_data);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   gboolean ret;
   ret = FALSE;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedate1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_timedated_timedate1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -1829,43 +2173,43 @@ _timedate1_skeleton_handle_set_property (
   return ret;
 }
 
-static const GDBusInterfaceVTable _timedate1_skeleton_vtable =
+static const GDBusInterfaceVTable _timedated_timedate1_skeleton_vtable =
 {
-  _timedate1_skeleton_handle_method_call,
-  _timedate1_skeleton_handle_get_property,
-  _timedate1_skeleton_handle_set_property,
+  _timedated_timedate1_skeleton_handle_method_call,
+  _timedated_timedate1_skeleton_handle_get_property,
+  _timedated_timedate1_skeleton_handle_set_property,
   {NULL}
 };
 
 static GDBusInterfaceInfo *
-timedate1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+timedated_timedate1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return timedate1_interface_info ();
+  return timedated_timedate1_interface_info ();
 }
 
 static GDBusInterfaceVTable *
-timedate1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+timedated_timedate1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return (GDBusInterfaceVTable *) &_timedate1_skeleton_vtable;
+  return (GDBusInterfaceVTable *) &_timedated_timedate1_skeleton_vtable;
 }
 
 static GVariant *
-timedate1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+timedated_timedate1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (_skeleton);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (_skeleton);
 
   GVariantBuilder builder;
   guint n;
   g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
-  if (_timedate1_interface_info.parent_struct.properties == NULL)
+  if (_timedated_timedate1_interface_info.parent_struct.properties == NULL)
     goto out;
-  for (n = 0; _timedate1_interface_info.parent_struct.properties[n] != NULL; n++)
+  for (n = 0; _timedated_timedate1_interface_info.parent_struct.properties[n] != NULL; n++)
     {
-      GDBusPropertyInfo *info = _timedate1_interface_info.parent_struct.properties[n];
+      GDBusPropertyInfo *info = _timedated_timedate1_interface_info.parent_struct.properties[n];
       if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
         {
           GVariant *value;
-          value = _timedate1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.timedate1", info->name, NULL, skeleton);
+          value = _timedated_timedate1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.timedate1", info->name, NULL, skeleton);
           if (value != NULL)
             {
               g_variant_take_ref (value);
@@ -1878,12 +2222,12 @@ out:
   return g_variant_builder_end (&builder);
 }
 
-static gboolean _timedate1_emit_changed (gpointer user_data);
+static gboolean _timedated_timedate1_emit_changed (gpointer user_data);
 
 static void
-timedate1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+timedated_timedate1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (_skeleton);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (_skeleton);
   gboolean emit_changed = FALSE;
 
   g_mutex_lock (&skeleton->priv->lock);
@@ -1896,26 +2240,26 @@ timedate1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
   g_mutex_unlock (&skeleton->priv->lock);
 
   if (emit_changed)
-    _timedate1_emit_changed (skeleton);
+    _timedated_timedate1_emit_changed (skeleton);
 }
 
-static void timedate1_skeleton_iface_init (Timedate1Iface *iface);
+static void timedated_timedate1_skeleton_iface_init (timedatedTimedate1Iface *iface);
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (Timedate1Skeleton, timedate1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_ADD_PRIVATE (Timedate1Skeleton)
-                         G_IMPLEMENT_INTERFACE (TYPE_TIMEDATE1, timedate1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (timedatedTimedate1Skeleton, timedated_timedate1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (timedatedTimedate1Skeleton)
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_TIMEDATE1, timedated_timedate1_skeleton_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (Timedate1Skeleton, timedate1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_IMPLEMENT_INTERFACE (TYPE_TIMEDATE1, timedate1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (timedatedTimedate1Skeleton, timedated_timedate1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_TIMEDATE1, timedated_timedate1_skeleton_iface_init));
 
 #endif
 static void
-timedate1_skeleton_finalize (GObject *object)
+timedated_timedate1_skeleton_finalize (GObject *object)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
   guint n;
-  for (n = 0; n < 3; n++)
+  for (n = 0; n < 7; n++)
     g_value_unset (&skeleton->priv->properties[n]);
   g_free (skeleton->priv->properties);
   g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
@@ -1923,26 +2267,26 @@ timedate1_skeleton_finalize (GObject *object)
     g_source_destroy (skeleton->priv->changed_properties_idle_source);
   g_main_context_unref (skeleton->priv->context);
   g_mutex_clear (&skeleton->priv->lock);
-  G_OBJECT_CLASS (timedate1_skeleton_parent_class)->finalize (object);
+  G_OBJECT_CLASS (timedated_timedate1_skeleton_parent_class)->finalize (object);
 }
 
 static void
-timedate1_skeleton_get_property (GObject      *object,
+timedated_timedate1_skeleton_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
-  g_assert (prop_id != 0 && prop_id - 1 < 3);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  g_assert (prop_id != 0 && prop_id - 1 < 7);
   g_mutex_lock (&skeleton->priv->lock);
   g_value_copy (&skeleton->priv->properties[prop_id - 1], value);
   g_mutex_unlock (&skeleton->priv->lock);
 }
 
 static gboolean
-_timedate1_emit_changed (gpointer user_data)
+_timedated_timedate1_emit_changed (gpointer user_data)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (user_data);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (user_data);
   GList *l;
   GVariantBuilder builder;
   GVariantBuilder invalidated_builder;
@@ -2000,7 +2344,7 @@ _timedate1_emit_changed (gpointer user_data)
 }
 
 static void
-_timedate1_schedule_emit_changed (Timedate1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
+_timedated_timedate1_schedule_emit_changed (timedatedTimedate1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
 {
   ChangedProperty *cp;
   GList *l;
@@ -2026,17 +2370,17 @@ _timedate1_schedule_emit_changed (Timedate1Skeleton *skeleton, const _ExtendedGD
 }
 
 static void
-timedate1_skeleton_notify (GObject      *object,
+timedated_timedate1_skeleton_notify (GObject      *object,
   GParamSpec *pspec G_GNUC_UNUSED)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
   g_mutex_lock (&skeleton->priv->lock);
   if (skeleton->priv->changed_properties != NULL &&
       skeleton->priv->changed_properties_idle_source == NULL)
     {
       skeleton->priv->changed_properties_idle_source = g_idle_source_new ();
       g_source_set_priority (skeleton->priv->changed_properties_idle_source, G_PRIORITY_DEFAULT);
-      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _timedate1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
+      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _timedated_timedate1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
       g_source_attach (skeleton->priv->changed_properties_idle_source, skeleton->priv->context);
       g_source_unref (skeleton->priv->changed_properties_idle_source);
     }
@@ -2044,19 +2388,19 @@ timedate1_skeleton_notify (GObject      *object,
 }
 
 static void
-timedate1_skeleton_set_property (GObject      *object,
+timedated_timedate1_skeleton_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
-  g_assert (prop_id != 0 && prop_id - 1 < 3);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  g_assert (prop_id != 0 && prop_id - 1 < 7);
   g_mutex_lock (&skeleton->priv->lock);
   g_object_freeze_notify (object);
   if (!_g_value_equal (value, &skeleton->priv->properties[prop_id - 1]))
     {
       if (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)) != NULL)
-        _timedate1_schedule_emit_changed (skeleton, _timedate1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
+        _timedated_timedate1_schedule_emit_changed (skeleton, _timedated_timedate1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
       g_value_copy (value, &skeleton->priv->properties[prop_id - 1]);
       g_object_notify_by_pspec (object, pspec);
     }
@@ -2065,26 +2409,30 @@ timedate1_skeleton_set_property (GObject      *object,
 }
 
 static void
-timedate1_skeleton_init (Timedate1Skeleton *skeleton)
+timedated_timedate1_skeleton_init (timedatedTimedate1Skeleton *skeleton)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  skeleton->priv = timedate1_skeleton_get_instance_private (skeleton);
+  skeleton->priv = timedated_timedate1_skeleton_get_instance_private (skeleton);
 #else
-  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_TIMEDATE1_SKELETON, Timedate1SkeletonPrivate);
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TIMEDATED_TYPE_TIMEDATE1_SKELETON, timedatedTimedate1SkeletonPrivate);
 #endif
 
   g_mutex_init (&skeleton->priv->lock);
   skeleton->priv->context = g_main_context_ref_thread_default ();
-  skeleton->priv->properties = g_new0 (GValue, 3);
+  skeleton->priv->properties = g_new0 (GValue, 7);
   g_value_init (&skeleton->priv->properties[0], G_TYPE_STRING);
   g_value_init (&skeleton->priv->properties[1], G_TYPE_BOOLEAN);
   g_value_init (&skeleton->priv->properties[2], G_TYPE_BOOLEAN);
+  g_value_init (&skeleton->priv->properties[3], G_TYPE_BOOLEAN);
+  g_value_init (&skeleton->priv->properties[4], G_TYPE_BOOLEAN);
+  g_value_init (&skeleton->priv->properties[5], G_TYPE_UINT64);
+  g_value_init (&skeleton->priv->properties[6], G_TYPE_UINT64);
 }
 
 static const gchar *
-timedate1_skeleton_get_timezone (Timedate1 *object)
+timedated_timedate1_skeleton_get_timezone (timedatedTimedate1 *object)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[0]));
@@ -2093,9 +2441,9 @@ timedate1_skeleton_get_timezone (Timedate1 *object)
 }
 
 static gboolean 
-timedate1_skeleton_get_local_rtc (Timedate1 *object)
+timedated_timedate1_skeleton_get_local_rtc (timedatedTimedate1 *object)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[1]));
@@ -2104,9 +2452,9 @@ timedate1_skeleton_get_local_rtc (Timedate1 *object)
 }
 
 static gboolean 
-timedate1_skeleton_get_ntp (Timedate1 *object)
+timedated_timedate1_skeleton_get_can_ntp (timedatedTimedate1 *object)
 {
-  Timedate1Skeleton *skeleton = TIMEDATE1_SKELETON (object);
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[2]));
@@ -2114,50 +2462,662 @@ timedate1_skeleton_get_ntp (Timedate1 *object)
   return value;
 }
 
+static gboolean 
+timedated_timedate1_skeleton_get_ntp (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  gboolean value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_boolean (&(skeleton->priv->properties[3]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static gboolean 
+timedated_timedate1_skeleton_get_ntpsynchronized (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  gboolean value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_boolean (&(skeleton->priv->properties[4]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static guint64 
+timedated_timedate1_skeleton_get_time_usec (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  guint64 value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_uint64 (&(skeleton->priv->properties[5]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
+static guint64 
+timedated_timedate1_skeleton_get_rtctime_usec (timedatedTimedate1 *object)
+{
+  timedatedTimedate1Skeleton *skeleton = TIMEDATED_TIMEDATE1_SKELETON (object);
+  guint64 value;
+  g_mutex_lock (&skeleton->priv->lock);
+  value = g_value_get_uint64 (&(skeleton->priv->properties[6]));
+  g_mutex_unlock (&skeleton->priv->lock);
+  return value;
+}
+
 static void
-timedate1_skeleton_class_init (Timedate1SkeletonClass *klass)
+timedated_timedate1_skeleton_class_init (timedatedTimedate1SkeletonClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusInterfaceSkeletonClass *skeleton_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = timedate1_skeleton_finalize;
-  gobject_class->get_property = timedate1_skeleton_get_property;
-  gobject_class->set_property = timedate1_skeleton_set_property;
-  gobject_class->notify       = timedate1_skeleton_notify;
+  gobject_class->finalize = timedated_timedate1_skeleton_finalize;
+  gobject_class->get_property = timedated_timedate1_skeleton_get_property;
+  gobject_class->set_property = timedated_timedate1_skeleton_set_property;
+  gobject_class->notify       = timedated_timedate1_skeleton_notify;
 
 
-  timedate1_override_properties (gobject_class, 1);
+  timedated_timedate1_override_properties (gobject_class, 1);
 
   skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
-  skeleton_class->get_info = timedate1_skeleton_dbus_interface_get_info;
-  skeleton_class->get_properties = timedate1_skeleton_dbus_interface_get_properties;
-  skeleton_class->flush = timedate1_skeleton_dbus_interface_flush;
-  skeleton_class->get_vtable = timedate1_skeleton_dbus_interface_get_vtable;
+  skeleton_class->get_info = timedated_timedate1_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = timedated_timedate1_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = timedated_timedate1_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = timedated_timedate1_skeleton_dbus_interface_get_vtable;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (Timedate1SkeletonPrivate));
+  g_type_class_add_private (klass, sizeof (timedatedTimedate1SkeletonPrivate));
 #endif
 }
 
 static void
-timedate1_skeleton_iface_init (Timedate1Iface *iface)
+timedated_timedate1_skeleton_iface_init (timedatedTimedate1Iface *iface)
 {
-  iface->get_timezone = timedate1_skeleton_get_timezone;
-  iface->get_local_rtc = timedate1_skeleton_get_local_rtc;
-  iface->get_ntp = timedate1_skeleton_get_ntp;
+  iface->get_timezone = timedated_timedate1_skeleton_get_timezone;
+  iface->get_local_rtc = timedated_timedate1_skeleton_get_local_rtc;
+  iface->get_can_ntp = timedated_timedate1_skeleton_get_can_ntp;
+  iface->get_ntp = timedated_timedate1_skeleton_get_ntp;
+  iface->get_ntpsynchronized = timedated_timedate1_skeleton_get_ntpsynchronized;
+  iface->get_time_usec = timedated_timedate1_skeleton_get_time_usec;
+  iface->get_rtctime_usec = timedated_timedate1_skeleton_get_rtctime_usec;
 }
 
 /**
- * timedate1_skeleton_new:
+ * timedated_timedate1_skeleton_new:
  *
  * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link>.
  *
- * Returns: (transfer full) (type Timedate1Skeleton): The skeleton object.
+ * Returns: (transfer full) (type timedatedTimedate1Skeleton): The skeleton object.
  */
-Timedate1 *
-timedate1_skeleton_new (void)
+timedatedTimedate1 *
+timedated_timedate1_skeleton_new (void)
 {
-  return TIMEDATE1 (g_object_new (TYPE_TIMEDATE1_SKELETON, NULL));
+  return TIMEDATED_TIMEDATE1 (g_object_new (TIMEDATED_TYPE_TIMEDATE1_SKELETON, NULL));
 }
+
+/* ------------------------------------------------------------------------
+ * Code for Object, ObjectProxy and ObjectSkeleton
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:timedatedObject
+ * @title: timedatedObject
+ * @short_description: Specialized GDBusObject types
+ *
+ * This section contains the #timedatedObject, #timedatedObjectProxy, and #timedatedObjectSkeleton types which make it easier to work with objects implementing generated types for D-Bus interfaces.
+ */
+
+/**
+ * timedatedObject:
+ *
+ * The #timedatedObject type is a specialized container of interfaces.
+ */
+
+/**
+ * timedatedObjectIface:
+ * @parent_iface: The parent interface.
+ *
+ * Virtual table for the #timedatedObject interface.
+ */
+
+typedef timedatedObjectIface timedatedObjectInterface;
+G_DEFINE_INTERFACE_WITH_CODE (timedatedObject, timedated_object, G_TYPE_OBJECT, g_type_interface_add_prerequisite (g_define_type_id, G_TYPE_DBUS_OBJECT));
+
+static void
+timedated_object_default_init (timedatedObjectIface *iface)
+{
+  /**
+   * timedatedObject:timedate1:
+   *
+   * The #timedatedTimedate1 instance corresponding to the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link>, if any.
+   *
+   * Connect to the #GObject::notify signal to get informed of property changes.
+   */
+  g_object_interface_install_property (iface, g_param_spec_object ("timedate1", "timedate1", "timedate1", TIMEDATED_TYPE_TIMEDATE1, G_PARAM_READWRITE|G_PARAM_STATIC_STRINGS));
+
+}
+
+/**
+ * timedated_object_get_timedate1:
+ * @object: A #timedatedObject.
+ *
+ * Gets the #timedatedTimedate1 instance for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link> on @object, if any.
+ *
+ * Returns: (transfer full): A #timedatedTimedate1 that must be freed with g_object_unref() or %NULL if @object does not implement the interface.
+ */
+timedatedTimedate1 *timedated_object_get_timedate1 (timedatedObject *object)
+{
+  GDBusInterface *ret;
+  ret = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.timedate1");
+  if (ret == NULL)
+    return NULL;
+  return TIMEDATED_TIMEDATE1 (ret);
+}
+
+
+/**
+ * timedated_object_peek_timedate1: (skip)
+ * @object: A #timedatedObject.
+ *
+ * Like timedated_object_get_timedate1() but doesn't increase the reference count on the returned object.
+ *
+ * <warning>It is not safe to use the returned object if you are on another thread than the one where the #GDBusObjectManagerClient or #GDBusObjectManagerServer for @object is running.</warning>
+ *
+ * Returns: (transfer none): A #timedatedTimedate1 or %NULL if @object does not implement the interface. Do not free the returned object, it is owned by @object.
+ */
+timedatedTimedate1 *timedated_object_peek_timedate1 (timedatedObject *object)
+{
+  GDBusInterface *ret;
+  ret = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.timedate1");
+  if (ret == NULL)
+    return NULL;
+  g_object_unref (ret);
+  return TIMEDATED_TIMEDATE1 (ret);
+}
+
+
+static void
+timedated_object_notify (GDBusObject *object, GDBusInterface *interface)
+{
+  _ExtendedGDBusInterfaceInfo *info = (_ExtendedGDBusInterfaceInfo *) g_dbus_interface_get_info (interface);
+  /* info can be NULL if the other end is using a D-Bus interface we don't know
+   * anything about, for example old generated code in this process talking to
+   * newer generated code in the other process. */
+  if (info != NULL)
+    g_object_notify (G_OBJECT (object), info->hyphen_name);
+}
+
+/**
+ * timedatedObjectProxy:
+ *
+ * The #timedatedObjectProxy structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * timedatedObjectProxyClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #timedatedObjectProxy.
+ */
+
+static void
+timedated_object_proxy__timedated_object_iface_init (timedatedObjectIface *iface G_GNUC_UNUSED)
+{
+}
+
+static void
+timedated_object_proxy__g_dbus_object_iface_init (GDBusObjectIface *iface)
+{
+  iface->interface_added = timedated_object_notify;
+  iface->interface_removed = timedated_object_notify;
+}
+
+
+G_DEFINE_TYPE_WITH_CODE (timedatedObjectProxy, timedated_object_proxy, G_TYPE_DBUS_OBJECT_PROXY,
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_OBJECT, timedated_object_proxy__timedated_object_iface_init)
+                         G_IMPLEMENT_INTERFACE (G_TYPE_DBUS_OBJECT, timedated_object_proxy__g_dbus_object_iface_init));
+
+static void
+timedated_object_proxy_init (timedatedObjectProxy *object G_GNUC_UNUSED)
+{
+}
+
+static void
+timedated_object_proxy_set_property (GObject      *gobject,
+  guint         prop_id,
+  const GValue *value G_GNUC_UNUSED,
+  GParamSpec   *pspec)
+{
+  G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+}
+
+static void
+timedated_object_proxy_get_property (GObject      *gobject,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec)
+{
+  timedatedObjectProxy *object = TIMEDATED_OBJECT_PROXY (gobject);
+  GDBusInterface *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.timedate1");
+      g_value_take_object (value, interface);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+timedated_object_proxy_class_init (timedatedObjectProxyClass *klass)
+{
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  gobject_class->set_property = timedated_object_proxy_set_property;
+  gobject_class->get_property = timedated_object_proxy_get_property;
+
+  g_object_class_override_property (gobject_class, 1, "timedate1");
+}
+
+/**
+ * timedated_object_proxy_new:
+ * @connection: A #GDBusConnection.
+ * @object_path: An object path.
+ *
+ * Creates a new proxy object.
+ *
+ * Returns: (transfer full): The proxy object.
+ */
+timedatedObjectProxy *
+timedated_object_proxy_new (GDBusConnection *connection,
+  const gchar *object_path)
+{
+  g_return_val_if_fail (G_IS_DBUS_CONNECTION (connection), NULL);
+  g_return_val_if_fail (g_variant_is_object_path (object_path), NULL);
+  return TIMEDATED_OBJECT_PROXY (g_object_new (TIMEDATED_TYPE_OBJECT_PROXY, "g-connection", connection, "g-object-path", object_path, NULL));
+}
+
+/**
+ * timedatedObjectSkeleton:
+ *
+ * The #timedatedObjectSkeleton structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * timedatedObjectSkeletonClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #timedatedObjectSkeleton.
+ */
+
+static void
+timedated_object_skeleton__timedated_object_iface_init (timedatedObjectIface *iface G_GNUC_UNUSED)
+{
+}
+
+
+static void
+timedated_object_skeleton__g_dbus_object_iface_init (GDBusObjectIface *iface)
+{
+  iface->interface_added = timedated_object_notify;
+  iface->interface_removed = timedated_object_notify;
+}
+
+G_DEFINE_TYPE_WITH_CODE (timedatedObjectSkeleton, timedated_object_skeleton, G_TYPE_DBUS_OBJECT_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TIMEDATED_TYPE_OBJECT, timedated_object_skeleton__timedated_object_iface_init)
+                         G_IMPLEMENT_INTERFACE (G_TYPE_DBUS_OBJECT, timedated_object_skeleton__g_dbus_object_iface_init));
+
+static void
+timedated_object_skeleton_init (timedatedObjectSkeleton *object G_GNUC_UNUSED)
+{
+}
+
+static void
+timedated_object_skeleton_set_property (GObject      *gobject,
+  guint         prop_id,
+  const GValue *value,
+  GParamSpec   *pspec)
+{
+  timedatedObjectSkeleton *object = TIMEDATED_OBJECT_SKELETON (gobject);
+  GDBusInterfaceSkeleton *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_value_get_object (value);
+      if (interface != NULL)
+        {
+          g_warn_if_fail (TIMEDATED_IS_TIMEDATE1 (interface));
+          g_dbus_object_skeleton_add_interface (G_DBUS_OBJECT_SKELETON (object), interface);
+        }
+      else
+        {
+          g_dbus_object_skeleton_remove_interface_by_name (G_DBUS_OBJECT_SKELETON (object), "org.freedesktop.timedate1");
+        }
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+timedated_object_skeleton_get_property (GObject      *gobject,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec)
+{
+  timedatedObjectSkeleton *object = TIMEDATED_OBJECT_SKELETON (gobject);
+  GDBusInterface *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.timedate1");
+      g_value_take_object (value, interface);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+timedated_object_skeleton_class_init (timedatedObjectSkeletonClass *klass)
+{
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  gobject_class->set_property = timedated_object_skeleton_set_property;
+  gobject_class->get_property = timedated_object_skeleton_get_property;
+
+  g_object_class_override_property (gobject_class, 1, "timedate1");
+}
+
+/**
+ * timedated_object_skeleton_new:
+ * @object_path: An object path.
+ *
+ * Creates a new skeleton object.
+ *
+ * Returns: (transfer full): The skeleton object.
+ */
+timedatedObjectSkeleton *
+timedated_object_skeleton_new (const gchar *object_path)
+{
+  g_return_val_if_fail (g_variant_is_object_path (object_path), NULL);
+  return TIMEDATED_OBJECT_SKELETON (g_object_new (TIMEDATED_TYPE_OBJECT_SKELETON, "g-object-path", object_path, NULL));
+}
+
+/**
+ * timedated_object_skeleton_set_timedate1:
+ * @object: A #timedatedObjectSkeleton.
+ * @interface_: (allow-none): A #timedatedTimedate1 or %NULL to clear the interface.
+ *
+ * Sets the #timedatedTimedate1 instance for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-timedate1.top_of_page">org.freedesktop.timedate1</link> on @object.
+ */
+void timedated_object_skeleton_set_timedate1 (timedatedObjectSkeleton *object, timedatedTimedate1 *interface_)
+{
+  g_object_set (G_OBJECT (object), "timedate1", interface_, NULL);
+}
+
+
+/* ------------------------------------------------------------------------
+ * Code for ObjectManager client
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:timedatedObjectManagerClient
+ * @title: timedatedObjectManagerClient
+ * @short_description: Generated GDBusObjectManagerClient type
+ *
+ * This section contains a #GDBusObjectManagerClient that uses timedated_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc.
+ */
+
+/**
+ * timedatedObjectManagerClient:
+ *
+ * The #timedatedObjectManagerClient structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * timedatedObjectManagerClientClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #timedatedObjectManagerClient.
+ */
+
+G_DEFINE_TYPE (timedatedObjectManagerClient, timedated_object_manager_client, G_TYPE_DBUS_OBJECT_MANAGER_CLIENT);
+
+static void
+timedated_object_manager_client_init (timedatedObjectManagerClient *manager G_GNUC_UNUSED)
+{
+}
+
+static void
+timedated_object_manager_client_class_init (timedatedObjectManagerClientClass *klass G_GNUC_UNUSED)
+{
+}
+
+/**
+ * timedated_object_manager_client_get_proxy_type:
+ * @manager: A #GDBusObjectManagerClient.
+ * @object_path: The object path of the remote object (unused).
+ * @interface_name: (allow-none): Interface name of the remote object or %NULL to get the object proxy #GType.
+ * @user_data: User data (unused).
+ *
+ * A #GDBusProxyTypeFunc that maps @interface_name to the generated #GDBusObjectProxy<!-- -->- and #GDBusProxy<!-- -->-derived types.
+ *
+ * Returns: A #GDBusProxy<!-- -->-derived #GType if @interface_name is not %NULL, otherwise the #GType for #timedatedObjectProxy.
+ */
+GType
+timedated_object_manager_client_get_proxy_type (GDBusObjectManagerClient *manager G_GNUC_UNUSED, const gchar *object_path G_GNUC_UNUSED, const gchar *interface_name, gpointer user_data G_GNUC_UNUSED)
+{
+  static gsize once_init_value = 0;
+  static GHashTable *lookup_hash;
+  GType ret;
+
+  if (interface_name == NULL)
+    return TIMEDATED_TYPE_OBJECT_PROXY;
+  if (g_once_init_enter (&once_init_value))
+    {
+      lookup_hash = g_hash_table_new (g_str_hash, g_str_equal);
+      g_hash_table_insert (lookup_hash, (gpointer) "org.freedesktop.timedate1", GSIZE_TO_POINTER (TIMEDATED_TYPE_TIMEDATE1_PROXY));
+      g_once_init_leave (&once_init_value, 1);
+    }
+  ret = (GType) GPOINTER_TO_SIZE (g_hash_table_lookup (lookup_hash, interface_name));
+  if (ret == (GType) 0)
+    ret = G_TYPE_DBUS_PROXY;
+  return ret;
+}
+
+/**
+ * timedated_object_manager_client_new:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously creates #GDBusObjectManagerClient using timedated_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc. See g_dbus_object_manager_client_new() for more details.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call timedated_object_manager_client_new_finish() to get the result of the operation.
+ *
+ * See timedated_object_manager_client_new_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+timedated_object_manager_client_new (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data)
+{
+  g_async_initable_new_async (TIMEDATED_TYPE_OBJECT_MANAGER_CLIENT, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "flags", flags, "name", name, "connection", connection, "object-path", object_path, "get-proxy-type-func", timedated_object_manager_client_get_proxy_type, NULL);
+}
+
+/**
+ * timedated_object_manager_client_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_object_manager_client_new().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with timedated_object_manager_client_new().
+ *
+ * Returns: (transfer full) (type timedatedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+timedated_object_manager_client_new_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * timedated_object_manager_client_new_sync:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Synchronously creates #GDBusObjectManagerClient using timedated_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc. See g_dbus_object_manager_client_new_sync() for more details.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See timedated_object_manager_client_new() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type timedatedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+timedated_object_manager_client_new_sync (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TIMEDATED_TYPE_OBJECT_MANAGER_CLIENT, cancellable, error, "flags", flags, "name", name, "connection", connection, "object-path", object_path, "get-proxy-type-func", timedated_object_manager_client_get_proxy_type, NULL);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+
+/**
+ * timedated_object_manager_client_new_for_bus:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Like timedated_object_manager_client_new() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call timedated_object_manager_client_new_for_bus_finish() to get the result of the operation.
+ *
+ * See timedated_object_manager_client_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+timedated_object_manager_client_new_for_bus (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data)
+{
+  g_async_initable_new_async (TIMEDATED_TYPE_OBJECT_MANAGER_CLIENT, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "flags", flags, "name", name, "bus-type", bus_type, "object-path", object_path, "get-proxy-type-func", timedated_object_manager_client_get_proxy_type, NULL);
+}
+
+/**
+ * timedated_object_manager_client_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to timedated_object_manager_client_new_for_bus().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with timedated_object_manager_client_new_for_bus().
+ *
+ * Returns: (transfer full) (type timedatedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+timedated_object_manager_client_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * timedated_object_manager_client_new_for_bus_sync:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Like timedated_object_manager_client_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See timedated_object_manager_client_new_for_bus() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type timedatedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+timedated_object_manager_client_new_for_bus_sync (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (TIMEDATED_TYPE_OBJECT_MANAGER_CLIENT, cancellable, error, "flags", flags, "name", name, "bus-type", bus_type, "object-path", object_path, "get-proxy-type-func", timedated_object_manager_client_get_proxy_type, NULL);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
 

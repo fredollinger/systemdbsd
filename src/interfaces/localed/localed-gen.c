@@ -8,7 +8,7 @@
 #  include "config.h"
 #endif
 
-#include "src/interfaces/localed/localed-gen.h"
+#include "localed-gen.h"
 
 #include <string.h>
 #ifdef G_OS_UNIX
@@ -154,8 +154,8 @@ _g_value_equal (const GValue *a, const GValue *b)
  */
 
 /**
- * SECTION:Locale1
- * @title: Locale1
+ * SECTION:localedLocale1
+ * @title: localedLocale1
  * @short_description: Generated C code for the org.freedesktop.locale1 D-Bus interface
  *
  * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link> D-Bus interface in C.
@@ -163,41 +163,41 @@ _g_value_equal (const GValue *a, const GValue *b)
 
 /* ---- Introspection data for org.freedesktop.locale1 ---- */
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_locale_IN_ARG_locale =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_locale_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "locale",
+    (gchar *) "unnamed_arg0",
     (gchar *) "as",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_locale_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_locale_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg1",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _locale1_method_info_set_locale_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _localed_locale1_method_info_set_locale_IN_ARG_pointers[] =
 {
-  &_locale1_method_info_set_locale_IN_ARG_locale,
-  &_locale1_method_info_set_locale_IN_ARG_user_interaction,
+  &_localed_locale1_method_info_set_locale_IN_ARG_unnamed_arg0,
+  &_localed_locale1_method_info_set_locale_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _locale1_method_info_set_locale =
+static const _ExtendedGDBusMethodInfo _localed_locale1_method_info_set_locale =
 {
   {
     -1,
     (gchar *) "SetLocale",
-    (GDBusArgInfo **) &_locale1_method_info_set_locale_IN_ARG_pointers,
+    (GDBusArgInfo **) &_localed_locale1_method_info_set_locale_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -205,65 +205,65 @@ static const _ExtendedGDBusMethodInfo _locale1_method_info_set_locale =
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_vconsole_keyboard_IN_ARG_keymap =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "keymap",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_vconsole_keyboard_IN_ARG_keymap_toggle =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "keymap_toggle",
+    (gchar *) "unnamed_arg1",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_vconsole_keyboard_IN_ARG_convert =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
-    (gchar *) "convert",
+    (gchar *) "unnamed_arg2",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_vconsole_keyboard_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg3 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg3",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _locale1_method_info_set_vconsole_keyboard_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_pointers[] =
 {
-  &_locale1_method_info_set_vconsole_keyboard_IN_ARG_keymap,
-  &_locale1_method_info_set_vconsole_keyboard_IN_ARG_keymap_toggle,
-  &_locale1_method_info_set_vconsole_keyboard_IN_ARG_convert,
-  &_locale1_method_info_set_vconsole_keyboard_IN_ARG_user_interaction,
+  &_localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg0,
+  &_localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg1,
+  &_localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg2,
+  &_localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_unnamed_arg3,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _locale1_method_info_set_vconsole_keyboard =
+static const _ExtendedGDBusMethodInfo _localed_locale1_method_info_set_vconsole_keyboard =
 {
   {
     -1,
     (gchar *) "SetVConsoleKeyboard",
-    (GDBusArgInfo **) &_locale1_method_info_set_vconsole_keyboard_IN_ARG_pointers,
+    (GDBusArgInfo **) &_localed_locale1_method_info_set_vconsole_keyboard_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -271,89 +271,89 @@ static const _ExtendedGDBusMethodInfo _locale1_method_info_set_vconsole_keyboard
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_layout =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
-    (gchar *) "layout",
+    (gchar *) "unnamed_arg0",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_model =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
-    (gchar *) "model",
+    (gchar *) "unnamed_arg1",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_variant =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
-    (gchar *) "variant",
+    (gchar *) "unnamed_arg2",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_options =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg3 =
 {
   {
     -1,
-    (gchar *) "options",
+    (gchar *) "unnamed_arg3",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_convert =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg4 =
 {
   {
     -1,
-    (gchar *) "convert",
+    (gchar *) "unnamed_arg4",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _locale1_method_info_set_x11_keyboard_IN_ARG_user_interaction =
+static const _ExtendedGDBusArgInfo _localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg5 =
 {
   {
     -1,
-    (gchar *) "user_interaction",
+    (gchar *) "unnamed_arg5",
     (gchar *) "b",
     NULL
   },
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _locale1_method_info_set_x11_keyboard_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _localed_locale1_method_info_set_x11_keyboard_IN_ARG_pointers[] =
 {
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_layout,
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_model,
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_variant,
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_options,
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_convert,
-  &_locale1_method_info_set_x11_keyboard_IN_ARG_user_interaction,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg0,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg1,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg2,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg3,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg4,
+  &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_unnamed_arg5,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _locale1_method_info_set_x11_keyboard =
+static const _ExtendedGDBusMethodInfo _localed_locale1_method_info_set_x11_keyboard =
 {
   {
     -1,
     (gchar *) "SetX11Keyboard",
-    (GDBusArgInfo **) &_locale1_method_info_set_x11_keyboard_IN_ARG_pointers,
+    (GDBusArgInfo **) &_localed_locale1_method_info_set_x11_keyboard_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -361,15 +361,15 @@ static const _ExtendedGDBusMethodInfo _locale1_method_info_set_x11_keyboard =
   FALSE
 };
 
-static const _ExtendedGDBusMethodInfo * const _locale1_method_info_pointers[] =
+static const _ExtendedGDBusMethodInfo * const _localed_locale1_method_info_pointers[] =
 {
-  &_locale1_method_info_set_locale,
-  &_locale1_method_info_set_vconsole_keyboard,
-  &_locale1_method_info_set_x11_keyboard,
+  &_localed_locale1_method_info_set_locale,
+  &_localed_locale1_method_info_set_vconsole_keyboard,
+  &_localed_locale1_method_info_set_x11_keyboard,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_locale =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_locale =
 {
   {
     -1,
@@ -382,33 +382,7 @@ static const _ExtendedGDBusPropertyInfo _locale1_property_info_locale =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_vconsole_keymap =
-{
-  {
-    -1,
-    (gchar *) "VConsoleKeymap",
-    (gchar *) "s",
-    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    NULL
-  },
-  "vconsole-keymap",
-  FALSE
-};
-
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_vconsole_keymap_toggle =
-{
-  {
-    -1,
-    (gchar *) "VConsoleKeymapToggle",
-    (gchar *) "s",
-    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    NULL
-  },
-  "vconsole-keymap-toggle",
-  FALSE
-};
-
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_layout =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_x11_layout =
 {
   {
     -1,
@@ -421,7 +395,7 @@ static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_layout =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_model =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_x11_model =
 {
   {
     -1,
@@ -434,7 +408,7 @@ static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_model =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_variant =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_x11_variant =
 {
   {
     -1,
@@ -447,7 +421,7 @@ static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_variant =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_options =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_x11_options =
 {
   {
     -1,
@@ -460,26 +434,52 @@ static const _ExtendedGDBusPropertyInfo _locale1_property_info_x11_options =
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo * const _locale1_property_info_pointers[] =
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_vconsole_keymap =
 {
-  &_locale1_property_info_locale,
-  &_locale1_property_info_vconsole_keymap,
-  &_locale1_property_info_vconsole_keymap_toggle,
-  &_locale1_property_info_x11_layout,
-  &_locale1_property_info_x11_model,
-  &_locale1_property_info_x11_variant,
-  &_locale1_property_info_x11_options,
+  {
+    -1,
+    (gchar *) "VConsoleKeymap",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    NULL
+  },
+  "vconsole-keymap",
+  FALSE
+};
+
+static const _ExtendedGDBusPropertyInfo _localed_locale1_property_info_vconsole_keymap_toggle =
+{
+  {
+    -1,
+    (gchar *) "VConsoleKeymapToggle",
+    (gchar *) "s",
+    G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
+    NULL
+  },
+  "vconsole-keymap-toggle",
+  FALSE
+};
+
+static const _ExtendedGDBusPropertyInfo * const _localed_locale1_property_info_pointers[] =
+{
+  &_localed_locale1_property_info_locale,
+  &_localed_locale1_property_info_x11_layout,
+  &_localed_locale1_property_info_x11_model,
+  &_localed_locale1_property_info_x11_variant,
+  &_localed_locale1_property_info_x11_options,
+  &_localed_locale1_property_info_vconsole_keymap,
+  &_localed_locale1_property_info_vconsole_keymap_toggle,
   NULL
 };
 
-static const _ExtendedGDBusInterfaceInfo _locale1_interface_info =
+static const _ExtendedGDBusInterfaceInfo _localed_locale1_interface_info =
 {
   {
     -1,
     (gchar *) "org.freedesktop.locale1",
-    (GDBusMethodInfo **) &_locale1_method_info_pointers,
+    (GDBusMethodInfo **) &_localed_locale1_method_info_pointers,
     NULL,
-    (GDBusPropertyInfo **) &_locale1_property_info_pointers,
+    (GDBusPropertyInfo **) &_localed_locale1_property_info_pointers,
     NULL
   },
   "locale1",
@@ -487,90 +487,90 @@ static const _ExtendedGDBusInterfaceInfo _locale1_interface_info =
 
 
 /**
- * locale1_interface_info:
+ * localed_locale1_interface_info:
  *
  * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link> D-Bus interface.
  *
  * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
  */
 GDBusInterfaceInfo *
-locale1_interface_info (void)
+localed_locale1_interface_info (void)
 {
-  return (GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct;
+  return (GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct;
 }
 
 /**
- * locale1_override_properties:
+ * localed_locale1_override_properties:
  * @klass: The class structure for a #GObject<!-- -->-derived class.
  * @property_id_begin: The property id to assign to the first overridden property.
  *
- * Overrides all #GObject properties in the #Locale1 interface for a concrete class.
+ * Overrides all #GObject properties in the #localedLocale1 interface for a concrete class.
  * The properties are overridden in the order they are defined.
  *
  * Returns: The last property id.
  */
 guint
-locale1_override_properties (GObjectClass *klass, guint property_id_begin)
+localed_locale1_override_properties (GObjectClass *klass, guint property_id_begin)
 {
   g_object_class_override_property (klass, property_id_begin++, "locale");
-  g_object_class_override_property (klass, property_id_begin++, "vconsole-keymap");
-  g_object_class_override_property (klass, property_id_begin++, "vconsole-keymap-toggle");
   g_object_class_override_property (klass, property_id_begin++, "x11-layout");
   g_object_class_override_property (klass, property_id_begin++, "x11-model");
   g_object_class_override_property (klass, property_id_begin++, "x11-variant");
   g_object_class_override_property (klass, property_id_begin++, "x11-options");
+  g_object_class_override_property (klass, property_id_begin++, "vconsole-keymap");
+  g_object_class_override_property (klass, property_id_begin++, "vconsole-keymap-toggle");
   return property_id_begin - 1;
 }
 
 
 
 /**
- * Locale1:
+ * localedLocale1:
  *
  * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link>.
  */
 
 /**
- * Locale1Iface:
+ * localedLocale1Iface:
  * @parent_iface: The parent interface.
- * @handle_set_locale: Handler for the #Locale1::handle-set-locale signal.
- * @handle_set_vconsole_keyboard: Handler for the #Locale1::handle-set-vconsole-keyboard signal.
- * @handle_set_x11_keyboard: Handler for the #Locale1::handle-set-x11-keyboard signal.
- * @get_locale: Getter for the #Locale1:locale property.
- * @get_vconsole_keymap: Getter for the #Locale1:vconsole-keymap property.
- * @get_vconsole_keymap_toggle: Getter for the #Locale1:vconsole-keymap-toggle property.
- * @get_x11_layout: Getter for the #Locale1:x11-layout property.
- * @get_x11_model: Getter for the #Locale1:x11-model property.
- * @get_x11_options: Getter for the #Locale1:x11-options property.
- * @get_x11_variant: Getter for the #Locale1:x11-variant property.
+ * @handle_set_locale: Handler for the #localedLocale1::handle-set-locale signal.
+ * @handle_set_vconsole_keyboard: Handler for the #localedLocale1::handle-set-vconsole-keyboard signal.
+ * @handle_set_x11_keyboard: Handler for the #localedLocale1::handle-set-x11-keyboard signal.
+ * @get_locale: Getter for the #localedLocale1:locale property.
+ * @get_vconsole_keymap: Getter for the #localedLocale1:vconsole-keymap property.
+ * @get_vconsole_keymap_toggle: Getter for the #localedLocale1:vconsole-keymap-toggle property.
+ * @get_x11_layout: Getter for the #localedLocale1:x11-layout property.
+ * @get_x11_model: Getter for the #localedLocale1:x11-model property.
+ * @get_x11_options: Getter for the #localedLocale1:x11-options property.
+ * @get_x11_variant: Getter for the #localedLocale1:x11-variant property.
  *
  * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link>.
  */
 
-typedef Locale1Iface Locale1Interface;
-G_DEFINE_INTERFACE (Locale1, locale1, G_TYPE_OBJECT);
+typedef localedLocale1Iface localedLocale1Interface;
+G_DEFINE_INTERFACE (localedLocale1, localed_locale1, G_TYPE_OBJECT);
 
 static void
-locale1_default_init (Locale1Iface *iface)
+localed_locale1_default_init (localedLocale1Iface *iface)
 {
   /* GObject signals for incoming D-Bus method calls: */
   /**
-   * Locale1::handle-set-locale:
-   * @object: A #Locale1.
+   * localedLocale1::handle-set-locale:
+   * @object: A #localedLocale1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_locale: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call locale1_complete_set_locale() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call localed_locale1_complete_set_locale() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-locale",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Locale1Iface, handle_set_locale),
+    G_STRUCT_OFFSET (localedLocale1Iface, handle_set_locale),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -579,24 +579,24 @@ locale1_default_init (Locale1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRV, G_TYPE_BOOLEAN);
 
   /**
-   * Locale1::handle-set-vconsole-keyboard:
-   * @object: A #Locale1.
+   * localedLocale1::handle-set-vconsole-keyboard:
+   * @object: A #localedLocale1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_keymap: Argument passed by remote caller.
-   * @arg_keymap_toggle: Argument passed by remote caller.
-   * @arg_convert: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
+   * @arg_unnamed_arg2: Argument passed by remote caller.
+   * @arg_unnamed_arg3: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call locale1_complete_set_vconsole_keyboard() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call localed_locale1_complete_set_vconsole_keyboard() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-vconsole-keyboard",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Locale1Iface, handle_set_vconsole_keyboard),
+    G_STRUCT_OFFSET (localedLocale1Iface, handle_set_vconsole_keyboard),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -605,26 +605,26 @@ locale1_default_init (Locale1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
   /**
-   * Locale1::handle-set-x11-keyboard:
-   * @object: A #Locale1.
+   * localedLocale1::handle-set-x11-keyboard:
+   * @object: A #localedLocale1.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_layout: Argument passed by remote caller.
-   * @arg_model: Argument passed by remote caller.
-   * @arg_variant: Argument passed by remote caller.
-   * @arg_options: Argument passed by remote caller.
-   * @arg_convert: Argument passed by remote caller.
-   * @arg_user_interaction: Argument passed by remote caller.
+   * @arg_unnamed_arg0: Argument passed by remote caller.
+   * @arg_unnamed_arg1: Argument passed by remote caller.
+   * @arg_unnamed_arg2: Argument passed by remote caller.
+   * @arg_unnamed_arg3: Argument passed by remote caller.
+   * @arg_unnamed_arg4: Argument passed by remote caller.
+   * @arg_unnamed_arg5: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call locale1_complete_set_x11_keyboard() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call localed_locale1_complete_set_x11_keyboard() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-x11-keyboard",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (Locale1Iface, handle_set_x11_keyboard),
+    G_STRUCT_OFFSET (localedLocale1Iface, handle_set_x11_keyboard),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -634,7 +634,7 @@ locale1_default_init (Locale1Iface *iface)
 
   /* GObject properties for D-Bus properties: */
   /**
-   * Locale1:locale:
+   * localedLocale1:locale:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.Locale">"Locale"</link>.
    *
@@ -643,25 +643,7 @@ locale1_default_init (Locale1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boxed ("locale", "Locale", "Locale", G_TYPE_STRV, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Locale1:vconsole-keymap:
-   *
-   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link>.
-   *
-   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
-   */
-  g_object_interface_install_property (iface,
-    g_param_spec_string ("vconsole-keymap", "VConsoleKeymap", "VConsoleKeymap", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
-  /**
-   * Locale1:vconsole-keymap-toggle:
-   *
-   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link>.
-   *
-   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
-   */
-  g_object_interface_install_property (iface,
-    g_param_spec_string ("vconsole-keymap-toggle", "VConsoleKeymapToggle", "VConsoleKeymapToggle", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
-  /**
-   * Locale1:x11-layout:
+   * localedLocale1:x11-layout:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.X11Layout">"X11Layout"</link>.
    *
@@ -670,7 +652,7 @@ locale1_default_init (Locale1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("x11-layout", "X11Layout", "X11Layout", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Locale1:x11-model:
+   * localedLocale1:x11-model:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.X11Model">"X11Model"</link>.
    *
@@ -679,7 +661,7 @@ locale1_default_init (Locale1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("x11-model", "X11Model", "X11Model", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Locale1:x11-variant:
+   * localedLocale1:x11-variant:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.X11Variant">"X11Variant"</link>.
    *
@@ -688,7 +670,7 @@ locale1_default_init (Locale1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("x11-variant", "X11Variant", "X11Variant", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * Locale1:x11-options:
+   * localedLocale1:x11-options:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.X11Options">"X11Options"</link>.
    *
@@ -696,29 +678,47 @@ locale1_default_init (Locale1Iface *iface)
    */
   g_object_interface_install_property (iface,
     g_param_spec_string ("x11-options", "X11Options", "X11Options", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * localedLocale1:vconsole-keymap:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("vconsole-keymap", "VConsoleKeymap", "VConsoleKeymap", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  /**
+   * localedLocale1:vconsole-keymap-toggle:
+   *
+   * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link>.
+   *
+   * Since the D-Bus property for this #GObject property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.
+   */
+  g_object_interface_install_property (iface,
+    g_param_spec_string ("vconsole-keymap-toggle", "VConsoleKeymapToggle", "VConsoleKeymapToggle", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
 
 /**
- * locale1_get_locale: (skip)
- * @object: A #Locale1.
+ * localed_locale1_get_locale: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.Locale">"Locale"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_locale() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_locale() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *const *
-locale1_get_locale (Locale1 *object)
+localed_locale1_get_locale (localedLocale1 *object)
 {
-  return LOCALE1_GET_IFACE (object)->get_locale (object);
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_locale (object);
 }
 
 /**
- * locale1_dup_locale: (skip)
- * @object: A #Locale1.
+ * localed_locale1_dup_locale: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.Locale">"Locale"</link> D-Bus property.
  *
@@ -727,7 +727,7 @@ locale1_get_locale (Locale1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_strfreev().
  */
 gchar **
-locale1_dup_locale (Locale1 *object)
+localed_locale1_dup_locale (localedLocale1 *object)
 {
   gchar **value;
   g_object_get (G_OBJECT (object), "locale", &value, NULL);
@@ -735,8 +735,8 @@ locale1_dup_locale (Locale1 *object)
 }
 
 /**
- * locale1_set_locale: (skip)
- * @object: A #Locale1.
+ * localed_locale1_set_locale: (skip)
+ * @object: A #localedLocale1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.Locale">"Locale"</link> D-Bus property to @value.
@@ -744,134 +744,32 @@ locale1_dup_locale (Locale1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-locale1_set_locale (Locale1 *object, const gchar *const *value)
+localed_locale1_set_locale (localedLocale1 *object, const gchar *const *value)
 {
   g_object_set (G_OBJECT (object), "locale", value, NULL);
 }
 
 /**
- * locale1_get_vconsole_keymap: (skip)
- * @object: A #Locale1.
- *
- * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property.
- *
- * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
- *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_vconsole_keymap() if on another thread.</warning>
- *
- * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
- */
-const gchar *
-locale1_get_vconsole_keymap (Locale1 *object)
-{
-  return LOCALE1_GET_IFACE (object)->get_vconsole_keymap (object);
-}
-
-/**
- * locale1_dup_vconsole_keymap: (skip)
- * @object: A #Locale1.
- *
- * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property.
- *
- * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
- *
- * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
- */
-gchar *
-locale1_dup_vconsole_keymap (Locale1 *object)
-{
-  gchar *value;
-  g_object_get (G_OBJECT (object), "vconsole-keymap", &value, NULL);
-  return value;
-}
-
-/**
- * locale1_set_vconsole_keymap: (skip)
- * @object: A #Locale1.
- * @value: The value to set.
- *
- * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property to @value.
- *
- * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
- */
-void
-locale1_set_vconsole_keymap (Locale1 *object, const gchar *value)
-{
-  g_object_set (G_OBJECT (object), "vconsole-keymap", value, NULL);
-}
-
-/**
- * locale1_get_vconsole_keymap_toggle: (skip)
- * @object: A #Locale1.
- *
- * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property.
- *
- * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
- *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_vconsole_keymap_toggle() if on another thread.</warning>
- *
- * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
- */
-const gchar *
-locale1_get_vconsole_keymap_toggle (Locale1 *object)
-{
-  return LOCALE1_GET_IFACE (object)->get_vconsole_keymap_toggle (object);
-}
-
-/**
- * locale1_dup_vconsole_keymap_toggle: (skip)
- * @object: A #Locale1.
- *
- * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property.
- *
- * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
- *
- * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
- */
-gchar *
-locale1_dup_vconsole_keymap_toggle (Locale1 *object)
-{
-  gchar *value;
-  g_object_get (G_OBJECT (object), "vconsole-keymap-toggle", &value, NULL);
-  return value;
-}
-
-/**
- * locale1_set_vconsole_keymap_toggle: (skip)
- * @object: A #Locale1.
- * @value: The value to set.
- *
- * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property to @value.
- *
- * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
- */
-void
-locale1_set_vconsole_keymap_toggle (Locale1 *object, const gchar *value)
-{
-  g_object_set (G_OBJECT (object), "vconsole-keymap-toggle", value, NULL);
-}
-
-/**
- * locale1_get_x11_layout: (skip)
- * @object: A #Locale1.
+ * localed_locale1_get_x11_layout: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Layout">"X11Layout"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_x11_layout() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_x11_layout() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-locale1_get_x11_layout (Locale1 *object)
+localed_locale1_get_x11_layout (localedLocale1 *object)
 {
-  return LOCALE1_GET_IFACE (object)->get_x11_layout (object);
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_x11_layout (object);
 }
 
 /**
- * locale1_dup_x11_layout: (skip)
- * @object: A #Locale1.
+ * localed_locale1_dup_x11_layout: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Layout">"X11Layout"</link> D-Bus property.
  *
@@ -880,7 +778,7 @@ locale1_get_x11_layout (Locale1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-locale1_dup_x11_layout (Locale1 *object)
+localed_locale1_dup_x11_layout (localedLocale1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "x11-layout", &value, NULL);
@@ -888,8 +786,8 @@ locale1_dup_x11_layout (Locale1 *object)
 }
 
 /**
- * locale1_set_x11_layout: (skip)
- * @object: A #Locale1.
+ * localed_locale1_set_x11_layout: (skip)
+ * @object: A #localedLocale1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.X11Layout">"X11Layout"</link> D-Bus property to @value.
@@ -897,32 +795,32 @@ locale1_dup_x11_layout (Locale1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-locale1_set_x11_layout (Locale1 *object, const gchar *value)
+localed_locale1_set_x11_layout (localedLocale1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "x11-layout", value, NULL);
 }
 
 /**
- * locale1_get_x11_model: (skip)
- * @object: A #Locale1.
+ * localed_locale1_get_x11_model: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Model">"X11Model"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_x11_model() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_x11_model() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-locale1_get_x11_model (Locale1 *object)
+localed_locale1_get_x11_model (localedLocale1 *object)
 {
-  return LOCALE1_GET_IFACE (object)->get_x11_model (object);
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_x11_model (object);
 }
 
 /**
- * locale1_dup_x11_model: (skip)
- * @object: A #Locale1.
+ * localed_locale1_dup_x11_model: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Model">"X11Model"</link> D-Bus property.
  *
@@ -931,7 +829,7 @@ locale1_get_x11_model (Locale1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-locale1_dup_x11_model (Locale1 *object)
+localed_locale1_dup_x11_model (localedLocale1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "x11-model", &value, NULL);
@@ -939,8 +837,8 @@ locale1_dup_x11_model (Locale1 *object)
 }
 
 /**
- * locale1_set_x11_model: (skip)
- * @object: A #Locale1.
+ * localed_locale1_set_x11_model: (skip)
+ * @object: A #localedLocale1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.X11Model">"X11Model"</link> D-Bus property to @value.
@@ -948,32 +846,32 @@ locale1_dup_x11_model (Locale1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-locale1_set_x11_model (Locale1 *object, const gchar *value)
+localed_locale1_set_x11_model (localedLocale1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "x11-model", value, NULL);
 }
 
 /**
- * locale1_get_x11_variant: (skip)
- * @object: A #Locale1.
+ * localed_locale1_get_x11_variant: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Variant">"X11Variant"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_x11_variant() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_x11_variant() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-locale1_get_x11_variant (Locale1 *object)
+localed_locale1_get_x11_variant (localedLocale1 *object)
 {
-  return LOCALE1_GET_IFACE (object)->get_x11_variant (object);
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_x11_variant (object);
 }
 
 /**
- * locale1_dup_x11_variant: (skip)
- * @object: A #Locale1.
+ * localed_locale1_dup_x11_variant: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Variant">"X11Variant"</link> D-Bus property.
  *
@@ -982,7 +880,7 @@ locale1_get_x11_variant (Locale1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-locale1_dup_x11_variant (Locale1 *object)
+localed_locale1_dup_x11_variant (localedLocale1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "x11-variant", &value, NULL);
@@ -990,8 +888,8 @@ locale1_dup_x11_variant (Locale1 *object)
 }
 
 /**
- * locale1_set_x11_variant: (skip)
- * @object: A #Locale1.
+ * localed_locale1_set_x11_variant: (skip)
+ * @object: A #localedLocale1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.X11Variant">"X11Variant"</link> D-Bus property to @value.
@@ -999,32 +897,32 @@ locale1_dup_x11_variant (Locale1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-locale1_set_x11_variant (Locale1 *object, const gchar *value)
+localed_locale1_set_x11_variant (localedLocale1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "x11-variant", value, NULL);
 }
 
 /**
- * locale1_get_x11_options: (skip)
- * @object: A #Locale1.
+ * localed_locale1_get_x11_options: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Options">"X11Options"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use locale1_dup_x11_options() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_x11_options() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-locale1_get_x11_options (Locale1 *object)
+localed_locale1_get_x11_options (localedLocale1 *object)
 {
-  return LOCALE1_GET_IFACE (object)->get_x11_options (object);
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_x11_options (object);
 }
 
 /**
- * locale1_dup_x11_options: (skip)
- * @object: A #Locale1.
+ * localed_locale1_dup_x11_options: (skip)
+ * @object: A #localedLocale1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.X11Options">"X11Options"</link> D-Bus property.
  *
@@ -1033,7 +931,7 @@ locale1_get_x11_options (Locale1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-locale1_dup_x11_options (Locale1 *object)
+localed_locale1_dup_x11_options (localedLocale1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "x11-options", &value, NULL);
@@ -1041,8 +939,8 @@ locale1_dup_x11_options (Locale1 *object)
 }
 
 /**
- * locale1_set_x11_options: (skip)
- * @object: A #Locale1.
+ * localed_locale1_set_x11_options: (skip)
+ * @object: A #localedLocale1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.X11Options">"X11Options"</link> D-Bus property to @value.
@@ -1050,31 +948,133 @@ locale1_dup_x11_options (Locale1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-locale1_set_x11_options (Locale1 *object, const gchar *value)
+localed_locale1_set_x11_options (localedLocale1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "x11-options", value, NULL);
 }
 
 /**
- * locale1_call_set_locale:
- * @proxy: A #Locale1Proxy.
- * @arg_locale: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_get_vconsole_keymap: (skip)
+ * @object: A #localedLocale1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_vconsole_keymap() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+localed_locale1_get_vconsole_keymap (localedLocale1 *object)
+{
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_vconsole_keymap (object);
+}
+
+/**
+ * localed_locale1_dup_vconsole_keymap: (skip)
+ * @object: A #localedLocale1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+localed_locale1_dup_vconsole_keymap (localedLocale1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "vconsole-keymap", &value, NULL);
+  return value;
+}
+
+/**
+ * localed_locale1_set_vconsole_keymap: (skip)
+ * @object: A #localedLocale1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymap">"VConsoleKeymap"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+localed_locale1_set_vconsole_keymap (localedLocale1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "vconsole-keymap", value, NULL);
+}
+
+/**
+ * localed_locale1_get_vconsole_keymap_toggle: (skip)
+ * @object: A #localedLocale1.
+ *
+ * Gets the value of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use localed_locale1_dup_vconsole_keymap_toggle() if on another thread.</warning>
+ *
+ * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
+ */
+const gchar *
+localed_locale1_get_vconsole_keymap_toggle (localedLocale1 *object)
+{
+  return LOCALED_LOCALE1_GET_IFACE (object)->get_vconsole_keymap_toggle (object);
+}
+
+/**
+ * localed_locale1_dup_vconsole_keymap_toggle: (skip)
+ * @object: A #localedLocale1.
+ *
+ * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property.
+ *
+ * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
+ *
+ * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
+ */
+gchar *
+localed_locale1_dup_vconsole_keymap_toggle (localedLocale1 *object)
+{
+  gchar *value;
+  g_object_get (G_OBJECT (object), "vconsole-keymap-toggle", &value, NULL);
+  return value;
+}
+
+/**
+ * localed_locale1_set_vconsole_keymap_toggle: (skip)
+ * @object: A #localedLocale1.
+ * @value: The value to set.
+ *
+ * Sets the <link linkend="gdbus-property-org-freedesktop-locale1.VConsoleKeymapToggle">"VConsoleKeymapToggle"</link> D-Bus property to @value.
+ *
+ * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
+ */
+void
+localed_locale1_set_vconsole_keymap_toggle (localedLocale1 *object, const gchar *value)
+{
+  g_object_set (G_OBJECT (object), "vconsole-keymap-toggle", value, NULL);
+}
+
+/**
+ * localed_locale1_call_set_locale:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call locale1_call_set_locale_finish() to get the result of the operation.
+ * You can then call localed_locale1_call_set_locale_finish() to get the result of the operation.
  *
- * See locale1_call_set_locale_sync() for the synchronous, blocking version of this method.
+ * See localed_locale1_call_set_locale_sync() for the synchronous, blocking version of this method.
  */
 void
-locale1_call_set_locale (
-    Locale1 *proxy,
-    const gchar *const *arg_locale,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_locale (
+    localedLocale1 *proxy,
+    const gchar *const *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1082,8 +1082,8 @@ locale1_call_set_locale (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetLocale",
     g_variant_new ("(^asb)",
-                   arg_locale,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1092,18 +1092,18 @@ locale1_call_set_locale (
 }
 
 /**
- * locale1_call_set_locale_finish:
- * @proxy: A #Locale1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to locale1_call_set_locale().
+ * localed_locale1_call_set_locale_finish:
+ * @proxy: A #localedLocale1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_locale1_call_set_locale().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with locale1_call_set_locale().
+ * Finishes an operation started with localed_locale1_call_set_locale().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_locale_finish (
-    Locale1 *proxy,
+localed_locale1_call_set_locale_finish (
+    localedLocale1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1119,24 +1119,24 @@ _out:
 }
 
 /**
- * locale1_call_set_locale_sync:
- * @proxy: A #Locale1Proxy.
- * @arg_locale: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_call_set_locale_sync:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See locale1_call_set_locale() for the asynchronous version of this method.
+ * See localed_locale1_call_set_locale() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_locale_sync (
-    Locale1 *proxy,
-    const gchar *const *arg_locale,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_locale_sync (
+    localedLocale1 *proxy,
+    const gchar *const *arg_unnamed_arg0,
+    gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1144,8 +1144,8 @@ locale1_call_set_locale_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetLocale",
     g_variant_new ("(^asb)",
-                   arg_locale,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1160,29 +1160,29 @@ _out:
 }
 
 /**
- * locale1_call_set_vconsole_keyboard:
- * @proxy: A #Locale1Proxy.
- * @arg_keymap: Argument to pass with the method invocation.
- * @arg_keymap_toggle: Argument to pass with the method invocation.
- * @arg_convert: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_call_set_vconsole_keyboard:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
+ * @arg_unnamed_arg3: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call locale1_call_set_vconsole_keyboard_finish() to get the result of the operation.
+ * You can then call localed_locale1_call_set_vconsole_keyboard_finish() to get the result of the operation.
  *
- * See locale1_call_set_vconsole_keyboard_sync() for the synchronous, blocking version of this method.
+ * See localed_locale1_call_set_vconsole_keyboard_sync() for the synchronous, blocking version of this method.
  */
 void
-locale1_call_set_vconsole_keyboard (
-    Locale1 *proxy,
-    const gchar *arg_keymap,
-    const gchar *arg_keymap_toggle,
-    gboolean arg_convert,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_vconsole_keyboard (
+    localedLocale1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    const gchar *arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
+    gboolean arg_unnamed_arg3,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1190,10 +1190,10 @@ locale1_call_set_vconsole_keyboard (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetVConsoleKeyboard",
     g_variant_new ("(ssbb)",
-                   arg_keymap,
-                   arg_keymap_toggle,
-                   arg_convert,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2,
+                   arg_unnamed_arg3),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1202,18 +1202,18 @@ locale1_call_set_vconsole_keyboard (
 }
 
 /**
- * locale1_call_set_vconsole_keyboard_finish:
- * @proxy: A #Locale1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to locale1_call_set_vconsole_keyboard().
+ * localed_locale1_call_set_vconsole_keyboard_finish:
+ * @proxy: A #localedLocale1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_locale1_call_set_vconsole_keyboard().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with locale1_call_set_vconsole_keyboard().
+ * Finishes an operation started with localed_locale1_call_set_vconsole_keyboard().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_vconsole_keyboard_finish (
-    Locale1 *proxy,
+localed_locale1_call_set_vconsole_keyboard_finish (
+    localedLocale1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1229,28 +1229,28 @@ _out:
 }
 
 /**
- * locale1_call_set_vconsole_keyboard_sync:
- * @proxy: A #Locale1Proxy.
- * @arg_keymap: Argument to pass with the method invocation.
- * @arg_keymap_toggle: Argument to pass with the method invocation.
- * @arg_convert: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_call_set_vconsole_keyboard_sync:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
+ * @arg_unnamed_arg3: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See locale1_call_set_vconsole_keyboard() for the asynchronous version of this method.
+ * See localed_locale1_call_set_vconsole_keyboard() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_vconsole_keyboard_sync (
-    Locale1 *proxy,
-    const gchar *arg_keymap,
-    const gchar *arg_keymap_toggle,
-    gboolean arg_convert,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_vconsole_keyboard_sync (
+    localedLocale1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    const gchar *arg_unnamed_arg1,
+    gboolean arg_unnamed_arg2,
+    gboolean arg_unnamed_arg3,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1258,10 +1258,10 @@ locale1_call_set_vconsole_keyboard_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetVConsoleKeyboard",
     g_variant_new ("(ssbb)",
-                   arg_keymap,
-                   arg_keymap_toggle,
-                   arg_convert,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2,
+                   arg_unnamed_arg3),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1276,33 +1276,33 @@ _out:
 }
 
 /**
- * locale1_call_set_x11_keyboard:
- * @proxy: A #Locale1Proxy.
- * @arg_layout: Argument to pass with the method invocation.
- * @arg_model: Argument to pass with the method invocation.
- * @arg_variant: Argument to pass with the method invocation.
- * @arg_options: Argument to pass with the method invocation.
- * @arg_convert: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_call_set_x11_keyboard:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
+ * @arg_unnamed_arg3: Argument to pass with the method invocation.
+ * @arg_unnamed_arg4: Argument to pass with the method invocation.
+ * @arg_unnamed_arg5: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call locale1_call_set_x11_keyboard_finish() to get the result of the operation.
+ * You can then call localed_locale1_call_set_x11_keyboard_finish() to get the result of the operation.
  *
- * See locale1_call_set_x11_keyboard_sync() for the synchronous, blocking version of this method.
+ * See localed_locale1_call_set_x11_keyboard_sync() for the synchronous, blocking version of this method.
  */
 void
-locale1_call_set_x11_keyboard (
-    Locale1 *proxy,
-    const gchar *arg_layout,
-    const gchar *arg_model,
-    const gchar *arg_variant,
-    const gchar *arg_options,
-    gboolean arg_convert,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_x11_keyboard (
+    localedLocale1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    const gchar *arg_unnamed_arg1,
+    const gchar *arg_unnamed_arg2,
+    const gchar *arg_unnamed_arg3,
+    gboolean arg_unnamed_arg4,
+    gboolean arg_unnamed_arg5,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -1310,12 +1310,12 @@ locale1_call_set_x11_keyboard (
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
     "SetX11Keyboard",
     g_variant_new ("(ssssbb)",
-                   arg_layout,
-                   arg_model,
-                   arg_variant,
-                   arg_options,
-                   arg_convert,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2,
+                   arg_unnamed_arg3,
+                   arg_unnamed_arg4,
+                   arg_unnamed_arg5),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1324,18 +1324,18 @@ locale1_call_set_x11_keyboard (
 }
 
 /**
- * locale1_call_set_x11_keyboard_finish:
- * @proxy: A #Locale1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to locale1_call_set_x11_keyboard().
+ * localed_locale1_call_set_x11_keyboard_finish:
+ * @proxy: A #localedLocale1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_locale1_call_set_x11_keyboard().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with locale1_call_set_x11_keyboard().
+ * Finishes an operation started with localed_locale1_call_set_x11_keyboard().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_x11_keyboard_finish (
-    Locale1 *proxy,
+localed_locale1_call_set_x11_keyboard_finish (
+    localedLocale1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1351,32 +1351,32 @@ _out:
 }
 
 /**
- * locale1_call_set_x11_keyboard_sync:
- * @proxy: A #Locale1Proxy.
- * @arg_layout: Argument to pass with the method invocation.
- * @arg_model: Argument to pass with the method invocation.
- * @arg_variant: Argument to pass with the method invocation.
- * @arg_options: Argument to pass with the method invocation.
- * @arg_convert: Argument to pass with the method invocation.
- * @arg_user_interaction: Argument to pass with the method invocation.
+ * localed_locale1_call_set_x11_keyboard_sync:
+ * @proxy: A #localedLocale1Proxy.
+ * @arg_unnamed_arg0: Argument to pass with the method invocation.
+ * @arg_unnamed_arg1: Argument to pass with the method invocation.
+ * @arg_unnamed_arg2: Argument to pass with the method invocation.
+ * @arg_unnamed_arg3: Argument to pass with the method invocation.
+ * @arg_unnamed_arg4: Argument to pass with the method invocation.
+ * @arg_unnamed_arg5: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See locale1_call_set_x11_keyboard() for the asynchronous version of this method.
+ * See localed_locale1_call_set_x11_keyboard() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-locale1_call_set_x11_keyboard_sync (
-    Locale1 *proxy,
-    const gchar *arg_layout,
-    const gchar *arg_model,
-    const gchar *arg_variant,
-    const gchar *arg_options,
-    gboolean arg_convert,
-    gboolean arg_user_interaction,
+localed_locale1_call_set_x11_keyboard_sync (
+    localedLocale1 *proxy,
+    const gchar *arg_unnamed_arg0,
+    const gchar *arg_unnamed_arg1,
+    const gchar *arg_unnamed_arg2,
+    const gchar *arg_unnamed_arg3,
+    gboolean arg_unnamed_arg4,
+    gboolean arg_unnamed_arg5,
     GCancellable *cancellable,
     GError **error)
 {
@@ -1384,12 +1384,12 @@ locale1_call_set_x11_keyboard_sync (
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
     "SetX11Keyboard",
     g_variant_new ("(ssssbb)",
-                   arg_layout,
-                   arg_model,
-                   arg_variant,
-                   arg_options,
-                   arg_convert,
-                   arg_user_interaction),
+                   arg_unnamed_arg0,
+                   arg_unnamed_arg1,
+                   arg_unnamed_arg2,
+                   arg_unnamed_arg3,
+                   arg_unnamed_arg4,
+                   arg_unnamed_arg5),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -1404,8 +1404,8 @@ _out:
 }
 
 /**
- * locale1_complete_set_locale:
- * @object: A #Locale1.
+ * localed_locale1_complete_set_locale:
+ * @object: A #localedLocale1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-locale1.SetLocale">SetLocale()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1413,8 +1413,8 @@ _out:
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-locale1_complete_set_locale (
-    Locale1 *object,
+localed_locale1_complete_set_locale (
+    localedLocale1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1422,8 +1422,8 @@ locale1_complete_set_locale (
 }
 
 /**
- * locale1_complete_set_vconsole_keyboard:
- * @object: A #Locale1.
+ * localed_locale1_complete_set_vconsole_keyboard:
+ * @object: A #localedLocale1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-locale1.SetVConsoleKeyboard">SetVConsoleKeyboard()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1431,8 +1431,8 @@ locale1_complete_set_locale (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-locale1_complete_set_vconsole_keyboard (
-    Locale1 *object,
+localed_locale1_complete_set_vconsole_keyboard (
+    localedLocale1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1440,8 +1440,8 @@ locale1_complete_set_vconsole_keyboard (
 }
 
 /**
- * locale1_complete_set_x11_keyboard:
- * @object: A #Locale1.
+ * localed_locale1_complete_set_x11_keyboard:
+ * @object: A #localedLocale1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-locale1.SetX11Keyboard">SetX11Keyboard()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1449,8 +1449,8 @@ locale1_complete_set_vconsole_keyboard (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-locale1_complete_set_x11_keyboard (
-    Locale1 *object,
+localed_locale1_complete_set_x11_keyboard (
+    localedLocale1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1460,45 +1460,45 @@ locale1_complete_set_x11_keyboard (
 /* ------------------------------------------------------------------------ */
 
 /**
- * Locale1Proxy:
+ * localedLocale1Proxy:
  *
- * The #Locale1Proxy structure contains only private data and should only be accessed using the provided API.
+ * The #localedLocale1Proxy structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * Locale1ProxyClass:
+ * localedLocale1ProxyClass:
  * @parent_class: The parent class.
  *
- * Class structure for #Locale1Proxy.
+ * Class structure for #localedLocale1Proxy.
  */
 
-struct _Locale1ProxyPrivate
+struct _localedLocale1ProxyPrivate
 {
   GData *qdata;
 };
 
-static void locale1_proxy_iface_init (Locale1Iface *iface);
+static void localed_locale1_proxy_iface_init (localedLocale1Iface *iface);
 
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (Locale1Proxy, locale1_proxy, G_TYPE_DBUS_PROXY,
-                         G_ADD_PRIVATE (Locale1Proxy)
-                         G_IMPLEMENT_INTERFACE (TYPE_LOCALE1, locale1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (localedLocale1Proxy, localed_locale1_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (localedLocale1Proxy)
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_LOCALE1, localed_locale1_proxy_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (Locale1Proxy, locale1_proxy, G_TYPE_DBUS_PROXY,
-                         G_IMPLEMENT_INTERFACE (TYPE_LOCALE1, locale1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (localedLocale1Proxy, localed_locale1_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_LOCALE1, localed_locale1_proxy_iface_init));
 
 #endif
 static void
-locale1_proxy_finalize (GObject *object)
+localed_locale1_proxy_finalize (GObject *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   g_datalist_clear (&proxy->priv->qdata);
-  G_OBJECT_CLASS (locale1_proxy_parent_class)->finalize (object);
+  G_OBJECT_CLASS (localed_locale1_proxy_parent_class)->finalize (object);
 }
 
 static void
-locale1_proxy_get_property (GObject      *object,
+localed_locale1_proxy_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -1506,7 +1506,7 @@ locale1_proxy_get_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 7);
-  info = _locale1_property_info_pointers[prop_id - 1];
+  info = _localed_locale1_property_info_pointers[prop_id - 1];
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (object), info->parent_struct.name);
   if (info->use_gvariant)
     {
@@ -1522,7 +1522,7 @@ locale1_proxy_get_property (GObject      *object,
 }
 
 static void
-locale1_proxy_set_property_cb (GDBusProxy *proxy,
+localed_locale1_proxy_set_property_cb (GDBusProxy *proxy,
   GAsyncResult *res,
   gpointer      user_data)
 {
@@ -1545,7 +1545,7 @@ locale1_proxy_set_property_cb (GDBusProxy *proxy,
 }
 
 static void
-locale1_proxy_set_property (GObject      *object,
+localed_locale1_proxy_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -1553,19 +1553,19 @@ locale1_proxy_set_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 7);
-  info = _locale1_property_info_pointers[prop_id - 1];
+  info = _localed_locale1_property_info_pointers[prop_id - 1];
   variant = g_dbus_gvalue_to_gvariant (value, G_VARIANT_TYPE (info->parent_struct.signature));
   g_dbus_proxy_call (G_DBUS_PROXY (object),
     "org.freedesktop.DBus.Properties.Set",
     g_variant_new ("(ssv)", "org.freedesktop.locale1", info->parent_struct.name, variant),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
-    NULL, (GAsyncReadyCallback) locale1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
+    NULL, (GAsyncReadyCallback) localed_locale1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
   g_variant_unref (variant);
 }
 
 static void
-locale1_proxy_g_signal (GDBusProxy *proxy,
+localed_locale1_proxy_g_signal (GDBusProxy *proxy,
   const gchar *sender_name G_GNUC_UNUSED,
   const gchar *signal_name,
   GVariant *parameters)
@@ -1577,12 +1577,12 @@ locale1_proxy_g_signal (GDBusProxy *proxy,
   guint num_params;
   guint n;
   guint signal_id;
-  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct, signal_name);
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct, signal_name);
   if (info == NULL)
     return;
   num_params = g_variant_n_children (parameters);
   paramv = g_new0 (GValue, num_params + 1);
-  g_value_init (&paramv[0], TYPE_LOCALE1);
+  g_value_init (&paramv[0], LOCALED_TYPE_LOCALE1);
   g_value_set_object (&paramv[0], proxy);
   g_variant_iter_init (&iter, parameters);
   n = 1;
@@ -1599,7 +1599,7 @@ locale1_proxy_g_signal (GDBusProxy *proxy,
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, TYPE_LOCALE1);
+  signal_id = g_signal_lookup (info->signal_name, LOCALED_TYPE_LOCALE1);
   g_signal_emitv (paramv, signal_id, 0, NULL);
   for (n = 0; n < num_params + 1; n++)
     g_value_unset (&paramv[n]);
@@ -1607,11 +1607,11 @@ locale1_proxy_g_signal (GDBusProxy *proxy,
 }
 
 static void
-locale1_proxy_g_properties_changed (GDBusProxy *_proxy,
+localed_locale1_proxy_g_properties_changed (GDBusProxy *_proxy,
   GVariant *changed_properties,
   const gchar *const *invalidated_properties)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (_proxy);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (_proxy);
   guint n;
   const gchar *key;
   GVariantIter *iter;
@@ -1619,7 +1619,7 @@ locale1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_get (changed_properties, "a{sv}", &iter);
   while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct, key);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct, key);
       g_datalist_remove_data (&proxy->priv->qdata, key);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -1627,7 +1627,7 @@ locale1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_iter_free (iter);
   for (n = 0; invalidated_properties[n] != NULL; n++)
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct, invalidated_properties[n]);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct, invalidated_properties[n]);
       g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -1635,9 +1635,9 @@ locale1_proxy_g_properties_changed (GDBusProxy *_proxy,
 }
 
 static const gchar *const *
-locale1_proxy_get_locale (Locale1 *object)
+localed_locale1_proxy_get_locale (localedLocale1 *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   GVariant *variant;
   const gchar *const *value = NULL;
   value = g_datalist_get_data (&proxy->priv->qdata, "Locale");
@@ -1654,39 +1654,9 @@ locale1_proxy_get_locale (Locale1 *object)
 }
 
 static const gchar *
-locale1_proxy_get_vconsole_keymap (Locale1 *object)
+localed_locale1_proxy_get_x11_layout (localedLocale1 *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
-  GVariant *variant;
-  const gchar *value = NULL;
-  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "VConsoleKeymap");
-  if (variant != NULL)
-    {
-      value = g_variant_get_string (variant, NULL);
-      g_variant_unref (variant);
-    }
-  return value;
-}
-
-static const gchar *
-locale1_proxy_get_vconsole_keymap_toggle (Locale1 *object)
-{
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
-  GVariant *variant;
-  const gchar *value = NULL;
-  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "VConsoleKeymapToggle");
-  if (variant != NULL)
-    {
-      value = g_variant_get_string (variant, NULL);
-      g_variant_unref (variant);
-    }
-  return value;
-}
-
-static const gchar *
-locale1_proxy_get_x11_layout (Locale1 *object)
-{
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "X11Layout");
@@ -1699,9 +1669,9 @@ locale1_proxy_get_x11_layout (Locale1 *object)
 }
 
 static const gchar *
-locale1_proxy_get_x11_model (Locale1 *object)
+localed_locale1_proxy_get_x11_model (localedLocale1 *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "X11Model");
@@ -1714,9 +1684,9 @@ locale1_proxy_get_x11_model (Locale1 *object)
 }
 
 static const gchar *
-locale1_proxy_get_x11_variant (Locale1 *object)
+localed_locale1_proxy_get_x11_variant (localedLocale1 *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "X11Variant");
@@ -1729,9 +1699,9 @@ locale1_proxy_get_x11_variant (Locale1 *object)
 }
 
 static const gchar *
-locale1_proxy_get_x11_options (Locale1 *object)
+localed_locale1_proxy_get_x11_options (localedLocale1 *object)
 {
-  Locale1Proxy *proxy = LOCALE1_PROXY (object);
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "X11Options");
@@ -1743,54 +1713,84 @@ locale1_proxy_get_x11_options (Locale1 *object)
   return value;
 }
 
-static void
-locale1_proxy_init (Locale1Proxy *proxy)
+static const gchar *
+localed_locale1_proxy_get_vconsole_keymap (localedLocale1 *object)
 {
-#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  proxy->priv = locale1_proxy_get_instance_private (proxy);
-#else
-  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_LOCALE1_PROXY, Locale1ProxyPrivate);
-#endif
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "VConsoleKeymap");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
+}
 
-  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), locale1_interface_info ());
+static const gchar *
+localed_locale1_proxy_get_vconsole_keymap_toggle (localedLocale1 *object)
+{
+  localedLocale1Proxy *proxy = LOCALED_LOCALE1_PROXY (object);
+  GVariant *variant;
+  const gchar *value = NULL;
+  variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "VConsoleKeymapToggle");
+  if (variant != NULL)
+    {
+      value = g_variant_get_string (variant, NULL);
+      g_variant_unref (variant);
+    }
+  return value;
 }
 
 static void
-locale1_proxy_class_init (Locale1ProxyClass *klass)
+localed_locale1_proxy_init (localedLocale1Proxy *proxy)
+{
+#if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
+  proxy->priv = localed_locale1_proxy_get_instance_private (proxy);
+#else
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, LOCALED_TYPE_LOCALE1_PROXY, localedLocale1ProxyPrivate);
+#endif
+
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), localed_locale1_interface_info ());
+}
+
+static void
+localed_locale1_proxy_class_init (localedLocale1ProxyClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize     = locale1_proxy_finalize;
-  gobject_class->get_property = locale1_proxy_get_property;
-  gobject_class->set_property = locale1_proxy_set_property;
+  gobject_class->finalize     = localed_locale1_proxy_finalize;
+  gobject_class->get_property = localed_locale1_proxy_get_property;
+  gobject_class->set_property = localed_locale1_proxy_set_property;
 
   proxy_class = G_DBUS_PROXY_CLASS (klass);
-  proxy_class->g_signal = locale1_proxy_g_signal;
-  proxy_class->g_properties_changed = locale1_proxy_g_properties_changed;
+  proxy_class->g_signal = localed_locale1_proxy_g_signal;
+  proxy_class->g_properties_changed = localed_locale1_proxy_g_properties_changed;
 
-  locale1_override_properties (gobject_class, 1);
+  localed_locale1_override_properties (gobject_class, 1);
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (Locale1ProxyPrivate));
+  g_type_class_add_private (klass, sizeof (localedLocale1ProxyPrivate));
 #endif
 }
 
 static void
-locale1_proxy_iface_init (Locale1Iface *iface)
+localed_locale1_proxy_iface_init (localedLocale1Iface *iface)
 {
-  iface->get_locale = locale1_proxy_get_locale;
-  iface->get_vconsole_keymap = locale1_proxy_get_vconsole_keymap;
-  iface->get_vconsole_keymap_toggle = locale1_proxy_get_vconsole_keymap_toggle;
-  iface->get_x11_layout = locale1_proxy_get_x11_layout;
-  iface->get_x11_model = locale1_proxy_get_x11_model;
-  iface->get_x11_variant = locale1_proxy_get_x11_variant;
-  iface->get_x11_options = locale1_proxy_get_x11_options;
+  iface->get_locale = localed_locale1_proxy_get_locale;
+  iface->get_x11_layout = localed_locale1_proxy_get_x11_layout;
+  iface->get_x11_model = localed_locale1_proxy_get_x11_model;
+  iface->get_x11_variant = localed_locale1_proxy_get_x11_variant;
+  iface->get_x11_options = localed_locale1_proxy_get_x11_options;
+  iface->get_vconsole_keymap = localed_locale1_proxy_get_vconsole_keymap;
+  iface->get_vconsole_keymap_toggle = localed_locale1_proxy_get_vconsole_keymap_toggle;
 }
 
 /**
- * locale1_proxy_new:
+ * localed_locale1_proxy_new:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -1802,12 +1802,12 @@ locale1_proxy_iface_init (Locale1Iface *iface)
  * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link>. See g_dbus_proxy_new() for more details.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call locale1_proxy_new_finish() to get the result of the operation.
+ * You can then call localed_locale1_proxy_new_finish() to get the result of the operation.
  *
- * See locale1_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ * See localed_locale1_proxy_new_sync() for the synchronous, blocking version of this constructor.
  */
 void
-locale1_proxy_new (
+localed_locale1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1816,20 +1816,20 @@ locale1_proxy_new (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (TYPE_LOCALE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
+  g_async_initable_new_async (LOCALED_TYPE_LOCALE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
 }
 
 /**
- * locale1_proxy_new_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to locale1_proxy_new().
+ * localed_locale1_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_locale1_proxy_new().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with locale1_proxy_new().
+ * Finishes an operation started with localed_locale1_proxy_new().
  *
- * Returns: (transfer full) (type Locale1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type localedLocale1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Locale1 *
-locale1_proxy_new_finish (
+localedLocale1 *
+localed_locale1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -1839,13 +1839,13 @@ locale1_proxy_new_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return LOCALE1 (ret);
+    return LOCALED_LOCALE1 (ret);
   else
     return NULL;
 }
 
 /**
- * locale1_proxy_new_sync:
+ * localed_locale1_proxy_new_sync:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -1857,12 +1857,12 @@ locale1_proxy_new_finish (
  *
  * The calling thread is blocked until a reply is received.
  *
- * See locale1_proxy_new() for the asynchronous version of this constructor.
+ * See localed_locale1_proxy_new() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type Locale1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type localedLocale1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Locale1 *
-locale1_proxy_new_sync (
+localedLocale1 *
+localed_locale1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1871,16 +1871,16 @@ locale1_proxy_new_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (TYPE_LOCALE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
+  ret = g_initable_new (LOCALED_TYPE_LOCALE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
   if (ret != NULL)
-    return LOCALE1 (ret);
+    return LOCALED_LOCALE1 (ret);
   else
     return NULL;
 }
 
 
 /**
- * locale1_proxy_new_for_bus:
+ * localed_locale1_proxy_new_for_bus:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -1889,15 +1889,15 @@ locale1_proxy_new_sync (
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Like locale1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ * Like localed_locale1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call locale1_proxy_new_for_bus_finish() to get the result of the operation.
+ * You can then call localed_locale1_proxy_new_for_bus_finish() to get the result of the operation.
  *
- * See locale1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ * See localed_locale1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
  */
 void
-locale1_proxy_new_for_bus (
+localed_locale1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1906,20 +1906,20 @@ locale1_proxy_new_for_bus (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (TYPE_LOCALE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
+  g_async_initable_new_async (LOCALED_TYPE_LOCALE1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
 }
 
 /**
- * locale1_proxy_new_for_bus_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to locale1_proxy_new_for_bus().
+ * localed_locale1_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_locale1_proxy_new_for_bus().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with locale1_proxy_new_for_bus().
+ * Finishes an operation started with localed_locale1_proxy_new_for_bus().
  *
- * Returns: (transfer full) (type Locale1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type localedLocale1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Locale1 *
-locale1_proxy_new_for_bus_finish (
+localedLocale1 *
+localed_locale1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -1929,13 +1929,13 @@ locale1_proxy_new_for_bus_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return LOCALE1 (ret);
+    return LOCALED_LOCALE1 (ret);
   else
     return NULL;
 }
 
 /**
- * locale1_proxy_new_for_bus_sync:
+ * localed_locale1_proxy_new_for_bus_sync:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -1943,16 +1943,16 @@ locale1_proxy_new_for_bus_finish (
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Like locale1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ * Like localed_locale1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See locale1_proxy_new_for_bus() for the asynchronous version of this constructor.
+ * See localed_locale1_proxy_new_for_bus() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type Locale1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type localedLocale1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-Locale1 *
-locale1_proxy_new_for_bus_sync (
+localedLocale1 *
+localed_locale1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -1961,9 +1961,9 @@ locale1_proxy_new_for_bus_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (TYPE_LOCALE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
+  ret = g_initable_new (LOCALED_TYPE_LOCALE1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.locale1", NULL);
   if (ret != NULL)
-    return LOCALE1 (ret);
+    return LOCALED_LOCALE1 (ret);
   else
     return NULL;
 }
@@ -1972,19 +1972,19 @@ locale1_proxy_new_for_bus_sync (
 /* ------------------------------------------------------------------------ */
 
 /**
- * Locale1Skeleton:
+ * localedLocale1Skeleton:
  *
- * The #Locale1Skeleton structure contains only private data and should only be accessed using the provided API.
+ * The #localedLocale1Skeleton structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * Locale1SkeletonClass:
+ * localedLocale1SkeletonClass:
  * @parent_class: The parent class.
  *
- * Class structure for #Locale1Skeleton.
+ * Class structure for #localedLocale1Skeleton.
  */
 
-struct _Locale1SkeletonPrivate
+struct _localedLocale1SkeletonPrivate
 {
   GValue *properties;
   GList *changed_properties;
@@ -1994,7 +1994,7 @@ struct _Locale1SkeletonPrivate
 };
 
 static void
-_locale1_skeleton_handle_method_call (
+_localed_locale1_skeleton_handle_method_call (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2004,7 +2004,7 @@ _locale1_skeleton_handle_method_call (
   GDBusMethodInvocation *invocation,
   gpointer user_data)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (user_data);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (user_data);
   _ExtendedGDBusMethodInfo *info;
   GVariantIter iter;
   GVariant *child;
@@ -2019,7 +2019,7 @@ _locale1_skeleton_handle_method_call (
   num_params = g_variant_n_children (parameters);
   num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
   n = 0;
-  g_value_init (&paramv[n], TYPE_LOCALE1);
+  g_value_init (&paramv[n], LOCALED_TYPE_LOCALE1);
   g_value_set_object (&paramv[n++], skeleton);
   g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
   g_value_set_object (&paramv[n++], invocation);
@@ -2046,7 +2046,7 @@ _locale1_skeleton_handle_method_call (
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, TYPE_LOCALE1);
+  signal_id = g_signal_lookup (info->signal_name, LOCALED_TYPE_LOCALE1);
   g_value_init (&return_value, G_TYPE_BOOLEAN);
   g_signal_emitv (paramv, signal_id, 0, &return_value);
   if (!g_value_get_boolean (&return_value))
@@ -2058,7 +2058,7 @@ _locale1_skeleton_handle_method_call (
 }
 
 static GVariant *
-_locale1_skeleton_handle_get_property (
+_localed_locale1_skeleton_handle_get_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2067,13 +2067,13 @@ _locale1_skeleton_handle_get_property (
   GError **error,
   gpointer user_data)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (user_data);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   GVariant *ret;
   ret = NULL;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -2091,7 +2091,7 @@ _locale1_skeleton_handle_get_property (
 }
 
 static gboolean
-_locale1_skeleton_handle_set_property (
+_localed_locale1_skeleton_handle_set_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2101,13 +2101,13 @@ _locale1_skeleton_handle_set_property (
   GError **error,
   gpointer user_data)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (user_data);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   gboolean ret;
   ret = FALSE;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_locale1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_localed_locale1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -2127,43 +2127,43 @@ _locale1_skeleton_handle_set_property (
   return ret;
 }
 
-static const GDBusInterfaceVTable _locale1_skeleton_vtable =
+static const GDBusInterfaceVTable _localed_locale1_skeleton_vtable =
 {
-  _locale1_skeleton_handle_method_call,
-  _locale1_skeleton_handle_get_property,
-  _locale1_skeleton_handle_set_property,
+  _localed_locale1_skeleton_handle_method_call,
+  _localed_locale1_skeleton_handle_get_property,
+  _localed_locale1_skeleton_handle_set_property,
   {NULL}
 };
 
 static GDBusInterfaceInfo *
-locale1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+localed_locale1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return locale1_interface_info ();
+  return localed_locale1_interface_info ();
 }
 
 static GDBusInterfaceVTable *
-locale1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+localed_locale1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return (GDBusInterfaceVTable *) &_locale1_skeleton_vtable;
+  return (GDBusInterfaceVTable *) &_localed_locale1_skeleton_vtable;
 }
 
 static GVariant *
-locale1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+localed_locale1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (_skeleton);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (_skeleton);
 
   GVariantBuilder builder;
   guint n;
   g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
-  if (_locale1_interface_info.parent_struct.properties == NULL)
+  if (_localed_locale1_interface_info.parent_struct.properties == NULL)
     goto out;
-  for (n = 0; _locale1_interface_info.parent_struct.properties[n] != NULL; n++)
+  for (n = 0; _localed_locale1_interface_info.parent_struct.properties[n] != NULL; n++)
     {
-      GDBusPropertyInfo *info = _locale1_interface_info.parent_struct.properties[n];
+      GDBusPropertyInfo *info = _localed_locale1_interface_info.parent_struct.properties[n];
       if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
         {
           GVariant *value;
-          value = _locale1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.locale1", info->name, NULL, skeleton);
+          value = _localed_locale1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.locale1", info->name, NULL, skeleton);
           if (value != NULL)
             {
               g_variant_take_ref (value);
@@ -2176,12 +2176,12 @@ out:
   return g_variant_builder_end (&builder);
 }
 
-static gboolean _locale1_emit_changed (gpointer user_data);
+static gboolean _localed_locale1_emit_changed (gpointer user_data);
 
 static void
-locale1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+localed_locale1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (_skeleton);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (_skeleton);
   gboolean emit_changed = FALSE;
 
   g_mutex_lock (&skeleton->priv->lock);
@@ -2194,24 +2194,24 @@ locale1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
   g_mutex_unlock (&skeleton->priv->lock);
 
   if (emit_changed)
-    _locale1_emit_changed (skeleton);
+    _localed_locale1_emit_changed (skeleton);
 }
 
-static void locale1_skeleton_iface_init (Locale1Iface *iface);
+static void localed_locale1_skeleton_iface_init (localedLocale1Iface *iface);
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (Locale1Skeleton, locale1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_ADD_PRIVATE (Locale1Skeleton)
-                         G_IMPLEMENT_INTERFACE (TYPE_LOCALE1, locale1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (localedLocale1Skeleton, localed_locale1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (localedLocale1Skeleton)
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_LOCALE1, localed_locale1_skeleton_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (Locale1Skeleton, locale1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_IMPLEMENT_INTERFACE (TYPE_LOCALE1, locale1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (localedLocale1Skeleton, localed_locale1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_LOCALE1, localed_locale1_skeleton_iface_init));
 
 #endif
 static void
-locale1_skeleton_finalize (GObject *object)
+localed_locale1_skeleton_finalize (GObject *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   guint n;
   for (n = 0; n < 7; n++)
     g_value_unset (&skeleton->priv->properties[n]);
@@ -2221,16 +2221,16 @@ locale1_skeleton_finalize (GObject *object)
     g_source_destroy (skeleton->priv->changed_properties_idle_source);
   g_main_context_unref (skeleton->priv->context);
   g_mutex_clear (&skeleton->priv->lock);
-  G_OBJECT_CLASS (locale1_skeleton_parent_class)->finalize (object);
+  G_OBJECT_CLASS (localed_locale1_skeleton_parent_class)->finalize (object);
 }
 
 static void
-locale1_skeleton_get_property (GObject      *object,
+localed_locale1_skeleton_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 7);
   g_mutex_lock (&skeleton->priv->lock);
   g_value_copy (&skeleton->priv->properties[prop_id - 1], value);
@@ -2238,9 +2238,9 @@ locale1_skeleton_get_property (GObject      *object,
 }
 
 static gboolean
-_locale1_emit_changed (gpointer user_data)
+_localed_locale1_emit_changed (gpointer user_data)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (user_data);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (user_data);
   GList *l;
   GVariantBuilder builder;
   GVariantBuilder invalidated_builder;
@@ -2298,7 +2298,7 @@ _locale1_emit_changed (gpointer user_data)
 }
 
 static void
-_locale1_schedule_emit_changed (Locale1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
+_localed_locale1_schedule_emit_changed (localedLocale1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
 {
   ChangedProperty *cp;
   GList *l;
@@ -2324,17 +2324,17 @@ _locale1_schedule_emit_changed (Locale1Skeleton *skeleton, const _ExtendedGDBusP
 }
 
 static void
-locale1_skeleton_notify (GObject      *object,
+localed_locale1_skeleton_notify (GObject      *object,
   GParamSpec *pspec G_GNUC_UNUSED)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   g_mutex_lock (&skeleton->priv->lock);
   if (skeleton->priv->changed_properties != NULL &&
       skeleton->priv->changed_properties_idle_source == NULL)
     {
       skeleton->priv->changed_properties_idle_source = g_idle_source_new ();
       g_source_set_priority (skeleton->priv->changed_properties_idle_source, G_PRIORITY_DEFAULT);
-      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _locale1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
+      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _localed_locale1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
       g_source_attach (skeleton->priv->changed_properties_idle_source, skeleton->priv->context);
       g_source_unref (skeleton->priv->changed_properties_idle_source);
     }
@@ -2342,19 +2342,19 @@ locale1_skeleton_notify (GObject      *object,
 }
 
 static void
-locale1_skeleton_set_property (GObject      *object,
+localed_locale1_skeleton_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 7);
   g_mutex_lock (&skeleton->priv->lock);
   g_object_freeze_notify (object);
   if (!_g_value_equal (value, &skeleton->priv->properties[prop_id - 1]))
     {
       if (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)) != NULL)
-        _locale1_schedule_emit_changed (skeleton, _locale1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
+        _localed_locale1_schedule_emit_changed (skeleton, _localed_locale1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
       g_value_copy (value, &skeleton->priv->properties[prop_id - 1]);
       g_object_notify_by_pspec (object, pspec);
     }
@@ -2363,12 +2363,12 @@ locale1_skeleton_set_property (GObject      *object,
 }
 
 static void
-locale1_skeleton_init (Locale1Skeleton *skeleton)
+localed_locale1_skeleton_init (localedLocale1Skeleton *skeleton)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  skeleton->priv = locale1_skeleton_get_instance_private (skeleton);
+  skeleton->priv = localed_locale1_skeleton_get_instance_private (skeleton);
 #else
-  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_LOCALE1_SKELETON, Locale1SkeletonPrivate);
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, LOCALED_TYPE_LOCALE1_SKELETON, localedLocale1SkeletonPrivate);
 #endif
 
   g_mutex_init (&skeleton->priv->lock);
@@ -2384,9 +2384,9 @@ locale1_skeleton_init (Locale1Skeleton *skeleton)
 }
 
 static const gchar *const *
-locale1_skeleton_get_locale (Locale1 *object)
+localed_locale1_skeleton_get_locale (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *const *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boxed (&(skeleton->priv->properties[0]));
@@ -2395,9 +2395,9 @@ locale1_skeleton_get_locale (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_vconsole_keymap (Locale1 *object)
+localed_locale1_skeleton_get_x11_layout (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[1]));
@@ -2406,9 +2406,9 @@ locale1_skeleton_get_vconsole_keymap (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_vconsole_keymap_toggle (Locale1 *object)
+localed_locale1_skeleton_get_x11_model (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[2]));
@@ -2417,9 +2417,9 @@ locale1_skeleton_get_vconsole_keymap_toggle (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_x11_layout (Locale1 *object)
+localed_locale1_skeleton_get_x11_variant (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[3]));
@@ -2428,9 +2428,9 @@ locale1_skeleton_get_x11_layout (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_x11_model (Locale1 *object)
+localed_locale1_skeleton_get_x11_options (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[4]));
@@ -2439,9 +2439,9 @@ locale1_skeleton_get_x11_model (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_x11_variant (Locale1 *object)
+localed_locale1_skeleton_get_vconsole_keymap (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[5]));
@@ -2450,9 +2450,9 @@ locale1_skeleton_get_x11_variant (Locale1 *object)
 }
 
 static const gchar *
-locale1_skeleton_get_x11_options (Locale1 *object)
+localed_locale1_skeleton_get_vconsole_keymap_toggle (localedLocale1 *object)
 {
-  Locale1Skeleton *skeleton = LOCALE1_SKELETON (object);
+  localedLocale1Skeleton *skeleton = LOCALED_LOCALE1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[6]));
@@ -2461,53 +2461,617 @@ locale1_skeleton_get_x11_options (Locale1 *object)
 }
 
 static void
-locale1_skeleton_class_init (Locale1SkeletonClass *klass)
+localed_locale1_skeleton_class_init (localedLocale1SkeletonClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusInterfaceSkeletonClass *skeleton_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = locale1_skeleton_finalize;
-  gobject_class->get_property = locale1_skeleton_get_property;
-  gobject_class->set_property = locale1_skeleton_set_property;
-  gobject_class->notify       = locale1_skeleton_notify;
+  gobject_class->finalize = localed_locale1_skeleton_finalize;
+  gobject_class->get_property = localed_locale1_skeleton_get_property;
+  gobject_class->set_property = localed_locale1_skeleton_set_property;
+  gobject_class->notify       = localed_locale1_skeleton_notify;
 
 
-  locale1_override_properties (gobject_class, 1);
+  localed_locale1_override_properties (gobject_class, 1);
 
   skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
-  skeleton_class->get_info = locale1_skeleton_dbus_interface_get_info;
-  skeleton_class->get_properties = locale1_skeleton_dbus_interface_get_properties;
-  skeleton_class->flush = locale1_skeleton_dbus_interface_flush;
-  skeleton_class->get_vtable = locale1_skeleton_dbus_interface_get_vtable;
+  skeleton_class->get_info = localed_locale1_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = localed_locale1_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = localed_locale1_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = localed_locale1_skeleton_dbus_interface_get_vtable;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (Locale1SkeletonPrivate));
+  g_type_class_add_private (klass, sizeof (localedLocale1SkeletonPrivate));
 #endif
 }
 
 static void
-locale1_skeleton_iface_init (Locale1Iface *iface)
+localed_locale1_skeleton_iface_init (localedLocale1Iface *iface)
 {
-  iface->get_locale = locale1_skeleton_get_locale;
-  iface->get_vconsole_keymap = locale1_skeleton_get_vconsole_keymap;
-  iface->get_vconsole_keymap_toggle = locale1_skeleton_get_vconsole_keymap_toggle;
-  iface->get_x11_layout = locale1_skeleton_get_x11_layout;
-  iface->get_x11_model = locale1_skeleton_get_x11_model;
-  iface->get_x11_variant = locale1_skeleton_get_x11_variant;
-  iface->get_x11_options = locale1_skeleton_get_x11_options;
+  iface->get_locale = localed_locale1_skeleton_get_locale;
+  iface->get_x11_layout = localed_locale1_skeleton_get_x11_layout;
+  iface->get_x11_model = localed_locale1_skeleton_get_x11_model;
+  iface->get_x11_variant = localed_locale1_skeleton_get_x11_variant;
+  iface->get_x11_options = localed_locale1_skeleton_get_x11_options;
+  iface->get_vconsole_keymap = localed_locale1_skeleton_get_vconsole_keymap;
+  iface->get_vconsole_keymap_toggle = localed_locale1_skeleton_get_vconsole_keymap_toggle;
 }
 
 /**
- * locale1_skeleton_new:
+ * localed_locale1_skeleton_new:
  *
  * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link>.
  *
- * Returns: (transfer full) (type Locale1Skeleton): The skeleton object.
+ * Returns: (transfer full) (type localedLocale1Skeleton): The skeleton object.
  */
-Locale1 *
-locale1_skeleton_new (void)
+localedLocale1 *
+localed_locale1_skeleton_new (void)
 {
-  return LOCALE1 (g_object_new (TYPE_LOCALE1_SKELETON, NULL));
+  return LOCALED_LOCALE1 (g_object_new (LOCALED_TYPE_LOCALE1_SKELETON, NULL));
 }
+
+/* ------------------------------------------------------------------------
+ * Code for Object, ObjectProxy and ObjectSkeleton
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:localedObject
+ * @title: localedObject
+ * @short_description: Specialized GDBusObject types
+ *
+ * This section contains the #localedObject, #localedObjectProxy, and #localedObjectSkeleton types which make it easier to work with objects implementing generated types for D-Bus interfaces.
+ */
+
+/**
+ * localedObject:
+ *
+ * The #localedObject type is a specialized container of interfaces.
+ */
+
+/**
+ * localedObjectIface:
+ * @parent_iface: The parent interface.
+ *
+ * Virtual table for the #localedObject interface.
+ */
+
+typedef localedObjectIface localedObjectInterface;
+G_DEFINE_INTERFACE_WITH_CODE (localedObject, localed_object, G_TYPE_OBJECT, g_type_interface_add_prerequisite (g_define_type_id, G_TYPE_DBUS_OBJECT));
+
+static void
+localed_object_default_init (localedObjectIface *iface)
+{
+  /**
+   * localedObject:locale1:
+   *
+   * The #localedLocale1 instance corresponding to the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link>, if any.
+   *
+   * Connect to the #GObject::notify signal to get informed of property changes.
+   */
+  g_object_interface_install_property (iface, g_param_spec_object ("locale1", "locale1", "locale1", LOCALED_TYPE_LOCALE1, G_PARAM_READWRITE|G_PARAM_STATIC_STRINGS));
+
+}
+
+/**
+ * localed_object_get_locale1:
+ * @object: A #localedObject.
+ *
+ * Gets the #localedLocale1 instance for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link> on @object, if any.
+ *
+ * Returns: (transfer full): A #localedLocale1 that must be freed with g_object_unref() or %NULL if @object does not implement the interface.
+ */
+localedLocale1 *localed_object_get_locale1 (localedObject *object)
+{
+  GDBusInterface *ret;
+  ret = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.locale1");
+  if (ret == NULL)
+    return NULL;
+  return LOCALED_LOCALE1 (ret);
+}
+
+
+/**
+ * localed_object_peek_locale1: (skip)
+ * @object: A #localedObject.
+ *
+ * Like localed_object_get_locale1() but doesn't increase the reference count on the returned object.
+ *
+ * <warning>It is not safe to use the returned object if you are on another thread than the one where the #GDBusObjectManagerClient or #GDBusObjectManagerServer for @object is running.</warning>
+ *
+ * Returns: (transfer none): A #localedLocale1 or %NULL if @object does not implement the interface. Do not free the returned object, it is owned by @object.
+ */
+localedLocale1 *localed_object_peek_locale1 (localedObject *object)
+{
+  GDBusInterface *ret;
+  ret = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.locale1");
+  if (ret == NULL)
+    return NULL;
+  g_object_unref (ret);
+  return LOCALED_LOCALE1 (ret);
+}
+
+
+static void
+localed_object_notify (GDBusObject *object, GDBusInterface *interface)
+{
+  _ExtendedGDBusInterfaceInfo *info = (_ExtendedGDBusInterfaceInfo *) g_dbus_interface_get_info (interface);
+  /* info can be NULL if the other end is using a D-Bus interface we don't know
+   * anything about, for example old generated code in this process talking to
+   * newer generated code in the other process. */
+  if (info != NULL)
+    g_object_notify (G_OBJECT (object), info->hyphen_name);
+}
+
+/**
+ * localedObjectProxy:
+ *
+ * The #localedObjectProxy structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * localedObjectProxyClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #localedObjectProxy.
+ */
+
+static void
+localed_object_proxy__localed_object_iface_init (localedObjectIface *iface G_GNUC_UNUSED)
+{
+}
+
+static void
+localed_object_proxy__g_dbus_object_iface_init (GDBusObjectIface *iface)
+{
+  iface->interface_added = localed_object_notify;
+  iface->interface_removed = localed_object_notify;
+}
+
+
+G_DEFINE_TYPE_WITH_CODE (localedObjectProxy, localed_object_proxy, G_TYPE_DBUS_OBJECT_PROXY,
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_OBJECT, localed_object_proxy__localed_object_iface_init)
+                         G_IMPLEMENT_INTERFACE (G_TYPE_DBUS_OBJECT, localed_object_proxy__g_dbus_object_iface_init));
+
+static void
+localed_object_proxy_init (localedObjectProxy *object G_GNUC_UNUSED)
+{
+}
+
+static void
+localed_object_proxy_set_property (GObject      *gobject,
+  guint         prop_id,
+  const GValue *value G_GNUC_UNUSED,
+  GParamSpec   *pspec)
+{
+  G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+}
+
+static void
+localed_object_proxy_get_property (GObject      *gobject,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec)
+{
+  localedObjectProxy *object = LOCALED_OBJECT_PROXY (gobject);
+  GDBusInterface *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.locale1");
+      g_value_take_object (value, interface);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+localed_object_proxy_class_init (localedObjectProxyClass *klass)
+{
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  gobject_class->set_property = localed_object_proxy_set_property;
+  gobject_class->get_property = localed_object_proxy_get_property;
+
+  g_object_class_override_property (gobject_class, 1, "locale1");
+}
+
+/**
+ * localed_object_proxy_new:
+ * @connection: A #GDBusConnection.
+ * @object_path: An object path.
+ *
+ * Creates a new proxy object.
+ *
+ * Returns: (transfer full): The proxy object.
+ */
+localedObjectProxy *
+localed_object_proxy_new (GDBusConnection *connection,
+  const gchar *object_path)
+{
+  g_return_val_if_fail (G_IS_DBUS_CONNECTION (connection), NULL);
+  g_return_val_if_fail (g_variant_is_object_path (object_path), NULL);
+  return LOCALED_OBJECT_PROXY (g_object_new (LOCALED_TYPE_OBJECT_PROXY, "g-connection", connection, "g-object-path", object_path, NULL));
+}
+
+/**
+ * localedObjectSkeleton:
+ *
+ * The #localedObjectSkeleton structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * localedObjectSkeletonClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #localedObjectSkeleton.
+ */
+
+static void
+localed_object_skeleton__localed_object_iface_init (localedObjectIface *iface G_GNUC_UNUSED)
+{
+}
+
+
+static void
+localed_object_skeleton__g_dbus_object_iface_init (GDBusObjectIface *iface)
+{
+  iface->interface_added = localed_object_notify;
+  iface->interface_removed = localed_object_notify;
+}
+
+G_DEFINE_TYPE_WITH_CODE (localedObjectSkeleton, localed_object_skeleton, G_TYPE_DBUS_OBJECT_SKELETON,
+                         G_IMPLEMENT_INTERFACE (LOCALED_TYPE_OBJECT, localed_object_skeleton__localed_object_iface_init)
+                         G_IMPLEMENT_INTERFACE (G_TYPE_DBUS_OBJECT, localed_object_skeleton__g_dbus_object_iface_init));
+
+static void
+localed_object_skeleton_init (localedObjectSkeleton *object G_GNUC_UNUSED)
+{
+}
+
+static void
+localed_object_skeleton_set_property (GObject      *gobject,
+  guint         prop_id,
+  const GValue *value,
+  GParamSpec   *pspec)
+{
+  localedObjectSkeleton *object = LOCALED_OBJECT_SKELETON (gobject);
+  GDBusInterfaceSkeleton *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_value_get_object (value);
+      if (interface != NULL)
+        {
+          g_warn_if_fail (LOCALED_IS_LOCALE1 (interface));
+          g_dbus_object_skeleton_add_interface (G_DBUS_OBJECT_SKELETON (object), interface);
+        }
+      else
+        {
+          g_dbus_object_skeleton_remove_interface_by_name (G_DBUS_OBJECT_SKELETON (object), "org.freedesktop.locale1");
+        }
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+localed_object_skeleton_get_property (GObject      *gobject,
+  guint         prop_id,
+  GValue       *value,
+  GParamSpec   *pspec)
+{
+  localedObjectSkeleton *object = LOCALED_OBJECT_SKELETON (gobject);
+  GDBusInterface *interface;
+
+  switch (prop_id)
+    {
+    case 1:
+      interface = g_dbus_object_get_interface (G_DBUS_OBJECT (object), "org.freedesktop.locale1");
+      g_value_take_object (value, interface);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+  }
+}
+
+static void
+localed_object_skeleton_class_init (localedObjectSkeletonClass *klass)
+{
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  gobject_class->set_property = localed_object_skeleton_set_property;
+  gobject_class->get_property = localed_object_skeleton_get_property;
+
+  g_object_class_override_property (gobject_class, 1, "locale1");
+}
+
+/**
+ * localed_object_skeleton_new:
+ * @object_path: An object path.
+ *
+ * Creates a new skeleton object.
+ *
+ * Returns: (transfer full): The skeleton object.
+ */
+localedObjectSkeleton *
+localed_object_skeleton_new (const gchar *object_path)
+{
+  g_return_val_if_fail (g_variant_is_object_path (object_path), NULL);
+  return LOCALED_OBJECT_SKELETON (g_object_new (LOCALED_TYPE_OBJECT_SKELETON, "g-object-path", object_path, NULL));
+}
+
+/**
+ * localed_object_skeleton_set_locale1:
+ * @object: A #localedObjectSkeleton.
+ * @interface_: (allow-none): A #localedLocale1 or %NULL to clear the interface.
+ *
+ * Sets the #localedLocale1 instance for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-locale1.top_of_page">org.freedesktop.locale1</link> on @object.
+ */
+void localed_object_skeleton_set_locale1 (localedObjectSkeleton *object, localedLocale1 *interface_)
+{
+  g_object_set (G_OBJECT (object), "locale1", interface_, NULL);
+}
+
+
+/* ------------------------------------------------------------------------
+ * Code for ObjectManager client
+ * ------------------------------------------------------------------------
+ */
+
+/**
+ * SECTION:localedObjectManagerClient
+ * @title: localedObjectManagerClient
+ * @short_description: Generated GDBusObjectManagerClient type
+ *
+ * This section contains a #GDBusObjectManagerClient that uses localed_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc.
+ */
+
+/**
+ * localedObjectManagerClient:
+ *
+ * The #localedObjectManagerClient structure contains only private data and should only be accessed using the provided API.
+ */
+
+/**
+ * localedObjectManagerClientClass:
+ * @parent_class: The parent class.
+ *
+ * Class structure for #localedObjectManagerClient.
+ */
+
+G_DEFINE_TYPE (localedObjectManagerClient, localed_object_manager_client, G_TYPE_DBUS_OBJECT_MANAGER_CLIENT);
+
+static void
+localed_object_manager_client_init (localedObjectManagerClient *manager G_GNUC_UNUSED)
+{
+}
+
+static void
+localed_object_manager_client_class_init (localedObjectManagerClientClass *klass G_GNUC_UNUSED)
+{
+}
+
+/**
+ * localed_object_manager_client_get_proxy_type:
+ * @manager: A #GDBusObjectManagerClient.
+ * @object_path: The object path of the remote object (unused).
+ * @interface_name: (allow-none): Interface name of the remote object or %NULL to get the object proxy #GType.
+ * @user_data: User data (unused).
+ *
+ * A #GDBusProxyTypeFunc that maps @interface_name to the generated #GDBusObjectProxy<!-- -->- and #GDBusProxy<!-- -->-derived types.
+ *
+ * Returns: A #GDBusProxy<!-- -->-derived #GType if @interface_name is not %NULL, otherwise the #GType for #localedObjectProxy.
+ */
+GType
+localed_object_manager_client_get_proxy_type (GDBusObjectManagerClient *manager G_GNUC_UNUSED, const gchar *object_path G_GNUC_UNUSED, const gchar *interface_name, gpointer user_data G_GNUC_UNUSED)
+{
+  static gsize once_init_value = 0;
+  static GHashTable *lookup_hash;
+  GType ret;
+
+  if (interface_name == NULL)
+    return LOCALED_TYPE_OBJECT_PROXY;
+  if (g_once_init_enter (&once_init_value))
+    {
+      lookup_hash = g_hash_table_new (g_str_hash, g_str_equal);
+      g_hash_table_insert (lookup_hash, (gpointer) "org.freedesktop.locale1", GSIZE_TO_POINTER (LOCALED_TYPE_LOCALE1_PROXY));
+      g_once_init_leave (&once_init_value, 1);
+    }
+  ret = (GType) GPOINTER_TO_SIZE (g_hash_table_lookup (lookup_hash, interface_name));
+  if (ret == (GType) 0)
+    ret = G_TYPE_DBUS_PROXY;
+  return ret;
+}
+
+/**
+ * localed_object_manager_client_new:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Asynchronously creates #GDBusObjectManagerClient using localed_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc. See g_dbus_object_manager_client_new() for more details.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call localed_object_manager_client_new_finish() to get the result of the operation.
+ *
+ * See localed_object_manager_client_new_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+localed_object_manager_client_new (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data)
+{
+  g_async_initable_new_async (LOCALED_TYPE_OBJECT_MANAGER_CLIENT, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "flags", flags, "name", name, "connection", connection, "object-path", object_path, "get-proxy-type-func", localed_object_manager_client_get_proxy_type, NULL);
+}
+
+/**
+ * localed_object_manager_client_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_object_manager_client_new().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with localed_object_manager_client_new().
+ *
+ * Returns: (transfer full) (type localedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+localed_object_manager_client_new_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * localed_object_manager_client_new_sync:
+ * @connection: A #GDBusConnection.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Synchronously creates #GDBusObjectManagerClient using localed_object_manager_client_get_proxy_type() as the #GDBusProxyTypeFunc. See g_dbus_object_manager_client_new_sync() for more details.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See localed_object_manager_client_new() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type localedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+localed_object_manager_client_new_sync (
+    GDBusConnection        *connection,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (LOCALED_TYPE_OBJECT_MANAGER_CLIENT, cancellable, error, "flags", flags, "name", name, "connection", connection, "object-path", object_path, "get-proxy-type-func", localed_object_manager_client_get_proxy_type, NULL);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+
+/**
+ * localed_object_manager_client_new_for_bus:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
+ * @user_data: User data to pass to @callback.
+ *
+ * Like localed_object_manager_client_new() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
+ * You can then call localed_object_manager_client_new_for_bus_finish() to get the result of the operation.
+ *
+ * See localed_object_manager_client_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ */
+void
+localed_object_manager_client_new_for_bus (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GAsyncReadyCallback     callback,
+    gpointer                user_data)
+{
+  g_async_initable_new_async (LOCALED_TYPE_OBJECT_MANAGER_CLIENT, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "flags", flags, "name", name, "bus-type", bus_type, "object-path", object_path, "get-proxy-type-func", localed_object_manager_client_get_proxy_type, NULL);
+}
+
+/**
+ * localed_object_manager_client_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to localed_object_manager_client_new_for_bus().
+ * @error: Return location for error or %NULL
+ *
+ * Finishes an operation started with localed_object_manager_client_new_for_bus().
+ *
+ * Returns: (transfer full) (type localedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+localed_object_manager_client_new_for_bus_finish (
+    GAsyncResult        *res,
+    GError             **error)
+{
+  GObject *ret;
+  GObject *source_object;
+  source_object = g_async_result_get_source_object (res);
+  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
+  g_object_unref (source_object);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
+/**
+ * localed_object_manager_client_new_for_bus_sync:
+ * @bus_type: A #GBusType.
+ * @flags: Flags from the #GDBusObjectManagerClientFlags enumeration.
+ * @name: A bus name (well-known or unique).
+ * @object_path: An object path.
+ * @cancellable: (allow-none): A #GCancellable or %NULL.
+ * @error: Return location for error or %NULL
+ *
+ * Like localed_object_manager_client_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ *
+ * The calling thread is blocked until a reply is received.
+ *
+ * See localed_object_manager_client_new_for_bus() for the asynchronous version of this constructor.
+ *
+ * Returns: (transfer full) (type localedObjectManagerClient): The constructed object manager client or %NULL if @error is set.
+ */
+GDBusObjectManager *
+localed_object_manager_client_new_for_bus_sync (
+    GBusType                bus_type,
+    GDBusObjectManagerClientFlags  flags,
+    const gchar            *name,
+    const gchar            *object_path,
+    GCancellable           *cancellable,
+    GError                **error)
+{
+  GInitable *ret;
+  ret = g_initable_new (LOCALED_TYPE_OBJECT_MANAGER_CLIENT, cancellable, error, "flags", flags, "name", name, "bus-type", bus_type, "object-path", object_path, "get-proxy-type-func", localed_object_manager_client_get_proxy_type, NULL);
+  if (ret != NULL)
+    return G_DBUS_OBJECT_MANAGER (ret);
+  else
+    return NULL;
+}
+
 
