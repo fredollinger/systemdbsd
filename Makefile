@@ -13,7 +13,7 @@ all: build
 build:
 	gcc -o bin/out.bin $(DEBUGF) $(GLIBF) $(SANITY) $(SRCDIR)/main.c 
 
-build-proper:
+publish:
 	gcc -o bin/out.bin $(CFLAGS) $(GLIBF) $(SANITY) $(SRCDIR)/main.c
 
 clean:
