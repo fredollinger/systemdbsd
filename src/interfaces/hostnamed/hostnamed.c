@@ -138,7 +138,7 @@ our_get_os_pretty_name() {
 
 /* end method/property/signal code, begin bus/name handlers */
 
-static void on_bus_acquired(GDBusConnection *conn,
+static void hostnamed_on_bus_acquired(GDBusConnection *conn,
                             const gchar *name,
                             gpointer user_data) {
 
@@ -146,7 +146,7 @@ static void on_bus_acquired(GDBusConnection *conn,
 
 }
 
-static void on_name_acquired(GDBusConnection *conn,
+static void hostnamed_on_name_acquired(GDBusConnection *conn,
                              const gchar *name,
                              gpointer user_data) {
 
@@ -183,7 +183,7 @@ static void on_name_acquired(GDBusConnection *conn,
 
 }
 
-static void on_name_lost(GDBusConnection *conn,
+static void hostnamed_on_name_lost(GDBusConnection *conn,
                          const gchar *name,
                          gpointer user_data) {
 
@@ -216,9 +216,9 @@ GError *hostnamed_init() {
     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.hostname1",
                                     G_BUS_NAME_OWNER_FLAGS_NONE,
-                                    on_bus_acquired,
-                                    on_name_acquired,
-                                    on_name_lost,
+                                    hostnamed_on_bus_acquired,
+                                    hostnamed_on_name_acquired,
+                                    hostnamed_on_name_lost,
                                     NULL,
                                     NULL);
 

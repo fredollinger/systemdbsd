@@ -18,15 +18,20 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib/gstdio.h>
+
 #include "config.c"
+
 #include "interfaces/hostnamed/hostnamed.c"
+#include "interfaces/localed/localed.c"
+#include "interfaces/timedated/timedated.c"
+#include "interfaces/logind/logind.c"
 
 gboolean systemd_utils_init() {
     if(!config_init()) {
         gchar *tmp;
         tmp = "/etc/systemd_compat.conf"; 
 
-        g_printf("FAILED to open config %s!\n", tmp);
+        g_printf("FAILED to open config %s! did you `make install`?\n", tmp);
         return FALSE;
     } 
     return TRUE;
@@ -42,6 +47,7 @@ int main() {
     }
 
     hostnamed_init();
+	localed_init();
 
     mloop = g_main_loop_new(NULL, TRUE);
 
