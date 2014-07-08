@@ -15,6 +15,8 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+# TODO fix #include, should be "foo-gen.h" instead of "src/interfaces/foo/foo-gen.h
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/../ && pwd )"
 
 if [[ -z "$1" ]]; then 
@@ -30,6 +32,7 @@ gdbus-codegen \
 --generate-docbook doc/$1-docbook.xml \
 --generate-c-code  src/interfaces/$1/$1-gen \
 --c-generate-object-manager \
+--c-namespace $1
 conf/$1-ispect.xml
 
 echo "success"
