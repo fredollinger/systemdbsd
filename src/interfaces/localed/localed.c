@@ -114,7 +114,7 @@ static void localed_on_name_lost(GDBusConnection *conn,
 }
 
 /* safe call to try and start localed */
-GError *localed_init() {
+void localed_init() {
 
     guint bus_descriptor;
     GError *err = NULL;
@@ -141,7 +141,6 @@ GError *localed_init() {
                                     NULL);
 
     /* TODO: malloc and return reference as if a main() closed */
-    return err;
 }
 
 /* free()'s */

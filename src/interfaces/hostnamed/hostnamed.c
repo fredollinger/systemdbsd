@@ -196,22 +196,9 @@ static void hostnamed_on_name_lost(GDBusConnection *conn,
 }
 
 /* safe call to try and start hostnamed */
-GError *hostnamed_init() {
+void hostnamed_init() {
 
     guint bus_descriptor;
-    GError *err = NULL;
-    gchar **hostnamed_ispect_xml;
-    gchar  *hostnamed_joined_xml;
-
-    hostnamed_freeable = g_ptr_array_new();
-    hostnamed_ispect_xml = g_malloc(3000);
-
-    g_file_get_contents("conf/hostnamed-ispect.xml", hostnamed_ispect_xml, NULL, NULL);
-    hostnamed_joined_xml = g_strjoinv("\n", hostnamed_ispect_xml);
-    spect_data = g_dbus_node_info_new_for_xml(hostnamed_joined_xml, NULL);
-
-    g_free(hostnamed_ispect_xml);
-    g_ptr_array_add(hostnamed_freeable, hostnamed_joined_xml);
 
     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.hostname1",
@@ -223,7 +210,6 @@ GError *hostnamed_init() {
                                     NULL);
 
     /* TODO: malloc and return reference as if a main() closed */
-    return err;
 }
 
 /* free()'s */

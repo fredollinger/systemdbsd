@@ -1,2 +1,3 @@
  * get autoconf stuff figured out
  * handle SIGINTs so file descriptors are dropped properly, otherwise we get bus errors next run
+ * document how gdbus-codegen files always generate the same 'typedef structs' per interface pair, and how those pairs must be snipped as they cause "already defined" compiler errors
