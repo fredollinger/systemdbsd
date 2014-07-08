@@ -32,7 +32,7 @@ gdbus-codegen \
 --generate-docbook doc/$1-docbook.xml \
 --generate-c-code  src/interfaces/$1/$1-gen \
 --c-generate-object-manager \
---c-namespace $1
+--c-namespace $1 \
 conf/$1-ispect.xml
 
 echo "success"
