@@ -17,6 +17,8 @@
 #include <unistd.h>
 #include <limits.h>
 
+#include <sys/param.h>
+
 #include <glib.h>
 #include <gio/gio.h>
 
@@ -79,7 +81,13 @@ on_handle_set_icon_name(hostnamedHostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-    return "TODO";
+	int hostname_try;
+	gchar *hostname_buf;
+
+	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+	hostname_try = gethostname(hostname_buf, MAXHOSTNAMELEN);
+
+	return hostname_buf;
 }
 
 const gchar *

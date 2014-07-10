@@ -1,7 +1,7 @@
 .PHONY: all
 
 CFLAGS=-Wall -Wextra -Werror -std=c89 
-DEBUGF=-O0 -v -g
+DEBUGF=-O0 -g
 SRCDIR=src
 INTFDIR=$(SRCDIR)/interfaces
 SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
