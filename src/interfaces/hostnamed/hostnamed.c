@@ -19,11 +19,7 @@
 
 #include <sys/param.h>
 
-#include <glib.h>
-#include <gio/gio.h>
-
-#include "hostnamed.h"
-#include "hostnamed-gen.c"
+#include "hostnamed-gen.h"
 
 GPtrArray *hostnamed_freeable;
 GDBusNodeInfo *spect_data;
@@ -191,6 +187,12 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
 
 }
 
+/* free()'s */
+void hostnamed_mem_clean() {
+
+    g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
+}
+
 static void hostnamed_on_name_lost(GDBusConnection *conn,
                          const gchar *name,
                          gpointer user_data) {
@@ -220,10 +222,19 @@ void hostnamed_init() {
     /* TODO: malloc and return reference as if a main() closed */
 }
 
-/* free()'s */
-void hostnamed_mem_clean() {
+int main() {
 
-    g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
+	GMainLoop *hostnamed_loop;
+	hostnamed_loop = g_main_loop_new(NULL, TRUE);
+
+	/* config stuff here */
+
+
+	hostnamed_init();
+	g_main_loop_run(hostnamed_loop);
+	g_main_loop_unref(hostnamed_loop);
+
+	return 0;
 }
 
 /* TODO figure out DMI variables on obsd */
@@ -271,3 +282,4 @@ void hostnamed_mem_clean() {
     g_free (filebuf);
     return ret;
 }*/
+

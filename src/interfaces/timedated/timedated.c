@@ -14,3 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include "timedated-gen.h"
+
+int main() {
+	return 0;
+}

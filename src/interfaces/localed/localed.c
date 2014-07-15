@@ -17,11 +17,7 @@
 #include <unistd.h>
 #include <limits.h>
 
-#include <glib.h>
-#include <gio/gio.h>
-
-#include "localed.h"
-#include "localed-gen.c"
+#include "localed-gen.h"
 
 GPtrArray *localed_freeable;
 GDBusNodeInfo *spect_data;
@@ -101,6 +97,12 @@ static void localed_on_name_acquired(GDBusConnection *conn,
 
 }
 
+/* free()'s */
+void localed_mem_clean() {
+
+    g_ptr_array_foreach(localed_freeable, (GFunc) g_free, NULL);
+}
+
 static void localed_on_name_lost(GDBusConnection *conn,
                          const gchar *name,
                          gpointer user_data) {
@@ -143,54 +145,18 @@ void localed_init() {
     /* TODO: malloc and return reference as if a main() closed */
 }
 
-/* free()'s */
-void localed_mem_clean() {
+int main() {
+	
+	GMainLoop *localed_loop;
+	localed_loop = g_main_loop_new(NULL, TRUE);
 
-    g_ptr_array_foreach(localed_freeable, (GFunc) g_free, NULL);
+	/* config stuff here */
+
+	localed_init();
+
+	g_main_loop_run(localed_loop);
+	g_main_loop_unref(localed_loop);
+
+	return 0;
 }
 
-/* TODO figure out DMI variables on obsd */
-/*static gchar *guess_icon_name() {
-
-    gchar *filebuf = NULL;
-    gchar *ret = NULL;
-
-    #if defined(__i386__) || defined(__x86_64__)
-    
-       Taken with a few minor changes from systemd's localed.c,
-       copyright 2011 Lennart Poettering.
-
-       See the SMBIOS Specification 2.7.1 section 7.4.1 for
-       details about the values listed here:
-
-       http://www.dmtf.org/sites/default/files/standards/documents/DSP0134_2.7.1.pdf
-
-
-    if (g_file_get_contents ("/sys/class/dmi/id/chassis_type", &filebuf, NULL, NULL)) {
-        switch (g_ascii_strtoull (filebuf, NULL, 10)) {
-        case 0x3:
-        case 0x4:
-        case 0x5:
-        case 0x6:
-        case 0x7:
-            ret = g_strdup ("computer-desktop");
-            goto out;
-        case 0x9:
-        case 0xA:
-        case 0xE:
-            ret = g_strdup ("computer-laptop");
-            goto out;
-        case 0x11:
-        case 0x17:
-        case 0x1C:
-        case 0x1D:
-            ret = g_strdup ("computer-server");
-            goto out;
-        }
-    }
-    #endif
-    ret = g_strdup ("computer");
-  out:
-    g_free (filebuf);
-    return ret;
-}*/
