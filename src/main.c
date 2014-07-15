@@ -21,11 +21,6 @@
 
 #include "config.c"
 
-#include "interfaces/hostnamed/hostnamed.c"
-#include "interfaces/localed/localed.c"
-#include "interfaces/timedated/timedated.c"
-#include "interfaces/logind/logind.c"
-
 gboolean systemd_utils_init() {
 
 	if(!config_init()) {
