@@ -17,6 +17,8 @@
 #include <unistd.h>
 #include <limits.h>
 
+#include <glib/gprintf.h>
+
 #include "localed-gen.h"
 
 GPtrArray *localed_freeable;

@@ -19,6 +19,8 @@
 
 #include <sys/param.h>
 
+#include <glib/gprintf.h>
+
 #include "hostnamed-gen.h"
 
 GPtrArray *hostnamed_freeable;
