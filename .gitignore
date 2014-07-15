@@ -1,8 +1,7 @@
 *.core
-bin/*
 bin/*.out
 bin/*.bin
-bin/*.o
+bin/*-handler
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
