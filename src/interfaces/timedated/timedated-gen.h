@@ -4,8 +4,8 @@
  * The license of this code is the same as for the source it was derived from.
  */
 
-#ifndef __SRC_INTERFACES_TIMEDATED_TIMEDATED_GEN_H__
-#define __SRC_INTERFACES_TIMEDATED_TIMEDATED_GEN_H__
+#ifndef __TIMEDATED_GEN_H__
+#define __TIMEDATED_GEN_H__
 
 #include <gio/gio.h>
 
@@ -15,90 +15,90 @@ G_BEGIN_DECLS
 /* ------------------------------------------------------------------------ */
 /* Declarations for org.freedesktop.timedate1 */
 
-#define TIMEDATED_TYPE_TIMEDATE1 (timedated_timedate1_get_type ())
-#define TIMEDATED_TIMEDATE1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TIMEDATED_TYPE_TIMEDATE1, timedatedTimedate1))
-#define TIMEDATED_IS_TIMEDATE1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TIMEDATED_TYPE_TIMEDATE1))
-#define TIMEDATED_TIMEDATE1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TIMEDATED_TYPE_TIMEDATE1, timedatedTimedate1Iface))
+#define TYPE_TIMEDATE1 (timedate1_get_type ())
+#define TIMEDATE1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_TIMEDATE1, Timedate1))
+#define IS_TIMEDATE1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_TIMEDATE1))
+#define TIMEDATE1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_TIMEDATE1, Timedate1Iface))
 
-struct _timedatedTimedate1;
-typedef struct _timedatedTimedate1 timedatedTimedate1;
-typedef struct _timedatedTimedate1Iface timedatedTimedate1Iface;
+struct _Timedate1;
+typedef struct _Timedate1 Timedate1;
+typedef struct _Timedate1Iface Timedate1Iface;
 
-struct _timedatedTimedate1Iface
+struct _Timedate1Iface
 {
   GTypeInterface parent_iface;
 
 
   gboolean (*handle_set_local_rtc) (
-    timedatedTimedate1 *object,
+    Timedate1 *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2);
 
   gboolean (*handle_set_ntp) (
-    timedatedTimedate1 *object,
+    Timedate1 *object,
     GDBusMethodInvocation *invocation,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_time) (
-    timedatedTimedate1 *object,
+    Timedate1 *object,
     GDBusMethodInvocation *invocation,
     gint64 arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2);
 
   gboolean (*handle_set_timezone) (
-    timedatedTimedate1 *object,
+    Timedate1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
-  gboolean  (*get_can_ntp) (timedatedTimedate1 *object);
+  gboolean  (*get_can_ntp) (Timedate1 *object);
 
-  gboolean  (*get_local_rtc) (timedatedTimedate1 *object);
+  gboolean  (*get_local_rtc) (Timedate1 *object);
 
-  gboolean  (*get_ntp) (timedatedTimedate1 *object);
+  gboolean  (*get_ntp) (Timedate1 *object);
 
-  gboolean  (*get_ntpsynchronized) (timedatedTimedate1 *object);
+  gboolean  (*get_ntpsynchronized) (Timedate1 *object);
 
-  guint64  (*get_rtctime_usec) (timedatedTimedate1 *object);
+  guint64  (*get_rtctime_usec) (Timedate1 *object);
 
-  guint64  (*get_time_usec) (timedatedTimedate1 *object);
+  guint64  (*get_time_usec) (Timedate1 *object);
 
-  const gchar * (*get_timezone) (timedatedTimedate1 *object);
+  const gchar * (*get_timezone) (Timedate1 *object);
 
 };
 
-GType timedated_timedate1_get_type (void) G_GNUC_CONST;
+GType timedate1_get_type (void) G_GNUC_CONST;
 
-GDBusInterfaceInfo *timedated_timedate1_interface_info (void);
-guint timedated_timedate1_override_properties (GObjectClass *klass, guint property_id_begin);
+GDBusInterfaceInfo *timedate1_interface_info (void);
+guint timedate1_override_properties (GObjectClass *klass, guint property_id_begin);
 
 
 /* D-Bus method call completion functions: */
-void timedated_timedate1_complete_set_time (
-    timedatedTimedate1 *object,
+void timedate1_complete_set_time (
+    Timedate1 *object,
     GDBusMethodInvocation *invocation);
 
-void timedated_timedate1_complete_set_timezone (
-    timedatedTimedate1 *object,
+void timedate1_complete_set_timezone (
+    Timedate1 *object,
     GDBusMethodInvocation *invocation);
 
-void timedated_timedate1_complete_set_local_rtc (
-    timedatedTimedate1 *object,
+void timedate1_complete_set_local_rtc (
+    Timedate1 *object,
     GDBusMethodInvocation *invocation);
 
-void timedated_timedate1_complete_set_ntp (
-    timedatedTimedate1 *object,
+void timedate1_complete_set_ntp (
+    Timedate1 *object,
     GDBusMethodInvocation *invocation);
 
 
 
 /* D-Bus method calls: */
-void timedated_timedate1_call_set_time (
-    timedatedTimedate1 *proxy,
+void timedate1_call_set_time (
+    Timedate1 *proxy,
     gint64 arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -106,41 +106,41 @@ void timedated_timedate1_call_set_time (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean timedated_timedate1_call_set_time_finish (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_time_finish (
+    Timedate1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean timedated_timedate1_call_set_time_sync (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_time_sync (
+    Timedate1 *proxy,
     gint64 arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error);
 
-void timedated_timedate1_call_set_timezone (
-    timedatedTimedate1 *proxy,
+void timedate1_call_set_timezone (
+    Timedate1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean timedated_timedate1_call_set_timezone_finish (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_timezone_finish (
+    Timedate1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean timedated_timedate1_call_set_timezone_sync (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_timezone_sync (
+    Timedate1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void timedated_timedate1_call_set_local_rtc (
-    timedatedTimedate1 *proxy,
+void timedate1_call_set_local_rtc (
+    Timedate1 *proxy,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -148,34 +148,34 @@ void timedated_timedate1_call_set_local_rtc (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean timedated_timedate1_call_set_local_rtc_finish (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_local_rtc_finish (
+    Timedate1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean timedated_timedate1_call_set_local_rtc_sync (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_local_rtc_sync (
+    Timedate1 *proxy,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
     GCancellable *cancellable,
     GError **error);
 
-void timedated_timedate1_call_set_ntp (
-    timedatedTimedate1 *proxy,
+void timedate1_call_set_ntp (
+    Timedate1 *proxy,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean timedated_timedate1_call_set_ntp_finish (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_ntp_finish (
+    Timedate1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean timedated_timedate1_call_set_ntp_sync (
-    timedatedTimedate1 *proxy,
+gboolean timedate1_call_set_ntp_sync (
+    Timedate1 *proxy,
     gboolean arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -184,57 +184,57 @@ gboolean timedated_timedate1_call_set_ntp_sync (
 
 
 /* D-Bus property accessors: */
-const gchar *timedated_timedate1_get_timezone (timedatedTimedate1 *object);
-gchar *timedated_timedate1_dup_timezone (timedatedTimedate1 *object);
-void timedated_timedate1_set_timezone (timedatedTimedate1 *object, const gchar *value);
+const gchar *timedate1_get_timezone (Timedate1 *object);
+gchar *timedate1_dup_timezone (Timedate1 *object);
+void timedate1_set_timezone (Timedate1 *object, const gchar *value);
 
-gboolean timedated_timedate1_get_local_rtc (timedatedTimedate1 *object);
-void timedated_timedate1_set_local_rtc (timedatedTimedate1 *object, gboolean value);
+gboolean timedate1_get_local_rtc (Timedate1 *object);
+void timedate1_set_local_rtc (Timedate1 *object, gboolean value);
 
-gboolean timedated_timedate1_get_can_ntp (timedatedTimedate1 *object);
-void timedated_timedate1_set_can_ntp (timedatedTimedate1 *object, gboolean value);
+gboolean timedate1_get_can_ntp (Timedate1 *object);
+void timedate1_set_can_ntp (Timedate1 *object, gboolean value);
 
-gboolean timedated_timedate1_get_ntp (timedatedTimedate1 *object);
-void timedated_timedate1_set_ntp (timedatedTimedate1 *object, gboolean value);
+gboolean timedate1_get_ntp (Timedate1 *object);
+void timedate1_set_ntp (Timedate1 *object, gboolean value);
 
-gboolean timedated_timedate1_get_ntpsynchronized (timedatedTimedate1 *object);
-void timedated_timedate1_set_ntpsynchronized (timedatedTimedate1 *object, gboolean value);
+gboolean timedate1_get_ntpsynchronized (Timedate1 *object);
+void timedate1_set_ntpsynchronized (Timedate1 *object, gboolean value);
 
-guint64 timedated_timedate1_get_time_usec (timedatedTimedate1 *object);
-void timedated_timedate1_set_time_usec (timedatedTimedate1 *object, guint64 value);
+guint64 timedate1_get_time_usec (Timedate1 *object);
+void timedate1_set_time_usec (Timedate1 *object, guint64 value);
 
-guint64 timedated_timedate1_get_rtctime_usec (timedatedTimedate1 *object);
-void timedated_timedate1_set_rtctime_usec (timedatedTimedate1 *object, guint64 value);
+guint64 timedate1_get_rtctime_usec (Timedate1 *object);
+void timedate1_set_rtctime_usec (Timedate1 *object, guint64 value);
 
 
 /* ---- */
 
-#define TIMEDATED_TYPE_TIMEDATE1_PROXY (timedated_timedate1_proxy_get_type ())
-#define TIMEDATED_TIMEDATE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TIMEDATED_TYPE_TIMEDATE1_PROXY, timedatedTimedate1Proxy))
-#define TIMEDATED_TIMEDATE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TIMEDATED_TYPE_TIMEDATE1_PROXY, timedatedTimedate1ProxyClass))
-#define TIMEDATED_TIMEDATE1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TIMEDATED_TYPE_TIMEDATE1_PROXY, timedatedTimedate1ProxyClass))
-#define TIMEDATED_IS_TIMEDATE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TIMEDATED_TYPE_TIMEDATE1_PROXY))
-#define TIMEDATED_IS_TIMEDATE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TIMEDATED_TYPE_TIMEDATE1_PROXY))
+#define TYPE_TIMEDATE1_PROXY (timedate1_proxy_get_type ())
+#define TIMEDATE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_TIMEDATE1_PROXY, Timedate1Proxy))
+#define TIMEDATE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_TIMEDATE1_PROXY, Timedate1ProxyClass))
+#define TIMEDATE1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_TIMEDATE1_PROXY, Timedate1ProxyClass))
+#define IS_TIMEDATE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_TIMEDATE1_PROXY))
+#define IS_TIMEDATE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_TIMEDATE1_PROXY))
 
-typedef struct _timedatedTimedate1Proxy timedatedTimedate1Proxy;
-typedef struct _timedatedTimedate1ProxyClass timedatedTimedate1ProxyClass;
-typedef struct _timedatedTimedate1ProxyPrivate timedatedTimedate1ProxyPrivate;
+typedef struct _Timedate1Proxy Timedate1Proxy;
+typedef struct _Timedate1ProxyClass Timedate1ProxyClass;
+typedef struct _Timedate1ProxyPrivate Timedate1ProxyPrivate;
 
-struct _timedatedTimedate1Proxy
+struct _Timedate1Proxy
 {
   /*< private >*/
   GDBusProxy parent_instance;
-  timedatedTimedate1ProxyPrivate *priv;
+  Timedate1ProxyPrivate *priv;
 };
 
-struct _timedatedTimedate1ProxyClass
+struct _Timedate1ProxyClass
 {
   GDBusProxyClass parent_class;
 };
 
-GType timedated_timedate1_proxy_get_type (void) G_GNUC_CONST;
+GType timedate1_proxy_get_type (void) G_GNUC_CONST;
 
-void timedated_timedate1_proxy_new (
+void timedate1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -242,10 +242,10 @@ void timedated_timedate1_proxy_new (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-timedatedTimedate1 *timedated_timedate1_proxy_new_finish (
+Timedate1 *timedate1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error);
-timedatedTimedate1 *timedated_timedate1_proxy_new_sync (
+Timedate1 *timedate1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -253,7 +253,7 @@ timedatedTimedate1 *timedated_timedate1_proxy_new_sync (
     GCancellable        *cancellable,
     GError             **error);
 
-void timedated_timedate1_proxy_new_for_bus (
+void timedate1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -261,10 +261,10 @@ void timedated_timedate1_proxy_new_for_bus (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-timedatedTimedate1 *timedated_timedate1_proxy_new_for_bus_finish (
+Timedate1 *timedate1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error);
-timedatedTimedate1 *timedated_timedate1_proxy_new_for_bus_sync (
+Timedate1 *timedate1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -275,34 +275,34 @@ timedatedTimedate1 *timedated_timedate1_proxy_new_for_bus_sync (
 
 /* ---- */
 
-#define TIMEDATED_TYPE_TIMEDATE1_SKELETON (timedated_timedate1_skeleton_get_type ())
-#define TIMEDATED_TIMEDATE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TIMEDATED_TYPE_TIMEDATE1_SKELETON, timedatedTimedate1Skeleton))
-#define TIMEDATED_TIMEDATE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TIMEDATED_TYPE_TIMEDATE1_SKELETON, timedatedTimedate1SkeletonClass))
-#define TIMEDATED_TIMEDATE1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TIMEDATED_TYPE_TIMEDATE1_SKELETON, timedatedTimedate1SkeletonClass))
-#define TIMEDATED_IS_TIMEDATE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TIMEDATED_TYPE_TIMEDATE1_SKELETON))
-#define TIMEDATED_IS_TIMEDATE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TIMEDATED_TYPE_TIMEDATE1_SKELETON))
+#define TYPE_TIMEDATE1_SKELETON (timedate1_skeleton_get_type ())
+#define TIMEDATE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_TIMEDATE1_SKELETON, Timedate1Skeleton))
+#define TIMEDATE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_TIMEDATE1_SKELETON, Timedate1SkeletonClass))
+#define TIMEDATE1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_TIMEDATE1_SKELETON, Timedate1SkeletonClass))
+#define IS_TIMEDATE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_TIMEDATE1_SKELETON))
+#define IS_TIMEDATE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_TIMEDATE1_SKELETON))
 
-typedef struct _timedatedTimedate1Skeleton timedatedTimedate1Skeleton;
-typedef struct _timedatedTimedate1SkeletonClass timedatedTimedate1SkeletonClass;
-typedef struct _timedatedTimedate1SkeletonPrivate timedatedTimedate1SkeletonPrivate;
+typedef struct _Timedate1Skeleton Timedate1Skeleton;
+typedef struct _Timedate1SkeletonClass Timedate1SkeletonClass;
+typedef struct _Timedate1SkeletonPrivate Timedate1SkeletonPrivate;
 
-struct _timedatedTimedate1Skeleton
+struct _Timedate1Skeleton
 {
   /*< private >*/
   GDBusInterfaceSkeleton parent_instance;
-  timedatedTimedate1SkeletonPrivate *priv;
+  Timedate1SkeletonPrivate *priv;
 };
 
-struct _timedatedTimedate1SkeletonClass
+struct _Timedate1SkeletonClass
 {
   GDBusInterfaceSkeletonClass parent_class;
 };
 
-GType timedated_timedate1_skeleton_get_type (void) G_GNUC_CONST;
+GType timedate1_skeleton_get_type (void) G_GNUC_CONST;
 
-timedatedTimedate1 *timedated_timedate1_skeleton_new (void);
+Timedate1 *timedate1_skeleton_new (void);
 
 
 G_END_DECLS
 
-#endif /* __SRC_INTERFACES_TIMEDATED_TIMEDATED_GEN_H__ */
+#endif /* __TIMEDATED_GEN_H__ */

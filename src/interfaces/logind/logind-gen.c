@@ -154,8 +154,8 @@ _g_value_equal (const GValue *a, const GValue *b)
  */
 
 /**
- * SECTION:logindLogin1Manager
- * @title: logindLogin1Manager
+ * SECTION:Login1Manager
+ * @title: Login1Manager
  * @short_description: Generated C code for the org.freedesktop.login1.Manager D-Bus interface
  *
  * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link> D-Bus interface in C.
@@ -163,7 +163,7 @@ _g_value_equal (const GValue *a, const GValue *b)
 
 /* ---- Introspection data for org.freedesktop.login1.Manager ---- */
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -174,13 +174,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_sessio
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_get_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_session_OUT_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_session_OUT_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -191,26 +191,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_sessio
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_session_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_session_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_session_OUT_ARG_unnamed_arg1,
+  &_login1_manager_method_info_get_session_OUT_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_get_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_get_session =
 {
   {
     -1,
     (gchar *) "GetSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_session_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_session_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_session_OUT_ARG_pointers,
     NULL
   },
   "handle-get-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_session_by_pid_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_session_by_pid_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -221,13 +221,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_sessio
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_session_by_pid_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_session_by_pid_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_session_by_pid_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_get_session_by_pid_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_session_by_pid_OUT_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_session_by_pid_OUT_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -238,26 +238,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_sessio
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_session_by_pid_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_session_by_pid_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_session_by_pid_OUT_ARG_unnamed_arg1,
+  &_login1_manager_method_info_get_session_by_pid_OUT_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_get_session_by_pid =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_get_session_by_pid =
 {
   {
     -1,
     (gchar *) "GetSessionByPID",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_session_by_pid_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_session_by_pid_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_session_by_pid_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_session_by_pid_OUT_ARG_pointers,
     NULL
   },
   "handle-get-session-by-pid",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_user_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -268,13 +268,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_I
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_user_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_user_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_user_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_get_user_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_OUT_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_user_OUT_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -285,26 +285,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_O
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_user_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_user_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_user_OUT_ARG_unnamed_arg1,
+  &_login1_manager_method_info_get_user_OUT_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_get_user =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_get_user =
 {
   {
     -1,
     (gchar *) "GetUser",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_user_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_user_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_user_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_user_OUT_ARG_pointers,
     NULL
   },
   "handle-get-user",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_by_pid_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_user_by_pid_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -315,13 +315,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_b
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_user_by_pid_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_user_by_pid_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_user_by_pid_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_get_user_by_pid_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_by_pid_OUT_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_user_by_pid_OUT_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -332,26 +332,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_user_b
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_user_by_pid_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_user_by_pid_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_user_by_pid_OUT_ARG_unnamed_arg1,
+  &_login1_manager_method_info_get_user_by_pid_OUT_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_get_user_by_pid =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_get_user_by_pid =
 {
   {
     -1,
     (gchar *) "GetUserByPID",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_user_by_pid_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_user_by_pid_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_user_by_pid_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_user_by_pid_OUT_ARG_pointers,
     NULL
   },
   "handle-get-user-by-pid",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_seat_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_seat_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -362,13 +362,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_seat_I
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_seat_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_seat_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_seat_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_get_seat_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_seat_OUT_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_get_seat_OUT_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -379,26 +379,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_get_seat_O
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_get_seat_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_get_seat_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_seat_OUT_ARG_unnamed_arg1,
+  &_login1_manager_method_info_get_seat_OUT_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_get_seat =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_get_seat =
 {
   {
     -1,
     (gchar *) "GetSeat",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_seat_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_get_seat_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_seat_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_get_seat_OUT_ARG_pointers,
     NULL
   },
   "handle-get-seat",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_sessions_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_list_sessions_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -409,26 +409,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_sessi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_list_sessions_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_list_sessions_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_list_sessions_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_list_sessions_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_list_sessions =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_list_sessions =
 {
   {
     -1,
     (gchar *) "ListSessions",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_list_sessions_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_list_sessions_OUT_ARG_pointers,
     NULL
   },
   "handle-list-sessions",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_users_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_list_users_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -439,26 +439,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_users
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_list_users_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_list_users_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_list_users_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_list_users_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_list_users =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_list_users =
 {
   {
     -1,
     (gchar *) "ListUsers",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_list_users_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_list_users_OUT_ARG_pointers,
     NULL
   },
   "handle-list-users",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_seats_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_list_seats_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -469,26 +469,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_seats
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_list_seats_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_list_seats_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_list_seats_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_list_seats_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_list_seats =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_list_seats =
 {
   {
     -1,
     (gchar *) "ListSeats",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_list_seats_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_list_seats_OUT_ARG_pointers,
     NULL
   },
   "handle-list-seats",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_inhibitors_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_list_inhibitors_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -499,26 +499,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_list_inhib
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_list_inhibitors_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_list_inhibitors_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_list_inhibitors_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_list_inhibitors_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_list_inhibitors =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_list_inhibitors =
 {
   {
     -1,
     (gchar *) "ListInhibitors",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_list_inhibitors_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_list_inhibitors_OUT_ARG_pointers,
     NULL
   },
   "handle-list-inhibitors",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -529,7 +529,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -540,7 +540,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg2 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
@@ -551,7 +551,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg3 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg3 =
 {
   {
     -1,
@@ -562,7 +562,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg4 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg4 =
 {
   {
     -1,
@@ -573,7 +573,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg5 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg5 =
 {
   {
     -1,
@@ -584,7 +584,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg6 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg6 =
 {
   {
     -1,
@@ -595,7 +595,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg7 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg7 =
 {
   {
     -1,
@@ -606,7 +606,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg8 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg8 =
 {
   {
     -1,
@@ -617,7 +617,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg9 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg9 =
 {
   {
     -1,
@@ -628,7 +628,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg10 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg10 =
 {
   {
     -1,
@@ -639,7 +639,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg11 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg11 =
 {
   {
     -1,
@@ -650,7 +650,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg12 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg12 =
 {
   {
     -1,
@@ -661,7 +661,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg13 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_IN_ARG_unnamed_arg13 =
 {
   {
     -1,
@@ -672,26 +672,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_create_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_create_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg1,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg2,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg3,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg4,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg5,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg6,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg7,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg8,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg9,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg10,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg11,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg12,
-  &_logind_login1_manager_method_info_create_session_IN_ARG_unnamed_arg13,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg2,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg3,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg4,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg5,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg6,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg7,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg8,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg9,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg10,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg11,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg12,
+  &_login1_manager_method_info_create_session_IN_ARG_unnamed_arg13,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg14 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg14 =
 {
   {
     -1,
@@ -702,7 +702,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg15 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg15 =
 {
   {
     -1,
@@ -713,7 +713,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg16 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg16 =
 {
   {
     -1,
@@ -724,7 +724,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg17 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg17 =
 {
   {
     -1,
@@ -735,7 +735,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg18 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg18 =
 {
   {
     -1,
@@ -746,7 +746,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg19 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg19 =
 {
   {
     -1,
@@ -757,7 +757,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg20 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg20 =
 {
   {
     -1,
@@ -768,7 +768,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg21 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_create_session_OUT_ARG_unnamed_arg21 =
 {
   {
     -1,
@@ -779,20 +779,20 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_create_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_create_session_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_create_session_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg14,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg15,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg16,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg17,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg18,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg19,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg20,
-  &_logind_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg21,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg14,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg15,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg16,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg17,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg18,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg19,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg20,
+  &_login1_manager_method_info_create_session_OUT_ARG_unnamed_arg21,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_create_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_create_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -800,26 +800,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_create_session_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_create_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_create_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_create_session_annotation_info_0,
+  &_login1_manager_method_create_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_create_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_create_session =
 {
   {
     -1,
     (gchar *) "CreateSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_create_session_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_create_session_OUT_ARG_pointers,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_create_session_annotation_info_pointers
+    (GDBusArgInfo **) &_login1_manager_method_info_create_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_create_session_OUT_ARG_pointers,
+    (GDBusAnnotationInfo **) &_login1_manager_method_create_session_annotation_info_pointers
   },
   "handle-create-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_release_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_release_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -830,13 +830,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_release_se
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_release_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_release_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_release_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_release_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_release_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_release_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -844,26 +844,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_release_session_a
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_release_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_release_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_release_session_annotation_info_0,
+  &_login1_manager_method_release_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_release_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_release_session =
 {
   {
     -1,
     (gchar *) "ReleaseSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_release_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_release_session_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_release_session_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_release_session_annotation_info_pointers
   },
   "handle-release-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_activate_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -874,18 +874,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_s
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_activate_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_activate_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_activate_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_activate_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_activate_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_activate_session =
 {
   {
     -1,
     (gchar *) "ActivateSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_activate_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_activate_session_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -893,7 +893,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_activat
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -904,7 +904,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_s
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -915,19 +915,19 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_activate_s
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_activate_session_on_seat_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_activate_session_on_seat_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_activate_session_on_seat =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_activate_session_on_seat =
 {
   {
     -1,
     (gchar *) "ActivateSessionOnSeat",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_activate_session_on_seat_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_activate_session_on_seat_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -935,7 +935,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_activat
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_lock_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_lock_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -946,13 +946,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_lock_sessi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_lock_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_lock_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_lock_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_lock_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_lock_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_lock_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -960,26 +960,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_lock_session_anno
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_lock_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_lock_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_lock_session_annotation_info_0,
+  &_login1_manager_method_lock_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_lock_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_lock_session =
 {
   {
     -1,
     (gchar *) "LockSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_lock_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_lock_session_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_lock_session_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_lock_session_annotation_info_pointers
   },
   "handle-lock-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_unlock_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_unlock_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -990,13 +990,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_unlock_ses
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_unlock_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_unlock_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_unlock_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_unlock_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_unlock_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_unlock_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1004,26 +1004,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_unlock_session_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_unlock_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_unlock_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_unlock_session_annotation_info_0,
+  &_login1_manager_method_unlock_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_unlock_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_unlock_session =
 {
   {
     -1,
     (gchar *) "UnlockSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_unlock_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_unlock_session_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_unlock_session_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_unlock_session_annotation_info_pointers
   },
   "handle-unlock-session",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_lock_sessions_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_lock_sessions_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1031,26 +1031,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_lock_sessions_ann
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_lock_sessions_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_lock_sessions_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_lock_sessions_annotation_info_0,
+  &_login1_manager_method_lock_sessions_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_lock_sessions =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_lock_sessions =
 {
   {
     -1,
     (gchar *) "LockSessions",
     NULL,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_lock_sessions_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_lock_sessions_annotation_info_pointers
   },
   "handle-lock-sessions",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_unlock_sessions_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_unlock_sessions_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1058,26 +1058,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_unlock_sessions_a
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_unlock_sessions_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_unlock_sessions_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_unlock_sessions_annotation_info_0,
+  &_login1_manager_method_unlock_sessions_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_unlock_sessions =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_unlock_sessions =
 {
   {
     -1,
     (gchar *) "UnlockSessions",
     NULL,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_unlock_sessions_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_unlock_sessions_annotation_info_pointers
   },
   "handle-unlock-sessions",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_kill_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1088,7 +1088,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_sessi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_kill_session_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1099,7 +1099,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_sessi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg2 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_kill_session_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
@@ -1110,15 +1110,15 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_sessi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_kill_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_kill_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg1,
-  &_logind_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg2,
+  &_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_kill_session_IN_ARG_unnamed_arg2,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_kill_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_kill_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1126,26 +1126,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_kill_session_anno
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_kill_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_kill_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_kill_session_annotation_info_0,
+  &_login1_manager_method_kill_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_kill_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_kill_session =
 {
   {
     -1,
     (gchar *) "KillSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_kill_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_kill_session_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_kill_session_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_kill_session_annotation_info_pointers
   },
   "handle-kill-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_kill_user_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1156,7 +1156,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_user_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_kill_user_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1167,14 +1167,14 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_kill_user_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_kill_user_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_kill_user_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_kill_user_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_kill_user_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_kill_user_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1182,26 +1182,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_kill_user_annotat
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_kill_user_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_kill_user_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_kill_user_annotation_info_0,
+  &_login1_manager_method_kill_user_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_kill_user =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_kill_user =
 {
   {
     -1,
     (gchar *) "KillUser",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_kill_user_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_kill_user_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_kill_user_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_kill_user_annotation_info_pointers
   },
   "handle-kill-user",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_session_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_terminate_session_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1212,13 +1212,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_terminate_session_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_terminate_session_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_terminate_session_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_terminate_session_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_session_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_terminate_session_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1226,26 +1226,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_session
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_terminate_session_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_terminate_session_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_terminate_session_annotation_info_0,
+  &_login1_manager_method_terminate_session_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_terminate_session =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_terminate_session =
 {
   {
     -1,
     (gchar *) "TerminateSession",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_terminate_session_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_terminate_session_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_terminate_session_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_terminate_session_annotation_info_pointers
   },
   "handle-terminate-session",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_user_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_terminate_user_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1256,13 +1256,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_terminate_user_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_terminate_user_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_terminate_user_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_terminate_user_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_user_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_terminate_user_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1270,26 +1270,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_user_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_terminate_user_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_terminate_user_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_terminate_user_annotation_info_0,
+  &_login1_manager_method_terminate_user_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_terminate_user =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_terminate_user =
 {
   {
     -1,
     (gchar *) "TerminateUser",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_terminate_user_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_terminate_user_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_terminate_user_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_terminate_user_annotation_info_pointers
   },
   "handle-terminate-user",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_seat_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_terminate_seat_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1300,13 +1300,13 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_terminate_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_terminate_seat_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_terminate_seat_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_terminate_seat_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_terminate_seat_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_seat_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_method_terminate_seat_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.systemd1.Privileged",
@@ -1314,26 +1314,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_method_terminate_seat_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_method_terminate_seat_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_method_terminate_seat_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_method_terminate_seat_annotation_info_0,
+  &_login1_manager_method_terminate_seat_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_terminate_seat =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_terminate_seat =
 {
   {
     -1,
     (gchar *) "TerminateSeat",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_terminate_seat_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_terminate_seat_IN_ARG_pointers,
     NULL,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_method_terminate_seat_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_method_terminate_seat_annotation_info_pointers
   },
   "handle-terminate-seat",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1344,7 +1344,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_l
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1355,7 +1355,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_l
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg2 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
@@ -1366,20 +1366,20 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_set_user_l
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_set_user_linger_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_set_user_linger_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg1,
-  &_logind_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg2,
+  &_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_set_user_linger_IN_ARG_unnamed_arg2,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_set_user_linger =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_set_user_linger =
 {
   {
     -1,
     (gchar *) "SetUserLinger",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_set_user_linger_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_set_user_linger_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1387,7 +1387,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_set_use
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_attach_device_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1398,7 +1398,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_dev
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_attach_device_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1409,7 +1409,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_dev
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg2 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_attach_device_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
@@ -1420,20 +1420,20 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_attach_dev
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_attach_device_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_attach_device_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg1,
-  &_logind_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg2,
+  &_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_attach_device_IN_ARG_unnamed_arg2,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_attach_device =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_attach_device =
 {
   {
     -1,
     (gchar *) "AttachDevice",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_attach_device_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_attach_device_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1441,7 +1441,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_attach_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_flush_devices_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_flush_devices_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1452,18 +1452,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_flush_devi
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_flush_devices_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_flush_devices_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_flush_devices_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_flush_devices_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_flush_devices =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_flush_devices =
 {
   {
     -1,
     (gchar *) "FlushDevices",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_flush_devices_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_flush_devices_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1471,7 +1471,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_flush_d
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_power_off_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_power_off_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1482,18 +1482,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_power_off_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_power_off_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_power_off_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_power_off_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_power_off_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_power_off =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_power_off =
 {
   {
     -1,
     (gchar *) "PowerOff",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_power_off_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_power_off_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1501,7 +1501,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_power_o
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_reboot_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_reboot_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1512,18 +1512,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_reboot_IN_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_reboot_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_reboot_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_reboot_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_reboot_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_reboot =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_reboot =
 {
   {
     -1,
     (gchar *) "Reboot",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_reboot_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_reboot_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1531,7 +1531,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_reboot 
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_suspend_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_suspend_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1542,18 +1542,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_suspend_IN
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_suspend_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_suspend_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_suspend_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_suspend_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_suspend =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_suspend =
 {
   {
     -1,
     (gchar *) "Suspend",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_suspend_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_suspend_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1561,7 +1561,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_suspend
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_hibernate_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_hibernate_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1572,18 +1572,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_hibernate_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_hibernate_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_hibernate_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_hibernate_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_hibernate_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_hibernate =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_hibernate =
 {
   {
     -1,
     (gchar *) "Hibernate",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_hibernate_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_hibernate_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1591,7 +1591,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_hiberna
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_hybrid_sleep_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_hybrid_sleep_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1602,18 +1602,18 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_hybrid_sle
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_hybrid_sleep_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_hybrid_sleep_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_hybrid_sleep_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_hybrid_sleep_IN_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_hybrid_sleep =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_hybrid_sleep =
 {
   {
     -1,
     (gchar *) "HybridSleep",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_hybrid_sleep_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_hybrid_sleep_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -1621,7 +1621,7 @@ static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_hybrid_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_power_off_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_can_power_off_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1632,26 +1632,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_power_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_can_power_off_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_can_power_off_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_can_power_off_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_can_power_off_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_can_power_off =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_can_power_off =
 {
   {
     -1,
     (gchar *) "CanPowerOff",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_can_power_off_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_can_power_off_OUT_ARG_pointers,
     NULL
   },
   "handle-can-power-off",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_reboot_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_can_reboot_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1662,26 +1662,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_reboot
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_can_reboot_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_can_reboot_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_can_reboot_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_can_reboot_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_can_reboot =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_can_reboot =
 {
   {
     -1,
     (gchar *) "CanReboot",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_can_reboot_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_can_reboot_OUT_ARG_pointers,
     NULL
   },
   "handle-can-reboot",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_suspend_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_can_suspend_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1692,26 +1692,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_suspen
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_can_suspend_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_can_suspend_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_can_suspend_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_can_suspend_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_can_suspend =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_can_suspend =
 {
   {
     -1,
     (gchar *) "CanSuspend",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_can_suspend_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_can_suspend_OUT_ARG_pointers,
     NULL
   },
   "handle-can-suspend",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_hibernate_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_can_hibernate_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1722,26 +1722,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_hibern
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_can_hibernate_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_can_hibernate_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_can_hibernate_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_can_hibernate_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_can_hibernate =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_can_hibernate =
 {
   {
     -1,
     (gchar *) "CanHibernate",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_can_hibernate_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_can_hibernate_OUT_ARG_pointers,
     NULL
   },
   "handle-can-hibernate",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_can_hybrid_sleep_OUT_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1752,26 +1752,26 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_can_hybrid
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_can_hybrid_sleep_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_unnamed_arg0,
+  &_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_can_hybrid_sleep =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_can_hybrid_sleep =
 {
   {
     -1,
     (gchar *) "CanHybridSleep",
     NULL,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_can_hybrid_sleep_OUT_ARG_pointers,
     NULL
   },
   "handle-can-hybrid-sleep",
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_inhibit_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1782,7 +1782,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_inhibit_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1793,7 +1793,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg2 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_inhibit_IN_ARG_unnamed_arg2 =
 {
   {
     -1,
@@ -1804,7 +1804,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg3 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_inhibit_IN_ARG_unnamed_arg3 =
 {
   {
     -1,
@@ -1815,16 +1815,16 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_IN
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_inhibit_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_inhibit_IN_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg0,
-  &_logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg1,
-  &_logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg2,
-  &_logind_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg3,
+  &_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg0,
+  &_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg1,
+  &_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg2,
+  &_login1_manager_method_info_inhibit_IN_ARG_unnamed_arg3,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_OUT_ARG_unnamed_arg4 =
+static const _ExtendedGDBusArgInfo _login1_manager_method_info_inhibit_OUT_ARG_unnamed_arg4 =
 {
   {
     -1,
@@ -1835,67 +1835,67 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_method_info_inhibit_OU
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_method_info_inhibit_OUT_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_method_info_inhibit_OUT_ARG_pointers[] =
 {
-  &_logind_login1_manager_method_info_inhibit_OUT_ARG_unnamed_arg4,
+  &_login1_manager_method_info_inhibit_OUT_ARG_unnamed_arg4,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _logind_login1_manager_method_info_inhibit =
+static const _ExtendedGDBusMethodInfo _login1_manager_method_info_inhibit =
 {
   {
     -1,
     (gchar *) "Inhibit",
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_inhibit_IN_ARG_pointers,
-    (GDBusArgInfo **) &_logind_login1_manager_method_info_inhibit_OUT_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_inhibit_IN_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_method_info_inhibit_OUT_ARG_pointers,
     NULL
   },
   "handle-inhibit",
   FALSE
 };
 
-static const _ExtendedGDBusMethodInfo * const _logind_login1_manager_method_info_pointers[] =
+static const _ExtendedGDBusMethodInfo * const _login1_manager_method_info_pointers[] =
 {
-  &_logind_login1_manager_method_info_get_session,
-  &_logind_login1_manager_method_info_get_session_by_pid,
-  &_logind_login1_manager_method_info_get_user,
-  &_logind_login1_manager_method_info_get_user_by_pid,
-  &_logind_login1_manager_method_info_get_seat,
-  &_logind_login1_manager_method_info_list_sessions,
-  &_logind_login1_manager_method_info_list_users,
-  &_logind_login1_manager_method_info_list_seats,
-  &_logind_login1_manager_method_info_list_inhibitors,
-  &_logind_login1_manager_method_info_create_session,
-  &_logind_login1_manager_method_info_release_session,
-  &_logind_login1_manager_method_info_activate_session,
-  &_logind_login1_manager_method_info_activate_session_on_seat,
-  &_logind_login1_manager_method_info_lock_session,
-  &_logind_login1_manager_method_info_unlock_session,
-  &_logind_login1_manager_method_info_lock_sessions,
-  &_logind_login1_manager_method_info_unlock_sessions,
-  &_logind_login1_manager_method_info_kill_session,
-  &_logind_login1_manager_method_info_kill_user,
-  &_logind_login1_manager_method_info_terminate_session,
-  &_logind_login1_manager_method_info_terminate_user,
-  &_logind_login1_manager_method_info_terminate_seat,
-  &_logind_login1_manager_method_info_set_user_linger,
-  &_logind_login1_manager_method_info_attach_device,
-  &_logind_login1_manager_method_info_flush_devices,
-  &_logind_login1_manager_method_info_power_off,
-  &_logind_login1_manager_method_info_reboot,
-  &_logind_login1_manager_method_info_suspend,
-  &_logind_login1_manager_method_info_hibernate,
-  &_logind_login1_manager_method_info_hybrid_sleep,
-  &_logind_login1_manager_method_info_can_power_off,
-  &_logind_login1_manager_method_info_can_reboot,
-  &_logind_login1_manager_method_info_can_suspend,
-  &_logind_login1_manager_method_info_can_hibernate,
-  &_logind_login1_manager_method_info_can_hybrid_sleep,
-  &_logind_login1_manager_method_info_inhibit,
+  &_login1_manager_method_info_get_session,
+  &_login1_manager_method_info_get_session_by_pid,
+  &_login1_manager_method_info_get_user,
+  &_login1_manager_method_info_get_user_by_pid,
+  &_login1_manager_method_info_get_seat,
+  &_login1_manager_method_info_list_sessions,
+  &_login1_manager_method_info_list_users,
+  &_login1_manager_method_info_list_seats,
+  &_login1_manager_method_info_list_inhibitors,
+  &_login1_manager_method_info_create_session,
+  &_login1_manager_method_info_release_session,
+  &_login1_manager_method_info_activate_session,
+  &_login1_manager_method_info_activate_session_on_seat,
+  &_login1_manager_method_info_lock_session,
+  &_login1_manager_method_info_unlock_session,
+  &_login1_manager_method_info_lock_sessions,
+  &_login1_manager_method_info_unlock_sessions,
+  &_login1_manager_method_info_kill_session,
+  &_login1_manager_method_info_kill_user,
+  &_login1_manager_method_info_terminate_session,
+  &_login1_manager_method_info_terminate_user,
+  &_login1_manager_method_info_terminate_seat,
+  &_login1_manager_method_info_set_user_linger,
+  &_login1_manager_method_info_attach_device,
+  &_login1_manager_method_info_flush_devices,
+  &_login1_manager_method_info_power_off,
+  &_login1_manager_method_info_reboot,
+  &_login1_manager_method_info_suspend,
+  &_login1_manager_method_info_hibernate,
+  &_login1_manager_method_info_hybrid_sleep,
+  &_login1_manager_method_info_can_power_off,
+  &_login1_manager_method_info_can_reboot,
+  &_login1_manager_method_info_can_suspend,
+  &_login1_manager_method_info_can_hibernate,
+  &_login1_manager_method_info_can_hybrid_sleep,
+  &_login1_manager_method_info_inhibit,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_new_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_session_new_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1906,7 +1906,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_ne
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_new_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_session_new_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1917,25 +1917,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_ne
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_session_new_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_session_new_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_session_new_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_session_new_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_session_new_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_session_new_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_session_new =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_session_new =
 {
   {
     -1,
     (gchar *) "SessionNew",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_session_new_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_session_new_ARG_pointers,
     NULL
   },
   "session-new"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_removed_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_session_removed_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1946,7 +1946,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_re
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_removed_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_session_removed_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1957,25 +1957,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_session_re
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_session_removed_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_session_removed_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_session_removed_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_session_removed_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_session_removed_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_session_removed_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_session_removed =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_session_removed =
 {
   {
     -1,
     (gchar *) "SessionRemoved",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_session_removed_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_session_removed_ARG_pointers,
     NULL
   },
   "session-removed"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_new_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_user_new_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -1986,7 +1986,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_new_A
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_new_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_user_new_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -1997,25 +1997,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_new_A
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_user_new_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_user_new_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_user_new_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_user_new_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_user_new_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_user_new_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_user_new =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_user_new =
 {
   {
     -1,
     (gchar *) "UserNew",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_user_new_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_user_new_ARG_pointers,
     NULL
   },
   "user-new"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_removed_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_user_removed_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -2026,7 +2026,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_remov
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_removed_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_user_removed_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -2037,25 +2037,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_user_remov
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_user_removed_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_user_removed_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_user_removed_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_user_removed_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_user_removed_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_user_removed_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_user_removed =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_user_removed =
 {
   {
     -1,
     (gchar *) "UserRemoved",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_user_removed_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_user_removed_ARG_pointers,
     NULL
   },
   "user-removed"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_new_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_seat_new_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -2066,7 +2066,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_new_A
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_new_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_seat_new_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -2077,25 +2077,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_new_A
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_seat_new_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_seat_new_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_seat_new_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_seat_new_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_seat_new_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_seat_new_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_seat_new =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_seat_new =
 {
   {
     -1,
     (gchar *) "SeatNew",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_seat_new_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_seat_new_ARG_pointers,
     NULL
   },
   "seat-new"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_removed_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_seat_removed_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -2106,7 +2106,7 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_remov
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_removed_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_seat_removed_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -2117,25 +2117,25 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_seat_remov
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_seat_removed_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_seat_removed_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_seat_removed_ARG_unnamed_arg0,
-  &_logind_login1_manager_signal_info_seat_removed_ARG_unnamed_arg1,
+  &_login1_manager_signal_info_seat_removed_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_seat_removed_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_seat_removed =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_seat_removed =
 {
   {
     -1,
     (gchar *) "SeatRemoved",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_seat_removed_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_seat_removed_ARG_pointers,
     NULL
   },
   "seat-removed"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_prepare_for_shutdown_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_prepare_for_shutdown_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -2146,24 +2146,24 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_prepare_fo
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_prepare_for_shutdown_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_prepare_for_shutdown_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_prepare_for_shutdown_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_prepare_for_shutdown_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_prepare_for_shutdown =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_prepare_for_shutdown =
 {
   {
     -1,
     (gchar *) "PrepareForShutdown",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_prepare_for_shutdown_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_prepare_for_shutdown_ARG_pointers,
     NULL
   },
   "prepare-for-shutdown"
 };
 
-static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_prepare_for_sleep_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _login1_manager_signal_info_prepare_for_sleep_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -2174,37 +2174,37 @@ static const _ExtendedGDBusArgInfo _logind_login1_manager_signal_info_prepare_fo
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _logind_login1_manager_signal_info_prepare_for_sleep_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _login1_manager_signal_info_prepare_for_sleep_ARG_pointers[] =
 {
-  &_logind_login1_manager_signal_info_prepare_for_sleep_ARG_unnamed_arg0,
+  &_login1_manager_signal_info_prepare_for_sleep_ARG_unnamed_arg0,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _logind_login1_manager_signal_info_prepare_for_sleep =
+static const _ExtendedGDBusSignalInfo _login1_manager_signal_info_prepare_for_sleep =
 {
   {
     -1,
     (gchar *) "PrepareForSleep",
-    (GDBusArgInfo **) &_logind_login1_manager_signal_info_prepare_for_sleep_ARG_pointers,
+    (GDBusArgInfo **) &_login1_manager_signal_info_prepare_for_sleep_ARG_pointers,
     NULL
   },
   "prepare-for-sleep"
 };
 
-static const _ExtendedGDBusSignalInfo * const _logind_login1_manager_signal_info_pointers[] =
+static const _ExtendedGDBusSignalInfo * const _login1_manager_signal_info_pointers[] =
 {
-  &_logind_login1_manager_signal_info_session_new,
-  &_logind_login1_manager_signal_info_session_removed,
-  &_logind_login1_manager_signal_info_user_new,
-  &_logind_login1_manager_signal_info_user_removed,
-  &_logind_login1_manager_signal_info_seat_new,
-  &_logind_login1_manager_signal_info_seat_removed,
-  &_logind_login1_manager_signal_info_prepare_for_shutdown,
-  &_logind_login1_manager_signal_info_prepare_for_sleep,
+  &_login1_manager_signal_info_session_new,
+  &_login1_manager_signal_info_session_removed,
+  &_login1_manager_signal_info_user_new,
+  &_login1_manager_signal_info_user_removed,
+  &_login1_manager_signal_info_seat_new,
+  &_login1_manager_signal_info_seat_removed,
+  &_login1_manager_signal_info_prepare_for_shutdown,
+  &_login1_manager_signal_info_prepare_for_sleep,
   NULL
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_nauto_vts_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_nauto_vts_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2212,26 +2212,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_nauto_vts_annot
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_nauto_vts_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_nauto_vts_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_nauto_vts_annotation_info_0,
+  &_login1_manager_property_nauto_vts_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_nauto_vts =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_nauto_vts =
 {
   {
     -1,
     (gchar *) "NAutoVTs",
     (gchar *) "u",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_nauto_vts_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_nauto_vts_annotation_info_pointers
   },
   "nauto-vts",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_kill_only_users_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_kill_only_users_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2239,26 +2239,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_kill_only_users
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_kill_only_users_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_kill_only_users_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_kill_only_users_annotation_info_0,
+  &_login1_manager_property_kill_only_users_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_kill_only_users =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_kill_only_users =
 {
   {
     -1,
     (gchar *) "KillOnlyUsers",
     (gchar *) "as",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_kill_only_users_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_kill_only_users_annotation_info_pointers
   },
   "kill-only-users",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_kill_exclude_users_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_kill_exclude_users_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2266,26 +2266,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_kill_exclude_us
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_kill_exclude_users_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_kill_exclude_users_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_kill_exclude_users_annotation_info_0,
+  &_login1_manager_property_kill_exclude_users_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_kill_exclude_users =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_kill_exclude_users =
 {
   {
     -1,
     (gchar *) "KillExcludeUsers",
     (gchar *) "as",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_kill_exclude_users_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_kill_exclude_users_annotation_info_pointers
   },
   "kill-exclude-users",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_kill_user_processes_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_kill_user_processes_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2293,26 +2293,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_kill_user_proce
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_kill_user_processes_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_kill_user_processes_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_kill_user_processes_annotation_info_0,
+  &_login1_manager_property_kill_user_processes_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_kill_user_processes =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_kill_user_processes =
 {
   {
     -1,
     (gchar *) "KillUserProcesses",
     (gchar *) "b",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_kill_user_processes_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_kill_user_processes_annotation_info_pointers
   },
   "kill-user-processes",
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idle_hint =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_idle_hint =
 {
   {
     -1,
@@ -2325,7 +2325,7 @@ static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idl
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idle_since_hint =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_idle_since_hint =
 {
   {
     -1,
@@ -2338,7 +2338,7 @@ static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idl
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idle_since_hint_monotonic =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_idle_since_hint_monotonic =
 {
   {
     -1,
@@ -2351,7 +2351,7 @@ static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idl
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_block_inhibited =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_block_inhibited =
 {
   {
     -1,
@@ -2364,7 +2364,7 @@ static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_blo
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_delay_inhibited =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_delay_inhibited =
 {
   {
     -1,
@@ -2377,7 +2377,7 @@ static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_del
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_inhibit_delay_max_usec_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_inhibit_delay_max_usec_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2385,26 +2385,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_inhibit_delay_m
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_inhibit_delay_max_usec_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_inhibit_delay_max_usec_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_inhibit_delay_max_usec_annotation_info_0,
+  &_login1_manager_property_inhibit_delay_max_usec_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_inhibit_delay_max_usec =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_inhibit_delay_max_usec =
 {
   {
     -1,
     (gchar *) "InhibitDelayMaxUSec",
     (gchar *) "t",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_inhibit_delay_max_usec_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_inhibit_delay_max_usec_annotation_info_pointers
   },
   "inhibit-delay-max-usec",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_handle_power_key_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_handle_power_key_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2412,26 +2412,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_handle_power_ke
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_handle_power_key_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_handle_power_key_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_handle_power_key_annotation_info_0,
+  &_login1_manager_property_handle_power_key_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_handle_power_key =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_handle_power_key =
 {
   {
     -1,
     (gchar *) "HandlePowerKey",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_handle_power_key_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_handle_power_key_annotation_info_pointers
   },
   "handle-power-key",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_handle_suspend_key_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_handle_suspend_key_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2439,26 +2439,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_handle_suspend_
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_handle_suspend_key_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_handle_suspend_key_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_handle_suspend_key_annotation_info_0,
+  &_login1_manager_property_handle_suspend_key_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_handle_suspend_key =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_handle_suspend_key =
 {
   {
     -1,
     (gchar *) "HandleSuspendKey",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_handle_suspend_key_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_handle_suspend_key_annotation_info_pointers
   },
   "handle-suspend-key",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_handle_hibernate_key_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_handle_hibernate_key_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2466,26 +2466,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_handle_hibernat
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_handle_hibernate_key_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_handle_hibernate_key_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_handle_hibernate_key_annotation_info_0,
+  &_login1_manager_property_handle_hibernate_key_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_handle_hibernate_key =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_handle_hibernate_key =
 {
   {
     -1,
     (gchar *) "HandleHibernateKey",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_handle_hibernate_key_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_handle_hibernate_key_annotation_info_pointers
   },
   "handle-hibernate-key",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_handle_lid_switch_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_handle_lid_switch_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2493,26 +2493,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_handle_lid_swit
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_handle_lid_switch_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_handle_lid_switch_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_handle_lid_switch_annotation_info_0,
+  &_login1_manager_property_handle_lid_switch_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_handle_lid_switch =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_handle_lid_switch =
 {
   {
     -1,
     (gchar *) "HandleLidSwitch",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_handle_lid_switch_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_handle_lid_switch_annotation_info_pointers
   },
   "handle-lid-switch",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_idle_action_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_idle_action_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2520,26 +2520,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_idle_action_ann
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_idle_action_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_idle_action_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_idle_action_annotation_info_0,
+  &_login1_manager_property_idle_action_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idle_action =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_idle_action =
 {
   {
     -1,
     (gchar *) "IdleAction",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_idle_action_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_idle_action_annotation_info_pointers
   },
   "idle-action",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_idle_action_usec_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_idle_action_usec_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2547,26 +2547,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_idle_action_use
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_idle_action_usec_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_idle_action_usec_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_idle_action_usec_annotation_info_0,
+  &_login1_manager_property_idle_action_usec_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_idle_action_usec =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_idle_action_usec =
 {
   {
     -1,
     (gchar *) "IdleActionUSec",
     (gchar *) "t",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_idle_action_usec_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_idle_action_usec_annotation_info_pointers
   },
   "idle-action-usec",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_preparing_for_shutdown_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_preparing_for_shutdown_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2574,26 +2574,26 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_preparing_for_s
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_preparing_for_shutdown_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_preparing_for_shutdown_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_preparing_for_shutdown_annotation_info_0,
+  &_login1_manager_property_preparing_for_shutdown_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_preparing_for_shutdown =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_preparing_for_shutdown =
 {
   {
     -1,
     (gchar *) "PreparingForShutdown",
     (gchar *) "b",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_preparing_for_shutdown_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_preparing_for_shutdown_annotation_info_pointers
   },
   "preparing-for-shutdown",
   FALSE
 };
 
-static const GDBusAnnotationInfo _logind_login1_manager_property_preparing_for_sleep_annotation_info_0 =
+static const GDBusAnnotationInfo _login1_manager_property_preparing_for_sleep_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -2601,56 +2601,56 @@ static const GDBusAnnotationInfo _logind_login1_manager_property_preparing_for_s
   NULL
 };
 
-static const GDBusAnnotationInfo * const _logind_login1_manager_property_preparing_for_sleep_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _login1_manager_property_preparing_for_sleep_annotation_info_pointers[] =
 {
-  &_logind_login1_manager_property_preparing_for_sleep_annotation_info_0,
+  &_login1_manager_property_preparing_for_sleep_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _logind_login1_manager_property_info_preparing_for_sleep =
+static const _ExtendedGDBusPropertyInfo _login1_manager_property_info_preparing_for_sleep =
 {
   {
     -1,
     (gchar *) "PreparingForSleep",
     (gchar *) "b",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_logind_login1_manager_property_preparing_for_sleep_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_login1_manager_property_preparing_for_sleep_annotation_info_pointers
   },
   "preparing-for-sleep",
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo * const _logind_login1_manager_property_info_pointers[] =
+static const _ExtendedGDBusPropertyInfo * const _login1_manager_property_info_pointers[] =
 {
-  &_logind_login1_manager_property_info_nauto_vts,
-  &_logind_login1_manager_property_info_kill_only_users,
-  &_logind_login1_manager_property_info_kill_exclude_users,
-  &_logind_login1_manager_property_info_kill_user_processes,
-  &_logind_login1_manager_property_info_idle_hint,
-  &_logind_login1_manager_property_info_idle_since_hint,
-  &_logind_login1_manager_property_info_idle_since_hint_monotonic,
-  &_logind_login1_manager_property_info_block_inhibited,
-  &_logind_login1_manager_property_info_delay_inhibited,
-  &_logind_login1_manager_property_info_inhibit_delay_max_usec,
-  &_logind_login1_manager_property_info_handle_power_key,
-  &_logind_login1_manager_property_info_handle_suspend_key,
-  &_logind_login1_manager_property_info_handle_hibernate_key,
-  &_logind_login1_manager_property_info_handle_lid_switch,
-  &_logind_login1_manager_property_info_idle_action,
-  &_logind_login1_manager_property_info_idle_action_usec,
-  &_logind_login1_manager_property_info_preparing_for_shutdown,
-  &_logind_login1_manager_property_info_preparing_for_sleep,
+  &_login1_manager_property_info_nauto_vts,
+  &_login1_manager_property_info_kill_only_users,
+  &_login1_manager_property_info_kill_exclude_users,
+  &_login1_manager_property_info_kill_user_processes,
+  &_login1_manager_property_info_idle_hint,
+  &_login1_manager_property_info_idle_since_hint,
+  &_login1_manager_property_info_idle_since_hint_monotonic,
+  &_login1_manager_property_info_block_inhibited,
+  &_login1_manager_property_info_delay_inhibited,
+  &_login1_manager_property_info_inhibit_delay_max_usec,
+  &_login1_manager_property_info_handle_power_key,
+  &_login1_manager_property_info_handle_suspend_key,
+  &_login1_manager_property_info_handle_hibernate_key,
+  &_login1_manager_property_info_handle_lid_switch,
+  &_login1_manager_property_info_idle_action,
+  &_login1_manager_property_info_idle_action_usec,
+  &_login1_manager_property_info_preparing_for_shutdown,
+  &_login1_manager_property_info_preparing_for_sleep,
   NULL
 };
 
-static const _ExtendedGDBusInterfaceInfo _logind_login1_manager_interface_info =
+static const _ExtendedGDBusInterfaceInfo _login1_manager_interface_info =
 {
   {
     -1,
     (gchar *) "org.freedesktop.login1.Manager",
-    (GDBusMethodInfo **) &_logind_login1_manager_method_info_pointers,
-    (GDBusSignalInfo **) &_logind_login1_manager_signal_info_pointers,
-    (GDBusPropertyInfo **) &_logind_login1_manager_property_info_pointers,
+    (GDBusMethodInfo **) &_login1_manager_method_info_pointers,
+    (GDBusSignalInfo **) &_login1_manager_signal_info_pointers,
+    (GDBusPropertyInfo **) &_login1_manager_property_info_pointers,
     NULL
   },
   "login1-manager",
@@ -2658,30 +2658,30 @@ static const _ExtendedGDBusInterfaceInfo _logind_login1_manager_interface_info =
 
 
 /**
- * logind_login1_manager_interface_info:
+ * login1_manager_interface_info:
  *
  * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link> D-Bus interface.
  *
  * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
  */
 GDBusInterfaceInfo *
-logind_login1_manager_interface_info (void)
+login1_manager_interface_info (void)
 {
-  return (GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct;
+  return (GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct;
 }
 
 /**
- * logind_login1_manager_override_properties:
+ * login1_manager_override_properties:
  * @klass: The class structure for a #GObject<!-- -->-derived class.
  * @property_id_begin: The property id to assign to the first overridden property.
  *
- * Overrides all #GObject properties in the #logindLogin1Manager interface for a concrete class.
+ * Overrides all #GObject properties in the #Login1Manager interface for a concrete class.
  * The properties are overridden in the order they are defined.
  *
  * Returns: The last property id.
  */
 guint
-logind_login1_manager_override_properties (GObjectClass *klass, guint property_id_begin)
+login1_manager_override_properties (GObjectClass *klass, guint property_id_begin)
 {
   g_object_class_override_property (klass, property_id_begin++, "nauto-vts");
   g_object_class_override_property (klass, property_id_begin++, "kill-only-users");
@@ -2707,103 +2707,103 @@ logind_login1_manager_override_properties (GObjectClass *klass, guint property_i
 
 
 /**
- * logindLogin1Manager:
+ * Login1Manager:
  *
  * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link>.
  */
 
 /**
- * logindLogin1ManagerIface:
+ * Login1ManagerIface:
  * @parent_iface: The parent interface.
- * @handle_activate_session: Handler for the #logindLogin1Manager::handle-activate-session signal.
- * @handle_activate_session_on_seat: Handler for the #logindLogin1Manager::handle-activate-session-on-seat signal.
- * @handle_attach_device: Handler for the #logindLogin1Manager::handle-attach-device signal.
- * @handle_can_hibernate: Handler for the #logindLogin1Manager::handle-can-hibernate signal.
- * @handle_can_hybrid_sleep: Handler for the #logindLogin1Manager::handle-can-hybrid-sleep signal.
- * @handle_can_power_off: Handler for the #logindLogin1Manager::handle-can-power-off signal.
- * @handle_can_reboot: Handler for the #logindLogin1Manager::handle-can-reboot signal.
- * @handle_can_suspend: Handler for the #logindLogin1Manager::handle-can-suspend signal.
- * @handle_create_session: Handler for the #logindLogin1Manager::handle-create-session signal.
- * @handle_flush_devices: Handler for the #logindLogin1Manager::handle-flush-devices signal.
- * @handle_get_seat: Handler for the #logindLogin1Manager::handle-get-seat signal.
- * @handle_get_session: Handler for the #logindLogin1Manager::handle-get-session signal.
- * @handle_get_session_by_pid: Handler for the #logindLogin1Manager::handle-get-session-by-pid signal.
- * @handle_get_user: Handler for the #logindLogin1Manager::handle-get-user signal.
- * @handle_get_user_by_pid: Handler for the #logindLogin1Manager::handle-get-user-by-pid signal.
- * @handle_hibernate: Handler for the #logindLogin1Manager::handle-hibernate signal.
- * @handle_hybrid_sleep: Handler for the #logindLogin1Manager::handle-hybrid-sleep signal.
- * @handle_inhibit: Handler for the #logindLogin1Manager::handle-inhibit signal.
- * @handle_kill_session: Handler for the #logindLogin1Manager::handle-kill-session signal.
- * @handle_kill_user: Handler for the #logindLogin1Manager::handle-kill-user signal.
- * @handle_list_inhibitors: Handler for the #logindLogin1Manager::handle-list-inhibitors signal.
- * @handle_list_seats: Handler for the #logindLogin1Manager::handle-list-seats signal.
- * @handle_list_sessions: Handler for the #logindLogin1Manager::handle-list-sessions signal.
- * @handle_list_users: Handler for the #logindLogin1Manager::handle-list-users signal.
- * @handle_lock_session: Handler for the #logindLogin1Manager::handle-lock-session signal.
- * @handle_lock_sessions: Handler for the #logindLogin1Manager::handle-lock-sessions signal.
- * @handle_power_off: Handler for the #logindLogin1Manager::handle-power-off signal.
- * @handle_reboot: Handler for the #logindLogin1Manager::handle-reboot signal.
- * @handle_release_session: Handler for the #logindLogin1Manager::handle-release-session signal.
- * @handle_set_user_linger: Handler for the #logindLogin1Manager::handle-set-user-linger signal.
- * @handle_suspend: Handler for the #logindLogin1Manager::handle-suspend signal.
- * @handle_terminate_seat: Handler for the #logindLogin1Manager::handle-terminate-seat signal.
- * @handle_terminate_session: Handler for the #logindLogin1Manager::handle-terminate-session signal.
- * @handle_terminate_user: Handler for the #logindLogin1Manager::handle-terminate-user signal.
- * @handle_unlock_session: Handler for the #logindLogin1Manager::handle-unlock-session signal.
- * @handle_unlock_sessions: Handler for the #logindLogin1Manager::handle-unlock-sessions signal.
- * @get_block_inhibited: Getter for the #logindLogin1Manager:block-inhibited property.
- * @get_delay_inhibited: Getter for the #logindLogin1Manager:delay-inhibited property.
- * @get_handle_hibernate_key: Getter for the #logindLogin1Manager:handle-hibernate-key property.
- * @get_handle_lid_switch: Getter for the #logindLogin1Manager:handle-lid-switch property.
- * @get_handle_power_key: Getter for the #logindLogin1Manager:handle-power-key property.
- * @get_handle_suspend_key: Getter for the #logindLogin1Manager:handle-suspend-key property.
- * @get_idle_action: Getter for the #logindLogin1Manager:idle-action property.
- * @get_idle_action_usec: Getter for the #logindLogin1Manager:idle-action-usec property.
- * @get_idle_hint: Getter for the #logindLogin1Manager:idle-hint property.
- * @get_idle_since_hint: Getter for the #logindLogin1Manager:idle-since-hint property.
- * @get_idle_since_hint_monotonic: Getter for the #logindLogin1Manager:idle-since-hint-monotonic property.
- * @get_inhibit_delay_max_usec: Getter for the #logindLogin1Manager:inhibit-delay-max-usec property.
- * @get_kill_exclude_users: Getter for the #logindLogin1Manager:kill-exclude-users property.
- * @get_kill_only_users: Getter for the #logindLogin1Manager:kill-only-users property.
- * @get_kill_user_processes: Getter for the #logindLogin1Manager:kill-user-processes property.
- * @get_nauto_vts: Getter for the #logindLogin1Manager:nauto-vts property.
- * @get_preparing_for_shutdown: Getter for the #logindLogin1Manager:preparing-for-shutdown property.
- * @get_preparing_for_sleep: Getter for the #logindLogin1Manager:preparing-for-sleep property.
- * @prepare_for_shutdown: Handler for the #logindLogin1Manager::prepare-for-shutdown signal.
- * @prepare_for_sleep: Handler for the #logindLogin1Manager::prepare-for-sleep signal.
- * @seat_new: Handler for the #logindLogin1Manager::seat-new signal.
- * @seat_removed: Handler for the #logindLogin1Manager::seat-removed signal.
- * @session_new: Handler for the #logindLogin1Manager::session-new signal.
- * @session_removed: Handler for the #logindLogin1Manager::session-removed signal.
- * @user_new: Handler for the #logindLogin1Manager::user-new signal.
- * @user_removed: Handler for the #logindLogin1Manager::user-removed signal.
+ * @handle_activate_session: Handler for the #Login1Manager::handle-activate-session signal.
+ * @handle_activate_session_on_seat: Handler for the #Login1Manager::handle-activate-session-on-seat signal.
+ * @handle_attach_device: Handler for the #Login1Manager::handle-attach-device signal.
+ * @handle_can_hibernate: Handler for the #Login1Manager::handle-can-hibernate signal.
+ * @handle_can_hybrid_sleep: Handler for the #Login1Manager::handle-can-hybrid-sleep signal.
+ * @handle_can_power_off: Handler for the #Login1Manager::handle-can-power-off signal.
+ * @handle_can_reboot: Handler for the #Login1Manager::handle-can-reboot signal.
+ * @handle_can_suspend: Handler for the #Login1Manager::handle-can-suspend signal.
+ * @handle_create_session: Handler for the #Login1Manager::handle-create-session signal.
+ * @handle_flush_devices: Handler for the #Login1Manager::handle-flush-devices signal.
+ * @handle_get_seat: Handler for the #Login1Manager::handle-get-seat signal.
+ * @handle_get_session: Handler for the #Login1Manager::handle-get-session signal.
+ * @handle_get_session_by_pid: Handler for the #Login1Manager::handle-get-session-by-pid signal.
+ * @handle_get_user: Handler for the #Login1Manager::handle-get-user signal.
+ * @handle_get_user_by_pid: Handler for the #Login1Manager::handle-get-user-by-pid signal.
+ * @handle_hibernate: Handler for the #Login1Manager::handle-hibernate signal.
+ * @handle_hybrid_sleep: Handler for the #Login1Manager::handle-hybrid-sleep signal.
+ * @handle_inhibit: Handler for the #Login1Manager::handle-inhibit signal.
+ * @handle_kill_session: Handler for the #Login1Manager::handle-kill-session signal.
+ * @handle_kill_user: Handler for the #Login1Manager::handle-kill-user signal.
+ * @handle_list_inhibitors: Handler for the #Login1Manager::handle-list-inhibitors signal.
+ * @handle_list_seats: Handler for the #Login1Manager::handle-list-seats signal.
+ * @handle_list_sessions: Handler for the #Login1Manager::handle-list-sessions signal.
+ * @handle_list_users: Handler for the #Login1Manager::handle-list-users signal.
+ * @handle_lock_session: Handler for the #Login1Manager::handle-lock-session signal.
+ * @handle_lock_sessions: Handler for the #Login1Manager::handle-lock-sessions signal.
+ * @handle_power_off: Handler for the #Login1Manager::handle-power-off signal.
+ * @handle_reboot: Handler for the #Login1Manager::handle-reboot signal.
+ * @handle_release_session: Handler for the #Login1Manager::handle-release-session signal.
+ * @handle_set_user_linger: Handler for the #Login1Manager::handle-set-user-linger signal.
+ * @handle_suspend: Handler for the #Login1Manager::handle-suspend signal.
+ * @handle_terminate_seat: Handler for the #Login1Manager::handle-terminate-seat signal.
+ * @handle_terminate_session: Handler for the #Login1Manager::handle-terminate-session signal.
+ * @handle_terminate_user: Handler for the #Login1Manager::handle-terminate-user signal.
+ * @handle_unlock_session: Handler for the #Login1Manager::handle-unlock-session signal.
+ * @handle_unlock_sessions: Handler for the #Login1Manager::handle-unlock-sessions signal.
+ * @get_block_inhibited: Getter for the #Login1Manager:block-inhibited property.
+ * @get_delay_inhibited: Getter for the #Login1Manager:delay-inhibited property.
+ * @get_handle_hibernate_key: Getter for the #Login1Manager:handle-hibernate-key property.
+ * @get_handle_lid_switch: Getter for the #Login1Manager:handle-lid-switch property.
+ * @get_handle_power_key: Getter for the #Login1Manager:handle-power-key property.
+ * @get_handle_suspend_key: Getter for the #Login1Manager:handle-suspend-key property.
+ * @get_idle_action: Getter for the #Login1Manager:idle-action property.
+ * @get_idle_action_usec: Getter for the #Login1Manager:idle-action-usec property.
+ * @get_idle_hint: Getter for the #Login1Manager:idle-hint property.
+ * @get_idle_since_hint: Getter for the #Login1Manager:idle-since-hint property.
+ * @get_idle_since_hint_monotonic: Getter for the #Login1Manager:idle-since-hint-monotonic property.
+ * @get_inhibit_delay_max_usec: Getter for the #Login1Manager:inhibit-delay-max-usec property.
+ * @get_kill_exclude_users: Getter for the #Login1Manager:kill-exclude-users property.
+ * @get_kill_only_users: Getter for the #Login1Manager:kill-only-users property.
+ * @get_kill_user_processes: Getter for the #Login1Manager:kill-user-processes property.
+ * @get_nauto_vts: Getter for the #Login1Manager:nauto-vts property.
+ * @get_preparing_for_shutdown: Getter for the #Login1Manager:preparing-for-shutdown property.
+ * @get_preparing_for_sleep: Getter for the #Login1Manager:preparing-for-sleep property.
+ * @prepare_for_shutdown: Handler for the #Login1Manager::prepare-for-shutdown signal.
+ * @prepare_for_sleep: Handler for the #Login1Manager::prepare-for-sleep signal.
+ * @seat_new: Handler for the #Login1Manager::seat-new signal.
+ * @seat_removed: Handler for the #Login1Manager::seat-removed signal.
+ * @session_new: Handler for the #Login1Manager::session-new signal.
+ * @session_removed: Handler for the #Login1Manager::session-removed signal.
+ * @user_new: Handler for the #Login1Manager::user-new signal.
+ * @user_removed: Handler for the #Login1Manager::user-removed signal.
  *
  * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link>.
  */
 
-typedef logindLogin1ManagerIface logindLogin1ManagerInterface;
-G_DEFINE_INTERFACE (logindLogin1Manager, logind_login1_manager, G_TYPE_OBJECT);
+typedef Login1ManagerIface Login1ManagerInterface;
+G_DEFINE_INTERFACE (Login1Manager, login1_manager, G_TYPE_OBJECT);
 
 static void
-logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
+login1_manager_default_init (Login1ManagerIface *iface)
 {
   /* GObject signals for incoming D-Bus method calls: */
   /**
-   * logindLogin1Manager::handle-get-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-get-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSession">GetSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_get_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_get_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-get-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_get_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_get_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2812,21 +2812,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-get-session-by-pid:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-get-session-by-pid:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSessionByPID">GetSessionByPID()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_get_session_by_pid() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_get_session_by_pid() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-get-session-by-pid",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_get_session_by_pid),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_get_session_by_pid),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2835,21 +2835,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT);
 
   /**
-   * logindLogin1Manager::handle-get-user:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-get-user:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUser">GetUser()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_get_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_get_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-get-user",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_get_user),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_get_user),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2858,21 +2858,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT);
 
   /**
-   * logindLogin1Manager::handle-get-user-by-pid:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-get-user-by-pid:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUserByPID">GetUserByPID()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_get_user_by_pid() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_get_user_by_pid() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-get-user-by-pid",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_get_user_by_pid),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_get_user_by_pid),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2881,21 +2881,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT);
 
   /**
-   * logindLogin1Manager::handle-get-seat:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-get-seat:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSeat">GetSeat()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_get_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_get_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-get-seat",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_get_seat),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_get_seat),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2904,20 +2904,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-list-sessions:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-list-sessions:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSessions">ListSessions()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_list_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_list_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-list-sessions",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_list_sessions),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_list_sessions),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2926,20 +2926,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-list-users:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-list-users:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListUsers">ListUsers()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_list_users() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_list_users() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-list-users",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_list_users),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_list_users),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2948,20 +2948,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-list-seats:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-list-seats:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSeats">ListSeats()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_list_seats() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_list_seats() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-list-seats",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_list_seats),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_list_seats),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2970,20 +2970,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-list-inhibitors:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-list-inhibitors:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListInhibitors">ListInhibitors()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_list_inhibitors() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_list_inhibitors() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-list-inhibitors",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_list_inhibitors),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_list_inhibitors),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -2992,8 +2992,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-create-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-create-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
@@ -3012,14 +3012,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CreateSession">CreateSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_create_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_create_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-create-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_create_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_create_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3028,21 +3028,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT, G_TYPE_UINT, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_UINT, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_VARIANT);
 
   /**
-   * logindLogin1Manager::handle-release-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-release-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ReleaseSession">ReleaseSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_release_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_release_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-release-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_release_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_release_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3051,21 +3051,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-activate-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-activate-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSession">ActivateSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_activate_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_activate_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-activate-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_activate_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_activate_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3074,22 +3074,22 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-activate-session-on-seat:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-activate-session-on-seat:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSessionOnSeat">ActivateSessionOnSeat()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_activate_session_on_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_activate_session_on_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-activate-session-on-seat",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_activate_session_on_seat),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_activate_session_on_seat),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3098,21 +3098,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-lock-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-lock-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSession">LockSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_lock_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_lock_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-lock-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_lock_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_lock_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3121,21 +3121,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-unlock-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-unlock-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSession">UnlockSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_unlock_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_unlock_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-unlock-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_unlock_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_unlock_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3144,20 +3144,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-lock-sessions:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-lock-sessions:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSessions">LockSessions()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_lock_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_lock_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-lock-sessions",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_lock_sessions),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_lock_sessions),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3166,20 +3166,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-unlock-sessions:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-unlock-sessions:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSessions">UnlockSessions()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_unlock_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_unlock_sessions() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-unlock-sessions",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_unlock_sessions),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_unlock_sessions),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3188,8 +3188,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-kill-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-kill-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
@@ -3197,14 +3197,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillSession">KillSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_kill_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_kill_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-kill-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_kill_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_kill_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3213,22 +3213,22 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT);
 
   /**
-   * logindLogin1Manager::handle-kill-user:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-kill-user:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillUser">KillUser()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_kill_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_kill_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-kill-user",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_kill_user),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_kill_user),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3237,21 +3237,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT, G_TYPE_INT);
 
   /**
-   * logindLogin1Manager::handle-terminate-session:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-terminate-session:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSession">TerminateSession()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_terminate_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_terminate_session() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-terminate-session",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_terminate_session),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_terminate_session),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3260,21 +3260,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-terminate-user:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-terminate-user:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateUser">TerminateUser()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_terminate_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_terminate_user() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-terminate-user",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_terminate_user),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_terminate_user),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3283,21 +3283,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT);
 
   /**
-   * logindLogin1Manager::handle-terminate-seat:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-terminate-seat:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSeat">TerminateSeat()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_terminate_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_terminate_seat() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-terminate-seat",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_terminate_seat),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_terminate_seat),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3306,8 +3306,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::handle-set-user-linger:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-set-user-linger:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
@@ -3315,14 +3315,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.SetUserLinger">SetUserLinger()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_set_user_linger() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_set_user_linger() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-user-linger",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_set_user_linger),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_set_user_linger),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3331,8 +3331,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_UINT, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-attach-device:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-attach-device:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
@@ -3340,14 +3340,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.AttachDevice">AttachDevice()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_attach_device() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_attach_device() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-attach-device",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_attach_device),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_attach_device),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3356,21 +3356,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-flush-devices:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-flush-devices:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.FlushDevices">FlushDevices()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_flush_devices() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_flush_devices() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-flush-devices",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_flush_devices),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_flush_devices),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3379,21 +3379,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-power-off:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-power-off:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.PowerOff">PowerOff()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_power_off() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_power_off() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-power-off",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_power_off),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_power_off),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3402,21 +3402,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-reboot:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-reboot:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Reboot">Reboot()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_reboot() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_reboot() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-reboot",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_reboot),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_reboot),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3425,21 +3425,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-suspend:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-suspend:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Suspend">Suspend()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_suspend() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_suspend() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-suspend",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_suspend),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_suspend),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3448,21 +3448,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-hibernate:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-hibernate:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Hibernate">Hibernate()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_hibernate() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_hibernate() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-hibernate",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_hibernate),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_hibernate),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3471,21 +3471,21 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-hybrid-sleep:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-hybrid-sleep:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.HybridSleep">HybridSleep()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_hybrid_sleep() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_hybrid_sleep() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-hybrid-sleep",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_hybrid_sleep),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_hybrid_sleep),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3494,20 +3494,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::handle-can-power-off:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-can-power-off:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanPowerOff">CanPowerOff()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_can_power_off() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_can_power_off() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-can-power-off",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_can_power_off),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_can_power_off),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3516,20 +3516,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-can-reboot:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-can-reboot:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanReboot">CanReboot()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_can_reboot() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_can_reboot() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-can-reboot",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_can_reboot),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_can_reboot),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3538,20 +3538,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-can-suspend:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-can-suspend:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanSuspend">CanSuspend()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_can_suspend() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_can_suspend() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-can-suspend",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_can_suspend),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_can_suspend),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3560,20 +3560,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-can-hibernate:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-can-hibernate:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHibernate">CanHibernate()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_can_hibernate() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_can_hibernate() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-can-hibernate",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_can_hibernate),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_can_hibernate),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3582,20 +3582,20 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-can-hybrid-sleep:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-can-hybrid-sleep:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHybridSleep">CanHybridSleep()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_can_hybrid_sleep() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_can_hybrid_sleep() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-can-hybrid-sleep",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_can_hybrid_sleep),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_can_hybrid_sleep),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3604,8 +3604,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION);
 
   /**
-   * logindLogin1Manager::handle-inhibit:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::handle-inhibit:
+   * @object: A #Login1Manager.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
@@ -3614,14 +3614,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Inhibit">Inhibit()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call logind_login1_manager_complete_inhibit() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call login1_manager_complete_inhibit() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-inhibit",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, handle_inhibit),
+    G_STRUCT_OFFSET (Login1ManagerIface, handle_inhibit),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -3631,8 +3631,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
 
   /* GObject signals for received D-Bus signals: */
   /**
-   * logindLogin1Manager::session-new:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::session-new:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3643,7 +3643,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("session-new",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, session_new),
+    G_STRUCT_OFFSET (Login1ManagerIface, session_new),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3651,8 +3651,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_STRING, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::session-removed:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::session-removed:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3663,7 +3663,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("session-removed",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, session_removed),
+    G_STRUCT_OFFSET (Login1ManagerIface, session_removed),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3671,8 +3671,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_STRING, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::user-new:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::user-new:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3683,7 +3683,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("user-new",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, user_new),
+    G_STRUCT_OFFSET (Login1ManagerIface, user_new),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3691,8 +3691,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_UINT, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::user-removed:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::user-removed:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3703,7 +3703,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("user-removed",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, user_removed),
+    G_STRUCT_OFFSET (Login1ManagerIface, user_removed),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3711,8 +3711,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_UINT, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::seat-new:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::seat-new:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3723,7 +3723,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("seat-new",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, seat_new),
+    G_STRUCT_OFFSET (Login1ManagerIface, seat_new),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3731,8 +3731,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_STRING, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::seat-removed:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::seat-removed:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    * @arg_unnamed_arg1: Argument.
    *
@@ -3743,7 +3743,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("seat-removed",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, seat_removed),
+    G_STRUCT_OFFSET (Login1ManagerIface, seat_removed),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3751,8 +3751,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     2, G_TYPE_STRING, G_TYPE_STRING);
 
   /**
-   * logindLogin1Manager::prepare-for-shutdown:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::prepare-for-shutdown:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    *
    * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-org-freedesktop-login1-Manager.PrepareForShutdown">"PrepareForShutdown"</link> is received.
@@ -3762,7 +3762,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("prepare-for-shutdown",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, prepare_for_shutdown),
+    G_STRUCT_OFFSET (Login1ManagerIface, prepare_for_shutdown),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3770,8 +3770,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
     1, G_TYPE_BOOLEAN);
 
   /**
-   * logindLogin1Manager::prepare-for-sleep:
-   * @object: A #logindLogin1Manager.
+   * Login1Manager::prepare-for-sleep:
+   * @object: A #Login1Manager.
    * @arg_unnamed_arg0: Argument.
    *
    * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-org-freedesktop-login1-Manager.PrepareForSleep">"PrepareForSleep"</link> is received.
@@ -3781,7 +3781,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_signal_new ("prepare-for-sleep",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (logindLogin1ManagerIface, prepare_for_sleep),
+    G_STRUCT_OFFSET (Login1ManagerIface, prepare_for_sleep),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -3790,7 +3790,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
 
   /* GObject properties for D-Bus properties: */
   /**
-   * logindLogin1Manager:nauto-vts:
+   * Login1Manager:nauto-vts:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.NAutoVTs">"NAutoVTs"</link>.
    *
@@ -3799,7 +3799,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_uint ("nauto-vts", "NAutoVTs", "NAutoVTs", 0, G_MAXUINT32, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:kill-only-users:
+   * Login1Manager:kill-only-users:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillOnlyUsers">"KillOnlyUsers"</link>.
    *
@@ -3808,7 +3808,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boxed ("kill-only-users", "KillOnlyUsers", "KillOnlyUsers", G_TYPE_STRV, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:kill-exclude-users:
+   * Login1Manager:kill-exclude-users:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillExcludeUsers">"KillExcludeUsers"</link>.
    *
@@ -3817,7 +3817,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boxed ("kill-exclude-users", "KillExcludeUsers", "KillExcludeUsers", G_TYPE_STRV, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:kill-user-processes:
+   * Login1Manager:kill-user-processes:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillUserProcesses">"KillUserProcesses"</link>.
    *
@@ -3826,7 +3826,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boolean ("kill-user-processes", "KillUserProcesses", "KillUserProcesses", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:idle-hint:
+   * Login1Manager:idle-hint:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleHint">"IdleHint"</link>.
    *
@@ -3835,7 +3835,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boolean ("idle-hint", "IdleHint", "IdleHint", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:idle-since-hint:
+   * Login1Manager:idle-since-hint:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHint">"IdleSinceHint"</link>.
    *
@@ -3844,7 +3844,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_uint64 ("idle-since-hint", "IdleSinceHint", "IdleSinceHint", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:idle-since-hint-monotonic:
+   * Login1Manager:idle-since-hint-monotonic:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHintMonotonic">"IdleSinceHintMonotonic"</link>.
    *
@@ -3853,7 +3853,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_uint64 ("idle-since-hint-monotonic", "IdleSinceHintMonotonic", "IdleSinceHintMonotonic", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:block-inhibited:
+   * Login1Manager:block-inhibited:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.BlockInhibited">"BlockInhibited"</link>.
    *
@@ -3862,7 +3862,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("block-inhibited", "BlockInhibited", "BlockInhibited", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:delay-inhibited:
+   * Login1Manager:delay-inhibited:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.DelayInhibited">"DelayInhibited"</link>.
    *
@@ -3871,7 +3871,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("delay-inhibited", "DelayInhibited", "DelayInhibited", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:inhibit-delay-max-usec:
+   * Login1Manager:inhibit-delay-max-usec:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.InhibitDelayMaxUSec">"InhibitDelayMaxUSec"</link>.
    *
@@ -3880,7 +3880,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_uint64 ("inhibit-delay-max-usec", "InhibitDelayMaxUSec", "InhibitDelayMaxUSec", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:handle-power-key:
+   * Login1Manager:handle-power-key:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandlePowerKey">"HandlePowerKey"</link>.
    *
@@ -3889,7 +3889,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("handle-power-key", "HandlePowerKey", "HandlePowerKey", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:handle-suspend-key:
+   * Login1Manager:handle-suspend-key:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleSuspendKey">"HandleSuspendKey"</link>.
    *
@@ -3898,7 +3898,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("handle-suspend-key", "HandleSuspendKey", "HandleSuspendKey", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:handle-hibernate-key:
+   * Login1Manager:handle-hibernate-key:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleHibernateKey">"HandleHibernateKey"</link>.
    *
@@ -3907,7 +3907,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("handle-hibernate-key", "HandleHibernateKey", "HandleHibernateKey", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:handle-lid-switch:
+   * Login1Manager:handle-lid-switch:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleLidSwitch">"HandleLidSwitch"</link>.
    *
@@ -3916,7 +3916,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("handle-lid-switch", "HandleLidSwitch", "HandleLidSwitch", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:idle-action:
+   * Login1Manager:idle-action:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleAction">"IdleAction"</link>.
    *
@@ -3925,7 +3925,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("idle-action", "IdleAction", "IdleAction", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:idle-action-usec:
+   * Login1Manager:idle-action-usec:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleActionUSec">"IdleActionUSec"</link>.
    *
@@ -3934,7 +3934,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_uint64 ("idle-action-usec", "IdleActionUSec", "IdleActionUSec", 0, G_MAXUINT64, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:preparing-for-shutdown:
+   * Login1Manager:preparing-for-shutdown:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForShutdown">"PreparingForShutdown"</link>.
    *
@@ -3943,7 +3943,7 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_boolean ("preparing-for-shutdown", "PreparingForShutdown", "PreparingForShutdown", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * logindLogin1Manager:preparing-for-sleep:
+   * Login1Manager:preparing-for-sleep:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForSleep">"PreparingForSleep"</link>.
    *
@@ -3954,8 +3954,8 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
 }
 
 /**
- * logind_login1_manager_get_nauto_vts: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_nauto_vts: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.NAutoVTs">"NAutoVTs"</link> D-Bus property.
  *
@@ -3964,14 +3964,14 @@ logind_login1_manager_default_init (logindLogin1ManagerIface *iface)
  * Returns: The property value.
  */
 guint 
-logind_login1_manager_get_nauto_vts (logindLogin1Manager *object)
+login1_manager_get_nauto_vts (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_nauto_vts (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_nauto_vts (object);
 }
 
 /**
- * logind_login1_manager_set_nauto_vts: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_nauto_vts: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.NAutoVTs">"NAutoVTs"</link> D-Bus property to @value.
@@ -3979,32 +3979,32 @@ logind_login1_manager_get_nauto_vts (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_nauto_vts (logindLogin1Manager *object, guint value)
+login1_manager_set_nauto_vts (Login1Manager *object, guint value)
 {
   g_object_set (G_OBJECT (object), "nauto-vts", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_kill_only_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_kill_only_users: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillOnlyUsers">"KillOnlyUsers"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_kill_only_users() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_kill_only_users() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *const *
-logind_login1_manager_get_kill_only_users (logindLogin1Manager *object)
+login1_manager_get_kill_only_users (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_kill_only_users (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_kill_only_users (object);
 }
 
 /**
- * logind_login1_manager_dup_kill_only_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_kill_only_users: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillOnlyUsers">"KillOnlyUsers"</link> D-Bus property.
  *
@@ -4013,7 +4013,7 @@ logind_login1_manager_get_kill_only_users (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_strfreev().
  */
 gchar **
-logind_login1_manager_dup_kill_only_users (logindLogin1Manager *object)
+login1_manager_dup_kill_only_users (Login1Manager *object)
 {
   gchar **value;
   g_object_get (G_OBJECT (object), "kill-only-users", &value, NULL);
@@ -4021,8 +4021,8 @@ logind_login1_manager_dup_kill_only_users (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_kill_only_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_kill_only_users: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillOnlyUsers">"KillOnlyUsers"</link> D-Bus property to @value.
@@ -4030,32 +4030,32 @@ logind_login1_manager_dup_kill_only_users (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_kill_only_users (logindLogin1Manager *object, const gchar *const *value)
+login1_manager_set_kill_only_users (Login1Manager *object, const gchar *const *value)
 {
   g_object_set (G_OBJECT (object), "kill-only-users", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_kill_exclude_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_kill_exclude_users: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillExcludeUsers">"KillExcludeUsers"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_kill_exclude_users() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_kill_exclude_users() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *const *
-logind_login1_manager_get_kill_exclude_users (logindLogin1Manager *object)
+login1_manager_get_kill_exclude_users (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_kill_exclude_users (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_kill_exclude_users (object);
 }
 
 /**
- * logind_login1_manager_dup_kill_exclude_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_kill_exclude_users: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillExcludeUsers">"KillExcludeUsers"</link> D-Bus property.
  *
@@ -4064,7 +4064,7 @@ logind_login1_manager_get_kill_exclude_users (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_strfreev().
  */
 gchar **
-logind_login1_manager_dup_kill_exclude_users (logindLogin1Manager *object)
+login1_manager_dup_kill_exclude_users (Login1Manager *object)
 {
   gchar **value;
   g_object_get (G_OBJECT (object), "kill-exclude-users", &value, NULL);
@@ -4072,8 +4072,8 @@ logind_login1_manager_dup_kill_exclude_users (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_kill_exclude_users: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_kill_exclude_users: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillExcludeUsers">"KillExcludeUsers"</link> D-Bus property to @value.
@@ -4081,14 +4081,14 @@ logind_login1_manager_dup_kill_exclude_users (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_kill_exclude_users (logindLogin1Manager *object, const gchar *const *value)
+login1_manager_set_kill_exclude_users (Login1Manager *object, const gchar *const *value)
 {
   g_object_set (G_OBJECT (object), "kill-exclude-users", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_kill_user_processes: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_kill_user_processes: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillUserProcesses">"KillUserProcesses"</link> D-Bus property.
  *
@@ -4097,14 +4097,14 @@ logind_login1_manager_set_kill_exclude_users (logindLogin1Manager *object, const
  * Returns: The property value.
  */
 gboolean 
-logind_login1_manager_get_kill_user_processes (logindLogin1Manager *object)
+login1_manager_get_kill_user_processes (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_kill_user_processes (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_kill_user_processes (object);
 }
 
 /**
- * logind_login1_manager_set_kill_user_processes: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_kill_user_processes: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.KillUserProcesses">"KillUserProcesses"</link> D-Bus property to @value.
@@ -4112,14 +4112,14 @@ logind_login1_manager_get_kill_user_processes (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_kill_user_processes (logindLogin1Manager *object, gboolean value)
+login1_manager_set_kill_user_processes (Login1Manager *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "kill-user-processes", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_idle_hint: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_idle_hint: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleHint">"IdleHint"</link> D-Bus property.
  *
@@ -4128,14 +4128,14 @@ logind_login1_manager_set_kill_user_processes (logindLogin1Manager *object, gboo
  * Returns: The property value.
  */
 gboolean 
-logind_login1_manager_get_idle_hint (logindLogin1Manager *object)
+login1_manager_get_idle_hint (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_idle_hint (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_idle_hint (object);
 }
 
 /**
- * logind_login1_manager_set_idle_hint: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_idle_hint: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleHint">"IdleHint"</link> D-Bus property to @value.
@@ -4143,14 +4143,14 @@ logind_login1_manager_get_idle_hint (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_idle_hint (logindLogin1Manager *object, gboolean value)
+login1_manager_set_idle_hint (Login1Manager *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "idle-hint", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_idle_since_hint: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_idle_since_hint: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHint">"IdleSinceHint"</link> D-Bus property.
  *
@@ -4159,14 +4159,14 @@ logind_login1_manager_set_idle_hint (logindLogin1Manager *object, gboolean value
  * Returns: The property value.
  */
 guint64 
-logind_login1_manager_get_idle_since_hint (logindLogin1Manager *object)
+login1_manager_get_idle_since_hint (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_idle_since_hint (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_idle_since_hint (object);
 }
 
 /**
- * logind_login1_manager_set_idle_since_hint: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_idle_since_hint: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHint">"IdleSinceHint"</link> D-Bus property to @value.
@@ -4174,14 +4174,14 @@ logind_login1_manager_get_idle_since_hint (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_idle_since_hint (logindLogin1Manager *object, guint64 value)
+login1_manager_set_idle_since_hint (Login1Manager *object, guint64 value)
 {
   g_object_set (G_OBJECT (object), "idle-since-hint", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_idle_since_hint_monotonic: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_idle_since_hint_monotonic: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHintMonotonic">"IdleSinceHintMonotonic"</link> D-Bus property.
  *
@@ -4190,14 +4190,14 @@ logind_login1_manager_set_idle_since_hint (logindLogin1Manager *object, guint64 
  * Returns: The property value.
  */
 guint64 
-logind_login1_manager_get_idle_since_hint_monotonic (logindLogin1Manager *object)
+login1_manager_get_idle_since_hint_monotonic (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_idle_since_hint_monotonic (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_idle_since_hint_monotonic (object);
 }
 
 /**
- * logind_login1_manager_set_idle_since_hint_monotonic: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_idle_since_hint_monotonic: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleSinceHintMonotonic">"IdleSinceHintMonotonic"</link> D-Bus property to @value.
@@ -4205,32 +4205,32 @@ logind_login1_manager_get_idle_since_hint_monotonic (logindLogin1Manager *object
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_idle_since_hint_monotonic (logindLogin1Manager *object, guint64 value)
+login1_manager_set_idle_since_hint_monotonic (Login1Manager *object, guint64 value)
 {
   g_object_set (G_OBJECT (object), "idle-since-hint-monotonic", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_block_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_block_inhibited: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.BlockInhibited">"BlockInhibited"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_block_inhibited() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_block_inhibited() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_block_inhibited (logindLogin1Manager *object)
+login1_manager_get_block_inhibited (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_block_inhibited (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_block_inhibited (object);
 }
 
 /**
- * logind_login1_manager_dup_block_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_block_inhibited: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.BlockInhibited">"BlockInhibited"</link> D-Bus property.
  *
@@ -4239,7 +4239,7 @@ logind_login1_manager_get_block_inhibited (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_block_inhibited (logindLogin1Manager *object)
+login1_manager_dup_block_inhibited (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "block-inhibited", &value, NULL);
@@ -4247,8 +4247,8 @@ logind_login1_manager_dup_block_inhibited (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_block_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_block_inhibited: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.BlockInhibited">"BlockInhibited"</link> D-Bus property to @value.
@@ -4256,32 +4256,32 @@ logind_login1_manager_dup_block_inhibited (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_block_inhibited (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_block_inhibited (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "block-inhibited", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_delay_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_delay_inhibited: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.DelayInhibited">"DelayInhibited"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_delay_inhibited() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_delay_inhibited() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_delay_inhibited (logindLogin1Manager *object)
+login1_manager_get_delay_inhibited (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_delay_inhibited (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_delay_inhibited (object);
 }
 
 /**
- * logind_login1_manager_dup_delay_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_delay_inhibited: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.DelayInhibited">"DelayInhibited"</link> D-Bus property.
  *
@@ -4290,7 +4290,7 @@ logind_login1_manager_get_delay_inhibited (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_delay_inhibited (logindLogin1Manager *object)
+login1_manager_dup_delay_inhibited (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "delay-inhibited", &value, NULL);
@@ -4298,8 +4298,8 @@ logind_login1_manager_dup_delay_inhibited (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_delay_inhibited: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_delay_inhibited: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.DelayInhibited">"DelayInhibited"</link> D-Bus property to @value.
@@ -4307,14 +4307,14 @@ logind_login1_manager_dup_delay_inhibited (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_delay_inhibited (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_delay_inhibited (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "delay-inhibited", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_inhibit_delay_max_usec: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_inhibit_delay_max_usec: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.InhibitDelayMaxUSec">"InhibitDelayMaxUSec"</link> D-Bus property.
  *
@@ -4323,14 +4323,14 @@ logind_login1_manager_set_delay_inhibited (logindLogin1Manager *object, const gc
  * Returns: The property value.
  */
 guint64 
-logind_login1_manager_get_inhibit_delay_max_usec (logindLogin1Manager *object)
+login1_manager_get_inhibit_delay_max_usec (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_inhibit_delay_max_usec (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_inhibit_delay_max_usec (object);
 }
 
 /**
- * logind_login1_manager_set_inhibit_delay_max_usec: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_inhibit_delay_max_usec: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.InhibitDelayMaxUSec">"InhibitDelayMaxUSec"</link> D-Bus property to @value.
@@ -4338,32 +4338,32 @@ logind_login1_manager_get_inhibit_delay_max_usec (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_inhibit_delay_max_usec (logindLogin1Manager *object, guint64 value)
+login1_manager_set_inhibit_delay_max_usec (Login1Manager *object, guint64 value)
 {
   g_object_set (G_OBJECT (object), "inhibit-delay-max-usec", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_handle_power_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_handle_power_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandlePowerKey">"HandlePowerKey"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_handle_power_key() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_handle_power_key() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_handle_power_key (logindLogin1Manager *object)
+login1_manager_get_handle_power_key (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_handle_power_key (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_handle_power_key (object);
 }
 
 /**
- * logind_login1_manager_dup_handle_power_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_handle_power_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandlePowerKey">"HandlePowerKey"</link> D-Bus property.
  *
@@ -4372,7 +4372,7 @@ logind_login1_manager_get_handle_power_key (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_handle_power_key (logindLogin1Manager *object)
+login1_manager_dup_handle_power_key (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "handle-power-key", &value, NULL);
@@ -4380,8 +4380,8 @@ logind_login1_manager_dup_handle_power_key (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_handle_power_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_handle_power_key: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandlePowerKey">"HandlePowerKey"</link> D-Bus property to @value.
@@ -4389,32 +4389,32 @@ logind_login1_manager_dup_handle_power_key (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_handle_power_key (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_handle_power_key (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "handle-power-key", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_handle_suspend_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_handle_suspend_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleSuspendKey">"HandleSuspendKey"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_handle_suspend_key() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_handle_suspend_key() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_handle_suspend_key (logindLogin1Manager *object)
+login1_manager_get_handle_suspend_key (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_handle_suspend_key (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_handle_suspend_key (object);
 }
 
 /**
- * logind_login1_manager_dup_handle_suspend_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_handle_suspend_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleSuspendKey">"HandleSuspendKey"</link> D-Bus property.
  *
@@ -4423,7 +4423,7 @@ logind_login1_manager_get_handle_suspend_key (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_handle_suspend_key (logindLogin1Manager *object)
+login1_manager_dup_handle_suspend_key (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "handle-suspend-key", &value, NULL);
@@ -4431,8 +4431,8 @@ logind_login1_manager_dup_handle_suspend_key (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_handle_suspend_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_handle_suspend_key: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleSuspendKey">"HandleSuspendKey"</link> D-Bus property to @value.
@@ -4440,32 +4440,32 @@ logind_login1_manager_dup_handle_suspend_key (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_handle_suspend_key (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_handle_suspend_key (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "handle-suspend-key", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_handle_hibernate_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_handle_hibernate_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleHibernateKey">"HandleHibernateKey"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_handle_hibernate_key() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_handle_hibernate_key() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_handle_hibernate_key (logindLogin1Manager *object)
+login1_manager_get_handle_hibernate_key (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_handle_hibernate_key (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_handle_hibernate_key (object);
 }
 
 /**
- * logind_login1_manager_dup_handle_hibernate_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_handle_hibernate_key: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleHibernateKey">"HandleHibernateKey"</link> D-Bus property.
  *
@@ -4474,7 +4474,7 @@ logind_login1_manager_get_handle_hibernate_key (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_handle_hibernate_key (logindLogin1Manager *object)
+login1_manager_dup_handle_hibernate_key (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "handle-hibernate-key", &value, NULL);
@@ -4482,8 +4482,8 @@ logind_login1_manager_dup_handle_hibernate_key (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_handle_hibernate_key: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_handle_hibernate_key: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleHibernateKey">"HandleHibernateKey"</link> D-Bus property to @value.
@@ -4491,32 +4491,32 @@ logind_login1_manager_dup_handle_hibernate_key (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_handle_hibernate_key (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_handle_hibernate_key (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "handle-hibernate-key", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_handle_lid_switch: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_handle_lid_switch: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleLidSwitch">"HandleLidSwitch"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_handle_lid_switch() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_handle_lid_switch() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_handle_lid_switch (logindLogin1Manager *object)
+login1_manager_get_handle_lid_switch (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_handle_lid_switch (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_handle_lid_switch (object);
 }
 
 /**
- * logind_login1_manager_dup_handle_lid_switch: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_handle_lid_switch: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleLidSwitch">"HandleLidSwitch"</link> D-Bus property.
  *
@@ -4525,7 +4525,7 @@ logind_login1_manager_get_handle_lid_switch (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_handle_lid_switch (logindLogin1Manager *object)
+login1_manager_dup_handle_lid_switch (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "handle-lid-switch", &value, NULL);
@@ -4533,8 +4533,8 @@ logind_login1_manager_dup_handle_lid_switch (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_handle_lid_switch: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_handle_lid_switch: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.HandleLidSwitch">"HandleLidSwitch"</link> D-Bus property to @value.
@@ -4542,32 +4542,32 @@ logind_login1_manager_dup_handle_lid_switch (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_handle_lid_switch (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_handle_lid_switch (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "handle-lid-switch", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_idle_action: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_idle_action: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleAction">"IdleAction"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use logind_login1_manager_dup_idle_action() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use login1_manager_dup_idle_action() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-logind_login1_manager_get_idle_action (logindLogin1Manager *object)
+login1_manager_get_idle_action (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_idle_action (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_idle_action (object);
 }
 
 /**
- * logind_login1_manager_dup_idle_action: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_dup_idle_action: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleAction">"IdleAction"</link> D-Bus property.
  *
@@ -4576,7 +4576,7 @@ logind_login1_manager_get_idle_action (logindLogin1Manager *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-logind_login1_manager_dup_idle_action (logindLogin1Manager *object)
+login1_manager_dup_idle_action (Login1Manager *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "idle-action", &value, NULL);
@@ -4584,8 +4584,8 @@ logind_login1_manager_dup_idle_action (logindLogin1Manager *object)
 }
 
 /**
- * logind_login1_manager_set_idle_action: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_idle_action: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleAction">"IdleAction"</link> D-Bus property to @value.
@@ -4593,14 +4593,14 @@ logind_login1_manager_dup_idle_action (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_idle_action (logindLogin1Manager *object, const gchar *value)
+login1_manager_set_idle_action (Login1Manager *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "idle-action", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_idle_action_usec: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_idle_action_usec: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleActionUSec">"IdleActionUSec"</link> D-Bus property.
  *
@@ -4609,14 +4609,14 @@ logind_login1_manager_set_idle_action (logindLogin1Manager *object, const gchar 
  * Returns: The property value.
  */
 guint64 
-logind_login1_manager_get_idle_action_usec (logindLogin1Manager *object)
+login1_manager_get_idle_action_usec (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_idle_action_usec (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_idle_action_usec (object);
 }
 
 /**
- * logind_login1_manager_set_idle_action_usec: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_idle_action_usec: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.IdleActionUSec">"IdleActionUSec"</link> D-Bus property to @value.
@@ -4624,14 +4624,14 @@ logind_login1_manager_get_idle_action_usec (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_idle_action_usec (logindLogin1Manager *object, guint64 value)
+login1_manager_set_idle_action_usec (Login1Manager *object, guint64 value)
 {
   g_object_set (G_OBJECT (object), "idle-action-usec", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_preparing_for_shutdown: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_preparing_for_shutdown: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForShutdown">"PreparingForShutdown"</link> D-Bus property.
  *
@@ -4640,14 +4640,14 @@ logind_login1_manager_set_idle_action_usec (logindLogin1Manager *object, guint64
  * Returns: The property value.
  */
 gboolean 
-logind_login1_manager_get_preparing_for_shutdown (logindLogin1Manager *object)
+login1_manager_get_preparing_for_shutdown (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_preparing_for_shutdown (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_preparing_for_shutdown (object);
 }
 
 /**
- * logind_login1_manager_set_preparing_for_shutdown: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_preparing_for_shutdown: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForShutdown">"PreparingForShutdown"</link> D-Bus property to @value.
@@ -4655,14 +4655,14 @@ logind_login1_manager_get_preparing_for_shutdown (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_preparing_for_shutdown (logindLogin1Manager *object, gboolean value)
+login1_manager_set_preparing_for_shutdown (Login1Manager *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "preparing-for-shutdown", value, NULL);
 }
 
 /**
- * logind_login1_manager_get_preparing_for_sleep: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_get_preparing_for_sleep: (skip)
+ * @object: A #Login1Manager.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForSleep">"PreparingForSleep"</link> D-Bus property.
  *
@@ -4671,14 +4671,14 @@ logind_login1_manager_set_preparing_for_shutdown (logindLogin1Manager *object, g
  * Returns: The property value.
  */
 gboolean 
-logind_login1_manager_get_preparing_for_sleep (logindLogin1Manager *object)
+login1_manager_get_preparing_for_sleep (Login1Manager *object)
 {
-  return LOGIND_LOGIN1_MANAGER_GET_IFACE (object)->get_preparing_for_sleep (object);
+  return LOGIN1_MANAGER_GET_IFACE (object)->get_preparing_for_sleep (object);
 }
 
 /**
- * logind_login1_manager_set_preparing_for_sleep: (skip)
- * @object: A #logindLogin1Manager.
+ * login1_manager_set_preparing_for_sleep: (skip)
+ * @object: A #Login1Manager.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-login1-Manager.PreparingForSleep">"PreparingForSleep"</link> D-Bus property to @value.
@@ -4686,22 +4686,22 @@ logind_login1_manager_get_preparing_for_sleep (logindLogin1Manager *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-logind_login1_manager_set_preparing_for_sleep (logindLogin1Manager *object, gboolean value)
+login1_manager_set_preparing_for_sleep (Login1Manager *object, gboolean value)
 {
   g_object_set (G_OBJECT (object), "preparing-for-sleep", value, NULL);
 }
 
 /**
- * logind_login1_manager_emit_session_new:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_session_new:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.SessionNew">"SessionNew"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_session_new (
-    logindLogin1Manager *object,
+login1_manager_emit_session_new (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4709,16 +4709,16 @@ logind_login1_manager_emit_session_new (
 }
 
 /**
- * logind_login1_manager_emit_session_removed:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_session_removed:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.SessionRemoved">"SessionRemoved"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_session_removed (
-    logindLogin1Manager *object,
+login1_manager_emit_session_removed (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4726,16 +4726,16 @@ logind_login1_manager_emit_session_removed (
 }
 
 /**
- * logind_login1_manager_emit_user_new:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_user_new:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.UserNew">"UserNew"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_user_new (
-    logindLogin1Manager *object,
+login1_manager_emit_user_new (
+    Login1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4743,16 +4743,16 @@ logind_login1_manager_emit_user_new (
 }
 
 /**
- * logind_login1_manager_emit_user_removed:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_user_removed:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.UserRemoved">"UserRemoved"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_user_removed (
-    logindLogin1Manager *object,
+login1_manager_emit_user_removed (
+    Login1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4760,16 +4760,16 @@ logind_login1_manager_emit_user_removed (
 }
 
 /**
- * logind_login1_manager_emit_seat_new:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_seat_new:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.SeatNew">"SeatNew"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_seat_new (
-    logindLogin1Manager *object,
+login1_manager_emit_seat_new (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4777,16 +4777,16 @@ logind_login1_manager_emit_seat_new (
 }
 
 /**
- * logind_login1_manager_emit_seat_removed:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_seat_removed:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  * @arg_unnamed_arg1: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.SeatRemoved">"SeatRemoved"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_seat_removed (
-    logindLogin1Manager *object,
+login1_manager_emit_seat_removed (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
@@ -4794,38 +4794,38 @@ logind_login1_manager_emit_seat_removed (
 }
 
 /**
- * logind_login1_manager_emit_prepare_for_shutdown:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_prepare_for_shutdown:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.PrepareForShutdown">"PrepareForShutdown"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_prepare_for_shutdown (
-    logindLogin1Manager *object,
+login1_manager_emit_prepare_for_shutdown (
+    Login1Manager *object,
     gboolean arg_unnamed_arg0)
 {
   g_signal_emit_by_name (object, "prepare-for-shutdown", arg_unnamed_arg0);
 }
 
 /**
- * logind_login1_manager_emit_prepare_for_sleep:
- * @object: A #logindLogin1Manager.
+ * login1_manager_emit_prepare_for_sleep:
+ * @object: A #Login1Manager.
  * @arg_unnamed_arg0: Argument to pass with the signal.
  *
  * Emits the <link linkend="gdbus-signal-org-freedesktop-login1-Manager.PrepareForSleep">"PrepareForSleep"</link> D-Bus signal.
  */
 void
-logind_login1_manager_emit_prepare_for_sleep (
-    logindLogin1Manager *object,
+login1_manager_emit_prepare_for_sleep (
+    Login1Manager *object,
     gboolean arg_unnamed_arg0)
 {
   g_signal_emit_by_name (object, "prepare-for-sleep", arg_unnamed_arg0);
 }
 
 /**
- * logind_login1_manager_call_get_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -4833,13 +4833,13 @@ logind_login1_manager_emit_prepare_for_sleep (
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSession">GetSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_get_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_get_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_get_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_get_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_get_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -4857,19 +4857,19 @@ logind_login1_manager_call_get_session (
 }
 
 /**
- * logind_login1_manager_call_get_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_get_session().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_get_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_get_session().
+ * Finishes an operation started with login1_manager_call_get_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error)
@@ -4887,8 +4887,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -4896,13 +4896,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSession">GetSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_get_session() for the asynchronous version of this method.
+ * See login1_manager_call_get_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
@@ -4928,8 +4928,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_session_by_pid:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session_by_pid:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -4937,13 +4937,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSessionByPID">GetSessionByPID()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_get_session_by_pid_finish() to get the result of the operation.
+ * You can then call login1_manager_call_get_session_by_pid_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_get_session_by_pid_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_get_session_by_pid_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_get_session_by_pid (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session_by_pid (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -4961,19 +4961,19 @@ logind_login1_manager_call_get_session_by_pid (
 }
 
 /**
- * logind_login1_manager_call_get_session_by_pid_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session_by_pid_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_get_session_by_pid().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_get_session_by_pid().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_get_session_by_pid().
+ * Finishes an operation started with login1_manager_call_get_session_by_pid().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_session_by_pid_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session_by_pid_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error)
@@ -4991,8 +4991,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_session_by_pid_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_session_by_pid_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -5000,13 +5000,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSessionByPID">GetSessionByPID()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_get_session_by_pid() for the asynchronous version of this method.
+ * See login1_manager_call_get_session_by_pid() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_session_by_pid_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_session_by_pid_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
@@ -5032,8 +5032,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_user:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -5041,13 +5041,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUser">GetUser()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_get_user_finish() to get the result of the operation.
+ * You can then call login1_manager_call_get_user_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_get_user_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_get_user_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_get_user (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -5065,19 +5065,19 @@ logind_login1_manager_call_get_user (
 }
 
 /**
- * logind_login1_manager_call_get_user_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_get_user().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_get_user().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_get_user().
+ * Finishes an operation started with login1_manager_call_get_user().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_user_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error)
@@ -5095,8 +5095,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_user_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -5104,13 +5104,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUser">GetUser()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_get_user() for the asynchronous version of this method.
+ * See login1_manager_call_get_user() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_user_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
@@ -5136,8 +5136,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_user_by_pid:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user_by_pid:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -5145,13 +5145,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUserByPID">GetUserByPID()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_get_user_by_pid_finish() to get the result of the operation.
+ * You can then call login1_manager_call_get_user_by_pid_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_get_user_by_pid_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_get_user_by_pid_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_get_user_by_pid (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user_by_pid (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -5169,19 +5169,19 @@ logind_login1_manager_call_get_user_by_pid (
 }
 
 /**
- * logind_login1_manager_call_get_user_by_pid_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user_by_pid_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_get_user_by_pid().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_get_user_by_pid().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_get_user_by_pid().
+ * Finishes an operation started with login1_manager_call_get_user_by_pid().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_user_by_pid_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user_by_pid_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error)
@@ -5199,8 +5199,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_user_by_pid_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_user_by_pid_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -5208,13 +5208,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetUserByPID">GetUserByPID()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_get_user_by_pid() for the asynchronous version of this method.
+ * See login1_manager_call_get_user_by_pid() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_user_by_pid_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_user_by_pid_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
@@ -5240,8 +5240,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_seat:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_seat:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -5249,13 +5249,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSeat">GetSeat()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_get_seat_finish() to get the result of the operation.
+ * You can then call login1_manager_call_get_seat_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_get_seat_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_get_seat_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_get_seat (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_seat (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -5273,19 +5273,19 @@ logind_login1_manager_call_get_seat (
 }
 
 /**
- * logind_login1_manager_call_get_seat_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_seat_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_get_seat().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_get_seat().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_get_seat().
+ * Finishes an operation started with login1_manager_call_get_seat().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_seat_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_seat_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg1,
     GAsyncResult *res,
     GError **error)
@@ -5303,8 +5303,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_get_seat_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_get_seat_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @out_unnamed_arg1: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -5312,13 +5312,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.GetSeat">GetSeat()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_get_seat() for the asynchronous version of this method.
+ * See login1_manager_call_get_seat() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_get_seat_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_get_seat_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     gchar **out_unnamed_arg1,
     GCancellable *cancellable,
@@ -5344,21 +5344,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_sessions:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_sessions:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSessions">ListSessions()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_list_sessions_finish() to get the result of the operation.
+ * You can then call login1_manager_call_list_sessions_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_list_sessions_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_list_sessions_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_list_sessions (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_sessions (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -5374,19 +5374,19 @@ logind_login1_manager_call_list_sessions (
 }
 
 /**
- * logind_login1_manager_call_list_sessions_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_sessions_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_list_sessions().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_list_sessions().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_list_sessions().
+ * Finishes an operation started with login1_manager_call_list_sessions().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_sessions_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_sessions_finish (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -5404,21 +5404,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_sessions_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_sessions_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSessions">ListSessions()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_list_sessions() for the asynchronous version of this method.
+ * See login1_manager_call_list_sessions() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_sessions_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_sessions_sync (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -5442,21 +5442,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_users:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_users:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListUsers">ListUsers()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_list_users_finish() to get the result of the operation.
+ * You can then call login1_manager_call_list_users_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_list_users_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_list_users_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_list_users (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_users (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -5472,19 +5472,19 @@ logind_login1_manager_call_list_users (
 }
 
 /**
- * logind_login1_manager_call_list_users_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_users_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_list_users().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_list_users().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_list_users().
+ * Finishes an operation started with login1_manager_call_list_users().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_users_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_users_finish (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -5502,21 +5502,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_users_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_users_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListUsers">ListUsers()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_list_users() for the asynchronous version of this method.
+ * See login1_manager_call_list_users() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_users_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_users_sync (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -5540,21 +5540,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_seats:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_seats:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSeats">ListSeats()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_list_seats_finish() to get the result of the operation.
+ * You can then call login1_manager_call_list_seats_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_list_seats_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_list_seats_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_list_seats (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_seats (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -5570,19 +5570,19 @@ logind_login1_manager_call_list_seats (
 }
 
 /**
- * logind_login1_manager_call_list_seats_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_seats_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_list_seats().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_list_seats().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_list_seats().
+ * Finishes an operation started with login1_manager_call_list_seats().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_seats_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_seats_finish (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -5600,21 +5600,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_seats_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_seats_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListSeats">ListSeats()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_list_seats() for the asynchronous version of this method.
+ * See login1_manager_call_list_seats() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_seats_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_seats_sync (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -5638,21 +5638,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_inhibitors:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_inhibitors:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListInhibitors">ListInhibitors()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_list_inhibitors_finish() to get the result of the operation.
+ * You can then call login1_manager_call_list_inhibitors_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_list_inhibitors_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_list_inhibitors_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_list_inhibitors (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_inhibitors (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -5668,19 +5668,19 @@ logind_login1_manager_call_list_inhibitors (
 }
 
 /**
- * logind_login1_manager_call_list_inhibitors_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_inhibitors_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_list_inhibitors().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_list_inhibitors().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_list_inhibitors().
+ * Finishes an operation started with login1_manager_call_list_inhibitors().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_inhibitors_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_inhibitors_finish (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -5698,21 +5698,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_list_inhibitors_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_list_inhibitors_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ListInhibitors">ListInhibitors()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_list_inhibitors() for the asynchronous version of this method.
+ * See login1_manager_call_list_inhibitors() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_list_inhibitors_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_list_inhibitors_sync (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -5736,8 +5736,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_create_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_create_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -5758,13 +5758,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CreateSession">CreateSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_create_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_create_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_create_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_create_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_create_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_create_session (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     guint arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -5808,8 +5808,8 @@ logind_login1_manager_call_create_session (
 }
 
 /**
- * logind_login1_manager_call_create_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_create_session_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg14: (out): Return location for return parameter or %NULL to ignore.
  * @out_unnamed_arg15: (out): Return location for return parameter or %NULL to ignore.
  * @out_unnamed_arg16: (out): Return location for return parameter or %NULL to ignore.
@@ -5818,16 +5818,16 @@ logind_login1_manager_call_create_session (
  * @out_unnamed_arg19: (out): Return location for return parameter or %NULL to ignore.
  * @out_unnamed_arg20: (out): Return location for return parameter or %NULL to ignore.
  * @out_unnamed_arg21: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_create_session().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_create_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_create_session().
+ * Finishes an operation started with login1_manager_call_create_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_create_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_create_session_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg14,
     gchar **out_unnamed_arg15,
     gchar **out_unnamed_arg16,
@@ -5859,8 +5859,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_create_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_create_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -5888,13 +5888,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CreateSession">CreateSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_create_session() for the asynchronous version of this method.
+ * See login1_manager_call_create_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_create_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_create_session_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     guint arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -5960,8 +5960,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_release_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_release_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -5969,13 +5969,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ReleaseSession">ReleaseSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_release_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_release_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_release_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_release_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_release_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_release_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -5993,18 +5993,18 @@ logind_login1_manager_call_release_session (
 }
 
 /**
- * logind_login1_manager_call_release_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_release_session().
+ * login1_manager_call_release_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_release_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_release_session().
+ * Finishes an operation started with login1_manager_call_release_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_release_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_release_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6020,21 +6020,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_release_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_release_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ReleaseSession">ReleaseSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_release_session() for the asynchronous version of this method.
+ * See login1_manager_call_release_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_release_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_release_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -6058,8 +6058,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_activate_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_activate_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -6067,13 +6067,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSession">ActivateSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_activate_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_activate_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_activate_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_activate_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_activate_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -6091,18 +6091,18 @@ logind_login1_manager_call_activate_session (
 }
 
 /**
- * logind_login1_manager_call_activate_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_activate_session().
+ * login1_manager_call_activate_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_activate_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_activate_session().
+ * Finishes an operation started with login1_manager_call_activate_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_activate_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6118,21 +6118,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_activate_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_activate_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSession">ActivateSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_activate_session() for the asynchronous version of this method.
+ * See login1_manager_call_activate_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_activate_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -6156,8 +6156,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_activate_session_on_seat:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_activate_session_on_seat:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -6166,13 +6166,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSessionOnSeat">ActivateSessionOnSeat()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_activate_session_on_seat_finish() to get the result of the operation.
+ * You can then call login1_manager_call_activate_session_on_seat_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_activate_session_on_seat_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_activate_session_on_seat_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_activate_session_on_seat (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session_on_seat (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -6192,18 +6192,18 @@ logind_login1_manager_call_activate_session_on_seat (
 }
 
 /**
- * logind_login1_manager_call_activate_session_on_seat_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_activate_session_on_seat().
+ * login1_manager_call_activate_session_on_seat_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_activate_session_on_seat().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_activate_session_on_seat().
+ * Finishes an operation started with login1_manager_call_activate_session_on_seat().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_activate_session_on_seat_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session_on_seat_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6219,8 +6219,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_activate_session_on_seat_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_activate_session_on_seat_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -6228,13 +6228,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSessionOnSeat">ActivateSessionOnSeat()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_activate_session_on_seat() for the asynchronous version of this method.
+ * See login1_manager_call_activate_session_on_seat() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_activate_session_on_seat_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_activate_session_on_seat_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -6260,8 +6260,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_lock_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_lock_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -6269,13 +6269,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSession">LockSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_lock_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_lock_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_lock_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_lock_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_lock_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -6293,18 +6293,18 @@ logind_login1_manager_call_lock_session (
 }
 
 /**
- * logind_login1_manager_call_lock_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_lock_session().
+ * login1_manager_call_lock_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_lock_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_lock_session().
+ * Finishes an operation started with login1_manager_call_lock_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_lock_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6320,21 +6320,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_lock_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_lock_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSession">LockSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_lock_session() for the asynchronous version of this method.
+ * See login1_manager_call_lock_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_lock_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -6358,8 +6358,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_unlock_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_unlock_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -6367,13 +6367,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSession">UnlockSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_unlock_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_unlock_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_unlock_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_unlock_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_unlock_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -6391,18 +6391,18 @@ logind_login1_manager_call_unlock_session (
 }
 
 /**
- * logind_login1_manager_call_unlock_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_unlock_session().
+ * login1_manager_call_unlock_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_unlock_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_unlock_session().
+ * Finishes an operation started with login1_manager_call_unlock_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_unlock_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6418,21 +6418,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_unlock_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_unlock_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSession">UnlockSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_unlock_session() for the asynchronous version of this method.
+ * See login1_manager_call_unlock_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_unlock_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -6456,21 +6456,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_lock_sessions:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_lock_sessions:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSessions">LockSessions()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_lock_sessions_finish() to get the result of the operation.
+ * You can then call login1_manager_call_lock_sessions_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_lock_sessions_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_lock_sessions_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_lock_sessions (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_sessions (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -6486,18 +6486,18 @@ logind_login1_manager_call_lock_sessions (
 }
 
 /**
- * logind_login1_manager_call_lock_sessions_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_lock_sessions().
+ * login1_manager_call_lock_sessions_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_lock_sessions().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_lock_sessions().
+ * Finishes an operation started with login1_manager_call_lock_sessions().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_lock_sessions_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_sessions_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6513,20 +6513,20 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_lock_sessions_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_lock_sessions_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSessions">LockSessions()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_lock_sessions() for the asynchronous version of this method.
+ * See login1_manager_call_lock_sessions() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_lock_sessions_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_lock_sessions_sync (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GError **error)
 {
@@ -6548,21 +6548,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_unlock_sessions:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_unlock_sessions:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSessions">UnlockSessions()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_unlock_sessions_finish() to get the result of the operation.
+ * You can then call login1_manager_call_unlock_sessions_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_unlock_sessions_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_unlock_sessions_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_unlock_sessions (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_sessions (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -6578,18 +6578,18 @@ logind_login1_manager_call_unlock_sessions (
 }
 
 /**
- * logind_login1_manager_call_unlock_sessions_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_unlock_sessions().
+ * login1_manager_call_unlock_sessions_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_unlock_sessions().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_unlock_sessions().
+ * Finishes an operation started with login1_manager_call_unlock_sessions().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_unlock_sessions_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_sessions_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6605,20 +6605,20 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_unlock_sessions_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_unlock_sessions_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSessions">UnlockSessions()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_unlock_sessions() for the asynchronous version of this method.
+ * See login1_manager_call_unlock_sessions() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_unlock_sessions_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_unlock_sessions_sync (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GError **error)
 {
@@ -6640,8 +6640,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_kill_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_kill_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -6651,13 +6651,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillSession">KillSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_kill_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_kill_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_kill_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_kill_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_kill_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gint arg_unnamed_arg2,
@@ -6679,18 +6679,18 @@ logind_login1_manager_call_kill_session (
 }
 
 /**
- * logind_login1_manager_call_kill_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_kill_session().
+ * login1_manager_call_kill_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_kill_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_kill_session().
+ * Finishes an operation started with login1_manager_call_kill_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_kill_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6706,8 +6706,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_kill_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_kill_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -6716,13 +6716,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillSession">KillSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_kill_session() for the asynchronous version of this method.
+ * See login1_manager_call_kill_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_kill_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gint arg_unnamed_arg2,
@@ -6750,8 +6750,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_kill_user:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_kill_user:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -6760,13 +6760,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillUser">KillUser()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_kill_user_finish() to get the result of the operation.
+ * You can then call login1_manager_call_kill_user_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_kill_user_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_kill_user_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_kill_user (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_user (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gint arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -6786,18 +6786,18 @@ logind_login1_manager_call_kill_user (
 }
 
 /**
- * logind_login1_manager_call_kill_user_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_kill_user().
+ * login1_manager_call_kill_user_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_kill_user().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_kill_user().
+ * Finishes an operation started with login1_manager_call_kill_user().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_kill_user_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_user_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6813,8 +6813,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_kill_user_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_kill_user_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -6822,13 +6822,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillUser">KillUser()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_kill_user() for the asynchronous version of this method.
+ * See login1_manager_call_kill_user() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_kill_user_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_kill_user_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gint arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -6854,8 +6854,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_session:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_session:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -6863,13 +6863,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSession">TerminateSession()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_terminate_session_finish() to get the result of the operation.
+ * You can then call login1_manager_call_terminate_session_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_terminate_session_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_terminate_session_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_terminate_session (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_session (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -6887,18 +6887,18 @@ logind_login1_manager_call_terminate_session (
 }
 
 /**
- * logind_login1_manager_call_terminate_session_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_terminate_session().
+ * login1_manager_call_terminate_session_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_terminate_session().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_terminate_session().
+ * Finishes an operation started with login1_manager_call_terminate_session().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_session_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_session_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -6914,21 +6914,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_session_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_session_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSession">TerminateSession()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_terminate_session() for the asynchronous version of this method.
+ * See login1_manager_call_terminate_session() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_session_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_session_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -6952,8 +6952,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_user:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_user:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -6961,13 +6961,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateUser">TerminateUser()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_terminate_user_finish() to get the result of the operation.
+ * You can then call login1_manager_call_terminate_user_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_terminate_user_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_terminate_user_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_terminate_user (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_user (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -6985,18 +6985,18 @@ logind_login1_manager_call_terminate_user (
 }
 
 /**
- * logind_login1_manager_call_terminate_user_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_terminate_user().
+ * login1_manager_call_terminate_user_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_terminate_user().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_terminate_user().
+ * Finishes an operation started with login1_manager_call_terminate_user().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_user_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_user_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7012,21 +7012,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_user_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_user_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateUser">TerminateUser()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_terminate_user() for the asynchronous version of this method.
+ * See login1_manager_call_terminate_user() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_user_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_user_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7050,8 +7050,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_seat:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_seat:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7059,13 +7059,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSeat">TerminateSeat()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_terminate_seat_finish() to get the result of the operation.
+ * You can then call login1_manager_call_terminate_seat_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_terminate_seat_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_terminate_seat_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_terminate_seat (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_seat (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7083,18 +7083,18 @@ logind_login1_manager_call_terminate_seat (
 }
 
 /**
- * logind_login1_manager_call_terminate_seat_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_terminate_seat().
+ * login1_manager_call_terminate_seat_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_terminate_seat().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_terminate_seat().
+ * Finishes an operation started with login1_manager_call_terminate_seat().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_seat_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_seat_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7110,21 +7110,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_terminate_seat_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_terminate_seat_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSeat">TerminateSeat()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_terminate_seat() for the asynchronous version of this method.
+ * See login1_manager_call_terminate_seat() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_terminate_seat_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_terminate_seat_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7148,8 +7148,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_set_user_linger:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_set_user_linger:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -7159,13 +7159,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.SetUserLinger">SetUserLinger()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_set_user_linger_finish() to get the result of the operation.
+ * You can then call login1_manager_call_set_user_linger_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_set_user_linger_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_set_user_linger_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_set_user_linger (
-    logindLogin1Manager *proxy,
+login1_manager_call_set_user_linger (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -7187,18 +7187,18 @@ logind_login1_manager_call_set_user_linger (
 }
 
 /**
- * logind_login1_manager_call_set_user_linger_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_set_user_linger().
+ * login1_manager_call_set_user_linger_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_set_user_linger().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_set_user_linger().
+ * Finishes an operation started with login1_manager_call_set_user_linger().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_set_user_linger_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_set_user_linger_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7214,8 +7214,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_set_user_linger_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_set_user_linger_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -7224,13 +7224,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.SetUserLinger">SetUserLinger()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_set_user_linger() for the asynchronous version of this method.
+ * See login1_manager_call_set_user_linger() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_set_user_linger_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_set_user_linger_sync (
+    Login1Manager *proxy,
     guint arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -7258,8 +7258,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_attach_device:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_attach_device:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -7269,13 +7269,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.AttachDevice">AttachDevice()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_attach_device_finish() to get the result of the operation.
+ * You can then call login1_manager_call_attach_device_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_attach_device_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_attach_device_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_attach_device (
-    logindLogin1Manager *proxy,
+login1_manager_call_attach_device (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -7297,18 +7297,18 @@ logind_login1_manager_call_attach_device (
 }
 
 /**
- * logind_login1_manager_call_attach_device_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_attach_device().
+ * login1_manager_call_attach_device_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_attach_device().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_attach_device().
+ * Finishes an operation started with login1_manager_call_attach_device().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_attach_device_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_attach_device_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7324,8 +7324,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_attach_device_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_attach_device_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -7334,13 +7334,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.AttachDevice">AttachDevice()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_attach_device() for the asynchronous version of this method.
+ * See login1_manager_call_attach_device() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_attach_device_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_attach_device_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -7368,8 +7368,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_flush_devices:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_flush_devices:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7377,13 +7377,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.FlushDevices">FlushDevices()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_flush_devices_finish() to get the result of the operation.
+ * You can then call login1_manager_call_flush_devices_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_flush_devices_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_flush_devices_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_flush_devices (
-    logindLogin1Manager *proxy,
+login1_manager_call_flush_devices (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7401,18 +7401,18 @@ logind_login1_manager_call_flush_devices (
 }
 
 /**
- * logind_login1_manager_call_flush_devices_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_flush_devices().
+ * login1_manager_call_flush_devices_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_flush_devices().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_flush_devices().
+ * Finishes an operation started with login1_manager_call_flush_devices().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_flush_devices_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_flush_devices_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7428,21 +7428,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_flush_devices_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_flush_devices_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.FlushDevices">FlushDevices()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_flush_devices() for the asynchronous version of this method.
+ * See login1_manager_call_flush_devices() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_flush_devices_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_flush_devices_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7466,8 +7466,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_power_off:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_power_off:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7475,13 +7475,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.PowerOff">PowerOff()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_power_off_finish() to get the result of the operation.
+ * You can then call login1_manager_call_power_off_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_power_off_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_power_off_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_power_off (
-    logindLogin1Manager *proxy,
+login1_manager_call_power_off (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7499,18 +7499,18 @@ logind_login1_manager_call_power_off (
 }
 
 /**
- * logind_login1_manager_call_power_off_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_power_off().
+ * login1_manager_call_power_off_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_power_off().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_power_off().
+ * Finishes an operation started with login1_manager_call_power_off().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_power_off_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_power_off_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7526,21 +7526,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_power_off_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_power_off_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.PowerOff">PowerOff()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_power_off() for the asynchronous version of this method.
+ * See login1_manager_call_power_off() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_power_off_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_power_off_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7564,8 +7564,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_reboot:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_reboot:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7573,13 +7573,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Reboot">Reboot()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_reboot_finish() to get the result of the operation.
+ * You can then call login1_manager_call_reboot_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_reboot_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_reboot_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_reboot (
-    logindLogin1Manager *proxy,
+login1_manager_call_reboot (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7597,18 +7597,18 @@ logind_login1_manager_call_reboot (
 }
 
 /**
- * logind_login1_manager_call_reboot_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_reboot().
+ * login1_manager_call_reboot_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_reboot().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_reboot().
+ * Finishes an operation started with login1_manager_call_reboot().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_reboot_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_reboot_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7624,21 +7624,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_reboot_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_reboot_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Reboot">Reboot()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_reboot() for the asynchronous version of this method.
+ * See login1_manager_call_reboot() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_reboot_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_reboot_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7662,8 +7662,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_suspend:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_suspend:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7671,13 +7671,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Suspend">Suspend()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_suspend_finish() to get the result of the operation.
+ * You can then call login1_manager_call_suspend_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_suspend_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_suspend_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_suspend (
-    logindLogin1Manager *proxy,
+login1_manager_call_suspend (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7695,18 +7695,18 @@ logind_login1_manager_call_suspend (
 }
 
 /**
- * logind_login1_manager_call_suspend_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_suspend().
+ * login1_manager_call_suspend_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_suspend().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_suspend().
+ * Finishes an operation started with login1_manager_call_suspend().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_suspend_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_suspend_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7722,21 +7722,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_suspend_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_suspend_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Suspend">Suspend()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_suspend() for the asynchronous version of this method.
+ * See login1_manager_call_suspend() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_suspend_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_suspend_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7760,8 +7760,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_hibernate:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_hibernate:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7769,13 +7769,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Hibernate">Hibernate()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_hibernate_finish() to get the result of the operation.
+ * You can then call login1_manager_call_hibernate_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_hibernate_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_hibernate_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_hibernate (
-    logindLogin1Manager *proxy,
+login1_manager_call_hibernate (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7793,18 +7793,18 @@ logind_login1_manager_call_hibernate (
 }
 
 /**
- * logind_login1_manager_call_hibernate_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_hibernate().
+ * login1_manager_call_hibernate_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_hibernate().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_hibernate().
+ * Finishes an operation started with login1_manager_call_hibernate().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_hibernate_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_hibernate_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7820,21 +7820,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_hibernate_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_hibernate_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Hibernate">Hibernate()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_hibernate() for the asynchronous version of this method.
+ * See login1_manager_call_hibernate() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_hibernate_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_hibernate_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7858,8 +7858,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_hybrid_sleep:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_hybrid_sleep:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
@@ -7867,13 +7867,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.HybridSleep">HybridSleep()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_hybrid_sleep_finish() to get the result of the operation.
+ * You can then call login1_manager_call_hybrid_sleep_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_hybrid_sleep_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_hybrid_sleep_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_hybrid_sleep (
-    logindLogin1Manager *proxy,
+login1_manager_call_hybrid_sleep (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
@@ -7891,18 +7891,18 @@ logind_login1_manager_call_hybrid_sleep (
 }
 
 /**
- * logind_login1_manager_call_hybrid_sleep_finish:
- * @proxy: A #logindLogin1ManagerProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_hybrid_sleep().
+ * login1_manager_call_hybrid_sleep_finish:
+ * @proxy: A #Login1ManagerProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_hybrid_sleep().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_hybrid_sleep().
+ * Finishes an operation started with login1_manager_call_hybrid_sleep().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_hybrid_sleep_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_hybrid_sleep_finish (
+    Login1Manager *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -7918,21 +7918,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_hybrid_sleep_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_hybrid_sleep_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.HybridSleep">HybridSleep()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_hybrid_sleep() for the asynchronous version of this method.
+ * See login1_manager_call_hybrid_sleep() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_hybrid_sleep_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_hybrid_sleep_sync (
+    Login1Manager *proxy,
     gboolean arg_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -7956,21 +7956,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_power_off:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_power_off:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanPowerOff">CanPowerOff()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_can_power_off_finish() to get the result of the operation.
+ * You can then call login1_manager_call_can_power_off_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_can_power_off_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_can_power_off_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_can_power_off (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_power_off (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -7986,19 +7986,19 @@ logind_login1_manager_call_can_power_off (
 }
 
 /**
- * logind_login1_manager_call_can_power_off_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_power_off_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_can_power_off().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_can_power_off().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_can_power_off().
+ * Finishes an operation started with login1_manager_call_can_power_off().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_power_off_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_power_off_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -8016,21 +8016,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_power_off_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_power_off_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanPowerOff">CanPowerOff()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_can_power_off() for the asynchronous version of this method.
+ * See login1_manager_call_can_power_off() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_power_off_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_power_off_sync (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -8054,21 +8054,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_reboot:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_reboot:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanReboot">CanReboot()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_can_reboot_finish() to get the result of the operation.
+ * You can then call login1_manager_call_can_reboot_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_can_reboot_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_can_reboot_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_can_reboot (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_reboot (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -8084,19 +8084,19 @@ logind_login1_manager_call_can_reboot (
 }
 
 /**
- * logind_login1_manager_call_can_reboot_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_reboot_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_can_reboot().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_can_reboot().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_can_reboot().
+ * Finishes an operation started with login1_manager_call_can_reboot().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_reboot_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_reboot_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -8114,21 +8114,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_reboot_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_reboot_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanReboot">CanReboot()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_can_reboot() for the asynchronous version of this method.
+ * See login1_manager_call_can_reboot() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_reboot_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_reboot_sync (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -8152,21 +8152,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_suspend:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_suspend:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanSuspend">CanSuspend()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_can_suspend_finish() to get the result of the operation.
+ * You can then call login1_manager_call_can_suspend_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_can_suspend_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_can_suspend_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_can_suspend (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_suspend (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -8182,19 +8182,19 @@ logind_login1_manager_call_can_suspend (
 }
 
 /**
- * logind_login1_manager_call_can_suspend_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_suspend_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_can_suspend().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_can_suspend().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_can_suspend().
+ * Finishes an operation started with login1_manager_call_can_suspend().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_suspend_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_suspend_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -8212,21 +8212,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_suspend_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_suspend_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanSuspend">CanSuspend()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_can_suspend() for the asynchronous version of this method.
+ * See login1_manager_call_can_suspend() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_suspend_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_suspend_sync (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -8250,21 +8250,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_hibernate:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hibernate:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHibernate">CanHibernate()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_can_hibernate_finish() to get the result of the operation.
+ * You can then call login1_manager_call_can_hibernate_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_can_hibernate_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_can_hibernate_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_can_hibernate (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hibernate (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -8280,19 +8280,19 @@ logind_login1_manager_call_can_hibernate (
 }
 
 /**
- * logind_login1_manager_call_can_hibernate_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hibernate_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_can_hibernate().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_can_hibernate().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_can_hibernate().
+ * Finishes an operation started with login1_manager_call_can_hibernate().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_hibernate_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hibernate_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -8310,21 +8310,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_hibernate_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hibernate_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHibernate">CanHibernate()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_can_hibernate() for the asynchronous version of this method.
+ * See login1_manager_call_can_hibernate() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_hibernate_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hibernate_sync (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -8348,21 +8348,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_hybrid_sleep:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hybrid_sleep:
+ * @proxy: A #Login1ManagerProxy.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHybridSleep">CanHybridSleep()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_can_hybrid_sleep_finish() to get the result of the operation.
+ * You can then call login1_manager_call_can_hybrid_sleep_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_can_hybrid_sleep_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_can_hybrid_sleep_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_can_hybrid_sleep (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hybrid_sleep (
+    Login1Manager *proxy,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
@@ -8378,19 +8378,19 @@ logind_login1_manager_call_can_hybrid_sleep (
 }
 
 /**
- * logind_login1_manager_call_can_hybrid_sleep_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hybrid_sleep_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_can_hybrid_sleep().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_can_hybrid_sleep().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_can_hybrid_sleep().
+ * Finishes an operation started with login1_manager_call_can_hybrid_sleep().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_hybrid_sleep_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hybrid_sleep_finish (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GAsyncResult *res,
     GError **error)
@@ -8408,21 +8408,21 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_can_hybrid_sleep_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_can_hybrid_sleep_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg0: (out): Return location for return parameter or %NULL to ignore.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.CanHybridSleep">CanHybridSleep()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_can_hybrid_sleep() for the asynchronous version of this method.
+ * See login1_manager_call_can_hybrid_sleep() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_can_hybrid_sleep_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_can_hybrid_sleep_sync (
+    Login1Manager *proxy,
     gchar **out_unnamed_arg0,
     GCancellable *cancellable,
     GError **error)
@@ -8446,8 +8446,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_inhibit:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_inhibit:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -8458,13 +8458,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Inhibit">Inhibit()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_call_inhibit_finish() to get the result of the operation.
+ * You can then call login1_manager_call_inhibit_finish() to get the result of the operation.
  *
- * See logind_login1_manager_call_inhibit_sync() for the synchronous, blocking version of this method.
+ * See login1_manager_call_inhibit_sync() for the synchronous, blocking version of this method.
  */
 void
-logind_login1_manager_call_inhibit (
-    logindLogin1Manager *proxy,
+login1_manager_call_inhibit (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -8488,19 +8488,19 @@ logind_login1_manager_call_inhibit (
 }
 
 /**
- * logind_login1_manager_call_inhibit_finish:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_inhibit_finish:
+ * @proxy: A #Login1ManagerProxy.
  * @out_unnamed_arg4: (out): Return location for return parameter or %NULL to ignore.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_call_inhibit().
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_call_inhibit().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with logind_login1_manager_call_inhibit().
+ * Finishes an operation started with login1_manager_call_inhibit().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_inhibit_finish (
-    logindLogin1Manager *proxy,
+login1_manager_call_inhibit_finish (
+    Login1Manager *proxy,
     GVariant **out_unnamed_arg4,
     GAsyncResult *res,
     GError **error)
@@ -8518,8 +8518,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_call_inhibit_sync:
- * @proxy: A #logindLogin1ManagerProxy.
+ * login1_manager_call_inhibit_sync:
+ * @proxy: A #Login1ManagerProxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @arg_unnamed_arg2: Argument to pass with the method invocation.
@@ -8530,13 +8530,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Inhibit">Inhibit()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_call_inhibit() for the asynchronous version of this method.
+ * See login1_manager_call_inhibit() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-logind_login1_manager_call_inhibit_sync (
-    logindLogin1Manager *proxy,
+login1_manager_call_inhibit_sync (
+    Login1Manager *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -8568,8 +8568,8 @@ _out:
 }
 
 /**
- * logind_login1_manager_complete_get_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_get_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg1: Parameter to return.
  *
@@ -8578,8 +8578,8 @@ _out:
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_get_session (
-    logindLogin1Manager *object,
+login1_manager_complete_get_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1)
 {
@@ -8589,8 +8589,8 @@ logind_login1_manager_complete_get_session (
 }
 
 /**
- * logind_login1_manager_complete_get_session_by_pid:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_get_session_by_pid:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg1: Parameter to return.
  *
@@ -8599,8 +8599,8 @@ logind_login1_manager_complete_get_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_get_session_by_pid (
-    logindLogin1Manager *object,
+login1_manager_complete_get_session_by_pid (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1)
 {
@@ -8610,8 +8610,8 @@ logind_login1_manager_complete_get_session_by_pid (
 }
 
 /**
- * logind_login1_manager_complete_get_user:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_get_user:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg1: Parameter to return.
  *
@@ -8620,8 +8620,8 @@ logind_login1_manager_complete_get_session_by_pid (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_get_user (
-    logindLogin1Manager *object,
+login1_manager_complete_get_user (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1)
 {
@@ -8631,8 +8631,8 @@ logind_login1_manager_complete_get_user (
 }
 
 /**
- * logind_login1_manager_complete_get_user_by_pid:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_get_user_by_pid:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg1: Parameter to return.
  *
@@ -8641,8 +8641,8 @@ logind_login1_manager_complete_get_user (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_get_user_by_pid (
-    logindLogin1Manager *object,
+login1_manager_complete_get_user_by_pid (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1)
 {
@@ -8652,8 +8652,8 @@ logind_login1_manager_complete_get_user_by_pid (
 }
 
 /**
- * logind_login1_manager_complete_get_seat:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_get_seat:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg1: Parameter to return.
  *
@@ -8662,8 +8662,8 @@ logind_login1_manager_complete_get_user_by_pid (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_get_seat (
-    logindLogin1Manager *object,
+login1_manager_complete_get_seat (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg1)
 {
@@ -8673,8 +8673,8 @@ logind_login1_manager_complete_get_seat (
 }
 
 /**
- * logind_login1_manager_complete_list_sessions:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_list_sessions:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -8683,8 +8683,8 @@ logind_login1_manager_complete_get_seat (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_list_sessions (
-    logindLogin1Manager *object,
+login1_manager_complete_list_sessions (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0)
 {
@@ -8694,8 +8694,8 @@ logind_login1_manager_complete_list_sessions (
 }
 
 /**
- * logind_login1_manager_complete_list_users:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_list_users:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -8704,8 +8704,8 @@ logind_login1_manager_complete_list_sessions (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_list_users (
-    logindLogin1Manager *object,
+login1_manager_complete_list_users (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0)
 {
@@ -8715,8 +8715,8 @@ logind_login1_manager_complete_list_users (
 }
 
 /**
- * logind_login1_manager_complete_list_seats:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_list_seats:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -8725,8 +8725,8 @@ logind_login1_manager_complete_list_users (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_list_seats (
-    logindLogin1Manager *object,
+login1_manager_complete_list_seats (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0)
 {
@@ -8736,8 +8736,8 @@ logind_login1_manager_complete_list_seats (
 }
 
 /**
- * logind_login1_manager_complete_list_inhibitors:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_list_inhibitors:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -8746,8 +8746,8 @@ logind_login1_manager_complete_list_seats (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_list_inhibitors (
-    logindLogin1Manager *object,
+login1_manager_complete_list_inhibitors (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg0)
 {
@@ -8757,8 +8757,8 @@ logind_login1_manager_complete_list_inhibitors (
 }
 
 /**
- * logind_login1_manager_complete_create_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_create_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg14: Parameter to return.
  * @unnamed_arg15: Parameter to return.
@@ -8774,8 +8774,8 @@ logind_login1_manager_complete_list_inhibitors (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_create_session (
-    logindLogin1Manager *object,
+login1_manager_complete_create_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg14,
     const gchar *unnamed_arg15,
@@ -8799,8 +8799,8 @@ logind_login1_manager_complete_create_session (
 }
 
 /**
- * logind_login1_manager_complete_release_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_release_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ReleaseSession">ReleaseSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8808,8 +8808,8 @@ logind_login1_manager_complete_create_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_release_session (
-    logindLogin1Manager *object,
+login1_manager_complete_release_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8817,8 +8817,8 @@ logind_login1_manager_complete_release_session (
 }
 
 /**
- * logind_login1_manager_complete_activate_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_activate_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSession">ActivateSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8826,8 +8826,8 @@ logind_login1_manager_complete_release_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_activate_session (
-    logindLogin1Manager *object,
+login1_manager_complete_activate_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8835,8 +8835,8 @@ logind_login1_manager_complete_activate_session (
 }
 
 /**
- * logind_login1_manager_complete_activate_session_on_seat:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_activate_session_on_seat:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.ActivateSessionOnSeat">ActivateSessionOnSeat()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8844,8 +8844,8 @@ logind_login1_manager_complete_activate_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_activate_session_on_seat (
-    logindLogin1Manager *object,
+login1_manager_complete_activate_session_on_seat (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8853,8 +8853,8 @@ logind_login1_manager_complete_activate_session_on_seat (
 }
 
 /**
- * logind_login1_manager_complete_lock_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_lock_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSession">LockSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8862,8 +8862,8 @@ logind_login1_manager_complete_activate_session_on_seat (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_lock_session (
-    logindLogin1Manager *object,
+login1_manager_complete_lock_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8871,8 +8871,8 @@ logind_login1_manager_complete_lock_session (
 }
 
 /**
- * logind_login1_manager_complete_unlock_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_unlock_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSession">UnlockSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8880,8 +8880,8 @@ logind_login1_manager_complete_lock_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_unlock_session (
-    logindLogin1Manager *object,
+login1_manager_complete_unlock_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8889,8 +8889,8 @@ logind_login1_manager_complete_unlock_session (
 }
 
 /**
- * logind_login1_manager_complete_lock_sessions:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_lock_sessions:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.LockSessions">LockSessions()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8898,8 +8898,8 @@ logind_login1_manager_complete_unlock_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_lock_sessions (
-    logindLogin1Manager *object,
+login1_manager_complete_lock_sessions (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8907,8 +8907,8 @@ logind_login1_manager_complete_lock_sessions (
 }
 
 /**
- * logind_login1_manager_complete_unlock_sessions:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_unlock_sessions:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.UnlockSessions">UnlockSessions()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8916,8 +8916,8 @@ logind_login1_manager_complete_lock_sessions (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_unlock_sessions (
-    logindLogin1Manager *object,
+login1_manager_complete_unlock_sessions (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8925,8 +8925,8 @@ logind_login1_manager_complete_unlock_sessions (
 }
 
 /**
- * logind_login1_manager_complete_kill_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_kill_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillSession">KillSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8934,8 +8934,8 @@ logind_login1_manager_complete_unlock_sessions (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_kill_session (
-    logindLogin1Manager *object,
+login1_manager_complete_kill_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8943,8 +8943,8 @@ logind_login1_manager_complete_kill_session (
 }
 
 /**
- * logind_login1_manager_complete_kill_user:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_kill_user:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.KillUser">KillUser()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8952,8 +8952,8 @@ logind_login1_manager_complete_kill_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_kill_user (
-    logindLogin1Manager *object,
+login1_manager_complete_kill_user (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8961,8 +8961,8 @@ logind_login1_manager_complete_kill_user (
 }
 
 /**
- * logind_login1_manager_complete_terminate_session:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_terminate_session:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSession">TerminateSession()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8970,8 +8970,8 @@ logind_login1_manager_complete_kill_user (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_terminate_session (
-    logindLogin1Manager *object,
+login1_manager_complete_terminate_session (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8979,8 +8979,8 @@ logind_login1_manager_complete_terminate_session (
 }
 
 /**
- * logind_login1_manager_complete_terminate_user:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_terminate_user:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateUser">TerminateUser()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -8988,8 +8988,8 @@ logind_login1_manager_complete_terminate_session (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_terminate_user (
-    logindLogin1Manager *object,
+login1_manager_complete_terminate_user (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -8997,8 +8997,8 @@ logind_login1_manager_complete_terminate_user (
 }
 
 /**
- * logind_login1_manager_complete_terminate_seat:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_terminate_seat:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.TerminateSeat">TerminateSeat()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9006,8 +9006,8 @@ logind_login1_manager_complete_terminate_user (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_terminate_seat (
-    logindLogin1Manager *object,
+login1_manager_complete_terminate_seat (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9015,8 +9015,8 @@ logind_login1_manager_complete_terminate_seat (
 }
 
 /**
- * logind_login1_manager_complete_set_user_linger:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_set_user_linger:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.SetUserLinger">SetUserLinger()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9024,8 +9024,8 @@ logind_login1_manager_complete_terminate_seat (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_set_user_linger (
-    logindLogin1Manager *object,
+login1_manager_complete_set_user_linger (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9033,8 +9033,8 @@ logind_login1_manager_complete_set_user_linger (
 }
 
 /**
- * logind_login1_manager_complete_attach_device:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_attach_device:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.AttachDevice">AttachDevice()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9042,8 +9042,8 @@ logind_login1_manager_complete_set_user_linger (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_attach_device (
-    logindLogin1Manager *object,
+login1_manager_complete_attach_device (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9051,8 +9051,8 @@ logind_login1_manager_complete_attach_device (
 }
 
 /**
- * logind_login1_manager_complete_flush_devices:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_flush_devices:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.FlushDevices">FlushDevices()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9060,8 +9060,8 @@ logind_login1_manager_complete_attach_device (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_flush_devices (
-    logindLogin1Manager *object,
+login1_manager_complete_flush_devices (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9069,8 +9069,8 @@ logind_login1_manager_complete_flush_devices (
 }
 
 /**
- * logind_login1_manager_complete_power_off:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_power_off:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.PowerOff">PowerOff()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9078,8 +9078,8 @@ logind_login1_manager_complete_flush_devices (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_power_off (
-    logindLogin1Manager *object,
+login1_manager_complete_power_off (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9087,8 +9087,8 @@ logind_login1_manager_complete_power_off (
 }
 
 /**
- * logind_login1_manager_complete_reboot:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_reboot:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Reboot">Reboot()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9096,8 +9096,8 @@ logind_login1_manager_complete_power_off (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_reboot (
-    logindLogin1Manager *object,
+login1_manager_complete_reboot (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9105,8 +9105,8 @@ logind_login1_manager_complete_reboot (
 }
 
 /**
- * logind_login1_manager_complete_suspend:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_suspend:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Suspend">Suspend()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9114,8 +9114,8 @@ logind_login1_manager_complete_reboot (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_suspend (
-    logindLogin1Manager *object,
+login1_manager_complete_suspend (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9123,8 +9123,8 @@ logind_login1_manager_complete_suspend (
 }
 
 /**
- * logind_login1_manager_complete_hibernate:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_hibernate:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.Hibernate">Hibernate()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9132,8 +9132,8 @@ logind_login1_manager_complete_suspend (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_hibernate (
-    logindLogin1Manager *object,
+login1_manager_complete_hibernate (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9141,8 +9141,8 @@ logind_login1_manager_complete_hibernate (
 }
 
 /**
- * logind_login1_manager_complete_hybrid_sleep:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_hybrid_sleep:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-login1-Manager.HybridSleep">HybridSleep()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -9150,8 +9150,8 @@ logind_login1_manager_complete_hibernate (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_hybrid_sleep (
-    logindLogin1Manager *object,
+login1_manager_complete_hybrid_sleep (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -9159,8 +9159,8 @@ logind_login1_manager_complete_hybrid_sleep (
 }
 
 /**
- * logind_login1_manager_complete_can_power_off:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_can_power_off:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -9169,8 +9169,8 @@ logind_login1_manager_complete_hybrid_sleep (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_can_power_off (
-    logindLogin1Manager *object,
+login1_manager_complete_can_power_off (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0)
 {
@@ -9180,8 +9180,8 @@ logind_login1_manager_complete_can_power_off (
 }
 
 /**
- * logind_login1_manager_complete_can_reboot:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_can_reboot:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -9190,8 +9190,8 @@ logind_login1_manager_complete_can_power_off (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_can_reboot (
-    logindLogin1Manager *object,
+login1_manager_complete_can_reboot (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0)
 {
@@ -9201,8 +9201,8 @@ logind_login1_manager_complete_can_reboot (
 }
 
 /**
- * logind_login1_manager_complete_can_suspend:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_can_suspend:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -9211,8 +9211,8 @@ logind_login1_manager_complete_can_reboot (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_can_suspend (
-    logindLogin1Manager *object,
+login1_manager_complete_can_suspend (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0)
 {
@@ -9222,8 +9222,8 @@ logind_login1_manager_complete_can_suspend (
 }
 
 /**
- * logind_login1_manager_complete_can_hibernate:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_can_hibernate:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -9232,8 +9232,8 @@ logind_login1_manager_complete_can_suspend (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_can_hibernate (
-    logindLogin1Manager *object,
+login1_manager_complete_can_hibernate (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0)
 {
@@ -9243,8 +9243,8 @@ logind_login1_manager_complete_can_hibernate (
 }
 
 /**
- * logind_login1_manager_complete_can_hybrid_sleep:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_can_hybrid_sleep:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg0: Parameter to return.
  *
@@ -9253,8 +9253,8 @@ logind_login1_manager_complete_can_hibernate (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_can_hybrid_sleep (
-    logindLogin1Manager *object,
+login1_manager_complete_can_hybrid_sleep (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     const gchar *unnamed_arg0)
 {
@@ -9264,8 +9264,8 @@ logind_login1_manager_complete_can_hybrid_sleep (
 }
 
 /**
- * logind_login1_manager_complete_inhibit:
- * @object: A #logindLogin1Manager.
+ * login1_manager_complete_inhibit:
+ * @object: A #Login1Manager.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  * @unnamed_arg4: Parameter to return.
  *
@@ -9274,8 +9274,8 @@ logind_login1_manager_complete_can_hybrid_sleep (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-logind_login1_manager_complete_inhibit (
-    logindLogin1Manager *object,
+login1_manager_complete_inhibit (
+    Login1Manager *object,
     GDBusMethodInvocation *invocation,
     GVariant *unnamed_arg4)
 {
@@ -9287,45 +9287,45 @@ logind_login1_manager_complete_inhibit (
 /* ------------------------------------------------------------------------ */
 
 /**
- * logindLogin1ManagerProxy:
+ * Login1ManagerProxy:
  *
- * The #logindLogin1ManagerProxy structure contains only private data and should only be accessed using the provided API.
+ * The #Login1ManagerProxy structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * logindLogin1ManagerProxyClass:
+ * Login1ManagerProxyClass:
  * @parent_class: The parent class.
  *
- * Class structure for #logindLogin1ManagerProxy.
+ * Class structure for #Login1ManagerProxy.
  */
 
-struct _logindLogin1ManagerProxyPrivate
+struct _Login1ManagerProxyPrivate
 {
   GData *qdata;
 };
 
-static void logind_login1_manager_proxy_iface_init (logindLogin1ManagerIface *iface);
+static void login1_manager_proxy_iface_init (Login1ManagerIface *iface);
 
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (logindLogin1ManagerProxy, logind_login1_manager_proxy, G_TYPE_DBUS_PROXY,
-                         G_ADD_PRIVATE (logindLogin1ManagerProxy)
-                         G_IMPLEMENT_INTERFACE (LOGIND_TYPE_LOGIN1_MANAGER, logind_login1_manager_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Login1ManagerProxy, login1_manager_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (Login1ManagerProxy)
+                         G_IMPLEMENT_INTERFACE (TYPE_LOGIN1_MANAGER, login1_manager_proxy_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (logindLogin1ManagerProxy, logind_login1_manager_proxy, G_TYPE_DBUS_PROXY,
-                         G_IMPLEMENT_INTERFACE (LOGIND_TYPE_LOGIN1_MANAGER, logind_login1_manager_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Login1ManagerProxy, login1_manager_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TYPE_LOGIN1_MANAGER, login1_manager_proxy_iface_init));
 
 #endif
 static void
-logind_login1_manager_proxy_finalize (GObject *object)
+login1_manager_proxy_finalize (GObject *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   g_datalist_clear (&proxy->priv->qdata);
-  G_OBJECT_CLASS (logind_login1_manager_proxy_parent_class)->finalize (object);
+  G_OBJECT_CLASS (login1_manager_proxy_parent_class)->finalize (object);
 }
 
 static void
-logind_login1_manager_proxy_get_property (GObject      *object,
+login1_manager_proxy_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -9333,7 +9333,7 @@ logind_login1_manager_proxy_get_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 18);
-  info = _logind_login1_manager_property_info_pointers[prop_id - 1];
+  info = _login1_manager_property_info_pointers[prop_id - 1];
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (object), info->parent_struct.name);
   if (info->use_gvariant)
     {
@@ -9349,7 +9349,7 @@ logind_login1_manager_proxy_get_property (GObject      *object,
 }
 
 static void
-logind_login1_manager_proxy_set_property_cb (GDBusProxy *proxy,
+login1_manager_proxy_set_property_cb (GDBusProxy *proxy,
   GAsyncResult *res,
   gpointer      user_data)
 {
@@ -9372,7 +9372,7 @@ logind_login1_manager_proxy_set_property_cb (GDBusProxy *proxy,
 }
 
 static void
-logind_login1_manager_proxy_set_property (GObject      *object,
+login1_manager_proxy_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -9380,19 +9380,19 @@ logind_login1_manager_proxy_set_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 18);
-  info = _logind_login1_manager_property_info_pointers[prop_id - 1];
+  info = _login1_manager_property_info_pointers[prop_id - 1];
   variant = g_dbus_gvalue_to_gvariant (value, G_VARIANT_TYPE (info->parent_struct.signature));
   g_dbus_proxy_call (G_DBUS_PROXY (object),
     "org.freedesktop.DBus.Properties.Set",
     g_variant_new ("(ssv)", "org.freedesktop.login1.Manager", info->parent_struct.name, variant),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
-    NULL, (GAsyncReadyCallback) logind_login1_manager_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
+    NULL, (GAsyncReadyCallback) login1_manager_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
   g_variant_unref (variant);
 }
 
 static void
-logind_login1_manager_proxy_g_signal (GDBusProxy *proxy,
+login1_manager_proxy_g_signal (GDBusProxy *proxy,
   const gchar *sender_name G_GNUC_UNUSED,
   const gchar *signal_name,
   GVariant *parameters)
@@ -9404,12 +9404,12 @@ logind_login1_manager_proxy_g_signal (GDBusProxy *proxy,
   guint num_params;
   guint n;
   guint signal_id;
-  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct, signal_name);
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct, signal_name);
   if (info == NULL)
     return;
   num_params = g_variant_n_children (parameters);
   paramv = g_new0 (GValue, num_params + 1);
-  g_value_init (&paramv[0], LOGIND_TYPE_LOGIN1_MANAGER);
+  g_value_init (&paramv[0], TYPE_LOGIN1_MANAGER);
   g_value_set_object (&paramv[0], proxy);
   g_variant_iter_init (&iter, parameters);
   n = 1;
@@ -9426,7 +9426,7 @@ logind_login1_manager_proxy_g_signal (GDBusProxy *proxy,
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, LOGIND_TYPE_LOGIN1_MANAGER);
+  signal_id = g_signal_lookup (info->signal_name, TYPE_LOGIN1_MANAGER);
   g_signal_emitv (paramv, signal_id, 0, NULL);
   for (n = 0; n < num_params + 1; n++)
     g_value_unset (&paramv[n]);
@@ -9434,11 +9434,11 @@ logind_login1_manager_proxy_g_signal (GDBusProxy *proxy,
 }
 
 static void
-logind_login1_manager_proxy_g_properties_changed (GDBusProxy *_proxy,
+login1_manager_proxy_g_properties_changed (GDBusProxy *_proxy,
   GVariant *changed_properties,
   const gchar *const *invalidated_properties)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (_proxy);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (_proxy);
   guint n;
   const gchar *key;
   GVariantIter *iter;
@@ -9446,7 +9446,7 @@ logind_login1_manager_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_get (changed_properties, "a{sv}", &iter);
   while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct, key);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct, key);
       g_datalist_remove_data (&proxy->priv->qdata, key);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -9454,7 +9454,7 @@ logind_login1_manager_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_iter_free (iter);
   for (n = 0; invalidated_properties[n] != NULL; n++)
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct, invalidated_properties[n]);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct, invalidated_properties[n]);
       g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -9462,9 +9462,9 @@ logind_login1_manager_proxy_g_properties_changed (GDBusProxy *_proxy,
 }
 
 static guint 
-logind_login1_manager_proxy_get_nauto_vts (logindLogin1Manager *object)
+login1_manager_proxy_get_nauto_vts (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   guint value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "NAutoVTs");
@@ -9477,9 +9477,9 @@ logind_login1_manager_proxy_get_nauto_vts (logindLogin1Manager *object)
 }
 
 static const gchar *const *
-logind_login1_manager_proxy_get_kill_only_users (logindLogin1Manager *object)
+login1_manager_proxy_get_kill_only_users (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *const *value = NULL;
   value = g_datalist_get_data (&proxy->priv->qdata, "KillOnlyUsers");
@@ -9496,9 +9496,9 @@ logind_login1_manager_proxy_get_kill_only_users (logindLogin1Manager *object)
 }
 
 static const gchar *const *
-logind_login1_manager_proxy_get_kill_exclude_users (logindLogin1Manager *object)
+login1_manager_proxy_get_kill_exclude_users (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *const *value = NULL;
   value = g_datalist_get_data (&proxy->priv->qdata, "KillExcludeUsers");
@@ -9515,9 +9515,9 @@ logind_login1_manager_proxy_get_kill_exclude_users (logindLogin1Manager *object)
 }
 
 static gboolean 
-logind_login1_manager_proxy_get_kill_user_processes (logindLogin1Manager *object)
+login1_manager_proxy_get_kill_user_processes (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KillUserProcesses");
@@ -9530,9 +9530,9 @@ logind_login1_manager_proxy_get_kill_user_processes (logindLogin1Manager *object
 }
 
 static gboolean 
-logind_login1_manager_proxy_get_idle_hint (logindLogin1Manager *object)
+login1_manager_proxy_get_idle_hint (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IdleHint");
@@ -9545,9 +9545,9 @@ logind_login1_manager_proxy_get_idle_hint (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_proxy_get_idle_since_hint (logindLogin1Manager *object)
+login1_manager_proxy_get_idle_since_hint (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   guint64 value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IdleSinceHint");
@@ -9560,9 +9560,9 @@ logind_login1_manager_proxy_get_idle_since_hint (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_proxy_get_idle_since_hint_monotonic (logindLogin1Manager *object)
+login1_manager_proxy_get_idle_since_hint_monotonic (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   guint64 value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IdleSinceHintMonotonic");
@@ -9575,9 +9575,9 @@ logind_login1_manager_proxy_get_idle_since_hint_monotonic (logindLogin1Manager *
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_block_inhibited (logindLogin1Manager *object)
+login1_manager_proxy_get_block_inhibited (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "BlockInhibited");
@@ -9590,9 +9590,9 @@ logind_login1_manager_proxy_get_block_inhibited (logindLogin1Manager *object)
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_delay_inhibited (logindLogin1Manager *object)
+login1_manager_proxy_get_delay_inhibited (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "DelayInhibited");
@@ -9605,9 +9605,9 @@ logind_login1_manager_proxy_get_delay_inhibited (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_proxy_get_inhibit_delay_max_usec (logindLogin1Manager *object)
+login1_manager_proxy_get_inhibit_delay_max_usec (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   guint64 value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "InhibitDelayMaxUSec");
@@ -9620,9 +9620,9 @@ logind_login1_manager_proxy_get_inhibit_delay_max_usec (logindLogin1Manager *obj
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_handle_power_key (logindLogin1Manager *object)
+login1_manager_proxy_get_handle_power_key (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "HandlePowerKey");
@@ -9635,9 +9635,9 @@ logind_login1_manager_proxy_get_handle_power_key (logindLogin1Manager *object)
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_handle_suspend_key (logindLogin1Manager *object)
+login1_manager_proxy_get_handle_suspend_key (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "HandleSuspendKey");
@@ -9650,9 +9650,9 @@ logind_login1_manager_proxy_get_handle_suspend_key (logindLogin1Manager *object)
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_handle_hibernate_key (logindLogin1Manager *object)
+login1_manager_proxy_get_handle_hibernate_key (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "HandleHibernateKey");
@@ -9665,9 +9665,9 @@ logind_login1_manager_proxy_get_handle_hibernate_key (logindLogin1Manager *objec
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_handle_lid_switch (logindLogin1Manager *object)
+login1_manager_proxy_get_handle_lid_switch (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "HandleLidSwitch");
@@ -9680,9 +9680,9 @@ logind_login1_manager_proxy_get_handle_lid_switch (logindLogin1Manager *object)
 }
 
 static const gchar *
-logind_login1_manager_proxy_get_idle_action (logindLogin1Manager *object)
+login1_manager_proxy_get_idle_action (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IdleAction");
@@ -9695,9 +9695,9 @@ logind_login1_manager_proxy_get_idle_action (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_proxy_get_idle_action_usec (logindLogin1Manager *object)
+login1_manager_proxy_get_idle_action_usec (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   guint64 value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IdleActionUSec");
@@ -9710,9 +9710,9 @@ logind_login1_manager_proxy_get_idle_action_usec (logindLogin1Manager *object)
 }
 
 static gboolean 
-logind_login1_manager_proxy_get_preparing_for_shutdown (logindLogin1Manager *object)
+login1_manager_proxy_get_preparing_for_shutdown (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "PreparingForShutdown");
@@ -9725,9 +9725,9 @@ logind_login1_manager_proxy_get_preparing_for_shutdown (logindLogin1Manager *obj
 }
 
 static gboolean 
-logind_login1_manager_proxy_get_preparing_for_sleep (logindLogin1Manager *object)
+login1_manager_proxy_get_preparing_for_sleep (Login1Manager *object)
 {
-  logindLogin1ManagerProxy *proxy = LOGIND_LOGIN1_MANAGER_PROXY (object);
+  Login1ManagerProxy *proxy = LOGIN1_MANAGER_PROXY (object);
   GVariant *variant;
   gboolean value = 0;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "PreparingForSleep");
@@ -9740,64 +9740,64 @@ logind_login1_manager_proxy_get_preparing_for_sleep (logindLogin1Manager *object
 }
 
 static void
-logind_login1_manager_proxy_init (logindLogin1ManagerProxy *proxy)
+login1_manager_proxy_init (Login1ManagerProxy *proxy)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  proxy->priv = logind_login1_manager_proxy_get_instance_private (proxy);
+  proxy->priv = login1_manager_proxy_get_instance_private (proxy);
 #else
-  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, LOGIND_TYPE_LOGIN1_MANAGER_PROXY, logindLogin1ManagerProxyPrivate);
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_LOGIN1_MANAGER_PROXY, Login1ManagerProxyPrivate);
 #endif
 
-  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), logind_login1_manager_interface_info ());
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), login1_manager_interface_info ());
 }
 
 static void
-logind_login1_manager_proxy_class_init (logindLogin1ManagerProxyClass *klass)
+login1_manager_proxy_class_init (Login1ManagerProxyClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize     = logind_login1_manager_proxy_finalize;
-  gobject_class->get_property = logind_login1_manager_proxy_get_property;
-  gobject_class->set_property = logind_login1_manager_proxy_set_property;
+  gobject_class->finalize     = login1_manager_proxy_finalize;
+  gobject_class->get_property = login1_manager_proxy_get_property;
+  gobject_class->set_property = login1_manager_proxy_set_property;
 
   proxy_class = G_DBUS_PROXY_CLASS (klass);
-  proxy_class->g_signal = logind_login1_manager_proxy_g_signal;
-  proxy_class->g_properties_changed = logind_login1_manager_proxy_g_properties_changed;
+  proxy_class->g_signal = login1_manager_proxy_g_signal;
+  proxy_class->g_properties_changed = login1_manager_proxy_g_properties_changed;
 
-  logind_login1_manager_override_properties (gobject_class, 1);
+  login1_manager_override_properties (gobject_class, 1);
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (logindLogin1ManagerProxyPrivate));
+  g_type_class_add_private (klass, sizeof (Login1ManagerProxyPrivate));
 #endif
 }
 
 static void
-logind_login1_manager_proxy_iface_init (logindLogin1ManagerIface *iface)
+login1_manager_proxy_iface_init (Login1ManagerIface *iface)
 {
-  iface->get_nauto_vts = logind_login1_manager_proxy_get_nauto_vts;
-  iface->get_kill_only_users = logind_login1_manager_proxy_get_kill_only_users;
-  iface->get_kill_exclude_users = logind_login1_manager_proxy_get_kill_exclude_users;
-  iface->get_kill_user_processes = logind_login1_manager_proxy_get_kill_user_processes;
-  iface->get_idle_hint = logind_login1_manager_proxy_get_idle_hint;
-  iface->get_idle_since_hint = logind_login1_manager_proxy_get_idle_since_hint;
-  iface->get_idle_since_hint_monotonic = logind_login1_manager_proxy_get_idle_since_hint_monotonic;
-  iface->get_block_inhibited = logind_login1_manager_proxy_get_block_inhibited;
-  iface->get_delay_inhibited = logind_login1_manager_proxy_get_delay_inhibited;
-  iface->get_inhibit_delay_max_usec = logind_login1_manager_proxy_get_inhibit_delay_max_usec;
-  iface->get_handle_power_key = logind_login1_manager_proxy_get_handle_power_key;
-  iface->get_handle_suspend_key = logind_login1_manager_proxy_get_handle_suspend_key;
-  iface->get_handle_hibernate_key = logind_login1_manager_proxy_get_handle_hibernate_key;
-  iface->get_handle_lid_switch = logind_login1_manager_proxy_get_handle_lid_switch;
-  iface->get_idle_action = logind_login1_manager_proxy_get_idle_action;
-  iface->get_idle_action_usec = logind_login1_manager_proxy_get_idle_action_usec;
-  iface->get_preparing_for_shutdown = logind_login1_manager_proxy_get_preparing_for_shutdown;
-  iface->get_preparing_for_sleep = logind_login1_manager_proxy_get_preparing_for_sleep;
+  iface->get_nauto_vts = login1_manager_proxy_get_nauto_vts;
+  iface->get_kill_only_users = login1_manager_proxy_get_kill_only_users;
+  iface->get_kill_exclude_users = login1_manager_proxy_get_kill_exclude_users;
+  iface->get_kill_user_processes = login1_manager_proxy_get_kill_user_processes;
+  iface->get_idle_hint = login1_manager_proxy_get_idle_hint;
+  iface->get_idle_since_hint = login1_manager_proxy_get_idle_since_hint;
+  iface->get_idle_since_hint_monotonic = login1_manager_proxy_get_idle_since_hint_monotonic;
+  iface->get_block_inhibited = login1_manager_proxy_get_block_inhibited;
+  iface->get_delay_inhibited = login1_manager_proxy_get_delay_inhibited;
+  iface->get_inhibit_delay_max_usec = login1_manager_proxy_get_inhibit_delay_max_usec;
+  iface->get_handle_power_key = login1_manager_proxy_get_handle_power_key;
+  iface->get_handle_suspend_key = login1_manager_proxy_get_handle_suspend_key;
+  iface->get_handle_hibernate_key = login1_manager_proxy_get_handle_hibernate_key;
+  iface->get_handle_lid_switch = login1_manager_proxy_get_handle_lid_switch;
+  iface->get_idle_action = login1_manager_proxy_get_idle_action;
+  iface->get_idle_action_usec = login1_manager_proxy_get_idle_action_usec;
+  iface->get_preparing_for_shutdown = login1_manager_proxy_get_preparing_for_shutdown;
+  iface->get_preparing_for_sleep = login1_manager_proxy_get_preparing_for_sleep;
 }
 
 /**
- * logind_login1_manager_proxy_new:
+ * login1_manager_proxy_new:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -9809,12 +9809,12 @@ logind_login1_manager_proxy_iface_init (logindLogin1ManagerIface *iface)
  * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link>. See g_dbus_proxy_new() for more details.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_proxy_new_finish() to get the result of the operation.
+ * You can then call login1_manager_proxy_new_finish() to get the result of the operation.
  *
- * See logind_login1_manager_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ * See login1_manager_proxy_new_sync() for the synchronous, blocking version of this constructor.
  */
 void
-logind_login1_manager_proxy_new (
+login1_manager_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -9823,20 +9823,20 @@ logind_login1_manager_proxy_new (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (LOGIND_TYPE_LOGIN1_MANAGER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
+  g_async_initable_new_async (TYPE_LOGIN1_MANAGER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
 }
 
 /**
- * logind_login1_manager_proxy_new_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_proxy_new().
+ * login1_manager_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_proxy_new().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with logind_login1_manager_proxy_new().
+ * Finishes an operation started with login1_manager_proxy_new().
  *
- * Returns: (transfer full) (type logindLogin1ManagerProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Login1ManagerProxy): The constructed proxy object or %NULL if @error is set.
  */
-logindLogin1Manager *
-logind_login1_manager_proxy_new_finish (
+Login1Manager *
+login1_manager_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -9846,13 +9846,13 @@ logind_login1_manager_proxy_new_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return LOGIND_LOGIN1_MANAGER (ret);
+    return LOGIN1_MANAGER (ret);
   else
     return NULL;
 }
 
 /**
- * logind_login1_manager_proxy_new_sync:
+ * login1_manager_proxy_new_sync:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -9864,12 +9864,12 @@ logind_login1_manager_proxy_new_finish (
  *
  * The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_proxy_new() for the asynchronous version of this constructor.
+ * See login1_manager_proxy_new() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type logindLogin1ManagerProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Login1ManagerProxy): The constructed proxy object or %NULL if @error is set.
  */
-logindLogin1Manager *
-logind_login1_manager_proxy_new_sync (
+Login1Manager *
+login1_manager_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -9878,16 +9878,16 @@ logind_login1_manager_proxy_new_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (LOGIND_TYPE_LOGIN1_MANAGER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
+  ret = g_initable_new (TYPE_LOGIN1_MANAGER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
   if (ret != NULL)
-    return LOGIND_LOGIN1_MANAGER (ret);
+    return LOGIN1_MANAGER (ret);
   else
     return NULL;
 }
 
 
 /**
- * logind_login1_manager_proxy_new_for_bus:
+ * login1_manager_proxy_new_for_bus:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -9896,15 +9896,15 @@ logind_login1_manager_proxy_new_sync (
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Like logind_login1_manager_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ * Like login1_manager_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call logind_login1_manager_proxy_new_for_bus_finish() to get the result of the operation.
+ * You can then call login1_manager_proxy_new_for_bus_finish() to get the result of the operation.
  *
- * See logind_login1_manager_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ * See login1_manager_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
  */
 void
-logind_login1_manager_proxy_new_for_bus (
+login1_manager_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -9913,20 +9913,20 @@ logind_login1_manager_proxy_new_for_bus (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (LOGIND_TYPE_LOGIN1_MANAGER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
+  g_async_initable_new_async (TYPE_LOGIN1_MANAGER_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
 }
 
 /**
- * logind_login1_manager_proxy_new_for_bus_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to logind_login1_manager_proxy_new_for_bus().
+ * login1_manager_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to login1_manager_proxy_new_for_bus().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with logind_login1_manager_proxy_new_for_bus().
+ * Finishes an operation started with login1_manager_proxy_new_for_bus().
  *
- * Returns: (transfer full) (type logindLogin1ManagerProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Login1ManagerProxy): The constructed proxy object or %NULL if @error is set.
  */
-logindLogin1Manager *
-logind_login1_manager_proxy_new_for_bus_finish (
+Login1Manager *
+login1_manager_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -9936,13 +9936,13 @@ logind_login1_manager_proxy_new_for_bus_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return LOGIND_LOGIN1_MANAGER (ret);
+    return LOGIN1_MANAGER (ret);
   else
     return NULL;
 }
 
 /**
- * logind_login1_manager_proxy_new_for_bus_sync:
+ * login1_manager_proxy_new_for_bus_sync:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -9950,16 +9950,16 @@ logind_login1_manager_proxy_new_for_bus_finish (
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Like logind_login1_manager_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ * Like login1_manager_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See logind_login1_manager_proxy_new_for_bus() for the asynchronous version of this constructor.
+ * See login1_manager_proxy_new_for_bus() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type logindLogin1ManagerProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Login1ManagerProxy): The constructed proxy object or %NULL if @error is set.
  */
-logindLogin1Manager *
-logind_login1_manager_proxy_new_for_bus_sync (
+Login1Manager *
+login1_manager_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -9968,9 +9968,9 @@ logind_login1_manager_proxy_new_for_bus_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (LOGIND_TYPE_LOGIN1_MANAGER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
+  ret = g_initable_new (TYPE_LOGIN1_MANAGER_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.login1.Manager", NULL);
   if (ret != NULL)
-    return LOGIND_LOGIN1_MANAGER (ret);
+    return LOGIN1_MANAGER (ret);
   else
     return NULL;
 }
@@ -9979,19 +9979,19 @@ logind_login1_manager_proxy_new_for_bus_sync (
 /* ------------------------------------------------------------------------ */
 
 /**
- * logindLogin1ManagerSkeleton:
+ * Login1ManagerSkeleton:
  *
- * The #logindLogin1ManagerSkeleton structure contains only private data and should only be accessed using the provided API.
+ * The #Login1ManagerSkeleton structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * logindLogin1ManagerSkeletonClass:
+ * Login1ManagerSkeletonClass:
  * @parent_class: The parent class.
  *
- * Class structure for #logindLogin1ManagerSkeleton.
+ * Class structure for #Login1ManagerSkeleton.
  */
 
-struct _logindLogin1ManagerSkeletonPrivate
+struct _Login1ManagerSkeletonPrivate
 {
   GValue *properties;
   GList *changed_properties;
@@ -10001,7 +10001,7 @@ struct _logindLogin1ManagerSkeletonPrivate
 };
 
 static void
-_logind_login1_manager_skeleton_handle_method_call (
+_login1_manager_skeleton_handle_method_call (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -10011,7 +10011,7 @@ _logind_login1_manager_skeleton_handle_method_call (
   GDBusMethodInvocation *invocation,
   gpointer user_data)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (user_data);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (user_data);
   _ExtendedGDBusMethodInfo *info;
   GVariantIter iter;
   GVariant *child;
@@ -10026,7 +10026,7 @@ _logind_login1_manager_skeleton_handle_method_call (
   num_params = g_variant_n_children (parameters);
   num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
   n = 0;
-  g_value_init (&paramv[n], LOGIND_TYPE_LOGIN1_MANAGER);
+  g_value_init (&paramv[n], TYPE_LOGIN1_MANAGER);
   g_value_set_object (&paramv[n++], skeleton);
   g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
   g_value_set_object (&paramv[n++], invocation);
@@ -10053,7 +10053,7 @@ _logind_login1_manager_skeleton_handle_method_call (
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, LOGIND_TYPE_LOGIN1_MANAGER);
+  signal_id = g_signal_lookup (info->signal_name, TYPE_LOGIN1_MANAGER);
   g_value_init (&return_value, G_TYPE_BOOLEAN);
   g_signal_emitv (paramv, signal_id, 0, &return_value);
   if (!g_value_get_boolean (&return_value))
@@ -10065,7 +10065,7 @@ _logind_login1_manager_skeleton_handle_method_call (
 }
 
 static GVariant *
-_logind_login1_manager_skeleton_handle_get_property (
+_login1_manager_skeleton_handle_get_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -10074,13 +10074,13 @@ _logind_login1_manager_skeleton_handle_get_property (
   GError **error,
   gpointer user_data)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (user_data);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   GVariant *ret;
   ret = NULL;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -10098,7 +10098,7 @@ _logind_login1_manager_skeleton_handle_get_property (
 }
 
 static gboolean
-_logind_login1_manager_skeleton_handle_set_property (
+_login1_manager_skeleton_handle_set_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -10108,13 +10108,13 @@ _logind_login1_manager_skeleton_handle_set_property (
   GError **error,
   gpointer user_data)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (user_data);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   gboolean ret;
   ret = FALSE;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_logind_login1_manager_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_login1_manager_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -10134,43 +10134,43 @@ _logind_login1_manager_skeleton_handle_set_property (
   return ret;
 }
 
-static const GDBusInterfaceVTable _logind_login1_manager_skeleton_vtable =
+static const GDBusInterfaceVTable _login1_manager_skeleton_vtable =
 {
-  _logind_login1_manager_skeleton_handle_method_call,
-  _logind_login1_manager_skeleton_handle_get_property,
-  _logind_login1_manager_skeleton_handle_set_property,
+  _login1_manager_skeleton_handle_method_call,
+  _login1_manager_skeleton_handle_get_property,
+  _login1_manager_skeleton_handle_set_property,
   {NULL}
 };
 
 static GDBusInterfaceInfo *
-logind_login1_manager_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+login1_manager_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return logind_login1_manager_interface_info ();
+  return login1_manager_interface_info ();
 }
 
 static GDBusInterfaceVTable *
-logind_login1_manager_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+login1_manager_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return (GDBusInterfaceVTable *) &_logind_login1_manager_skeleton_vtable;
+  return (GDBusInterfaceVTable *) &_login1_manager_skeleton_vtable;
 }
 
 static GVariant *
-logind_login1_manager_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+login1_manager_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (_skeleton);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (_skeleton);
 
   GVariantBuilder builder;
   guint n;
   g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
-  if (_logind_login1_manager_interface_info.parent_struct.properties == NULL)
+  if (_login1_manager_interface_info.parent_struct.properties == NULL)
     goto out;
-  for (n = 0; _logind_login1_manager_interface_info.parent_struct.properties[n] != NULL; n++)
+  for (n = 0; _login1_manager_interface_info.parent_struct.properties[n] != NULL; n++)
     {
-      GDBusPropertyInfo *info = _logind_login1_manager_interface_info.parent_struct.properties[n];
+      GDBusPropertyInfo *info = _login1_manager_interface_info.parent_struct.properties[n];
       if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
         {
           GVariant *value;
-          value = _logind_login1_manager_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.login1.Manager", info->name, NULL, skeleton);
+          value = _login1_manager_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.login1.Manager", info->name, NULL, skeleton);
           if (value != NULL)
             {
               g_variant_take_ref (value);
@@ -10183,12 +10183,12 @@ out:
   return g_variant_builder_end (&builder);
 }
 
-static gboolean _logind_login1_manager_emit_changed (gpointer user_data);
+static gboolean _login1_manager_emit_changed (gpointer user_data);
 
 static void
-logind_login1_manager_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+login1_manager_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (_skeleton);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (_skeleton);
   gboolean emit_changed = FALSE;
 
   g_mutex_lock (&skeleton->priv->lock);
@@ -10201,16 +10201,16 @@ logind_login1_manager_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_sk
   g_mutex_unlock (&skeleton->priv->lock);
 
   if (emit_changed)
-    _logind_login1_manager_emit_changed (skeleton);
+    _login1_manager_emit_changed (skeleton);
 }
 
 static void
-_logind_login1_manager_on_signal_session_new (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_session_new (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10231,12 +10231,12 @@ _logind_login1_manager_on_signal_session_new (
 }
 
 static void
-_logind_login1_manager_on_signal_session_removed (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_session_removed (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10257,12 +10257,12 @@ _logind_login1_manager_on_signal_session_removed (
 }
 
 static void
-_logind_login1_manager_on_signal_user_new (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_user_new (
+    Login1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10283,12 +10283,12 @@ _logind_login1_manager_on_signal_user_new (
 }
 
 static void
-_logind_login1_manager_on_signal_user_removed (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_user_removed (
+    Login1Manager *object,
     guint arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10309,12 +10309,12 @@ _logind_login1_manager_on_signal_user_removed (
 }
 
 static void
-_logind_login1_manager_on_signal_seat_new (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_seat_new (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10335,12 +10335,12 @@ _logind_login1_manager_on_signal_seat_new (
 }
 
 static void
-_logind_login1_manager_on_signal_seat_removed (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_seat_removed (
+    Login1Manager *object,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10361,11 +10361,11 @@ _logind_login1_manager_on_signal_seat_removed (
 }
 
 static void
-_logind_login1_manager_on_signal_prepare_for_shutdown (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_prepare_for_shutdown (
+    Login1Manager *object,
     gboolean arg_unnamed_arg0)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10385,11 +10385,11 @@ _logind_login1_manager_on_signal_prepare_for_shutdown (
 }
 
 static void
-_logind_login1_manager_on_signal_prepare_for_sleep (
-    logindLogin1Manager *object,
+_login1_manager_on_signal_prepare_for_sleep (
+    Login1Manager *object,
     gboolean arg_unnamed_arg0)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -10408,21 +10408,21 @@ _logind_login1_manager_on_signal_prepare_for_sleep (
   g_list_free_full (connections, g_object_unref);
 }
 
-static void logind_login1_manager_skeleton_iface_init (logindLogin1ManagerIface *iface);
+static void login1_manager_skeleton_iface_init (Login1ManagerIface *iface);
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (logindLogin1ManagerSkeleton, logind_login1_manager_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_ADD_PRIVATE (logindLogin1ManagerSkeleton)
-                         G_IMPLEMENT_INTERFACE (LOGIND_TYPE_LOGIN1_MANAGER, logind_login1_manager_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Login1ManagerSkeleton, login1_manager_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (Login1ManagerSkeleton)
+                         G_IMPLEMENT_INTERFACE (TYPE_LOGIN1_MANAGER, login1_manager_skeleton_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (logindLogin1ManagerSkeleton, logind_login1_manager_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_IMPLEMENT_INTERFACE (LOGIND_TYPE_LOGIN1_MANAGER, logind_login1_manager_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Login1ManagerSkeleton, login1_manager_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TYPE_LOGIN1_MANAGER, login1_manager_skeleton_iface_init));
 
 #endif
 static void
-logind_login1_manager_skeleton_finalize (GObject *object)
+login1_manager_skeleton_finalize (GObject *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint n;
   for (n = 0; n < 18; n++)
     g_value_unset (&skeleton->priv->properties[n]);
@@ -10432,16 +10432,16 @@ logind_login1_manager_skeleton_finalize (GObject *object)
     g_source_destroy (skeleton->priv->changed_properties_idle_source);
   g_main_context_unref (skeleton->priv->context);
   g_mutex_clear (&skeleton->priv->lock);
-  G_OBJECT_CLASS (logind_login1_manager_skeleton_parent_class)->finalize (object);
+  G_OBJECT_CLASS (login1_manager_skeleton_parent_class)->finalize (object);
 }
 
 static void
-logind_login1_manager_skeleton_get_property (GObject      *object,
+login1_manager_skeleton_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 18);
   g_mutex_lock (&skeleton->priv->lock);
   g_value_copy (&skeleton->priv->properties[prop_id - 1], value);
@@ -10449,9 +10449,9 @@ logind_login1_manager_skeleton_get_property (GObject      *object,
 }
 
 static gboolean
-_logind_login1_manager_emit_changed (gpointer user_data)
+_login1_manager_emit_changed (gpointer user_data)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (user_data);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (user_data);
   GList *l;
   GVariantBuilder builder;
   GVariantBuilder invalidated_builder;
@@ -10509,7 +10509,7 @@ _logind_login1_manager_emit_changed (gpointer user_data)
 }
 
 static void
-_logind_login1_manager_schedule_emit_changed (logindLogin1ManagerSkeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
+_login1_manager_schedule_emit_changed (Login1ManagerSkeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
 {
   ChangedProperty *cp;
   GList *l;
@@ -10535,17 +10535,17 @@ _logind_login1_manager_schedule_emit_changed (logindLogin1ManagerSkeleton *skele
 }
 
 static void
-logind_login1_manager_skeleton_notify (GObject      *object,
+login1_manager_skeleton_notify (GObject      *object,
   GParamSpec *pspec G_GNUC_UNUSED)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   g_mutex_lock (&skeleton->priv->lock);
   if (skeleton->priv->changed_properties != NULL &&
       skeleton->priv->changed_properties_idle_source == NULL)
     {
       skeleton->priv->changed_properties_idle_source = g_idle_source_new ();
       g_source_set_priority (skeleton->priv->changed_properties_idle_source, G_PRIORITY_DEFAULT);
-      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _logind_login1_manager_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
+      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _login1_manager_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
       g_source_attach (skeleton->priv->changed_properties_idle_source, skeleton->priv->context);
       g_source_unref (skeleton->priv->changed_properties_idle_source);
     }
@@ -10553,19 +10553,19 @@ logind_login1_manager_skeleton_notify (GObject      *object,
 }
 
 static void
-logind_login1_manager_skeleton_set_property (GObject      *object,
+login1_manager_skeleton_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 18);
   g_mutex_lock (&skeleton->priv->lock);
   g_object_freeze_notify (object);
   if (!_g_value_equal (value, &skeleton->priv->properties[prop_id - 1]))
     {
       if (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)) != NULL)
-        _logind_login1_manager_schedule_emit_changed (skeleton, _logind_login1_manager_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
+        _login1_manager_schedule_emit_changed (skeleton, _login1_manager_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
       g_value_copy (value, &skeleton->priv->properties[prop_id - 1]);
       g_object_notify_by_pspec (object, pspec);
     }
@@ -10574,12 +10574,12 @@ logind_login1_manager_skeleton_set_property (GObject      *object,
 }
 
 static void
-logind_login1_manager_skeleton_init (logindLogin1ManagerSkeleton *skeleton)
+login1_manager_skeleton_init (Login1ManagerSkeleton *skeleton)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  skeleton->priv = logind_login1_manager_skeleton_get_instance_private (skeleton);
+  skeleton->priv = login1_manager_skeleton_get_instance_private (skeleton);
 #else
-  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, LOGIND_TYPE_LOGIN1_MANAGER_SKELETON, logindLogin1ManagerSkeletonPrivate);
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_LOGIN1_MANAGER_SKELETON, Login1ManagerSkeletonPrivate);
 #endif
 
   g_mutex_init (&skeleton->priv->lock);
@@ -10606,9 +10606,9 @@ logind_login1_manager_skeleton_init (logindLogin1ManagerSkeleton *skeleton)
 }
 
 static guint 
-logind_login1_manager_skeleton_get_nauto_vts (logindLogin1Manager *object)
+login1_manager_skeleton_get_nauto_vts (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_uint (&(skeleton->priv->properties[0]));
@@ -10617,9 +10617,9 @@ logind_login1_manager_skeleton_get_nauto_vts (logindLogin1Manager *object)
 }
 
 static const gchar *const *
-logind_login1_manager_skeleton_get_kill_only_users (logindLogin1Manager *object)
+login1_manager_skeleton_get_kill_only_users (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *const *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boxed (&(skeleton->priv->properties[1]));
@@ -10628,9 +10628,9 @@ logind_login1_manager_skeleton_get_kill_only_users (logindLogin1Manager *object)
 }
 
 static const gchar *const *
-logind_login1_manager_skeleton_get_kill_exclude_users (logindLogin1Manager *object)
+login1_manager_skeleton_get_kill_exclude_users (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *const *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boxed (&(skeleton->priv->properties[2]));
@@ -10639,9 +10639,9 @@ logind_login1_manager_skeleton_get_kill_exclude_users (logindLogin1Manager *obje
 }
 
 static gboolean 
-logind_login1_manager_skeleton_get_kill_user_processes (logindLogin1Manager *object)
+login1_manager_skeleton_get_kill_user_processes (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[3]));
@@ -10650,9 +10650,9 @@ logind_login1_manager_skeleton_get_kill_user_processes (logindLogin1Manager *obj
 }
 
 static gboolean 
-logind_login1_manager_skeleton_get_idle_hint (logindLogin1Manager *object)
+login1_manager_skeleton_get_idle_hint (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[4]));
@@ -10661,9 +10661,9 @@ logind_login1_manager_skeleton_get_idle_hint (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_skeleton_get_idle_since_hint (logindLogin1Manager *object)
+login1_manager_skeleton_get_idle_since_hint (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint64 value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_uint64 (&(skeleton->priv->properties[5]));
@@ -10672,9 +10672,9 @@ logind_login1_manager_skeleton_get_idle_since_hint (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_skeleton_get_idle_since_hint_monotonic (logindLogin1Manager *object)
+login1_manager_skeleton_get_idle_since_hint_monotonic (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint64 value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_uint64 (&(skeleton->priv->properties[6]));
@@ -10683,9 +10683,9 @@ logind_login1_manager_skeleton_get_idle_since_hint_monotonic (logindLogin1Manage
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_block_inhibited (logindLogin1Manager *object)
+login1_manager_skeleton_get_block_inhibited (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[7]));
@@ -10694,9 +10694,9 @@ logind_login1_manager_skeleton_get_block_inhibited (logindLogin1Manager *object)
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_delay_inhibited (logindLogin1Manager *object)
+login1_manager_skeleton_get_delay_inhibited (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[8]));
@@ -10705,9 +10705,9 @@ logind_login1_manager_skeleton_get_delay_inhibited (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_skeleton_get_inhibit_delay_max_usec (logindLogin1Manager *object)
+login1_manager_skeleton_get_inhibit_delay_max_usec (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint64 value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_uint64 (&(skeleton->priv->properties[9]));
@@ -10716,9 +10716,9 @@ logind_login1_manager_skeleton_get_inhibit_delay_max_usec (logindLogin1Manager *
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_handle_power_key (logindLogin1Manager *object)
+login1_manager_skeleton_get_handle_power_key (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[10]));
@@ -10727,9 +10727,9 @@ logind_login1_manager_skeleton_get_handle_power_key (logindLogin1Manager *object
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_handle_suspend_key (logindLogin1Manager *object)
+login1_manager_skeleton_get_handle_suspend_key (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[11]));
@@ -10738,9 +10738,9 @@ logind_login1_manager_skeleton_get_handle_suspend_key (logindLogin1Manager *obje
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_handle_hibernate_key (logindLogin1Manager *object)
+login1_manager_skeleton_get_handle_hibernate_key (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[12]));
@@ -10749,9 +10749,9 @@ logind_login1_manager_skeleton_get_handle_hibernate_key (logindLogin1Manager *ob
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_handle_lid_switch (logindLogin1Manager *object)
+login1_manager_skeleton_get_handle_lid_switch (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[13]));
@@ -10760,9 +10760,9 @@ logind_login1_manager_skeleton_get_handle_lid_switch (logindLogin1Manager *objec
 }
 
 static const gchar *
-logind_login1_manager_skeleton_get_idle_action (logindLogin1Manager *object)
+login1_manager_skeleton_get_idle_action (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[14]));
@@ -10771,9 +10771,9 @@ logind_login1_manager_skeleton_get_idle_action (logindLogin1Manager *object)
 }
 
 static guint64 
-logind_login1_manager_skeleton_get_idle_action_usec (logindLogin1Manager *object)
+login1_manager_skeleton_get_idle_action_usec (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   guint64 value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_uint64 (&(skeleton->priv->properties[15]));
@@ -10782,9 +10782,9 @@ logind_login1_manager_skeleton_get_idle_action_usec (logindLogin1Manager *object
 }
 
 static gboolean 
-logind_login1_manager_skeleton_get_preparing_for_shutdown (logindLogin1Manager *object)
+login1_manager_skeleton_get_preparing_for_shutdown (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[16]));
@@ -10793,9 +10793,9 @@ logind_login1_manager_skeleton_get_preparing_for_shutdown (logindLogin1Manager *
 }
 
 static gboolean 
-logind_login1_manager_skeleton_get_preparing_for_sleep (logindLogin1Manager *object)
+login1_manager_skeleton_get_preparing_for_sleep (Login1Manager *object)
 {
-  logindLogin1ManagerSkeleton *skeleton = LOGIND_LOGIN1_MANAGER_SKELETON (object);
+  Login1ManagerSkeleton *skeleton = LOGIN1_MANAGER_SKELETON (object);
   gboolean value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_boolean (&(skeleton->priv->properties[17]));
@@ -10804,72 +10804,72 @@ logind_login1_manager_skeleton_get_preparing_for_sleep (logindLogin1Manager *obj
 }
 
 static void
-logind_login1_manager_skeleton_class_init (logindLogin1ManagerSkeletonClass *klass)
+login1_manager_skeleton_class_init (Login1ManagerSkeletonClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusInterfaceSkeletonClass *skeleton_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = logind_login1_manager_skeleton_finalize;
-  gobject_class->get_property = logind_login1_manager_skeleton_get_property;
-  gobject_class->set_property = logind_login1_manager_skeleton_set_property;
-  gobject_class->notify       = logind_login1_manager_skeleton_notify;
+  gobject_class->finalize = login1_manager_skeleton_finalize;
+  gobject_class->get_property = login1_manager_skeleton_get_property;
+  gobject_class->set_property = login1_manager_skeleton_set_property;
+  gobject_class->notify       = login1_manager_skeleton_notify;
 
 
-  logind_login1_manager_override_properties (gobject_class, 1);
+  login1_manager_override_properties (gobject_class, 1);
 
   skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
-  skeleton_class->get_info = logind_login1_manager_skeleton_dbus_interface_get_info;
-  skeleton_class->get_properties = logind_login1_manager_skeleton_dbus_interface_get_properties;
-  skeleton_class->flush = logind_login1_manager_skeleton_dbus_interface_flush;
-  skeleton_class->get_vtable = logind_login1_manager_skeleton_dbus_interface_get_vtable;
+  skeleton_class->get_info = login1_manager_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = login1_manager_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = login1_manager_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = login1_manager_skeleton_dbus_interface_get_vtable;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (logindLogin1ManagerSkeletonPrivate));
+  g_type_class_add_private (klass, sizeof (Login1ManagerSkeletonPrivate));
 #endif
 }
 
 static void
-logind_login1_manager_skeleton_iface_init (logindLogin1ManagerIface *iface)
+login1_manager_skeleton_iface_init (Login1ManagerIface *iface)
 {
-  iface->session_new = _logind_login1_manager_on_signal_session_new;
-  iface->session_removed = _logind_login1_manager_on_signal_session_removed;
-  iface->user_new = _logind_login1_manager_on_signal_user_new;
-  iface->user_removed = _logind_login1_manager_on_signal_user_removed;
-  iface->seat_new = _logind_login1_manager_on_signal_seat_new;
-  iface->seat_removed = _logind_login1_manager_on_signal_seat_removed;
-  iface->prepare_for_shutdown = _logind_login1_manager_on_signal_prepare_for_shutdown;
-  iface->prepare_for_sleep = _logind_login1_manager_on_signal_prepare_for_sleep;
-  iface->get_nauto_vts = logind_login1_manager_skeleton_get_nauto_vts;
-  iface->get_kill_only_users = logind_login1_manager_skeleton_get_kill_only_users;
-  iface->get_kill_exclude_users = logind_login1_manager_skeleton_get_kill_exclude_users;
-  iface->get_kill_user_processes = logind_login1_manager_skeleton_get_kill_user_processes;
-  iface->get_idle_hint = logind_login1_manager_skeleton_get_idle_hint;
-  iface->get_idle_since_hint = logind_login1_manager_skeleton_get_idle_since_hint;
-  iface->get_idle_since_hint_monotonic = logind_login1_manager_skeleton_get_idle_since_hint_monotonic;
-  iface->get_block_inhibited = logind_login1_manager_skeleton_get_block_inhibited;
-  iface->get_delay_inhibited = logind_login1_manager_skeleton_get_delay_inhibited;
-  iface->get_inhibit_delay_max_usec = logind_login1_manager_skeleton_get_inhibit_delay_max_usec;
-  iface->get_handle_power_key = logind_login1_manager_skeleton_get_handle_power_key;
-  iface->get_handle_suspend_key = logind_login1_manager_skeleton_get_handle_suspend_key;
-  iface->get_handle_hibernate_key = logind_login1_manager_skeleton_get_handle_hibernate_key;
-  iface->get_handle_lid_switch = logind_login1_manager_skeleton_get_handle_lid_switch;
-  iface->get_idle_action = logind_login1_manager_skeleton_get_idle_action;
-  iface->get_idle_action_usec = logind_login1_manager_skeleton_get_idle_action_usec;
-  iface->get_preparing_for_shutdown = logind_login1_manager_skeleton_get_preparing_for_shutdown;
-  iface->get_preparing_for_sleep = logind_login1_manager_skeleton_get_preparing_for_sleep;
+  iface->session_new = _login1_manager_on_signal_session_new;
+  iface->session_removed = _login1_manager_on_signal_session_removed;
+  iface->user_new = _login1_manager_on_signal_user_new;
+  iface->user_removed = _login1_manager_on_signal_user_removed;
+  iface->seat_new = _login1_manager_on_signal_seat_new;
+  iface->seat_removed = _login1_manager_on_signal_seat_removed;
+  iface->prepare_for_shutdown = _login1_manager_on_signal_prepare_for_shutdown;
+  iface->prepare_for_sleep = _login1_manager_on_signal_prepare_for_sleep;
+  iface->get_nauto_vts = login1_manager_skeleton_get_nauto_vts;
+  iface->get_kill_only_users = login1_manager_skeleton_get_kill_only_users;
+  iface->get_kill_exclude_users = login1_manager_skeleton_get_kill_exclude_users;
+  iface->get_kill_user_processes = login1_manager_skeleton_get_kill_user_processes;
+  iface->get_idle_hint = login1_manager_skeleton_get_idle_hint;
+  iface->get_idle_since_hint = login1_manager_skeleton_get_idle_since_hint;
+  iface->get_idle_since_hint_monotonic = login1_manager_skeleton_get_idle_since_hint_monotonic;
+  iface->get_block_inhibited = login1_manager_skeleton_get_block_inhibited;
+  iface->get_delay_inhibited = login1_manager_skeleton_get_delay_inhibited;
+  iface->get_inhibit_delay_max_usec = login1_manager_skeleton_get_inhibit_delay_max_usec;
+  iface->get_handle_power_key = login1_manager_skeleton_get_handle_power_key;
+  iface->get_handle_suspend_key = login1_manager_skeleton_get_handle_suspend_key;
+  iface->get_handle_hibernate_key = login1_manager_skeleton_get_handle_hibernate_key;
+  iface->get_handle_lid_switch = login1_manager_skeleton_get_handle_lid_switch;
+  iface->get_idle_action = login1_manager_skeleton_get_idle_action;
+  iface->get_idle_action_usec = login1_manager_skeleton_get_idle_action_usec;
+  iface->get_preparing_for_shutdown = login1_manager_skeleton_get_preparing_for_shutdown;
+  iface->get_preparing_for_sleep = login1_manager_skeleton_get_preparing_for_sleep;
 }
 
 /**
- * logind_login1_manager_skeleton_new:
+ * login1_manager_skeleton_new:
  *
  * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-login1-Manager.top_of_page">org.freedesktop.login1.Manager</link>.
  *
- * Returns: (transfer full) (type logindLogin1ManagerSkeleton): The skeleton object.
+ * Returns: (transfer full) (type Login1ManagerSkeleton): The skeleton object.
  */
-logindLogin1Manager *
-logind_login1_manager_skeleton_new (void)
+Login1Manager *
+login1_manager_skeleton_new (void)
 {
-  return LOGIND_LOGIN1_MANAGER (g_object_new (LOGIND_TYPE_LOGIN1_MANAGER_SKELETON, NULL));
+  return LOGIN1_MANAGER (g_object_new (TYPE_LOGIN1_MANAGER_SKELETON, NULL));
 }
 

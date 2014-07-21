@@ -154,8 +154,8 @@ _g_value_equal (const GValue *a, const GValue *b)
  */
 
 /**
- * SECTION:hostnamedHostname1
- * @title: hostnamedHostname1
+ * SECTION:Hostname1
+ * @title: Hostname1
  * @short_description: Generated C code for the org.freedesktop.hostname1 D-Bus interface
  *
  * This section contains code for working with the <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link> D-Bus interface in C.
@@ -163,7 +163,7 @@ _g_value_equal (const GValue *a, const GValue *b)
 
 /* ---- Introspection data for org.freedesktop.hostname1 ---- */
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -174,7 +174,7 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_hostname
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -185,19 +185,19 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_hostname
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _hostnamed_hostname1_method_info_set_hostname_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_hostname_IN_ARG_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0,
-  &_hostnamed_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1,
+  &_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_hostname =
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_hostname =
 {
   {
     -1,
     (gchar *) "SetHostname",
-    (GDBusArgInfo **) &_hostnamed_hostname1_method_info_set_hostname_IN_ARG_pointers,
+    (GDBusArgInfo **) &_hostname1_method_info_set_hostname_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -205,7 +205,7 @@ static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_hostn
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -216,7 +216,7 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_static_h
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -227,19 +227,19 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_static_h
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_static_hostname_IN_ARG_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0,
-  &_hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1,
+  &_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_static_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_static_hostname =
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_static_hostname =
 {
   {
     -1,
     (gchar *) "SetStaticHostname",
-    (GDBusArgInfo **) &_hostnamed_hostname1_method_info_set_static_hostname_IN_ARG_pointers,
+    (GDBusArgInfo **) &_hostname1_method_info_set_static_hostname_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -247,7 +247,7 @@ static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_stati
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -258,7 +258,7 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_pretty_h
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -269,19 +269,19 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_pretty_h
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_pretty_hostname_IN_ARG_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0,
-  &_hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1,
+  &_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_pretty_hostname_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_pretty_hostname =
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_pretty_hostname =
 {
   {
     -1,
     (gchar *) "SetPrettyHostname",
-    (GDBusArgInfo **) &_hostnamed_hostname1_method_info_set_pretty_hostname_IN_ARG_pointers,
+    (GDBusArgInfo **) &_hostname1_method_info_set_pretty_hostname_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -289,7 +289,7 @@ static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_prett
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -300,7 +300,7 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_icon_nam
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -311,19 +311,19 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_icon_nam
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _hostnamed_hostname1_method_info_set_icon_name_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_icon_name_IN_ARG_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0,
-  &_hostnamed_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1,
+  &_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_icon_name_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_icon_name =
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_icon_name =
 {
   {
     -1,
     (gchar *) "SetIconName",
-    (GDBusArgInfo **) &_hostnamed_hostname1_method_info_set_icon_name_IN_ARG_pointers,
+    (GDBusArgInfo **) &_hostname1_method_info_set_icon_name_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -331,7 +331,7 @@ static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_icon_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0 =
 {
   {
     -1,
@@ -342,7 +342,7 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_chassis_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1 =
+static const _ExtendedGDBusArgInfo _hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1 =
 {
   {
     -1,
@@ -353,19 +353,19 @@ static const _ExtendedGDBusArgInfo _hostnamed_hostname1_method_info_set_chassis_
   FALSE
 };
 
-static const _ExtendedGDBusArgInfo * const _hostnamed_hostname1_method_info_set_chassis_IN_ARG_pointers[] =
+static const _ExtendedGDBusArgInfo * const _hostname1_method_info_set_chassis_IN_ARG_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0,
-  &_hostnamed_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1,
+  &_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg0,
+  &_hostname1_method_info_set_chassis_IN_ARG_unnamed_arg1,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_chassis =
+static const _ExtendedGDBusMethodInfo _hostname1_method_info_set_chassis =
 {
   {
     -1,
     (gchar *) "SetChassis",
-    (GDBusArgInfo **) &_hostnamed_hostname1_method_info_set_chassis_IN_ARG_pointers,
+    (GDBusArgInfo **) &_hostname1_method_info_set_chassis_IN_ARG_pointers,
     NULL,
     NULL
   },
@@ -373,17 +373,17 @@ static const _ExtendedGDBusMethodInfo _hostnamed_hostname1_method_info_set_chass
   FALSE
 };
 
-static const _ExtendedGDBusMethodInfo * const _hostnamed_hostname1_method_info_pointers[] =
+static const _ExtendedGDBusMethodInfo * const _hostname1_method_info_pointers[] =
 {
-  &_hostnamed_hostname1_method_info_set_hostname,
-  &_hostnamed_hostname1_method_info_set_static_hostname,
-  &_hostnamed_hostname1_method_info_set_pretty_hostname,
-  &_hostnamed_hostname1_method_info_set_icon_name,
-  &_hostnamed_hostname1_method_info_set_chassis,
+  &_hostname1_method_info_set_hostname,
+  &_hostname1_method_info_set_static_hostname,
+  &_hostname1_method_info_set_pretty_hostname,
+  &_hostname1_method_info_set_icon_name,
+  &_hostname1_method_info_set_chassis,
   NULL
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_hostname_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_hostname_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -391,26 +391,26 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_hostname_annotati
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_hostname_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_hostname_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_hostname_annotation_info_0,
+  &_hostname1_property_hostname_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_hostname =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_hostname =
 {
   {
     -1,
     (gchar *) "Hostname",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_hostname_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_hostname_annotation_info_pointers
   },
   "hostname",
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_static_hostname =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_static_hostname =
 {
   {
     -1,
@@ -423,7 +423,7 @@ static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_stati
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_pretty_hostname =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_pretty_hostname =
 {
   {
     -1,
@@ -436,7 +436,7 @@ static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_prett
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_icon_name =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_icon_name =
 {
   {
     -1,
@@ -449,7 +449,7 @@ static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_icon_
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_chassis =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_chassis =
 {
   {
     -1,
@@ -462,7 +462,7 @@ static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_chass
   FALSE
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_name_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_kernel_name_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -470,26 +470,26 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_name_annot
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_kernel_name_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_name_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_kernel_name_annotation_info_0,
+  &_hostname1_property_kernel_name_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_kernel_name =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_name =
 {
   {
     -1,
     (gchar *) "KernelName",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_kernel_name_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_name_annotation_info_pointers
   },
   "kernel-name",
   FALSE
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_release_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_kernel_release_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -497,26 +497,26 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_release_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_kernel_release_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_release_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_kernel_release_annotation_info_0,
+  &_hostname1_property_kernel_release_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_kernel_release =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_release =
 {
   {
     -1,
     (gchar *) "KernelRelease",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_kernel_release_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_release_annotation_info_pointers
   },
   "kernel-release",
   FALSE
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_version_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_kernel_version_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -524,26 +524,26 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_kernel_version_an
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_kernel_version_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_kernel_version_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_kernel_version_annotation_info_0,
+  &_hostname1_property_kernel_version_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_kernel_version =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_kernel_version =
 {
   {
     -1,
     (gchar *) "KernelVersion",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_kernel_version_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_kernel_version_annotation_info_pointers
   },
   "kernel-version",
   FALSE
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_operating_system_pretty_name_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_operating_system_pretty_name_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -551,26 +551,26 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_operating_system_
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_operating_system_pretty_name_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_operating_system_pretty_name_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_operating_system_pretty_name_annotation_info_0,
+  &_hostname1_property_operating_system_pretty_name_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_operating_system_pretty_name =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_operating_system_pretty_name =
 {
   {
     -1,
     (gchar *) "OperatingSystemPrettyName",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_operating_system_pretty_name_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_operating_system_pretty_name_annotation_info_pointers
   },
   "operating-system-pretty-name",
   FALSE
 };
 
-static const GDBusAnnotationInfo _hostnamed_hostname1_property_operating_system_cpename_annotation_info_0 =
+static const GDBusAnnotationInfo _hostname1_property_operating_system_cpename_annotation_info_0 =
 {
   -1,
   (gchar *) "org.freedesktop.DBus.Property.EmitsChangedSignal",
@@ -578,48 +578,48 @@ static const GDBusAnnotationInfo _hostnamed_hostname1_property_operating_system_
   NULL
 };
 
-static const GDBusAnnotationInfo * const _hostnamed_hostname1_property_operating_system_cpename_annotation_info_pointers[] =
+static const GDBusAnnotationInfo * const _hostname1_property_operating_system_cpename_annotation_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_operating_system_cpename_annotation_info_0,
+  &_hostname1_property_operating_system_cpename_annotation_info_0,
   NULL
 };
 
-static const _ExtendedGDBusPropertyInfo _hostnamed_hostname1_property_info_operating_system_cpename =
+static const _ExtendedGDBusPropertyInfo _hostname1_property_info_operating_system_cpename =
 {
   {
     -1,
     (gchar *) "OperatingSystemCPEName",
     (gchar *) "s",
     G_DBUS_PROPERTY_INFO_FLAGS_READABLE,
-    (GDBusAnnotationInfo **) &_hostnamed_hostname1_property_operating_system_cpename_annotation_info_pointers
+    (GDBusAnnotationInfo **) &_hostname1_property_operating_system_cpename_annotation_info_pointers
   },
   "operating-system-cpename",
   FALSE
 };
 
-static const _ExtendedGDBusPropertyInfo * const _hostnamed_hostname1_property_info_pointers[] =
+static const _ExtendedGDBusPropertyInfo * const _hostname1_property_info_pointers[] =
 {
-  &_hostnamed_hostname1_property_info_hostname,
-  &_hostnamed_hostname1_property_info_static_hostname,
-  &_hostnamed_hostname1_property_info_pretty_hostname,
-  &_hostnamed_hostname1_property_info_icon_name,
-  &_hostnamed_hostname1_property_info_chassis,
-  &_hostnamed_hostname1_property_info_kernel_name,
-  &_hostnamed_hostname1_property_info_kernel_release,
-  &_hostnamed_hostname1_property_info_kernel_version,
-  &_hostnamed_hostname1_property_info_operating_system_pretty_name,
-  &_hostnamed_hostname1_property_info_operating_system_cpename,
+  &_hostname1_property_info_hostname,
+  &_hostname1_property_info_static_hostname,
+  &_hostname1_property_info_pretty_hostname,
+  &_hostname1_property_info_icon_name,
+  &_hostname1_property_info_chassis,
+  &_hostname1_property_info_kernel_name,
+  &_hostname1_property_info_kernel_release,
+  &_hostname1_property_info_kernel_version,
+  &_hostname1_property_info_operating_system_pretty_name,
+  &_hostname1_property_info_operating_system_cpename,
   NULL
 };
 
-static const _ExtendedGDBusInterfaceInfo _hostnamed_hostname1_interface_info =
+static const _ExtendedGDBusInterfaceInfo _hostname1_interface_info =
 {
   {
     -1,
     (gchar *) "org.freedesktop.hostname1",
-    (GDBusMethodInfo **) &_hostnamed_hostname1_method_info_pointers,
+    (GDBusMethodInfo **) &_hostname1_method_info_pointers,
     NULL,
-    (GDBusPropertyInfo **) &_hostnamed_hostname1_property_info_pointers,
+    (GDBusPropertyInfo **) &_hostname1_property_info_pointers,
     NULL
   },
   "hostname1",
@@ -627,30 +627,30 @@ static const _ExtendedGDBusInterfaceInfo _hostnamed_hostname1_interface_info =
 
 
 /**
- * hostnamed_hostname1_interface_info:
+ * hostname1_interface_info:
  *
  * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link> D-Bus interface.
  *
  * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
  */
 GDBusInterfaceInfo *
-hostnamed_hostname1_interface_info (void)
+hostname1_interface_info (void)
 {
-  return (GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct;
+  return (GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct;
 }
 
 /**
- * hostnamed_hostname1_override_properties:
+ * hostname1_override_properties:
  * @klass: The class structure for a #GObject<!-- -->-derived class.
  * @property_id_begin: The property id to assign to the first overridden property.
  *
- * Overrides all #GObject properties in the #hostnamedHostname1 interface for a concrete class.
+ * Overrides all #GObject properties in the #Hostname1 interface for a concrete class.
  * The properties are overridden in the order they are defined.
  *
  * Returns: The last property id.
  */
 guint
-hostnamed_hostname1_override_properties (GObjectClass *klass, guint property_id_begin)
+hostname1_override_properties (GObjectClass *klass, guint property_id_begin)
 {
   g_object_class_override_property (klass, property_id_begin++, "hostname");
   g_object_class_override_property (klass, property_id_begin++, "static-hostname");
@@ -668,57 +668,57 @@ hostnamed_hostname1_override_properties (GObjectClass *klass, guint property_id_
 
 
 /**
- * hostnamedHostname1:
+ * Hostname1:
  *
  * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link>.
  */
 
 /**
- * hostnamedHostname1Iface:
+ * Hostname1Iface:
  * @parent_iface: The parent interface.
- * @handle_set_chassis: Handler for the #hostnamedHostname1::handle-set-chassis signal.
- * @handle_set_hostname: Handler for the #hostnamedHostname1::handle-set-hostname signal.
- * @handle_set_icon_name: Handler for the #hostnamedHostname1::handle-set-icon-name signal.
- * @handle_set_pretty_hostname: Handler for the #hostnamedHostname1::handle-set-pretty-hostname signal.
- * @handle_set_static_hostname: Handler for the #hostnamedHostname1::handle-set-static-hostname signal.
- * @get_chassis: Getter for the #hostnamedHostname1:chassis property.
- * @get_hostname: Getter for the #hostnamedHostname1:hostname property.
- * @get_icon_name: Getter for the #hostnamedHostname1:icon-name property.
- * @get_kernel_name: Getter for the #hostnamedHostname1:kernel-name property.
- * @get_kernel_release: Getter for the #hostnamedHostname1:kernel-release property.
- * @get_kernel_version: Getter for the #hostnamedHostname1:kernel-version property.
- * @get_operating_system_cpename: Getter for the #hostnamedHostname1:operating-system-cpename property.
- * @get_operating_system_pretty_name: Getter for the #hostnamedHostname1:operating-system-pretty-name property.
- * @get_pretty_hostname: Getter for the #hostnamedHostname1:pretty-hostname property.
- * @get_static_hostname: Getter for the #hostnamedHostname1:static-hostname property.
+ * @handle_set_chassis: Handler for the #Hostname1::handle-set-chassis signal.
+ * @handle_set_hostname: Handler for the #Hostname1::handle-set-hostname signal.
+ * @handle_set_icon_name: Handler for the #Hostname1::handle-set-icon-name signal.
+ * @handle_set_pretty_hostname: Handler for the #Hostname1::handle-set-pretty-hostname signal.
+ * @handle_set_static_hostname: Handler for the #Hostname1::handle-set-static-hostname signal.
+ * @get_chassis: Getter for the #Hostname1:chassis property.
+ * @get_hostname: Getter for the #Hostname1:hostname property.
+ * @get_icon_name: Getter for the #Hostname1:icon-name property.
+ * @get_kernel_name: Getter for the #Hostname1:kernel-name property.
+ * @get_kernel_release: Getter for the #Hostname1:kernel-release property.
+ * @get_kernel_version: Getter for the #Hostname1:kernel-version property.
+ * @get_operating_system_cpename: Getter for the #Hostname1:operating-system-cpename property.
+ * @get_operating_system_pretty_name: Getter for the #Hostname1:operating-system-pretty-name property.
+ * @get_pretty_hostname: Getter for the #Hostname1:pretty-hostname property.
+ * @get_static_hostname: Getter for the #Hostname1:static-hostname property.
  *
  * Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link>.
  */
 
-typedef hostnamedHostname1Iface hostnamedHostname1Interface;
-G_DEFINE_INTERFACE (hostnamedHostname1, hostnamed_hostname1, G_TYPE_OBJECT);
+typedef Hostname1Iface Hostname1Interface;
+G_DEFINE_INTERFACE (Hostname1, hostname1, G_TYPE_OBJECT);
 
 static void
-hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
+hostname1_default_init (Hostname1Iface *iface)
 {
   /* GObject signals for incoming D-Bus method calls: */
   /**
-   * hostnamedHostname1::handle-set-hostname:
-   * @object: A #hostnamedHostname1.
+   * Hostname1::handle-set-hostname:
+   * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetHostname">SetHostname()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostnamed_hostname1_complete_set_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-hostname",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (hostnamedHostname1Iface, handle_set_hostname),
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_hostname),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -727,22 +727,22 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * hostnamedHostname1::handle-set-static-hostname:
-   * @object: A #hostnamedHostname1.
+   * Hostname1::handle-set-static-hostname:
+   * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetStaticHostname">SetStaticHostname()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostnamed_hostname1_complete_set_static_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_static_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-static-hostname",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (hostnamedHostname1Iface, handle_set_static_hostname),
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_static_hostname),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -751,22 +751,22 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * hostnamedHostname1::handle-set-pretty-hostname:
-   * @object: A #hostnamedHostname1.
+   * Hostname1::handle-set-pretty-hostname:
+   * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetPrettyHostname">SetPrettyHostname()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostnamed_hostname1_complete_set_pretty_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_pretty_hostname() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-pretty-hostname",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (hostnamedHostname1Iface, handle_set_pretty_hostname),
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_pretty_hostname),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -775,22 +775,22 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * hostnamedHostname1::handle-set-icon-name:
-   * @object: A #hostnamedHostname1.
+   * Hostname1::handle-set-icon-name:
+   * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetIconName">SetIconName()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostnamed_hostname1_complete_set_icon_name() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_icon_name() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-icon-name",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (hostnamedHostname1Iface, handle_set_icon_name),
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_icon_name),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -799,22 +799,22 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
     G_TYPE_DBUS_METHOD_INVOCATION, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
   /**
-   * hostnamedHostname1::handle-set-chassis:
-   * @object: A #hostnamedHostname1.
+   * Hostname1::handle-set-chassis:
+   * @object: A #Hostname1.
    * @invocation: A #GDBusMethodInvocation.
    * @arg_unnamed_arg0: Argument passed by remote caller.
    * @arg_unnamed_arg1: Argument passed by remote caller.
    *
    * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostnamed_hostname1_complete_set_chassis() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hostname1_complete_set_chassis() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
   g_signal_new ("handle-set-chassis",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (hostnamedHostname1Iface, handle_set_chassis),
+    G_STRUCT_OFFSET (Hostname1Iface, handle_set_chassis),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -824,7 +824,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
 
   /* GObject properties for D-Bus properties: */
   /**
-   * hostnamedHostname1:hostname:
+   * Hostname1:hostname:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.Hostname">"Hostname"</link>.
    *
@@ -833,7 +833,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("hostname", "Hostname", "Hostname", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:static-hostname:
+   * Hostname1:static-hostname:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.StaticHostname">"StaticHostname"</link>.
    *
@@ -842,7 +842,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("static-hostname", "StaticHostname", "StaticHostname", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:pretty-hostname:
+   * Hostname1:pretty-hostname:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.PrettyHostname">"PrettyHostname"</link>.
    *
@@ -851,7 +851,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("pretty-hostname", "PrettyHostname", "PrettyHostname", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:icon-name:
+   * Hostname1:icon-name:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.IconName">"IconName"</link>.
    *
@@ -860,7 +860,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("icon-name", "IconName", "IconName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:chassis:
+   * Hostname1:chassis:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link>.
    *
@@ -869,7 +869,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("chassis", "Chassis", "Chassis", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:kernel-name:
+   * Hostname1:kernel-name:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link>.
    *
@@ -878,7 +878,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("kernel-name", "KernelName", "KernelName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:kernel-release:
+   * Hostname1:kernel-release:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link>.
    *
@@ -887,7 +887,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("kernel-release", "KernelRelease", "KernelRelease", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:kernel-version:
+   * Hostname1:kernel-version:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link>.
    *
@@ -896,7 +896,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("kernel-version", "KernelVersion", "KernelVersion", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:operating-system-pretty-name:
+   * Hostname1:operating-system-pretty-name:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link>.
    *
@@ -905,7 +905,7 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
   g_object_interface_install_property (iface,
     g_param_spec_string ("operating-system-pretty-name", "OperatingSystemPrettyName", "OperatingSystemPrettyName", NULL, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   /**
-   * hostnamedHostname1:operating-system-cpename:
+   * Hostname1:operating-system-cpename:
    *
    * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link>.
    *
@@ -916,26 +916,26 @@ hostnamed_hostname1_default_init (hostnamedHostname1Iface *iface)
 }
 
 /**
- * hostnamed_hostname1_get_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.Hostname">"Hostname"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_hostname() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_hostname() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_hostname (hostnamedHostname1 *object)
+hostname1_get_hostname (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_hostname (object);
+  return HOSTNAME1_GET_IFACE (object)->get_hostname (object);
 }
 
 /**
- * hostnamed_hostname1_dup_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.Hostname">"Hostname"</link> D-Bus property.
  *
@@ -944,7 +944,7 @@ hostnamed_hostname1_get_hostname (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_hostname (hostnamedHostname1 *object)
+hostname1_dup_hostname (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "hostname", &value, NULL);
@@ -952,8 +952,8 @@ hostnamed_hostname1_dup_hostname (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_hostname: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.Hostname">"Hostname"</link> D-Bus property to @value.
@@ -961,32 +961,32 @@ hostnamed_hostname1_dup_hostname (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_hostname (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_hostname (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "hostname", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_static_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_static_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.StaticHostname">"StaticHostname"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_static_hostname() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_static_hostname() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_static_hostname (hostnamedHostname1 *object)
+hostname1_get_static_hostname (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_static_hostname (object);
+  return HOSTNAME1_GET_IFACE (object)->get_static_hostname (object);
 }
 
 /**
- * hostnamed_hostname1_dup_static_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_static_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.StaticHostname">"StaticHostname"</link> D-Bus property.
  *
@@ -995,7 +995,7 @@ hostnamed_hostname1_get_static_hostname (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_static_hostname (hostnamedHostname1 *object)
+hostname1_dup_static_hostname (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "static-hostname", &value, NULL);
@@ -1003,8 +1003,8 @@ hostnamed_hostname1_dup_static_hostname (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_static_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_static_hostname: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.StaticHostname">"StaticHostname"</link> D-Bus property to @value.
@@ -1012,32 +1012,32 @@ hostnamed_hostname1_dup_static_hostname (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_static_hostname (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_static_hostname (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "static-hostname", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_pretty_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_pretty_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.PrettyHostname">"PrettyHostname"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_pretty_hostname() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_pretty_hostname() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_pretty_hostname (hostnamedHostname1 *object)
+hostname1_get_pretty_hostname (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_pretty_hostname (object);
+  return HOSTNAME1_GET_IFACE (object)->get_pretty_hostname (object);
 }
 
 /**
- * hostnamed_hostname1_dup_pretty_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_pretty_hostname: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.PrettyHostname">"PrettyHostname"</link> D-Bus property.
  *
@@ -1046,7 +1046,7 @@ hostnamed_hostname1_get_pretty_hostname (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_pretty_hostname (hostnamedHostname1 *object)
+hostname1_dup_pretty_hostname (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "pretty-hostname", &value, NULL);
@@ -1054,8 +1054,8 @@ hostnamed_hostname1_dup_pretty_hostname (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_pretty_hostname: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_pretty_hostname: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.PrettyHostname">"PrettyHostname"</link> D-Bus property to @value.
@@ -1063,32 +1063,32 @@ hostnamed_hostname1_dup_pretty_hostname (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_pretty_hostname (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_pretty_hostname (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "pretty-hostname", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_icon_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_icon_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.IconName">"IconName"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_icon_name() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_icon_name() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_icon_name (hostnamedHostname1 *object)
+hostname1_get_icon_name (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_icon_name (object);
+  return HOSTNAME1_GET_IFACE (object)->get_icon_name (object);
 }
 
 /**
- * hostnamed_hostname1_dup_icon_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_icon_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.IconName">"IconName"</link> D-Bus property.
  *
@@ -1097,7 +1097,7 @@ hostnamed_hostname1_get_icon_name (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_icon_name (hostnamedHostname1 *object)
+hostname1_dup_icon_name (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "icon-name", &value, NULL);
@@ -1105,8 +1105,8 @@ hostnamed_hostname1_dup_icon_name (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_icon_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_icon_name: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.IconName">"IconName"</link> D-Bus property to @value.
@@ -1114,32 +1114,32 @@ hostnamed_hostname1_dup_icon_name (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_icon_name (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_icon_name (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "icon-name", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_chassis: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_chassis: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_chassis() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_chassis() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_chassis (hostnamedHostname1 *object)
+hostname1_get_chassis (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_chassis (object);
+  return HOSTNAME1_GET_IFACE (object)->get_chassis (object);
 }
 
 /**
- * hostnamed_hostname1_dup_chassis: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_chassis: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property.
  *
@@ -1148,7 +1148,7 @@ hostnamed_hostname1_get_chassis (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_chassis (hostnamedHostname1 *object)
+hostname1_dup_chassis (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "chassis", &value, NULL);
@@ -1156,8 +1156,8 @@ hostnamed_hostname1_dup_chassis (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_chassis: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_chassis: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">"Chassis"</link> D-Bus property to @value.
@@ -1165,32 +1165,32 @@ hostnamed_hostname1_dup_chassis (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_chassis (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_chassis (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "chassis", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_kernel_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_kernel_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_kernel_name() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_name() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_kernel_name (hostnamedHostname1 *object)
+hostname1_get_kernel_name (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_kernel_name (object);
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_name (object);
 }
 
 /**
- * hostnamed_hostname1_dup_kernel_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_kernel_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property.
  *
@@ -1199,7 +1199,7 @@ hostnamed_hostname1_get_kernel_name (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_kernel_name (hostnamedHostname1 *object)
+hostname1_dup_kernel_name (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "kernel-name", &value, NULL);
@@ -1207,8 +1207,8 @@ hostnamed_hostname1_dup_kernel_name (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_kernel_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_kernel_name: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">"KernelName"</link> D-Bus property to @value.
@@ -1216,32 +1216,32 @@ hostnamed_hostname1_dup_kernel_name (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_kernel_name (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_kernel_name (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "kernel-name", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_kernel_release: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_kernel_release: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_kernel_release() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_release() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_kernel_release (hostnamedHostname1 *object)
+hostname1_get_kernel_release (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_kernel_release (object);
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_release (object);
 }
 
 /**
- * hostnamed_hostname1_dup_kernel_release: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_kernel_release: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property.
  *
@@ -1250,7 +1250,7 @@ hostnamed_hostname1_get_kernel_release (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_kernel_release (hostnamedHostname1 *object)
+hostname1_dup_kernel_release (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "kernel-release", &value, NULL);
@@ -1258,8 +1258,8 @@ hostnamed_hostname1_dup_kernel_release (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_kernel_release: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_kernel_release: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">"KernelRelease"</link> D-Bus property to @value.
@@ -1267,32 +1267,32 @@ hostnamed_hostname1_dup_kernel_release (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_kernel_release (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_kernel_release (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "kernel-release", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_kernel_version: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_kernel_version: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_kernel_version() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_kernel_version() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_kernel_version (hostnamedHostname1 *object)
+hostname1_get_kernel_version (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_kernel_version (object);
+  return HOSTNAME1_GET_IFACE (object)->get_kernel_version (object);
 }
 
 /**
- * hostnamed_hostname1_dup_kernel_version: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_kernel_version: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property.
  *
@@ -1301,7 +1301,7 @@ hostnamed_hostname1_get_kernel_version (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_kernel_version (hostnamedHostname1 *object)
+hostname1_dup_kernel_version (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "kernel-version", &value, NULL);
@@ -1309,8 +1309,8 @@ hostnamed_hostname1_dup_kernel_version (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_kernel_version: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_kernel_version: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">"KernelVersion"</link> D-Bus property to @value.
@@ -1318,32 +1318,32 @@ hostnamed_hostname1_dup_kernel_version (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_kernel_version (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_kernel_version (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "kernel-version", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_operating_system_pretty_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_operating_system_pretty_name() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_operating_system_pretty_name() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_operating_system_pretty_name (hostnamedHostname1 *object)
+hostname1_get_operating_system_pretty_name (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_operating_system_pretty_name (object);
+  return HOSTNAME1_GET_IFACE (object)->get_operating_system_pretty_name (object);
 }
 
 /**
- * hostnamed_hostname1_dup_operating_system_pretty_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property.
  *
@@ -1352,7 +1352,7 @@ hostnamed_hostname1_get_operating_system_pretty_name (hostnamedHostname1 *object
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_operating_system_pretty_name (hostnamedHostname1 *object)
+hostname1_dup_operating_system_pretty_name (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "operating-system-pretty-name", &value, NULL);
@@ -1360,8 +1360,8 @@ hostnamed_hostname1_dup_operating_system_pretty_name (hostnamedHostname1 *object
 }
 
 /**
- * hostnamed_hostname1_set_operating_system_pretty_name: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_operating_system_pretty_name: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemPrettyName">"OperatingSystemPrettyName"</link> D-Bus property to @value.
@@ -1369,32 +1369,32 @@ hostnamed_hostname1_dup_operating_system_pretty_name (hostnamedHostname1 *object
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_operating_system_pretty_name (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_operating_system_pretty_name (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "operating-system-pretty-name", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_get_operating_system_cpename: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_get_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
  *
  * Gets the value of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property.
  *
  * Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.
  *
- * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostnamed_hostname1_dup_operating_system_cpename() if on another thread.</warning>
+ * <warning>The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where @object was constructed. Use hostname1_dup_operating_system_cpename() if on another thread.</warning>
  *
  * Returns: (transfer none): The property value or %NULL if the property is not set. Do not free the returned value, it belongs to @object.
  */
 const gchar *
-hostnamed_hostname1_get_operating_system_cpename (hostnamedHostname1 *object)
+hostname1_get_operating_system_cpename (Hostname1 *object)
 {
-  return HOSTNAMED_HOSTNAME1_GET_IFACE (object)->get_operating_system_cpename (object);
+  return HOSTNAME1_GET_IFACE (object)->get_operating_system_cpename (object);
 }
 
 /**
- * hostnamed_hostname1_dup_operating_system_cpename: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_dup_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
  *
  * Gets a copy of the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property.
  *
@@ -1403,7 +1403,7 @@ hostnamed_hostname1_get_operating_system_cpename (hostnamedHostname1 *object)
  * Returns: (transfer full): The property value or %NULL if the property is not set. The returned value should be freed with g_free().
  */
 gchar *
-hostnamed_hostname1_dup_operating_system_cpename (hostnamedHostname1 *object)
+hostname1_dup_operating_system_cpename (Hostname1 *object)
 {
   gchar *value;
   g_object_get (G_OBJECT (object), "operating-system-cpename", &value, NULL);
@@ -1411,8 +1411,8 @@ hostnamed_hostname1_dup_operating_system_cpename (hostnamedHostname1 *object)
 }
 
 /**
- * hostnamed_hostname1_set_operating_system_cpename: (skip)
- * @object: A #hostnamedHostname1.
+ * hostname1_set_operating_system_cpename: (skip)
+ * @object: A #Hostname1.
  * @value: The value to set.
  *
  * Sets the <link linkend="gdbus-property-org-freedesktop-hostname1.OperatingSystemCPEName">"OperatingSystemCPEName"</link> D-Bus property to @value.
@@ -1420,14 +1420,14 @@ hostnamed_hostname1_dup_operating_system_cpename (hostnamedHostname1 *object)
  * Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.
  */
 void
-hostnamed_hostname1_set_operating_system_cpename (hostnamedHostname1 *object, const gchar *value)
+hostname1_set_operating_system_cpename (Hostname1 *object, const gchar *value)
 {
   g_object_set (G_OBJECT (object), "operating-system-cpename", value, NULL);
 }
 
 /**
- * hostnamed_hostname1_call_set_hostname:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_hostname:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1436,13 +1436,13 @@ hostnamed_hostname1_set_operating_system_cpename (hostnamedHostname1 *object, co
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetHostname">SetHostname()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_call_set_hostname_finish() to get the result of the operation.
+ * You can then call hostname1_call_set_hostname_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_call_set_hostname_sync() for the synchronous, blocking version of this method.
+ * See hostname1_call_set_hostname_sync() for the synchronous, blocking version of this method.
  */
 void
-hostnamed_hostname1_call_set_hostname (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1462,18 +1462,18 @@ hostnamed_hostname1_call_set_hostname (
 }
 
 /**
- * hostnamed_hostname1_call_set_hostname_finish:
- * @proxy: A #hostnamedHostname1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_call_set_hostname().
+ * hostname1_call_set_hostname_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_hostname().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hostnamed_hostname1_call_set_hostname().
+ * Finishes an operation started with hostname1_call_set_hostname().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_hostname_finish (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1489,8 +1489,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_hostname_sync:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_hostname_sync:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1498,13 +1498,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetHostname">SetHostname()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_call_set_hostname() for the asynchronous version of this method.
+ * See hostname1_call_set_hostname() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_hostname_sync (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1530,8 +1530,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_static_hostname:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_static_hostname:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1540,13 +1540,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetStaticHostname">SetStaticHostname()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_call_set_static_hostname_finish() to get the result of the operation.
+ * You can then call hostname1_call_set_static_hostname_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_call_set_static_hostname_sync() for the synchronous, blocking version of this method.
+ * See hostname1_call_set_static_hostname_sync() for the synchronous, blocking version of this method.
  */
 void
-hostnamed_hostname1_call_set_static_hostname (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_static_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1566,18 +1566,18 @@ hostnamed_hostname1_call_set_static_hostname (
 }
 
 /**
- * hostnamed_hostname1_call_set_static_hostname_finish:
- * @proxy: A #hostnamedHostname1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_call_set_static_hostname().
+ * hostname1_call_set_static_hostname_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_static_hostname().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hostnamed_hostname1_call_set_static_hostname().
+ * Finishes an operation started with hostname1_call_set_static_hostname().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_static_hostname_finish (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_static_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1593,8 +1593,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_static_hostname_sync:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_static_hostname_sync:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1602,13 +1602,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetStaticHostname">SetStaticHostname()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_call_set_static_hostname() for the asynchronous version of this method.
+ * See hostname1_call_set_static_hostname() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_static_hostname_sync (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_static_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1634,8 +1634,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_pretty_hostname:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_pretty_hostname:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1644,13 +1644,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetPrettyHostname">SetPrettyHostname()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_call_set_pretty_hostname_finish() to get the result of the operation.
+ * You can then call hostname1_call_set_pretty_hostname_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_call_set_pretty_hostname_sync() for the synchronous, blocking version of this method.
+ * See hostname1_call_set_pretty_hostname_sync() for the synchronous, blocking version of this method.
  */
 void
-hostnamed_hostname1_call_set_pretty_hostname (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_pretty_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1670,18 +1670,18 @@ hostnamed_hostname1_call_set_pretty_hostname (
 }
 
 /**
- * hostnamed_hostname1_call_set_pretty_hostname_finish:
- * @proxy: A #hostnamedHostname1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_call_set_pretty_hostname().
+ * hostname1_call_set_pretty_hostname_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_pretty_hostname().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hostnamed_hostname1_call_set_pretty_hostname().
+ * Finishes an operation started with hostname1_call_set_pretty_hostname().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_pretty_hostname_finish (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_pretty_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1697,8 +1697,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_pretty_hostname_sync:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_pretty_hostname_sync:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1706,13 +1706,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetPrettyHostname">SetPrettyHostname()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_call_set_pretty_hostname() for the asynchronous version of this method.
+ * See hostname1_call_set_pretty_hostname() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_pretty_hostname_sync (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_pretty_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1738,8 +1738,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_icon_name:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_icon_name:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1748,13 +1748,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetIconName">SetIconName()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_call_set_icon_name_finish() to get the result of the operation.
+ * You can then call hostname1_call_set_icon_name_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_call_set_icon_name_sync() for the synchronous, blocking version of this method.
+ * See hostname1_call_set_icon_name_sync() for the synchronous, blocking version of this method.
  */
 void
-hostnamed_hostname1_call_set_icon_name (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_icon_name (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1774,18 +1774,18 @@ hostnamed_hostname1_call_set_icon_name (
 }
 
 /**
- * hostnamed_hostname1_call_set_icon_name_finish:
- * @proxy: A #hostnamedHostname1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_call_set_icon_name().
+ * hostname1_call_set_icon_name_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_icon_name().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hostnamed_hostname1_call_set_icon_name().
+ * Finishes an operation started with hostname1_call_set_icon_name().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_icon_name_finish (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_icon_name_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1801,8 +1801,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_icon_name_sync:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_icon_name_sync:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1810,13 +1810,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetIconName">SetIconName()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_call_set_icon_name() for the asynchronous version of this method.
+ * See hostname1_call_set_icon_name() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_icon_name_sync (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_icon_name_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1842,8 +1842,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_chassis:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_chassis:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1852,13 +1852,13 @@ _out:
  *
  * Asynchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_call_set_chassis_finish() to get the result of the operation.
+ * You can then call hostname1_call_set_chassis_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_call_set_chassis_sync() for the synchronous, blocking version of this method.
+ * See hostname1_call_set_chassis_sync() for the synchronous, blocking version of this method.
  */
 void
-hostnamed_hostname1_call_set_chassis (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_chassis (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1878,18 +1878,18 @@ hostnamed_hostname1_call_set_chassis (
 }
 
 /**
- * hostnamed_hostname1_call_set_chassis_finish:
- * @proxy: A #hostnamedHostname1Proxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_call_set_chassis().
+ * hostname1_call_set_chassis_finish:
+ * @proxy: A #Hostname1Proxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_call_set_chassis().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hostnamed_hostname1_call_set_chassis().
+ * Finishes an operation started with hostname1_call_set_chassis().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_chassis_finish (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_chassis_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -1905,8 +1905,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_call_set_chassis_sync:
- * @proxy: A #hostnamedHostname1Proxy.
+ * hostname1_call_set_chassis_sync:
+ * @proxy: A #Hostname1Proxy.
  * @arg_unnamed_arg0: Argument to pass with the method invocation.
  * @arg_unnamed_arg1: Argument to pass with the method invocation.
  * @cancellable: (allow-none): A #GCancellable or %NULL.
@@ -1914,13 +1914,13 @@ _out:
  *
  * Synchronously invokes the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_call_set_chassis() for the asynchronous version of this method.
+ * See hostname1_call_set_chassis() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hostnamed_hostname1_call_set_chassis_sync (
-    hostnamedHostname1 *proxy,
+hostname1_call_set_chassis_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -1946,8 +1946,8 @@ _out:
 }
 
 /**
- * hostnamed_hostname1_complete_set_hostname:
- * @object: A #hostnamedHostname1.
+ * hostname1_complete_set_hostname:
+ * @object: A #Hostname1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetHostname">SetHostname()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1955,8 +1955,8 @@ _out:
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hostnamed_hostname1_complete_set_hostname (
-    hostnamedHostname1 *object,
+hostname1_complete_set_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1964,8 +1964,8 @@ hostnamed_hostname1_complete_set_hostname (
 }
 
 /**
- * hostnamed_hostname1_complete_set_static_hostname:
- * @object: A #hostnamedHostname1.
+ * hostname1_complete_set_static_hostname:
+ * @object: A #Hostname1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetStaticHostname">SetStaticHostname()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1973,8 +1973,8 @@ hostnamed_hostname1_complete_set_hostname (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hostnamed_hostname1_complete_set_static_hostname (
-    hostnamedHostname1 *object,
+hostname1_complete_set_static_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -1982,8 +1982,8 @@ hostnamed_hostname1_complete_set_static_hostname (
 }
 
 /**
- * hostnamed_hostname1_complete_set_pretty_hostname:
- * @object: A #hostnamedHostname1.
+ * hostname1_complete_set_pretty_hostname:
+ * @object: A #Hostname1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetPrettyHostname">SetPrettyHostname()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -1991,8 +1991,8 @@ hostnamed_hostname1_complete_set_static_hostname (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hostnamed_hostname1_complete_set_pretty_hostname (
-    hostnamedHostname1 *object,
+hostname1_complete_set_pretty_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -2000,8 +2000,8 @@ hostnamed_hostname1_complete_set_pretty_hostname (
 }
 
 /**
- * hostnamed_hostname1_complete_set_icon_name:
- * @object: A #hostnamedHostname1.
+ * hostname1_complete_set_icon_name:
+ * @object: A #Hostname1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetIconName">SetIconName()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -2009,8 +2009,8 @@ hostnamed_hostname1_complete_set_pretty_hostname (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hostnamed_hostname1_complete_set_icon_name (
-    hostnamedHostname1 *object,
+hostname1_complete_set_icon_name (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -2018,8 +2018,8 @@ hostnamed_hostname1_complete_set_icon_name (
 }
 
 /**
- * hostnamed_hostname1_complete_set_chassis:
- * @object: A #hostnamedHostname1.
+ * hostname1_complete_set_chassis:
+ * @object: A #Hostname1.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
  * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
@@ -2027,8 +2027,8 @@ hostnamed_hostname1_complete_set_icon_name (
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hostnamed_hostname1_complete_set_chassis (
-    hostnamedHostname1 *object,
+hostname1_complete_set_chassis (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -2038,45 +2038,45 @@ hostnamed_hostname1_complete_set_chassis (
 /* ------------------------------------------------------------------------ */
 
 /**
- * hostnamedHostname1Proxy:
+ * Hostname1Proxy:
  *
- * The #hostnamedHostname1Proxy structure contains only private data and should only be accessed using the provided API.
+ * The #Hostname1Proxy structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * hostnamedHostname1ProxyClass:
+ * Hostname1ProxyClass:
  * @parent_class: The parent class.
  *
- * Class structure for #hostnamedHostname1Proxy.
+ * Class structure for #Hostname1Proxy.
  */
 
-struct _hostnamedHostname1ProxyPrivate
+struct _Hostname1ProxyPrivate
 {
   GData *qdata;
 };
 
-static void hostnamed_hostname1_proxy_iface_init (hostnamedHostname1Iface *iface);
+static void hostname1_proxy_iface_init (Hostname1Iface *iface);
 
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (hostnamedHostname1Proxy, hostnamed_hostname1_proxy, G_TYPE_DBUS_PROXY,
-                         G_ADD_PRIVATE (hostnamedHostname1Proxy)
-                         G_IMPLEMENT_INTERFACE (HOSTNAMED_TYPE_HOSTNAME1, hostnamed_hostname1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Hostname1Proxy, hostname1_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (Hostname1Proxy)
+                         G_IMPLEMENT_INTERFACE (TYPE_HOSTNAME1, hostname1_proxy_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (hostnamedHostname1Proxy, hostnamed_hostname1_proxy, G_TYPE_DBUS_PROXY,
-                         G_IMPLEMENT_INTERFACE (HOSTNAMED_TYPE_HOSTNAME1, hostnamed_hostname1_proxy_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Hostname1Proxy, hostname1_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (TYPE_HOSTNAME1, hostname1_proxy_iface_init));
 
 #endif
 static void
-hostnamed_hostname1_proxy_finalize (GObject *object)
+hostname1_proxy_finalize (GObject *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   g_datalist_clear (&proxy->priv->qdata);
-  G_OBJECT_CLASS (hostnamed_hostname1_proxy_parent_class)->finalize (object);
+  G_OBJECT_CLASS (hostname1_proxy_parent_class)->finalize (object);
 }
 
 static void
-hostnamed_hostname1_proxy_get_property (GObject      *object,
+hostname1_proxy_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -2084,7 +2084,7 @@ hostnamed_hostname1_proxy_get_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 10);
-  info = _hostnamed_hostname1_property_info_pointers[prop_id - 1];
+  info = _hostname1_property_info_pointers[prop_id - 1];
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (object), info->parent_struct.name);
   if (info->use_gvariant)
     {
@@ -2100,7 +2100,7 @@ hostnamed_hostname1_proxy_get_property (GObject      *object,
 }
 
 static void
-hostnamed_hostname1_proxy_set_property_cb (GDBusProxy *proxy,
+hostname1_proxy_set_property_cb (GDBusProxy *proxy,
   GAsyncResult *res,
   gpointer      user_data)
 {
@@ -2123,7 +2123,7 @@ hostnamed_hostname1_proxy_set_property_cb (GDBusProxy *proxy,
 }
 
 static void
-hostnamed_hostname1_proxy_set_property (GObject      *object,
+hostname1_proxy_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -2131,19 +2131,19 @@ hostnamed_hostname1_proxy_set_property (GObject      *object,
   const _ExtendedGDBusPropertyInfo *info;
   GVariant *variant;
   g_assert (prop_id != 0 && prop_id - 1 < 10);
-  info = _hostnamed_hostname1_property_info_pointers[prop_id - 1];
+  info = _hostname1_property_info_pointers[prop_id - 1];
   variant = g_dbus_gvalue_to_gvariant (value, G_VARIANT_TYPE (info->parent_struct.signature));
   g_dbus_proxy_call (G_DBUS_PROXY (object),
     "org.freedesktop.DBus.Properties.Set",
     g_variant_new ("(ssv)", "org.freedesktop.hostname1", info->parent_struct.name, variant),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
-    NULL, (GAsyncReadyCallback) hostnamed_hostname1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
+    NULL, (GAsyncReadyCallback) hostname1_proxy_set_property_cb, (GDBusPropertyInfo *) &info->parent_struct);
   g_variant_unref (variant);
 }
 
 static void
-hostnamed_hostname1_proxy_g_signal (GDBusProxy *proxy,
+hostname1_proxy_g_signal (GDBusProxy *proxy,
   const gchar *sender_name G_GNUC_UNUSED,
   const gchar *signal_name,
   GVariant *parameters)
@@ -2155,12 +2155,12 @@ hostnamed_hostname1_proxy_g_signal (GDBusProxy *proxy,
   guint num_params;
   guint n;
   guint signal_id;
-  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct, signal_name);
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct, signal_name);
   if (info == NULL)
     return;
   num_params = g_variant_n_children (parameters);
   paramv = g_new0 (GValue, num_params + 1);
-  g_value_init (&paramv[0], HOSTNAMED_TYPE_HOSTNAME1);
+  g_value_init (&paramv[0], TYPE_HOSTNAME1);
   g_value_set_object (&paramv[0], proxy);
   g_variant_iter_init (&iter, parameters);
   n = 1;
@@ -2177,7 +2177,7 @@ hostnamed_hostname1_proxy_g_signal (GDBusProxy *proxy,
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, HOSTNAMED_TYPE_HOSTNAME1);
+  signal_id = g_signal_lookup (info->signal_name, TYPE_HOSTNAME1);
   g_signal_emitv (paramv, signal_id, 0, NULL);
   for (n = 0; n < num_params + 1; n++)
     g_value_unset (&paramv[n]);
@@ -2185,11 +2185,11 @@ hostnamed_hostname1_proxy_g_signal (GDBusProxy *proxy,
 }
 
 static void
-hostnamed_hostname1_proxy_g_properties_changed (GDBusProxy *_proxy,
+hostname1_proxy_g_properties_changed (GDBusProxy *_proxy,
   GVariant *changed_properties,
   const gchar *const *invalidated_properties)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (_proxy);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (_proxy);
   guint n;
   const gchar *key;
   GVariantIter *iter;
@@ -2197,7 +2197,7 @@ hostnamed_hostname1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_get (changed_properties, "a{sv}", &iter);
   while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct, key);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct, key);
       g_datalist_remove_data (&proxy->priv->qdata, key);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -2205,7 +2205,7 @@ hostnamed_hostname1_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_iter_free (iter);
   for (n = 0; invalidated_properties[n] != NULL; n++)
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct, invalidated_properties[n]);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct, invalidated_properties[n]);
       g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -2213,9 +2213,9 @@ hostnamed_hostname1_proxy_g_properties_changed (GDBusProxy *_proxy,
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_hostname (hostnamedHostname1 *object)
+hostname1_proxy_get_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "Hostname");
@@ -2228,9 +2228,9 @@ hostnamed_hostname1_proxy_get_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_static_hostname (hostnamedHostname1 *object)
+hostname1_proxy_get_static_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "StaticHostname");
@@ -2243,9 +2243,9 @@ hostnamed_hostname1_proxy_get_static_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_pretty_hostname (hostnamedHostname1 *object)
+hostname1_proxy_get_pretty_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "PrettyHostname");
@@ -2258,9 +2258,9 @@ hostnamed_hostname1_proxy_get_pretty_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_icon_name (hostnamedHostname1 *object)
+hostname1_proxy_get_icon_name (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "IconName");
@@ -2273,9 +2273,9 @@ hostnamed_hostname1_proxy_get_icon_name (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_chassis (hostnamedHostname1 *object)
+hostname1_proxy_get_chassis (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "Chassis");
@@ -2288,9 +2288,9 @@ hostnamed_hostname1_proxy_get_chassis (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_kernel_name (hostnamedHostname1 *object)
+hostname1_proxy_get_kernel_name (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelName");
@@ -2303,9 +2303,9 @@ hostnamed_hostname1_proxy_get_kernel_name (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_kernel_release (hostnamedHostname1 *object)
+hostname1_proxy_get_kernel_release (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelRelease");
@@ -2318,9 +2318,9 @@ hostnamed_hostname1_proxy_get_kernel_release (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_kernel_version (hostnamedHostname1 *object)
+hostname1_proxy_get_kernel_version (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "KernelVersion");
@@ -2333,9 +2333,9 @@ hostnamed_hostname1_proxy_get_kernel_version (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_operating_system_pretty_name (hostnamedHostname1 *object)
+hostname1_proxy_get_operating_system_pretty_name (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "OperatingSystemPrettyName");
@@ -2348,9 +2348,9 @@ hostnamed_hostname1_proxy_get_operating_system_pretty_name (hostnamedHostname1 *
 }
 
 static const gchar *
-hostnamed_hostname1_proxy_get_operating_system_cpename (hostnamedHostname1 *object)
+hostname1_proxy_get_operating_system_cpename (Hostname1 *object)
 {
-  hostnamedHostname1Proxy *proxy = HOSTNAMED_HOSTNAME1_PROXY (object);
+  Hostname1Proxy *proxy = HOSTNAME1_PROXY (object);
   GVariant *variant;
   const gchar *value = NULL;
   variant = g_dbus_proxy_get_cached_property (G_DBUS_PROXY (proxy), "OperatingSystemCPEName");
@@ -2363,56 +2363,56 @@ hostnamed_hostname1_proxy_get_operating_system_cpename (hostnamedHostname1 *obje
 }
 
 static void
-hostnamed_hostname1_proxy_init (hostnamedHostname1Proxy *proxy)
+hostname1_proxy_init (Hostname1Proxy *proxy)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  proxy->priv = hostnamed_hostname1_proxy_get_instance_private (proxy);
+  proxy->priv = hostname1_proxy_get_instance_private (proxy);
 #else
-  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, HOSTNAMED_TYPE_HOSTNAME1_PROXY, hostnamedHostname1ProxyPrivate);
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, TYPE_HOSTNAME1_PROXY, Hostname1ProxyPrivate);
 #endif
 
-  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), hostnamed_hostname1_interface_info ());
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), hostname1_interface_info ());
 }
 
 static void
-hostnamed_hostname1_proxy_class_init (hostnamedHostname1ProxyClass *klass)
+hostname1_proxy_class_init (Hostname1ProxyClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize     = hostnamed_hostname1_proxy_finalize;
-  gobject_class->get_property = hostnamed_hostname1_proxy_get_property;
-  gobject_class->set_property = hostnamed_hostname1_proxy_set_property;
+  gobject_class->finalize     = hostname1_proxy_finalize;
+  gobject_class->get_property = hostname1_proxy_get_property;
+  gobject_class->set_property = hostname1_proxy_set_property;
 
   proxy_class = G_DBUS_PROXY_CLASS (klass);
-  proxy_class->g_signal = hostnamed_hostname1_proxy_g_signal;
-  proxy_class->g_properties_changed = hostnamed_hostname1_proxy_g_properties_changed;
+  proxy_class->g_signal = hostname1_proxy_g_signal;
+  proxy_class->g_properties_changed = hostname1_proxy_g_properties_changed;
 
-  hostnamed_hostname1_override_properties (gobject_class, 1);
+  hostname1_override_properties (gobject_class, 1);
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (hostnamedHostname1ProxyPrivate));
+  g_type_class_add_private (klass, sizeof (Hostname1ProxyPrivate));
 #endif
 }
 
 static void
-hostnamed_hostname1_proxy_iface_init (hostnamedHostname1Iface *iface)
+hostname1_proxy_iface_init (Hostname1Iface *iface)
 {
-  iface->get_hostname = hostnamed_hostname1_proxy_get_hostname;
-  iface->get_static_hostname = hostnamed_hostname1_proxy_get_static_hostname;
-  iface->get_pretty_hostname = hostnamed_hostname1_proxy_get_pretty_hostname;
-  iface->get_icon_name = hostnamed_hostname1_proxy_get_icon_name;
-  iface->get_chassis = hostnamed_hostname1_proxy_get_chassis;
-  iface->get_kernel_name = hostnamed_hostname1_proxy_get_kernel_name;
-  iface->get_kernel_release = hostnamed_hostname1_proxy_get_kernel_release;
-  iface->get_kernel_version = hostnamed_hostname1_proxy_get_kernel_version;
-  iface->get_operating_system_pretty_name = hostnamed_hostname1_proxy_get_operating_system_pretty_name;
-  iface->get_operating_system_cpename = hostnamed_hostname1_proxy_get_operating_system_cpename;
+  iface->get_hostname = hostname1_proxy_get_hostname;
+  iface->get_static_hostname = hostname1_proxy_get_static_hostname;
+  iface->get_pretty_hostname = hostname1_proxy_get_pretty_hostname;
+  iface->get_icon_name = hostname1_proxy_get_icon_name;
+  iface->get_chassis = hostname1_proxy_get_chassis;
+  iface->get_kernel_name = hostname1_proxy_get_kernel_name;
+  iface->get_kernel_release = hostname1_proxy_get_kernel_release;
+  iface->get_kernel_version = hostname1_proxy_get_kernel_version;
+  iface->get_operating_system_pretty_name = hostname1_proxy_get_operating_system_pretty_name;
+  iface->get_operating_system_cpename = hostname1_proxy_get_operating_system_cpename;
 }
 
 /**
- * hostnamed_hostname1_proxy_new:
+ * hostname1_proxy_new:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -2424,12 +2424,12 @@ hostnamed_hostname1_proxy_iface_init (hostnamedHostname1Iface *iface)
  * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link>. See g_dbus_proxy_new() for more details.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_proxy_new_finish() to get the result of the operation.
+ * You can then call hostname1_proxy_new_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ * See hostname1_proxy_new_sync() for the synchronous, blocking version of this constructor.
  */
 void
-hostnamed_hostname1_proxy_new (
+hostname1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -2438,20 +2438,20 @@ hostnamed_hostname1_proxy_new (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (HOSTNAMED_TYPE_HOSTNAME1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
+  g_async_initable_new_async (TYPE_HOSTNAME1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
 }
 
 /**
- * hostnamed_hostname1_proxy_new_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_proxy_new().
+ * hostname1_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_proxy_new().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with hostnamed_hostname1_proxy_new().
+ * Finishes an operation started with hostname1_proxy_new().
  *
- * Returns: (transfer full) (type hostnamedHostname1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Hostname1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-hostnamedHostname1 *
-hostnamed_hostname1_proxy_new_finish (
+Hostname1 *
+hostname1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -2461,13 +2461,13 @@ hostnamed_hostname1_proxy_new_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return HOSTNAMED_HOSTNAME1 (ret);
+    return HOSTNAME1 (ret);
   else
     return NULL;
 }
 
 /**
- * hostnamed_hostname1_proxy_new_sync:
+ * hostname1_proxy_new_sync:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (allow-none): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -2479,12 +2479,12 @@ hostnamed_hostname1_proxy_new_finish (
  *
  * The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_proxy_new() for the asynchronous version of this constructor.
+ * See hostname1_proxy_new() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type hostnamedHostname1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Hostname1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-hostnamedHostname1 *
-hostnamed_hostname1_proxy_new_sync (
+Hostname1 *
+hostname1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -2493,16 +2493,16 @@ hostnamed_hostname1_proxy_new_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (HOSTNAMED_TYPE_HOSTNAME1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
+  ret = g_initable_new (TYPE_HOSTNAME1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
   if (ret != NULL)
-    return HOSTNAMED_HOSTNAME1 (ret);
+    return HOSTNAME1 (ret);
   else
     return NULL;
 }
 
 
 /**
- * hostnamed_hostname1_proxy_new_for_bus:
+ * hostname1_proxy_new_for_bus:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -2511,15 +2511,15 @@ hostnamed_hostname1_proxy_new_sync (
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Like hostnamed_hostname1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ * Like hostname1_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
  *
  * When the operation is finished, @callback will be invoked in the <link linkend="g-main-context-push-thread-default">thread-default main loop</link> of the thread you are calling this method from.
- * You can then call hostnamed_hostname1_proxy_new_for_bus_finish() to get the result of the operation.
+ * You can then call hostname1_proxy_new_for_bus_finish() to get the result of the operation.
  *
- * See hostnamed_hostname1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ * See hostname1_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
  */
 void
-hostnamed_hostname1_proxy_new_for_bus (
+hostname1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -2528,20 +2528,20 @@ hostnamed_hostname1_proxy_new_for_bus (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (HOSTNAMED_TYPE_HOSTNAME1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
+  g_async_initable_new_async (TYPE_HOSTNAME1_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
 }
 
 /**
- * hostnamed_hostname1_proxy_new_for_bus_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostnamed_hostname1_proxy_new_for_bus().
+ * hostname1_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hostname1_proxy_new_for_bus().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with hostnamed_hostname1_proxy_new_for_bus().
+ * Finishes an operation started with hostname1_proxy_new_for_bus().
  *
- * Returns: (transfer full) (type hostnamedHostname1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Hostname1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-hostnamedHostname1 *
-hostnamed_hostname1_proxy_new_for_bus_finish (
+Hostname1 *
+hostname1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -2551,13 +2551,13 @@ hostnamed_hostname1_proxy_new_for_bus_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return HOSTNAMED_HOSTNAME1 (ret);
+    return HOSTNAME1 (ret);
   else
     return NULL;
 }
 
 /**
- * hostnamed_hostname1_proxy_new_for_bus_sync:
+ * hostname1_proxy_new_for_bus_sync:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -2565,16 +2565,16 @@ hostnamed_hostname1_proxy_new_for_bus_finish (
  * @cancellable: (allow-none): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Like hostnamed_hostname1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ * Like hostname1_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See hostnamed_hostname1_proxy_new_for_bus() for the asynchronous version of this constructor.
+ * See hostname1_proxy_new_for_bus() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type hostnamedHostname1Proxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type Hostname1Proxy): The constructed proxy object or %NULL if @error is set.
  */
-hostnamedHostname1 *
-hostnamed_hostname1_proxy_new_for_bus_sync (
+Hostname1 *
+hostname1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -2583,9 +2583,9 @@ hostnamed_hostname1_proxy_new_for_bus_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (HOSTNAMED_TYPE_HOSTNAME1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
+  ret = g_initable_new (TYPE_HOSTNAME1_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "org.freedesktop.hostname1", NULL);
   if (ret != NULL)
-    return HOSTNAMED_HOSTNAME1 (ret);
+    return HOSTNAME1 (ret);
   else
     return NULL;
 }
@@ -2594,19 +2594,19 @@ hostnamed_hostname1_proxy_new_for_bus_sync (
 /* ------------------------------------------------------------------------ */
 
 /**
- * hostnamedHostname1Skeleton:
+ * Hostname1Skeleton:
  *
- * The #hostnamedHostname1Skeleton structure contains only private data and should only be accessed using the provided API.
+ * The #Hostname1Skeleton structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * hostnamedHostname1SkeletonClass:
+ * Hostname1SkeletonClass:
  * @parent_class: The parent class.
  *
- * Class structure for #hostnamedHostname1Skeleton.
+ * Class structure for #Hostname1Skeleton.
  */
 
-struct _hostnamedHostname1SkeletonPrivate
+struct _Hostname1SkeletonPrivate
 {
   GValue *properties;
   GList *changed_properties;
@@ -2616,7 +2616,7 @@ struct _hostnamedHostname1SkeletonPrivate
 };
 
 static void
-_hostnamed_hostname1_skeleton_handle_method_call (
+_hostname1_skeleton_handle_method_call (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2626,7 +2626,7 @@ _hostnamed_hostname1_skeleton_handle_method_call (
   GDBusMethodInvocation *invocation,
   gpointer user_data)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (user_data);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (user_data);
   _ExtendedGDBusMethodInfo *info;
   GVariantIter iter;
   GVariant *child;
@@ -2641,7 +2641,7 @@ _hostnamed_hostname1_skeleton_handle_method_call (
   num_params = g_variant_n_children (parameters);
   num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
   n = 0;
-  g_value_init (&paramv[n], HOSTNAMED_TYPE_HOSTNAME1);
+  g_value_init (&paramv[n], TYPE_HOSTNAME1);
   g_value_set_object (&paramv[n++], skeleton);
   g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
   g_value_set_object (&paramv[n++], invocation);
@@ -2668,7 +2668,7 @@ _hostnamed_hostname1_skeleton_handle_method_call (
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, HOSTNAMED_TYPE_HOSTNAME1);
+  signal_id = g_signal_lookup (info->signal_name, TYPE_HOSTNAME1);
   g_value_init (&return_value, G_TYPE_BOOLEAN);
   g_signal_emitv (paramv, signal_id, 0, &return_value);
   if (!g_value_get_boolean (&return_value))
@@ -2680,7 +2680,7 @@ _hostnamed_hostname1_skeleton_handle_method_call (
 }
 
 static GVariant *
-_hostnamed_hostname1_skeleton_handle_get_property (
+_hostname1_skeleton_handle_get_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2689,13 +2689,13 @@ _hostnamed_hostname1_skeleton_handle_get_property (
   GError **error,
   gpointer user_data)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (user_data);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   GVariant *ret;
   ret = NULL;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -2713,7 +2713,7 @@ _hostnamed_hostname1_skeleton_handle_get_property (
 }
 
 static gboolean
-_hostnamed_hostname1_skeleton_handle_set_property (
+_hostname1_skeleton_handle_set_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -2723,13 +2723,13 @@ _hostnamed_hostname1_skeleton_handle_set_property (
   GError **error,
   gpointer user_data)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (user_data);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   gboolean ret;
   ret = FALSE;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostnamed_hostname1_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hostname1_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -2749,43 +2749,43 @@ _hostnamed_hostname1_skeleton_handle_set_property (
   return ret;
 }
 
-static const GDBusInterfaceVTable _hostnamed_hostname1_skeleton_vtable =
+static const GDBusInterfaceVTable _hostname1_skeleton_vtable =
 {
-  _hostnamed_hostname1_skeleton_handle_method_call,
-  _hostnamed_hostname1_skeleton_handle_get_property,
-  _hostnamed_hostname1_skeleton_handle_set_property,
+  _hostname1_skeleton_handle_method_call,
+  _hostname1_skeleton_handle_get_property,
+  _hostname1_skeleton_handle_set_property,
   {NULL}
 };
 
 static GDBusInterfaceInfo *
-hostnamed_hostname1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+hostname1_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return hostnamed_hostname1_interface_info ();
+  return hostname1_interface_info ();
 }
 
 static GDBusInterfaceVTable *
-hostnamed_hostname1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+hostname1_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return (GDBusInterfaceVTable *) &_hostnamed_hostname1_skeleton_vtable;
+  return (GDBusInterfaceVTable *) &_hostname1_skeleton_vtable;
 }
 
 static GVariant *
-hostnamed_hostname1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+hostname1_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (_skeleton);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (_skeleton);
 
   GVariantBuilder builder;
   guint n;
   g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
-  if (_hostnamed_hostname1_interface_info.parent_struct.properties == NULL)
+  if (_hostname1_interface_info.parent_struct.properties == NULL)
     goto out;
-  for (n = 0; _hostnamed_hostname1_interface_info.parent_struct.properties[n] != NULL; n++)
+  for (n = 0; _hostname1_interface_info.parent_struct.properties[n] != NULL; n++)
     {
-      GDBusPropertyInfo *info = _hostnamed_hostname1_interface_info.parent_struct.properties[n];
+      GDBusPropertyInfo *info = _hostname1_interface_info.parent_struct.properties[n];
       if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
         {
           GVariant *value;
-          value = _hostnamed_hostname1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.hostname1", info->name, NULL, skeleton);
+          value = _hostname1_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "org.freedesktop.hostname1", info->name, NULL, skeleton);
           if (value != NULL)
             {
               g_variant_take_ref (value);
@@ -2798,12 +2798,12 @@ out:
   return g_variant_builder_end (&builder);
 }
 
-static gboolean _hostnamed_hostname1_emit_changed (gpointer user_data);
+static gboolean _hostname1_emit_changed (gpointer user_data);
 
 static void
-hostnamed_hostname1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+hostname1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (_skeleton);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (_skeleton);
   gboolean emit_changed = FALSE;
 
   g_mutex_lock (&skeleton->priv->lock);
@@ -2816,24 +2816,24 @@ hostnamed_hostname1_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skel
   g_mutex_unlock (&skeleton->priv->lock);
 
   if (emit_changed)
-    _hostnamed_hostname1_emit_changed (skeleton);
+    _hostname1_emit_changed (skeleton);
 }
 
-static void hostnamed_hostname1_skeleton_iface_init (hostnamedHostname1Iface *iface);
+static void hostname1_skeleton_iface_init (Hostname1Iface *iface);
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (hostnamedHostname1Skeleton, hostnamed_hostname1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_ADD_PRIVATE (hostnamedHostname1Skeleton)
-                         G_IMPLEMENT_INTERFACE (HOSTNAMED_TYPE_HOSTNAME1, hostnamed_hostname1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Hostname1Skeleton, hostname1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (Hostname1Skeleton)
+                         G_IMPLEMENT_INTERFACE (TYPE_HOSTNAME1, hostname1_skeleton_iface_init));
 
 #else
-G_DEFINE_TYPE_WITH_CODE (hostnamedHostname1Skeleton, hostnamed_hostname1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_IMPLEMENT_INTERFACE (HOSTNAMED_TYPE_HOSTNAME1, hostnamed_hostname1_skeleton_iface_init));
+G_DEFINE_TYPE_WITH_CODE (Hostname1Skeleton, hostname1_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (TYPE_HOSTNAME1, hostname1_skeleton_iface_init));
 
 #endif
 static void
-hostnamed_hostname1_skeleton_finalize (GObject *object)
+hostname1_skeleton_finalize (GObject *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   guint n;
   for (n = 0; n < 10; n++)
     g_value_unset (&skeleton->priv->properties[n]);
@@ -2843,16 +2843,16 @@ hostnamed_hostname1_skeleton_finalize (GObject *object)
     g_source_destroy (skeleton->priv->changed_properties_idle_source);
   g_main_context_unref (skeleton->priv->context);
   g_mutex_clear (&skeleton->priv->lock);
-  G_OBJECT_CLASS (hostnamed_hostname1_skeleton_parent_class)->finalize (object);
+  G_OBJECT_CLASS (hostname1_skeleton_parent_class)->finalize (object);
 }
 
 static void
-hostnamed_hostname1_skeleton_get_property (GObject      *object,
+hostname1_skeleton_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 10);
   g_mutex_lock (&skeleton->priv->lock);
   g_value_copy (&skeleton->priv->properties[prop_id - 1], value);
@@ -2860,9 +2860,9 @@ hostnamed_hostname1_skeleton_get_property (GObject      *object,
 }
 
 static gboolean
-_hostnamed_hostname1_emit_changed (gpointer user_data)
+_hostname1_emit_changed (gpointer user_data)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (user_data);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (user_data);
   GList *l;
   GVariantBuilder builder;
   GVariantBuilder invalidated_builder;
@@ -2920,7 +2920,7 @@ _hostnamed_hostname1_emit_changed (gpointer user_data)
 }
 
 static void
-_hostnamed_hostname1_schedule_emit_changed (hostnamedHostname1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
+_hostname1_schedule_emit_changed (Hostname1Skeleton *skeleton, const _ExtendedGDBusPropertyInfo *info, guint prop_id, const GValue *orig_value)
 {
   ChangedProperty *cp;
   GList *l;
@@ -2946,17 +2946,17 @@ _hostnamed_hostname1_schedule_emit_changed (hostnamedHostname1Skeleton *skeleton
 }
 
 static void
-hostnamed_hostname1_skeleton_notify (GObject      *object,
+hostname1_skeleton_notify (GObject      *object,
   GParamSpec *pspec G_GNUC_UNUSED)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   g_mutex_lock (&skeleton->priv->lock);
   if (skeleton->priv->changed_properties != NULL &&
       skeleton->priv->changed_properties_idle_source == NULL)
     {
       skeleton->priv->changed_properties_idle_source = g_idle_source_new ();
       g_source_set_priority (skeleton->priv->changed_properties_idle_source, G_PRIORITY_DEFAULT);
-      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _hostnamed_hostname1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
+      g_source_set_callback (skeleton->priv->changed_properties_idle_source, _hostname1_emit_changed, g_object_ref (skeleton), (GDestroyNotify) g_object_unref);
       g_source_attach (skeleton->priv->changed_properties_idle_source, skeleton->priv->context);
       g_source_unref (skeleton->priv->changed_properties_idle_source);
     }
@@ -2964,19 +2964,19 @@ hostnamed_hostname1_skeleton_notify (GObject      *object,
 }
 
 static void
-hostnamed_hostname1_skeleton_set_property (GObject      *object,
+hostname1_skeleton_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   g_assert (prop_id != 0 && prop_id - 1 < 10);
   g_mutex_lock (&skeleton->priv->lock);
   g_object_freeze_notify (object);
   if (!_g_value_equal (value, &skeleton->priv->properties[prop_id - 1]))
     {
       if (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)) != NULL)
-        _hostnamed_hostname1_schedule_emit_changed (skeleton, _hostnamed_hostname1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
+        _hostname1_schedule_emit_changed (skeleton, _hostname1_property_info_pointers[prop_id - 1], prop_id, &skeleton->priv->properties[prop_id - 1]);
       g_value_copy (value, &skeleton->priv->properties[prop_id - 1]);
       g_object_notify_by_pspec (object, pspec);
     }
@@ -2985,12 +2985,12 @@ hostnamed_hostname1_skeleton_set_property (GObject      *object,
 }
 
 static void
-hostnamed_hostname1_skeleton_init (hostnamedHostname1Skeleton *skeleton)
+hostname1_skeleton_init (Hostname1Skeleton *skeleton)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  skeleton->priv = hostnamed_hostname1_skeleton_get_instance_private (skeleton);
+  skeleton->priv = hostname1_skeleton_get_instance_private (skeleton);
 #else
-  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, HOSTNAMED_TYPE_HOSTNAME1_SKELETON, hostnamedHostname1SkeletonPrivate);
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, TYPE_HOSTNAME1_SKELETON, Hostname1SkeletonPrivate);
 #endif
 
   g_mutex_init (&skeleton->priv->lock);
@@ -3009,9 +3009,9 @@ hostnamed_hostname1_skeleton_init (hostnamedHostname1Skeleton *skeleton)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_hostname (hostnamedHostname1 *object)
+hostname1_skeleton_get_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[0]));
@@ -3020,9 +3020,9 @@ hostnamed_hostname1_skeleton_get_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_static_hostname (hostnamedHostname1 *object)
+hostname1_skeleton_get_static_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[1]));
@@ -3031,9 +3031,9 @@ hostnamed_hostname1_skeleton_get_static_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_pretty_hostname (hostnamedHostname1 *object)
+hostname1_skeleton_get_pretty_hostname (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[2]));
@@ -3042,9 +3042,9 @@ hostnamed_hostname1_skeleton_get_pretty_hostname (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_icon_name (hostnamedHostname1 *object)
+hostname1_skeleton_get_icon_name (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[3]));
@@ -3053,9 +3053,9 @@ hostnamed_hostname1_skeleton_get_icon_name (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_chassis (hostnamedHostname1 *object)
+hostname1_skeleton_get_chassis (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[4]));
@@ -3064,9 +3064,9 @@ hostnamed_hostname1_skeleton_get_chassis (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_kernel_name (hostnamedHostname1 *object)
+hostname1_skeleton_get_kernel_name (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[5]));
@@ -3075,9 +3075,9 @@ hostnamed_hostname1_skeleton_get_kernel_name (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_kernel_release (hostnamedHostname1 *object)
+hostname1_skeleton_get_kernel_release (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[6]));
@@ -3086,9 +3086,9 @@ hostnamed_hostname1_skeleton_get_kernel_release (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_kernel_version (hostnamedHostname1 *object)
+hostname1_skeleton_get_kernel_version (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[7]));
@@ -3097,9 +3097,9 @@ hostnamed_hostname1_skeleton_get_kernel_version (hostnamedHostname1 *object)
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_operating_system_pretty_name (hostnamedHostname1 *object)
+hostname1_skeleton_get_operating_system_pretty_name (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[8]));
@@ -3108,9 +3108,9 @@ hostnamed_hostname1_skeleton_get_operating_system_pretty_name (hostnamedHostname
 }
 
 static const gchar *
-hostnamed_hostname1_skeleton_get_operating_system_cpename (hostnamedHostname1 *object)
+hostname1_skeleton_get_operating_system_cpename (Hostname1 *object)
 {
-  hostnamedHostname1Skeleton *skeleton = HOSTNAMED_HOSTNAME1_SKELETON (object);
+  Hostname1Skeleton *skeleton = HOSTNAME1_SKELETON (object);
   const gchar *value;
   g_mutex_lock (&skeleton->priv->lock);
   value = g_value_get_string (&(skeleton->priv->properties[9]));
@@ -3119,56 +3119,56 @@ hostnamed_hostname1_skeleton_get_operating_system_cpename (hostnamedHostname1 *o
 }
 
 static void
-hostnamed_hostname1_skeleton_class_init (hostnamedHostname1SkeletonClass *klass)
+hostname1_skeleton_class_init (Hostname1SkeletonClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusInterfaceSkeletonClass *skeleton_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = hostnamed_hostname1_skeleton_finalize;
-  gobject_class->get_property = hostnamed_hostname1_skeleton_get_property;
-  gobject_class->set_property = hostnamed_hostname1_skeleton_set_property;
-  gobject_class->notify       = hostnamed_hostname1_skeleton_notify;
+  gobject_class->finalize = hostname1_skeleton_finalize;
+  gobject_class->get_property = hostname1_skeleton_get_property;
+  gobject_class->set_property = hostname1_skeleton_set_property;
+  gobject_class->notify       = hostname1_skeleton_notify;
 
 
-  hostnamed_hostname1_override_properties (gobject_class, 1);
+  hostname1_override_properties (gobject_class, 1);
 
   skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
-  skeleton_class->get_info = hostnamed_hostname1_skeleton_dbus_interface_get_info;
-  skeleton_class->get_properties = hostnamed_hostname1_skeleton_dbus_interface_get_properties;
-  skeleton_class->flush = hostnamed_hostname1_skeleton_dbus_interface_flush;
-  skeleton_class->get_vtable = hostnamed_hostname1_skeleton_dbus_interface_get_vtable;
+  skeleton_class->get_info = hostname1_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = hostname1_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = hostname1_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = hostname1_skeleton_dbus_interface_get_vtable;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (hostnamedHostname1SkeletonPrivate));
+  g_type_class_add_private (klass, sizeof (Hostname1SkeletonPrivate));
 #endif
 }
 
 static void
-hostnamed_hostname1_skeleton_iface_init (hostnamedHostname1Iface *iface)
+hostname1_skeleton_iface_init (Hostname1Iface *iface)
 {
-  iface->get_hostname = hostnamed_hostname1_skeleton_get_hostname;
-  iface->get_static_hostname = hostnamed_hostname1_skeleton_get_static_hostname;
-  iface->get_pretty_hostname = hostnamed_hostname1_skeleton_get_pretty_hostname;
-  iface->get_icon_name = hostnamed_hostname1_skeleton_get_icon_name;
-  iface->get_chassis = hostnamed_hostname1_skeleton_get_chassis;
-  iface->get_kernel_name = hostnamed_hostname1_skeleton_get_kernel_name;
-  iface->get_kernel_release = hostnamed_hostname1_skeleton_get_kernel_release;
-  iface->get_kernel_version = hostnamed_hostname1_skeleton_get_kernel_version;
-  iface->get_operating_system_pretty_name = hostnamed_hostname1_skeleton_get_operating_system_pretty_name;
-  iface->get_operating_system_cpename = hostnamed_hostname1_skeleton_get_operating_system_cpename;
+  iface->get_hostname = hostname1_skeleton_get_hostname;
+  iface->get_static_hostname = hostname1_skeleton_get_static_hostname;
+  iface->get_pretty_hostname = hostname1_skeleton_get_pretty_hostname;
+  iface->get_icon_name = hostname1_skeleton_get_icon_name;
+  iface->get_chassis = hostname1_skeleton_get_chassis;
+  iface->get_kernel_name = hostname1_skeleton_get_kernel_name;
+  iface->get_kernel_release = hostname1_skeleton_get_kernel_release;
+  iface->get_kernel_version = hostname1_skeleton_get_kernel_version;
+  iface->get_operating_system_pretty_name = hostname1_skeleton_get_operating_system_pretty_name;
+  iface->get_operating_system_cpename = hostname1_skeleton_get_operating_system_cpename;
 }
 
 /**
- * hostnamed_hostname1_skeleton_new:
+ * hostname1_skeleton_new:
  *
  * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-org-freedesktop-hostname1.top_of_page">org.freedesktop.hostname1</link>.
  *
- * Returns: (transfer full) (type hostnamedHostname1Skeleton): The skeleton object.
+ * Returns: (transfer full) (type Hostname1Skeleton): The skeleton object.
  */
-hostnamedHostname1 *
-hostnamed_hostname1_skeleton_new (void)
+Hostname1 *
+hostname1_skeleton_new (void)
 {
-  return HOSTNAMED_HOSTNAME1 (g_object_new (HOSTNAMED_TYPE_HOSTNAME1_SKELETON, NULL));
+  return HOSTNAME1 (g_object_new (TYPE_HOSTNAME1_SKELETON, NULL));
 }
 

@@ -4,8 +4,8 @@
  * The license of this code is the same as for the source it was derived from.
  */
 
-#ifndef __SRC_INTERFACES_HOSTNAMED_HOSTNAMED_GEN_H__
-#define __SRC_INTERFACES_HOSTNAMED_HOSTNAMED_GEN_H__
+#ifndef __HOSTNAMED_GEN_H__
+#define __HOSTNAMED_GEN_H__
 
 #include <gio/gio.h>
 
@@ -15,197 +15,197 @@ G_BEGIN_DECLS
 /* ------------------------------------------------------------------------ */
 /* Declarations for org.freedesktop.hostname1 */
 
-#define HOSTNAMED_TYPE_HOSTNAME1 (hostnamed_hostname1_get_type ())
-#define HOSTNAMED_HOSTNAME1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), HOSTNAMED_TYPE_HOSTNAME1, hostnamedHostname1))
-#define HOSTNAMED_IS_HOSTNAME1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), HOSTNAMED_TYPE_HOSTNAME1))
-#define HOSTNAMED_HOSTNAME1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), HOSTNAMED_TYPE_HOSTNAME1, hostnamedHostname1Iface))
+#define TYPE_HOSTNAME1 (hostname1_get_type ())
+#define HOSTNAME1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_HOSTNAME1, Hostname1))
+#define IS_HOSTNAME1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_HOSTNAME1))
+#define HOSTNAME1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_HOSTNAME1, Hostname1Iface))
 
-struct _hostnamedHostname1;
-typedef struct _hostnamedHostname1 hostnamedHostname1;
-typedef struct _hostnamedHostname1Iface hostnamedHostname1Iface;
+struct _Hostname1;
+typedef struct _Hostname1 Hostname1;
+typedef struct _Hostname1Iface Hostname1Iface;
 
-struct _hostnamedHostname1Iface
+struct _Hostname1Iface
 {
   GTypeInterface parent_iface;
 
 
   gboolean (*handle_set_chassis) (
-    hostnamedHostname1 *object,
+    Hostname1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_hostname) (
-    hostnamedHostname1 *object,
+    Hostname1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_icon_name) (
-    hostnamedHostname1 *object,
+    Hostname1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_pretty_hostname) (
-    hostnamedHostname1 *object,
+    Hostname1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_static_hostname) (
-    hostnamedHostname1 *object,
+    Hostname1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
-  const gchar * (*get_chassis) (hostnamedHostname1 *object);
+  const gchar * (*get_chassis) (Hostname1 *object);
 
-  const gchar * (*get_hostname) (hostnamedHostname1 *object);
+  const gchar * (*get_hostname) (Hostname1 *object);
 
-  const gchar * (*get_icon_name) (hostnamedHostname1 *object);
+  const gchar * (*get_icon_name) (Hostname1 *object);
 
-  const gchar * (*get_kernel_name) (hostnamedHostname1 *object);
+  const gchar * (*get_kernel_name) (Hostname1 *object);
 
-  const gchar * (*get_kernel_release) (hostnamedHostname1 *object);
+  const gchar * (*get_kernel_release) (Hostname1 *object);
 
-  const gchar * (*get_kernel_version) (hostnamedHostname1 *object);
+  const gchar * (*get_kernel_version) (Hostname1 *object);
 
-  const gchar * (*get_operating_system_cpename) (hostnamedHostname1 *object);
+  const gchar * (*get_operating_system_cpename) (Hostname1 *object);
 
-  const gchar * (*get_operating_system_pretty_name) (hostnamedHostname1 *object);
+  const gchar * (*get_operating_system_pretty_name) (Hostname1 *object);
 
-  const gchar * (*get_pretty_hostname) (hostnamedHostname1 *object);
+  const gchar * (*get_pretty_hostname) (Hostname1 *object);
 
-  const gchar * (*get_static_hostname) (hostnamedHostname1 *object);
+  const gchar * (*get_static_hostname) (Hostname1 *object);
 
 };
 
-GType hostnamed_hostname1_get_type (void) G_GNUC_CONST;
+GType hostname1_get_type (void) G_GNUC_CONST;
 
-GDBusInterfaceInfo *hostnamed_hostname1_interface_info (void);
-guint hostnamed_hostname1_override_properties (GObjectClass *klass, guint property_id_begin);
+GDBusInterfaceInfo *hostname1_interface_info (void);
+guint hostname1_override_properties (GObjectClass *klass, guint property_id_begin);
 
 
 /* D-Bus method call completion functions: */
-void hostnamed_hostname1_complete_set_hostname (
-    hostnamedHostname1 *object,
+void hostname1_complete_set_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
-void hostnamed_hostname1_complete_set_static_hostname (
-    hostnamedHostname1 *object,
+void hostname1_complete_set_static_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
-void hostnamed_hostname1_complete_set_pretty_hostname (
-    hostnamedHostname1 *object,
+void hostname1_complete_set_pretty_hostname (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
-void hostnamed_hostname1_complete_set_icon_name (
-    hostnamedHostname1 *object,
+void hostname1_complete_set_icon_name (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
-void hostnamed_hostname1_complete_set_chassis (
-    hostnamedHostname1 *object,
+void hostname1_complete_set_chassis (
+    Hostname1 *object,
     GDBusMethodInvocation *invocation);
 
 
 
 /* D-Bus method calls: */
-void hostnamed_hostname1_call_set_hostname (
-    hostnamedHostname1 *proxy,
+void hostname1_call_set_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean hostnamed_hostname1_call_set_hostname_finish (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean hostnamed_hostname1_call_set_hostname_sync (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void hostnamed_hostname1_call_set_static_hostname (
-    hostnamedHostname1 *proxy,
+void hostname1_call_set_static_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean hostnamed_hostname1_call_set_static_hostname_finish (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_static_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean hostnamed_hostname1_call_set_static_hostname_sync (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_static_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void hostnamed_hostname1_call_set_pretty_hostname (
-    hostnamedHostname1 *proxy,
+void hostname1_call_set_pretty_hostname (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean hostnamed_hostname1_call_set_pretty_hostname_finish (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_pretty_hostname_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean hostnamed_hostname1_call_set_pretty_hostname_sync (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_pretty_hostname_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void hostnamed_hostname1_call_set_icon_name (
-    hostnamedHostname1 *proxy,
+void hostname1_call_set_icon_name (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean hostnamed_hostname1_call_set_icon_name_finish (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_icon_name_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean hostnamed_hostname1_call_set_icon_name_sync (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_icon_name_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void hostnamed_hostname1_call_set_chassis (
-    hostnamedHostname1 *proxy,
+void hostname1_call_set_chassis (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean hostnamed_hostname1_call_set_chassis_finish (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_chassis_finish (
+    Hostname1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean hostnamed_hostname1_call_set_chassis_sync (
-    hostnamedHostname1 *proxy,
+gboolean hostname1_call_set_chassis_sync (
+    Hostname1 *proxy,
     const gchar *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
@@ -214,75 +214,75 @@ gboolean hostnamed_hostname1_call_set_chassis_sync (
 
 
 /* D-Bus property accessors: */
-const gchar *hostnamed_hostname1_get_hostname (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_hostname (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_hostname (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_hostname (Hostname1 *object);
+gchar *hostname1_dup_hostname (Hostname1 *object);
+void hostname1_set_hostname (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_static_hostname (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_static_hostname (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_static_hostname (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_static_hostname (Hostname1 *object);
+gchar *hostname1_dup_static_hostname (Hostname1 *object);
+void hostname1_set_static_hostname (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_pretty_hostname (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_pretty_hostname (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_pretty_hostname (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_pretty_hostname (Hostname1 *object);
+gchar *hostname1_dup_pretty_hostname (Hostname1 *object);
+void hostname1_set_pretty_hostname (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_icon_name (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_icon_name (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_icon_name (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_icon_name (Hostname1 *object);
+gchar *hostname1_dup_icon_name (Hostname1 *object);
+void hostname1_set_icon_name (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_chassis (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_chassis (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_chassis (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_chassis (Hostname1 *object);
+gchar *hostname1_dup_chassis (Hostname1 *object);
+void hostname1_set_chassis (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_kernel_name (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_kernel_name (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_kernel_name (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_kernel_name (Hostname1 *object);
+gchar *hostname1_dup_kernel_name (Hostname1 *object);
+void hostname1_set_kernel_name (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_kernel_release (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_kernel_release (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_kernel_release (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_kernel_release (Hostname1 *object);
+gchar *hostname1_dup_kernel_release (Hostname1 *object);
+void hostname1_set_kernel_release (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_kernel_version (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_kernel_version (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_kernel_version (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_kernel_version (Hostname1 *object);
+gchar *hostname1_dup_kernel_version (Hostname1 *object);
+void hostname1_set_kernel_version (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_operating_system_pretty_name (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_operating_system_pretty_name (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_operating_system_pretty_name (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_operating_system_pretty_name (Hostname1 *object);
+gchar *hostname1_dup_operating_system_pretty_name (Hostname1 *object);
+void hostname1_set_operating_system_pretty_name (Hostname1 *object, const gchar *value);
 
-const gchar *hostnamed_hostname1_get_operating_system_cpename (hostnamedHostname1 *object);
-gchar *hostnamed_hostname1_dup_operating_system_cpename (hostnamedHostname1 *object);
-void hostnamed_hostname1_set_operating_system_cpename (hostnamedHostname1 *object, const gchar *value);
+const gchar *hostname1_get_operating_system_cpename (Hostname1 *object);
+gchar *hostname1_dup_operating_system_cpename (Hostname1 *object);
+void hostname1_set_operating_system_cpename (Hostname1 *object, const gchar *value);
 
 
 /* ---- */
 
-#define HOSTNAMED_TYPE_HOSTNAME1_PROXY (hostnamed_hostname1_proxy_get_type ())
-#define HOSTNAMED_HOSTNAME1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), HOSTNAMED_TYPE_HOSTNAME1_PROXY, hostnamedHostname1Proxy))
-#define HOSTNAMED_HOSTNAME1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), HOSTNAMED_TYPE_HOSTNAME1_PROXY, hostnamedHostname1ProxyClass))
-#define HOSTNAMED_HOSTNAME1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), HOSTNAMED_TYPE_HOSTNAME1_PROXY, hostnamedHostname1ProxyClass))
-#define HOSTNAMED_IS_HOSTNAME1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), HOSTNAMED_TYPE_HOSTNAME1_PROXY))
-#define HOSTNAMED_IS_HOSTNAME1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), HOSTNAMED_TYPE_HOSTNAME1_PROXY))
+#define TYPE_HOSTNAME1_PROXY (hostname1_proxy_get_type ())
+#define HOSTNAME1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_HOSTNAME1_PROXY, Hostname1Proxy))
+#define HOSTNAME1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_HOSTNAME1_PROXY, Hostname1ProxyClass))
+#define HOSTNAME1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_HOSTNAME1_PROXY, Hostname1ProxyClass))
+#define IS_HOSTNAME1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_HOSTNAME1_PROXY))
+#define IS_HOSTNAME1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_HOSTNAME1_PROXY))
 
-typedef struct _hostnamedHostname1Proxy hostnamedHostname1Proxy;
-typedef struct _hostnamedHostname1ProxyClass hostnamedHostname1ProxyClass;
-typedef struct _hostnamedHostname1ProxyPrivate hostnamedHostname1ProxyPrivate;
+typedef struct _Hostname1Proxy Hostname1Proxy;
+typedef struct _Hostname1ProxyClass Hostname1ProxyClass;
+typedef struct _Hostname1ProxyPrivate Hostname1ProxyPrivate;
 
-struct _hostnamedHostname1Proxy
+struct _Hostname1Proxy
 {
   /*< private >*/
   GDBusProxy parent_instance;
-  hostnamedHostname1ProxyPrivate *priv;
+  Hostname1ProxyPrivate *priv;
 };
 
-struct _hostnamedHostname1ProxyClass
+struct _Hostname1ProxyClass
 {
   GDBusProxyClass parent_class;
 };
 
-GType hostnamed_hostname1_proxy_get_type (void) G_GNUC_CONST;
+GType hostname1_proxy_get_type (void) G_GNUC_CONST;
 
-void hostnamed_hostname1_proxy_new (
+void hostname1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -290,10 +290,10 @@ void hostnamed_hostname1_proxy_new (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-hostnamedHostname1 *hostnamed_hostname1_proxy_new_finish (
+Hostname1 *hostname1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error);
-hostnamedHostname1 *hostnamed_hostname1_proxy_new_sync (
+Hostname1 *hostname1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -301,7 +301,7 @@ hostnamedHostname1 *hostnamed_hostname1_proxy_new_sync (
     GCancellable        *cancellable,
     GError             **error);
 
-void hostnamed_hostname1_proxy_new_for_bus (
+void hostname1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -309,10 +309,10 @@ void hostnamed_hostname1_proxy_new_for_bus (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-hostnamedHostname1 *hostnamed_hostname1_proxy_new_for_bus_finish (
+Hostname1 *hostname1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error);
-hostnamedHostname1 *hostnamed_hostname1_proxy_new_for_bus_sync (
+Hostname1 *hostname1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -323,34 +323,34 @@ hostnamedHostname1 *hostnamed_hostname1_proxy_new_for_bus_sync (
 
 /* ---- */
 
-#define HOSTNAMED_TYPE_HOSTNAME1_SKELETON (hostnamed_hostname1_skeleton_get_type ())
-#define HOSTNAMED_HOSTNAME1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), HOSTNAMED_TYPE_HOSTNAME1_SKELETON, hostnamedHostname1Skeleton))
-#define HOSTNAMED_HOSTNAME1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), HOSTNAMED_TYPE_HOSTNAME1_SKELETON, hostnamedHostname1SkeletonClass))
-#define HOSTNAMED_HOSTNAME1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), HOSTNAMED_TYPE_HOSTNAME1_SKELETON, hostnamedHostname1SkeletonClass))
-#define HOSTNAMED_IS_HOSTNAME1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), HOSTNAMED_TYPE_HOSTNAME1_SKELETON))
-#define HOSTNAMED_IS_HOSTNAME1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), HOSTNAMED_TYPE_HOSTNAME1_SKELETON))
+#define TYPE_HOSTNAME1_SKELETON (hostname1_skeleton_get_type ())
+#define HOSTNAME1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_HOSTNAME1_SKELETON, Hostname1Skeleton))
+#define HOSTNAME1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_HOSTNAME1_SKELETON, Hostname1SkeletonClass))
+#define HOSTNAME1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_HOSTNAME1_SKELETON, Hostname1SkeletonClass))
+#define IS_HOSTNAME1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_HOSTNAME1_SKELETON))
+#define IS_HOSTNAME1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_HOSTNAME1_SKELETON))
 
-typedef struct _hostnamedHostname1Skeleton hostnamedHostname1Skeleton;
-typedef struct _hostnamedHostname1SkeletonClass hostnamedHostname1SkeletonClass;
-typedef struct _hostnamedHostname1SkeletonPrivate hostnamedHostname1SkeletonPrivate;
+typedef struct _Hostname1Skeleton Hostname1Skeleton;
+typedef struct _Hostname1SkeletonClass Hostname1SkeletonClass;
+typedef struct _Hostname1SkeletonPrivate Hostname1SkeletonPrivate;
 
-struct _hostnamedHostname1Skeleton
+struct _Hostname1Skeleton
 {
   /*< private >*/
   GDBusInterfaceSkeleton parent_instance;
-  hostnamedHostname1SkeletonPrivate *priv;
+  Hostname1SkeletonPrivate *priv;
 };
 
-struct _hostnamedHostname1SkeletonClass
+struct _Hostname1SkeletonClass
 {
   GDBusInterfaceSkeletonClass parent_class;
 };
 
-GType hostnamed_hostname1_skeleton_get_type (void) G_GNUC_CONST;
+GType hostname1_skeleton_get_type (void) G_GNUC_CONST;
 
-hostnamedHostname1 *hostnamed_hostname1_skeleton_new (void);
+Hostname1 *hostname1_skeleton_new (void);
 
 
 G_END_DECLS
 
-#endif /* __SRC_INTERFACES_HOSTNAMED_HOSTNAMED_GEN_H__ */
+#endif /* __HOSTNAMED_GEN_H__ */

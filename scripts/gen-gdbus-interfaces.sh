@@ -1,5 +1,4 @@
-#!/usr/local/bin/bash
-# JUST for now
+#!/bin/sh
 
 # Copyright (c) 2014 Ian Sutton <ian@kremlin.cc>
 #
@@ -15,24 +14,26 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-# TODO fix #include, should be "foo-gen.h" instead of "src/interfaces/foo/foo-gen.h
+# cd to root of repository
+REPO=$(dirname "$(readlink -f $0)")/../
+cd $REPO
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/../ && pwd )"
-
-if [[ -z "$1" ]]; then 
+if [[ $# -ne 1 ]];then
 	echo "syntax: ./gen-dbus-interfaces <interface name>"
 	exit 1
-elif [[ "$1" != "hostnamed" && "$1" != "localed" && "$1" != "timedated" && "$1" != "logind" ]]; then 
+elif [[ $1 != "hostnamed" && $1 != "localed" && $1 != "timedated" && $1 != "logind" ]];then
 	echo "<interface name> must be 'hostnamed', 'localed', 'timedated', or 'logind'"
 	exit 1
 fi
 
+# cd to interface-specific source directory to avoid preprocessor pathing bug
+cd src/interfaces/$1
+
 gdbus-codegen \
 --interface-prefix org.freedesktop. \
---generate-docbook doc/$1-docbook.xml \
---generate-c-code  src/interfaces/$1/$1-gen \
---c-namespace $1 \
-conf/$1-ispect.xml
+--generate-docbook $REPO/doc/$1-docbook.xml \
+--generate-c-code  $1-gen \
+$REPO/conf/$1-ispect.xml
 
-echo "success"
+echo "Success"
 exit 0

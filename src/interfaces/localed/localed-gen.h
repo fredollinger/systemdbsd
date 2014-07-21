@@ -4,8 +4,8 @@
  * The license of this code is the same as for the source it was derived from.
  */
 
-#ifndef __SRC_INTERFACES_LOCALED_LOCALED_GEN_H__
-#define __SRC_INTERFACES_LOCALED_LOCALED_GEN_H__
+#ifndef __LOCALED_GEN_H__
+#define __LOCALED_GEN_H__
 
 #include <gio/gio.h>
 
@@ -15,28 +15,28 @@ G_BEGIN_DECLS
 /* ------------------------------------------------------------------------ */
 /* Declarations for org.freedesktop.locale1 */
 
-#define LOCALED_TYPE_LOCALE1 (localed_locale1_get_type ())
-#define LOCALED_LOCALE1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOCALED_TYPE_LOCALE1, localedLocale1))
-#define LOCALED_IS_LOCALE1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOCALED_TYPE_LOCALE1))
-#define LOCALED_LOCALE1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), LOCALED_TYPE_LOCALE1, localedLocale1Iface))
+#define TYPE_LOCALE1 (locale1_get_type ())
+#define LOCALE1(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOCALE1, Locale1))
+#define IS_LOCALE1(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOCALE1))
+#define LOCALE1_GET_IFACE(o) (G_TYPE_INSTANCE_GET_INTERFACE ((o), TYPE_LOCALE1, Locale1Iface))
 
-struct _localedLocale1;
-typedef struct _localedLocale1 localedLocale1;
-typedef struct _localedLocale1Iface localedLocale1Iface;
+struct _Locale1;
+typedef struct _Locale1 Locale1;
+typedef struct _Locale1Iface Locale1Iface;
 
-struct _localedLocale1Iface
+struct _Locale1Iface
 {
   GTypeInterface parent_iface;
 
 
   gboolean (*handle_set_locale) (
-    localedLocale1 *object,
+    Locale1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *const *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1);
 
   gboolean (*handle_set_vconsole_keyboard) (
-    localedLocale1 *object,
+    Locale1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
@@ -44,7 +44,7 @@ struct _localedLocale1Iface
     gboolean arg_unnamed_arg3);
 
   gboolean (*handle_set_x11_keyboard) (
-    localedLocale1 *object,
+    Locale1 *object,
     GDBusMethodInvocation *invocation,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
@@ -53,66 +53,66 @@ struct _localedLocale1Iface
     gboolean arg_unnamed_arg4,
     gboolean arg_unnamed_arg5);
 
-  const gchar *const * (*get_locale) (localedLocale1 *object);
+  const gchar *const * (*get_locale) (Locale1 *object);
 
-  const gchar * (*get_vconsole_keymap) (localedLocale1 *object);
+  const gchar * (*get_vconsole_keymap) (Locale1 *object);
 
-  const gchar * (*get_vconsole_keymap_toggle) (localedLocale1 *object);
+  const gchar * (*get_vconsole_keymap_toggle) (Locale1 *object);
 
-  const gchar * (*get_x11_layout) (localedLocale1 *object);
+  const gchar * (*get_x11_layout) (Locale1 *object);
 
-  const gchar * (*get_x11_model) (localedLocale1 *object);
+  const gchar * (*get_x11_model) (Locale1 *object);
 
-  const gchar * (*get_x11_options) (localedLocale1 *object);
+  const gchar * (*get_x11_options) (Locale1 *object);
 
-  const gchar * (*get_x11_variant) (localedLocale1 *object);
+  const gchar * (*get_x11_variant) (Locale1 *object);
 
 };
 
-GType localed_locale1_get_type (void) G_GNUC_CONST;
+GType locale1_get_type (void) G_GNUC_CONST;
 
-GDBusInterfaceInfo *localed_locale1_interface_info (void);
-guint localed_locale1_override_properties (GObjectClass *klass, guint property_id_begin);
+GDBusInterfaceInfo *locale1_interface_info (void);
+guint locale1_override_properties (GObjectClass *klass, guint property_id_begin);
 
 
 /* D-Bus method call completion functions: */
-void localed_locale1_complete_set_locale (
-    localedLocale1 *object,
+void locale1_complete_set_locale (
+    Locale1 *object,
     GDBusMethodInvocation *invocation);
 
-void localed_locale1_complete_set_vconsole_keyboard (
-    localedLocale1 *object,
+void locale1_complete_set_vconsole_keyboard (
+    Locale1 *object,
     GDBusMethodInvocation *invocation);
 
-void localed_locale1_complete_set_x11_keyboard (
-    localedLocale1 *object,
+void locale1_complete_set_x11_keyboard (
+    Locale1 *object,
     GDBusMethodInvocation *invocation);
 
 
 
 /* D-Bus method calls: */
-void localed_locale1_call_set_locale (
-    localedLocale1 *proxy,
+void locale1_call_set_locale (
+    Locale1 *proxy,
     const gchar *const *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean localed_locale1_call_set_locale_finish (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_locale_finish (
+    Locale1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean localed_locale1_call_set_locale_sync (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_locale_sync (
+    Locale1 *proxy,
     const gchar *const *arg_unnamed_arg0,
     gboolean arg_unnamed_arg1,
     GCancellable *cancellable,
     GError **error);
 
-void localed_locale1_call_set_vconsole_keyboard (
-    localedLocale1 *proxy,
+void locale1_call_set_vconsole_keyboard (
+    Locale1 *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -121,13 +121,13 @@ void localed_locale1_call_set_vconsole_keyboard (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean localed_locale1_call_set_vconsole_keyboard_finish (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_vconsole_keyboard_finish (
+    Locale1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean localed_locale1_call_set_vconsole_keyboard_sync (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_vconsole_keyboard_sync (
+    Locale1 *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     gboolean arg_unnamed_arg2,
@@ -135,8 +135,8 @@ gboolean localed_locale1_call_set_vconsole_keyboard_sync (
     GCancellable *cancellable,
     GError **error);
 
-void localed_locale1_call_set_x11_keyboard (
-    localedLocale1 *proxy,
+void locale1_call_set_x11_keyboard (
+    Locale1 *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -147,13 +147,13 @@ void localed_locale1_call_set_x11_keyboard (
     GAsyncReadyCallback callback,
     gpointer user_data);
 
-gboolean localed_locale1_call_set_x11_keyboard_finish (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_x11_keyboard_finish (
+    Locale1 *proxy,
     GAsyncResult *res,
     GError **error);
 
-gboolean localed_locale1_call_set_x11_keyboard_sync (
-    localedLocale1 *proxy,
+gboolean locale1_call_set_x11_keyboard_sync (
+    Locale1 *proxy,
     const gchar *arg_unnamed_arg0,
     const gchar *arg_unnamed_arg1,
     const gchar *arg_unnamed_arg2,
@@ -166,63 +166,63 @@ gboolean localed_locale1_call_set_x11_keyboard_sync (
 
 
 /* D-Bus property accessors: */
-const gchar *const *localed_locale1_get_locale (localedLocale1 *object);
-gchar **localed_locale1_dup_locale (localedLocale1 *object);
-void localed_locale1_set_locale (localedLocale1 *object, const gchar *const *value);
+const gchar *const *locale1_get_locale (Locale1 *object);
+gchar **locale1_dup_locale (Locale1 *object);
+void locale1_set_locale (Locale1 *object, const gchar *const *value);
 
-const gchar *localed_locale1_get_x11_layout (localedLocale1 *object);
-gchar *localed_locale1_dup_x11_layout (localedLocale1 *object);
-void localed_locale1_set_x11_layout (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_x11_layout (Locale1 *object);
+gchar *locale1_dup_x11_layout (Locale1 *object);
+void locale1_set_x11_layout (Locale1 *object, const gchar *value);
 
-const gchar *localed_locale1_get_x11_model (localedLocale1 *object);
-gchar *localed_locale1_dup_x11_model (localedLocale1 *object);
-void localed_locale1_set_x11_model (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_x11_model (Locale1 *object);
+gchar *locale1_dup_x11_model (Locale1 *object);
+void locale1_set_x11_model (Locale1 *object, const gchar *value);
 
-const gchar *localed_locale1_get_x11_variant (localedLocale1 *object);
-gchar *localed_locale1_dup_x11_variant (localedLocale1 *object);
-void localed_locale1_set_x11_variant (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_x11_variant (Locale1 *object);
+gchar *locale1_dup_x11_variant (Locale1 *object);
+void locale1_set_x11_variant (Locale1 *object, const gchar *value);
 
-const gchar *localed_locale1_get_x11_options (localedLocale1 *object);
-gchar *localed_locale1_dup_x11_options (localedLocale1 *object);
-void localed_locale1_set_x11_options (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_x11_options (Locale1 *object);
+gchar *locale1_dup_x11_options (Locale1 *object);
+void locale1_set_x11_options (Locale1 *object, const gchar *value);
 
-const gchar *localed_locale1_get_vconsole_keymap (localedLocale1 *object);
-gchar *localed_locale1_dup_vconsole_keymap (localedLocale1 *object);
-void localed_locale1_set_vconsole_keymap (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_vconsole_keymap (Locale1 *object);
+gchar *locale1_dup_vconsole_keymap (Locale1 *object);
+void locale1_set_vconsole_keymap (Locale1 *object, const gchar *value);
 
-const gchar *localed_locale1_get_vconsole_keymap_toggle (localedLocale1 *object);
-gchar *localed_locale1_dup_vconsole_keymap_toggle (localedLocale1 *object);
-void localed_locale1_set_vconsole_keymap_toggle (localedLocale1 *object, const gchar *value);
+const gchar *locale1_get_vconsole_keymap_toggle (Locale1 *object);
+gchar *locale1_dup_vconsole_keymap_toggle (Locale1 *object);
+void locale1_set_vconsole_keymap_toggle (Locale1 *object, const gchar *value);
 
 
 /* ---- */
 
-#define LOCALED_TYPE_LOCALE1_PROXY (localed_locale1_proxy_get_type ())
-#define LOCALED_LOCALE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOCALED_TYPE_LOCALE1_PROXY, localedLocale1Proxy))
-#define LOCALED_LOCALE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOCALED_TYPE_LOCALE1_PROXY, localedLocale1ProxyClass))
-#define LOCALED_LOCALE1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOCALED_TYPE_LOCALE1_PROXY, localedLocale1ProxyClass))
-#define LOCALED_IS_LOCALE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOCALED_TYPE_LOCALE1_PROXY))
-#define LOCALED_IS_LOCALE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOCALED_TYPE_LOCALE1_PROXY))
+#define TYPE_LOCALE1_PROXY (locale1_proxy_get_type ())
+#define LOCALE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOCALE1_PROXY, Locale1Proxy))
+#define LOCALE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_LOCALE1_PROXY, Locale1ProxyClass))
+#define LOCALE1_PROXY_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_LOCALE1_PROXY, Locale1ProxyClass))
+#define IS_LOCALE1_PROXY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOCALE1_PROXY))
+#define IS_LOCALE1_PROXY_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_LOCALE1_PROXY))
 
-typedef struct _localedLocale1Proxy localedLocale1Proxy;
-typedef struct _localedLocale1ProxyClass localedLocale1ProxyClass;
-typedef struct _localedLocale1ProxyPrivate localedLocale1ProxyPrivate;
+typedef struct _Locale1Proxy Locale1Proxy;
+typedef struct _Locale1ProxyClass Locale1ProxyClass;
+typedef struct _Locale1ProxyPrivate Locale1ProxyPrivate;
 
-struct _localedLocale1Proxy
+struct _Locale1Proxy
 {
   /*< private >*/
   GDBusProxy parent_instance;
-  localedLocale1ProxyPrivate *priv;
+  Locale1ProxyPrivate *priv;
 };
 
-struct _localedLocale1ProxyClass
+struct _Locale1ProxyClass
 {
   GDBusProxyClass parent_class;
 };
 
-GType localed_locale1_proxy_get_type (void) G_GNUC_CONST;
+GType locale1_proxy_get_type (void) G_GNUC_CONST;
 
-void localed_locale1_proxy_new (
+void locale1_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -230,10 +230,10 @@ void localed_locale1_proxy_new (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-localedLocale1 *localed_locale1_proxy_new_finish (
+Locale1 *locale1_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error);
-localedLocale1 *localed_locale1_proxy_new_sync (
+Locale1 *locale1_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -241,7 +241,7 @@ localedLocale1 *localed_locale1_proxy_new_sync (
     GCancellable        *cancellable,
     GError             **error);
 
-void localed_locale1_proxy_new_for_bus (
+void locale1_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -249,10 +249,10 @@ void localed_locale1_proxy_new_for_bus (
     GCancellable        *cancellable,
     GAsyncReadyCallback  callback,
     gpointer             user_data);
-localedLocale1 *localed_locale1_proxy_new_for_bus_finish (
+Locale1 *locale1_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error);
-localedLocale1 *localed_locale1_proxy_new_for_bus_sync (
+Locale1 *locale1_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -263,34 +263,34 @@ localedLocale1 *localed_locale1_proxy_new_for_bus_sync (
 
 /* ---- */
 
-#define LOCALED_TYPE_LOCALE1_SKELETON (localed_locale1_skeleton_get_type ())
-#define LOCALED_LOCALE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), LOCALED_TYPE_LOCALE1_SKELETON, localedLocale1Skeleton))
-#define LOCALED_LOCALE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), LOCALED_TYPE_LOCALE1_SKELETON, localedLocale1SkeletonClass))
-#define LOCALED_LOCALE1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), LOCALED_TYPE_LOCALE1_SKELETON, localedLocale1SkeletonClass))
-#define LOCALED_IS_LOCALE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), LOCALED_TYPE_LOCALE1_SKELETON))
-#define LOCALED_IS_LOCALE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LOCALED_TYPE_LOCALE1_SKELETON))
+#define TYPE_LOCALE1_SKELETON (locale1_skeleton_get_type ())
+#define LOCALE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_LOCALE1_SKELETON, Locale1Skeleton))
+#define LOCALE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_CAST ((k), TYPE_LOCALE1_SKELETON, Locale1SkeletonClass))
+#define LOCALE1_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_LOCALE1_SKELETON, Locale1SkeletonClass))
+#define IS_LOCALE1_SKELETON(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_LOCALE1_SKELETON))
+#define IS_LOCALE1_SKELETON_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_LOCALE1_SKELETON))
 
-typedef struct _localedLocale1Skeleton localedLocale1Skeleton;
-typedef struct _localedLocale1SkeletonClass localedLocale1SkeletonClass;
-typedef struct _localedLocale1SkeletonPrivate localedLocale1SkeletonPrivate;
+typedef struct _Locale1Skeleton Locale1Skeleton;
+typedef struct _Locale1SkeletonClass Locale1SkeletonClass;
+typedef struct _Locale1SkeletonPrivate Locale1SkeletonPrivate;
 
-struct _localedLocale1Skeleton
+struct _Locale1Skeleton
 {
   /*< private >*/
   GDBusInterfaceSkeleton parent_instance;
-  localedLocale1SkeletonPrivate *priv;
+  Locale1SkeletonPrivate *priv;
 };
 
-struct _localedLocale1SkeletonClass
+struct _Locale1SkeletonClass
 {
   GDBusInterfaceSkeletonClass parent_class;
 };
 
-GType localed_locale1_skeleton_get_type (void) G_GNUC_CONST;
+GType locale1_skeleton_get_type (void) G_GNUC_CONST;
 
-localedLocale1 *localed_locale1_skeleton_new (void);
+Locale1 *locale1_skeleton_new (void);
 
 
 G_END_DECLS
 
-#endif /* __SRC_INTERFACES_LOCALED_LOCALED_GEN_H__ */
+#endif /* __LOCALED_GEN_H__ */
