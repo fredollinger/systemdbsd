@@ -25,13 +25,13 @@
 
 GPtrArray *hostnamed_freeable;
 GDBusNodeInfo *spect_data;
-hostnamedHostname1 *hostnamed_interf;
+Hostname1 *hostnamed_interf;
 
 /* begin method/property/signal code */
 
 /* TODO make sure these guys only work if called by root */
 static gboolean
-on_handle_set_hostname(hostnamedHostname1 *hn1_passed_interf,
+on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        GDBusMethodInvocation *invoc,
                        const gchar *greet,
                        gpointer data) {
@@ -39,7 +39,7 @@ on_handle_set_hostname(hostnamedHostname1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_static_hostname(hostnamedHostname1 *hn1_passed_interf,
+on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
                               GDBusMethodInvocation *invoc,
                               const gchar *greet,
                               gpointer data) {
@@ -47,7 +47,7 @@ on_handle_set_static_hostname(hostnamedHostname1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_pretty_hostname(hostnamedHostname1 *hn1_passed_interf,
+on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
                               GDBusMethodInvocation *invoc,
                               const gchar *greet,
                               gpointer data) {
@@ -55,7 +55,7 @@ on_handle_set_pretty_hostname(hostnamedHostname1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_chassis(hostnamedHostname1 *hn1_passed_interf,
+on_handle_set_chassis(Hostname1 *hn1_passed_interf,
                       GDBusMethodInvocation *invoc,
                       const gchar *greet,
                       gpointer data) {
@@ -63,7 +63,7 @@ on_handle_set_chassis(hostnamedHostname1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_icon_name(hostnamedHostname1 *hn1_passed_interf,
+on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
                         GDBusMethodInvocation *invoc,
                         const gchar *greet,
                         gpointer data) {
@@ -153,12 +153,12 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
 }
 
 static void hostnamed_on_name_acquired(GDBusConnection *conn,
-                             const gchar *name,
-                             gpointer user_data) {
+    		                           const gchar *name,
+                                       gpointer user_data) {
 
     g_print("got '%s' on system bus\n", name);
 
-    hostnamed_interf = hostnamed_hostname1_skeleton_new();
+    hostnamed_interf = hostname1_skeleton_new();
 
     /* attach function pointers to generated struct's method handlers */
     g_signal_connect(hostnamed_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL);
@@ -168,23 +168,23 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
     g_signal_connect(hostnamed_interf, "handle-set-icon-name", G_CALLBACK(on_handle_set_icon_name), NULL);
 
     /* set our properties before export */
-    hostnamed_hostname1_set_hostname(hostnamed_interf, our_get_hostname());
-    hostnamed_hostname1_set_static_hostname(hostnamed_interf, our_get_static_hostname());
-    hostnamed_hostname1_set_pretty_hostname(hostnamed_interf, our_get_pretty_hostname());
-    hostnamed_hostname1_set_chassis(hostnamed_interf, our_get_chassis());
-    hostnamed_hostname1_set_icon_name(hostnamed_interf, our_get_icon_name());
-    hostnamed_hostname1_set_kernel_name(hostnamed_interf, our_get_kernel_name());
-    hostnamed_hostname1_set_kernel_version(hostnamed_interf, our_get_kernel_version());
-    hostnamed_hostname1_set_kernel_release(hostnamed_interf, our_get_kernel_release());
-    hostnamed_hostname1_set_operating_system_cpename(hostnamed_interf, our_get_os_cpename());
-    hostnamed_hostname1_set_operating_system_pretty_name(hostnamed_interf, our_get_os_pretty_name());
+    hostname1_set_hostname(hostnamed_interf, our_get_hostname());
+    hostname1_set_static_hostname(hostnamed_interf, our_get_static_hostname());
+    hostname1_set_pretty_hostname(hostnamed_interf, our_get_pretty_hostname());
+    hostname1_set_chassis(hostnamed_interf, our_get_chassis());
+    hostname1_set_icon_name(hostnamed_interf, our_get_icon_name());
+    hostname1_set_kernel_name(hostnamed_interf, our_get_kernel_name());
+    hostname1_set_kernel_version(hostnamed_interf, our_get_kernel_version());
+    hostname1_set_kernel_release(hostnamed_interf, our_get_kernel_release());
+    hostname1_set_operating_system_cpename(hostnamed_interf, our_get_os_cpename());
+    hostname1_set_operating_system_pretty_name(hostnamed_interf, our_get_os_pretty_name());
  
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(hostnamed_interf),
-                                                                   conn,
-                                                                   "/org/freedesktop/hostname1",
-                                                                   NULL)) {
+                                         conn,
+                                         "/org/freedesktop/hostname1",
+                                         NULL)) {
 
-        g_printf("failed to export hostname1's interface on system bus!");
+        g_printf("Failed to export Hostname1's interface!");
     }
 
 }
@@ -196,15 +196,14 @@ void hostnamed_mem_clean() {
 }
 
 static void hostnamed_on_name_lost(GDBusConnection *conn,
-                         const gchar *name,
-                         gpointer user_data) {
+                                   const gchar *name,
+                                   gpointer user_data) {
 
     g_print("lost name %s, exiting...", name);
 
     hostnamed_mem_clean();
     g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(hostnamed_interf));
 
-    /* TODO exit through g_main_loop properly... */
 }
 
 /* safe call to try and start hostnamed */
@@ -221,7 +220,6 @@ void hostnamed_init() {
                                     NULL,
                                     NULL);
 
-    /* TODO: malloc and return reference as if a main() closed */
 }
 
 int main() {
