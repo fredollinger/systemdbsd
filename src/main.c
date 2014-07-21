@@ -24,12 +24,11 @@
 gboolean systemd_utils_init() {
 
 	if(!config_init()) {
-        gchar *tmp;
-        tmp = "/etc/systemd_compat.conf"; 
 
-        g_printf("FAILED to open config %s! did you `make install`?\n", tmp);
+        g_printf("FAILED to open config /etc/systemd_compat.conf! did you `make install`?\n", tmp);
         return FALSE;
-    } 
+    }
+
     return TRUE;
 }
 
@@ -50,15 +49,6 @@ int main() {
 
 	hostnamed_argv[0] = "/usr/local/libexec/systemd-hostnamed-handler";
 	localed_argv[0] = "/usr/local/libexec/systemd-localed-handler";
-
-	/*hostnamed_init_ok = g_spawn_async(NULL, hostnamed_argv, NULL, G_SPAWN_DEFAULT, NULL, NULL, hostnamed_pid, NULL);
-	localed_init_ok = g_spawn_async(NULL, localed_argv, NULL, G_SPAWN_DEFAULT, NULL, NULL, localed_pid, NULL);
-
-	hostnamed_source = g_child_watch_source_new(*hostnamed_pid);
-	localed_source = g_child_watch_source_new(*localed_pid); */
-
-	/*g_source_attach(hostnamed_source, NULL);
-	g_source_attach(localed_source, NULL);*/
 
 	g_main_loop_run(mloop);
 	g_main_loop_unref(mloop);
