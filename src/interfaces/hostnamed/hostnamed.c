@@ -24,12 +24,10 @@
 #include "hostnamed-gen.h"
 
 GPtrArray *hostnamed_freeable;
-GDBusNodeInfo *spect_data;
 Hostname1 *hostnamed_interf;
 
-/* begin method/property/signal code */
+/* --- begin method/property/signal code --- */
 
-/* TODO make sure these guys only work if called by root */
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        GDBusMethodInvocation *invoc,
@@ -79,11 +77,13 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-	int hostname_try;
 	gchar *hostname_buf;
 
 	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-	hostname_try = gethostname(hostname_buf, MAXHOSTNAMELEN);
+	g_ptr_array_add(hostnamed_freeable, hostname_buf);
+
+	if(gethostname(hostname_buf, MAXHOSTNAMELEN))
+		return "";
 
 	return hostname_buf;
 }
@@ -142,7 +142,7 @@ our_get_os_pretty_name() {
     return "TODO";
 }
 
-/* end method/property/signal code, begin bus/name handlers */
+/* --- end method/property/signal code, begin bus/name handlers --- */
 
 static void hostnamed_on_bus_acquired(GDBusConnection *conn,
                             const gchar *name,
@@ -189,10 +189,13 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
 
 }
 
+/* --- end bus/name handlers, begin misc functions --- */
+
 /* free()'s */
 void hostnamed_mem_clean() {
 
-    g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
+    ddg_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
+	g_ptr_array_free(hostnamed_freeable);
 }
 
 static void hostnamed_on_name_lost(GDBusConnection *conn,
@@ -229,10 +232,11 @@ int main() {
 
 	/* config stuff here */
 
-
 	hostnamed_init();
 	g_main_loop_run(hostnamed_loop);
 	g_main_loop_unref(hostnamed_loop);
+
+	hostnamed_mem_clean();
 
 	return 0;
 }
