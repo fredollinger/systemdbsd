@@ -1,2 +1,3 @@
  * handle SIGINTs so file descriptors are dropped properly, otherwise we get bus errors next run
  * document conf file settings
+ * add comment starting with XXX where ntpd should start up (see mail from jul 22)
