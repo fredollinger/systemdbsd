@@ -49,12 +49,10 @@ _build_genfile_objs_debug:
 	gcc -o bin/obj/logind-gen.o    $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/logind/logind-gen.c
 
 _install_conf:
-	cp conf/*-dbus.conf         /etc/dbus-1/system.d/
-	cp conf/systemd_compat.conf /etc/
+	cp conf/*-dbus.conf               /etc/dbus-1/system.d/
+	cp conf/systemd_compat.conf       /etc/
+	cp conf/org.freedesktop.*.service /usr/local/share/dbus-1/system-services/
 
 _install_interface_binaries: $(LINKHN)
-	cp bin/systemd-hostnamed /usr/local/libexec/
-	cp bin/systemd-localed   /usr/local/libexec/
-	cp bin/systemd-timedated /usr/local/libexec/
-	cp bin/systemd-logind    /usr/local/libexec/
-
+	mkdir /usr/local/bin/systemd-compat
+	cp bin/systemd-* /usr/local/bin/systemd-compat/
