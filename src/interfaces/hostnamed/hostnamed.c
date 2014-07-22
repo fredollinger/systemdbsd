@@ -194,8 +194,8 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
 /* free()'s */
 void hostnamed_mem_clean() {
 
-    ddg_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(hostnamed_freeable);
+    g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
+	g_ptr_array_free(hostnamed_freeable, TRUE);
 }
 
 static void hostnamed_on_name_lost(GDBusConnection *conn,
@@ -209,12 +209,15 @@ static void hostnamed_on_name_lost(GDBusConnection *conn,
 
 }
 
-/* safe call to try and start hostnamed */
-void hostnamed_init() {
+int main() {
 
-    guint bus_descriptor;
+	guint bus_descriptor;
+	GMainLoop *hostnamed_loop;
+	hostnamed_loop = g_main_loop_new(NULL, TRUE);
 
-    bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
+	/* config stuff here */
+
+	 bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.hostname1",
                                     G_BUS_NAME_OWNER_FLAGS_NONE,
                                     hostnamed_on_bus_acquired,
@@ -223,18 +226,10 @@ void hostnamed_init() {
                                     NULL,
                                     NULL);
 
-}
-
-int main() {
-
-	GMainLoop *hostnamed_loop;
-	hostnamed_loop = g_main_loop_new(NULL, TRUE);
-
-	/* config stuff here */
-
-	hostnamed_init();
 	g_main_loop_run(hostnamed_loop);
 	g_main_loop_unref(hostnamed_loop);
+
+	g_bus_unown_name(bus_descriptor);
 
 	hostnamed_mem_clean();
 
