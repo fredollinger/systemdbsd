@@ -1,7 +1,8 @@
 *.core
 bin/*.out
+bin/systemd-*
+bin/obj/*.o
 bin/*.bin
-bin/*-handler
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
