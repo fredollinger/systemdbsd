@@ -33,7 +33,7 @@ gdbus-codegen \
 --interface-prefix org.freedesktop. \
 --generate-docbook $REPO/doc/$1-docbook.xml \
 --generate-c-code  $1-gen \
-$REPO/conf/$1-ispect.xml
+$REPO/conf/introspect-xml/$1-ispect.xml
 
 echo "Success"
 exit 0

@@ -13,8 +13,16 @@ GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
 SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
 
 PREFIX=/usr/local
+LIBDIR=$(PREFIX)/lib
+OUR_LIBDIR=$(LIBDIR)/systemd-compat
 SYSCONFDIR=/etc
+
 SRCDIR=src
+CONFDIR=conf
+POLICYDIR=$(CONFDIR)/sysbus-policy
+ISPECTDIR=$(CONFDIR)/introspect-xml
+SERVICEFDIR=$(CONFDIR)/service-files
+
 INTFDIR=$(SRCDIR)/interfaces
 
 DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/system.d
@@ -67,10 +75,10 @@ _generate_genfiles:
 	$(INVOKE_GENFILE_SCRIPT) logind
 
 _install_conf:
-	cp conf/*-dbus.conf               $(DBUS_POLICYDIR)/
-	cp conf/org.freedesktop.*.service $(DBUS_CONFIGDIR)/
-	cp conf/systemd_compat.conf       $(SYSCONFDIR)/
+	cp $(POLICYDIR)/*-dbus.conf       $(DBUS_POLICYDIR)/
+	cp $(SERVICEFDIR)/*.service       $(DBUS_CONFIGDIR)/
+	cp $(CONFDIR)/systemd_compat.conf $(SYSCONFDIR)/
 
 _install_interface_binaries: $(LINKHN)
-	mkdir $(PREFIX)/bin/systemd-compat
-	cp bin/systemd-* $(PREFIX)/bin/systemd-compat/
+	mkdir -p $(OUR_LIBDIR)
+	cp bin/systemd-* $(OUR_LIBDIR)/ 
