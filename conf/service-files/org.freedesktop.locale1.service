@@ -1,3 +1,4 @@
 [D-BUS Service]
 Names=org.freedesktop.locale1
 Exec=/usr/local/bin/systemd-compat/systemd-localed
+User=root

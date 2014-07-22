@@ -1,3 +1,4 @@
 [D-BUS Service]
 Names=org.freedesktop.timedate1
 Exec=/usr/local/bin/systemd-compat/systemd-timedated
+User=root
