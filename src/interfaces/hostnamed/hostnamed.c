@@ -18,6 +18,7 @@
 #include <limits.h>
 
 #include <sys/param.h>
+#include <string.h>
 
 #include <glib/gprintf.h>
 
@@ -77,15 +78,20 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-	gchar *hostname_buf;
+	gchar *hostname_buf, *ret;
+	size_t hostname_divider;
 
 	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+	ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
 	g_ptr_array_add(hostnamed_freeable, hostname_buf);
+	g_ptr_array_add(hostnamed_freeable, ret);
 
 	if(gethostname(hostname_buf, MAXHOSTNAMELEN))
 		return "";
 
-	return hostname_buf;
+	hostname_divider = strcspn(hostname_buf, ".");
+
+	return strncpy(ret, hostname_buf, hostname_divider);
 }
 
 const gchar *
@@ -213,9 +219,9 @@ int main() {
 
 	guint bus_descriptor;
 	GMainLoop *hostnamed_loop;
-	hostnamed_loop = g_main_loop_new(NULL, TRUE);
 
-	/* config stuff here */
+	hostnamed_loop = g_main_loop_new(NULL, TRUE);
+	hostnamed_freeable = g_ptr_array_new();
 
 	 bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.hostname1",
