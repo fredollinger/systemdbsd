@@ -19,37 +19,11 @@
 #include <glib/gprintf.h>
 #include <glib/gstdio.h>
 
-#include "config.c"
-
-gboolean systemd_utils_init() {
-
-	if(!config_init()) {
-
-        g_printf("FAILED to open config /etc/systemd_compat.conf! did you `make install`?\n", tmp);
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
 int main() {
 
 	GMainLoop *mloop;		
 	mloop = g_main_loop_new(NULL, TRUE);
-			
-	if(!systemd_utils_init()) {
-		g_printf("failed to init, are you root?\n");
-		return 1; /* TODO errno properly. grep for all "return 1;"s, not TODO'ing each one */
-	}
-
-	gboolean hostnamed_init_ok, localed_init_ok;
-	GPid *hostnamed_pid, *localed_pid;
-	gchar *hostnamed_argv[0], *localed_argv[0];
-	GSource *hostnamed_source, *localed_source, *timedated_source, *logind_source;
-
-	hostnamed_argv[0] = "/usr/local/libexec/systemd-hostnamed-handler";
-	localed_argv[0] = "/usr/local/libexec/systemd-localed-handler";
-
+	
 	g_main_loop_run(mloop);
 	g_main_loop_unref(mloop);
 
