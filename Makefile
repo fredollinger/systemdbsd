@@ -17,8 +17,10 @@ SYSCONFDIR=/etc
 SRCDIR=src
 INTFDIR=$(SRCDIR)/interfaces
 
-DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/systemd.d
+DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/system.d
 DBUS_CONFIGDIR=$(PREFIX)/share/dbus-1/system-services
+
+INVOKE_GENFILE_SCRIPT=./scripts/gen-gdbus-interfaces.sh 
 
 all: build
 
@@ -29,8 +31,8 @@ publish: _build_interface_objs
 	$(CC) -o bin/out.bin $(CFLAGS) $(GLIBEF) $(SANITY) $(SRCDIR)/main.c
 
 clean:
-	rm bin/*
-	rm bin/obj/*
+	find ./bin -type f -exec rm {} \;
+	find $(INTFDIR)/ -type f -iname *-gen.* -exec rm {} \;
 
 install: _install_conf _install_interface_binaries
 
@@ -46,17 +48,23 @@ _build_interface_objs_debug: _build_genfile_objs_debug
 	$(CC) -o bin/systemd-timedated $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o
 	$(CC) -o bin/systemd-logind    $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o
 
-_build_genfile_objs:
+_build_genfile_objs: _generate_genfiles
 	$(CC) -o bin/obj/hostnamed-gen.o $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
 	$(CC) -o bin/obj/localed-gen.o   $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/localed/localed-gen.c
 	$(CC) -o bin/obj/timedated-gen.o $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/timedated/timedated-gen.c
 	$(CC) -o bin/obj/logind-gen.o    $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/logind/logind-gen.c
 
-_build_genfile_objs_debug:
+_build_genfile_objs_debug: _generate_genfiles
 	$(CC) -o bin/obj/hostnamed-gen.o $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
 	$(CC) -o bin/obj/localed-gen.o   $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/localed/localed-gen.c
 	$(CC) -o bin/obj/timedated-gen.o $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/timedated/timedated-gen.c
 	$(CC) -o bin/obj/logind-gen.o    $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/logind/logind-gen.c
+
+_generate_genfiles:
+	$(INVOKE_GENFILE_SCRIPT) hostnamed
+	$(INVOKE_GENFILE_SCRIPT) localed
+	$(INVOKE_GENFILE_SCRIPT) timedated
+	$(INVOKE_GENFILE_SCRIPT) logind
 
 _install_conf:
 	cp conf/*-dbus.conf               $(DBUS_POLICYDIR)/
