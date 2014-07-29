@@ -16,6 +16,7 @@
 
 #include <unistd.h>
 #include <limits.h>
+#include <signal.h>
 
 #include <sys/param.h>
 #include <string.h>
@@ -28,6 +29,11 @@
 
 GPtrArray *localed_freeable;
 Locale1 *localed_interf;
+
+GMainLoop *localed_loop;
+
+guint bus_descriptor;
+gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -113,9 +119,6 @@ void localed_mem_clean() {
 }
 
 int main() {
-
-	guint bus_descriptor;
-	GMainLoop *localed_loop;
 
 	localed_loop = g_main_loop_new(NULL, TRUE);
 	localed_freeable = g_ptr_array_new();
