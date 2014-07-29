@@ -24,6 +24,7 @@
 #include <glib-unix.h>
 
 #include "logind-gen.h"
+#include "logind.h"
 
 GPtrArray *logind_freeable;
 Login1Manager *logind_interf;

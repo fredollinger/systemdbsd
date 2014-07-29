@@ -24,6 +24,7 @@
 #include <glib-unix.h>
 
 #include "timedated-gen.h"
+#include "timedated.h"
 
 GPtrArray *timedated_freeable;
 Timedate1 *timedated_interf;

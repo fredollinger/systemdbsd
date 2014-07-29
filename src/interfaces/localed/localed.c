@@ -24,6 +24,7 @@
 #include <glib-unix.h>
 
 #include "localed-gen.h"
+#include "localed.h"
 
 GPtrArray *localed_freeable;
 Locale1 *localed_interf;
