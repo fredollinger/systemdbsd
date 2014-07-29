@@ -91,7 +91,7 @@ static void logind_on_name_acquired(GDBusConnection *conn,
 
 }
 
-/* --- end bus/name handlers, begin misc functions --- */
+/* --- end bus/name handlers, begin misc unix functions --- */
 
 /* free()'s */
 void logind_mem_clean() {

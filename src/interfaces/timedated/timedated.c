@@ -91,7 +91,7 @@ static void timedated_on_name_acquired(GDBusConnection *conn,
 
 }
 
-/* --- end bus/name handlers, begin misc functions --- */
+/* --- end bus/name handlers, begin misc unix functions --- */
 
 /* free()'s */
 void timedated_mem_clean() {

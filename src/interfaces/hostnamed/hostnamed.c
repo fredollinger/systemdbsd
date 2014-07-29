@@ -196,7 +196,7 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
 
 }
 
-/* --- end bus/name handlers, begin misc functions --- */
+/* --- end bus/name handlers, begin misc unix functions --- */
 
 /* free()'s */
 void hostnamed_mem_clean() {
