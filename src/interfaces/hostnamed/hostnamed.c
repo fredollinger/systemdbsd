@@ -16,6 +16,7 @@
 
 #include <unistd.h>
 #include <limits.h>
+#include <signal.h>
 
 #include <sys/param.h>
 #include <string.h>
@@ -24,9 +25,15 @@
 #include <glib-unix.h>
 
 #include "hostnamed-gen.h"
+#include "hostnamed.h"
 
 GPtrArray *hostnamed_freeable;
 Hostname1 *hostnamed_interf;
+
+GMainLoop *hostnamed_loop;
+
+guint bus_descriptor;
+gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -82,7 +89,7 @@ our_get_hostname() {
 	gchar *hostname_buf, *ret;
 	size_t hostname_divider;
 
-	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN); /* todo check & free */
 	ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
 	g_ptr_array_add(hostnamed_freeable, hostname_buf);
 	g_ptr_array_add(hostnamed_freeable, ret);
@@ -155,17 +162,9 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
                             const gchar *name,
                             gpointer user_data) {
 
-    g_print("got bus, name: %s\n", name);   
+    g_printf("got bus/name, exporting %s's interface...\n", name);
 
-}
-
-static void hostnamed_on_name_acquired(GDBusConnection *conn,
-    		                           const gchar *name,
-                                       gpointer user_data) {
-
-    g_print("got '%s' on system bus\n", name);
-
-    hostnamed_interf = hostname1_skeleton_new();
+	hostnamed_interf = hostname1_skeleton_new();
 
     /* attach function pointers to generated struct's method handlers */
     g_signal_connect(hostnamed_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL);
@@ -191,54 +190,99 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
                                          "/org/freedesktop/hostname1",
                                          NULL)) {
 
-        g_printf("Failed to export Hostname1's interface!");
-    }
+        g_printf("failed to export %s's interface!\n", name); /* unusual edge case, TODO check errno */
+		hostnamed_mem_clean();
+
+    } else {
+
+		dbus_interface_exported = TRUE;
+		g_printf("exported %s's interface on the system bus...", name);
+	}
 
 }
 
-/* --- end bus/name handlers, begin misc unix functions --- */
+static void hostnamed_on_name_acquired(GDBusConnection *conn,
+    		                           const gchar *name,
+                                       gpointer user_data) {
 
-/* free()'s */
-void hostnamed_mem_clean() {
-
-    g_ptr_array_foreach(hostnamed_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(hostnamed_freeable, TRUE);
+    g_printf("success!\n");
+ 
 }
 
 static void hostnamed_on_name_lost(GDBusConnection *conn,
                                    const gchar *name,
                                    gpointer user_data) {
 
-    g_print("lost name %s, exiting...", name);
+	if(!conn) {
+
+		g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it", name);
+
+		hostnamed_mem_clean();
+	}
+
+    g_printf("lost name %s, exiting...", name);
 
     hostnamed_mem_clean();
-    g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(hostnamed_interf));
+}
+
+/* --- end bus/name handlers, begin misc unix functions --- */
+
+/* safe call to clean and then exit
+ * this stops our GMainLoop safely before letting main() return  */
+void hostnamed_mem_clean() {
+
+	g_printf("exiting...\n");
+
+	if(dbus_interface_exported)
+		g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(hostnamed_interf));
+
+	if(g_main_loop_is_running(hostnamed_loop)) 
+		g_main_loop_quit(hostnamed_loop);
 
 }
 
-int main() {
+/* wrapper for glib's unix signal handling; called only once if terminatating signal is raised against us */
+gboolean unix_sig_terminate_handler(gpointer data) {
 
-	guint bus_descriptor;
-	GMainLoop *hostnamed_loop;
+	g_printf("caught SIGINT/HUP/TERM, exiting\n");
+
+	hostnamed_mem_clean();
+	return G_SOURCE_REMOVE; 
+}
+
+void set_signal_handlers() {
+
+	/* we don't care about its descriptor, we never need to unregister these */
+	g_unix_signal_add(SIGINT,  unix_sig_terminate_handler, NULL);
+	g_unix_signal_add(SIGHUP,  unix_sig_terminate_handler, NULL);
+	g_unix_signal_add(SIGTERM, unix_sig_terminate_handler, NULL);
+}
+
+int main() {
+	
+	set_signal_handlers();
 
 	hostnamed_loop = g_main_loop_new(NULL, TRUE);
 	hostnamed_freeable = g_ptr_array_new();
 
-	 bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
-                                    "org.freedesktop.hostname1",
-                                    G_BUS_NAME_OWNER_FLAGS_NONE,
-                                    hostnamed_on_bus_acquired,
-                                    hostnamed_on_name_acquired,
-                                    hostnamed_on_name_lost,
-                                    NULL,
-                                    NULL);
+	bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
+                                   "org.freedesktop.hostname1",
+                                   G_BUS_NAME_OWNER_FLAGS_NONE,
+                                   hostnamed_on_bus_acquired,
+                                   hostnamed_on_name_acquired,
+                                   hostnamed_on_name_lost,
+                                   NULL,
+                                   NULL);
 
 	g_main_loop_run(hostnamed_loop);
+	/* runs until single g_main_loop_quit() call is raised inside <interface>_mem_clean() */
 	g_main_loop_unref(hostnamed_loop);
 
+	/* guaranteed unownable */
 	g_bus_unown_name(bus_descriptor);
 
-	hostnamed_mem_clean();
+	/* at this point no operations can occur with our data, it is safe to free it + its container */
+	g_ptr_array_free(hostnamed_freeable, TRUE);
 
 	return 0;
 }
