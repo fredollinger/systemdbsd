@@ -21,6 +21,7 @@
 #include <string.h>
 
 #include <glib/gprintf.h>
+#include <glib-unix.h>
 
 #include "logind-gen.h"
 
