@@ -92,15 +92,6 @@ static void logind_on_name_acquired(GDBusConnection *conn,
 
 }
 
-/* --- end bus/name handlers, begin misc unix functions --- */
-
-/* free()'s */
-void logind_mem_clean() {
-
-    g_ptr_array_foreach(logind_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(logind_freeable, TRUE);
-}
-
 static void logind_on_name_lost(GDBusConnection *conn,
                                 const gchar *name,
                                 gpointer user_data) {
@@ -110,6 +101,15 @@ static void logind_on_name_lost(GDBusConnection *conn,
     logind_mem_clean();
     g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(logind_interf));
 
+}
+
+/* --- end bus/name handlers, begin misc unix functions --- */
+
+/* free()'s */
+void logind_mem_clean() {
+
+    g_ptr_array_foreach(logind_freeable, (GFunc) g_free, NULL);
+	g_ptr_array_free(logind_freeable, TRUE);
 }
 
 int main() {

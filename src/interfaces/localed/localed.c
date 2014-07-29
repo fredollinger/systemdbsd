@@ -92,15 +92,6 @@ static void localed_on_name_acquired(GDBusConnection *conn,
 
 }
 
-/* --- end bus/name handlers, begin misc unix functions --- */
-
-/* free()'s */
-void localed_mem_clean() {
-
-    g_ptr_array_foreach(localed_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(localed_freeable, TRUE);
-}
-
 static void localed_on_name_lost(GDBusConnection *conn,
                                    const gchar *name,
                                    gpointer user_data) {
@@ -110,6 +101,15 @@ static void localed_on_name_lost(GDBusConnection *conn,
     localed_mem_clean();
     g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(localed_interf));
 
+}
+
+/* --- end bus/name handlers, begin misc unix functions --- */
+
+/* free()'s */
+void localed_mem_clean() {
+
+    g_ptr_array_foreach(localed_freeable, (GFunc) g_free, NULL);
+	g_ptr_array_free(localed_freeable, TRUE);
 }
 
 int main() {
