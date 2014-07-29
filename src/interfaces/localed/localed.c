@@ -28,7 +28,7 @@
 GPtrArray *localed_freeable;
 Locale1 *localed_interf;
 
-/* --- begin method/property/signal code --- */
+/* --- begin method/property/dbus signal code --- */
 
 /*static gboolean
 on_handle_set_hostname(Locale1 *hn1_passed_interf,
@@ -57,7 +57,7 @@ our_get_hostname() {
 	return strncpy(ret, hostname_buf, hostname_divider);
 }*/
 
-/* --- end method/property/signal code, begin bus/name handlers --- */
+/* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void localed_on_bus_acquired(GDBusConnection *conn,
                                     const gchar *name,

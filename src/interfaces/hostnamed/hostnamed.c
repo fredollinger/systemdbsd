@@ -28,7 +28,7 @@
 GPtrArray *hostnamed_freeable;
 Hostname1 *hostnamed_interf;
 
-/* --- begin method/property/signal code --- */
+/* --- begin method/property/dbus signal code --- */
 
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
@@ -149,7 +149,7 @@ our_get_os_pretty_name() {
     return "TODO";
 }
 
-/* --- end method/property/signal code, begin bus/name handlers --- */
+/* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void hostnamed_on_bus_acquired(GDBusConnection *conn,
                             const gchar *name,

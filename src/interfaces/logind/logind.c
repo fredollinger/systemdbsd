@@ -28,7 +28,7 @@
 GPtrArray *logind_freeable;
 Login1Manager *logind_interf;
 
-/* --- begin method/property/signal code --- */
+/* --- begin method/property/dbus signal code --- */
 
 /*static gboolean
 on_handle_set_hostname(Login1Manager *hn1_passed_interf,
@@ -57,7 +57,7 @@ our_get_hostname() {
 	return strncpy(ret, hostname_buf, hostname_divider);
 }*/
 
-/* --- end method/property/signal code, begin bus/name handlers --- */
+/* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void logind_on_bus_acquired(GDBusConnection *conn,
                                    const gchar *name,

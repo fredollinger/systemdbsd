@@ -28,7 +28,7 @@
 GPtrArray *timedated_freeable;
 Timedate1 *timedated_interf;
 
-/* --- begin method/property/signal code --- */
+/* --- begin method/property/dbus signal code --- */
 
 /*static gboolean
 on_handle_set_hostname(Timedate1 *hn1_passed_interf,
@@ -57,7 +57,7 @@ our_get_hostname() {
 	return strncpy(ret, hostname_buf, hostname_divider);
 }*/
 
-/* --- end method/property/signal code, begin bus/name handlers --- */
+/* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void timedated_on_bus_acquired(GDBusConnection *conn,
                                       const gchar *name,
