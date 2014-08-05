@@ -253,6 +253,10 @@ void set_signal_handlers() {
 	g_unix_signal_add(SIGINT,  unix_sig_terminate_handler, NULL);
 	g_unix_signal_add(SIGHUP,  unix_sig_terminate_handler, NULL);
 	g_unix_signal_add(SIGTERM, unix_sig_terminate_handler, NULL);
+
+	/* TODO: the "only once" guarantee only counts towards specific signals.
+	 *       make sure calling a SIGINT and SIGHUP doesn't cause term_handler()
+	 *       to be called twice */
 }
 
 int main() {
