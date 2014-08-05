@@ -142,6 +142,14 @@ gboolean unix_sig_terminate_handler(gpointer data) {
     return G_SOURCE_REMOVE;
 }
 
+void set_signal_handlers() {
+
+    /* we don't care about its descriptor, we never need to unregister these */
+    g_unix_signal_add(SIGINT,  unix_sig_terminate_handler, NULL);
+    g_unix_signal_add(SIGHUP,  unix_sig_terminate_handler, NULL);
+    g_unix_signal_add(SIGTERM, unix_sig_terminate_handler, NULL);
+}
+
 int main() {
 
 	timedated_loop = g_main_loop_new(NULL, TRUE);
