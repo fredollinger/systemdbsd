@@ -123,8 +123,14 @@ static void logind_on_name_lost(GDBusConnection *conn,
  * this stops our GMainLoop sfaely before letting main() return */
 void logind_mem_clean() {
 
-    g_ptr_array_foreach(logind_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(logind_freeable, TRUE);
+    g_printf("exiting...\n");
+
+    if(dbus_interface_exported)
+        g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(logind_interf));
+
+    if(g_main_loop_is_running(logind_loop))
+        g_main_loop_quit(logind_loop);
+
 }
 
 int main() {

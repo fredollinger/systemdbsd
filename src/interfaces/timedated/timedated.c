@@ -123,8 +123,14 @@ static void timedated_on_name_lost(GDBusConnection *conn,
  * this stops our GMainLoop safely before letting main() return */
 void timedated_mem_clean() {
 
-    g_ptr_array_foreach(timedated_freeable, (GFunc) g_free, NULL);
-	g_ptr_array_free(timedated_freeable, TRUE);
+    g_printf("exiting...\n");
+
+    if(dbus_interface_exported)
+        g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(timedated_interf));
+
+     if(g_main_loop_is_running(timedated_loop))
+        g_main_loop_quit(timedated_loop);
+
 }
 
 int main() {
