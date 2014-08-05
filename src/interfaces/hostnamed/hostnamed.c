@@ -196,9 +196,8 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
     } else {
 
 		dbus_interface_exported = TRUE;
-		g_printf("exported %s's interface on the system bus...", name);
+		g_printf("exported %s's interface on the system bus...\n", name);
 	}
-
 }
 
 static void hostnamed_on_name_acquired(GDBusConnection *conn,
@@ -206,7 +205,6 @@ static void hostnamed_on_name_acquired(GDBusConnection *conn,
                                        gpointer user_data) {
 
     g_printf("success!\n");
- 
 }
 
 static void hostnamed_on_name_lost(GDBusConnection *conn,
@@ -215,12 +213,11 @@ static void hostnamed_on_name_lost(GDBusConnection *conn,
 
 	if(!conn) {
 
-		g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it", name);
-
+		g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it.\n", name);
 		hostnamed_mem_clean();
 	}
 
-    g_printf("lost name %s, exiting...", name);
+    g_printf("lost name %s, exiting...\n", name);
 
     hostnamed_mem_clean();
 }
@@ -228,7 +225,7 @@ static void hostnamed_on_name_lost(GDBusConnection *conn,
 /* --- end bus/name handlers, begin misc unix functions --- */
 
 /* safe call to clean and then exit
- * this stops our GMainLoop safely before letting main() return  */
+ * this stops our GMainLoop safely before letting main() return */
 void hostnamed_mem_clean() {
 
 	g_printf("exiting...\n");

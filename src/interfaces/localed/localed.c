@@ -70,16 +70,8 @@ static void localed_on_bus_acquired(GDBusConnection *conn,
                                     const gchar *name,
                                     gpointer user_data) {
 
-    g_print("got bus, name: %s\n", name);   
-
-}
-
-static void localed_on_name_acquired(GDBusConnection *conn,
-    		                         const gchar *name,
-                                     gpointer user_data) {
-
-    g_print("got '%s' on system bus\n", name);
-
+    g_print("got bus/name, exporting %s's interface...\n", name);
+ 
     localed_interf = locale1_skeleton_new();
 
     /* attach function pointers to generated struct's method handlers 
@@ -93,25 +85,42 @@ static void localed_on_name_acquired(GDBusConnection *conn,
                                          "/org/freedesktop/locale1",
                                          NULL)) {
 
-        g_printf("Failed to export Locale1's interface!");
-    }
+        g_printf("failed to export %s's interface!\n", name);
+        localed_mem_clean();
 
+    } else {
+
+        dbus_interface_exported = TRUE;
+        g_printf("exported %s's interface on the system bus...\n", name);
+    }
+}
+
+static void localed_on_name_acquired(GDBusConnection *conn,
+    		                         const gchar *name,
+                                     gpointer user_data) {
+
+	g_printf("success!\n");
 }
 
 static void localed_on_name_lost(GDBusConnection *conn,
                                    const gchar *name,
                                    gpointer user_data) {
 
-    g_print("lost name %s, exiting...", name);
+	if(!conn) {
+
+		g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it.\n", name);
+		localed_mem_clean();
+	}
+
+	g_print("lost name %s, exiting...\n", name);
 
     localed_mem_clean();
-    g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(localed_interf));
-
 }
 
 /* --- end bus/name handlers, begin misc unix functions --- */
 
-/* free()'s */
+/* safe call to clean and then exit
+ * this stops our GMainLoop safely before letting main() return */
 void localed_mem_clean() {
 
     g_ptr_array_foreach(localed_freeable, (GFunc) g_free, NULL);
