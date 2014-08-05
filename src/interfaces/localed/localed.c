@@ -133,6 +133,15 @@ void localed_mem_clean() {
 
 }
 
+/* wrapper for glib's unix signal handling; called only once if terminating signal is raised against us */
+gboolean unix_sig_terminate_handler(gpointer data) {
+
+	g_printf("caught SIGINT/HUP/TERM, exiting\n");
+
+	localed_mem_clean();
+	return G_SOURCE_REMOVE;
+}
+
 int main() {
 
 	localed_loop = g_main_loop_new(NULL, TRUE);
