@@ -70,7 +70,7 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
                                       const gchar *name,
                                       gpointer user_data) {
 
-    g_print("got bus/name, exporting %s's interface...\n", name);
+    g_printf("got bus/name, exporting %s's interface...\n", name);
 
     timedated_interf = timedate1_skeleton_new();
 
