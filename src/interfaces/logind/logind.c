@@ -152,6 +152,8 @@ void set_signal_handlers() {
 
 int main() {
 
+    set_signal_handlers();
+
 	logind_loop = g_main_loop_new(NULL, TRUE);
 	logind_freeable = g_ptr_array_new();
 
@@ -165,11 +167,15 @@ int main() {
                                     NULL);
 
 	g_main_loop_run(logind_loop);
+    /* runs until single g_main_loop_quit() call is raised inside <interface>_mem_clean() */
 	g_main_loop_unref(logind_loop);
 
+    /* guaranteed unownable */
 	g_bus_unown_name(bus_descriptor);
 
-	logind_mem_clean();
+    /* at this point no operations can occur with our data, it is safe to free it + its container */
+     g_ptr_array_free(logind_freeable, TRUE);
+
 
 	return 0;
 }
