@@ -19,6 +19,7 @@
 #include <signal.h>
 
 #include <sys/param.h>
+#include <sys/sysctl.h>
 #include <string.h>
 
 #include <glib/gprintf.h>
@@ -36,6 +37,16 @@ guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
 /* --- begin method/property/dbus signal code --- */
+
+/* add any sysctl strings that suggest virtualization here */
+const gchar* vmstring_list[] = { 
+    "QEMU Virtual CPU",
+    "SmartDC HVM",
+    "KVM",
+    "VirtualBox"
+};
+
+static gboolean is_vm;
 
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
@@ -129,10 +140,12 @@ our_get_pretty_hostname() {
     GKeyFile *config;
     gchar *ret;
 
+    config = g_key_file_new();
+
     if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
         && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) { /* ret might need to be freed, docs dont specify but i am suspicious */
 
-        g_free(config);
+        g_key_file_unref(config);
         return ret;
     }
 
@@ -145,7 +158,30 @@ our_get_pretty_hostname() {
 const gchar *
 our_get_chassis() {
 
-    return "TODO";
+    char *hwproduct, *hwmodel;
+    size_t hwproduct_size, hwmodel_size;
+    int hwproduct_name[2], hwmodel_name[2];
+
+    hwproduct_name[0] = CTL_HW;
+    hwproduct_name[1] = HW_PRODUCT;
+
+    hwmodel_name[0] = CTL_HW;
+    hwmodel_name[1] = HW_MODEL;
+
+    /* pass NULL buffer to check size first, then pass hw to be filled according to freshly-set hw_size */
+    if(sysctl(&hwproduct_name, 2, NULL, &hwproduct_size, NULL, 0) || sysctl(&hwproduct_name, 2, hwproduct, &hwproduct_size, NULL, 0))
+        return "desktop"; /* TODO error properly here */
+
+    if(sysctl(&hwmodel_name, 2, NULL, &hwmodel_size, NULL, 0) || sysctl(&hwmodel_name, 2, hwmodel, &hwmodel_size, NULL, 0))
+        return "desktop"; /* TODO error properly here */
+
+    if(test_against_known_vm_strings(hwproduct) || test_against_known_vm_strings(hwmodel))
+        return "vm"; /*TODO differentiate between VMs (hardware virt, seperate kernel) and containers (paravirt, shared kernel)
+
+    /* TODO: test for laptop, if not, dmidecode for desktop vs. server
+     *       probably move this code to vm test func and set a global after running it early, once */
+
+    return "desktop";
 }
 
 const gchar *
@@ -314,6 +350,20 @@ int main() {
     g_ptr_array_free(hostnamed_freeable, TRUE);
 
     return 0;
+}
+
+gboolean test_against_known_vm_strings(gchar *sysctl_string) {
+
+    unsigned int i;
+
+    if(is_vm)
+        return TRUE;
+
+    for(; i < G_N_ELEMENTS(vmstring_list); i++)
+        if(strcasestr(sysctl_string, vmstring_list[i]))
+            return (is_vm = TRUE) ? TRUE : FALSE;
+
+         return FALSE;
 }
 
 /* TODO figure out DMI variables on obsd */
