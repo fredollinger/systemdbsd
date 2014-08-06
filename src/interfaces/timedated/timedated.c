@@ -48,20 +48,20 @@ on_handle_set_hostname(Timedate1 *hn1_passed_interf,
 /*const gchar *
 our_get_hostname() {
 
-	gchar *hostname_buf, *ret;
-	size_t hostname_divider;
+    gchar *hostname_buf, *ret;
+    size_t hostname_divider;
 
-	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-	ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-	g_ptr_array_add(timedated_freeable, hostname_buf);
-	g_ptr_array_add(timedated_freeable, ret);
+    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    g_ptr_array_add(timedated_freeable, hostname_buf);
+    g_ptr_array_add(timedated_freeable, ret);
 
-	if(gethostname(hostname_buf, MAXHOSTNAMELEN))
-		return "";
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
+        return "";
 
-	hostname_divider = strcspn(hostname_buf, ".");
+    hostname_divider = strcspn(hostname_buf, ".");
 
-	return strncpy(ret, hostname_buf, hostname_divider);
+    return strncpy(ret, hostname_buf, hostname_divider);
 }*/
 
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
@@ -96,7 +96,7 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
 }
 
 static void timedated_on_name_acquired(GDBusConnection *conn,
-    		                           const gchar *name,
+                                       const gchar *name,
                                        gpointer user_data) {
 
    g_printf("success!\n"); 
@@ -154,10 +154,10 @@ int main() {
 
     set_signal_handlers();
 
-	timedated_loop = g_main_loop_new(NULL, TRUE);
-	timedated_freeable = g_ptr_array_new();
+    timedated_loop = g_main_loop_new(NULL, TRUE);
+    timedated_freeable = g_ptr_array_new();
 
-	 bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
+     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.timedate1",
                                     G_BUS_NAME_OWNER_FLAGS_NONE,
                                     timedated_on_bus_acquired,
@@ -166,15 +166,15 @@ int main() {
                                     NULL,
                                     NULL);
 
-	g_main_loop_run(timedated_loop);
+    g_main_loop_run(timedated_loop);
     /* runs until single g_main_loop_quit() call is raised inside <interface>_mem_clean() */
-	g_main_loop_unref(timedated_loop);
+    g_main_loop_unref(timedated_loop);
 
     /* guaranteed unownable */
-	g_bus_unown_name(bus_descriptor);
+    g_bus_unown_name(bus_descriptor);
 
     /* at this point no operations can occur with our data, it is safe to free it + its container */
     g_ptr_array_free(timedated_freeable, TRUE);
 
-	return 0;
+    return 0;
 }

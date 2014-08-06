@@ -48,20 +48,20 @@ on_handle_set_hostname(Locale1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-	gchar *hostname_buf, *ret;
-	size_t hostname_divider;
+    gchar *hostname_buf, *ret;
+    size_t hostname_divider;
 
-	hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-	ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-	g_ptr_array_add(localed_freeable, hostname_buf);
-	g_ptr_array_add(localed_freeable, ret);
+    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    g_ptr_array_add(localed_freeable, hostname_buf);
+    g_ptr_array_add(localed_freeable, ret);
 
-	if(gethostname(hostname_buf, MAXHOSTNAMELEN))
-		return "";
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
+        return "";
 
-	hostname_divider = strcspn(hostname_buf, ".");
+    hostname_divider = strcspn(hostname_buf, ".");
 
-	return strncpy(ret, hostname_buf, hostname_divider);
+    return strncpy(ret, hostname_buf, hostname_divider);
 }*/
 
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
@@ -96,23 +96,23 @@ static void localed_on_bus_acquired(GDBusConnection *conn,
 }
 
 static void localed_on_name_acquired(GDBusConnection *conn,
-    		                         const gchar *name,
+                                     const gchar *name,
                                      gpointer user_data) {
 
-	g_printf("success!\n");
+    g_printf("success!\n");
 }
 
 static void localed_on_name_lost(GDBusConnection *conn,
                                    const gchar *name,
                                    gpointer user_data) {
 
-	if(!conn) {
+    if(!conn) {
 
-		g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it.\n", name);
-		localed_mem_clean();
-	}
+        g_printf("failed to connect to the system bus while trying to acquire name '%s': either dbus-daemon isn't running or we don't have permission to push names and/or their interfaces to it.\n", name);
+        localed_mem_clean();
+    }
 
-	g_print("lost name %s, exiting...\n", name);
+    g_print("lost name %s, exiting...\n", name);
 
     localed_mem_clean();
 }
@@ -123,23 +123,23 @@ static void localed_on_name_lost(GDBusConnection *conn,
  * this stops our GMainLoop safely before letting main() return */
 void localed_mem_clean() {
 
-	g_printf("exiting...\n");
+    g_printf("exiting...\n");
 
-	if(dbus_interface_exported)
-		g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(localed_interf));
+    if(dbus_interface_exported)
+        g_dbus_interface_skeleton_unexport(G_DBUS_INTERFACE_SKELETON(localed_interf));
 
-	if(g_main_loop_is_running(localed_loop))
-		g_main_loop_quit(localed_loop);
+    if(g_main_loop_is_running(localed_loop))
+        g_main_loop_quit(localed_loop);
 
 }
 
 /* wrapper for glib's unix signal handling; called only once if terminating signal is raised against us */
 gboolean unix_sig_terminate_handler(gpointer data) {
 
-	g_printf("caught SIGINT/HUP/TERM, exiting\n");
+    g_printf("caught SIGINT/HUP/TERM, exiting\n");
 
-	localed_mem_clean();
-	return G_SOURCE_REMOVE;
+    localed_mem_clean();
+    return G_SOURCE_REMOVE;
 }
 
 void set_signal_handlers() {
@@ -152,12 +152,12 @@ void set_signal_handlers() {
 
 int main() {
 
-	set_signal_handlers();
+    set_signal_handlers();
 
-	localed_loop = g_main_loop_new(NULL, TRUE);
-	localed_freeable = g_ptr_array_new();
+    localed_loop = g_main_loop_new(NULL, TRUE);
+    localed_freeable = g_ptr_array_new();
 
-	 bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
+     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                     "org.freedesktop.locale1",
                                     G_BUS_NAME_OWNER_FLAGS_NONE,
                                     localed_on_bus_acquired,
@@ -166,15 +166,15 @@ int main() {
                                     NULL,
                                     NULL);
 
-	g_main_loop_run(localed_loop);
-	/* runs until single g_main_loop_quit() call is raised inside <interface>_mem_clean() */
-	g_main_loop_unref(localed_loop);
+    g_main_loop_run(localed_loop);
+    /* runs until single g_main_loop_quit() call is raised inside <interface>_mem_clean() */
+    g_main_loop_unref(localed_loop);
 
-	/* guaranteed unownable */
-	g_bus_unown_name(bus_descriptor);
+    /* guaranteed unownable */
+    g_bus_unown_name(bus_descriptor);
 
-	/* at this point no operations can occur with our data, it is safe to free it + its container */
-	g_ptr_array_free(localed_freeable, TRUE);
+    /* at this point no operations can occur with our data, it is safe to free it + its container */
+    g_ptr_array_free(localed_freeable, TRUE);
 
-	return 0;
+    return 0;
 }

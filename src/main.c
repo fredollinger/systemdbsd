@@ -21,11 +21,11 @@
 
 int main() {
 
-	GMainLoop *mloop;		
-	mloop = g_main_loop_new(NULL, TRUE);
-	
-	g_main_loop_run(mloop);
-	g_main_loop_unref(mloop);
+    GMainLoop *mloop;        
+    mloop = g_main_loop_new(NULL, TRUE);
+    
+    g_main_loop_run(mloop);
+    g_main_loop_unref(mloop);
 
-	return 0;
+    return 0;
 }
