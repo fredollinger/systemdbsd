@@ -106,17 +106,17 @@ our_get_hostname() {
 const gchar *
 our_get_static_hostname() {
 
-    gchar *pretty_hostname;
-    gchar *ret;
+    const gchar *pretty_hostname;
+    const gchar *ret;
 
     pretty_hostname = our_get_pretty_hostname();
 
     if(g_strcmp0(pretty_hostname, "") == 0)
         ret = our_get_hostname();
 
-    else if(ret = g_hostname_to_ascii(pretty_hostname)) {
+    else if((ret = g_hostname_to_ascii(pretty_hostname))) {
 
-        g_ptr_array_add(hostnamed_freeable, ret);
+        g_ptr_array_add(hostnamed_freeable, (gpointer)ret);
         return ret;
     }
 
@@ -130,7 +130,7 @@ our_get_pretty_hostname() {
     gchar *ret;
 
     if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
-        && ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL)) { /* ret might need to be freed, docs dont specify but i am suspicious */
+        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) { /* ret might need to be freed, docs dont specify but i am suspicious */
 
         g_free(config);
         return ret;

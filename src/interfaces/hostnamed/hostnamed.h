@@ -15,3 +15,5 @@
  */
 
 void hostnamed_mem_clean();
+
+const gchar *our_get_pretty_hostname();
