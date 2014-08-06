@@ -89,13 +89,14 @@ our_get_hostname() {
     gchar *hostname_buf, *ret;
     size_t hostname_divider;
 
-    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN); /* todo check & free */
+    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
     ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+
     g_ptr_array_add(hostnamed_freeable, hostname_buf);
     g_ptr_array_add(hostnamed_freeable, ret);
 
-    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
-        return "";
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN) || g_strcmp0(hostname_buf, "") == 0) 
+        return "localhost"; 
 
     hostname_divider = strcspn(hostname_buf, ".");
 
@@ -105,13 +106,40 @@ our_get_hostname() {
 const gchar *
 our_get_static_hostname() {
 
-    return "TODO";
+    gchar *pretty_hostname;
+    gchar *ret;
+
+    pretty_hostname = our_get_pretty_hostname();
+
+    if(g_strcmp0(pretty_hostname, "") == 0)
+        ret = our_get_hostname();
+
+    else if(ret = g_hostname_to_ascii(pretty_hostname)) {
+
+        g_ptr_array_add(hostnamed_freeable, ret);
+        return ret;
+    }
+
+    return ret;
 }
 
 const gchar *
 our_get_pretty_hostname() {
 
-    return "TODO";
+    GKeyFile *config;
+    gchar *ret;
+
+    if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
+        && ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL)) { /* ret might need to be freed, docs dont specify but i am suspicious */
+
+        g_free(config);
+        return ret;
+    }
+
+    if(config)
+        g_free(config);
+
+    return "";
 }
 
 const gchar *
