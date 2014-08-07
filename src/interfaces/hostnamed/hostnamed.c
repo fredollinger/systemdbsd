@@ -17,10 +17,14 @@
 #include <unistd.h>
 #include <limits.h>
 #include <signal.h>
+#include <string.h>
 
 #include <sys/param.h>
 #include <sys/sysctl.h>
-#include <string.h>
+#include <sys/sensors.h>
+#include <sys/ioctl.h>
+
+#include <machine/apmvar.h>
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
@@ -83,7 +87,7 @@ gchar *CHASSIS, *ICON;
  * but we will worry about those later */
 const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
-    { "QEMU Virtual CPU",        "container", "drive-optical",   FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
+    { "QEMU Virtual CPU",        "container", NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
     { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
     { "VirtualBox",              "container", "drive-optical",   TRUE,  TRUE  },
     { "VMware, Inc.",            "container", "drive-optical",   TRUE,  TRUE  },
@@ -91,12 +95,12 @@ const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
     { "Parallels",               "container", "drive-optical",   TRUE,  TRUE  } /* need verification */
 };
 
-/*const gchar* vmstring_list[] = { 
-    "QEMU Virtual CPU",
-    "SmartDC HVM",
-    "KVM",
-    "VirtualBox"
-};*/
+/* archs to check against when determining if machine is server */
+const gchar *server_archs[] = {
+    "hppa",
+    "sparc",
+    "sparc64"
+};
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -210,14 +214,19 @@ our_get_pretty_hostname() {
 const gchar *
 our_get_chassis() {
 
-   return "asdf";
+   if(CHASSIS)
+        return CHASSIS;
 
+    return "desktop";
 }
 
 const gchar *
 our_get_icon_name() {
 
-    return "TODO";
+    if(ICON)
+        return ICON;
+
+    return "";
 }
 
 const gchar *
@@ -357,7 +366,7 @@ int main() {
     
     set_signal_handlers();
 
-    if(!build_chassis_table() || !determine_chassis_and_icon())
+    if(!determine_chassis_and_icon())
         return 1;
     
     hostnamed_loop     = g_main_loop_new(NULL, TRUE);
@@ -385,16 +394,15 @@ int main() {
     return 0;
 }
 
-static gboolean build_chassis_table() {
-   return TRUE; 
-}
-
 gboolean determine_chassis_and_icon() {
 
-    char *hwproduct, *hwmodel, *hwvendor;
-    size_t hwproduct_size, hwmodel_size, hwvendor_size;
-    int hwproduct_name[2], hwmodel_name[2], hwvendor_name[2];
+    char *hwproduct, *hwmodel, *hwvendor, *hwmachine;
+    size_t hwproduct_size, hwmodel_size, hwvendor_size, hwmachine_size;
+    int hwproduct_name[2], hwmodel_name[2], hwvendor_name[2], hwmachine_name[2];
     unsigned int i;
+    gboolean UNSURE_CHASSIS_FLAG, UNSURE_ICON_FLAG;
+
+    hwproduct = hwmodel = hwvendor = hwmachine = NULL;
 
     hwproduct_name[0] = CTL_HW;
     hwproduct_name[1] = HW_PRODUCT;
@@ -404,6 +412,9 @@ gboolean determine_chassis_and_icon() {
 
     hwvendor_name[0] = CTL_HW;
     hwvendor_name[1] = HW_VENDOR;
+
+    hwmachine_name[0] = CTL_HW;
+    hwmachine_name[1] = HW_MACHINE;
 
     /* pass NULL buffer to check size first, then pass hw to be filled according to freshly-set hw_size */
     if(-1 == sysctl(hwproduct_name, 2, NULL, &hwproduct_size, NULL, 0) || -1 == sysctl(hwproduct_name, 2, hwproduct, &hwproduct_size, NULL, 0))
@@ -415,17 +426,119 @@ gboolean determine_chassis_and_icon() {
     if(-1 == sysctl(hwvendor_name, 2, NULL, &hwvendor_size, NULL, 0) || -1 == sysctl(hwvendor_name, 2, hwvendor, &hwvendor_size, NULL, 0))
         return FALSE;
 
+    if(-1 == sysctl(hwmachine_name, 2, NULL, &hwmachine_size, NULL, 0) || -1 == sysctl(hwmachine_name, 2, hwmachine, &hwmachine_size, NULL, 0))
+        return FALSE;
+
     /* TODO: test for laptop, if not, dmidecode for desktop vs. server
      *       probably move this code to vm test func and set a global after running it early, once */
  
-    for(; i < G_N_ELEMENTS(chassis_indicator_table); i++)
-        
-        /* if(strcasestr(sysctl_string, vmstring_list[i]))
-            return (CHASSIS = ) ? TRUE : FALSE; */
+    for(; i < G_N_ELEMENTS(chassis_indicator_table); i++) {
+        if(strcasestr(hwproduct,    chassis_indicator_table[i].match_string)
+            || strcasestr(hwmodel,  chassis_indicator_table[i].match_string)
+            || strcasestr(hwvendor, chassis_indicator_table[i].match_string)) {
 
-         return FALSE;
+            if(!UNSURE_CHASSIS_FLAG && chassis_indicator_table[i].chassis) {
 
-    return TRUE; /* temp */
+                UNSURE_CHASSIS_FLAG = chassis_indicator_table[i].chassis_precedence;
+                CHASSIS = chassis_indicator_table[i].chassis;
+            }
+            
+            if(!UNSURE_ICON_FLAG && chassis_indicator_table[i].icon) {
+
+                UNSURE_ICON_FLAG = chassis_indicator_table[i].icon_precedence;
+                ICON = chassis_indicator_table[i].icon;
+            }
+        }
+    }
+
+    if(up_native_is_laptop()) {
+
+        if(!CHASSIS)
+            CHASSIS = "laptop";
+        if(!ICON)
+            ICON = "input-touchpad"; /* TODO pull an icon package that actually has the icons we're looking for */
+
+    } else if(is_server(hwmachine)) {
+
+        if(!CHASSIS)
+            CHASSIS = "server";
+        if(!ICON)
+            ICON = "uninterruptible-power-supply";
+
+    } else if(!CHASSIS || !ICON) {
+
+        if(!CHASSIS)
+            CHASSIS = "desktop";
+        if(!ICON)
+            ICON = "computer";
+    }
+
+    return (CHASSIS && ICON);
+}
+
+gboolean is_server(gchar *arch) {
+    
+    unsigned int i;
+
+    for(; i < G_N_ELEMENTS(server_archs); i++)
+        if(strcasestr(arch, server_archs[i]))
+            return TRUE;
+
+    return FALSE;
+}
+
+gboolean up_native_is_laptop() {
+
+    struct apm_power_info bstate;
+    struct sensordev acpiac;
+
+    if (up_native_get_sensordev("acpiac0", &acpiac))
+        return TRUE;
+
+    if (-1 == ioctl(up_apm_get_fd(), APM_IOC_GETPOWER, &bstate))
+        g_error("ioctl on apm fd failed : %s", g_strerror(errno));
+
+    return bstate.ac_state != APM_AC_UNKNOWN;
+}
+
+int up_apm_get_fd() {
+
+    static int apm_fd = 0;
+
+    if(apm_fd == 0) {
+
+        g_debug("apm_fd is not initialized yet, opening");
+
+        /* open /dev/apm */
+        if((apm_fd = open("/dev/apm", O_RDONLY)) == -1) {
+            if(errno != ENXIO && errno != ENOENT)
+                g_error("cannot open device file");
+        }
+    }
+
+    return apm_fd;
+}
+
+gboolean up_native_get_sensordev(const char * id, struct sensordev * snsrdev) {
+
+    int devn;
+    size_t sdlen = sizeof(struct sensordev);
+    int mib[] = {CTL_HW, HW_SENSORS, 0, 0 ,0};
+
+    for (devn = 0 ; ; devn++) {
+        mib[2] = devn;
+        if(sysctl(mib, 3, snsrdev, &sdlen, NULL, 0) == -1) {
+            if(errno == ENXIO)
+                continue;
+            if(errno == ENOENT)
+                break;
+        }
+
+        if (!strcmp(snsrdev->xname, id))
+            return TRUE;
+    }
+
+    return FALSE;
 }
 
 /* TODO figure out DMI variables on obsd */

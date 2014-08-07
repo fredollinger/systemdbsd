@@ -18,6 +18,9 @@ void hostnamed_mem_clean();
 
 const gchar *our_get_pretty_hostname();
 
-static gboolean build_chassis_table();
+int up_apm_get_fd();
 
 gboolean determine_chassis_and_icon();
+gboolean up_native_get_sensordev(const char * id, struct sensordev * snsrdev);
+gboolean up_native_is_laptop();
+gboolean is_server(gchar *arch);
