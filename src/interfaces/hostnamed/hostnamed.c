@@ -90,14 +90,15 @@ gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS;
  * but we will worry about those later */
 const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
-    { "QEMU Virtual CPU",        "container", NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
+    { "QEMU Virtual CPU",        "vm",        NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
     { "KVM",                     "vm",        "drive-multidisk", FALSE, FALSE },
     { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
-    { "VirtualBox",              "container", "drive-optical",   TRUE,  TRUE  },
-    { "VMware, Inc.",            "container", "drive-optical",   TRUE,  TRUE  },
-    { "VMware Virtual Platform", "container", "drive-optical",   TRUE,  TRUE  },
-    { "Parallels",               "container", "drive-optical",   TRUE,  TRUE  } /* need verification */
-};
+    { "VirtualBox",              "vm",        "drive-multidisk", TRUE,  TRUE  },
+    { "VMware, Inc.",            "vm",        "drive-multidisk", TRUE,  TRUE  },
+    { "VMware Virtual Platform", "vm",        "drive-multidisk", TRUE,  TRUE  },
+    { "Parallels",               "vm",        "drive-multidisk", TRUE,  TRUE  }, /* need verification */
+    { "Xen",                     "vm",        "drive-multidisk", TRUE,  TRUE  } 
+}; /* TODO: chroots, etc. are the actual "containers", add them */
 
 /* archs to check against when determining if machine is server */
 const gchar *server_archs[] = {
