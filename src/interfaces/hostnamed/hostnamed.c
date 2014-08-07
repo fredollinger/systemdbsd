@@ -399,15 +399,21 @@ int main() {
 
 gboolean determine_chassis_and_icon() {
 
+    const size_t bufsize = 4096;    
+
     char *hwproduct, *hwmodel, *hwvendor, *hwmachine;
     size_t hwproduct_size, hwmodel_size, hwvendor_size, hwmachine_size;
     int hwproduct_name[2], hwmodel_name[2], hwvendor_name[2], hwmachine_name[2];
     unsigned int i;
     gboolean UNSURE_CHASSIS_FLAG, UNSURE_ICON_FLAG;
 
-    hwproduct = hwmodel = hwvendor = hwmachine = NULL;
-    hwproduct_size = hwmodel_size = hwvendor_size = hwmachine_size = 0;
+    hwproduct_size = hwmodel_size = hwvendor_size = hwmachine_size = bufsize;
     UNSURE_CHASSIS_FLAG = UNSURE_ICON_FLAG = FALSE;
+
+    hwproduct = (char*)g_malloc0(4096);
+    hwmodel   = (char*)g_malloc0(4096);
+    hwvendor  = (char*)g_malloc0(4096);
+    hwmachine = (char*)g_malloc0(4096);
 
     hwproduct_name[0] = CTL_HW;
     hwproduct_name[1] = HW_PRODUCT;
