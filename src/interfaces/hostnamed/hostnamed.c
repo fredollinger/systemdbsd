@@ -88,6 +88,7 @@ gchar *CHASSIS, *ICON;
 const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
     { "QEMU Virtual CPU",        "container", NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
+    { "KVM",                     "vm",      , "drive-multidisk", FALSE, FALSE },
     { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
     { "VirtualBox",              "container", "drive-optical",   TRUE,  TRUE  },
     { "VMware, Inc.",            "container", "drive-optical",   TRUE,  TRUE  },
@@ -363,7 +364,9 @@ void set_signal_handlers() {
 }
 
 int main() {
-    
+   
+    /* TODO: check for valid, writable config at init. if no, complain to `make install` */
+ 
     set_signal_handlers();
 
     if(!determine_chassis_and_icon())
@@ -540,50 +543,3 @@ gboolean up_native_get_sensordev(const char * id, struct sensordev * snsrdev) {
 
     return FALSE;
 }
-
-/* TODO figure out DMI variables on obsd */
-/*static gchar *guess_icon_name() {
-
-    gchar *filebuf = NULL;
-    gchar *ret = NULL;
-
-    #if defined(__i386__) || defined(__x86_64__)
-    
-       Taken with a few minor changes from systemd's hostnamed.c,
-       copyright 2011 Lennart Poettering.
-
-       See the SMBIOS Specification 2.7.1 section 7.4.1 for
-       details about the values listed here:
-
-       http://www.dmtf.org/sites/default/files/standards/documents/DSP0134_2.7.1.pdf
-
-
-    if (g_file_get_contents ("/sys/class/dmi/id/chassis_type", &filebuf, NULL, NULL)) {
-        switch (g_ascii_strtoull (filebuf, NULL, 10)) {
-        case 0x3:
-        case 0x4:
-        case 0x5:
-        case 0x6:
-        case 0x7:
-            ret = g_strdup ("computer-desktop");
-            goto out;
-        case 0x9:
-        case 0xA:
-        case 0xE:
-            ret = g_strdup ("computer-laptop");
-            goto out;
-        case 0x11:
-        case 0x17:
-        case 0x1C:
-        case 0x1D:
-            ret = g_strdup ("computer-server");
-            goto out;
-        }
-    }
-    #endif
-    ret = g_strdup ("computer");
-  out:
-    g_free (filebuf);
-    return ret;
-}*/
-
