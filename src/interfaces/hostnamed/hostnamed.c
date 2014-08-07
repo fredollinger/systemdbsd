@@ -23,6 +23,7 @@
 #include <sys/sysctl.h>
 #include <sys/sensors.h>
 #include <sys/ioctl.h>
+#include <sys/utsname.h>
 
 #include <machine/apmvar.h>
 
@@ -80,6 +81,8 @@ guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
 gchar *CHASSIS, *ICON;
+gchar *OS_CPENAME;
+gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS;
 
 /* TODO no specific vm or laptop icon in gnome
  * NOTE paravirtualization on xen is only available for linuxes right now
@@ -233,31 +236,40 @@ our_get_icon_name() {
 const gchar *
 our_get_kernel_name() {
 
-    return "TODO";
+    if(KERN_NAME)
+        return KERN_NAME;
+
+    return "";
 }
 
 const gchar *
 our_get_kernel_version() {
 
-    return "TODO";
+    if(KERN_VERS)
+        return KERN_VERS;
+
+    return "";
 }
 
 const gchar *
 our_get_kernel_release() {
 
-    return "TODO";
+    if(KERN_RELEASE)
+        return KERN_RELEASE;
+
+    return "";
 }
 
 const gchar *
 our_get_os_cpename() {
 
-    return "TODO";
+    return "ONEDAY";
 }
 
 const gchar *
 our_get_os_pretty_name() {
 
-    return "TODO";
+    return "OpenBSD";
 }
 
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
@@ -364,16 +376,20 @@ void set_signal_handlers() {
 }
 
 int main() {
-   
+ 
+    hostnamed_freeable = g_ptr_array_new();
+  
     /* TODO: check for valid, writable config at init. if no, complain to `make install` */
+
+    CHASSIS = ICON = OS_CPENAME = 0;
+    KERN_NAME = KERN_RELEASE = KERN_VERS = 0;
  
     set_signal_handlers();
 
-    if(!determine_chassis_and_icon())
+    if(!determine_chassis_and_icon() || !set_uname_properties())
         return 1;
     
     hostnamed_loop     = g_main_loop_new(NULL, TRUE);
-    hostnamed_freeable = g_ptr_array_new();
 
     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                    "org.freedesktop.hostname1",
@@ -397,6 +413,28 @@ int main() {
     return 0;
 }
 
+gboolean set_uname_properties() {
+
+    struct utsname un;
+
+    if(-1 == uname(&un))
+        return FALSE;
+
+    KERN_NAME = (gchar*)g_malloc0(sizeof(un.sysname));
+    g_ptr_array_add(hostnamed_freeable, KERN_NAME);
+    g_strlcpy(KERN_NAME, un.sysname, sizeof(un.sysname));
+
+    KERN_RELEASE = (gchar*)g_malloc0(sizeof(un.release));
+    g_ptr_array_add(hostnamed_freeable, KERN_RELEASE);
+    g_strlcpy(KERN_RELEASE, un.release, sizeof(un.release));
+
+    KERN_VERS = (gchar*)g_malloc0(sizeof(un.version));
+    g_ptr_array_add(hostnamed_freeable, KERN_VERS);
+    g_strlcpy(KERN_VERS, un.version, sizeof(un.version));
+
+    return TRUE;
+}
+
 gboolean determine_chassis_and_icon() {
 
     const size_t bufsize = 4096;    
@@ -415,6 +453,11 @@ gboolean determine_chassis_and_icon() {
     hwmodel   = (char*)g_malloc0(4096);
     hwvendor  = (char*)g_malloc0(4096);
     hwmachine = (char*)g_malloc0(4096);
+
+    g_ptr_array_add(hostnamed_freeable, hwproduct);
+    g_ptr_array_add(hostnamed_freeable, hwmodel);
+    g_ptr_array_add(hostnamed_freeable, hwvendor);
+    g_ptr_array_add(hostnamed_freeable, hwmachine);
 
     hwproduct_name[0] = CTL_HW;
     hwproduct_name[1] = HW_PRODUCT;
