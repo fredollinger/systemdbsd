@@ -92,7 +92,7 @@ const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
     { "QEMU Virtual CPU",        "vm",        NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
     { "KVM",                     "vm",        "drive-multidisk", FALSE, FALSE },
-    { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
+    { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* illumos-joyent kvm */
     { "VirtualBox",              "vm",        "drive-multidisk", TRUE,  TRUE  },
     { "VMware, Inc.",            "vm",        "drive-multidisk", TRUE,  TRUE  },
     { "VMware Virtual Platform", "vm",        "drive-multidisk", TRUE,  TRUE  },
