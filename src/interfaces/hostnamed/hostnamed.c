@@ -24,9 +24,48 @@
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
+/* #include <gtk/gtk.h> */
 
 #include "hostnamed-gen.h"
 #include "hostnamed.h"
+
+/* add any sysctl strings that suggest virtualization here */
+/* format: {
+ *           (1) string to be matched against runtime machine's sysctl output.
+ *               can be either the exact string or a substring contained
+ *               within sysctl strings. no "guesses" here, a match should
+ *               reliably indicate the chassis/icon. 
+ *
+ *           (2) string describing chassis type divulged by (1).
+ *               must be one of "desktop", "laptop", "server",
+ *               "tablet", "handset", "vm", "container" or NULL
+ *               if only icon string can be ascertained. "vm" refers
+ *               to operating systems running on baremetal hypervisors
+ *               (hardware virtualization, like XEN) while "container"
+ *               refers to OSs running on shared hypervisors like
+ *               virtualbox or VMware. consider the distinction carefully
+ *               as common virtualization software like KVM may share
+ *               characteristics of both "vm" and "container" types.
+ *
+ *           (3) string specifying icon to use. follows XDG icon spec.
+ *               see http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
+ *               for allowed strings.
+ *
+ *           (4) chassis precedence bit. TRUE if (2) is defined and
+ *               we're certain it is the proper string. FALSE in the
+ *               circumstance (2) may be the correct string, unless
+ *               a match with this bit set to TRUE overrides it.
+ *               if (2) is NULL, this bit is inconsequential.
+ *
+ *           (5) icon precedence bit. see previous definition.
+ *         }                                               */
+struct SYSCTL_LOOKUP_TABLE {
+    gchar    *match_string;
+    gchar    *chassis;
+    gchar    *icon;
+    gboolean chassis_precedence;
+    gboolean icon_precedence;
+};
 
 GPtrArray *hostnamed_freeable;
 Hostname1 *hostnamed_interf;
@@ -36,17 +75,30 @@ GMainLoop *hostnamed_loop;
 guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
-/* --- begin method/property/dbus signal code --- */
+gchar *CHASSIS, *ICON;
 
-/* add any sysctl strings that suggest virtualization here */
-const gchar* vmstring_list[] = { 
+/* TODO no specific vm or laptop icon in gnome
+ * NOTE paravirtualization on xen is only available for linuxes right now
+ * dmesg on linux systems reveals xen and virtualization method (HVM or PVM) 
+ * but we will worry about those later */
+const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
+{
+    { "QEMU Virtual CPU",        "container", "drive-optical",   FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
+    { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
+    { "VirtualBox",              "container", "drive-optical",   TRUE,  TRUE  },
+    { "VMware, Inc.",            "container", "drive-optical",   TRUE,  TRUE  },
+    { "VMware Virtual Platform", "container", "drive-optical",   TRUE,  TRUE  },
+    { "Parallels",               "container", "drive-optical",   TRUE,  TRUE  } /* need verification */
+};
+
+/*const gchar* vmstring_list[] = { 
     "QEMU Virtual CPU",
     "SmartDC HVM",
     "KVM",
     "VirtualBox"
-};
+};*/
 
-static gboolean is_vm;
+/* --- begin method/property/dbus signal code --- */
 
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
@@ -158,30 +210,8 @@ our_get_pretty_hostname() {
 const gchar *
 our_get_chassis() {
 
-    char *hwproduct, *hwmodel;
-    size_t hwproduct_size, hwmodel_size;
-    int hwproduct_name[2], hwmodel_name[2];
+   return "asdf";
 
-    hwproduct_name[0] = CTL_HW;
-    hwproduct_name[1] = HW_PRODUCT;
-
-    hwmodel_name[0] = CTL_HW;
-    hwmodel_name[1] = HW_MODEL;
-
-    /* pass NULL buffer to check size first, then pass hw to be filled according to freshly-set hw_size */
-    if(sysctl(&hwproduct_name, 2, NULL, &hwproduct_size, NULL, 0) || sysctl(&hwproduct_name, 2, hwproduct, &hwproduct_size, NULL, 0))
-        return "desktop"; /* TODO error properly here */
-
-    if(sysctl(&hwmodel_name, 2, NULL, &hwmodel_size, NULL, 0) || sysctl(&hwmodel_name, 2, hwmodel, &hwmodel_size, NULL, 0))
-        return "desktop"; /* TODO error properly here */
-
-    if(test_against_known_vm_strings(hwproduct) || test_against_known_vm_strings(hwmodel))
-        return "vm"; /*TODO differentiate between VMs (hardware virt, seperate kernel) and containers (paravirt, shared kernel)
-
-    /* TODO: test for laptop, if not, dmidecode for desktop vs. server
-     *       probably move this code to vm test func and set a global after running it early, once */
-
-    return "desktop";
 }
 
 const gchar *
@@ -327,7 +357,10 @@ int main() {
     
     set_signal_handlers();
 
-    hostnamed_loop = g_main_loop_new(NULL, TRUE);
+    if(!build_chassis_table() || !determine_chassis_and_icon())
+        return 1;
+    
+    hostnamed_loop     = g_main_loop_new(NULL, TRUE);
     hostnamed_freeable = g_ptr_array_new();
 
     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
@@ -352,18 +385,47 @@ int main() {
     return 0;
 }
 
-gboolean test_against_known_vm_strings(gchar *sysctl_string) {
+static gboolean build_chassis_table() {
+   return TRUE; 
+}
 
+gboolean determine_chassis_and_icon() {
+
+    char *hwproduct, *hwmodel, *hwvendor;
+    size_t hwproduct_size, hwmodel_size, hwvendor_size;
+    int hwproduct_name[2], hwmodel_name[2], hwvendor_name[2];
     unsigned int i;
 
-    if(is_vm)
-        return TRUE;
+    hwproduct_name[0] = CTL_HW;
+    hwproduct_name[1] = HW_PRODUCT;
 
-    for(; i < G_N_ELEMENTS(vmstring_list); i++)
-        if(strcasestr(sysctl_string, vmstring_list[i]))
-            return (is_vm = TRUE) ? TRUE : FALSE;
+    hwmodel_name[0] = CTL_HW;
+    hwmodel_name[1] = HW_MODEL;
+
+    hwvendor_name[0] = CTL_HW;
+    hwvendor_name[1] = HW_VENDOR;
+
+    /* pass NULL buffer to check size first, then pass hw to be filled according to freshly-set hw_size */
+    if(-1 == sysctl(hwproduct_name, 2, NULL, &hwproduct_size, NULL, 0) || -1 == sysctl(hwproduct_name, 2, hwproduct, &hwproduct_size, NULL, 0))
+        return FALSE;
+
+    if(-1 == sysctl(hwmodel_name, 2, NULL, &hwmodel_size, NULL, 0) || -1 == sysctl(hwmodel_name, 2, hwmodel, &hwmodel_size, NULL, 0))
+        return FALSE;
+ 
+    if(-1 == sysctl(hwvendor_name, 2, NULL, &hwvendor_size, NULL, 0) || -1 == sysctl(hwvendor_name, 2, hwvendor, &hwvendor_size, NULL, 0))
+        return FALSE;
+
+    /* TODO: test for laptop, if not, dmidecode for desktop vs. server
+     *       probably move this code to vm test func and set a global after running it early, once */
+ 
+    for(; i < G_N_ELEMENTS(chassis_indicator_table); i++)
+        
+        /* if(strcasestr(sysctl_string, vmstring_list[i]))
+            return (CHASSIS = ) ? TRUE : FALSE; */
 
          return FALSE;
+
+    return TRUE; /* temp */
 }
 
 /* TODO figure out DMI variables on obsd */

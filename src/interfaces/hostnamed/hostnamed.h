@@ -18,4 +18,6 @@ void hostnamed_mem_clean();
 
 const gchar *our_get_pretty_hostname();
 
-gboolean test_against_known_vm_strings(gchar* sysctl);
+static gboolean build_chassis_table();
+
+gboolean determine_chassis_and_icon();
