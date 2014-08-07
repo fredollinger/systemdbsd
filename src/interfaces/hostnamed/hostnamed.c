@@ -409,6 +409,7 @@ gboolean determine_chassis_and_icon() {
 
     hwproduct_size = hwmodel_size = hwvendor_size = hwmachine_size = bufsize;
     UNSURE_CHASSIS_FLAG = UNSURE_ICON_FLAG = FALSE;
+    i = 0;
 
     hwproduct = (char*)g_malloc0(4096);
     hwmodel   = (char*)g_malloc0(4096);
