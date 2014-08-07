@@ -406,6 +406,8 @@ gboolean determine_chassis_and_icon() {
     gboolean UNSURE_CHASSIS_FLAG, UNSURE_ICON_FLAG;
 
     hwproduct = hwmodel = hwvendor = hwmachine = NULL;
+    hwproduct_size = hwmodel_size = hwvendor_size = hwmachine_size = 0;
+    UNSURE_CHASSIS_FLAG = UNSURE_ICON_FLAG = FALSE;
 
     hwproduct_name[0] = CTL_HW;
     hwproduct_name[1] = HW_PRODUCT;
