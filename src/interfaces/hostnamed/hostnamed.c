@@ -88,7 +88,7 @@ gchar *CHASSIS, *ICON;
 const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
     { "QEMU Virtual CPU",        "container", NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
-    { "KVM",                     "vm",      , "drive-multidisk", FALSE, FALSE },
+    { "KVM",                     "vm",        "drive-multidisk", FALSE, FALSE },
     { "SmartDC HVM",             "vm",        "drive-multidisk", TRUE,  TRUE  }, /* oracle solaris kvm */
     { "VirtualBox",              "container", "drive-optical",   TRUE,  TRUE  },
     { "VMware, Inc.",            "container", "drive-optical",   TRUE,  TRUE  },
