@@ -34,7 +34,6 @@
 #include "hostnamed-gen.h"
 #include "hostnamed.h"
 
-/* add any sysctl strings that suggest virtualization here */
 /* format: {
  *           (1) string to be matched against runtime machine's sysctl output.
  *               can be either the exact string or a substring contained
@@ -88,6 +87,8 @@ gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS;
  * NOTE paravirtualization on xen is only available for linuxes right now
  * dmesg on linux systems reveals xen and virtualization method (HVM or PVM) 
  * but we will worry about those later */
+
+/* add any sysctl strings that suggest virtualization here */
 const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
 {
     { "QEMU Virtual CPU",        "vm",        NULL,              FALSE, FALSE }, /* could be QEMU running in userspace or as part of KVM */
@@ -97,7 +98,7 @@ const struct SYSCTL_LOOKUP_TABLE chassis_indicator_table[] =
     { "VMware, Inc.",            "vm",        "drive-multidisk", TRUE,  TRUE  },
     { "VMware Virtual Platform", "vm",        "drive-multidisk", TRUE,  TRUE  },
     { "Parallels",               "vm",        "drive-multidisk", TRUE,  TRUE  }, /* need verification */
-    { "Xen",                     "vm",        "drive-multidisk", TRUE,  TRUE  } 
+    { "Xen",                     "vm",        "drive-multidisk", FALSE, FALSE } 
 }; /* TODO: chroots, etc. are the actual "containers", add them */
 
 /* archs to check against when determining if machine is server */
