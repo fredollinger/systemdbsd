@@ -110,12 +110,41 @@ const gchar *server_archs[] = {
 
 /* --- begin method/property/dbus signal code --- */
 
+/* TODO the extra boolean passed to these funcs is for policykit auth */
+/* TODO complete call with error, message, etc */
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        GDBusMethodInvocation *invoc,
                        const gchar *greet,
                        gpointer data) {
-    return FALSE;
+    GVariant *params;
+    gchar *proposed_hostname, *valid_hostname_buf;
+    gboolean policykit_auth, ret;
+    size_t check_length, bad_length;
+
+    bad_length = MAXHOSTNAMELEN + 1;
+    proposed_hostname = NULL;
+    ret = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_hostname, &policykit_auth);
+
+    if(proposed_hostname && (valid_hostname_buf = g_hostname_to_ascii(proposed_hostname))) {
+
+        check_length = strnlen(proposed_hostname, bad_length);
+
+        if(check_length < bad_length && !sethostname(proposed_hostname, check_length))
+            ret = TRUE;
+    }
+
+    hostname1_complete_set_hostname(hn1_passed_interf, invoc);
+
+    if(proposed_hostname)
+        g_free(proposed_hostname);
+    if(valid_hostname_buf)
+        g_free(valid_hostname_buf);
+
+    return ret;
 }
 
 static gboolean
