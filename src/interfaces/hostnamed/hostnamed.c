@@ -79,9 +79,9 @@ GMainLoop *hostnamed_loop;
 guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
+gchar *HOSTNAME, *STATIC_HOSTNAME, *PRETTY_HOSTNAME;
 gchar *CHASSIS, *ICON;
-gchar *OS_CPENAME;
-gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS;
+gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS, *OS_CPENAME;
 
 /* TODO no specific vm or laptop icon in gnome
  * NOTE paravirtualization on xen is only available for linuxes right now
@@ -188,7 +188,7 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-    gchar *hostname_buf, *ret;
+    /*gchar *hostname_buf, *ret;
     size_t hostname_divider;
 
     hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
@@ -202,13 +202,18 @@ our_get_hostname() {
 
     hostname_divider = strcspn(hostname_buf, ".");
 
-    return strncpy(ret, hostname_buf, hostname_divider);
+    return strncpy(ret, hostname_buf, hostname_divider);*/
+
+    if(HOSTNAME)
+        return HOSTNAME;
+
+    return "localhost";
 }
 
 const gchar *
 our_get_static_hostname() {
 
-    const gchar *pretty_hostname;
+    /*const gchar *pretty_hostname;
     const gchar *ret;
 
     pretty_hostname = our_get_pretty_hostname();
@@ -222,19 +227,26 @@ our_get_static_hostname() {
         return ret;
     }
 
-    return ret;
+    return ret;*/
+
+    if(STATIC_HOSTNAME)
+        return STATIC_HOSTNAME;
+    else if(HOSTNAME)
+        return HOSTNAME;
+
+    return "localhost";
 }
 
 const gchar *
 our_get_pretty_hostname() {
 
-    GKeyFile *config;
+  /*GKeyFile *config;
     gchar *ret;
 
     config = g_key_file_new();
 
     if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
-        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) { /* ret might need to be freed, docs dont specify but i am suspicious */
+        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) {  ret might need to be freed, docs dont specify but i am suspicious
 
         g_key_file_unref(config);
         return ret;
@@ -242,6 +254,11 @@ our_get_pretty_hostname() {
 
     if(config)
         g_free(config);
+
+    return "";*/
+
+    if(PRETTY_HOSTNAME)
+        return PRETTY_HOSTNAME;
 
     return "";
 }
@@ -252,7 +269,7 @@ our_get_chassis() {
    if(CHASSIS)
         return CHASSIS;
 
-    return "desktop";
+    return "desktop"; /* this leads to the most generic beheivor in the unlikely case its returned */
 }
 
 const gchar *
