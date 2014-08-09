@@ -25,3 +25,4 @@ gboolean up_native_get_sensordev(const char * id, struct sensordev * snsrdev);
 gboolean up_native_is_laptop();
 gboolean is_server(gchar *arch);
 gboolean set_uname_properties();
+gboolean set_names();

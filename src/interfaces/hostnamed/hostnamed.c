@@ -188,22 +188,6 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-    /*gchar *hostname_buf, *ret;
-    size_t hostname_divider;
-
-    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-
-    g_ptr_array_add(hostnamed_freeable, hostname_buf);
-    g_ptr_array_add(hostnamed_freeable, ret);
-
-    if(gethostname(hostname_buf, MAXHOSTNAMELEN) || g_strcmp0(hostname_buf, "") == 0) 
-        return "localhost"; 
-
-    hostname_divider = strcspn(hostname_buf, ".");
-
-    return strncpy(ret, hostname_buf, hostname_divider);*/
-
     if(HOSTNAME)
         return HOSTNAME;
 
@@ -212,22 +196,6 @@ our_get_hostname() {
 
 const gchar *
 our_get_static_hostname() {
-
-    /*const gchar *pretty_hostname;
-    const gchar *ret;
-
-    pretty_hostname = our_get_pretty_hostname();
-
-    if(g_strcmp0(pretty_hostname, "") == 0)
-        ret = our_get_hostname();
-
-    else if((ret = g_hostname_to_ascii(pretty_hostname))) {
-
-        g_ptr_array_add(hostnamed_freeable, (gpointer)ret);
-        return ret;
-    }
-
-    return ret;*/
 
     if(STATIC_HOSTNAME)
         return STATIC_HOSTNAME;
@@ -239,23 +207,6 @@ our_get_static_hostname() {
 
 const gchar *
 our_get_pretty_hostname() {
-
-  /*GKeyFile *config;
-    gchar *ret;
-
-    config = g_key_file_new();
-
-    if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
-        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) {  ret might need to be freed, docs dont specify but i am suspicious
-
-        g_key_file_unref(config);
-        return ret;
-    }
-
-    if(config)
-        g_free(config);
-
-    return "";*/
 
     if(PRETTY_HOSTNAME)
         return PRETTY_HOSTNAME;
@@ -434,7 +385,7 @@ int main() {
  
     set_signal_handlers();
 
-    if(!determine_chassis_and_icon() || !set_uname_properties())
+    if(!determine_chassis_and_icon() || !set_uname_properties() || !set_names())
         return 1;
     
     hostnamed_loop     = g_main_loop_new(NULL, TRUE);
@@ -459,6 +410,67 @@ int main() {
     g_ptr_array_free(hostnamed_freeable, TRUE);
 
     return 0;
+}
+
+gboolean set_names() {
+
+    /*gchar *hostname_buf, *ret;
+    size_t hostname_divider;
+
+    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+
+    g_ptr_array_add(hostnamed_freeable, hostname_buf);
+    g_ptr_array_add(hostnamed_freeable, ret);
+
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN) || g_strcmp0(hostname_buf, "") == 0) 
+        return "localhost"; 
+
+    hostname_divider = strcspn(hostname_buf, ".");
+
+    return strncpy(ret, hostname_buf, hostname_divider);*/
+
+
+
+    /*const gchar *pretty_hostname;
+    const gchar *ret;
+
+    pretty_hostname = our_get_pretty_hostname();
+
+    if(g_strcmp0(pretty_hostname, "") == 0)
+        ret = our_get_hostname();
+
+    else if((ret = g_hostname_to_ascii(pretty_hostname))) {
+
+        g_ptr_array_add(hostnamed_freeable, (gpointer)ret);
+        return ret;
+    }
+
+    return ret;*/
+
+
+
+  /*GKeyFile *config;
+    gchar *ret;
+
+    config = g_key_file_new();
+
+    if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
+        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) {  ret might need to be freed, docs dont specify but i am suspicious
+
+        g_key_file_unref(config);
+        return ret;
+    }
+
+    if(config)
+        g_free(config);
+
+    return "";*/
+
+
+
+
+    return FALSE; /* temp */
 }
 
 gboolean set_uname_properties() {
