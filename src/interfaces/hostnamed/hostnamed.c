@@ -382,13 +382,14 @@ int main() {
 
     CHASSIS = ICON = OS_CPENAME = 0;
     KERN_NAME = KERN_RELEASE = KERN_VERS = 0;
+    HOSTNAME = STATIC_HOSTNAME = PRETTY_HOSTNAME = NULL;
  
     set_signal_handlers();
 
     if(!determine_chassis_and_icon() || !set_uname_properties() || !set_names())
         return 1;
     
-    hostnamed_loop     = g_main_loop_new(NULL, TRUE);
+    hostnamed_loop = g_main_loop_new(NULL, TRUE);
 
     bus_descriptor = g_bus_own_name(G_BUS_TYPE_SYSTEM,
                                    "org.freedesktop.hostname1",
@@ -414,63 +415,50 @@ int main() {
 
 gboolean set_names() {
 
-    /*gchar *hostname_buf, *ret;
+    /* (1) set up */
+    gchar *hostname_buf, *static_hostname_buf, *pretty_hostname_buf;
+    GKeyFile *config;
     size_t hostname_divider;
 
-    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-
-    g_ptr_array_add(hostnamed_freeable, hostname_buf);
-    g_ptr_array_add(hostnamed_freeable, ret);
-
-    if(gethostname(hostname_buf, MAXHOSTNAMELEN) || g_strcmp0(hostname_buf, "") == 0) 
-        return "localhost"; 
-
-    hostname_divider = strcspn(hostname_buf, ".");
-
-    return strncpy(ret, hostname_buf, hostname_divider);*/
-
-
-
-    /*const gchar *pretty_hostname;
-    const gchar *ret;
-
-    pretty_hostname = our_get_pretty_hostname();
-
-    if(g_strcmp0(pretty_hostname, "") == 0)
-        ret = our_get_hostname();
-
-    else if((ret = g_hostname_to_ascii(pretty_hostname))) {
-
-        g_ptr_array_add(hostnamed_freeable, (gpointer)ret);
-        return ret;
-    }
-
-    return ret;*/
-
-
-
-  /*GKeyFile *config;
-    gchar *ret;
+    hostname_buf        = (gchar*) g_malloc0(MAXHOSTNAMELEN);
+    static_hostname_buf = (gchar*) g_malloc0(4096);
+    pretty_hostname_buf = (gchar*) g_malloc0(4096);
 
     config = g_key_file_new();
 
+    g_ptr_array_add(hostnamed_freeable, hostname_buf);
+    g_ptr_array_add(hostnamed_freeable, static_hostname_buf);
+    g_ptr_array_add(hostnamed_freeable, pretty_hostname_buf);
+
+    /* (2) set HOSTNAME */
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN) || !g_strcmp0(hostname_buf, "")) 
+        HOSTNAME = "localhost";
+
+    HOSTNAME = hostname_buf;
+
+    /* this bit gets you the /etc/myname style hostname
+    hostname_divider = strcspn(hostname_buf, ".");
+    strncpy(ret, hostname_buf, hostname_divider); */
+
+    /* (3) set PRETTY_HOSTNAME */
     if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
-        && (ret = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL))) {  ret might need to be freed, docs dont specify but i am suspicious
-
-        g_key_file_unref(config);
-        return ret;
-    }
-
+        && (pretty_hostname_buf = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL)))
+        PRETTY_HOSTNAME = pretty_hostname_buf;
+    else
+        PRETTY_HOSTNAME = "";
+ 
     if(config)
-        g_free(config);
+        g_key_file_unref(config);
 
-    return "";*/
+    /* (4) set STATIC_HOSTNAME */ 
+    if(!g_strcmp0(PRETTY_HOSTNAME, ""))
+        STATIC_HOSTNAME = HOSTNAME;
 
+    else if((static_hostname_buf = g_hostname_to_ascii(PRETTY_HOSTNAME)))
+        STATIC_HOSTNAME = static_hostname_buf;
 
+    return (HOSTNAME && STATIC_HOSTNAME && PRETTY_HOSTNAME) ? TRUE : FALSE;
 
-
-    return FALSE; /* temp */
 }
 
 gboolean set_uname_properties() {
