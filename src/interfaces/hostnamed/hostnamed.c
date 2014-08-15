@@ -120,9 +120,8 @@ on_handle_set_hostname(Hostname1 *hn1_passed_interf,
     GVariant *params;
     gchar *proposed_hostname, *valid_hostname_buf;
     gboolean policykit_auth, ret;
-    size_t check_length, bad_length;
+    size_t check_length;
 
-    bad_length = MAXHOSTNAMELEN + 1;
     proposed_hostname = NULL;
     ret = FALSE;
     
@@ -131,15 +130,22 @@ on_handle_set_hostname(Hostname1 *hn1_passed_interf,
 
     if(proposed_hostname && (valid_hostname_buf = g_hostname_to_ascii(proposed_hostname))) {
 
-        check_length = strnlen(proposed_hostname, bad_length);
+        check_length = strnlen(proposed_hostname, MAXHOSTNAMELEN + 1);
 
-        if(check_length < bad_length && !sethostname(proposed_hostname, check_length))
+        if(check_length > MAXHOSTNAMELEN)
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ENAMETOOLONG", "Hostname string exceeded maximum length.");
+
+        else if(sethostname(proposed_hostname, check_length))
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to change hostname.");
+
+        else {
+            HOSTNAME = proposed_hostname;
+            hostname1_set_hostname(hn1_passed_interf, HOSTNAME);
             ret = TRUE;
+            hostname1_complete_set_hostname(hn1_passed_interf, invoc);
+        }
     }
-
-    if(ret)
-        hostname1_complete_set_hostname(hn1_passed_interf, invoc);
-
+ 
     if(proposed_hostname)
         g_free(proposed_hostname);
     if(valid_hostname_buf)
@@ -189,21 +195,34 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 const gchar *
 our_get_hostname() {
 
-    if(HOSTNAME)
-        return HOSTNAME;
+    gchar *hostname_buf;
+    hostname_buf = (gchar *)g_malloc0(MAXHOSTNAMELEN);
 
-    return "localhost";
+    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
+        return "localhost.home.network"; /* TODO bomb out here probably */
+    
+    else if(!g_strcmp0(HOSTNAME, hostname_buf)) {
+
+        g_free(hostname_buf);
+        return HOSTNAME;
+    }
+
+    g_ptr_array_add(hostnamed_freeable, hostname_buf);
+    HOSTNAME = hostname_buf;
+    hostname1_set_hostname(hostnamed_interf, HOSTNAME);
+
+    return HOSTNAME;
 }
 
 const gchar *
 our_get_static_hostname() {
 
-    if(STATIC_HOSTNAME)
+    if(STATIC_HOSTNAME && g_strcmp0(STATIC_HOSTNAME, ""))
         return STATIC_HOSTNAME;
     else if(HOSTNAME)
         return HOSTNAME;
 
-    return "localhost";
+    return "localhost.home.network";
 }
 
 const gchar *
