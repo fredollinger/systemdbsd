@@ -1,4 +1,0 @@
-[D-BUS Service]
-Names=org.freedesktop.locale1
-Exec=@BINDIR@/systemd-localed
-User=root

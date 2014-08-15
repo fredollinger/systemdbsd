@@ -1,4 +1,0 @@
-[D-BUS Service]
-Names=org.freedesktop.timedate1
-Exec=@BINDIR@/systemd-timedated
-User=root
