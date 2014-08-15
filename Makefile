@@ -1,7 +1,7 @@
 .PHONY: all
 
 CC?=		/usr/bin/cc
-CFLAGS+=	-Wall -Wextra -Werror -std=c89
+CFLAGS= 	-Wall -Wextra -Werror -std=c89
 
 DEBUG=		1
 .ifdef DEBUG
