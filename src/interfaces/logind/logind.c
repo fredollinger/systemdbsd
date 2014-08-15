@@ -23,6 +23,7 @@
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
+#include <polkit/polkit.h>
 
 #include "logind-gen.h"
 #include "logind.h"

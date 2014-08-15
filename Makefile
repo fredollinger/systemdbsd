@@ -7,8 +7,8 @@ DEBUGF=-O0 -g
 LINKGN=bin/obj/hostnamed-gen.o bin/obj/localed-gen.o bin/obj/timedated-gen.o bin/obj/logind-gen.o
 LINKHN=bin/systemd-hostnamed bin/systemd-localed bin/systemd-timedated bin/systemd-logind
 
-GLIBEF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
-GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
+GLIBEF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0 polkit-agent-1`
+GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0 polkit-agent-1`
 
 SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
 

@@ -29,7 +29,7 @@
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
-/* #include <gtk/gtk.h> */
+#include <polkit/polkit.h>
 
 #include "hostnamed-gen.h"
 #include "hostnamed.h"
@@ -137,7 +137,8 @@ on_handle_set_hostname(Hostname1 *hn1_passed_interf,
             ret = TRUE;
     }
 
-    hostname1_complete_set_hostname(hn1_passed_interf, invoc);
+    if(ret)
+        hostname1_complete_set_hostname(hn1_passed_interf, invoc);
 
     if(proposed_hostname)
         g_free(proposed_hostname);
