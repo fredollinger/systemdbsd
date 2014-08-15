@@ -1,4 +1,4 @@
 [D-BUS Service]
 Names=org.freedesktop.login1
-Exec=/usr/local/bin/systemd-compat/systemd-logind
+Exec=@BINDIR@/systemd-logind
 User=root
