@@ -1,0 +1,4 @@
+[D-BUS Service]
+Names=org.freedesktop.login1
+Exec=@BINDIR@/systemd-logind
+User=root

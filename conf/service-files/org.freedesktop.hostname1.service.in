@@ -1,0 +1,4 @@
+[D-BUS Service]
+Names=org.freedesktop.hostname1i
+Exec=@BINDIR@/systemd-hostnamed
+User=root
