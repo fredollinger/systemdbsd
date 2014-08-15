@@ -45,11 +45,13 @@ CONFDIR=	conf
 POLICYDIR=	$(CONFDIR)/sysbus-policy
 ISPECTDIR=	$(CONFDIR)/introspect-xml
 SERVICEFDIR=	$(CONFDIR)/service-files
+POLKITDIR=  $(CONFDIR)/polkit-policy
 
 INTFDIR=	$(SRCDIR)/interfaces
 
 DBUS_POLICYDIR=	$(SYSCONFDIR)/dbus-1/system.d
 DBUS_CONFIGDIR=	$(PREFIX)/share/dbus-1/system-services
+POLKIT_POLICYDIR=   $(PREFIX)/share/polkit-1/actions
 
 INVOKE_GENFILE_SCRIPT= \
 		./scripts/gen-gdbus-interfaces.sh 
@@ -95,6 +97,7 @@ _install_conf: _generate_servicefiles
 	${INSTALL_DATA} $(POLICYDIR)/*-dbus.conf $(DESTDIR)$(DBUS_POLICYDIR)/
 	${INSTALL_DATA} $(SERVICEFDIR)/*.service $(DESTDIR)$(DBUS_CONFIGDIR)/
 	${INSTALL_DATA} $(CONFDIR)/systemd_compat.conf $(DESTDIR)$(SYSCONFDIR)/
+	${INSTALL_DATA} $(POLKITDIR)/*.policy $(DESTDIR)$(POLKIT_POLICYDIR)/
 
 _install_interface_binaries: $(LINKHN)
 	${INSTALL_PROGRAM_DIR} $(DESTDIR)$(BINDIR)
