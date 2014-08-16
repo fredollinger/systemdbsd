@@ -406,8 +406,6 @@ int main() {
     KERN_NAME = KERN_RELEASE = KERN_VERS = 0;
     HOSTNAME = STATIC_HOSTNAME = PRETTY_HOSTNAME = NULL;
 
-    test_func();
- 
     set_signal_handlers();
 
     if(!determine_chassis_and_icon() || !set_uname_properties() || !set_names())
