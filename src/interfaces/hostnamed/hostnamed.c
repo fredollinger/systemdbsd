@@ -628,7 +628,8 @@ our_get_kernel_release() {
 const gchar *
 our_get_os_cpename() {
 
-    return "ONEDAY";
+    /* XXX needs to parse /etc/os-release (fallback to /usr/local/lib/os-release) */
+    return "";
 }
 
 const gchar *
