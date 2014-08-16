@@ -294,8 +294,8 @@ our_get_os_pretty_name() {
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void hostnamed_on_bus_acquired(GDBusConnection *conn,
-                            const gchar *name,
-                            gpointer user_data) {
+                                      const gchar *name,
+                                      gpointer user_data) {
 
     g_printf("got bus/name, exporting %s's interface...\n", name);
 
