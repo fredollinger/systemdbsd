@@ -194,7 +194,76 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
                               GDBusMethodInvocation *invoc,
                               const gchar *greet,
                               gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    gchar *proposed_static_hostname, *valid_static_hostname_buf;
+    const gchar *bus_name;
+    gboolean policykit_auth, ret, try_to_set;
+    size_t check_length;
+    check_auth_result is_authed;
+
+    proposed_static_hostname = NULL;
+    ret = try_to_set = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_static_hostname, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetStaticHostname", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set static hostname.");
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set static hostname for unknown reason.");
+            break;
+    }
+
+    /* verify passed hostname's validity */
+    if(try_to_set && proposed_static_hostname && (valid_static_hostname_buf = g_hostname_to_ascii(proposed_static_hostname))) {
+
+        check_length = strnlen(valid_static_hostname_buf, MAXHOSTNAMELEN + 1);
+
+        if(check_length > MAXHOSTNAMELEN) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ENAMETOOLONG", "Static hostname string exceeded maximum length.");
+            g_free(valid_static_hostname_buf);
+
+        } else if(!(STATIC_HOSTNAME = valid_static_hostname_buf)) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set static hostname for unknown reason.");
+            g_free(valid_static_hostname_buf);
+
+        } else { 
+
+            g_strdelimit(STATIC_HOSTNAME, " ", '-');
+            hostname1_set_static_hostname(hn1_passed_interf, STATIC_HOSTNAME);
+            g_ptr_array_add(hostnamed_freeable, valid_static_hostname_buf);
+            ret = TRUE;
+            hostname1_complete_set_static_hostname(hn1_passed_interf, invoc);
+        }
+    }
+
+    return ret;
 }
 
 static gboolean
@@ -202,7 +271,97 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
                               GDBusMethodInvocation *invoc,
                               const gchar *greet,
                               gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    gchar *proposed_pretty_hostname, *valid_pretty_hostname_buf, *computed_static_hostname;
+    const gchar *bus_name;
+    gboolean policykit_auth, ret, try_to_set;
+    size_t check_length;
+    check_auth_result is_authed;
+    GKeyFile *config;
+
+    config = g_key_file_new();
+    proposed_pretty_hostname = NULL;
+    ret = try_to_set = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_pretty_hostname, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetPrettyHostname", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set pretty hostname.");
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set pretty hostname for unknown reason.");
+            break;
+    }
+
+    /* verify passed hostname's validity */
+    if(try_to_set && proposed_pretty_hostname && (valid_pretty_hostname_buf = g_locale_to_utf8(proposed_pretty_hostname, -1, 0, 0, NULL))) {
+
+        check_length = strnlen(valid_pretty_hostname_buf, MAXHOSTNAMELEN + 1);
+
+        if(check_length > MAXHOSTNAMELEN) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ENAMETOOLONG", "Static hostname string exceeded maximum length.");
+            g_free(valid_pretty_hostname_buf);
+
+        } else if(!(PRETTY_HOSTNAME = valid_pretty_hostname_buf)) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set pretty hostname for unknown reason.");
+            g_free(valid_pretty_hostname_buf);
+
+        } else {
+
+            hostname1_set_pretty_hostname(hn1_passed_interf, PRETTY_HOSTNAME);
+            g_ptr_array_add(hostnamed_freeable, valid_pretty_hostname_buf);
+            hostname1_complete_set_pretty_hostname(hn1_passed_interf, invoc);
+            ret = TRUE;
+
+            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+ 
+                g_key_file_set_string(config, "hostnamed", "PrettyHostname", valid_pretty_hostname_buf);
+
+                if((computed_static_hostname = g_hostname_to_ascii(PRETTY_HOSTNAME))) {
+
+                    g_strdelimit(computed_static_hostname, " ", '-');
+                    hostname1_set_static_hostname(hn1_passed_interf, computed_static_hostname);
+                    STATIC_HOSTNAME = computed_static_hostname;
+                    g_ptr_array_add(hostnamed_freeable, computed_static_hostname);
+                    g_key_file_set_string(config, "hostnamed", "StaticHostname", computed_static_hostname);
+
+                } else
+                    g_free(computed_static_hostname);
+            }
+
+        }
+    }
+
+    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_unref(config);
+
+    return ret;
 }
 
 static gboolean
@@ -210,7 +369,86 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
                       GDBusMethodInvocation *invoc,
                       const gchar *greet,
                       gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    gchar *proposed_chassis_name, *valid_chassis_name_buf;
+    const gchar *bus_name;
+    gboolean policykit_auth, ret, try_to_set;
+    check_auth_result is_authed;
+    GKeyFile *config;
+
+    config = g_key_file_new();
+    proposed_chassis_name = NULL;
+    ret = try_to_set = FALSE;
+    valid_chassis_name_buf = (gchar *)g_malloc0(8192);
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_chassis_name, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    g_strlcpy(valid_chassis_name_buf, proposed_chassis_name, (gsize)64);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetChassis", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set chassis type.");
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set chassis type for unknown reason.");
+            break;
+    }
+
+    /* verify passed chassis type's validity */
+    if(try_to_set && proposed_chassis_name) {
+
+        if(!is_valid_chassis_type(proposed_chassis_name)) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Chassis type must be 'desktop', 'laptop', 'server', 'tablet', 'handset', 'vm', or 'container'.");
+            g_free(valid_chassis_name_buf);
+
+        } else if(!(CHASSIS = valid_chassis_name_buf)) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set chassis type for unknown reason.");
+            g_free(valid_chassis_name_buf);
+
+        } else {
+
+            hostname1_set_chassis(hn1_passed_interf, CHASSIS);
+            g_ptr_array_add(hostnamed_freeable, valid_chassis_name_buf);
+            hostname1_complete_set_chassis(hn1_passed_interf, invoc);
+
+            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+
+                ret = TRUE;
+                g_key_file_set_string(config, "hostnamed", "ChassisType", valid_chassis_name_buf);
+
+            }
+        }
+    }
+
+    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_unref(config);
+
+    return ret;
 }
 
 static gboolean
@@ -218,7 +456,80 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
                         GDBusMethodInvocation *invoc,
                         const gchar *greet,
                         gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    gchar *proposed_icon_name, *valid_icon_name_buf;
+    const gchar *bus_name;
+    gboolean policykit_auth, ret, try_to_set;
+    check_auth_result is_authed;
+    GKeyFile *config;
+
+    config = g_key_file_new();
+    proposed_icon_name = NULL;
+    ret = try_to_set = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_icon_name, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetIconName", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set icon name.");
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set icon name for unknown reason.");
+            break;
+    }
+
+    /* verify passed chassis type's validity */
+    if(try_to_set && proposed_icon_name) {
+
+        g_strlcpy(valid_icon_name_buf, proposed_icon_name, (gsize)64);
+
+        if(!(ICON = valid_icon_name_buf)) {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set icon name for unknown reason.");
+            g_free(valid_icon_name_buf);
+
+        } else {
+
+            hostname1_set_icon_name(hn1_passed_interf, ICON);
+            g_ptr_array_add(hostnamed_freeable, valid_icon_name_buf);
+            hostname1_complete_set_icon_name(hn1_passed_interf, invoc);
+
+            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+
+                ret = TRUE;
+                g_key_file_set_string(config, "hostnamed", "IconName", valid_icon_name_buf);
+
+            }
+        }
+    }
+
+    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_unref(config);
+
+    return ret;
 }
 
 /* note: all hostnamed/hostname1's properties are read-only,
@@ -698,3 +1009,18 @@ gboolean up_native_get_sensordev(const char * id, struct sensordev * snsrdev) {
 
     return FALSE;
 }
+
+static gboolean is_valid_chassis_type(gchar *test) {
+
+    if(!g_strcmp0(test, "desktop") ||
+       !g_strcmp0(test, "laptop") ||
+       !g_strcmp0(test, "server") ||
+       !g_strcmp0(test, "tablet") ||
+       !g_strcmp0(test, "handset") ||
+       !g_strcmp0(test, "vm") ||
+       !g_strcmp0(test, "container") ||
+       !g_strcmp0(test, ""))
+        return TRUE;
+
+    return FALSE;
+} 

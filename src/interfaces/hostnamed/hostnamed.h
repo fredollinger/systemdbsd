@@ -26,3 +26,4 @@ gboolean up_native_is_laptop();
 gboolean is_server(gchar *arch);
 gboolean set_uname_properties();
 gboolean set_names();
+static gboolean is_valid_chassis_type(gchar *test);
