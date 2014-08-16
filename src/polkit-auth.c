@@ -27,28 +27,43 @@
 static gboolean is_valid_action(GList *action_list, const gchar *action) {
 
     PolkitActionDescription *action_descr;
-    action_descr = (PolkitActionDescription *)g_list_first(action_list);
+    const gchar *action_descr_id;
+    GList *cur;
+    gboolean ret;
 
-    while((action_descr = (PolkitActionDescription *)g_list_next(action_list)))
-        if(!g_strcmp0(action, polkit_action_description_get_action_id(action_descr)))
-            return TRUE;
+    ret = FALSE;
+    cur = g_list_first(action_list);
 
-    return FALSE;
+    while(cur && (action_descr = ((PolkitActionDescription *)(cur->data))) && (action_descr_id = polkit_action_description_get_action_id(action_descr))) {
+        
+        if(!g_strcmp0(action, action_descr_id)) {
+            ret = TRUE;
+            break;
+        }
+
+        cur = cur->next;
+    }
+
+    g_list_free(action_list);
+
+    return ret;
 }
 
-check_auth_result polkit_try_auth(const gchar *bus, const gchar *action) {
+check_auth_result polkit_try_auth(const gchar *bus, const gchar *action, gboolean prompt) {
 
     GList           *valid_actions;
     PolkitAuthority *auth;
     PolkitSubject   *subj;
     PolkitAuthorizationResult *result;
+    PolkitCheckAuthorizationFlags prompt_flag;
     gboolean authorized, challenge;
-
+    
     auth  = NULL;
     subj  = NULL;
     result = NULL;
     valid_actions = NULL;
     authorized = challenge = FALSE;
+    prompt_flag = prompt ? POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION : POLKIT_CHECK_AUTHORIZATION_FLAGS_NONE;
 
     auth = polkit_authority_get_sync(NULL, NULL); /* TODO timeout for this */
     subj = polkit_system_bus_name_new(bus);
@@ -61,7 +76,7 @@ check_auth_result polkit_try_auth(const gchar *bus, const gchar *action) {
     else if(!is_valid_action(valid_actions, action))
         return ERROR_BADACTION;
 
-   if(!(result = polkit_authority_check_authorization_sync(auth, subj, action, NULL, POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION, NULL, NULL)))
+   if(!(result = polkit_authority_check_authorization_sync(auth, subj, action, NULL, prompt_flag, NULL, NULL)))
         return ERROR_GENERIC; /* TODO pass, check gerror and return more relevant error */
 
     authorized = polkit_authorization_result_get_is_authorized(result);

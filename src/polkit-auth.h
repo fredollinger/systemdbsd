@@ -20,4 +20,4 @@ typedef enum {
     ERROR_BADBUS, ERROR_BADACTION, ERROR_GENERIC
 } check_auth_result;
 
-check_auth_result polkit_try_auth(const gchar *bus, const gchar *action);
+check_auth_result polkit_try_auth(const gchar *bus, const gchar *action, gboolean prompt);

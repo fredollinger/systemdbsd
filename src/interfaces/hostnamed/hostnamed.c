@@ -112,8 +112,7 @@ const gchar *server_archs[] = {
 
 /* --- begin method/property/dbus signal code --- */
 
-/* TODO the extra boolean passed to these funcs is for policykit auth */
-/* TODO complete call with error, message, etc */
+/* TODO free some strings here */
 static gboolean
 on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        GDBusMethodInvocation *invoc,
@@ -121,37 +120,71 @@ on_handle_set_hostname(Hostname1 *hn1_passed_interf,
                        gpointer data) {
     GVariant *params;
     gchar *proposed_hostname, *valid_hostname_buf;
-    gboolean policykit_auth, ret;
+    const gchar *bus_name;
+    gboolean policykit_auth, ret, try_to_set;
     size_t check_length;
+    check_auth_result is_authed;
 
     proposed_hostname = NULL;
-    ret = FALSE;
+    ret = try_to_set = FALSE;
     
     params = g_dbus_method_invocation_get_parameters(invoc);
     g_variant_get(params, "(sb)", &proposed_hostname, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
 
-    if(proposed_hostname && (valid_hostname_buf = g_hostname_to_ascii(proposed_hostname))) {
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetHostname", policykit_auth);
 
-        check_length = strnlen(proposed_hostname, MAXHOSTNAMELEN + 1);
+    switch(is_authed) {
 
-        if(check_length > MAXHOSTNAMELEN)
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set hostname.");
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set hostname for unknown reason.");
+            break;
+    }
+
+    /* verify passed hostname's validity */
+    if(try_to_set && proposed_hostname && (valid_hostname_buf = g_hostname_to_ascii(proposed_hostname))) {
+
+        check_length = strnlen(valid_hostname_buf, MAXHOSTNAMELEN + 1);
+
+        if(check_length > MAXHOSTNAMELEN) {
+
             g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ENAMETOOLONG", "Hostname string exceeded maximum length.");
+            g_free(valid_hostname_buf);
 
-        else if(sethostname(proposed_hostname, check_length))
-            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to change hostname.");
+        } else if(sethostname(proposed_hostname, check_length)) {
 
-        else {
-            HOSTNAME = proposed_hostname;
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set hostname for unknown reason.");
+            g_free(valid_hostname_buf);
+
+        } else {
+
+            HOSTNAME = valid_hostname_buf;
             hostname1_set_hostname(hn1_passed_interf, HOSTNAME);
+            g_ptr_array_add(hostnamed_freeable, valid_hostname_buf);
             ret = TRUE;
             hostname1_complete_set_hostname(hn1_passed_interf, invoc);
         }
     }
- 
-    if(proposed_hostname)
-        g_free(proposed_hostname);
-    if(valid_hostname_buf)
-        g_free(valid_hostname_buf);
 
     return ret;
 }
