@@ -14,5 +14,10 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+typedef enum {
+    AUTHORIZED_NATIVELY,   AUTHORIZED_BY_PROMPT,
+    UNAUTHORIZED_NATIVELY, UNAUTHORIZED_FAILED_PROMPT,
+    ERROR_BADBUS, ERROR_BADACTION, ERROR_GENERIC
+} check_auth_result;
 
-void test_func();
+check_auth_result polkit_try_auth(const gchar *bus, const gchar *action);
