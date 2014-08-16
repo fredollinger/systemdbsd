@@ -83,8 +83,6 @@ check_auth_result polkit_try_auth(const gchar *bus, const gchar *action, gboolea
     challenge = polkit_authorization_result_get_is_challenge(result);
 
     /* free()'s before return */
-    if(valid_actions)
-        g_object_unref(valid_actions);
     if(auth)
         g_object_unref(auth);
     if(subj)
