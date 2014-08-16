@@ -59,7 +59,6 @@ INVOKE_GENFILE_SCRIPT= \
 all: build
 
 build: _build_interface_objs
-	$(CC) -o bin/out.bin $(CFLAGS) $(GLIBEF) $(SRCDIR)/main.c
 
 clean:
 	find ./bin -type f -exec rm {} \;
