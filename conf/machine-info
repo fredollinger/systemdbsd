@@ -1,0 +1,6 @@
+# XXX this file should not be an ini file;
+# it should contain parsable variables
+[hostnamed]
+PRETTY_HOSTNAME=
+ICON_NAME=
+CHASSIS=
