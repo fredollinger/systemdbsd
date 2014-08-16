@@ -67,16 +67,19 @@ clean:
 install: _install_conf _install_interface_binaries
 
 _build_interface_objs: _build_genfile_objs
-	$(CC) -o bin/systemd-hostnamed $(CFLAGS) $(GLIBEF) $(INTFDIR)/hostnamed/hostnamed.c bin/obj/hostnamed-gen.o 
-	$(CC) -o bin/systemd-localed   $(CFLAGS) $(GLIBEF) $(INTFDIR)/localed/localed.c     bin/obj/localed-gen.o
-	$(CC) -o bin/systemd-timedated $(CFLAGS) $(GLIBEF) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o
-	$(CC) -o bin/systemd-logind    $(CFLAGS) $(GLIBEF) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o
+	$(CC) -o bin/systemd-hostnamed $(CFLAGS) $(GLIBEF) $(INTFDIR)/hostnamed/hostnamed.c bin/obj/hostnamed-gen.o bin/obj/polkit-auth.o 
+	$(CC) -o bin/systemd-localed   $(CFLAGS) $(GLIBEF) $(INTFDIR)/localed/localed.c     bin/obj/localed-gen.o   bin/obj/polkit-auth.o
+	$(CC) -o bin/systemd-timedated $(CFLAGS) $(GLIBEF) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o bin/obj/polkit-auth.o
+	$(CC) -o bin/systemd-logind    $(CFLAGS) $(GLIBEF) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o    bin/obj/polkit-auth.o
 
-_build_genfile_objs: _generate_genfiles
+_build_genfile_objs: _generate_genfiles _build_auth_obj
 	$(CC) -o bin/obj/hostnamed-gen.o $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
 	$(CC) -o bin/obj/localed-gen.o   $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/localed/localed-gen.c
 	$(CC) -o bin/obj/timedated-gen.o $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/timedated/timedated-gen.c
 	$(CC) -o bin/obj/logind-gen.o    $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/logind/logind-gen.c
+
+_build_auth_obj:
+	$(CC) -o bin/obj/polkit-auth.o $(CFLAGS) $(GLIBOF) -c $(SRCDIR)/polkit-auth.c
 
 _generate_genfiles:
 	$(INVOKE_GENFILE_SCRIPT) hostnamed

@@ -34,6 +34,8 @@
 #include "hostnamed-gen.h"
 #include "hostnamed.h"
 
+#include "../../polkit-auth.h"
+
 /* format: {
  *           (1) string to be matched against runtime machine's sysctl output.
  *               can be either the exact string or a substring contained
@@ -403,6 +405,8 @@ int main() {
     CHASSIS = ICON = OS_CPENAME = 0;
     KERN_NAME = KERN_RELEASE = KERN_VERS = 0;
     HOSTNAME = STATIC_HOSTNAME = PRETTY_HOSTNAME = NULL;
+
+    test_func();
  
     set_signal_handlers();
 
