@@ -339,9 +339,9 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
             hostname1_complete_set_pretty_hostname(hn1_passed_interf, invoc);
             ret = TRUE;
 
-            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
  
-                g_key_file_set_string(config, "hostnamed", "PrettyHostname", valid_pretty_hostname_buf);
+                g_key_file_set_string(config, "hostnamed", "PRETTY_HOSTNAME", valid_pretty_hostname_buf);
 
                 if((computed_static_hostname = g_hostname_to_ascii(PRETTY_HOSTNAME))) {
 
@@ -358,7 +358,7 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
         }
     }
 
-    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
     g_key_file_unref(config);
 
     return ret;
@@ -436,7 +436,7 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
             g_ptr_array_add(hostnamed_freeable, valid_chassis_name_buf);
             hostname1_complete_set_chassis(hn1_passed_interf, invoc);
 
-            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
 
                 ret = TRUE;
                 g_key_file_set_string(config, "hostnamed", "ChassisType", valid_chassis_name_buf);
@@ -445,7 +445,7 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
         }
     }
 
-    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
     g_key_file_unref(config);
 
     return ret;
@@ -517,7 +517,7 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
             g_ptr_array_add(hostnamed_freeable, valid_icon_name_buf);
             hostname1_complete_set_icon_name(hn1_passed_interf, invoc);
 
-            if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)) {
+            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
 
                 ret = TRUE;
                 g_key_file_set_string(config, "hostnamed", "IconName", valid_icon_name_buf);
@@ -526,7 +526,7 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
         }
     }
 
-    g_key_file_save_to_file(config, "/etc/systemd_compat.conf", NULL);
+    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
     g_key_file_unref(config);
 
     return ret;
@@ -807,8 +807,8 @@ gboolean set_names() {
     strncpy(ret, hostname_buf, hostname_divider); */
 
     /* (3) set PRETTY_HOSTNAME */
-    if(g_key_file_load_from_file(config, "/etc/systemd_compat.conf", G_KEY_FILE_NONE, NULL)
-        && (pretty_hostname_buf = g_key_file_get_value(config, "hostnamed", "PrettyHostname", NULL)))
+    if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)
+        && (pretty_hostname_buf = g_key_file_get_value(config, "hostnamed", "PRETTY_HOSTNAME", NULL)))
         PRETTY_HOSTNAME = pretty_hostname_buf;
     else
         PRETTY_HOSTNAME = "";
