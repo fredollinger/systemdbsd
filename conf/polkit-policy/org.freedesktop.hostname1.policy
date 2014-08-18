@@ -5,7 +5,7 @@
     <vendor>OpenBSD</vendor>
     <vendor_url>https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git</vendor_url> <!-- TODO change or redirect this URL when we rebase -->
 
-    <action id="org.freedesktop.hostname1.SetHostname">
+    <action id="org.freedesktop.hostname1.set-hostname">
         <description>Set dynamic (system) hostname.</description>
         <message>Setting the dynamic (system) hostname requires authentication.</message>
         <defaults>
@@ -15,7 +15,7 @@
         </defaults>
     </action>
 
-    <action id="org.freedesktop.hostname1.SetStaticHostname">
+    <action id="org.freedesktop.hostname1.set-static-hostname">
         <description>Set static hostname.</description>
         <message>Setting the static hostname requires authentication.</message>
         <defaults>
@@ -25,7 +25,7 @@
         </defaults>
     </action>
 
-    <action id="org.freedesktop.hostname1.SetPrettyHostname">
+    <action id="org.freedesktop.hostname1.set-pretty-hostname">
         <description>Set pretty (UTF-8) hostname.</description>
         <message>Setting the pretty (UTF-8) hostname requires authentication.</message>
         <defaults>
@@ -35,7 +35,7 @@
         </defaults>
     </action>
 
-    <action id="org.freedesktop.hostname1.SetIconName">
+    <action id="org.freedesktop.hostname1.set-icon-name">
         <description>Set system's icon name.</description>
         <message>Setting the system's icon name requires authentication.</message>
         <defaults>
@@ -45,7 +45,7 @@
         </defaults>
     </action>
 
-    <action id="org.freedesktop.hostname1.SetChassis">
+    <action id="org.freedesktop.hostname1.set-chassis">
         <description>Set system's chassis type.</description>
         <message>Setting the system's chassis type requires authentication.</message>
         <defaults>

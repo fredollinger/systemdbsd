@@ -133,7 +133,7 @@ on_handle_set_hostname(Hostname1 *hn1_passed_interf,
     bus_name = g_dbus_method_invocation_get_sender(invoc);
 
     /* verify caller has correct permissions via polkit */
-    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetHostname", policykit_auth);
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-hostname", policykit_auth);
 
     switch(is_authed) {
 
@@ -210,7 +210,7 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
     bus_name = g_dbus_method_invocation_get_sender(invoc);
 
     /* verify caller has correct permissions via polkit */
-    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetStaticHostname", policykit_auth);
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-static-hostname", policykit_auth);
 
     switch(is_authed) {
 
@@ -289,7 +289,7 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
     bus_name = g_dbus_method_invocation_get_sender(invoc);
 
     /* verify caller has correct permissions via polkit */
-    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetPrettyHostname", policykit_auth);
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-pretty-hostname", policykit_auth);
 
     switch(is_authed) {
 
@@ -389,7 +389,7 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
     g_strlcpy(valid_chassis_name_buf, proposed_chassis_name, (gsize)64);
 
     /* verify caller has correct permissions via polkit */
-    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetChassis", policykit_auth);
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-chassis", policykit_auth);
 
     switch(is_authed) {
 
@@ -473,7 +473,7 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
     bus_name = g_dbus_method_invocation_get_sender(invoc);
 
     /* verify caller has correct permissions via polkit */
-    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.SetIconName", policykit_auth);
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-icon-name", policykit_auth);
 
     switch(is_authed) {
 
