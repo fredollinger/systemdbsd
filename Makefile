@@ -14,7 +14,7 @@ CFLAGS+=	-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
 .endif
 
 PREFIX?=	/usr/local
-BINDIR=		$(PREFIX)/libexec
+BINDIR=		$(PREFIX)/libexec/systemd
 SYSCONFDIR?=	/etc
 
 INSTALL_PROGRAM=	install -c -s -o root -g bin -m 555
