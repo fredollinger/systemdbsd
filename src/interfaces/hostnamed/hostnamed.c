@@ -343,7 +343,7 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
  
                 g_key_file_set_string(config, "hostnamed", "PRETTY_HOSTNAME", valid_pretty_hostname_buf);
 
-                if((computed_static_hostname = g_hostname_to_ascii(PRETTY_HOSTNAME))) {
+                /* if((computed_static_hostname = g_hostname_to_ascii(PRETTY_HOSTNAME))) {
 
                     g_strdelimit(computed_static_hostname, " ", '-');
                     hostname1_set_static_hostname(hn1_passed_interf, computed_static_hostname);
@@ -351,10 +351,8 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
                     g_ptr_array_add(hostnamed_freeable, computed_static_hostname);
                     g_key_file_set_string(config, "hostnamed", "StaticHostname", computed_static_hostname);
 
-                } else
-                    g_free(computed_static_hostname);
+                } */
             }
-
         }
     }
 
@@ -814,18 +812,18 @@ gboolean set_names() {
     else
         PRETTY_HOSTNAME = "";
  
+    
+    /* (4) set STATIC_HOSTNAME */
+    if((static_hostname_buf = g_key_file_get_value(config, "hostnamed", "STATIC_HOSTNAME", NULL)))
+        STATIC_HOSTNAME = static_hostname_buf;
+
+    else
+        STATIC_HOSTNAME = "";
+
     if(config)
         g_key_file_unref(config);
 
-    /* (4) set STATIC_HOSTNAME */ 
-    if(!g_strcmp0(PRETTY_HOSTNAME, ""))
-        STATIC_HOSTNAME = HOSTNAME;
-
-    else if((static_hostname_buf = g_hostname_to_ascii(PRETTY_HOSTNAME)))
-        STATIC_HOSTNAME = static_hostname_buf;
-
     return (HOSTNAME && STATIC_HOSTNAME && PRETTY_HOSTNAME) ? TRUE : FALSE;
-
 }
 
 gboolean set_uname_properties() {
