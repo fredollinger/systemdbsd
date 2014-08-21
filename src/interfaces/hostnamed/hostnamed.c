@@ -256,9 +256,9 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
         } else { 
 
             g_strdelimit(STATIC_HOSTNAME, " ", '-');
-            hostname1_set_static_hostname(hn1_passed_interf, STATIC_HOSTNAME);
+            hostname1_set_static_hostname(hn1_passed_interf, STATIC_HOSTNAME); 
             g_ptr_array_add(hostnamed_freeable, valid_static_hostname_buf);
-            ret = TRUE;
+            ret = (!sethostname(valid_static_hostname_buf, MAXHOSTNAMELEN)) ? TRUE : FALSE; /* TODO set /etc/myname, guarantee domain or substitue .home.network" */
             hostname1_complete_set_static_hostname(hn1_passed_interf, invoc);
         }
     }
