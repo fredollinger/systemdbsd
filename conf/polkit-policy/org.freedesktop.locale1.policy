@@ -3,7 +3,7 @@
 
 <policyconfig>
     <vendor>OpenBSD</vendor>
-    <vendor_url>https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git</vendor_url> <!-- TODO change or redirect this URL when we rebase -->
+    <vendor_url>https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systembsd.git</vendor_url> <!-- TODO change or redirect this URL when we rebase -->
 
     <action id="org.freedesktop.locale1.set-locale">
         <description>Set system's locale.</description>
