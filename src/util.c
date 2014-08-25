@@ -22,7 +22,7 @@
 #include <glib-unix.h>
 #include <polkit/polkit.h>
 
-#include "polkit-auth.h"
+#include "util.h"
 
 static gboolean is_valid_action(GList *action_list, const gchar *action) {
 

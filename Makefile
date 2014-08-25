@@ -79,7 +79,7 @@ _build_genfile_objs: _generate_genfiles _build_auth_obj
 	$(CC) -o bin/obj/logind-gen.o    $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/logind/logind-gen.c
 
 _build_auth_obj:
-	$(CC) -o bin/obj/polkit-auth.o $(CFLAGS) $(GLIBOF) -c $(SRCDIR)/polkit-auth.c
+	$(CC) -o bin/obj/polkit-auth.o $(CFLAGS) $(GLIBOF) -c $(SRCDIR)/util.c
 
 _generate_genfiles:
 	$(INVOKE_GENFILE_SCRIPT) hostnamed

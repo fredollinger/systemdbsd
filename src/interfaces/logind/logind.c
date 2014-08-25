@@ -28,7 +28,7 @@
 #include "logind-gen.h"
 #include "logind.h"
 
-#include "../../polkit-auth.h"
+#include "../../util.h"
 
 GPtrArray *logind_freeable;
 Login1Manager *logind_interf;

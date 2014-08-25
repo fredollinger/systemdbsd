@@ -28,7 +28,7 @@
 #include "timedated-gen.h"
 #include "timedated.h"
 
-#include "../../polkit-auth.h"
+#include "../../util.h"
 
 GPtrArray *timedated_freeable;
 Timedate1 *timedated_interf;

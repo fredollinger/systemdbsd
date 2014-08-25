@@ -28,7 +28,7 @@
 #include "localed-gen.h"
 #include "localed.h"
 
-#include "../../polkit-auth.h"
+#include "../../util.h"
 
 GPtrArray *localed_freeable;
 Locale1 *localed_interf;

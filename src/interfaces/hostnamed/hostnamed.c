@@ -34,7 +34,7 @@
 #include "hostnamed-gen.h"
 #include "hostnamed.h"
 
-#include "../../polkit-auth.h"
+#include "../../util.h"
 
 /* format: {
  *           (1) string to be matched against runtime machine's sysctl output.
