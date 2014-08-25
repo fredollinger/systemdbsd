@@ -18,7 +18,8 @@
 #include <limits.h>
 #include <signal.h>
 
-#include <sys/param.h>
+#include <sys/types.h>
+#include <time.h>
 #include <string.h>
 
 #include <glib/gprintf.h>
