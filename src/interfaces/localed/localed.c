@@ -40,32 +40,74 @@ gboolean dbus_interface_exported; /* reliable because of gdbus operational guara
 
 /* --- begin method/property/dbus signal code --- */
 
-/*static gboolean
-on_handle_set_hostname(Locale1 *hn1_passed_interf,
-                       GDBusMethodInvocation *invoc,
-                       const gchar *greet,
-                       gpointer data) {
+static gboolean
+on_handle_set_locale(Locale1 *hn1_passed_interf,
+                     GDBusMethodInvocation *invoc,
+                     const gchar *greet,
+                     gpointer data) {
     return FALSE;
 }
 
+static gboolean
+on_handle_set_v_console_keyboard(Locale1 *hn1_passed_interf,
+                                 GDBusMethodInvocation *invoc,
+                                 const gchar *greet,
+                                 gpointer data) {
+    return FALSE;
+}
+
+static gboolean
+on_handle_set_x11_keyboard(Locale1 *hn1_passed_interf,
+                           GDBusMethodInvocation *invoc,
+                           const gchar *greet,
+                           gpointer data) {
+    return FALSE;
+}
+
+const gchar * const *
+our_get_locale() {
+ 
+    const gchar * const *ret = NULL; 
+
+    return ret;
+}
+
 const gchar *
-our_get_hostname() {
+our_get_v_console_keymap() {
+ 
+    return "";
+}
 
-    gchar *hostname_buf, *ret;
-    size_t hostname_divider;
+const gchar *
+our_get_v_console_keymap_toggle() {
+ 
+    return "";
+}
 
-    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    g_ptr_array_add(localed_freeable, hostname_buf);
-    g_ptr_array_add(localed_freeable, ret);
+const gchar *
+our_get_x11_layout() {
+ 
+    return "";
+}
 
-    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
-        return "";
+const gchar *
+our_get_x11_model() {
+ 
+    return "";
+}
 
-    hostname_divider = strcspn(hostname_buf, ".");
+const gchar *
+our_get_x11_variant() {
+ 
+    return "";
+}
 
-    return strncpy(ret, hostname_buf, hostname_divider);
-}*/
+const gchar *
+our_get_x11_options() {
+ 
+    return "";
+}
+
 
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
@@ -77,12 +119,20 @@ static void localed_on_bus_acquired(GDBusConnection *conn,
  
     localed_interf = locale1_skeleton_new();
 
-    /* attach function pointers to generated struct's method handlers 
-    g_signal_connect(localed_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL); */
+    /* attach function pointers to generated struct's method handlers */
+    g_signal_connect(localed_interf, "handle-set-locale", G_CALLBACK(on_handle_set_locale), NULL);
+    g_signal_connect(localed_interf, "handle-set-vconsole-keyboard", G_CALLBACK(on_handle_set_v_console_keyboard), NULL);
+    g_signal_connect(localed_interf, "handle-set-x11-keyboard", G_CALLBACK(on_handle_set_x11_keyboard), NULL);
 
-    /* set our properties before export
-    locale1_set_hostname(localed_interf, our_get_hostname()); */
- 
+    /* set our properties before export */
+    locale1_set_locale(localed_interf, our_get_locale());
+    locale1_set_vconsole_keymap(localed_interf, our_get_v_console_keymap());
+    locale1_set_vconsole_keymap_toggle(localed_interf, our_get_v_console_keymap_toggle());
+    locale1_set_x11_layout(localed_interf, our_get_x11_layout());
+    locale1_set_x11_model(localed_interf, our_get_x11_model());
+    locale1_set_x11_variant(localed_interf, our_get_x11_variant());
+    locale1_set_x11_options(localed_interf, our_get_x11_options());
+
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(localed_interf),
                                          conn,
                                          "/org/freedesktop/locale1",
