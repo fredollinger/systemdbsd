@@ -27,6 +27,26 @@
 const gint MAX_TOKENS = 20;
 
 /* return must be g_free()'d */
+gchar *get_file_sha256(const gchar *path) {
+
+    gchar *checksum;
+    GMappedFile *file;
+    GBytes *data;
+    GError *err = NULL;
+
+    file = g_mapped_file_new(path, FALSE, &err);
+
+    if(file) {
+
+        data = g_mapped_file_get_bytes(file);
+        g_mapped_file_unref(file);
+        checksum = g_compute_checksum_for_bytes(G_CHECKSUM_SHA256, data);
+        return checksum;
+    } else
+        return NULL;
+}
+
+/* return must be g_free()'d */
 gchar *config_get(const gchar *path, gchar *key) {
 
     gchar  *content, **split_content, *cur, **cur_split, *ret;
