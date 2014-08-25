@@ -27,3 +27,5 @@ gboolean is_server(gchar *arch);
 gboolean set_uname_properties();
 gboolean set_names();
 static gboolean is_valid_chassis_type(gchar *test);
+static gchar *get_bsd_hostname(gchar *proposed_hostname);
+static gchar *has_domain(const gchar *test);

@@ -110,6 +110,9 @@ const gchar *server_archs[] = {
     "sparc64"
 };
 
+static const gchar *DEFAULT_DOMAIN   = ".home.network";
+static const gchar *OS_HOSTNAME_PATH = "/etc/myname";
+
 /* --- begin method/property/dbus signal code --- */
 
 /* TODO free some strings here */
@@ -745,6 +748,8 @@ int main() {
   
     /* TODO: check for valid, writable config at init. if no, complain to `make install` */
 
+    get_bsd_hostname("adsf"); /* TODO KILL ME */
+
     CHASSIS = ICON = OS_CPENAME = 0;
     KERN_NAME = KERN_RELEASE = KERN_VERS = 0;
     HOSTNAME = STATIC_HOSTNAME = PRETTY_HOSTNAME = NULL;
@@ -1022,4 +1027,101 @@ static gboolean is_valid_chassis_type(gchar *test) {
         return TRUE;
 
     return FALSE;
-} 
+}
+
+/* returns a proper, bsd-style FQDN hostname safe to write to /etc/myname
+ * if proposed_hostname does not contain an appended domain, the one in /etc/myname is substituted.
+ * failing that, DEFAULT_DOMAIN is used. NULL if proposed_hostname is invalid
+ * returns string that should be g_free()'d, or NULL if passed an invalid hostname */
+static gchar *get_bsd_hostname(gchar *proposed_hostname) {
+
+    gchar *bsd_hostname, *ascii_translated_hostname, **myname_contents, *passed_domain, *temp_buf;
+    size_t domain_len, check_len;
+    gboolean read_result;
+
+    g_strdelimit(proposed_hostname, "`~!@#$%^&*()_=+[{]}|:;'\"\\", '-');
+
+    ascii_translated_hostname = g_hostname_to_ascii(proposed_hostname);
+    check_len = strnlen(ascii_translated_hostname, MAXHOSTNAMELEN);
+
+    if(!ascii_translated_hostname || !check_len || check_len > MAXHOSTNAMELEN || !g_strcmp0("", ascii_translated_hostname) || !g_strcmp0(".", ascii_translated_hostname)) {
+        
+        bsd_hostname = NULL;
+        passed_domain = NULL;
+        myname_contents = NULL;
+
+    } else if((passed_domain = has_domain(ascii_translated_hostname))) {
+
+        bsd_hostname    = (gchar *) g_malloc0(MAXHOSTNAMELEN); 
+        g_strlcpy(bsd_hostname, ascii_translated_hostname, MAXHOSTNAMELEN);
+        
+        passed_domain = NULL;
+        myname_contents = NULL;
+
+    } else {
+
+        myname_contents = (gchar **) g_malloc0(MAXHOSTNAMELEN * 2);
+        read_result = g_file_get_contents(OS_HOSTNAME_PATH, myname_contents, NULL, NULL);
+
+        if(read_result && (passed_domain = has_domain(myname_contents[0]))) {
+
+            domain_len = strnlen(passed_domain, MAXHOSTNAMELEN);
+
+            if((domain_len + check_len) > MAXHOSTNAMELEN)
+                bsd_hostname = NULL;
+            else
+                bsd_hostname = g_strconcat(ascii_translated_hostname, passed_domain, NULL);
+
+        } else if(myname_contents[0]) {
+
+            g_printf("%s does not contain a proper FQDN! this is a significant error on BSD machines, otherwise OK.\nfalling back to default domain, '%s'\n", OS_HOSTNAME_PATH, DEFAULT_DOMAIN);
+
+            domain_len = strnlen(DEFAULT_DOMAIN, MAXHOSTNAMELEN);
+
+            if((domain_len + check_len) > MAXHOSTNAMELEN)
+                bsd_hostname = NULL;
+            else
+                bsd_hostname = g_strconcat(ascii_translated_hostname, DEFAULT_DOMAIN, NULL);
+
+        } else {
+
+            g_printf("could not read hostname at %s, this is a major error\n", OS_HOSTNAME_PATH);
+            bsd_hostname = NULL;
+            passed_domain = (gchar *) g_malloc0(MAXHOSTNAMELEN);
+        }
+    }
+
+    if(passed_domain)
+        g_free(passed_domain);
+    if(myname_contents)
+        g_free(myname_contents);
+
+    if(bsd_hostname && !strchr(bsd_hostname, '\n')) {
+
+        temp_buf = bsd_hostname;
+        bsd_hostname = g_strconcat(bsd_hostname, "\n", NULL);
+        g_free(temp_buf);
+    }
+
+    return bsd_hostname;
+}
+
+/* returns NULL if no domain, otherwise append-appropriate domain string you must g_free()
+ * i.e. has_domain("foo.bar.com") returns ".bar.com"
+ * only pass g_hostname_to_ascii'd strings */
+static gchar *has_domain(const gchar *test) {
+
+    size_t hostname_len, full_len;
+    gchar *ret;
+    
+    hostname_len = strcspn(test, ".");
+    full_len     = strnlen(test, MAXHOSTNAMELEN);
+
+    if(full_len == hostname_len)
+        return NULL;
+
+    ret = (gchar *) g_malloc0(MAXHOSTNAMELEN);
+    g_strlcpy(ret, &test[hostname_len], MAXHOSTNAMELEN);
+
+    return ret;
+}
