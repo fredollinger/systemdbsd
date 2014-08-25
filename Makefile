@@ -34,7 +34,6 @@ LINKHN=		bin/systemd-hostnamed \
 
 DBUS_SERVICES=	org.freedesktop.hostname1.service \
 		org.freedesktop.locale1.service \
-		org.freedesktop.login1.service \
 		org.freedesktop.timedate1.service
 
 GLIBEF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0 polkit-agent-1`
