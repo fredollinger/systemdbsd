@@ -24,6 +24,7 @@
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
+#include <glib/gstdio.h>
 #include <polkit/polkit.h>
 
 #include "timedated-gen.h"
@@ -38,6 +39,9 @@ GMainLoop *timedated_loop;
 
 guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
+
+const gchar *OS_LOCALTIME     = "/etc/localtime";      /* current timezone file */
+const gchar *OS_TIMEZONE_PATH = "/usr/share/zoneinfo"; /* path to system timezone files */
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -76,7 +80,34 @@ on_handle_set_ntp(Timedate1 *hn1_passed_interf,
 const gchar *
 our_get_timezone() {
 
-    return "";
+    GStatBuf *stat_zoneinfo;
+    gchar *find_cmd, *readlink_path, *ret;
+    GError *err = NULL;
+
+    find_cmd      = (gchar *)   g_malloc0(2048);
+    stat_zoneinfo = (GStatBuf*) g_malloc0(8192);
+
+    if(g_stat(OS_LOCALTIME, stat_zoneinfo)) {
+
+        g_printf("could not read from %s! please symlink or copy a timezone file from %s to %s!\n", OS_LOCALTIME, OS_TIMEZONE_PATH, OS_LOCALTIME);
+        ret = NULL;
+
+    } else if(g_file_test(OS_LOCALTIME, G_FILE_TEST_IS_SYMLINK)) {
+
+        readlink_path = g_file_read_link(OS_LOCALTIME, &err);
+        ret = parse_timezone_path(readlink_path);
+
+        if(readlink_path)
+            g_free(readlink_path);
+
+    } else {
+
+        g_printf("%s is not a symlink! attempting to match checksums in %s...\n", OS_LOCALTIME, OS_TIMEZONE_PATH);
+        g_sprintf(find_cmd, "find %s -type f", OS_TIMEZONE_PATH);
+        ret = NULL;
+    }
+
+    return ret;
 }
 
 gboolean
@@ -248,4 +279,27 @@ int main() {
     g_ptr_array_free(timedated_freeable, TRUE);
 
     return 0;
+}
+
+static gchar *parse_timezone_path(gchar *full_path) {
+
+    gchar *prefix_pattern;
+    GRegex *prefix, *posix, *right;
+    GError *err = NULL;
+
+    if(!full_path)
+        return NULL;
+
+    prefix_pattern = (gchar *) g_malloc0(4096);
+    g_sprintf(prefix_pattern, "^%s/$", OS_TIMEZONE_PATH);
+
+    prefix = g_regex_new(prefix_pattern, 0, 0, &err);
+    posix  = g_regex_new("^posix/$",     0, 0, &err);
+    right  = g_regex_new("^right/$",     0, 0, &err);
+
+    g_regex_unref(prefix);
+    g_regex_unref(right);
+    g_regex_unref(posix);
+
+    return NULL; /* TODO temp */
 }

@@ -15,3 +15,5 @@
  */
 
 void timedated_mem_clean();
+static gchar *parse_timezone_path(gchar *full_path);
+
