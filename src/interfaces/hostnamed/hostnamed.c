@@ -110,7 +110,7 @@ const gchar *server_archs[] = {
     "sparc64"
 };
 
-static const gchar *DEFAULT_DOMAIN   = ".home.network";
+static const gchar *DEFAULT_DOMAIN   = ""; /* blank domains are OK for now */
 static const gchar *OS_HOSTNAME_PATH = "/etc/myname";
 static const gchar *OS_CONFIG_PATH   = "/etc/machine-info";
 
