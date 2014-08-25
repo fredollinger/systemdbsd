@@ -24,6 +24,88 @@
 
 #include "util.h"
 
+const gint MAX_TOKENS = 20;
+
+/* return must be g_free()'d */
+gchar *config_get(const gchar *path, gchar *key) {
+
+    gchar  *content, **split_content, *cur, **cur_split, *ret;
+    GError *err;
+    int incr = 0;
+    gboolean breaker = TRUE;
+
+    ret = (gchar *) g_malloc0(4096);
+
+    if(!g_file_get_contents(path, &content, NULL, &err))
+        return NULL;
+
+    split_content = g_strsplit(content, "\n", MAX_TOKENS);
+
+    while(breaker && (cur = split_content[incr]) && (cur_split = g_strsplit(cur, "=", 2))) {
+
+        if(!g_strcmp0(key, cur_split[0])) {
+
+            g_strlcpy(ret, cur_split[1], 2048);
+            breaker = FALSE;
+        }
+
+        incr++;
+        g_strfreev(cur_split);
+    }
+
+    if(split_content)
+        g_strfreev(split_content);
+    if(content)
+        g_free(content);
+
+    return (ret ? ret : NULL);
+}
+
+gboolean config_set(const gchar *path, gchar *key, gchar *value) {
+
+    gchar  *content, **split_content, *cur, **cur_split, *rewrite;
+    GError *err_set, *err_get;
+    gboolean ret = FALSE;
+    int incr = 0;
+    gboolean breaker = TRUE;
+
+    err_get = err_set = NULL;
+
+    if(!g_file_get_contents(path, &content, NULL, &err_get))
+        return FALSE;
+
+    split_content = g_strsplit(content, "\n", MAX_TOKENS);
+
+    while(breaker && (cur = split_content[incr]) && (cur_split = g_strsplit(cur, "=", 2))) {
+        
+        if(!g_strcmp0(key, cur_split[0])) {
+
+            cur_split[1] = value;
+            split_content[incr] = g_strjoinv("=", cur_split);
+            ret = TRUE;
+            breaker = FALSE;
+        }
+
+        incr++;
+    }
+
+    if(ret) {
+
+        rewrite = g_strjoinv("\n", split_content);
+        ret = g_file_set_contents(path, rewrite, -1, &err_set);
+        g_free(rewrite);
+    }
+
+    if(cur_split)
+        g_strfreev(cur_split);
+    if(split_content)
+        g_strfreev(split_content);
+    if(content)
+        g_free(content);
+
+    return ret;
+}
+
 static gboolean is_valid_action(GList *action_list, const gchar *action) {
 
     PolkitActionDescription *action_descr;

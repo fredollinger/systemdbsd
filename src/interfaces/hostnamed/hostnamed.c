@@ -112,6 +112,7 @@ const gchar *server_archs[] = {
 
 static const gchar *DEFAULT_DOMAIN   = ".home.network";
 static const gchar *OS_HOSTNAME_PATH = "/etc/myname";
+static const gchar *OS_CONFIG_PATH   = "/etc/machine-info";
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -267,7 +268,7 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
             bsd_hostname_try = get_bsd_hostname(STATIC_HOSTNAME);
             GError *debug_error;
             if(!bsd_hostname_try || !g_file_set_contents(OS_HOSTNAME_PATH, bsd_hostname_try, -1, &debug_error))
-                g_printf("failed to write to %s! are you root?\n", OS_HOSTNAME_PATH);
+                g_printf("could not to write to %s! are you root?\n", OS_HOSTNAME_PATH);
             
             if(bsd_hostname_try)
                 g_free(bsd_hostname_try);
@@ -293,9 +294,7 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
     gboolean policykit_auth, ret, try_to_set;
     size_t check_length;
     check_auth_result is_authed;
-    GKeyFile *config;
 
-    config = g_key_file_new();
     proposed_pretty_hostname = NULL;
     ret = try_to_set = FALSE;
     
@@ -354,25 +353,10 @@ on_handle_set_pretty_hostname(Hostname1 *hn1_passed_interf,
             hostname1_complete_set_pretty_hostname(hn1_passed_interf, invoc);
             ret = TRUE;
 
-            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
- 
-                g_key_file_set_string(config, "hostnamed", "PRETTY_HOSTNAME", valid_pretty_hostname_buf);
-
-                /* if((computed_static_hostname = g_hostname_to_ascii(PRETTY_HOSTNAME))) {
-
-                    g_strdelimit(computed_static_hostname, " ", '-');
-                    hostname1_set_static_hostname(hn1_passed_interf, computed_static_hostname);
-                    STATIC_HOSTNAME = computed_static_hostname;
-                    g_ptr_array_add(hostnamed_freeable, computed_static_hostname);
-                    g_key_file_set_string(config, "hostnamed", "StaticHostname", computed_static_hostname);
-
-                } */
-            }
+            if(!config_set(OS_CONFIG_PATH, "PRETTY_HOSTNAME", PRETTY_HOSTNAME))
+                g_printf("could not write to %s! are you root?\n", OS_CONFIG_PATH);
         }
     }
-
-    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
-    g_key_file_unref(config);
 
     return ret;
 }
@@ -388,9 +372,7 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
     const gchar *bus_name;
     gboolean policykit_auth, ret, try_to_set;
     check_auth_result is_authed;
-    GKeyFile *config;
 
-    config = g_key_file_new();
     proposed_chassis_name = NULL;
     ret = try_to_set = FALSE;
     valid_chassis_name_buf = (gchar *)g_malloc0(8192);
@@ -448,18 +430,12 @@ on_handle_set_chassis(Hostname1 *hn1_passed_interf,
             hostname1_set_chassis(hn1_passed_interf, CHASSIS);
             g_ptr_array_add(hostnamed_freeable, valid_chassis_name_buf);
             hostname1_complete_set_chassis(hn1_passed_interf, invoc);
+            ret = TRUE;
 
-            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
-
-                ret = TRUE;
-                g_key_file_set_string(config, "hostnamed", "ChassisType", valid_chassis_name_buf);
-
-            }
+            if(!config_set(OS_CONFIG_PATH, "CHASSIS", valid_chassis_name_buf))
+                g_printf("could not write to %s! are you root?\n", OS_CONFIG_PATH);
         }
     }
-
-    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
-    g_key_file_unref(config);
 
     return ret;
 }
@@ -475,9 +451,7 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
     const gchar *bus_name;
     gboolean policykit_auth, ret, try_to_set;
     check_auth_result is_authed;
-    GKeyFile *config;
 
-    config = g_key_file_new();
     proposed_icon_name = NULL;
     ret = try_to_set = FALSE;
     
@@ -529,18 +503,13 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
             hostname1_set_icon_name(hn1_passed_interf, ICON);
             g_ptr_array_add(hostnamed_freeable, valid_icon_name_buf);
             hostname1_complete_set_icon_name(hn1_passed_interf, invoc);
+            ret = TRUE;
 
-            if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)) {
+            if(!config_set(OS_CONFIG_PATH, "ICON_NAME", valid_icon_name_buf))
+                g_printf("could not write to %s! are you root?\n", OS_CONFIG_PATH);
 
-                ret = TRUE;
-                g_key_file_set_string(config, "hostnamed", "IconName", valid_icon_name_buf);
-
-            }
         }
     }
-
-    g_key_file_save_to_file(config, "/etc/machine-info", NULL);
-    g_key_file_unref(config);
 
     return ret;
 }
@@ -799,14 +768,11 @@ gboolean set_names() {
 
     /* (1) set up */
     gchar *hostname_buf, *static_hostname_buf, *pretty_hostname_buf;
-    GKeyFile *config;
     size_t hostname_divider;
 
     hostname_buf        = (gchar*) g_malloc0(MAXHOSTNAMELEN);
     static_hostname_buf = (gchar*) g_malloc0(4096);
     pretty_hostname_buf = (gchar*) g_malloc0(4096);
-
-    config = g_key_file_new();
 
     g_ptr_array_add(hostnamed_freeable, hostname_buf);
     g_ptr_array_add(hostnamed_freeable, static_hostname_buf);
@@ -823,22 +789,19 @@ gboolean set_names() {
     strncpy(ret, hostname_buf, hostname_divider); */
 
     /* (3) set PRETTY_HOSTNAME */
-    if(g_key_file_load_from_file(config, "/etc/machine-info", G_KEY_FILE_NONE, NULL)
-        && (pretty_hostname_buf = g_key_file_get_value(config, "hostnamed", "PRETTY_HOSTNAME", NULL)))
+    if((pretty_hostname_buf = config_get(OS_CONFIG_PATH, "PRETTY_HOSTNAME")))
         PRETTY_HOSTNAME = pretty_hostname_buf;
+
     else
         PRETTY_HOSTNAME = "";
  
     
     /* (4) set STATIC_HOSTNAME */
-    if((static_hostname_buf = g_key_file_get_value(config, "hostnamed", "STATIC_HOSTNAME", NULL)))
+    if(!gethostname(static_hostname_buf, MAXHOSTNAMELEN))
         STATIC_HOSTNAME = static_hostname_buf;
 
     else
         STATIC_HOSTNAME = "";
-
-    if(config)
-        g_key_file_unref(config);
 
     return (HOSTNAME && STATIC_HOSTNAME && PRETTY_HOSTNAME) ? TRUE : FALSE;
 }

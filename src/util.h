@@ -21,3 +21,6 @@ typedef enum {
 } check_auth_result;
 
 check_auth_result polkit_try_auth(const gchar *bus, const gchar *action, gboolean prompt);
+
+gchar *  config_get(const gchar *path, gchar *key);
+gboolean config_set(const gchar *path, gchar *key, gchar *value);
