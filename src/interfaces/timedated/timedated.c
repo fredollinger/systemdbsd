@@ -40,32 +40,91 @@ gboolean dbus_interface_exported; /* reliable because of gdbus operational guara
 
 /* --- begin method/property/dbus signal code --- */
 
-/*static gboolean
-on_handle_set_hostname(Timedate1 *hn1_passed_interf,
-                       GDBusMethodInvocation *invoc,
-                       const gchar *greet,
-                       gpointer data) {
+static gboolean
+on_handle_set_time(Timedate1 *hn1_passed_interf,
+                   GDBusMethodInvocation *invoc,
+                   const gchar *greet,
+                   gpointer data) {
     return FALSE;
-}*/
+}
 
-/*const gchar *
-our_get_hostname() {
+static gboolean
+on_handle_set_timezone(Timedate1 *hn1_passed_interf,
+                   GDBusMethodInvocation *invoc,
+                   const gchar *greet,
+                   gpointer data) {
+    return FALSE;
+}
 
-    gchar *hostname_buf, *ret;
-    size_t hostname_divider;
+static gboolean
+on_handle_set_local_rtc(Timedate1 *hn1_passed_interf,
+                        GDBusMethodInvocation *invoc,
+                        const gchar *greet,
+                        gpointer data) {
+    return FALSE;
+}
 
-    hostname_buf = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    ret          = (gchar*) g_malloc0(MAXHOSTNAMELEN);
-    g_ptr_array_add(timedated_freeable, hostname_buf);
-    g_ptr_array_add(timedated_freeable, ret);
+static gboolean
+on_handle_set_ntp(Timedate1 *hn1_passed_interf,
+                  GDBusMethodInvocation *invoc,
+                  const gchar *greet,
+                  gpointer data) {
+    return FALSE;
+}
 
-    if(gethostname(hostname_buf, MAXHOSTNAMELEN))
-        return "";
+const gchar *
+our_get_timezone() {
 
-    hostname_divider = strcspn(hostname_buf, ".");
+    return "";
+}
 
-    return strncpy(ret, hostname_buf, hostname_divider);
-}*/
+gboolean
+our_get_local_rtc() { 
+
+    gboolean ret = FALSE;
+
+    return ret;
+}
+
+gboolean
+our_get_can_ntp() {
+ 
+    const gboolean ret = FALSE;
+
+    return ret;
+}
+
+gboolean
+our_get_ntp() {
+ 
+    const gboolean ret = FALSE;
+
+    return ret;
+}
+
+gboolean
+our_get_ntpsynchronized() {
+ 
+    const gboolean ret = FALSE;
+
+    return ret;
+}
+
+guint64
+our_get_time_usec() {
+
+    guint64 ret = 0;
+
+    return ret;
+}
+
+guint64
+our_get_rtc_time_usec() {
+
+    guint64 ret = 0;
+
+    return ret;
+}
 
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
@@ -77,12 +136,20 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
 
     timedated_interf = timedate1_skeleton_new();
 
-    /* attach function pointers to generated struct's method handlers
-    g_signal_connect(timedated_interf, "handle-set-hostname", G_CALLBACK(on_handle_set_hostname), NULL);*/
-
-    /* set our properties before export
-    timedate1_set_hostname(timedated_interf, our_get_hostname()); */
- 
+    /* attach function pointers to generated struct's method handlers */
+    g_signal_connect(timedated_interf, "handle-set-time",     G_CALLBACK(on_handle_set_time),     NULL);
+    g_signal_connect(timedated_interf, "handle-set-timezone", G_CALLBACK(on_handle_set_timezone), NULL);
+    g_signal_connect(timedated_interf, "handle-set-local-rtc", G_CALLBACK(on_handle_set_local_rtc), NULL);
+    g_signal_connect(timedated_interf, "handle-set-ntp",      G_CALLBACK(on_handle_set_ntp),      NULL);
+    /* set our properties before export */
+    timedate1_set_timezone(timedated_interf, our_get_timezone());
+    timedate1_set_local_rtc(timedated_interf, our_get_local_rtc());
+    timedate1_set_can_ntp(timedated_interf, our_get_can_ntp());
+    timedate1_set_ntp(timedated_interf, our_get_ntp());
+    timedate1_set_ntpsynchronized(timedated_interf, our_get_ntpsynchronized());
+    timedate1_set_time_usec(timedated_interf, our_get_time_usec());
+    timedate1_set_rtctime_usec(timedated_interf, our_get_rtc_time_usec());
+    
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(timedated_interf),
                                          conn,
                                          "/org/freedesktop/timedate1",
