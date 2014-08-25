@@ -199,11 +199,12 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
                               gpointer data) {
 
     GVariant *params;
-    gchar *proposed_static_hostname, *valid_static_hostname_buf;
+    gchar *proposed_static_hostname, *valid_static_hostname_buf, *bsd_hostname_try;
     const gchar *bus_name;
     gboolean policykit_auth, ret, try_to_set;
     size_t check_length;
     check_auth_result is_authed;
+    
 
     proposed_static_hostname = NULL;
     ret = try_to_set = FALSE;
@@ -261,6 +262,17 @@ on_handle_set_static_hostname(Hostname1 *hn1_passed_interf,
             g_strdelimit(STATIC_HOSTNAME, " ", '-');
             hostname1_set_static_hostname(hn1_passed_interf, STATIC_HOSTNAME); 
             g_ptr_array_add(hostnamed_freeable, valid_static_hostname_buf);
+
+            /* set string in OS_HOSTNAME_PATH ("/etc/myname" on bsd) */
+            bsd_hostname_try = get_bsd_hostname(STATIC_HOSTNAME);
+            GError *debug_error;
+            if(!bsd_hostname_try || !g_file_set_contents(OS_HOSTNAME_PATH, bsd_hostname_try, -1, &debug_error))
+                g_printf("failed to write to %s! are you root?\n", OS_HOSTNAME_PATH);
+            
+            if(bsd_hostname_try)
+                g_free(bsd_hostname_try);
+
+            /* call sethostname(3) too */
             ret = (!sethostname(valid_static_hostname_buf, MAXHOSTNAMELEN)) ? TRUE : FALSE; /* TODO set /etc/myname, guarantee domain or substitue .home.network" */
             hostname1_complete_set_static_hostname(hn1_passed_interf, invoc);
         }
