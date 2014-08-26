@@ -40,8 +40,18 @@ GMainLoop *timedated_loop;
 guint bus_descriptor;
 gboolean dbus_interface_exported; /* reliable because of gdbus operational guarantees */
 
-const gchar *OS_LOCALTIME     = "/etc/localtime";      /* current timezone file */
-const gchar *OS_TIMEZONE_PATH = "/usr/share/zoneinfo"; /* path to system timezone files */
+const gchar *OS_LOCALTIME       = "/etc/localtime";      /* current timezone file */
+const gchar *OS_TIMEZONE_PATH   = "/usr/share/zoneinfo"; /* path to system timezone files */
+
+struct timezone_checksum_pair {
+
+    gchar *path;
+    gchar *sum;
+    gboolean posix;
+    gboolean right;
+};
+
+static struct timezone_checksum_pair tz_table[5000];
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -81,11 +91,14 @@ const gchar *
 our_get_timezone() {
 
     GStatBuf *stat_zoneinfo;
-    gchar *find_cmd, *readlink_path, *ret;
-    GError *err = NULL;
+    gchar *find_cmd, *readlink_path, *ret, *argvp, *hash_to_match;
+    gint argcp;
+    GError *err;
+    struct timezone_checksum_pair tmp;
 
-    find_cmd      = (gchar *)   g_malloc0(2048);
-    stat_zoneinfo = (GStatBuf*) g_malloc0(8192);
+    find_cmd      = (gchar *)    g_malloc0(2048);
+    stat_zoneinfo = (GStatBuf *) g_malloc0(8192);
+    err           = (GError *)   g_malloc0(2048);
 
     if(g_stat(OS_LOCALTIME, stat_zoneinfo)) {
 
@@ -95,7 +108,11 @@ our_get_timezone() {
     } else if(g_file_test(OS_LOCALTIME, G_FILE_TEST_IS_SYMLINK)) {
 
         readlink_path = g_file_read_link(OS_LOCALTIME, &err);
-        ret = parse_timezone_path(readlink_path);
+
+        gchar *split[2] = { readlink_path, "" };
+        tmp = parse_timezone_path(split);
+
+        ret = tmp.path;
 
         if(readlink_path)
             g_free(readlink_path);
@@ -103,8 +120,12 @@ our_get_timezone() {
     } else {
 
         g_printf("%s is not a symlink! attempting to match checksums in %s...\n", OS_LOCALTIME, OS_TIMEZONE_PATH);
-        g_sprintf(find_cmd, "find %s -type f", OS_TIMEZONE_PATH);
-        ret = NULL;
+        hash_to_match = get_file_sha256(OS_LOCALTIME);
+
+        ret = lookup_hash(hash_to_match);
+
+        if(hash_to_match)
+            g_free(hash_to_match);
     }
 
     return ret;
@@ -173,6 +194,7 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
     g_signal_connect(timedated_interf, "handle-set-timezone", G_CALLBACK(on_handle_set_timezone), NULL);
     g_signal_connect(timedated_interf, "handle-set-local-rtc", G_CALLBACK(on_handle_set_local_rtc), NULL);
     g_signal_connect(timedated_interf, "handle-set-ntp",      G_CALLBACK(on_handle_set_ntp),      NULL);
+
     /* set our properties before export */
     timedate1_set_timezone(timedated_interf, our_get_timezone());
     timedate1_set_local_rtc(timedated_interf, our_get_local_rtc());
@@ -256,6 +278,9 @@ int main() {
 
     set_signal_handlers();
 
+    if(!build_lookup_table())
+        return 1;
+
     timedated_loop = g_main_loop_new(NULL, TRUE);
     timedated_freeable = g_ptr_array_new();
 
@@ -281,25 +306,102 @@ int main() {
     return 0;
 }
 
-static gchar *parse_timezone_path(gchar *full_path) {
+static struct timezone_checksum_pair parse_timezone_path(gchar **pair) {
 
-    gchar *prefix_pattern;
+    gchar *prefix_pattern, *right_prefix_pattern, *posix_prefix_pattern, *lean_path;
     GRegex *prefix, *posix, *right;
     GError *err = NULL;
+    struct timezone_checksum_pair ret = { NULL, NULL, FALSE, FALSE };
 
-    if(!full_path)
-        return NULL;
+    if(!pair[0])
+        return ret;
 
     prefix_pattern = (gchar *) g_malloc0(4096);
-    g_sprintf(prefix_pattern, "^%s/$", OS_TIMEZONE_PATH);
+    right_prefix_pattern = (gchar *) g_malloc0(4096);
+    posix_prefix_pattern = (gchar *) g_malloc0(4096);
+
+    g_sprintf(prefix_pattern, "%s/", OS_TIMEZONE_PATH);
+    g_sprintf(posix_prefix_pattern, "%s/posix/", OS_TIMEZONE_PATH);
+    g_sprintf(right_prefix_pattern, "%s/right/", OS_TIMEZONE_PATH);
 
     prefix = g_regex_new(prefix_pattern, 0, 0, &err);
-    posix  = g_regex_new("^posix/$",     0, 0, &err);
-    right  = g_regex_new("^right/$",     0, 0, &err);
+    posix  = g_regex_new(posix_prefix_pattern, 0, 0, &err);
+    right  = g_regex_new(right_prefix_pattern, 0, 0, &err);
+
+    if(g_regex_match_full(posix, pair[0], -1, 0, G_REGEX_MATCH_NOTEMPTY, NULL, NULL)) {
+
+        ret.posix = TRUE;
+        lean_path = g_regex_replace_literal(posix, pair[0], -1, 0, "", G_REGEX_MATCH_NOTEMPTY, NULL);
+
+    } else if(g_regex_match_full(right, pair[0], -1, 0, G_REGEX_MATCH_NOTEMPTY, NULL, NULL)) {
+ 
+       ret.right = TRUE;
+       lean_path = g_regex_replace_literal(right, pair[0], -1, 0, "", G_REGEX_MATCH_NOTEMPTY, NULL);
+
+    } else
+        lean_path = g_regex_replace_literal(prefix, pair[0], -1, 0, "", G_REGEX_MATCH_NOTEMPTY, NULL);
+
+    ret.path = lean_path;
+
+    ret.sum = g_malloc0(256);
+    g_strlcpy(ret.sum, pair[1], 66);
 
     g_regex_unref(prefix);
     g_regex_unref(right);
     g_regex_unref(posix);
 
-    return NULL; /* TODO temp */
+    return ret;
+}
+
+/* TODO need to deconstruct tz_table on exit */
+static gboolean build_lookup_table() {
+
+        gchar *find_cmd, **map_pairs, *find_output, *path_buf, *sum_buf, **entry_buf;
+        GError *err;
+        gboolean ret;
+        gint i;
+
+        i   = 0;
+        err = NULL;
+        ret = TRUE;
+
+        find_cmd    = (gchar *) g_malloc0(4096);
+        find_output = (gchar *) g_malloc0(1000000);
+
+        g_sprintf(find_cmd, "/bin/sh -c \"find %s -type f -exec cksum -a sha256 {} \\; | sed -E 's/SHA256 \\(//g' | sed -E 's/\\) = /=/g'\"", OS_TIMEZONE_PATH);
+
+        if(!g_spawn_command_line_sync(find_cmd, &find_output, NULL, NULL, &err)) {
+
+            g_printf("error running `%s`\n", find_cmd);
+            ret = FALSE;
+        }
+
+        map_pairs = g_strsplit(find_output, "\n", INT_MAX);
+
+        while(map_pairs[i] && (entry_buf = g_strsplit(map_pairs[i], "=", INT_MAX))) {
+
+            tz_table[i] = parse_timezone_path(entry_buf);
+
+            g_strfreev(entry_buf);
+            i++;
+        }
+
+        g_free(find_output);
+        g_free(find_cmd);
+        g_free(map_pairs);
+
+        return ret;
+}
+
+static gchar *lookup_hash(gchar *hash) {
+
+    gint i = 0;
+
+    while(tz_table[i].sum)
+        if(!g_strcmp0(tz_table[i].sum, hash))
+            return tz_table[i].path;
+        else
+            i++;
+
+    return NULL;
 }

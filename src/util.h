@@ -24,3 +24,4 @@ check_auth_result polkit_try_auth(const gchar *bus, const gchar *action, gboolea
 
 gchar *  config_get(const gchar *path, gchar *key);
 gboolean config_set(const gchar *path, gchar *key, gchar *value);
+gchar *get_file_sha256(const gchar *path);
