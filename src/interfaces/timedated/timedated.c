@@ -19,6 +19,7 @@
 #include <signal.h>
 
 #include <sys/types.h>
+#include <sys/time.h>
 #include <time.h>
 #include <string.h>
 
@@ -56,7 +57,82 @@ static struct timezone_checksum_pair tz_table[5000];
 /* --- begin method/property/dbus signal code --- */
 
 static gboolean
-on_handle_set_time(Timedate1 *hn1_passed_interf,
+on_handle_set_time(Timedate1 *td1_passed_interf,
+                   GDBusMethodInvocation *invoc,
+                   const gchar *greet,
+                   gpointer data) {
+
+    GVariant *params;
+    gint64 proposed_time, cur_time;
+    const gchar *bus_name;
+    gboolean policykit_auth;
+    check_auth_result is_authed;
+    gboolean relative; /* relative if passed time_t is meant to be added to current time */
+    struct timespec *new_time;
+
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(xbb)", &proposed_time, &relative, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.timedate1.set-time", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EACCES", "Insufficient permissions to set system time.");
+            return FALSE;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided bus name is invalid.");
+            return FALSE;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided action ID is invalid.");
+            return FALSE;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to set system time for unknown reasons.");
+            return FALSE;
+    }
+
+    if(relative) {
+
+        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
+
+        cur_time = g_get_real_time();
+        /* LEFT OFF HERE 9/13 */ return FALSE;
+    } else if(proposed_time >= 0) {
+
+        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
+        new_time->tv_sec = proposed_time;
+        new_time->tv_nsec = 0;
+        g_ptr_array_add(timedated_freeable, new_time);
+
+        if(!clock_settime(CLOCK_REALTIME, new_time)) {
+
+            timedate1_complete_set_time(td1_passed_interf, invoc);
+            return TRUE;
+
+        } else {
+
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to set system time for unknown reasons.");
+            return FALSE;
+        }
+    } else {
+
+        g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.EDOM", "Provided time results in a negative clock value.");
+        return FALSE;
+    }
+}
+
+static gboolean
+on_handle_set_timezone(Timedate1 *td1_passed_interf,
                    GDBusMethodInvocation *invoc,
                    const gchar *greet,
                    gpointer data) {
@@ -64,15 +140,7 @@ on_handle_set_time(Timedate1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_timezone(Timedate1 *hn1_passed_interf,
-                   GDBusMethodInvocation *invoc,
-                   const gchar *greet,
-                   gpointer data) {
-    return FALSE;
-}
-
-static gboolean
-on_handle_set_local_rtc(Timedate1 *hn1_passed_interf,
+on_handle_set_local_rtc(Timedate1 *td1_passed_interf,
                         GDBusMethodInvocation *invoc,
                         const gchar *greet,
                         gpointer data) {
@@ -80,7 +148,7 @@ on_handle_set_local_rtc(Timedate1 *hn1_passed_interf,
 }
 
 static gboolean
-on_handle_set_ntp(Timedate1 *hn1_passed_interf,
+on_handle_set_ntp(Timedate1 *td1_passed_interf,
                   GDBusMethodInvocation *invoc,
                   const gchar *greet,
                   gpointer data) {
