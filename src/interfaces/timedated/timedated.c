@@ -68,7 +68,7 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
     gboolean policykit_auth;
     check_auth_result is_authed;
     gboolean relative; /* relative if passed time_t is meant to be added to current time */
-    struct timespec *new_time;
+    struct timespec new_time;
 
     params = g_dbus_method_invocation_get_parameters(invoc);
     g_variant_get(params, "(xbb)", &proposed_time, &relative, &policykit_auth);
@@ -108,26 +108,23 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
 
     } else if(relative) {
 
-        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
         cur_time = g_get_real_time();
 
-        if(proposed_time < 0 && cur_time + proposed_time > proposed_time) {
+        if(proposed_time < 0 && cur_time + proposed_time > cur_time) {
 
             g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EINVAL", "Resultant time out of bounds.");
             return FALSE;
 
-        } else if(cur_time + proposed_time < proposed_time) {
+        } else if(proposed_time > 0 && cur_time + proposed_time < cur_time) {
 
             g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EINVAL", "Resultant time out of bounds.");
             return FALSE;
         }
 
-        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
-        new_time->tv_sec = proposed_time;
-        new_time->tv_nsec = 0;
-        g_ptr_array_add(timedated_freeable, new_time);
+        new_time.tv_sec  = (cur_time + proposed_time) / 1000000;
+        new_time.tv_nsec = CLAMP((((cur_time + proposed_time) % 1000000) * 1000), 0, 1000000000);
 
-        if(!clock_settime(CLOCK_REALTIME, new_time)) {
+        if(!clock_settime(CLOCK_REALTIME, &new_time)) {
 
             timedate1_complete_set_time(td1_passed_interf, invoc);
             return TRUE;
@@ -138,14 +135,12 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
             return FALSE;
         }
 
-    } else if(proposed_time >= 0) {
+    } else if(proposed_time > 0) {
 
-        new_time = (struct timespec *) g_malloc0(sizeof(struct timespec));
-        new_time->tv_sec = proposed_time;
-        new_time->tv_nsec = 0;
-        g_ptr_array_add(timedated_freeable, new_time);
+        new_time.tv_sec  = (cur_time + proposed_time) / 1000000;
+        new_time.tv_nsec = CLAMP((((cur_time + proposed_time) % 1000000) * 1000), 0, 1000000000);
 
-        if(!clock_settime(CLOCK_REALTIME, new_time)) {
+        if(!clock_settime(CLOCK_REALTIME, &new_time)) {
 
             timedate1_complete_set_time(td1_passed_interf, invoc);
             return TRUE;
