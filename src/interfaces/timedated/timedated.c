@@ -271,7 +271,7 @@ on_handle_set_local_rtc(Timedate1 *td1_passed_interf,
                         const gchar *greet,
                         gpointer data) {
 
-    g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ENODEV", "OpenBSD does not support setting the realtime clock in local time, only UTC.");
+    g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ENODEV", "Unix RTC must be in UTC.");
     return TRUE;
 }
 
@@ -330,7 +330,7 @@ our_get_timezone() {
     return ret;
 }
 
-/* openbsd does not support setting the RTC to localtime, only UTC */
+/* Unix time must be in UTC. */
 gboolean
 our_get_local_rtc() { 
 
