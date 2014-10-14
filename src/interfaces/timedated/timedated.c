@@ -219,7 +219,11 @@ on_handle_set_timezone(Timedate1 *td1_passed_interf,
     strlcat(tz_target_path, "/", TZNAME_MAX);
     strlcat(tz_target_path, proposed_tz, TZNAME_MAX);
 
-    g_printf("%s\n", tz_target_path);
+    if(strstr(tz_target_path, "../")) {
+
+        g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EBADF", "Provided timezone is invalid.");
+        return FALSE;
+    }
 
     if(!statbuf)
         return FALSE;
@@ -266,7 +270,9 @@ on_handle_set_local_rtc(Timedate1 *td1_passed_interf,
                         GDBusMethodInvocation *invoc,
                         const gchar *greet,
                         gpointer data) {
-    return FALSE;
+
+    g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ENODEV", "OpenBSD does not support setting the realtime clock in local time, only UTC.");
+    return TRUE;
 }
 
 static gboolean
@@ -324,6 +330,7 @@ our_get_timezone() {
     return ret;
 }
 
+/* openbsd does not support setting the RTC to localtime, only UTC */
 gboolean
 our_get_local_rtc() { 
 
