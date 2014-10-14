@@ -16,5 +16,6 @@
 
 void timedated_mem_clean();
 static struct timezone_checksum_pair parse_timezone_path(gchar **pair);
-static gboolean build_lookup_table();
-static gchar *lookup_hash(gchar * hash);
+/*static gboolean build_lookup_table();
+static gchar *lookup_hash(gchar * hash); */
+static struct timespec *mktimespec(gint64 us);

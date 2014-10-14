@@ -68,7 +68,7 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
     gboolean policykit_auth;
     check_auth_result is_authed;
     gboolean relative; /* relative if passed time_t is meant to be added to current time */
-    struct timespec new_time;
+    struct timespec *new_time;
 
     params = g_dbus_method_invocation_get_parameters(invoc);
     g_variant_get(params, "(xbb)", &proposed_time, &relative, &policykit_auth);
@@ -121,10 +121,9 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
             return FALSE;
         }
 
-        new_time.tv_sec  = (cur_time + proposed_time) / 1000000;
-        new_time.tv_nsec = CLAMP((((cur_time + proposed_time) % 1000000) * 1000), 0, 1000000000);
+        new_time = mktimespec(proposed_time);
 
-        if(!clock_settime(CLOCK_REALTIME, &new_time)) {
+        if(!clock_settime(CLOCK_REALTIME, new_time)) {
 
             timedate1_complete_set_time(td1_passed_interf, invoc);
             return TRUE;
@@ -137,10 +136,10 @@ on_handle_set_time(Timedate1 *td1_passed_interf,
 
     } else if(proposed_time > 0) {
 
-        new_time.tv_sec  = (cur_time + proposed_time) / 1000000;
-        new_time.tv_nsec = CLAMP((((cur_time + proposed_time) % 1000000) * 1000), 0, 1000000000);
 
-        if(!clock_settime(CLOCK_REALTIME, &new_time)) {
+        new_time = mktimespec(proposed_time);
+
+        if(!clock_settime(CLOCK_REALTIME, new_time)) {
 
             timedate1_complete_set_time(td1_passed_interf, invoc);
             return TRUE;
@@ -217,7 +216,8 @@ our_get_timezone() {
         g_printf("%s is not a symlink! attempting to match checksums in %s...\n", OS_LOCALTIME, OS_TIMEZONE_PATH);
         hash_to_match = get_file_sha256(OS_LOCALTIME);
 
-        ret = lookup_hash(hash_to_match);
+        /* ret = lookup_hash(hash_to_match); */
+        return FALSE; /* TODO fix me for real */
 
         if(hash_to_match)
             g_free(hash_to_match);
@@ -373,8 +373,8 @@ int main() {
 
     set_signal_handlers();
 
-    if(!build_lookup_table())
-        return 1;
+    /*if(!build_lookup_table())
+        return 1; */
 
     timedated_loop = g_main_loop_new(NULL, TRUE);
     timedated_freeable = g_ptr_array_new();
@@ -448,7 +448,7 @@ static struct timezone_checksum_pair parse_timezone_path(gchar **pair) {
     return ret;
 }
 
-/* TODO need to deconstruct tz_table on exit */
+/* TODO need to deconstruct tz_table on exit
 static gboolean build_lookup_table() {
 
         gchar *find_cmd, **map_pairs, *find_output, *path_buf, *sum_buf, **entry_buf;
@@ -499,4 +499,32 @@ static gchar *lookup_hash(gchar *hash) {
             i++;
 
     return NULL;
+}*/
+
+/* takes number of microseconds since epoch and returns a 
+ * ptr to a timespec suitable to be passed to clock_settime(3)
+ */
+static struct timespec* mktimespec(gint64 us) {
+
+    long nanoseconds;
+    time_t seconds;
+
+    gint64 div_buf_remainder, div_buf_s, div_buf_ns;
+    struct timespec *ret;
+
+    div_buf_s         = (us / 1000000); /* us / 10^6 = s */
+    div_buf_remainder = (us % 1000000); /* fraction of second lost from prev. line */
+    div_buf_ns        = div_buf_remainder * 1000; /* us * 10^3 = ns */
+
+    seconds     = (time_t) div_buf_s; /* porting note: most systems use 32 bit time, adjust accordingly */
+    nanoseconds = (long)   div_buf_ns;
+
+    ret = (struct timespec *) calloc(1, sizeof(struct timespec));
+
+    ret->tv_sec  = seconds;
+    ret->tv_nsec = nanoseconds;
+
+    g_ptr_array_add(timedated_freeable, ret);
+
+    return ret;
 }
