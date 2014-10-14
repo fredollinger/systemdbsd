@@ -20,8 +20,11 @@
 
 #include <sys/types.h>
 #include <sys/time.h>
+#include <sys/stat.h>
+#include <errno.h>
 #include <time.h>
 #include <string.h>
+#include <tzfile.h>
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
@@ -32,6 +35,8 @@
 #include "timedated.h"
 
 #include "../../util.h"
+
+#define TZNAME_MAX PATH_MAX
 
 GPtrArray *timedated_freeable;
 Timedate1 *timedated_interf;
@@ -162,7 +167,98 @@ on_handle_set_timezone(Timedate1 *td1_passed_interf,
                    GDBusMethodInvocation *invoc,
                    const gchar *greet,
                    gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    gchar *proposed_tz;
+    const gchar *bus_name;
+    gboolean policykit_auth;
+    check_auth_result is_authed;
+
+    gchar *tz_target_path;
+    struct stat *statbuf;
+    extern int errno;
+
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_tz, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.timedate1.set-timezone", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EACCES", "Insufficient permissions to set timezone.");
+            return FALSE;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided bus name is invalid.");
+            return FALSE;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided action ID is invalid.");
+            return FALSE;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to set timezone for unknown reasons.");
+            return FALSE;
+    }
+
+    statbuf        = (struct stat*) calloc(1, sizeof(struct stat));
+    tz_target_path = (gchar *) calloc(1, TZNAME_MAX);
+
+    g_ptr_array_add(timedated_freeable, statbuf);
+    g_ptr_array_add(timedated_freeable, tz_target_path);
+
+    strlcat(tz_target_path, TZDIR, TZNAME_MAX);
+    strlcat(tz_target_path, "/", TZNAME_MAX);
+    strlcat(tz_target_path, proposed_tz, TZNAME_MAX);
+
+    g_printf("%s\n", tz_target_path);
+
+    if(!statbuf)
+        return FALSE;
+
+    if(lstat(tz_target_path, statbuf)) {
+
+        switch(errno) {
+
+            case ENOENT:
+                g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ENOENT", "Specified timezone does not exist.");
+                break;
+
+            default:
+                g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EBADF", "Specified timezone is invalid.");
+                break;
+        }
+
+        return FALSE;
+    }
+    
+    if(!S_ISREG(statbuf->st_mode)) {
+
+        g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EBADF", "Specified path is of an inappropriate type.");
+        return FALSE;
+    }
+
+    memset(statbuf, 0, sizeof statbuf);
+
+    if(!lstat(TZDEFAULT, statbuf))
+        if(remove(TZDEFAULT))
+            return FALSE;
+
+    if(symlink(tz_target_path, TZDEFAULT))
+        return FALSE;
+
+    
+    timedate1_complete_set_timezone(td1_passed_interf, invoc);
+
+    return TRUE;
 }
 
 static gboolean
@@ -222,6 +318,8 @@ our_get_timezone() {
         if(hash_to_match)
             g_free(hash_to_match);
     }
+
+    
 
     return ret;
 }
