@@ -396,9 +396,7 @@ our_get_timezone() {
         if(hash_to_match)
             g_free(hash_to_match);
     }
-
-    
-
+ 
     return ret;
 }
 
@@ -422,9 +420,18 @@ our_get_can_ntp() {
 gboolean
 our_get_ntp() {
  
-    const gboolean ret = FALSE;
+    int system_ret;
 
-    return ret;
+    if((system_ret = system("rcctl check ntpd > /dev/null 2>&1")) == -1) {
+
+        g_printf("failed to check NTP status with rcctl\n");
+        return FALSE;
+    }
+
+    if(system_ret)
+        return FALSE;
+
+    return TRUE;
 }
 
 gboolean
