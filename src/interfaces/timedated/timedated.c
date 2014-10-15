@@ -280,7 +280,79 @@ on_handle_set_ntp(Timedate1 *td1_passed_interf,
                   GDBusMethodInvocation *invoc,
                   const gchar *greet,
                   gpointer data) {
-    return FALSE;
+
+    GVariant *params;
+    const gchar *bus_name;
+    gboolean policykit_auth;
+    check_auth_result is_authed;
+
+    gint ntpd_notrunning, ntpd_notenabled; /* this logic flip is due to rcctl returning 0 on success, 
+                                             * in this case an error means ntpd is not running or not enabled */
+    gboolean proposed_ntpstate;
+    GError *sh_errors;
+
+    extern int errno;
+
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(bb)", &proposed_ntpstate, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.timedate1.set-ntp", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EACCES", "Insufficient permissions to toggle the NTP daemon.");
+            return FALSE;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided bus name is invalid.");
+            return FALSE;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.EFAULT", "Provided action ID is invalid.");
+            return FALSE;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.timedate1.Error.ECANCELED", "Failed to toggle the NTP daemon for unknown reasons.");
+            return FALSE;
+    }
+
+    ntpd_notrunning = 0;   /* GLib does not bother asserting the passed return value int to zero */
+    ntpd_notenabled = 0;   /* if the program's exit status is also zero, hence this decl.        */
+
+    if((ntpd_notrunning = system("rcctl check ntpd > /dev/null 2>&1")) == -1)
+        return FALSE;
+
+    if((ntpd_notenabled = system("rcctl status ntpd > /dev/null 2>&1")) == -1)
+        return FALSE;
+
+    if(proposed_ntpstate) {
+
+        if(ntpd_notrunning)
+            system("rcctl -f start ntpd > /dev/null 2>&1");
+
+        if(ntpd_notenabled)
+            system("rcctl enable ntpd > /dev/null 2>&1");
+
+    } else {
+
+        if(!ntpd_notrunning)
+            system("rcctl stop ntpd > /dev/null 2>&1");
+
+        if(!ntpd_notenabled)
+            system("rcctl disable ntpd > /dev/null 2>&1");
+    }
+ 
+    timedate1_complete_set_ntp(td1_passed_interf, invoc);
+
+    return TRUE; 
 }
 
 const gchar *
