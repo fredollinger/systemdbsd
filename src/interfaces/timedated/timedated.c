@@ -355,7 +355,7 @@ on_handle_set_ntp(Timedate1 *td1_passed_interf,
 
     return TRUE; 
 }
-
+/* NOTE: you should be using gobject->set_property() for these ! */
 const gchar *
 our_get_timezone() {
 
@@ -401,21 +401,19 @@ our_get_timezone() {
     return ret;
 }
 
-/* Unix time must be in UTC. */
+/* Unix time is in UTC. */
 gboolean
 our_get_local_rtc() { 
 
-    gboolean ret = FALSE;
-
-    return ret;
+    return FALSE; 
 }
 
 gboolean
 our_get_can_ntp() {
  
-    const gboolean ret = FALSE;
+    /* ntpd is part of the default install */
 
-    return ret;
+    return TRUE;
 }
 
 gboolean
@@ -423,11 +421,7 @@ our_get_ntp() {
  
     int system_ret;
 
-    if((system_ret = system("/etc/rc.d/ntpd check > /dev/null 2>&1")) == -1) {
-
-        g_printf("failed to check NTP\n");
-        return FALSE;
-    }
+    system_ret = system("/etc/rc.d/ntpd check > /dev/null 2>&1");
 
     if(system_ret)
         return FALSE;
@@ -435,14 +429,17 @@ our_get_ntp() {
     return TRUE;
 }
 
+/* undocumented feature present in systemd */
 gboolean
 our_get_ntpsynchronized() {
  
-    const gboolean ret = FALSE;
+    gboolean ntp;
+    ntp = our_get_ntp();
 
-    return ret;
+    return ntp;
 }
 
+/* undocumented feature present in systemd */
 guint64
 our_get_time_usec() {
 
@@ -451,6 +448,7 @@ our_get_time_usec() {
     return ret;
 }
 
+/* undocumented feature present in systemd */
 guint64
 our_get_rtc_time_usec() {
 
@@ -476,6 +474,7 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
     g_signal_connect(timedated_interf, "handle-set-ntp",      G_CALLBACK(on_handle_set_ntp),      NULL);
 
     /* set our properties before export */
+    
     timedate1_set_timezone(timedated_interf, our_get_timezone());
     timedate1_set_local_rtc(timedated_interf, our_get_local_rtc());
     timedate1_set_can_ntp(timedated_interf, our_get_can_ntp());
@@ -484,6 +483,16 @@ static void timedated_on_bus_acquired(GDBusConnection *conn,
     timedate1_set_time_usec(timedated_interf, our_get_time_usec());
     timedate1_set_rtctime_usec(timedated_interf, our_get_rtc_time_usec());
     
+    /* WIP
+
+    timedated_interf->get_timezone        = our_get_timezone();
+    timedated_interf->get_local_rtc       = our_get_local_rtc();
+    timedated_interf->get_can_ntp         = our_get_can_ntp();
+    timedated_interf->get_ntp             = our_get_ntp();
+    timedated_interf->get_ntpsynchronized = our_get_ntpsynchronized();
+    timedated_interf->get_time_usec       = our_get_time_usec();
+    timedated_interf->get_rtctime_usec    = our_get_rtc_time_usec(); */
+
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(timedated_interf),
                                          conn,
                                          "/org/freedesktop/timedate1",
