@@ -286,6 +286,7 @@ on_handle_set_ntp(Timedate1 *td1_passed_interf,
     gboolean policykit_auth;
     check_auth_result is_authed;
 
+                                            /* revert to rcctl when 5.7 rolls around */
     gint ntpd_notrunning, ntpd_notenabled; /* this logic flip is due to rcctl returning 0 on success, 
                                              * in this case an error means ntpd is not running or not enabled */
     gboolean proposed_ntpstate;
@@ -327,27 +328,27 @@ on_handle_set_ntp(Timedate1 *td1_passed_interf,
     ntpd_notrunning = 0;   /* GLib does not bother asserting the passed return value int to zero */
     ntpd_notenabled = 0;   /* if the program's exit status is also zero, hence this decl.        */
 
-    if((ntpd_notrunning = system("rcctl check ntpd > /dev/null 2>&1")) == -1)
+    if((ntpd_notrunning = system("/etc/rc.d/ntpd check > /dev/null 2>&1")) == -1)
         return FALSE;
 
-    if((ntpd_notenabled = system("rcctl status ntpd > /dev/null 2>&1")) == -1)
+    if((ntpd_notenabled = system("/etc/rc.d/ntpd status > /dev/null 2>&1")) == -1)
         return FALSE;
 
     if(proposed_ntpstate) {
 
         if(ntpd_notrunning)
-            system("rcctl -f start ntpd > /dev/null 2>&1");
+            system("/etc/rc.d/ntpd -f start > /dev/null 2>&1");
 
         if(ntpd_notenabled)
-            system("rcctl enable ntpd > /dev/null 2>&1");
+            system("/etc/rc.d/ntpd enable > /dev/null 2>&1");
 
     } else {
 
         if(!ntpd_notrunning)
-            system("rcctl stop ntpd > /dev/null 2>&1");
+            system("/etc/rc.d/ntpd stop > /dev/null 2>&1");
 
         if(!ntpd_notenabled)
-            system("rcctl disable ntpd > /dev/null 2>&1");
+            system("/etc/rc.d/ntpd disable > /dev/null 2>&1");
     }
  
     timedate1_complete_set_ntp(td1_passed_interf, invoc);
@@ -422,9 +423,9 @@ our_get_ntp() {
  
     int system_ret;
 
-    if((system_ret = system("rcctl check ntpd > /dev/null 2>&1")) == -1) {
+    if((system_ret = system("/etc/rc.d/ntpd check > /dev/null 2>&1")) == -1) {
 
-        g_printf("failed to check NTP status with rcctl\n");
+        g_printf("failed to check NTP\n");
         return FALSE;
     }
 
