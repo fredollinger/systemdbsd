@@ -9,6 +9,8 @@
         <property name="PrettyHostname" type="s" access="read" />
         <property name="IconName" type="s" access="read" />
         <property name="Chassis" type="s" access="read" />
+        <property name="Location" type="s" access="read" />
+        <property name="Deployment" type="s" access="read" />
         <property name="KernelName" type="s" access="read">
             <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const" />
         </property>
@@ -41,6 +43,14 @@
             <arg type="b" direction="in" />
         </method>
         <method name="SetChassis">
+            <arg type="s" direction="in" />
+            <arg type="b" direction="in" />
+        </method>
+        <method name="SetDeployment">
+            <arg type="s" direction="in" />
+            <arg type="b" direction="in" />
+        </method>
+        <method name="SetLocation">
             <arg type="s" direction="in" />
             <arg type="b" direction="in" />
         </method>

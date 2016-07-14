@@ -18,6 +18,10 @@
                    IN  b unnamed_arg1);
 <link linkend="gdbus-method-org-freedesktop-hostname1.SetChassis">SetChassis</link>        (IN  s unnamed_arg0,
                    IN  b unnamed_arg1);
+<link linkend="gdbus-method-org-freedesktop-hostname1.SetDeployment">SetDeployment</link>     (IN  s unnamed_arg0,
+                   IN  b unnamed_arg1);
+<link linkend="gdbus-method-org-freedesktop-hostname1.SetLocation">SetLocation</link>       (IN  s unnamed_arg0,
+                   IN  b unnamed_arg1);
 </synopsis>
   </refsynopsisdiv>
   <refsect1 role="properties">
@@ -28,6 +32,8 @@
 <link linkend="gdbus-property-org-freedesktop-hostname1.PrettyHostname">PrettyHostname</link>             readable   s
 <link linkend="gdbus-property-org-freedesktop-hostname1.IconName">IconName</link>                   readable   s
 <link linkend="gdbus-property-org-freedesktop-hostname1.Chassis">Chassis</link>                    readable   s
+<link linkend="gdbus-property-org-freedesktop-hostname1.Location">Location</link>                   readable   s
+<link linkend="gdbus-property-org-freedesktop-hostname1.Deployment">Deployment</link>                 readable   s
 <link linkend="gdbus-property-org-freedesktop-hostname1.KernelName">KernelName</link>                 readable   s
 <link linkend="gdbus-property-org-freedesktop-hostname1.KernelRelease">KernelRelease</link>              readable   s
 <link linkend="gdbus-property-org-freedesktop-hostname1.KernelVersion">KernelVersion</link>              readable   s
@@ -136,6 +142,44 @@ SetChassis (IN  s unnamed_arg0,
 </varlistentry>
 </variablelist>
 </refsect2>
+<refsect2 role="method" id="gdbus-method-org-freedesktop-hostname1.SetDeployment">
+  <title>The SetDeployment() method</title>
+  <indexterm zone="gdbus-method-org-freedesktop-hostname1.SetDeployment"><primary sortas="hostname1.SetDeployment">org.freedesktop.hostname1.SetDeployment()</primary></indexterm>
+<programlisting>
+SetDeployment (IN  s unnamed_arg0,
+               IN  b unnamed_arg1);
+</programlisting>
+<para></para>
+<variablelist role="params">
+<varlistentry>
+  <term><literal>IN s <parameter>unnamed_arg0</parameter></literal>:</term>
+  <listitem><para></para></listitem>
+</varlistentry>
+<varlistentry>
+  <term><literal>IN b <parameter>unnamed_arg1</parameter></literal>:</term>
+  <listitem><para></para></listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 role="method" id="gdbus-method-org-freedesktop-hostname1.SetLocation">
+  <title>The SetLocation() method</title>
+  <indexterm zone="gdbus-method-org-freedesktop-hostname1.SetLocation"><primary sortas="hostname1.SetLocation">org.freedesktop.hostname1.SetLocation()</primary></indexterm>
+<programlisting>
+SetLocation (IN  s unnamed_arg0,
+             IN  b unnamed_arg1);
+</programlisting>
+<para></para>
+<variablelist role="params">
+<varlistentry>
+  <term><literal>IN s <parameter>unnamed_arg0</parameter></literal>:</term>
+  <listitem><para></para></listitem>
+</varlistentry>
+<varlistentry>
+  <term><literal>IN b <parameter>unnamed_arg1</parameter></literal>:</term>
+  <listitem><para></para></listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
 </refsect1>
 <refsect1 role="details" id="gdbus-properties-org.freedesktop.hostname1">
   <title role="details.title">Property Details</title>
@@ -176,6 +220,22 @@ IconName  readable   s
   <indexterm zone="gdbus-property-org-freedesktop-hostname1.Chassis"><primary sortas="hostname1:Chassis">org.freedesktop.hostname1:Chassis</primary></indexterm>
 <programlisting>
 Chassis  readable   s
+</programlisting>
+<para></para>
+</refsect2>
+<refsect2 role="property" id="gdbus-property-org-freedesktop-hostname1.Location">
+  <title>The "Location" property</title>
+  <indexterm zone="gdbus-property-org-freedesktop-hostname1.Location"><primary sortas="hostname1:Location">org.freedesktop.hostname1:Location</primary></indexterm>
+<programlisting>
+Location  readable   s
+</programlisting>
+<para></para>
+</refsect2>
+<refsect2 role="property" id="gdbus-property-org-freedesktop-hostname1.Deployment">
+  <title>The "Deployment" property</title>
+  <indexterm zone="gdbus-property-org-freedesktop-hostname1.Deployment"><primary sortas="hostname1:Deployment">org.freedesktop.hostname1:Deployment</primary></indexterm>
+<programlisting>
+Deployment  readable   s
 </programlisting>
 <para></para>
 </refsect2>

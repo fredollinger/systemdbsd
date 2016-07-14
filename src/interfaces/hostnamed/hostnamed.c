@@ -84,6 +84,7 @@ gboolean dbus_interface_exported; /* reliable because of gdbus operational guara
 gchar *HOSTNAME, *STATIC_HOSTNAME, *PRETTY_HOSTNAME;
 gchar *CHASSIS, *ICON;
 gchar *KERN_NAME, *KERN_RELEASE, *KERN_VERS, *OS_CPENAME;
+gchar *LOCATION = NULL, *DEPLOYMENT = NULL;
 
 /* TODO no specific vm or laptop icon in gnome
  * NOTE paravirtualization on xen is only available for linuxes right now
@@ -113,6 +114,10 @@ const gchar *server_archs[] = {
 static const gchar *DEFAULT_DOMAIN   = ""; /* blank domains are OK for now */
 static const gchar *OS_HOSTNAME_PATH = "/etc/myname";
 static const gchar *OS_CONFIG_PATH   = "/etc/machine-info";
+/* XXX */
+static const guint LOCATION_MAXSIZE   = 4096;
+static const guint DEPLOYMENT_MAXSIZE = 4096;
+
 
 /* --- begin method/property/dbus signal code --- */
 
@@ -513,6 +518,121 @@ on_handle_set_icon_name(Hostname1 *hn1_passed_interf,
 
     return ret;
 }
+static gboolean
+on_handle_set_location(Hostname1 *hn1_passed_interf,
+                        GDBusMethodInvocation *invoc,
+                        const gchar *greet,
+                        gpointer data) {
+    GVariant *params;
+    const gchar *bus_name;
+    gchar *proposed_location, *valid_location_buf;
+    gboolean policykit_auth, ret, try_to_set;
+    check_auth_result is_authed;
+
+    ret = try_to_set = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_location, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-location", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set location.");
+			return FALSE;
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+			return FALSE;
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+			return FALSE;
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set location for unknown reason.");
+			return FALSE;
+            break;
+    }
+	/* XXX follow systemd impl here */
+	LOCATION = (gchar *) g_malloc0(LOCATION_MAXSIZE);
+	g_strlcpy(LOCATION, proposed_location, LOCATION_MAXSIZE);
+	hostname1_set_location(hn1_passed_interf, LOCATION);
+	g_ptr_array_add(hostnamed_freeable, valid_location_buf);
+	hostname1_complete_set_location(hn1_passed_interf, invoc);
+	return TRUE;
+}
+
+static gboolean
+on_handle_set_deployment(Hostname1 *hn1_passed_interf,
+                        GDBusMethodInvocation *invoc,
+                        const gchar *greet,
+                        gpointer data) {
+    GVariant *params;
+    const gchar *bus_name;
+    gchar *proposed_deployment, *valid_deployment_buf;
+    gboolean policykit_auth, ret, try_to_set;
+    check_auth_result is_authed;
+
+    ret = try_to_set = FALSE;
+    
+    params = g_dbus_method_invocation_get_parameters(invoc);
+    g_variant_get(params, "(sb)", &proposed_deployment, &policykit_auth);
+    bus_name = g_dbus_method_invocation_get_sender(invoc);
+
+    /* verify caller has correct permissions via polkit */
+    is_authed = polkit_try_auth(bus_name, "org.freedesktop.hostname1.set-deployment", policykit_auth);
+
+    switch(is_authed) {
+
+        case AUTHORIZED_NATIVELY:
+        case AUTHORIZED_BY_PROMPT:
+            try_to_set = TRUE;
+            break;
+
+        case UNAUTHORIZED_NATIVELY:
+        case UNAUTHORIZED_FAILED_PROMPT:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EACCES", "Insufficient permissions to set deployment.");
+			return FALSE;
+            break;
+
+        case ERROR_BADBUS:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided bus name is invalid.");
+			return FALSE;
+            break;
+
+        case ERROR_BADACTION:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.EFAULT", "Provided action ID is invalid.");
+			return FALSE;
+            break;
+
+        case ERROR_GENERIC:
+        default:
+            g_dbus_method_invocation_return_dbus_error(invoc, "org.freedesktop.hostname1.Error.ECANCELED", "Failed to set deployment for unknown reason.");
+			return FALSE;
+            break;
+    }
+	/* XXX follow systemd impl here */
+	DEPLOYMENT = (gchar *) g_malloc0(DEPLOYMENT_MAXSIZE);
+	g_strlcpy(DEPLOYMENT, proposed_deployment, DEPLOYMENT_MAXSIZE);
+	hostname1_set_deployment(hn1_passed_interf, DEPLOYMENT);
+	g_ptr_array_add(hostnamed_freeable, valid_deployment_buf);
+	hostname1_complete_set_deployment(hn1_passed_interf, invoc);
+	return TRUE;
+}
 
 /* note: all hostnamed/hostname1's properties are read-only,
  * and do not need set_ functions, gdbus-codegen realized
@@ -620,6 +740,21 @@ our_get_os_pretty_name() {
     return "OpenBSD";
 }
 
+const gchar *
+our_get_location() {
+
+	if(LOCATION)
+		return LOCATION;
+	return "";
+}
+
+const gchar *
+our_get_deployment() {
+
+	if(DEPLOYMENT)
+		return DEPLOYMENT;
+	return "";
+}
 /* --- end method/property/dbus signal code, begin bus/name handlers --- */
 
 static void hostnamed_on_bus_acquired(GDBusConnection *conn,
@@ -636,6 +771,8 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
     g_signal_connect(hostnamed_interf, "handle-set-pretty-hostname", G_CALLBACK(on_handle_set_pretty_hostname), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-chassis", G_CALLBACK(on_handle_set_chassis), NULL);
     g_signal_connect(hostnamed_interf, "handle-set-icon-name", G_CALLBACK(on_handle_set_icon_name), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-deployment", G_CALLBACK(on_handle_set_deployment), NULL);
+    g_signal_connect(hostnamed_interf, "handle-set-location", G_CALLBACK(on_handle_set_location), NULL);
 
     /* set our properties before export */
     hostname1_set_hostname(hostnamed_interf, our_get_hostname());
@@ -648,6 +785,9 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
     hostname1_set_kernel_release(hostnamed_interf, our_get_kernel_release());
     hostname1_set_operating_system_cpename(hostnamed_interf, our_get_os_cpename());
     hostname1_set_operating_system_pretty_name(hostnamed_interf, our_get_os_pretty_name());
+    hostname1_set_deployment(hostnamed_interf, our_get_deployment());
+    hostname1_set_location(hostnamed_interf, our_get_location());
+
  
     if(!g_dbus_interface_skeleton_export(G_DBUS_INTERFACE_SKELETON(hostnamed_interf),
                                          conn,
@@ -658,7 +798,6 @@ static void hostnamed_on_bus_acquired(GDBusConnection *conn,
         hostnamed_mem_clean();
 
     } else {
-
         dbus_interface_exported = TRUE;
         g_printf("exported %s's interface on the system bus...\n", name);
     }
@@ -767,16 +906,20 @@ int main() {
 gboolean set_names() {
 
     /* (1) set up */
-    gchar *hostname_buf, *static_hostname_buf, *pretty_hostname_buf;
+    gchar *hostname_buf, *static_hostname_buf, *pretty_hostname_buf, *location_buf, *deployment_buf;
     size_t hostname_divider;
 
     hostname_buf        = (gchar*) g_malloc0(MAXHOSTNAMELEN);
     static_hostname_buf = (gchar*) g_malloc0(4096);
     pretty_hostname_buf = (gchar*) g_malloc0(4096);
+    location_buf	= (gchar*) g_malloc0(LOCATION_MAXSIZE);
+    deployment_buf	= (gchar*) g_malloc0(DEPLOYMENT_MAXSIZE);
 
     g_ptr_array_add(hostnamed_freeable, hostname_buf);
     g_ptr_array_add(hostnamed_freeable, static_hostname_buf);
     g_ptr_array_add(hostnamed_freeable, pretty_hostname_buf);
+    g_ptr_array_add(hostnamed_freeable, location_buf);
+    g_ptr_array_add(hostnamed_freeable, deployment_buf);
 
     /* (2) set HOSTNAME */
     if(gethostname(hostname_buf, MAXHOSTNAMELEN) || !g_strcmp0(hostname_buf, "")) 
@@ -803,7 +946,13 @@ gboolean set_names() {
     else
         STATIC_HOSTNAME = "";
 
-    return (HOSTNAME && STATIC_HOSTNAME && PRETTY_HOSTNAME) ? TRUE : FALSE;
+	/* XXX */
+	location_buf = "";
+	LOCATION = location_buf;
+	deployment_buf = "";
+	DEPLOYMENT = deployment_buf;
+
+    return (HOSTNAME && STATIC_HOSTNAME && PRETTY_HOSTNAME && LOCATION && DEPLOYMENT) ? TRUE : FALSE;
 }
 
 gboolean set_uname_properties() {
