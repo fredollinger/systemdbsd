@@ -24,7 +24,6 @@
 #include <errno.h>
 #include <time.h>
 #include <string.h>
-#include <tzfile.h>
 
 #include <glib/gprintf.h>
 #include <glib-unix.h>
@@ -215,7 +214,7 @@ on_handle_set_timezone(Timedate1 *td1_passed_interf,
     g_ptr_array_add(timedated_freeable, statbuf);
     g_ptr_array_add(timedated_freeable, tz_target_path);
 
-    strlcat(tz_target_path, TZDIR, TZNAME_MAX);
+    strlcat(tz_target_path, OS_TIMEZONE_PATH, TZNAME_MAX);
     strlcat(tz_target_path, "/", TZNAME_MAX);
     strlcat(tz_target_path, proposed_tz, TZNAME_MAX);
 
@@ -252,11 +251,11 @@ on_handle_set_timezone(Timedate1 *td1_passed_interf,
 
     memset(statbuf, 0, sizeof statbuf);
 
-    if(!lstat(TZDEFAULT, statbuf))
-        if(remove(TZDEFAULT))
+    if(!lstat(OS_LOCALTIME, statbuf))
+        if(remove(OS_LOCALTIME))
             return FALSE;
 
-    if(symlink(tz_target_path, TZDEFAULT))
+    if(symlink(tz_target_path, OS_LOCALTIME))
         return FALSE;
 
     
